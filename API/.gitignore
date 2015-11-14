@@ -1,1 +1,23 @@
+#gitignore file
 
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+.idea/
+*.iml
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Logs
+logs
+*.log
