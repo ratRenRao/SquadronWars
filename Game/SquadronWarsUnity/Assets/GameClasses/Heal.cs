@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +8,17 @@ class Heal : Effect, IEffectable
 {
     private int healthRestored;
 
-    public Heal(int healthRestored)
+    public Heal(Stats casterStats, Stats targetStats, bool immediate, int duration)
     {
-        this.healthRestored = healthRestored;
+        this.targetStats = targetStats;
+        this.casterStats = casterStats;
+        this.immediate = immediate;
+        this.duration = duration;
     }
 
-    public void execute(ref Stats charStats)
+    public void immediateEffect()
     {
-        applyEffect(ref charStats.health, healthRestored);
+        targetStats.Health = ValidateStat(targetStats.Health + healthRestored, 0, targetStats.MaxHealth); 
     }
 
 }
