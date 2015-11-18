@@ -11,7 +11,10 @@
 $app = new \Silex\Application();
 
 
+
 $app->get('/',function() use($app){
-    echo 'Hello';
+    return require_once realpath(DIRECTORY_SEPARATOR.'Common'.DIRECTORY_SEPARATOR.'html'.DIRECTORY_SEPARATOR.'index.hmtl');
 });
 
+
+$app->run();
