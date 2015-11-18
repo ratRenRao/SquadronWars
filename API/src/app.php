@@ -8,19 +8,10 @@
  * will use this class to create our website endpoints and logic needed when reached
  * all API endpoints should return json encoded objects
  */
-$app = new \Slim\Slim();
+$app = new \Silex\Application();
 
-$app->notFound(function () {
-    echo 'Dude you are lost...';
+
+$app->get('/',function() use($app){
+    echo 'Hello';
 });
-
-$app->get('/', function () {
-    echo 'Welcome to root...';
-});
-
-//$app->get('/', function()
-//{
-//    echo "hello";
-//   // require_once realpath(__DIR__.DIRECTORY_SEPARATOR.'Common'.DIRECTORY_SEPARATOR.'html'.DIRECTORY_SEPARATOR.'index.html');
-//});
 
