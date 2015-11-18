@@ -1,6 +1,7 @@
 {
     "require": {
-        "slim/slim": "~2.6"
+        "slim/slim": "~2.6",
+        "silex/silex": "^1.3"
         
     },
     "require-dev": {
@@ -9,7 +10,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Common\\Authentication\\": "src/Common/Authentication"
+            "Common\\Authentication\\": "src/Common/Authentication",
+            "Common\\html\\": "src/Common/html"
         }
     }
 }
