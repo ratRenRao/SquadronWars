@@ -39,6 +39,7 @@ class MySQL implements IDBStructure
             //this will be ignored in production. do not want to echo back this error.
             echo $e->getMessage();
         }
+        var_dump($dbh);
 
         $query = $dbh->prepare("CALL SPNAME(?,?)");
         $query->bindParam(1,$username, PDO::PARAM_STR);
@@ -46,8 +47,9 @@ class MySQL implements IDBStructure
         $query->execute();
 
         $results = $query->fetchAll(PDO::FETCH_ASSOC);
+        var_dump($results);
         //iterates over the result set from the query. may need to change based on using stored procedure. will test more.
-        while($row = $results->fetch(PDO::FETCH_ASSOC))
+        if(sizeof($results) > 0)
         {
             if($row["username"]=== $username && $row["password"] === $password)
             {
@@ -56,7 +58,7 @@ class MySQL implements IDBStructure
                 return;
             }
         }
-        $results->closeCursor();
+        $query->closeCursor();
         echo 'Login Failed!';
     }
 
