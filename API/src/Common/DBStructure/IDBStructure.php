@@ -5,12 +5,12 @@
  * Date: 11/16/2015
  * Time: 11:44 PM
  *
- * Class will be used to declare Common Authentication requirements for our server
+ * Class will be used to declare Common DBStructure requirements for our server
  */
 
-namespace Common\Authentication;
+namespace Common\DBStructure;
 
-interface IAuthentication
+interface IDBStructure
 {
     /*
      * Function used to authenticate user
