@@ -34,8 +34,9 @@ $app->get('/api', function() use($app) {
 
 $app->post('/api/auth', function() use($app) {
     $mysql = new MySQL();
-    //$mysql->authenticateUser();
+    $mysql->authenticateUser("test","test");
     //TODO: DBStructure API call -- return JSON encoded messages
+    return"";
 
 });
 
