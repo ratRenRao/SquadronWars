@@ -10,7 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Common\\Authentication\\": "src/Common/Authentication",
+            "Common\\DBStructure\\": "src/Common/DBStructure",
             "Common\\html\\": "src/Common/html"
         }
     }
