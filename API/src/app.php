@@ -13,9 +13,9 @@
 
 
 use Common\Authentication\MySQL;
+use \Symfony\Component\HttpFoundation\Response;
 
 $app = new \Silex\Application();
-
 
 
 $app->get('/',function() use($app){
@@ -39,14 +39,21 @@ $app->get('/api', function() use($app) {
 
 $app->post('/api/auth', function() use($app) {
     //TODO: Authentication API call -- return JSON encoded messages
+
 });
 
 $app->post('/api/getuser', function() use($app) {
     //TODO: Get User API call -- return JSON encoded messages
+
+    if("ERROR CHECK HERE")
+    {
+        return $app->json($errormessageinarray,$errorcode);
+    }
+
+    return $app->json($arrayhere);
 });
 
-$app->post('/api/getuser', function() use($app) {
-    //TODO: Get User API call -- return JSON encoded messages
-});
+
+
 
 $app->run();
