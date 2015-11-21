@@ -13,9 +13,10 @@ namespace Common\DBStructure;
 interface IDBStructure
 {
     /*
-     * Function used to authenticate user
+     * Functions used to interact with server
      *
-     * we will need to modify this to match how we want to authenticate users to our system
+     * We will need to define all functions we put into the MySQL file to create scalability and
+     * loosely couple our code. this will allow for changes to structure later if needed
      *
      * */
     public function authenticateUser($username, $password);
