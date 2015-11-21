@@ -46,14 +46,14 @@ class MySQL implements IDBStructure
         $query->execute();
 
         $results = $query->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($results);
+        //var_dump($results);
         //iterates over the result set from the query. may need to change based on using stored procedure. will test more.
         if(sizeof($results) > 0)
         {
             //generate a session id to track logged in time store into an array to return
             $results["SessionID"] = "test";
             $query->closeCursor();
-            echo 'Login Successful for '.$username;
+            //echo 'Login Successful for '.$username;
             return $results;
         }
         $query->closeCursor();
