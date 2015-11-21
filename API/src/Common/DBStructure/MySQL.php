@@ -25,7 +25,7 @@ class MySQL implements IDBStructure
 
     public function authenticateUser($username, $password)
     {
-        $credentials = file_get_contents(basedir.DIRECTORY_SEPARATOR.'devconfiginfo.json');
+        $credentials = json_decode(file_get_contents(basedir.DIRECTORY_SEPARATOR.'devconfiginfo.json'));
         //create database reference object
         $dbh='';
         //Try to connect to mysql service
@@ -39,9 +39,8 @@ class MySQL implements IDBStructure
             //this will be ignored in production. do not want to echo back this error.
             echo $e->getMessage();
         }
-        var_dump($dbh);
 
-        $query = $dbh->prepare("CALL SPNAME(?,?)");
+        $query = $dbh->prepare("CALL sp_AuthorizePlayer(?,?)");
         $query->bindParam(1,$username, PDO::PARAM_STR);
         $query->bindParam(2,$password, PDO::PARAM_STR);
         $query->execute();
@@ -51,12 +50,11 @@ class MySQL implements IDBStructure
         //iterates over the result set from the query. may need to change based on using stored procedure. will test more.
         if(sizeof($results) > 0)
         {
-            if($row["username"]=== $username && $row["password"] === $password)
-            {
-                $results->closeCursor();
-                echo 'Login Successful for '.$username;
-                return;
-            }
+            //generate a session id to track logged in time store into an array to return
+            $results["SessionID"] = "test";
+            $query->closeCursor();
+            echo 'Login Successful for '.$username;
+            return $results;
         }
         $query->closeCursor();
         echo 'Login Failed!';
