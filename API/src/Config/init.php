@@ -8,9 +8,8 @@
  * will be used to initialize slim framework on server.
  */
 
-
 /**
- * Define Directory Constants
+ * Define App Constants
  */
 define("basedir", realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR));
 define("srcpath", realpath(basedir.DIRECTORY_SEPARATOR.'src'));
