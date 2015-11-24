@@ -2,41 +2,56 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
-abstract class Effect : IEffectable
+namespace SquadronWars2
 {
-    private int duration { get; set; }
-    private bool hasInitialEffect = false;
-    private Stats casterStats { get; set; }
-    private Stats targetStats { get; set; }
-
-    public void execute(ref Stats charStats)
+    abstract class Effect : IEffectable
     {
-        if (hasInitialEffect)
+        public int duration { get; set; }
+        public bool hasInitialEffect = false;
+        public Stats casterStats { get; set; }
+        public Stats targetStats { get; set; }
+
+        public void execute(Stats charStats)
         {
-            initialEffect();
-            hasInitialEffect = false;
+            if (hasInitialEffect)
+            {
+                //initialEffect();
+                hasInitialEffect = false;
+            }
+            else if (duration > 0)
+            {
+                lingeringEffect();
+            }
+            else if (duration == 0)
+            {
+                removeEffect();
+            }
         }
-        else if (duration > 0)
+
+        public static int ValidateStat(int stat, int minStat, int maxStat)
         {
-            lingeringEffect();
+            return (stat < minStat) ? minStat : (stat > maxStat) ? maxStat : stat;
         }
-        else if (duration == 0)
+
+        public void lingeringEffect() { }
+
+        public void immediateEffect() { }
+
+        public void removeEffect() { }
+
+        public void immediateEffect(ref Stats charStat)
         {
-            removeEffect();
+            throw new NotImplementedException();
+        }
+
+        public void removeEffect(ref Stats charStat)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void lingeringEffect(ref Stats charStats)
+        {
+            throw new NotImplementedException();
         }
     }
-
-    public static int Clamp(int stat, int minStat, int maxStat)
-    {
-        return (stat < minStat) ? minStat : (stat > maxStat) ? maxStat : stat;
-    }
-
-    public void lingeringEffect() { }
-
-    public void immediateEffect() { }
-
-    public void removeEffect() { }
-
 }

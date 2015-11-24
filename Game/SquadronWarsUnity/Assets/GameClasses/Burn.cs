@@ -2,22 +2,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-class Burn : Effect, IEffectable
+namespace SquadronWars2
 {
-    private int burnDamage;
 
-    public Burn(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration)
+    class Burn : Effect, IEffectable
     {
-        this.targetStats = targetStats;
-        this.casterStats = casterStats;
-        this.hasInitialEffect = hasInitialEffect;
-        this.duration = duration;
-    }
+        private int burnDamage;
 
-    public override void lingeringEffect()
-    {
-        targetStats.Health -= burnDamage;
+        public Burn(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration)
+        {
+            this.targetStats = targetStats;
+            this.casterStats = casterStats;
+            this.hasInitialEffect = hasInitialEffect;
+            this.duration = duration;
+        }
+
+        public void lingeringEffect()
+        {
+            targetStats.currentHP -= burnDamage;
+        }
     }
 }

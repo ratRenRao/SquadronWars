@@ -2,22 +2,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
-class Fireball : Burn, IEffectable
+namespace SquadronWars2
 {
-    private int fireballDamage;
-
-    public Fireball(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration)
+    class Fireball : Effect, IEffectable
     {
-        this.targetStats = targetStats;
-        this.casterStats = casterStats;
-        this.hasInitialEffect = hasInitialEffect;
-        this.duration = duration;
-    }
+        private int fireballDamage;
 
-    public override void immediateEffect()
-    {
-        targetStats.Health -= fireballDamage;
+        public Fireball(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration)
+        {
+            this.targetStats = targetStats;
+            this.casterStats = casterStats;
+            this.hasInitialEffect = hasInitialEffect;
+            this.duration = duration;
+        }
+
+        public void immediateEffect()
+        {
+            targetStats.currentHP -= fireballDamage;
+        }
     }
 }

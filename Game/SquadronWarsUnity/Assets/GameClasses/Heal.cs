@@ -2,23 +2,43 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-class Heal : Effect, IEffectable
+namespace SquadronWars2
 {
-    private int healthRestored;
-
-    public Heal(Stats casterStats, Stats targetStats, bool immediate, int duration)
+    class Heal : Effect, IEffectable
     {
-        this.targetStats = targetStats;
-        this.casterStats = casterStats;
-        this.immediate = immediate;
-        this.duration = duration;
-    }
+        private int healthRestored = 50;
+        public Heal(Stats casterStats, Stats targetStats, bool initial, int duration)
+        {
+            this.targetStats = targetStats;
+            this.casterStats = casterStats;
+            this.hasInitialEffect = initial;
+            this.duration = duration;
+        }
 
-    public void immediateEffect()
-    {
-        targetStats.Health = ValidateStat(targetStats.Health + healthRestored, 0, targetStats.MaxHealth); 
-    }
+        public void immediateEffect()
+        {
+            targetStats.currentHP = ValidateStat(targetStats.currentHP + healthRestored, 0, targetStats.maxHP);
+        }
 
+        public void execute(ref Stats charStats)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void immediateEffect(ref Stats charStat)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void removeEffect(ref Stats charStat)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void lingeringEffect(ref Stats charStats)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

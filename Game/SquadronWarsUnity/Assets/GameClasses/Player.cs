@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
 class Player
 {
     private string username { get; set; } // remove and create LoginChange class for changes

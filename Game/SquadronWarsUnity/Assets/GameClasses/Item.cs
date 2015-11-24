@@ -2,25 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-class Item : IWearable
+namespace SquadronWars2
 {
-    enum ItemType
+    public enum ItemType
     {
-        Helm,
-        Chest,
-        Gloves,
-        Legs,
-        Shoulders,
-        Boots,
-        Accessory1,
-        Accessory2
+        HELM,
+        CHEST,
+        GLOVES,
+        LEGS,
+        SHOULDERS,
+        BOOTS,
+        ACCESSORY1,
+        ACCESSORY2,
     };
 
-    private ItemType itemType { get; set; }
-    private string name { get; set; }
-    private int id { get; set; }
-    private int itemListId { get; set; }
+    class Item : IWearable
+    {
 
+        private ItemType itemType { get; set; }
+        private string name { get; set; }
+        private int id { get; set; }
+        private int itemListId { get; set; }
+
+    }
 }
