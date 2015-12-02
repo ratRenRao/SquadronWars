@@ -21,3 +21,10 @@ pids
 # Logs
 logs
 *.log
+
+#Your specific files to be ignored
+#startphpserver.bat
+devconfiginfo.json
+CMD.lnk
+
+
