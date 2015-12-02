@@ -20,4 +20,6 @@ interface IDBStructure
      *
      * */
     public function authenticateUser($username, $password);
+
+    public function getCharacters($playerID);
 }

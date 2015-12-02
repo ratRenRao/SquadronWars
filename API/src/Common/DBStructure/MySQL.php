@@ -25,8 +25,6 @@ class MySQL implements IDBStructure
 
     public function authenticateUser($username, $password)
     {
-        //read username and password from config file. will create a different file name and reference that for production.
-        $credentials = json_decode(file_get_contents(basedir.DIRECTORY_SEPARATOR.'devconfiginfo.json'));
 
         //create database reference object
         $dbh='';
@@ -35,7 +33,7 @@ class MySQL implements IDBStructure
         try
         {
             //created config file to hold user name and password that we will use to obscure and keep off of our repo.
-            $dbh = new PDO("mysql:host=localhost:3306;dbname=dbo",$credentials->{"username"},$credentials->{"password"});
+            $dbh = new PDO("mysql:host=localhost:3306;dbname=dbo", dbuser, dbpass);
         }
         catch(PDOException $e)
         {
@@ -71,6 +69,45 @@ class MySQL implements IDBStructure
         return;
     }
 
+    public function getCharacters($playerID)
+    {
+
+        //create database reference object
+        $dbh='';
+
+        //Try to connect to mysql service
+        try
+        {
+            //created config file to hold user name and password that we will use to obscure and keep off of our repo.
+            $dbh = new PDO("mysql:host=localhost:3306;dbname=dbo", dbuser, dbpass);
+        }
+        catch(PDOException $e)
+        {
+            //this will be ignored in production. do not want to echo back this error.
+            echo $e->getMessage();
+        }
+
+        //Prepare SQL statement and bind the parameters for authenticating a username and password.
+        $query = $dbh->prepare("CALL sp_(?,?)");
+        $query->bindParam(1,$username, PDO::PARAM_STR);
+        $query->bindParam(2,$password, PDO::PARAM_STR);
+
+        //Execute stored procedure with username and password passed in.
+        $query->execute();
+
+        //Turns the result from the stored procedure (if any) into an associative array.
+        $results = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        //done with database connection. Closing connection.
+        $query->closeCursor();
+
+        if(sizeof($results) > 0)
+        {
+
+        }
+
+        return $results;
+    }
 
 
 }
