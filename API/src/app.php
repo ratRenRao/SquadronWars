@@ -52,7 +52,7 @@ $app->post('/api/auth', function() use($app) {
     return new Response("Failed Authentication",401);
 });
 
-$app->post('/api/getuser', function() use($app) {
+$app->post('/api/getchars', function() use($app) {
     //TODO: Get User API call -- return JSON encoded messages
 });
 
