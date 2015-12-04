@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-class Squad
+namespace SquadronWars2
 {
-    private int squadId { get; set; }
-    private int playerId { get; set; } // is this needed?
-    private string squadDetails { get; set; }
-
-    public Squad(int squadId, int playerId)
+    class Squad
     {
-        this.squadId = squadId;
-        this.playerId = playerId;
+        private int squadId { get; set; }
+        private string squadDetails { get; set; }
+        private List<Character> characterList { get; set; }
+        public Squad(int squadId, int playerId)
+        {
+            this.squadId = squadId;
+        }
     }
 }

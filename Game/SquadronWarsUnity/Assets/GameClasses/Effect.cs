@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 namespace SquadronWars2
 {
-    abstract class Effect : IEffectable
+    abstract public class Effect : IEffectable
     {
         public int duration { get; set; }
         public bool hasInitialEffect = false;

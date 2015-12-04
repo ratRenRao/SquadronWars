@@ -5,12 +5,12 @@ using System.Text;
 
 namespace SquadronWars2
 {
-    class Character
+    public class Character
     {
         private int characterId { get; set; }
         private Stats stats { get; set; }
         private int characterListId { get; set; }
-        private string name { get; set; }
+        public string name { get; set; }
         private int level { get; set; }
         private int experience { get; set; }
         private List<Effect> effects = new List<Effect>();

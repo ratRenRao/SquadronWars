@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SquadronWars2
 {
-    class Stats
+    public class Stats
     {
         public int strength { get; set; }
         public int agility { get; set; }
