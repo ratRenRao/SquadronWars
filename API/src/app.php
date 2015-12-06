@@ -52,8 +52,18 @@ $app->post('/api/auth', function() use($app) {
     return new Response("Failed Authentication",401);
 });
 
-$app->post('/api/getchars', function() use($app) {
-    //TODO: Get User API call -- return JSON encoded messages
+$app->post('/api/getchars', function() use($app){
+
+    $mysql = new MySQL();
+
+    //verify that session id is valid and get character information. Call from authenticate?
+    if(isset($_POST['PlayerID']) && isset($_POST['SessionID']))
+    {
+        $returnObject = $mysql->getCharacters($_POST['PlayerID']);
+        return $app->json($returnObject);
+    }
+
+    return new Response("Invalid Session ID", 401);
 });
 
 

@@ -6,7 +6,8 @@
  * Time: 3:53 PM
  */
 
-//Initialize Slim Framework to manage website
-require_once realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'init.php');
+//Initialize Silex Framework to manage website
+echo (realpath(__FILE__));
+//require_once realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'init.php');
 
 
