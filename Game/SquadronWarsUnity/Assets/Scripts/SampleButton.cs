@@ -1,7 +1,8 @@
-﻿using UnityEngine;
-using SquadronWars;
+using UnityEngine;
+using SquadronWars2;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
 public class SampleButton : MonoBehaviour
 {
@@ -19,7 +20,6 @@ public class SampleButton : MonoBehaviour
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         SpriteRenderer sprite = GameObject.FindGameObjectWithTag("Character1").GetComponent<SpriteRenderer>();
         character.sprite = sprite.sprite;
-        Debug.Log(character.sprite);
         menu.squadScreenPanel.SetActive(false);
         menu.characterScreenPanel.SetActive(true);
         stats.characterSprite.sprite = character.sprite;
@@ -41,6 +41,12 @@ public class SampleButton : MonoBehaviour
         stats.hitRateStat.text = character.stats.calculateHitRate().ToString();
         stats.dodgeRateStat.text = character.stats.calculateDodgeRate().ToString();
         stats.criticalRateStat.text = character.stats.calculateCritRate().ToString();
-
+        stats.levelStat.text = character.stats.level.ToString();
+        int expToNextLevel = (int)Math.Floor(character.stats.level * 1.5 * 200);
+        stats.experienceStat.text = string.Format("{0} / {1}", character.stats.experience.ToString(), expToNextLevel.ToString());
+        double tempVal = ((double)character.stats.experience / expToNextLevel) * 100;
+        int progBar = Convert.ToInt32(tempVal);
+        stats.ProgressBar.value = progBar;
+        
     }
 }
