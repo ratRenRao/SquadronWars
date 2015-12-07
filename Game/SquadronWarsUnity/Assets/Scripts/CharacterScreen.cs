@@ -25,4 +25,7 @@ public class CharacterScreen : MonoBehaviour {
     public Text hitRateStat;
     public Text dodgeRateStat;
     public Text criticalRateStat;
+    public Text levelStat;
+    public Text experienceStat;
+    public Slider ProgressBar;
 }
