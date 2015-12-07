@@ -1,4 +1,8 @@
 ﻿using System;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,13 +11,15 @@ namespace SquadronWars2
 {
     public class Character
     {
-        private int characterId { get; set; }
-        private Stats stats { get; set; }
-        private int characterListId { get; set; }
+        public int characterId { get; set; }
+        public Stats stats { get; set; }
+        public int characterListId { get; set; }
         public string name { get; set; }
-        private int level { get; set; }
-        private int experience { get; set; }
-        private List<Effect> effects = new List<Effect>();
+        public int level { get; set; }
+        public int experience { get; set; }
+        public List<Effect> effects = new List<Effect>();
+        public Sprite sprite;
+        public Button.ButtonClickedEvent buildCharacterSheet;
 
         public Character(int characterId, Stats stats, int characterListId, string name,
             int level, int experience)
