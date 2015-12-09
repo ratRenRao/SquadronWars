@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Script.Serialization;
 
-namespace SquadronWars.Game.SquadronWarsUnity.Repo
+namespace SquadronWars2.Game.SquadronWarsUnity.Repo
 {
     public class DbConnection
     {

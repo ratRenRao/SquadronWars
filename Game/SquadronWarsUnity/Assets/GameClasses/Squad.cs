@@ -5,7 +5,7 @@ using System.Text;
 using SquadronWars.Game.SquadronWarsUnity.Repo;
 using System.Threading.Tasks;
 
-namespace SquadronWars
+namespace SquadronWars2
 {
     class Squad
     {

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SquadronWars.Game.SquadronWarsUnity.Repo
 
-namespace SquadronWars
+namespace SquadronWars2
 {
     public class Character
     {
