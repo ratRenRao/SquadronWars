@@ -18,7 +18,7 @@ CREATE  TABLE IF NOT EXISTS `dbo`.`Character` (
   `boots` INT(11) NULL DEFAULT NULL ,
   `accessory1` INT(11) NULL DEFAULT NULL ,
   `accessory2` INT(11) NULL DEFAULT NULL ,
-  `IsStandard` TINYINT(1) NULL ,
+  `IsStandard` TINYINT(1) NULL DEFAULT NULL ,
   PRIMARY KEY (`characterId`) ,
   INDEX `FK_Character_Level_idx` (`LevelID` ASC) ,
   INDEX `FK_Character_Squad_idx` (`SquadID` ASC) ,
