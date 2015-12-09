@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     public GameObject homePanel;
     public GameObject squadPanel;
     public GameObject squadScreenPanel;
+    public GameObject characterList;
     public GameObject characterScreenPanel;
     public GameObject shopPanel;
     public GameObject shop;
@@ -27,6 +28,7 @@ public class MenuManager : MonoBehaviour
         characterScreenPanel = GameObject.Find("CharacterScreen");
         shop = GameObject.Find("Shop");
         shopPanel = GameObject.Find("ShopPanel");
+        characterList = GameObject.Find("CharacterList");
         setup();
     }
 
