@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 public class CharacterScreen : MonoBehaviour {
     public Image characterSprite;
+    public SampleButton sampleButton;
     public Text characterName;
     public Text strengthStat;
     public Text agilityStat;
@@ -28,4 +29,11 @@ public class CharacterScreen : MonoBehaviour {
     public Text levelStat;
     public Text experienceStat;
     public Slider ProgressBar;
+    public Dropdown helmSlot;
+    public Dropdown shoulderSlot;
+    public Dropdown chestSlot;
+    public Dropdown legsSlot;
+    public Dropdown glovesSlot;
+    public Dropdown bootsSlot;
+
 }

@@ -17,13 +17,13 @@ namespace SquadronWars2
         ACCESSORY2,
     };
 
-    class Item : IWearable
+    public class Item : IWearable
     {
 
-        private ItemType itemType { get; set; }
-        private string name { get; set; }
-        private int id { get; set; }
-        private int itemListId { get; set; }
+        public ItemType itemType { get; set; }
+        public string name { get; set; }
+        public int id { get; set; }
+        public int itemListId { get; set; }
 
     }
 }
