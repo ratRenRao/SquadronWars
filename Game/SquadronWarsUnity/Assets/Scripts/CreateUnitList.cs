@@ -1,30 +1,14 @@
-<<<<<<< .mine
-﻿using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.Collections;
-||||||| .r93
-﻿using UnityEngine;
+﻿﻿using UnityEngine;
 using SquadronWars2;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
-=======
-﻿using UnityEngine;
-using SquadronWars;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.Collections;
->>>>>>> .r96
 using System.Collections.Generic;
 
-<<<<<<< .mine
 namespace SquadronWars2
 {
-
     public class CreateUnitList : MonoBehaviour
     {
-
         public GameObject sampleButton;
         public List<Character> characters;
         public Transform contentPanel;
@@ -39,81 +23,6 @@ namespace SquadronWars2
         {
 
         }
-||||||| .r93
-public class CreateUnitList : MonoBehaviour {
-
-    public GameObject sampleButton;
-    public List<Character> characters;
-    public Transform contentPanel;
-	// Use this for initialization
-	void Start () {
-        populateList();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-    void populateList()
-    {
-        characters = new List<Character> ();
-        Stats newStat = new Stats(5, 4, 6, 3, 2, 9, 5);
-        newStat.level = 1;
-        newStat.experience = 75;
-        characters.Add(new Character(1, newStat, 1, "Saint Lancelot", 1, 0));
-        characters.Add(new Character(1, newStat, 1, "Sir Charles", 1, 0));
-        characters.Add(new Character(1, newStat, 1, "Devil Raider", 1, 0));
-        characters.Add(new Character(1, newStat, 1, "King Arthur", 1, 0));
-        characters.Add(new Character(1, newStat, 1, "Angel", 1, 0));
-        characters.Add(new Character(1, newStat, 1, "Arnold", 1, 0));
-        foreach (Character character in characters)
-        {
-            GameObject newButton = Instantiate(sampleButton) as GameObject;
-            SampleButton tempButton = newButton.GetComponent<SampleButton>();
-            tempButton.nameLabel.text = character.name;
-            tempButton.character = character;
-            newButton.transform.SetParent(contentPanel);
-
-        }
-=======
-public class CreateUnitList : MonoBehaviour {
-
-    public GameObject sampleButton;
-    public List<Character> characters;
-    public Transform contentPanel;
-	// Use this for initialization
-	void Start () {
-        populateList();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-    void populateList()
-    {
-        characters = new List<Character> ();
-        Stats newStat = new Stats(5, 4, 6, 3, 2, 9, 5);
-        newStat.level = 1;
-        newStat.experience = 75;
-        characters.Add(new Character(1, newStat, 1, "Saint Lancelot", 1, 0));
-        characters.Add(new Character(1, newStat, 1, "Sir Charles", 1, 0));
-        characters.Add(new Character(1, newStat, 1, "Devil Raider", 1, 0));
-        characters.Add(new Character(1, newStat, 1, "King Arthur", 1, 0));
-        characters.Add(new Character(1, newStat, 1, "Angel", 1, 0));
-        characters.Add(new Character(1, newStat, 1, "Arnold", 1, 0));
-        foreach (Character character in characters)
-        {
-            GameObject newButton = Instantiate(sampleButton) as GameObject;
-            SampleButton tempButton = newButton.GetComponent<SampleButton>();
-            tempButton.nameLabel.text = character.name;
-            tempButton.character = character;
-            newButton.transform.SetParent(contentPanel);
-
-        }
->>>>>>> .r96
 
         void populateList()
         {
@@ -186,7 +95,7 @@ public class CreateUnitList : MonoBehaviour {
             characters.Add(new Character(1, stat6, 1, "Arnold", 25, 30000, equipment5));
             foreach (Character character in characters)
             {
-                character.alteredStats = new Stats(0,0,0,0,0,0,0);
+                character.alteredStats = new Stats(0, 0, 0, 0, 0, 0, 0);
                 GameObject newButton = Instantiate(sampleButton) as GameObject;
                 SampleButton tempButton = newButton.GetComponent<SampleButton>();
                 tempButton.nameLabel.text = character.characterName;
