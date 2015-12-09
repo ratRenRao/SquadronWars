@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SquadronWars.Game.SquadronWarsUnity.Repo
+using SquadronWars2.Game.SquadronWarsUnity.Repo;
 
 namespace SquadronWars2
 {
