@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SquadronWars2.Game.SquadronWarsUnity.Repo;
-using System.Threading.Tasks;
 
 namespace SquadronWars2
 {
@@ -38,7 +37,7 @@ namespace SquadronWars2
 
         }
 
-        public async Task UpdatePlayerFromDb()
+        /*public async Task UpdatePlayerFromDb()
         {
             await dbConnection.ExecuteApiCall(GlobalConstants.squadDbUrl);
             Player dbPlayer = dbConnection.DeserializeData<Player>(this);
@@ -49,7 +48,7 @@ namespace SquadronWars2
             this.lastLogin = dbPlayer.lastLogin;
             this.squad = dbPlayer.squad;
             this.itemList = dbPlayer.itemList;
-        }
+        }*/
 
     }
 }

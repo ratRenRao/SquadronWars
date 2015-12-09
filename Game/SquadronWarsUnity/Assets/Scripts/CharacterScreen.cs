@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using SquadronWars;
+using SquadronWars2;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SquadronWars2.Game.SquadronWarsUnity.Repo;
-using System.Threading.Tasks;
+using UnityEditor.VersionControl;
 
 namespace SquadronWars2
 {
@@ -19,13 +19,13 @@ namespace SquadronWars2
             this.squadId = squadId;
         }
 
-        public async Task UpdateSquadFromDb()
+        /*public async Task UpdateSquadFromDb()
         {
             await dbConnection.ExecuteApiCall(GlobalConstants.squadDbUrl); 
             Squad dbSquad = dbConnection.DeserializeData<Squad>(this);
 
             this.characterList = dbSquad.characterList;
             this.squadDetails = dbSquad.squadDetails;
-        }
+        }*/
     }
 }

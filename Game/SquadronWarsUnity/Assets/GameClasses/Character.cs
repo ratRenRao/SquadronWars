@@ -1,12 +1,6 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SquadronWars2.Game.SquadronWarsUnity.Repo;
 
 namespace SquadronWars2
@@ -52,8 +46,8 @@ namespace SquadronWars2
 
             }
         }
-		
-		public int startExperience()
+
+        public int startExperience()
         {
             if (level == 1)
             {
@@ -68,7 +62,7 @@ namespace SquadronWars2
             {
                 return 200;
             }
-            return 200 + ((int)Math.Pow(level,2) * 50) ;
+            return 200 + ((int)Math.Pow(level, 2) * 50);
         }
 
         public int percentToNextLevel()
@@ -79,7 +73,7 @@ namespace SquadronWars2
             return Convert.ToInt32(percentComplete);
         }
 
-        public async Task UpdateCharacterFromDb()
+        /*public async Task UpdateCharacterFromDb()
         {
             await dbConnection.ExecuteApiCall(GlobalConstants.squadDbUrl);
             Character dbCharacter = dbConnection.DeserializeData<Character>(this);
@@ -89,5 +83,6 @@ namespace SquadronWars2
             this.name = dbCharacter.name;
             this.level = dbCharacter.level;
             this.experience = dbCharacter.experience;
-     }
+        }*/
+    }
 }

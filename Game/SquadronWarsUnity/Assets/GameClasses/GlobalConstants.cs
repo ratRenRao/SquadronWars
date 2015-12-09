@@ -9,7 +9,7 @@ namespace SquadronWars2
     {
 		public static string squadDbUrl = "temp/temp";
         public static string characterDbUrl = "/api/getchars";
-        public static string playerDbUrl = "/api/auth"
+        public static string playerDbUrl = "/api/auth";
 		
 		 static public Dictionary<string,Item> itemList = new Dictionary<string,Item>()
         {
@@ -47,5 +47,4 @@ namespace SquadronWars2
         //inventory.Add(new Equipment("None", ItemType.HELM, new Stats(0, 0, 0, 0, 0, 0, 0)));
         //inventory.Add(new Equipment("Leather Helm", ItemType.HELM, new Stats(1,1,1,0,0,0,0)));
     }
-}    }
-}
+}    

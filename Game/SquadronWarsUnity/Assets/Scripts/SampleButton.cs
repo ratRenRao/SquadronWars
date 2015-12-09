@@ -27,7 +27,7 @@ public class SampleButton : MonoBehaviour
         menu.characterScreenPanel.SetActive(true);
         stats.characterSprite.sprite = character.sprite;
         stats.characterName.text = character.characterName;
-        character.alteredStats = GetBonusStats(character);
+        
         UpdateStats(character);
         stats.levelStat.text = character.level.ToString();
         int expToNextLevel = character.experienceNeeded();
@@ -92,14 +92,7 @@ public class SampleButton : MonoBehaviour
         menuStats.criticalRateStat.text = concatStats.calculateCritRate(character.level).ToString();
     }
 
-    public Stats GetBonusStats(Character character)
-    {
-        foreach(Equipment equipment in character.equipment.Values)
-        {
-            character.alteredStats = character.alteredStats.concatStats(character.alteredStats, equipment.stats);
-        }
-        return character.alteredStats;
-    }
+    
     public string formatStats(int stats, int bonusStats)
     {
         if (bonusStats == 0)
