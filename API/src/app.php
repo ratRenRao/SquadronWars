@@ -42,21 +42,18 @@ $app->post('/api/auth', function() use($app) {
 
     if(isset($_POST['username']) && isset($_POST['password']))
     {
-        $returnobject = $mysql->authenticateUser($app->escape($_POST['username']),$app->escape($_POST['password']));
+        $returnobject["PlayerInfo"] = $mysql->authenticateUser($app->escape($_POST['username']),$app->escape($_POST['password']));
+//       $returnobject["PlayerInfo"] = $mysql->authenticateUser("test","testing123");
+
         if(sizeof($returnobject) > 0)
         {
+            $returnobject["Characters"] = $mysql->getCharacters($returnobject["PlayerInfo"]["playerId"]);
             return $app->json($returnobject);
         }
     }
 
     return new Response("Failed Authentication",401);
 });
-
-$app->post('/api/getchars', function() use($app) {
-    //TODO: Get User API call -- return JSON encoded messages
-});
-
-
 
 
 $app->run();
