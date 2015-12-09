@@ -50,7 +50,7 @@ class MySQL implements IDBStructure
         $query->execute();
 
         //Turns the result from the stored procedure (if any) into an associative array.
-        $results = $query->fetchAll(PDO::FETCH_ASSOC);
+        $results = $query->fetch(PDO::FETCH_ASSOC);
 
         //done with database connection. Closing connection.
         $query->closeCursor();
@@ -87,21 +87,12 @@ class MySQL implements IDBStructure
             echo $e->getMessage();
         }
 
-        $query = $dbh->prepare("CALL sp_GetSquads(?)");
-        $query->bindParam(1, $playerID, PDO::PARAM_INT);
-
-        $query->execute();
-        $returnObject["squads"] = $query->fetchAll(PDO::FETCH_ASSOC);
-
 
         $query = $dbh->prepare("CALL sp_GetCharacters(?)");
-        $returnObject["characters"] = Array();
-        for($i = 0; $i<sizeof($returnObject["squads"]); $i++)
-        {
-            $query->bindParam(1,$returnObject["squads"][$i]["SquadID"], PDO::PARAM_INT);
-            $query->execute();
-            $returnObject["characters"] += $query->fetchAll(PDO::FETCH_ASSOC);
-        }
+        $query->bindParam(1, $playerID, PDO::PARAM_INT);
+        $query->execute();
+        $returnObject = $query->fetchAll(PDO::FETCH_ASSOC);
+
 
         //done with database connection. Closing connection.
         $query->closeCursor();

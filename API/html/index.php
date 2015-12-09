@@ -7,7 +7,6 @@
  */
 
 //Initialize Silex Framework to manage website
-echo (realpath(__FILE__));
-//require_once realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'init.php');
+require_once realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'init.php');
 
 
