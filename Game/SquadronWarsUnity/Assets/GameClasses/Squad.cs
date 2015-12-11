@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SquadronWars2.Game.SquadronWarsUnity.Repo;
-using UnityEditor.VersionControl;
 
 namespace SquadronWars2
 {
