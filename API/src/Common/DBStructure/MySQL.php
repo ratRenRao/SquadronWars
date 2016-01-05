@@ -69,6 +69,53 @@ class MySQL implements IDBStructure
         return;
     }
 
+    public function getPlayer($playerID)
+    {
+        //create database reference object
+        $dbh='';
+
+        //Try to connect to mysql service
+        try
+        {
+            //created config file to hold user name and password that we will use to obscure and keep off of our repo.
+            $dbh = new PDO("mysql:host=localhost:3306;dbname=dbo", dbuser, dbpass);
+        }
+        catch(PDOException $e)
+        {
+            //this will be ignored in production. do not want to echo back this error.
+            echo $e->getMessage();
+        }
+
+        $query = $dbh->prepare("CALL sp_GetCharacters(?)");
+        $query->bindParam(1, $playerID, PDO::PARAM_INT);
+        $query->execute();
+        $returnObject["Characters"] = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        $query = $dbh->prepare("CALL sp_GetCharacterAbilities(?)");
+        $query->bindParam(1, $playerID, PDO::PARAM_INT);
+        $query->execute();
+        $returnObject["CharacterAbilities"] = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        $query = $dbh->prepare("CALL sp_GetInventory(?)");
+        $query->bindParam(1, $playerID, PDO::PARAM_INT);
+        $query->execute();
+        $returnObject["Inventory"] = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+        $query = $dbh->prepare("CALL sp_GetItems");
+        $query->execute();
+        $returnObject["Items"] = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+        $query = $dbh->prepare("CALL sp_GetEquipment");
+        $query->execute();
+        $returnObject["Equipment"] = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        $query->closeCursor();
+
+        return $returnObject;
+    }
+
     public function getCharacters($playerID)
     {
 

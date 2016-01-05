@@ -55,5 +55,12 @@ $app->post('/api/auth', function() use($app) {
     return new Response("Failed Authentication",401);
 });
 
+$app->get('/test', function() use($app){
+    $mysql = new MySQL();
+    $test = $mysql->getPlayer(9);
+    var_dump($test);
+    return '';
+});
+
 
 $app->run();
