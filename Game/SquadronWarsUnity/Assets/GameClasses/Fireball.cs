@@ -6,19 +6,20 @@ namespace SquadronWars2
 {
     class Fireball : Effect, IEffectable
     {
-        private int fireballDamage;
+        private readonly int _fireballDamage;
 
-        public Fireball(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration)
+        public Fireball(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration, int fireballDamage)
         {
-            this.targetStats = targetStats;
-            this.casterStats = casterStats;
-            this.hasInitialEffect = hasInitialEffect;
-            this.duration = duration;
+            _fireballDamage = fireballDamage;
+            TargetStats = targetStats;
+            CasterStats = casterStats;
+            HasInitialEffect = hasInitialEffect;
+            Duration = duration;
         }
 
-        public void immediateEffect()
+        public new void ImmediateEffect()
         {
-            targetStats.currentHP -= fireballDamage;
+            TargetStats.currentHP -= _fireballDamage;
         }
     }
 }

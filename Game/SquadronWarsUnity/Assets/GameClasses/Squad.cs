@@ -1,21 +1,25 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using SquadronWars2.Game.SquadronWarsUnity.Repo;
 
 namespace SquadronWars2
 {
-    class Squad
+    public class Squad
     {
-        DbConnection dbConnection = new DbConnection();
+        private DbConnection _dbConnection = new DbConnection();
 
-        private int squadId { get; set; }
-        private string squadDetails { get; set; }
-        private List<Character> characterList { get; set; }
-        public Squad(int squadId, int playerId)
+        private int SquadId { get; set; }
+        private string SquadDetails { get; set; }
+        private List<Character> CharacterList { get; set; }
+        public Squad(int squadId, int playerId, DbConnection dbConnection, string squadDetails, List<Character> characterList)
         {
-            this.squadId = squadId;
+            SquadId = squadId;
+            _dbConnection = dbConnection;
+            SquadDetails = squadDetails;
+            CharacterList = characterList;
         }
 
         /*public async Task UpdateSquadFromDb()

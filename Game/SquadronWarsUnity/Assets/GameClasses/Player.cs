@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using SquadronWars2.Game.SquadronWarsUnity.Repo;
@@ -10,26 +11,28 @@ namespace SquadronWars2
 {
     public class Player : MonoBehaviour
     {
-        DbConnection dbConnection = new DbConnection();
-        private string username { get; set; } // remove and create LoginChange class for changes
-        private string password { get; set; } // remove and create LoginChange class for changes
-        private string firstName { get; set; }
-        private string lastName { get; set; }
-        private string email { get; set; }
-        private DateTime? lastLogin { get; set; }
-        private Squad squad { get; set; }
-        private List<Item> itemList { get; set; }
+        private DbConnection _dbConnection = new DbConnection();
+        private string Username { get; set; } // remove and create LoginChange class for changes
+        private string Password { get; set; } // remove and create LoginChange class for changes
+        private string FirstName { get; set; }
+        private string LastName { get; set; }
+        private string Email { get; set; }
+        private DateTime? LastLogin { get; set; }
+        private Squad Squad { get; set; }
+        private List<Item> ItemList { get; set; }
 
         public Player(string username, string password, string firstName, string lastName, string email,
-            DateTime? lastLogin, int itemListId, int squadListId)
+            DateTime? lastLogin, List<Item> itemList, Squad squad, DbConnection dbConnection)
         {
-            this.username = username;
-            this.password = password;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.email = email;
-            this.lastLogin = lastLogin;
-            this.itemList = itemList;
+            _dbConnection = dbConnection;
+            Username = username;
+            Password = password;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            LastLogin = lastLogin;
+            Squad = squad;
+            ItemList = itemList;
         }
 
         void Update()

@@ -8,19 +8,20 @@ namespace SquadronWars2
 
     class Burn : Effect, IEffectable
     {
-        private int burnDamage;
+        private readonly int _burnDamage;
 
-        public Burn(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration)
+        public Burn(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration, int burnDamage)
         {
-            this.targetStats = targetStats;
-            this.casterStats = casterStats;
-            this.hasInitialEffect = hasInitialEffect;
-            this.duration = duration;
+            _burnDamage = burnDamage;
+            TargetStats = targetStats;
+            CasterStats = casterStats;
+            HasInitialEffect = hasInitialEffect;
+            Duration = duration;
         }
 
         public void lingeringEffect()
         {
-            targetStats.currentHP -= burnDamage;
+            TargetStats.currentHP -= _burnDamage;
         }
     }
 }
