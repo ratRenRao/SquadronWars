@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
-using System.Data.Common;
-using SquadronWars2.Game.SquadronWarsUnity.Repo;
+using DbConnection = SquadronWars2.Game.SquadronWarsUnity.Repo.DbConnection;
 
 namespace SquadronWars2
 {
@@ -37,7 +36,7 @@ namespace SquadronWars2
 
         public void AddEffect(Effect effect)
         {
-            effect.execute(BaseStats);
+            effect.Execute(BaseStats);
             Effects.Add(effect);
         }
 

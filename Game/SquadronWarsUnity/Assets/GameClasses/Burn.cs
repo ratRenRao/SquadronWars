@@ -6,7 +6,7 @@ using System.Text;
 namespace SquadronWars2
 {
 
-    class Burn : Effect, IEffectable
+    class Burn : Effect //, IEffectable
     {
         private readonly int _burnDamage;
 
@@ -19,9 +19,9 @@ namespace SquadronWars2
             Duration = duration;
         }
 
-        public void lingeringEffect()
+        public override void LingeringEffect(ref Stats charStats)
         {
-            TargetStats.currentHP -= _burnDamage;
+            charStats.CurrentHp -= _burnDamage;
         }
     }
 }

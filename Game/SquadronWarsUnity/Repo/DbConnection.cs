@@ -8,35 +8,50 @@ namespace SquadronWars2.Game.SquadronWarsUnity.Repo
 {
     public class DbConnection
     {
-        private static string url = "https://ec2-user@ec2-52-27-154-55.us-west-2.compute.amazonaws.com";
-        private static bool responseError = false;
-        private static string data = "";        
+        private const string Url = "https://ec2-user@ec2-52-27-154-55.us-west-2.compute.amazonaws.com";
+        public static bool ResponseError = false;
 
-        public async Task ExecuteApiCall(string apiCall)
+        public T PopulateObjectFromDb<T>(int primaryKey, string call)
         {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(url);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                HttpResponseMessage response = await client.GetAsync(apiCall);
-                if (response.IsSuccessStatusCode)
-                {
-                     data = await response.Content.ReadAsStringAsync();
-                }
-                else
-                {
-                    responseError = true;
-                }
-            }
+            var data = ExecuteApiCall(primaryKey, call);
+            return DeserializeData<T>(data.Result);
         }
 
-        public T DeserializeData<T>(T obj)
+        private async Task<string> ExecuteApiCall(int primaryKey, string call)
+        {
+            var data = "";
+            call = call + "id=" + primaryKey.ToString();
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(Url);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    var response = await client.GetAsync(call);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        data = await response.Content.ReadAsStringAsync();
+                    }
+                    else
+                    {
+                        ResponseError = true;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                
+            }
+
+            return data;
+        }
+
+        private T DeserializeData<T>(string data)
         {
             var serializer = new JavaScriptSerializer();
-            obj = serializer.Deserialize<T>(data);
-            return obj;
+            return serializer.Deserialize<T>(data);
         }
     }
 }
