@@ -1,13 +1,14 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using DbConnection = SquadronWars2.Game.SquadronWarsUnity.Repo.DbConnection;
 
 namespace SquadronWars2
 {
     public class Character : MonoBehaviour
     {
-        private DbConnection _dbConnection;
+        private readonly DbConnection _dbConnection;
         public int CharacterId { get; set; }
         public Stats BaseStats { get; set; }
         public Stats AlteredStats { get; set; }
@@ -74,16 +75,15 @@ namespace SquadronWars2
             return Convert.ToInt32(percentComplete);
         }
 
-        /*public async Task UpdateCharacterFromDb()
+        public void UpdateCharacterFromDb()
         {
-            await dbConnection.ExecuteApiCall(GlobalConstants.squadDbUrl);
-            Character dbCharacter = dbConnection.DeserializeData<Character>(this);
+            var dbCharacter = _dbConnection.PopulateObjectFromDb<Character>(CharacterId.ToString(), GlobalConstants.SquadDbUrl);
 
-            this.stats = dbCharacter.stats;
-            this.characterListId = dbCharacter.characterListId;
-            this.name = dbCharacter.name;
-            this.level = dbCharacter.level;
-            this.experience = dbCharacter.experience;
-        }*/
+            BaseStats = dbCharacter.BaseStats;
+            CharacterListId = dbCharacter.CharacterListId;
+            CharacterName = dbCharacter.CharacterName;
+            Level = dbCharacter.Level;
+            Experience = dbCharacter.Experience;
+        }
     }
 }

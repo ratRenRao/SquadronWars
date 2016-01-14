@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using SquadronWars2.Game.SquadronWarsUnity.Repo;
+using DbConnection = SquadronWars2.Game.SquadronWarsUnity.Repo.DbConnection;
 
 namespace SquadronWars2
 {
     public class Squad
     {
-        private DbConnection _dbConnection = new DbConnection();
+        public DbConnection Connection { get; set; }
 
         private int SquadId { get; set; }
         private string SquadDetails { get; set; }
@@ -17,18 +19,17 @@ namespace SquadronWars2
         public Squad(int squadId, int playerId, DbConnection dbConnection, string squadDetails, List<Character> characterList)
         {
             SquadId = squadId;
-            _dbConnection = dbConnection;
+            Connection = dbConnection;
             SquadDetails = squadDetails;
             CharacterList = characterList;
         }
 
-        /*public async Task UpdateSquadFromDb()
+        public void UpdateSquadFromDb()
         {
-            await dbConnection.ExecuteApiCall(GlobalConstants.squadDbUrl); 
-            Squad dbSquad = dbConnection.DeserializeData<Squad>(this);
+            var dbSquad = Connection.PopulateObjectFromDb<Squad>(SquadId.ToString(), GlobalConstants.SquadDbUrl);
 
-            this.characterList = dbSquad.characterList;
-            this.squadDetails = dbSquad.squadDetails;
-        }*/
+            CharacterList = dbSquad.CharacterList;
+            SquadDetails = dbSquad.SquadDetails;
+        }
     }
 }

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using SquadronWars2.Game.SquadronWarsUnity.Repo;
+using DbConnection = SquadronWars2.Game.SquadronWarsUnity.Repo.DbConnection;
 
 namespace SquadronWars2
 {
     public class Player : MonoBehaviour
     {
-        private DbConnection _dbConnection = new DbConnection();
+        private readonly DbConnection _dbConnection;
         private string Username { get; set; } // remove and create LoginChange class for changes
         private string Password { get; set; } // remove and create LoginChange class for changes
         private string FirstName { get; set; }
@@ -40,18 +42,17 @@ namespace SquadronWars2
 
         }
 
-        /*public async Task UpdatePlayerFromDb()
+        public void PopulatePlayer()
         {
-            await dbConnection.ExecuteApiCall(GlobalConstants.squadDbUrl);
-            Player dbPlayer = dbConnection.DeserializeData<Player>(this);
+            var dbPlayer= _dbConnection.PopulateObjectFromDb<Player>(Username, GlobalConstants.PlayerDbUrl);
 
-            this.firstName = dbPlayer.firstName;
-            this.lastName = dbPlayer.lastName;
-            this.email = dbPlayer.email;
-            this.lastLogin = dbPlayer.lastLogin;
-            this.squad = dbPlayer.squad;
-            this.itemList = dbPlayer.itemList;
-        }*/
+            FirstName = dbPlayer.FirstName;
+            LastName = dbPlayer.LastName;
+            Email = dbPlayer.Email;
+            LastLogin = dbPlayer.LastLogin;
+            Squad = dbPlayer.Squad;
+            ItemList = dbPlayer.ItemList;
+        }
 
     }
 }

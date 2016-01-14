@@ -11,16 +11,16 @@ namespace SquadronWars2.Game.SquadronWarsUnity.Repo
         private const string Url = "https://ec2-user@ec2-52-27-154-55.us-west-2.compute.amazonaws.com";
         public static bool ResponseError = false;
 
-        public T PopulateObjectFromDb<T>(int primaryKey, string call)
+        public T PopulateObjectFromDb<T>(string primaryKey, string call)
         {
             var data = ExecuteApiCall(primaryKey, call);
             return DeserializeData<T>(data.Result);
         }
 
-        private async Task<string> ExecuteApiCall(int primaryKey, string call)
+        private async Task<string> ExecuteApiCall(string primaryKey, string call)
         {
             var data = "";
-            call = call + "id=" + primaryKey.ToString();
+            call = call + "id=" + primaryKey;
             try
             {
                 using (var client = new HttpClient())

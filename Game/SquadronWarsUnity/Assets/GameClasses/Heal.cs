@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SquadronWars2
 {
-    internal class Heal : Effect, IEffectable
+    internal class Heal : Effect //, IEffectable
     {
         private const int HealthRestored = 50;
 
@@ -17,29 +17,21 @@ namespace SquadronWars2
             Duration = duration;
         }
 
-        public void immediateEffect()
+        public override void ImmediateEffect(ref Stats charStats)
         {
-            TargetStats.currentHP = ValidateStat(TargetStats.currentHP + HealthRestored, 0, TargetStats.maxHP);
+            charStats.CurrentHp = ValidateStat(charStats.CurrentHp + HealthRestored, 0, charStats.MaxHp);
         }
 
         public void Execute(ref Stats charStats)
         {
-            throw new NotImplementedException();
         }
 
-        public void immediateEffect(ref Stats charStat)
+        public override void RemoveEffect(ref Stats charStat)
         {
-            throw new NotImplementedException();
         }
 
-        public void removeEffect(ref Stats charStat)
+        public override void LingeringEffect(ref Stats charStats)
         {
-            throw new NotImplementedException();
-        }
-
-        public void lingeringEffect(ref Stats charStats)
-        {
-            throw new NotImplementedException();
         }
     }
 }

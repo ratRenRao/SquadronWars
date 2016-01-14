@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 namespace SquadronWars2
 {
-    class Fireball : Effect, IEffectable
+    class Fireball : Effect//, IEffectable
     {
         private readonly int _fireballDamage;
 
@@ -17,9 +17,9 @@ namespace SquadronWars2
             Duration = duration;
         }
 
-        public new void ImmediateEffect()
+        public override void ImmediateEffect(ref Stats charStats)
         {
-            TargetStats.currentHP -= _fireballDamage;
+            charStats.CurrentHp -= _fireballDamage;
         }
     }
 }
