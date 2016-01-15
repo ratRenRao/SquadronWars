@@ -14,15 +14,15 @@ namespace SquadronWars2
             Duration = duration;
         }
 
-        public override void ImmediateEffect(ref Stats charStat)
+        public override void ImmediateEffect(ref Stats charStats)
         {
-            _hpRemoved = TargetStats.currentHP * (_decreasePercent / 100);
-            TargetStats.currentHP -= _hpRemoved;
+            _hpRemoved = charStats.CurrentHp * (_decreasePercent / 100);
+            charStats.CurrentHp -= _hpRemoved;
         }
 
-        public override void RemoveEffect(ref Stats charStat)
+        public override void RemoveEffect(ref Stats charStats)
         {
-            TargetStats.currentHP = ValidateStat(TargetStats.currentHP + _hpRemoved, 0, TargetStats.maxHP);
+            charStats.CurrentHp = ValidateStat(charStats.CurrentHp + _hpRemoved, 0, TargetStats.MaxHp);
         }
 
     }

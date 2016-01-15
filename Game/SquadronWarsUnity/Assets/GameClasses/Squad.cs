@@ -13,9 +13,9 @@ namespace SquadronWars2
     {
         public DbConnection Connection { get; set; }
 
-        private int SquadId { get; set; }
-        private string SquadDetails { get; set; }
-        private List<Character> CharacterList { get; set; }
+        public int SquadId { get; private set; }
+        public string SquadDetails { get; private set; }
+        public List<Character> CharacterList { get; private set; }
         public Squad(int squadId, int playerId, DbConnection dbConnection, string squadDetails, List<Character> characterList)
         {
             SquadId = squadId;
