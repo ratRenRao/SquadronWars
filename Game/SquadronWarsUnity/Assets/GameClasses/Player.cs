@@ -14,14 +14,14 @@ namespace SquadronWars2
     public class Player : MonoBehaviour
     {
         private readonly DbConnection _dbConnection;
-        private string Username { get; set; } // remove and create LoginChange class for changes
-        private string Password { get; set; } // remove and create LoginChange class for changes
-        private string FirstName { get; set; }
-        private string LastName { get; set; }
-        private string Email { get; set; }
-        private DateTime? LastLogin { get; set; }
-        private Squad Squad { get; set; }
-        private List<Item> ItemList { get; set; }
+        public string Username { get; private set; } // remove and create LoginChange class for changes
+        public string Password { get; private set; } // remove and create LoginChange class for changes
+        public string FirstName { get; private set; }
+        public string LastName { get; private set; }
+        public string Email { get; private set; }
+        public DateTime? LastLogin { get; private set; }
+        public Squad Squad { get; private set; }
+        public List<Item> ItemList { get; private set; }
 
         public Player(string username, string password, string firstName, string lastName, string email,
             DateTime? lastLogin, List<Item> itemList, Squad squad, DbConnection dbConnection)

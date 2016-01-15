@@ -11,7 +11,7 @@ namespace SquadronWars2
 {
     public class Squad
     {
-        public DbConnection Connection { get; set; }
+        private DbConnection Connection { get; set; }
 
         public int SquadId { get; private set; }
         public string SquadDetails { get; private set; }
