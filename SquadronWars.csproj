@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{8784FE5A-A96B-4950-B70A-062D55853DB4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>SquadronWars</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KSP_Mods_090.1.0.7\lib\net35\Assembly-CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KSP_Mods_090.1.0.7\lib\net35\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fasterflect, Version=2.1.3.0, Culture=neutral, PublicKeyToken=38d18473284c1ca7, processorArchitecture=MSIL">
+      <HintPath>packages\fasterflect.2.1.3\lib\net40\Fasterflect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="KspHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KSP_Mods_090.1.0.7\lib\net35\KspHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Rocket.API, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Rocket.Core.2.0.1.0\lib\Rocket.API.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Rocket.Core.2.0.1.0\lib\UnityEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="API\.gitignore" />
+    <Content Include="API\README.txt" />
+    <Content Include="API\src\.idea\copyright\profiles_settings.xml" />
+    <Content Include="API\src\.idea\encodings.xml" />
+    <Content Include="API\src\.idea\misc.xml" />
+    <Content Include="API\src\.idea\modules.xml" />
+    <Content Include="API\src\.idea\workspace.xml" />
+    <Content Include="API\src\Common\html\index.html" />
+    <Content Include="Game\.gitignore" />
+    <Content Include="Game\ProjectSettings\ProjectVersion.txt" />
+    <Content Include="Game\README.txt" />
+    <Content Include="Game\SquadronWarsUnity\Assets\bin\Debug\ClassLibrary.dll" />
+    <Content Include="Game\SquadronWarsUnity\Assets\bin\Debug\ClassLibrary.pdb" />
+    <Content Include="Game\SquadronWarsUnity\Assets\bin\Debug\ConsoleApplication.vshost.exe" />
+    <Content Include="Game\SquadronWarsUnity\Assets\CharacterSprites\CharacterExample.png" />
+    <Content Include="Game\SquadronWarsUnity\Assets\images\backbutton.png" />
+    <Content Include="Game\SquadronWarsUnity\Assets\obj\Debug\ClassLibrary.dll" />
+    <Content Include="Game\SquadronWarsUnity\Assets\obj\Debug\ClassLibrary.pdb" />
+    <Content Include="Game\SquadronWarsUnity\Assets\obj\Debug\SquadronWars.csproj.FileListAbsolute.txt" />
+    <Content Include="Game\SquadronWarsUnity\Assets\obj\x86\Debug\SquadronWars.csproj.FileListAbsolute.txt" />
+    <Content Include="Game\SquadronWarsUnity\Assets\packages\fasterflect.2.1.3\lib\net35\Fasterflect.dll" />
+    <Content Include="Game\SquadronWarsUnity\Assets\packages\fasterflect.2.1.3\lib\net35\Fasterflect.XML" />
+    <Content Include="Game\SquadronWarsUnity\Assets\packages\fasterflect.2.1.3\lib\net40\Fasterflect.dll" />
+    <Content Include="Game\SquadronWarsUnity\Assets\packages\fasterflect.2.1.3\lib\net40\Fasterflect.XML" />
+    <Content Include="Game\SquadronWarsUnity\Assets\packages\KSP_Mods_090.1.0.7\lib\net35\Assembly-CSharp-firstpass.dll" />
+    <Content Include="Game\SquadronWarsUnity\Assets\packages\KSP_Mods_090.1.0.7\lib\net35\Assembly-CSharp.dll" />
+    <Content Include="Game\SquadronWarsUnity\Assets\packages\KSP_Mods_090.1.0.7\lib\net35\Assembly-CSharp.xml" />
+    <Content Include="Game\SquadronWarsUnity\Assets\packages\KSP_Mods_090.1.0.7\lib\net35\KspHelper.dll" />
+    <Content Include="Game\SquadronWarsUnity\Assets\packages\KSP_Mods_090.1.0.7\lib\net35\UnityEngine.dll" />
+    <Content Include="Game\SquadronWarsUnity\Assets\packages\KSP_Mods_090.1.0.7\lib\net35\UnityEngine.xml" />
+    <Content Include="Game\SquadronWarsUnity\Assets\Theme\background.png" />
+    <Content Include="Game\SquadronWarsUnity\Library\ScriptAssemblies\Assembly-CSharp.dll" />
+    <Content Include="Game\SquadronWarsUnity\Library\ScriptAssemblies\Assembly-CSharp.dll.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Game\SquadronWarsUnity\ProjectSettings\ProjectVersion.txt" />
+    <Content Include="SQL\DB_Creation.sql" />
+    <Content Include="SQL\ERD\ERD.jpg" />
+    <Content Include="SQL\PRC\sp_AuthorizePlayer.sql" />
+    <Content Include="SQL\PRC\sp_CreateCharacter.sql" />
+    <Content Include="SQL\PRC\SP_CreatePlayer.sql" />
+    <Content Include="SQL\PRC\sp_CreatePlayer2.sql" />
+    <Content Include="SQL\PRC\sp_CreateSquad.sql" />
+    <Content Include="SQL\PRC\sp_GetCharacterAbilities.sql" />
+    <Content Include="SQL\PRC\sp_GetCharacters.sql" />
+    <Content Include="SQL\PRC\sp_GetEquipment.sql" />
+    <Content Include="SQL\PRC\sp_GetInventory.sql" />
+    <Content Include="SQL\PRC\sp_GetItems.sql" />
+    <Content Include="SQL\PRC\sp_GetSquads.sql" />
+    <Content Include="SQL\PRC\sp_UpdateCharacter.sql" />
+    <Content Include="SQL\PRC\sp_UpdatePlayer.sql" />
+    <Content Include="SQL\PRC\sp_UpdateSquad.sql" />
+    <Content Include="SQL\Tables\Ability.sql" />
+    <Content Include="SQL\Tables\Character.sql" />
+    <Content Include="SQL\Tables\CharacterAbilities.sql" />
+    <Content Include="SQL\Tables\Equipment.sql" />
+    <Content Include="SQL\Tables\Inventory.sql" />
+    <Content Include="SQL\Tables\Item.sql" />
+    <Content Include="SQL\Tables\Levels.sql" />
+    <Content Include="SQL\Tables\Player.sql" />
+    <Content Include="SQL\Tables\Squad.sql" />
+    <Content Include="SQL\Tables\Stats.sql" />
+    <Content Include="test.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="API\composer.json" />
+    <None Include="API\html\index.php" />
+    <None Include="API\src\.idea\.name" />
+    <None Include="API\src\.idea\src.iml" />
+    <None Include="API\src\app.php" />
+    <None Include="API\src\Common\DBStructure\IDBStructure.php" />
+    <None Include="API\src\Common\DBStructure\MySQL.php" />
+    <None Include="API\src\Config\init.php" />
+    <None Include="API\src\Config\prod.php" />
+    <None Include="API\StartPHPserver.bat" />
+    <None Include="app.config" />
+    <None Include="Game\ProjectSettings\AudioManager.asset" />
+    <None Include="Game\ProjectSettings\DynamicsManager.asset" />
+    <None Include="Game\ProjectSettings\EditorBuildSettings.asset" />
+    <None Include="Game\ProjectSettings\EditorSettings.asset" />
+    <None Include="Game\ProjectSettings\GraphicsSettings.asset" />
+    <None Include="Game\ProjectSettings\InputManager.asset" />
+    <None Include="Game\ProjectSettings\NavMeshAreas.asset" />
+    <None Include="Game\ProjectSettings\NetworkManager.asset" />
+    <None Include="Game\ProjectSettings\Physics2DSettings.asset" />
+    <None Include="Game\ProjectSettings\ProjectSettings.asset" />
+    <None Include="Game\ProjectSettings\QualitySettings.asset" />
+    <None Include="Game\ProjectSettings\TagManager.asset" />
+    <None Include="Game\ProjectSettings\TimeManager.asset" />
+    <None Include="Game\SquadronWarsUnity\.vs\SquadronWarsUnity\v14\.suo" />
+    <None Include="Game\SquadronWarsUnity\Assets\.vs\SquadronWars\v14\.suo" />
+    <None Include="Game\SquadronWarsUnity\Assets\bin\Debug\ConsoleApplication.vshost.exe.manifest" />
+    <None Include="Game\SquadronWarsUnity\Assets\CharacterSprites.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\CharacterSprites\CharacterExample.png.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Ablilty.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Burn.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Character.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Effect.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Equipment.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Equipment.cs.meta~HEAD" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Equipment.cs.meta~HEAD.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Equipment.cs.meta~HEAD_0" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Equipment.cs.meta~HEAD_0.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Equipment.cs.meta~HEAD_1" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Fireball.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\GeneralItems.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\GlobalConstants.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Heal.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\IEffectable.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Item.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\IWearable.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Player.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Squad.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Stats.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\GameClasses\Weaken.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\images.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\images\backbutton.png.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\Login.unity" />
+    <None Include="Game\SquadronWarsUnity\Assets\Login.unity.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Game\SquadronWarsUnity\Assets\obj\x86\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Game\SquadronWarsUnity\Assets\obj\x86\Debug\SquadronWars.csprojResolveAssemblyReference.cache" />
+    <None Include="Game\SquadronWarsUnity\Assets\packages.config" />
+    <None Include="Game\SquadronWarsUnity\Assets\packages\fasterflect.2.1.3\fasterflect.2.1.3.nupkg" />
+    <None Include="Game\SquadronWarsUnity\Assets\packages\KSP_Mods_090.1.0.7\KSP_Mods_090.1.0.7.nupkg" />
+    <None Include="Game\SquadronWarsUnity\Assets\Prefabs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\Prefabs\Sample Button 1.prefab" />
+    <None Include="Game\SquadronWarsUnity\Assets\Prefabs\Sample Button 1.prefab.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\Prefabs\Sample Button.prefab" />
+    <None Include="Game\SquadronWarsUnity\Assets\Prefabs\Sample Button.prefab.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\Scripts.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\Scripts\CharacterScreen.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\Scripts\CreateUnitList.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\Scripts\MenuManager.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\Scripts\SampleButton.cs.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\Theme.meta" />
+    <None Include="Game\SquadronWarsUnity\Assets\Theme\background.png.meta" />
+    <None Include="Game\SquadronWarsUnity\Library\assetDatabase3" />
+    <None Include="Game\SquadronWarsUnity\Library\metadata\61\61caabf6a798c2c41b4c6f7488791280" />
+    <None Include="Game\SquadronWarsUnity\Library\metadata\61\61caabf6a798c2c41b4c6f7488791280.info" />
+    <None Include="Game\SquadronWarsUnity\Library\metadata\89\890a8659882787945af831f21cbbcc83" />
+    <None Include="Game\SquadronWarsUnity\Library\metadata\89\890a8659882787945af831f21cbbcc83.info" />
+    <None Include="Game\SquadronWarsUnity\Library\metadata\e4\e46ed773342ffe641bd2357b00059102" />
+    <None Include="Game\SquadronWarsUnity\Library\metadata\e4\e46ed773342ffe641bd2357b00059102.info" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\AudioManager.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\DynamicsManager.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\EditorBuildSettings.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\EditorSettings.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\GraphicsSettings.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\InputManager.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\NavMeshAreas.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\NetworkManager.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\Physics2DSettings.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\ProjectSettings.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\ProjectSettings.asset.mine" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\ProjectSettings.asset.r88" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\ProjectSettings.asset.r90" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\ProjectVersion.txt.mine" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\ProjectVersion.txt.r88" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\ProjectVersion.txt.r90" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\QualitySettings.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\TagManager.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\TimeManager.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\UnityAdsSettings.asset" />
+    <None Include="Game\SquadronWarsUnity\ProjectSettings\UnityAnalyticsManager.asset" />
+    <None Include="packages.config" />
+    <None Include="README.md" />
+    <None Include="SQL\ERD\WBERD.mwb" />
+    <None Include="SQL\ERD\WBERD.mwb.bak" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Ablilty.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Burn.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Character.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Effect.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Equipment.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Fireball.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\GeneralItems.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\GlobalConstants.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Heal.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\IEffectable.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Item.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\IWearable.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Player.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Squad.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Stats.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Weaken.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\Scripts\CharacterScreen.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\Scripts\CreateUnitList.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\Scripts\SampleButton.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Repo\DbConnection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git\" />
+    <Folder Include="Game\SquadronWarsUnity\Assets\obj\Debug\TempPE\" />
+    <Folder Include="Game\SquadronWarsUnity\Assets\obj\x86\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
