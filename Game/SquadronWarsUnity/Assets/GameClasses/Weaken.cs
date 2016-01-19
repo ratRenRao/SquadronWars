@@ -1,32 +1,28 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace SquadronWars2
 {
-    class Weaken : Effect, IEffectable
+    internal class Weaken : Effect
     {
-        private int decreasePercent;
-        private int hpRemoved;
+        private readonly int _decreasePercent;
+        private int _hpRemoved;
 
-        public Weaken(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration)
+        public Weaken(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration, int decreasePercent)
         {
-            this.targetStats = targetStats;
-            this.casterStats = casterStats;
-            this.hasInitialEffect = hasInitialEffect;
-            this.duration = duration;
+            _decreasePercent = decreasePercent;
+            TargetStats = targetStats;
+            CasterStats = casterStats;
+            HasInitialEffect = hasInitialEffect;
+            Duration = duration;
         }
 
-        public void immediateEffect()
+        public override void ImmediateEffect(ref Stats charStats)
         {
-            hpRemoved = targetStats.currentHP * (decreasePercent / 100);
-            targetStats.currentHP -= hpRemoved;
+            _hpRemoved = charStats.CurrentHp * (_decreasePercent / 100);
+            charStats.CurrentHp -= _hpRemoved;
         }
 
-        public void removeEffect()
+        public override void RemoveEffect(ref Stats charStats)
         {
-            targetStats.currentHP = ValidateStat(targetStats.currentHP + hpRemoved, 0, targetStats.maxHP);
+            charStats.CurrentHp = ValidateStat(charStats.CurrentHp + _hpRemoved, 0, TargetStats.MaxHp);
         }
 
     }
