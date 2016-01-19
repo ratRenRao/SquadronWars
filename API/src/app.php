@@ -47,7 +47,9 @@ $app->post('/api/auth', function() use($app) {
 
         if(sizeof($returnobject) > 0)
         {
-            $returnobject["Characters"] = $mysql->getCharacters($returnobject["PlayerInfo"]["playerId"]);
+            //Return just character information.
+            //$returnobject["Characters"] = $mysql->getCharacters($returnobject["PlayerInfo"]["playerId"]);
+            $returnobject["PlayerDetails"] = $mysql->getPlayer($returnobject["PlayerInfo"]["playerId"]);
             return $app->json($returnobject);
         }
     }
@@ -55,5 +57,40 @@ $app->post('/api/auth', function() use($app) {
     return new Response("Failed Authentication",401);
 });
 
+$app->post('/api/UpdateCharacter', function() use($app) {
+    //TODO: update character
+    return new Response("Failed",401);
+});
+
+$app->post('/api/UpdatePlayer', function() use($app) {
+    //TODO: update player
+    return new Response("Failed",401);
+});
+
+$app->post('/api/UpdateSquad', function() use($app) {
+    //TODO: update squad
+    return new Response("Failed",401);
+});
+
+$app->post('/api/StartGame', function() use($app) {
+    //TODO: Start Game
+    return new Response("Failed",401);
+});
+
+$app->post('/api/GetGameInfo', function() use($app) {
+    //TODO: Check Game status
+    return new Response("Failed",401);
+});
+
+/*
+ * Test Method
+ *
+$app->get('/test', function() use($app){
+    $mysql = new MySQL();
+    $test = $mysql->getPlayer(9);
+    var_dump($test);
+    return '';
+});
+*/
 
 $app->run();
