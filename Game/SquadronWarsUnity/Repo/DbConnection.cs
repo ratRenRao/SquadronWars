@@ -1,51 +1,43 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Web.Script.Serialization;
 
 namespace SquadronWars2.Game.SquadronWarsUnity.Repo
 {
     public class DbConnection
     {
-        private const string Url = "https://ec2-user@ec2-52-27-154-55.us-west-2.compute.amazonaws.com";
         public static bool ResponseError = false;
 
-        public T PopulateObjectFromDb<T>(string primaryKey, string call)
+        public T PopulateObjectFromDb<T>(string path, string key, string id)
         {
-            var data = ExecuteApiCall(primaryKey, call);
+            var url = $"{GlobalConstants.ServerUrl}{path}";
+
+            var data = ExecuteApiCall(url, key, id);
             return DeserializeData<T>(data.Result);
         }
 
-        private async Task<string> ExecuteApiCall(string primaryKey, string call)
+        private async Task<string> ExecuteApiCall(string url, string key, string id)
         {
-            var data = "";
-            call = call + "id=" + primaryKey;
-            try
+            using (var client = new HttpClient())
             {
-                using (var client = new HttpClient())
+                var parameters = new Dictionary<string, string>
                 {
-                    client.BaseAddress = new Uri(Url);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    {key, id}
+                };
 
-                    var response = await client.GetAsync(call);
-                    if (response.IsSuccessStatusCode)
-                    {
-                        data = await response.Content.ReadAsStringAsync();
-                    }
-                    else
-                    {
-                        ResponseError = true;
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                
+                var content = new FormUrlEncodedContent(parameters);
+                var response = await client.PostAsync(url, content);
+                var responseString = await response.Content.ReadAsStringAsync();
+
+                if (string.IsNullOrEmpty(responseString))
+                    throw new Exception("No data returned");
+
+                return responseString;
             }
 
-            return data;
+            //return responseString;
         }
 
         private T DeserializeData<T>(string data)
