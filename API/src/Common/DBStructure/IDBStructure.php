@@ -24,4 +24,11 @@ interface IDBStructure
     public function getCharacters($playerID);
 
     public function getPlayer($playerID);
+
+    public function createPlayer($email);
+
+    //will need to decide how/if we will use this
+    //public function createSquad();
+
+
 }
