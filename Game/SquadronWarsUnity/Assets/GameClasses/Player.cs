@@ -44,7 +44,9 @@ namespace SquadronWars2
 
         public void PopulatePlayer()
         {
-            var dbPlayer= _dbConnection.PopulateObjectFromDb<Player>(GlobalConstants.PlayerDbUrl, GlobalConstants.PlayerKeyName, Username);
+            var parameters = new Dictionary<string, string>();
+            
+            var dbPlayer= _dbConnection.PopulateObjectFromDb<Player>(GlobalConstants.PlayerDbUrl, this);
 
             FirstName = dbPlayer.FirstName;
             LastName = dbPlayer.LastName;

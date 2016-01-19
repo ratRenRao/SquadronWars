@@ -26,7 +26,7 @@ namespace SquadronWars2
 
         public void UpdateSquadFromDb()
         {
-            var dbSquad = Connection.PopulateObjectFromDb<Squad>(GlobalConstants.SquadDbUrl, GlobalConstants.SquadKeyName, SquadId.ToString());
+            var dbSquad = Connection.PopulateObjectFromDb<Squad>(GlobalConstants.SquadDbUrl, this);
 
             CharacterList = dbSquad.CharacterList;
             SquadDetails = dbSquad.SquadDetails;

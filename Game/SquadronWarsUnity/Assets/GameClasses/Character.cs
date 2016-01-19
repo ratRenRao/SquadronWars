@@ -77,7 +77,7 @@ namespace SquadronWars2
 
         public void UpdateCharacterFromDb()
         {
-            var dbCharacter = _dbConnection.PopulateObjectFromDb<Character>(GlobalConstants.CharacterDbUrl, GlobalConstants.CharacterKeyName, CharacterId.ToString());
+            var dbCharacter = _dbConnection.PopulateObjectFromDb<Character>(GlobalConstants.CharacterDbUrl, this);
 
             BaseStats = dbCharacter.BaseStats;
             CharacterListId = dbCharacter.CharacterListId;
