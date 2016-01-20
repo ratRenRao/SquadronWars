@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using SquadronWars2;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -37,3 +37,4 @@ public class CharacterScreen : MonoBehaviour {
     public Dropdown bootsSlot;
 
 }
+*/

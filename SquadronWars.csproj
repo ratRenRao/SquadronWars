@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{8784FE5A-A96B-4950-B70A-062D55853DB4}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>ConsoleApplication</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -36,6 +36,9 @@
   <PropertyGroup>
     <RootNamespace>SquadronWars</RootNamespace>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\KSP_Mods_090.1.0.7\lib\net35\Assembly-CSharp.dll</HintPath>
@@ -49,15 +52,7 @@
       <HintPath>packages\fasterflect.2.1.3\lib\net40\Fasterflect.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KspHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KSP_Mods_090.1.0.7\lib\net35\KspHelper.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Rocket.API, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Rocket.Core.2.0.1.0\lib\Rocket.API.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -66,10 +61,6 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Rocket.Core.2.0.1.0\lib\UnityEngine.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
@@ -261,10 +252,10 @@
     <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Squad.cs" />
     <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Stats.cs" />
     <Compile Include="Game\SquadronWarsUnity\Assets\GameClasses\Weaken.cs" />
-    <Compile Include="Game\SquadronWarsUnity\Assets\Scripts\CharacterScreen.cs" />
-    <Compile Include="Game\SquadronWarsUnity\Assets\Scripts\CreateUnitList.cs" />
-    <Compile Include="Game\SquadronWarsUnity\Assets\Scripts\MenuManager.cs" />
-    <Compile Include="Game\SquadronWarsUnity\Assets\Scripts\SampleButton.cs" />
+    <!--Compile Include="Game\SquadronWarsUnity\Assets\Scripts\CharacterScreen.cs" /-->
+    <!--Compile Include="Game\SquadronWarsUnity\Assets\Scripts\CreateUnitList.cs" /-->
+    <!--Compile Include="Game\SquadronWarsUnity\Assets\Scripts\MenuManager.cs" /-->
+    <!--Compile Include="Game\SquadronWarsUnity\Assets\Scripts\SampleButton.cs" /-->
     <Compile Include="Game\SquadronWarsUnity\Repo\DbConnection.cs" />
   </ItemGroup>
   <ItemGroup>

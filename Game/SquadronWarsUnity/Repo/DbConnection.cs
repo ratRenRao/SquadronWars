@@ -18,14 +18,14 @@ namespace SquadronWars2.Game.SquadronWarsUnity.Repo
             var url = $"{GlobalConstants.ServerUrl}{path}";
 
             var parameters = CreatePropertyDictionary<T>(obj);
-            var response = ExecuteApiCall(url, parameters);
-            return DeserializeData<T>(response.Result);
+            var response = ExecuteApiCall(url, parameters).Result;
+            return DeserializeData<T>(response);
         }
 
         private Dictionary<string, string> CreatePropertyDictionary<T>(T obj)
         {
             return obj.GetType().GetProperties().Where(attribute => !string.IsNullOrEmpty(attribute.ToString()))
-                .ToDictionary(attribute => attribute.Name, attribute => attribute.GetConstantValue().ToString());
+                .ToDictionary(attribute => attribute.Name, attribute => attribute.ToString());
         }
 
         public string PushDataToDb(string path, Dictionary<string, string> parameters)
@@ -48,8 +48,6 @@ namespace SquadronWars2.Game.SquadronWarsUnity.Repo
 
                 return responseString;
             }
-
-            //return responseString;
         }
 
         private T DeserializeData<T>(string data)

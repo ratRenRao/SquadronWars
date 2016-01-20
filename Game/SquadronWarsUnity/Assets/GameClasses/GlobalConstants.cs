@@ -4,7 +4,7 @@ namespace SquadronWars2
 {
     public static class GlobalConstants
     {
-        public const string ServerUrl = "https://ec2-user@ec2-52-27-154-55.us-west-2.compute.amazonaws.com";
+        public const string ServerUrl = "https://squadronwars.ddns.net";
 
         public const string SquadDbUrl = "temp/temp";
         public const string SquadKeyName = "squadid";
