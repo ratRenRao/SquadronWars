@@ -22,11 +22,11 @@ public class SampleButton : MonoBehaviour
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         SpriteRenderer sprite = GameObject.FindGameObjectWithTag("Character1").GetComponent<SpriteRenderer>();
         Stats baseStats = Character.BaseStats;
-        Character.Sprite = sprite.sprite;
+        //Character.Sprite = sprite.sprite;
         stats.sampleButton = button;
         menu.squadScreenPanel.SetActive(false);
         menu.characterScreenPanel.SetActive(true);
-        stats.characterSprite.sprite = Character.Sprite;
+        //stats.characterSprite.sprite = Character.Sprite;
         stats.characterName.text = Character.CharacterName;
         
         UpdateStats(Character);
