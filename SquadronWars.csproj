@@ -256,7 +256,7 @@
     <!--Compile Include="Game\SquadronWarsUnity\Assets\Scripts\CreateUnitList.cs" /-->
     <!--Compile Include="Game\SquadronWarsUnity\Assets\Scripts\MenuManager.cs" /-->
     <!--Compile Include="Game\SquadronWarsUnity\Assets\Scripts\SampleButton.cs" /-->
-    <Compile Include="Game\SquadronWarsUnity\Repo\DbConnection.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\Data\DbConnection.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".git\" />
