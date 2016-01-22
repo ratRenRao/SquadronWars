@@ -2366,9 +2366,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c523b6e016cd564dbc9d4babb0fb9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
-  character: {fileID: 0}
-  nameLabel: {fileID: 0}
+  Button: {fileID: 0}
+  Character: {fileID: 0}
+  NameLabel: {fileID: 0}
 --- !u!1 &287826050
 GameObject:
   m_ObjectHideFlags: 0
@@ -3870,9 +3870,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -6577,9 +6575,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c523b6e016cd564dbc9d4babb0fb9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
-  character: {fileID: 0}
-  nameLabel: {fileID: 0}
+  Button: {fileID: 0}
+  Character: {fileID: 0}
+  NameLabel: {fileID: 0}
 --- !u!1 &844143457
 GameObject:
   m_ObjectHideFlags: 0
@@ -6607,9 +6605,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07342e9b594bb284c8baef76a56df22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sampleButton: {fileID: 163718, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
-  characters: []
-  contentPanel: {fileID: 1916724121}
+  SampleButton: {fileID: 0}
+  Characters: []
+  ContentPanel: {fileID: 0}
 --- !u!4 &844143459
 Transform:
   m_ObjectHideFlags: 0
@@ -16359,9 +16357,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -16392,7 +16388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0eacc9539ff3e479f0b0d639f51e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  Sprite: {fileID: 0}
 --- !u!1 &2062297692
 GameObject:
   m_ObjectHideFlags: 0
