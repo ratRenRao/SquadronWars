@@ -58,16 +58,34 @@ $app->post('/api/auth', function() use($app) {
 });
 
 $app->post('/api/UpdateCharacter', function() use($app) {
+    $mysql = new MySQL();
+
+    if(isset($_POST['username']) && isset($_POST['password']))
+    {
+
+    }
     //TODO: update character
     return new Response("Failed",401);
 });
 
 $app->post('/api/UpdatePlayer', function() use($app) {
+    $mysql = new MySQL();
+
+    if(isset($_POST['username']) && isset($_POST['password']))
+    {
+
+    }
     //TODO: update player
     return new Response("Failed",401);
 });
 
 $app->post('/api/UpdateSquad', function() use($app) {
+    $mysql = new MySQL();
+
+    if(isset($_POST['username']) && isset($_POST['password']))
+    {
+
+    }
     //TODO: update squad
     return new Response("Failed",401);
 });

@@ -11,7 +11,7 @@ public class SampleButton : MonoBehaviour
 
     public Button Button;
     public Character Character;
-    public MediaTypeNames.Text NameLabel;
+    public Text NameLabel;
 
     public void BuildCharacterScreen()
     {        
@@ -37,11 +37,11 @@ public class SampleButton : MonoBehaviour
         int progBar = Character.PercentToNextLevel();
         stats.ProgressBar.value = progBar;
         Debug.Log(Character.Equipment[ItemType.Helm].Name);
-        Debug.Log(Character.BaseStats.intelligence);
+        Debug.Log(Character.BaseStats.Intelligence);
         BuildDropdowns(stats);
     }
 
-    public void ReevaluateStats(MediaTypeNames.Text labelText)
+    public void ReevaluateStats(Text labelText)
     {
         GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
         GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
@@ -60,8 +60,8 @@ public class SampleButton : MonoBehaviour
                 break;
             }
         }
-        Character.AlteredStats = item.Stats.removeAlteredStats(Character.AlteredStats, prevItem.Stats);
-        Character.AlteredStats = item.Stats.concatStats(Character.AlteredStats, item.Stats);
+        Character.AlteredStats = item.Stats.RemoveAlteredStats(Character.AlteredStats, prevItem.Stats);
+        Character.AlteredStats = item.Stats.ConcatStats(Character.AlteredStats, item.Stats);
         Character.Equipment[item.ItemType] = item;
         UpdateStats(Character);
     }
@@ -73,24 +73,24 @@ public class SampleButton : MonoBehaviour
         CharacterScreen menuStats = statsManager.GetComponent<CharacterScreen>();
         Stats stats = character.BaseStats;
         Stats bonusStats = character.AlteredStats;
-        Stats concatStats = stats.concatStats(character.BaseStats, character.AlteredStats);
-        menuStats.strengthStat.text = formatStats(stats.strength, bonusStats.strength);
-        menuStats.agilityStat.text = formatStats(stats.agility, bonusStats.agility);
-        menuStats.intelligenceStat.text = formatStats(stats.intelligence, bonusStats.intelligence);
-        menuStats.vitalityStat.text = formatStats(stats.vitality, bonusStats.vitality);
-        menuStats.dexterityStat.text = formatStats(stats.dexterity, bonusStats.dexterity);
-        menuStats.wisdomStat.text = formatStats(stats.wisdom, bonusStats.wisdom);
-        menuStats.luckStat.text = formatStats(stats.luck, bonusStats.luck);
-        menuStats.hitPointsStat.text = concatStats.calculateHP(character.Level).ToString();
-        menuStats.manaStat.text = concatStats.calculateMP(character.Level).ToString();
-        menuStats.damageStat.text = concatStats.calculateDamage(character.Level).ToString();
-        menuStats.magicDamageStat.text = concatStats.calculateMagicDamage(character.Level).ToString();
-        menuStats.speedStat.text = concatStats.calculateSpeed(character.Level).ToString();
-        menuStats.defenseStat.text = concatStats.calculateDefense(character.Level).ToString();
-        menuStats.magicDefenseStat.text = concatStats.calculateMagicDefense(character.Level).ToString();
-        menuStats.hitRateStat.text = concatStats.calculateHitRate(character.Level).ToString();
-        menuStats.dodgeRateStat.text = concatStats.calculateDodgeRate(character.Level).ToString();
-        menuStats.criticalRateStat.text = concatStats.calculateCritRate(character.Level).ToString();
+        Stats concatStats = stats.ConcatStats(character.BaseStats, character.AlteredStats);
+        menuStats.strengthStat.text = formatStats(stats.Strength, bonusStats.Strength);
+        menuStats.agilityStat.text = formatStats(stats.Agility, bonusStats.Agility);
+        menuStats.intelligenceStat.text = formatStats(stats.Intelligence, bonusStats.Intelligence);
+        menuStats.vitalityStat.text = formatStats(stats.Vitality, bonusStats.Vitality);
+        menuStats.dexterityStat.text = formatStats(stats.Dexterity, bonusStats.Dexterity);
+        menuStats.wisdomStat.text = formatStats(stats.Wisdom, bonusStats.Wisdom);
+        menuStats.luckStat.text = formatStats(stats.Luck, bonusStats.Luck);
+        menuStats.hitPointsStat.text = concatStats.CalculateHp(character.Level).ToString();
+        menuStats.manaStat.text = concatStats.CalculateMp(character.Level).ToString();
+        menuStats.damageStat.text = concatStats.CalculateDamage(character.Level).ToString();
+        menuStats.magicDamageStat.text = concatStats.CalculateMagicDamage(character.Level).ToString();
+        menuStats.speedStat.text = concatStats.CalculateSpeed(character.Level).ToString();
+        menuStats.defenseStat.text = concatStats.CalculateDefense(character.Level).ToString();
+        menuStats.magicDefenseStat.text = concatStats.CalculateMagicDefense(character.Level).ToString();
+        menuStats.hitRateStat.text = concatStats.CalculateHitRate(character.Level).ToString();
+        menuStats.dodgeRateStat.text = concatStats.CalculateDodgeRate(character.Level).ToString();
+        menuStats.criticalRateStat.text = concatStats.CalculateCritRate(character.Level).ToString();
     }
 
     
@@ -146,12 +146,12 @@ public class SampleButton : MonoBehaviour
             }
         }
         Debug.Log(Character.Equipment[ItemType.Helm].Name);
-        dropdowns.helmSlot.GetComponentsInChildren<MediaTypeNames.Text>()[0].text = Character.Equipment[ItemType.Helm].Name;
-        dropdowns.shoulderSlot.GetComponentsInChildren<MediaTypeNames.Text>()[0].text = Character.Equipment[ItemType.Shoulders].Name;
-        dropdowns.chestSlot.GetComponentsInChildren<MediaTypeNames.Text>()[0].text = Character.Equipment[ItemType.Chest].Name;
-        dropdowns.glovesSlot.GetComponentsInChildren<MediaTypeNames.Text>()[0].text = Character.Equipment[ItemType.Gloves].Name;
-        dropdowns.legsSlot.GetComponentsInChildren<MediaTypeNames.Text>()[0].text = Character.Equipment[ItemType.Legs].Name;
-        dropdowns.bootsSlot.GetComponentsInChildren<MediaTypeNames.Text>()[0].text = Character.Equipment[ItemType.Boots].Name;
+        dropdowns.helmSlot.GetComponentsInChildren<Text>()[0].text = Character.Equipment[ItemType.Helm].Name;
+        dropdowns.shoulderSlot.GetComponentsInChildren<Text>()[0].text = Character.Equipment[ItemType.Shoulders].Name;
+        dropdowns.chestSlot.GetComponentsInChildren<Text>()[0].text = Character.Equipment[ItemType.Chest].Name;
+        dropdowns.glovesSlot.GetComponentsInChildren<Text>()[0].text = Character.Equipment[ItemType.Gloves].Name;
+        dropdowns.legsSlot.GetComponentsInChildren<Text>()[0].text = Character.Equipment[ItemType.Legs].Name;
+        dropdowns.bootsSlot.GetComponentsInChildren<Text>()[0].text = Character.Equipment[ItemType.Boots].Name;
 
     }
 

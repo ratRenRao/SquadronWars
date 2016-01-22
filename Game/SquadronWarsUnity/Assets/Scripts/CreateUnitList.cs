@@ -99,10 +99,10 @@ namespace SquadronWars2
                 character.AlteredStats = new Stats(0, 0, 0, 0, 0, 0, 0);
                 character.AlteredStats = GetBonusStats(character);
                 var newButton = Instantiate(SampleButton) as GameObject;
-                var tempButton = newButton?.GetComponent<SampleButton>();
-                tempButton?.NameLabel.text = character.CharacterName;
-                tempButton?.Character = character;
-                newButton?.transform.SetParent(ContentPanel);
+                var tempButton = newButton.GetComponent<SampleButton>();
+                tempButton.NameLabel.text = character.CharacterName;
+                tempButton.Character = character;
+                newButton.transform.SetParent(ContentPanel);
 
             }
         }
@@ -110,7 +110,7 @@ namespace SquadronWars2
         {
             foreach (var equipment in character.Equipment.Values.Cast<Equipment>())
             {
-                character.AlteredStats = character.AlteredStats.concatStats(character.AlteredStats, equipment.Stats);
+                character.AlteredStats = character.AlteredStats.ConcatStats(character.AlteredStats, equipment.Stats);
             }
             return character.AlteredStats;
         }
