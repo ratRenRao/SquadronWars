@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Security.Policy;
 using System.Web.Script.Serialization;
 
 namespace SquadronWars2.Game.SquadronWarsUnity.Repo
@@ -18,7 +20,7 @@ namespace SquadronWars2.Game.SquadronWarsUnity.Repo
             var url = $"{GlobalConstants.ServerUrl}{path}";
 
             var parameters = CreatePropertyDictionary<T>(obj);
-            var response = ExecuteApiCall(url, parameters).Result;
+            var response = ExecuteApiCall(url, parameters);
             return DeserializeData<T>(response);
         }
 
@@ -32,22 +34,32 @@ namespace SquadronWars2.Game.SquadronWarsUnity.Repo
         {
             var url = $"{GlobalConstants.ServerUrl}{path}";
 
-            return ExecuteApiCall(url, parameters).Result;
+            return ExecuteApiCall(url, parameters);
         }
 
-        private async Task<string> ExecuteApiCall(string url, Dictionary<string, string> parameters)
+        private string ExecuteApiCall(string url, Dictionary<string, string> parameters)
         {
             using (var client = new HttpClient())
             {
-                var content = new FormUrlEncodedContent(parameters);
-                var response = await client.PostAsync(url, content);
-                var responseString = await response.Content.ReadAsStringAsync();
 
-                if (string.IsNullOrEmpty(responseString))
-                    throw new Exception("No data returned");
+                //HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri("http://[address]/");
 
-                return responseString;
+                // Add an Accept header for JSON format.
+                client.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = client.GetAsync(url).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    return response.ToString();
+                }
+                else
+                {
+                    Console.WriteLine("{0} ({1})", (int) response.StatusCode, response.ReasonPhrase);
+                }
             }
+            return null;
         }
 
         private T DeserializeData<T>(string data)
