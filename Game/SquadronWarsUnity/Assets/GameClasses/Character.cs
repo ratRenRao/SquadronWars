@@ -1,14 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using DbConnection = SquadronWars2.Game.SquadronWarsUnity.Repo.DbConnection;
 
 namespace SquadronWars2
 {
-    public class Character
-#if !DEBUG
-        : MonoBehaviour
-#endif
+    public class Character //: MonoBehaviour
     {
         private readonly DbConnection _dbConnection;
         public int CharacterId { get; set; }
@@ -22,9 +18,7 @@ namespace SquadronWars2
         public int StatPoints { get; set; }
         public int SkillPoints { get; set; }
         public List<Effect> Effects = new List<Effect>();
-#if !DEBUG
-        public Sprite Sprite;
-#endif
+        //public Sprite Sprite;
 
         public Character(int characterId, Stats baseStats, int characterListId, string characterName,
             int level, int experience, Dictionary<ItemType, Item> equipment)

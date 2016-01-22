@@ -1,4 +1,5 @@
 using System;
+
 namespace SquadronWars2
 {
     public abstract class Effect // : IEffectable
