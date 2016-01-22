@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
+//  Uncomment to run in Unity
+//using UnityEngine.UI;
 using System.Collections.Generic;
 //using System.Data.Common;
 using System.Linq;
@@ -11,7 +12,10 @@ using DbConnection = SquadronWars2.Game.SquadronWarsUnity.Repo.DbConnection;
 
 namespace SquadronWars2
 {
-    public class Player : MonoBehaviour
+    public class Player
+#if !DEBUG
+        : MonoBehaviour
+#endif
     {
         private readonly DbConnection _dbConnection;
         public string Username { get; private set; } // remove and create LoginChange class for changes
@@ -44,7 +48,9 @@ namespace SquadronWars2
 
         public void PopulatePlayer()
         {
-            var dbPlayer= _dbConnection.PopulateObjectFromDb<Player>(Username, GlobalConstants.PlayerDbUrl);
+            var parameters = new Dictionary<string, string>();
+            
+            var dbPlayer= _dbConnection.PopulateObjectFromDb<Player>(GlobalConstants.PlayerDbUrl, this);
 
             FirstName = dbPlayer.FirstName;
             LastName = dbPlayer.LastName;

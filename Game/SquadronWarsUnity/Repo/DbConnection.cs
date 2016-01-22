@@ -1,51 +1,53 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Net.Http;
-using System.Net.Http.Headers;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Web.Script.Serialization;
 
 namespace SquadronWars2.Game.SquadronWarsUnity.Repo
 {
     public class DbConnection
     {
-        private const string Url = "https://ec2-user@ec2-52-27-154-55.us-west-2.compute.amazonaws.com";
         public static bool ResponseError = false;
 
-        public T PopulateObjectFromDb<T>(string primaryKey, string call)
+        public T PopulateObjectFromDb<T>(string path, T obj)
         {
-            var data = ExecuteApiCall(primaryKey, call);
-            return DeserializeData<T>(data.Result);
+            var url = $"{GlobalConstants.ServerUrl}{path}";
+
+            var parameters = CreatePropertyDictionary<T>(obj);
+            var response = ExecuteApiCall(url, parameters).Result;
+            return DeserializeData<T>(response);
         }
 
-        private async Task<string> ExecuteApiCall(string primaryKey, string call)
+        private Dictionary<string, string> CreatePropertyDictionary<T>(T obj)
         {
-            var data = "";
-            call = call + "id=" + primaryKey;
-            try
-            {
-                using (var client = new HttpClient())
-                {
-                    client.BaseAddress = new Uri(Url);
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            return obj.GetType().GetProperties().Where(attribute => !string.IsNullOrEmpty(attribute.ToString()))
+                .ToDictionary(attribute => attribute.Name, attribute => attribute.ToString());
+        }
 
-                    var response = await client.GetAsync(call);
-                    if (response.IsSuccessStatusCode)
-                    {
-                        data = await response.Content.ReadAsStringAsync();
-                    }
-                    else
-                    {
-                        ResponseError = true;
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                
-            }
+        public string PushDataToDb(string path, Dictionary<string, string> parameters)
+        {
+            var url = $"{GlobalConstants.ServerUrl}{path}";
 
-            return data;
+            return ExecuteApiCall(url, parameters).Result;
+        }
+
+        private async Task<string> ExecuteApiCall(string url, Dictionary<string, string> parameters)
+        {
+            using (var client = new HttpClient())
+            {
+                var content = new FormUrlEncodedContent(parameters);
+                var response = await client.PostAsync(url, content);
+                var responseString = await response.Content.ReadAsStringAsync();
+
+                if (string.IsNullOrEmpty(responseString))
+                    throw new Exception("No data returned");
+
+                return responseString;
+            }
         }
 
         private T DeserializeData<T>(string data)

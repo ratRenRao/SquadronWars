@@ -4,9 +4,16 @@ namespace SquadronWars2
 {
     public static class GlobalConstants
     {
-		public const string SquadDbUrl = "temp/temp";
+        public const string ServerUrl = "https://squadronwars.ddns.net";
+
+        public const string SquadDbUrl = "temp/temp";
+        public const string SquadKeyName = "squadid";
+
         public const string CharacterDbUrl = "/api/getchars";
+        public const string CharacterKeyName = "characterid";
+
         public const string PlayerDbUrl = "/api/auth";
+        public const string PlayerKeyName = "playerid";
 		
 		public static Dictionary<string,Item> ItemList = new Dictionary<string,Item>()
         {
