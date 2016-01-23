@@ -1,28 +1,30 @@
 using System;
-
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 namespace SquadronWars2
 {
-    public abstract class Effect // : IEffectable
+    abstract public class Effect : IEffectable
     {
-        public int Duration { get; set; }
-        public bool HasInitialEffect = false;
-        public Stats CasterStats { get; set; }
-        public Stats TargetStats { get; set; }
+        public int duration { get; set; }
+        public bool hasInitialEffect = false;
+        public Stats casterStats { get; set; }
+        public Stats targetStats { get; set; }
 
-        public void Execute(Stats charStats)
+        public void execute(Stats charStats)
         {
-            if (HasInitialEffect)
+            if (hasInitialEffect)
             {
                 //initialEffect();
-                HasInitialEffect = false;
+                hasInitialEffect = false;
             }
-            else if (Duration > 0)
+            else if (duration > 0)
             {
-                LingeringEffect(ref charStats);
+                lingeringEffect();
             }
-            else if (Duration == 0)
+            else if (duration == 0)
             {
-                RemoveEffect(ref charStats);
+                removeEffect();
             }
         }
 
@@ -31,17 +33,23 @@ namespace SquadronWars2
             return (stat < minStat) ? minStat : (stat > maxStat) ? maxStat : stat;
         }
 
-        public virtual void ImmediateEffect(ref Stats charStat)
+        public void lingeringEffect() { }
+
+        public void immediateEffect() { }
+
+        public void removeEffect() { }
+
+        public void immediateEffect(ref Stats charStat)
         {
             throw new NotImplementedException();
         }
 
-        public virtual void RemoveEffect(ref Stats charStat)
+        public void removeEffect(ref Stats charStat)
         {
             throw new NotImplementedException();
         }
 
-        public virtual void LingeringEffect(ref Stats charStats)
+        public void lingeringEffect(ref Stats charStats)
         {
             throw new NotImplementedException();
         }

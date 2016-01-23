@@ -5,33 +5,40 @@ using System.Text;
 
 namespace SquadronWars2
 {
-    internal class Heal : Effect //, IEffectable
+    class Heal : Effect, IEffectable
     {
-        private const int HealthRestored = 50;
-
+        private int healthRestored = 50;
         public Heal(Stats casterStats, Stats targetStats, bool initial, int duration)
         {
-            TargetStats = targetStats;
-            CasterStats = casterStats;
-            HasInitialEffect = initial;
-            Duration = duration;
+            this.targetStats = targetStats;
+            this.casterStats = casterStats;
+            this.hasInitialEffect = initial;
+            this.duration = duration;
         }
 
-        public override void ImmediateEffect(ref Stats charStats)
+        public void immediateEffect()
         {
-            charStats.CurrentHp = ValidateStat(charStats.CurrentHp + HealthRestored, 0, charStats.MaxHp);
+            targetStats.currentHP = ValidateStat(targetStats.currentHP + healthRestored, 0, targetStats.maxHP);
         }
 
-        public void Execute(ref Stats charStats)
+        public void execute(ref Stats charStats)
         {
+            throw new NotImplementedException();
         }
 
-        public override void RemoveEffect(ref Stats charStat)
+        public void immediateEffect(ref Stats charStat)
         {
+            throw new NotImplementedException();
         }
 
-        public override void LingeringEffect(ref Stats charStats)
+        public void removeEffect(ref Stats charStat)
         {
+            throw new NotImplementedException();
+        }
+
+        public void lingeringEffect(ref Stats charStats)
+        {
+            throw new NotImplementedException();
         }
     }
 }

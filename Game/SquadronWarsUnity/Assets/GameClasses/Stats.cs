@@ -1,132 +1,135 @@
-﻿namespace SquadronWars2
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace SquadronWars2
 {
     public class Stats
     {
-        public int Strength { get; set; }
-        public int Agility { get; set; }
-        public int Intelligence { get; set; }
-        public int Vitality { get; set; }
-        public int Dexterity { get; set; }
-        public int Wisdom { get; set; }
-        public int Luck { get; set; }
-        public int CurrentHp { get; set; }
-        public int MaxHp { get; set; }
-        public int Damage { get; set; }
-        public int Defense { get; set; }
-        public int CurrentMp { get; set; }
-        public int MaxMp { get; set; }
-        public int Speed { get; set; }
-        public int MagicDef { get; set; }
-        public int MagicDmg { get; set; }
-        public int HitRate { get; set; }
-        public int CritRate { get; set; }
-        public int DodgeRate { get; set; }
-        public int StatPoints { get; set; }
+        public int strength { get; set; }
+        public int agility { get; set; }
+        public int intelligence { get; set; }
+        public int vitality { get; set; }
+        public int dexterity { get; set; }
+        public int wisdom { get; set; }
+        public int luck { get; set; }
+        public int currentHP { get; set; }
+        public int maxHP { get; set; }
+        public int damage { get; set; }
+        public int defense { get; set; }
+        public int currentMP { get; set; }
+        public int maxMP { get; set; }
+        public int speed { get; set; }
+        public int magicDef { get; set; }
+        public int magicDmg { get; set; }
+        public int hitRate { get; set; }
+        public int critRate { get; set; }
+        public int dodgeRate { get; set; }
+        public int statPoints { get; set; }
 
         public Stats(int strength, int agility, int intelligence, int vitality, int wisdom, int dexterity, int luck)
         {
-            Strength = strength;
-            Agility = agility;
-            Intelligence = intelligence;
-            Vitality = vitality;
-            Wisdom = wisdom;
-            Dexterity = dexterity;
-            Luck = luck;
+            this.strength = strength;
+            this.agility = agility;
+            this.intelligence = intelligence;
+            this.vitality = vitality;
+            this.wisdom = wisdom;
+            this.dexterity = dexterity;
+            this.luck = luck;
         }
 
         public Stats(int strength, int agility, int intelligence, int vitality, int wisdom, int dexterity, int maxHP, 
             int maxMP, int damage, int magicDmg, int speed, int defense, int magicDef, int hitRate, int dodgeRate, int critRate)
         {
-            Strength = strength;
-            Agility = agility;
-            Intelligence = intelligence;
-            Vitality = vitality;
-            Wisdom = wisdom;
-            Dexterity = dexterity;
-            MaxHp = maxHP;
-            MaxMp = maxMP;
-            Damage = damage;
-            MagicDmg = magicDmg;
-            Speed = speed;
-            Defense = defense;
-            MagicDef = magicDef;
-            HitRate = hitRate;
-            DodgeRate = dodgeRate;
-            CritRate = critRate;
+            this.strength = strength;
+            this.agility = agility;
+            this.intelligence = intelligence;
+            this.vitality = vitality;
+            this.wisdom = wisdom;
+            this.dexterity = dexterity;
+            this.maxHP = maxHP;
+            this.maxMP = maxMP;
+            this.damage = damage;
+            this.magicDmg = magicDmg;
+            this.speed = speed;
+            this.defense = defense;
+            this.magicDef = magicDef;
+            this.hitRate = hitRate;
+            this.dodgeRate = dodgeRate;
+            this.critRate = critRate;
         }
 
-        public int CalculateHp(int level) {
-            return (level * 5) + (Vitality * 10) + (Strength * 2);
+        public int calculateHP(int level) {
+            return (level * 5) + (vitality * 10) + (strength * 2);
         }
 
-        public int CalculateMp(int level)
+        public int calculateMP(int level)
         {
-            return (level * 5) + (Intelligence * 5) + (Wisdom * 10); 
+            return (level * 5) + (intelligence * 5) + (wisdom * 10); 
         }
 
-        public int CalculateDamage(int level)
+        public int calculateDamage(int level)
         {
-            return (level * 2) + (Strength * 6) + (Dexterity * 2);
+            return (level * 2) + (strength * 6) + (dexterity * 2);
         }
 
-        public int CalculateMagicDamage(int level)
+        public int calculateMagicDamage(int level)
         {
-            return level + (Intelligence * 8) + Wisdom; 
+            return level + (intelligence * 8) + wisdom; 
         }
 
-        public int CalculateSpeed(int level)
+        public int calculateSpeed(int level)
         {
-            return 5 + (level / 15) + (Agility / 20);
+            return 5 + (level / 15) + (agility / 20);
         }
 
-        public int CalculateDefense(int level)
+        public int calculateDefense(int level)
         {
-            return (level * 2) + (Vitality * 6) + Strength;
+            return (level * 2) + (vitality * 6) + strength;
         }
 
-        public int CalculateMagicDefense(int level)
+        public int calculateMagicDefense(int level)
         {
-            return (level * 3) + (Wisdom * 5) + Intelligence;
+            return (level * 3) + (wisdom * 5) + intelligence;
         }
 
-        public int CalculateHitRate(int level)
+        public int calculateHitRate(int level)
         {
-            return 50 + (level * 2) + (Dexterity * 6) + (Wisdom * 2);
+            return 50 + (level * 2) + (dexterity * 6) + (wisdom * 2);
         }
 
-        public int CalculateDodgeRate(int level)
+        public int calculateDodgeRate(int level)
         {
-            return 50 + (level * 2) + (Agility * 6);
+            return 50 + (level * 2) + (agility * 6);
         }
 
-        public int CalculateCritRate(int level)
+        public int calculateCritRate(int level)
         {
-            return 35 + (level * 2) + (Luck * 3);
+            return 35 + (level * 2) + (luck * 3);
         }
 
-        public Stats RemoveAlteredStats(Stats charStats, Stats itemStats)
+        public Stats removeAlteredStats(Stats charStats, Stats itemStats)
         {
-            charStats.Strength = charStats.Strength - itemStats.Strength;
-            charStats.Agility = charStats.Agility - itemStats.Agility;
-            charStats.Intelligence = charStats.Intelligence - itemStats.Intelligence;
-            charStats.Vitality = charStats.Vitality - itemStats.Vitality;
-            charStats.Dexterity = charStats.Dexterity - itemStats.Dexterity;
-            charStats.Wisdom = charStats.Wisdom - itemStats.Wisdom;
-            charStats.Luck = charStats.Luck - itemStats.Luck;
+            charStats.strength = charStats.strength - itemStats.strength;
+            charStats.agility = charStats.agility - itemStats.agility;
+            charStats.intelligence = charStats.intelligence - itemStats.intelligence;
+            charStats.vitality = charStats.vitality - itemStats.vitality;
+            charStats.dexterity = charStats.dexterity - itemStats.dexterity;
+            charStats.wisdom = charStats.wisdom - itemStats.wisdom;
+            charStats.luck = charStats.luck - itemStats.luck;
             return charStats;
         }
-        public Stats ConcatStats(Stats charStats, Stats itemStats)
+        public Stats concatStats(Stats charStats, Stats itemStats)
         {
-            var alteredStats = new Stats(0, 0, 0, 0, 0, 0, 0)
-            {
-                Strength = charStats.Strength + itemStats.Strength,
-                Agility = charStats.Agility + itemStats.Agility,
-                Intelligence = charStats.Intelligence + itemStats.Intelligence,
-                Vitality = charStats.Vitality + itemStats.Vitality,
-                Dexterity = charStats.Dexterity + itemStats.Dexterity,
-                Wisdom = charStats.Wisdom + itemStats.Wisdom,
-                Luck = charStats.Luck + itemStats.Luck
-            };
+            Stats alteredStats = new Stats(0,0,0,0,0,0,0);
+            alteredStats.strength = charStats.strength + itemStats.strength;
+            alteredStats.agility = charStats.agility + itemStats.agility;
+            alteredStats.intelligence = charStats.intelligence + itemStats.intelligence;
+            alteredStats.vitality = charStats.vitality + itemStats.vitality;
+            alteredStats.dexterity = charStats.dexterity + itemStats.dexterity;
+            alteredStats.wisdom = charStats.wisdom + itemStats.wisdom;
+            alteredStats.luck = charStats.luck + itemStats.luck;
             return alteredStats;
         }
     }
