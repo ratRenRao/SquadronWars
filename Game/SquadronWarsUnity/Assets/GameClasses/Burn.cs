@@ -6,22 +6,21 @@ using System.Text;
 namespace SquadronWars2
 {
 
-    class Burn : Effect //, IEffectable
+    class Burn : Effect, IEffectable
     {
-        private readonly int _burnDamage;
+        private int burnDamage;
 
-        public Burn(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration, int burnDamage)
+        public Burn(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration)
         {
-            _burnDamage = burnDamage;
-            TargetStats = targetStats;
-            CasterStats = casterStats;
-            HasInitialEffect = hasInitialEffect;
-            Duration = duration;
+            this.targetStats = targetStats;
+            this.casterStats = casterStats;
+            this.hasInitialEffect = hasInitialEffect;
+            this.duration = duration;
         }
 
-        public override void LingeringEffect(ref Stats charStats)
+        public void lingeringEffect()
         {
-            charStats.CurrentHp -= _burnDamage;
+            targetStats.currentHP -= burnDamage;
         }
     }
 }

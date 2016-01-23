@@ -1,93 +1,88 @@
 using System;
+using UnityEngine;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using DbConnection = SquadronWars2.Game.SquadronWarsUnity.Repo.DbConnection;
+//using SquadronWars2.Game.SquadronWarsUnity.Repo;
 
 namespace SquadronWars2
 {
-    public class Character
-#if !DEBUG
-        : MonoBehaviour
-#endif
+    public class Character : MonoBehaviour
     {
-        private readonly DbConnection _dbConnection;
-        public int CharacterId { get; set; }
-        public Stats BaseStats { get; set; }
-        public Stats AlteredStats { get; set; }
-        public int CharacterListId { get; set; }
-        public string CharacterName { get; set; }
-        public Dictionary<ItemType, Item> Equipment;
-        public int Level { get; set; }
-        public int Experience { get; set; }
-        public int StatPoints { get; set; }
-        public int SkillPoints { get; set; }
-        public List<Effect> Effects = new List<Effect>();
-#if !DEBUG
-        public Sprite Sprite;
-#endif
+        //DbConnection dbConnection = new DbConnection();
+        public int characterId { get; set; }
+        public Stats baseStats { get; set; }
+        public Stats alteredStats { get; set; }
+        public int characterListId { get; set; }
+        public string characterName { get; set; }
+        public Dictionary<ItemType, Item> equipment = new Dictionary<ItemType, Item>();
+        public int level { get; set; }
+        public int experience { get; set; }
+        public int statPoints { get; set; }
+        public int skillPoints { get; set; }
+        public List<Effect> effects = new List<Effect>();
+        public Sprite sprite;
 
         public Character(int characterId, Stats baseStats, int characterListId, string characterName,
             int level, int experience, Dictionary<ItemType, Item> equipment)
         {
-            _dbConnection = new DbConnection();
-            CharacterId = characterId;
-            BaseStats = baseStats;
-            Equipment = equipment;
-            CharacterListId = characterListId;
-            CharacterName = characterName;
-            Level = level;
-            Experience = experience;
+            this.characterId = characterId;
+            this.baseStats = baseStats;
+            this.equipment = equipment;
+            this.characterListId = characterListId;
+            this.characterName = characterName;
+            this.level = level;
+            this.experience = experience;
         }
 
-        public void AddEffect(Effect effect)
+        public void addEffect(Effect effect)
         {
-            effect.Execute(BaseStats);
-            Effects.Add(effect);
+            effect.execute(baseStats);
+            effects.Add(effect);
         }
 
-        public void CheckEffects()
+        public void checkEffects()
         {
-            foreach (var effect in Effects)
+            foreach (Effect effect in effects)
             {
 
             }
         }
 
-        public int StartExperience()
+        public int startExperience()
         {
-            if (Level == 1)
+            if (level == 1)
             {
                 return 0;
             }
-            return 200 + ((int)Math.Pow(Level - 1, 2) * 50);
+            return 200 + ((int)Math.Pow(level - 1, 2) * 50);
         }
 
-        public int ExperienceNeeded()
+        public int experienceNeeded()
         {
-            if (Level == 1)
+            if (level == 1)
             {
                 return 200;
             }
-            return 200 + ((int)Math.Pow(Level, 2) * 50);
+            return 200 + ((int)Math.Pow(level, 2) * 50);
         }
 
-        public int PercentToNextLevel()
+        public int percentToNextLevel()
         {
-            var startExp = StartExperience();
-            var finishExp = ExperienceNeeded();
-            var percentComplete = ((double)(Experience - startExp) / (finishExp - startExp) * 100);
+            int startExp = startExperience();
+            int finishExp = experienceNeeded();
+            double percentComplete = ((double)(experience - startExp) / (finishExp - startExp) * 100);
             return Convert.ToInt32(percentComplete);
         }
 
-        public void UpdateCharacterFromDb()
+        /*public async Task UpdateCharacterFromDb()
         {
-            var dbCharacter = _dbConnection.PopulateObjectFromDb<Character>(GlobalConstants.CharacterDbUrl, this);
+            await dbConnection.ExecuteApiCall(GlobalConstants.squadDbUrl);
+            Character dbCharacter = dbConnection.DeserializeData<Character>(this);
 
-            BaseStats = dbCharacter.BaseStats;
-            CharacterListId = dbCharacter.CharacterListId;
-            CharacterName = dbCharacter.CharacterName;
-            Level = dbCharacter.Level;
-            Experience = dbCharacter.Experience;
-        }
+            this.stats = dbCharacter.stats;
+            this.characterListId = dbCharacter.characterListId;
+            this.name = dbCharacter.name;
+            this.level = dbCharacter.level;
+            this.experience = dbCharacter.experience;
+        }*/
     }
 }

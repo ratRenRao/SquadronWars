@@ -1,35 +1,30 @@
 using System;
 using System.Collections.Generic;
-//using System.Data.Common;
 using System.Linq;
 using System.Text;
-//using System.Threading.Tasks;
-using SquadronWars2.Game.SquadronWarsUnity.Repo;
-using DbConnection = SquadronWars2.Game.SquadronWarsUnity.Repo.DbConnection;
+//using SquadronWars2.Game.SquadronWarsUnity.Repo;
 
 namespace SquadronWars2
 {
-    public class Squad
+    class Squad
     {
-        private DbConnection Connection { get; set; }
+        //DbConnection dbConnection = new DbConnection();
 
-        public int SquadId { get; private set; }
-        public string SquadDetails { get; private set; }
-        public List<Character> CharacterList { get; private set; }
-        public Squad(int squadId, int playerId, DbConnection dbConnection, string squadDetails, List<Character> characterList)
+        private int squadId { get; set; }
+        private string squadDetails { get; set; }
+        private List<Character> characterList { get; set; }
+        public Squad(int squadId, int playerId)
         {
-            SquadId = squadId;
-            Connection = dbConnection;
-            SquadDetails = squadDetails;
-            CharacterList = characterList;
+            this.squadId = squadId;
         }
 
-        public void UpdateSquadFromDb()
+        /*public async Task UpdateSquadFromDb()
         {
-            var dbSquad = Connection.PopulateObjectFromDb<Squad>(GlobalConstants.SquadDbUrl, this);
+            await dbConnection.ExecuteApiCall(GlobalConstants.squadDbUrl); 
+            Squad dbSquad = dbConnection.DeserializeData<Squad>(this);
 
-            CharacterList = dbSquad.CharacterList;
-            SquadDetails = dbSquad.SquadDetails;
-        }
+            this.characterList = dbSquad.characterList;
+            this.squadDetails = dbSquad.squadDetails;
+        }*/
     }
 }
