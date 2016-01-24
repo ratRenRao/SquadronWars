@@ -20,7 +20,7 @@ public class MenuManager : MonoBehaviour
     {
         menuPanels = GameObject.FindGameObjectsWithTag("MenuPanel");
 
-        mainMenuPanel = GameObject.Find("HomeScreen");
+        /*mainMenuPanel = GameObject.Find("HomeScreen");
         loginPanel = GameObject.Find("LoginScreen");
         homePanel = GameObject.Find("HomePanel");
         squadPanel = GameObject.Find("SquadPanel");
@@ -28,7 +28,7 @@ public class MenuManager : MonoBehaviour
         characterScreenPanel = GameObject.Find("CharacterScreen");
         shop = GameObject.Find("Shop");
         shopPanel = GameObject.Find("ShopPanel");
-        characterList = GameObject.Find("CharacterList");
+        characterList = GameObject.Find("CharacterList");*/
         setup();
     }
 
