@@ -7,9 +7,10 @@ namespace SquadronWars2
 {
     static public class GlobalConstants
     {
-		public static string squadDbUrl = "temp/temp";
-        public static string characterDbUrl = "/api/getchars";
-        public static string playerDbUrl = "/api/auth";
+        public static string webServerUrl = "HTTP://squadronwars.ddns.net";
+        public static string squadDbUrl = webServerUrl + "temp/temp";
+        public static string characterDbUrl = webServerUrl + "/api/getchars";
+        public static string playerDbUrl = webServerUrl + "/api/auth";
 		
 		 static public Dictionary<string,Item> itemList = new Dictionary<string,Item>()
         {
