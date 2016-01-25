@@ -1,11 +1,8 @@
-﻿﻿using UnityEngine;
-using SquadronWars2;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Assets.GameClasses;
+using UnityEngine;
 
-namespace SquadronWars2
+namespace Assets.Scripts
 {
     public class CreateUnitList : MonoBehaviour
     {
@@ -29,57 +26,57 @@ namespace SquadronWars2
             characters = new List<Character>();
             Dictionary<ItemType, Item> equipment = new Dictionary<ItemType, Item>
         {
-            {ItemType.HELM, GlobalConstants.itemList["Cloth Helm"] },
-            {ItemType.SHOULDERS, GlobalConstants.itemList["Cloth Shoulders"] },
-            {ItemType.CHEST, GlobalConstants.itemList["Cloth Chest"] },
-            {ItemType.GLOVES, GlobalConstants.itemList["Cloth Gloves"] },
-            {ItemType.LEGS, GlobalConstants.itemList["Cloth Legs"] },
-            {ItemType.BOOTS, GlobalConstants.itemList["Cloth Boots"] },
+            {ItemType.HELM, GlobalConstants.ItemList["Cloth Helm"] },
+            {ItemType.SHOULDERS, GlobalConstants.ItemList["Cloth Shoulders"] },
+            {ItemType.CHEST, GlobalConstants.ItemList["Cloth Chest"] },
+            {ItemType.GLOVES, GlobalConstants.ItemList["Cloth Gloves"] },
+            {ItemType.LEGS, GlobalConstants.ItemList["Cloth Legs"] },
+            {ItemType.BOOTS, GlobalConstants.ItemList["Cloth Boots"] },
         };
             Dictionary<ItemType, Item> equipment1 = new Dictionary<ItemType, Item>
         {
-            {ItemType.HELM, GlobalConstants.itemList["Leather Helm"] },
-            {ItemType.SHOULDERS, GlobalConstants.itemList["Leather Shoulders"] },
-            {ItemType.CHEST, GlobalConstants.itemList["Leather Chest"] },
-            {ItemType.GLOVES, GlobalConstants.itemList["Leather Gloves"] },
-            {ItemType.LEGS, GlobalConstants.itemList["Leather Legs"] },
-            {ItemType.BOOTS, GlobalConstants.itemList["Leather Boots"] },
+            {ItemType.HELM, GlobalConstants.ItemList["Leather Helm"] },
+            {ItemType.SHOULDERS, GlobalConstants.ItemList["Leather Shoulders"] },
+            {ItemType.CHEST, GlobalConstants.ItemList["Leather Chest"] },
+            {ItemType.GLOVES, GlobalConstants.ItemList["Leather Gloves"] },
+            {ItemType.LEGS, GlobalConstants.ItemList["Leather Legs"] },
+            {ItemType.BOOTS, GlobalConstants.ItemList["Leather Boots"] },
         };
             Dictionary<ItemType, Item> equipment2 = new Dictionary<ItemType, Item>
         {
-            {ItemType.HELM, GlobalConstants.itemList["None(Head)"] },
-            {ItemType.SHOULDERS, GlobalConstants.itemList["None(Shoulder)"] },
-            {ItemType.CHEST, GlobalConstants.itemList["None(Chest)"] },
-            {ItemType.GLOVES, GlobalConstants.itemList["None(Hands)"] },
-            {ItemType.LEGS, GlobalConstants.itemList["None(Legs)"] },
-            {ItemType.BOOTS, GlobalConstants.itemList["None(Feet)"] },
+            {ItemType.HELM, GlobalConstants.ItemList["None(Head)"] },
+            {ItemType.SHOULDERS, GlobalConstants.ItemList["None(Shoulder)"] },
+            {ItemType.CHEST, GlobalConstants.ItemList["None(Chest)"] },
+            {ItemType.GLOVES, GlobalConstants.ItemList["None(Hands)"] },
+            {ItemType.LEGS, GlobalConstants.ItemList["None(Legs)"] },
+            {ItemType.BOOTS, GlobalConstants.ItemList["None(Feet)"] },
         };
             Dictionary<ItemType, Item> equipment3 = new Dictionary<ItemType, Item>
         {
-            {ItemType.HELM, GlobalConstants.itemList["None(Head)"] },
-            {ItemType.SHOULDERS, GlobalConstants.itemList["None(Shoulder)"] },
-            {ItemType.CHEST, GlobalConstants.itemList["None(Chest)"] },
-            {ItemType.GLOVES, GlobalConstants.itemList["None(Hands)"] },
-            {ItemType.LEGS, GlobalConstants.itemList["None(Legs)"] },
-            {ItemType.BOOTS, GlobalConstants.itemList["None(Feet)"] },
+            {ItemType.HELM, GlobalConstants.ItemList["None(Head)"] },
+            {ItemType.SHOULDERS, GlobalConstants.ItemList["None(Shoulder)"] },
+            {ItemType.CHEST, GlobalConstants.ItemList["None(Chest)"] },
+            {ItemType.GLOVES, GlobalConstants.ItemList["None(Hands)"] },
+            {ItemType.LEGS, GlobalConstants.ItemList["None(Legs)"] },
+            {ItemType.BOOTS, GlobalConstants.ItemList["None(Feet)"] },
         };
             Dictionary<ItemType, Item> equipment4 = new Dictionary<ItemType, Item>
         {
-            {ItemType.HELM, GlobalConstants.itemList["None(Head)"] },
-            {ItemType.SHOULDERS, GlobalConstants.itemList["None(Shoulder)"] },
-            {ItemType.CHEST, GlobalConstants.itemList["None(Chest)"] },
-            {ItemType.GLOVES, GlobalConstants.itemList["None(Hands)"] },
-            {ItemType.LEGS, GlobalConstants.itemList["None(Legs)"] },
-            {ItemType.BOOTS, GlobalConstants.itemList["None(Feet)"] },
+            {ItemType.HELM, GlobalConstants.ItemList["None(Head)"] },
+            {ItemType.SHOULDERS, GlobalConstants.ItemList["None(Shoulder)"] },
+            {ItemType.CHEST, GlobalConstants.ItemList["None(Chest)"] },
+            {ItemType.GLOVES, GlobalConstants.ItemList["None(Hands)"] },
+            {ItemType.LEGS, GlobalConstants.ItemList["None(Legs)"] },
+            {ItemType.BOOTS, GlobalConstants.ItemList["None(Feet)"] },
         };
             Dictionary<ItemType, Item> equipment5 = new Dictionary<ItemType, Item>
         {
-            {ItemType.HELM, GlobalConstants.itemList["None(Head)"] },
-            {ItemType.SHOULDERS, GlobalConstants.itemList["None(Shoulder)"] },
-            {ItemType.CHEST, GlobalConstants.itemList["None(Chest)"] },
-            {ItemType.GLOVES, GlobalConstants.itemList["None(Hands)"] },
-            {ItemType.LEGS, GlobalConstants.itemList["None(Legs)"] },
-            {ItemType.BOOTS, GlobalConstants.itemList["None(Feet)"] },
+            {ItemType.HELM, GlobalConstants.ItemList["None(Head)"] },
+            {ItemType.SHOULDERS, GlobalConstants.ItemList["None(Shoulder)"] },
+            {ItemType.CHEST, GlobalConstants.ItemList["None(Chest)"] },
+            {ItemType.GLOVES, GlobalConstants.ItemList["None(Hands)"] },
+            {ItemType.LEGS, GlobalConstants.ItemList["None(Legs)"] },
+            {ItemType.BOOTS, GlobalConstants.ItemList["None(Feet)"] },
         };
             Stats stat1 = new Stats(5, 4, 6, 3, 2, 9, 5);
             Stats stat2 = new Stats(15, 4, 10, 3, 8, 19, 3);

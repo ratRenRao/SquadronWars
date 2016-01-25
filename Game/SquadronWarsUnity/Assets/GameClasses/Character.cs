@@ -1,9 +1,10 @@
 using System;
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
+
 //using SquadronWars2.Game.SquadronWarsUnity.Repo;
 
-namespace SquadronWars2
+namespace Assets.GameClasses
 {
     public class Character : MonoBehaviour
     {

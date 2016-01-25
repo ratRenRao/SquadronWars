@@ -1,18 +1,15 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace SquadronWars2
+namespace Assets.GameClasses
 {
     static public class GlobalConstants
     {
-        public static string webServerUrl = "HTTP://squadronwars.ddns.net";
-        public static string squadDbUrl = webServerUrl + "temp/temp";
-        public static string characterDbUrl = webServerUrl + "/api/getchars";
-        public static string playerDbUrl = webServerUrl + "/api/auth";
+        public static string WebServerUrl = "HTTP://squadronwars.ddns.net";
+        public static string SquadDbUrl = WebServerUrl + "temp/temp";
+        public static string CharacterDbUrl = WebServerUrl + "/api/getchars";
+        public static string PlayerDbUrl = WebServerUrl + "/api/auth";
 		
-		 static public Dictionary<string,Item> itemList = new Dictionary<string,Item>()
+		 static public Dictionary<string,Item> ItemList = new Dictionary<string,Item>()
         {
             //Helmets
         { "None(Head)",new Equipment("None(Head)", ItemType.HELM, new Stats(0, 0, 0, 0, 0, 0, 0))},

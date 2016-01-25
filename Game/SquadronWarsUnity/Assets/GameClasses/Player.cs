@@ -1,12 +1,10 @@
 using System;
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using UnityEngine;
+
 //using SquadronWars2.Game.SquadronWarsUnity.Repo;
 
-namespace SquadronWars2
+namespace Assets.GameClasses
 {
     public class Player : MonoBehaviour
     {

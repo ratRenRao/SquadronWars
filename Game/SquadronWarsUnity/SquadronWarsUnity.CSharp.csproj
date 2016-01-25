@@ -82,8 +82,12 @@
     <Compile Include="Assets\GameClasses\Weaken.cs" />
     <Compile Include="Assets\Scripts\CharacterScreen.cs" />
     <Compile Include="Assets\Scripts\CreateUnitList.cs" />
+    <Compile Include="Assets\Scripts\LoginButton.cs" />
+    <Compile Include="Assets\Scripts\LoginScreenManager.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\SampleButton.cs" />
+    <Compile Include="Assets\Scripts\SetLoginPassword.cs" />
+    <Compile Include="Assets\Scripts\SetLoginUsername.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\obj\Debug\SquadronWars.csproj.FileListAbsolute.txt" />
