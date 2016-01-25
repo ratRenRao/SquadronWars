@@ -17,10 +17,10 @@ define("commonpath", srcpath.DIRECTORY_SEPARATOR.'Common');
 
 //Switch between Dev Environment and production
 //dev
-require_once srcpath.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'dev.php';
+//require_once srcpath.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'dev.php';
 
 //prod
-//require_once srcpath.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'prod.php';
+require_once srcpath.DIRECTORY_SEPARATOR.'Config'.DIRECTORY_SEPARATOR.'prod.php';
 
 
 /**
