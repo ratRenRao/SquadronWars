@@ -27,6 +27,10 @@ interface IDBStructure
 
     public function createPlayer($email);
 
+    public function updatePlayer($playerObject);
+
+    public function updateCharacter($playerID, $characterObject);
+
     //will need to decide how/if we will use this
     //public function createSquad();
 
