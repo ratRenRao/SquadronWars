@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.UI;
 //using SquadronWars2.Game.SquadronWarsUnity.Repo;
 
 namespace Assets.GameClasses
@@ -15,6 +16,7 @@ namespace Assets.GameClasses
         public int characterListId { get; set; }
         public string characterName { get; set; }
         public Dictionary<ItemType, Item> equipment = new Dictionary<ItemType, Item>();
+        public Dictionary<string, int> skillList = new Dictionary<string, int>();
         public int level { get; set; }
         public int experience { get; set; }
         public int statPoints { get; set; }
@@ -74,6 +76,7 @@ namespace Assets.GameClasses
             return Convert.ToInt32(percentComplete);
         }
 
+        
         /*public async Task UpdateCharacterFromDb()
         {
             await dbConnection.ExecuteApiCall(GlobalConstants.squadDbUrl);

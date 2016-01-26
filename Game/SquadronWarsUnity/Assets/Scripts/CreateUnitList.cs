@@ -92,13 +92,15 @@ namespace Assets.Scripts
             characters.Add(new Character(1, stat6, 1, "Arnold", 25, 30000, equipment5));
             foreach (Character character in characters)
             {
+                character.statPoints = 10;
+                character.skillPoints = 1;
                 character.alteredStats = new Stats(0, 0, 0, 0, 0, 0, 0);
                 character.alteredStats = GetBonusStats(character);
                 GameObject newButton = Instantiate(sampleButton) as GameObject;
                 SampleButton tempButton = newButton.GetComponent<SampleButton>();
                 tempButton.nameLabel.text = character.characterName;
                 tempButton.character = character;
-                newButton.transform.SetParent(contentPanel);
+                newButton.transform.SetParent(contentPanel, false);
 
             }
         }

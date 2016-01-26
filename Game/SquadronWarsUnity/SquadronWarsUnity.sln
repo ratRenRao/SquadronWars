@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquadronWarsUnity.CSharp", "SquadronWarsUnity.CSharp.csproj", "{0565BD3E-15DF-A96C-2DD7-2EEC43F1DC77}"
 EndProject
+Project("{33504F0A-241C-2C2A-42EB-713EED99109A}") = "SquadronWarsUnity", "Assembly-CSharp-Editor.csproj", "{8A7ECADC-5FC6-D6F1-AA2F-BD66522C52A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{0565BD3E-15DF-A96C-2DD7-2EEC43F1DC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0565BD3E-15DF-A96C-2DD7-2EEC43F1DC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0565BD3E-15DF-A96C-2DD7-2EEC43F1DC77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A7ECADC-5FC6-D6F1-AA2F-BD66522C52A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A7ECADC-5FC6-D6F1-AA2F-BD66522C52A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A7ECADC-5FC6-D6F1-AA2F-BD66522C52A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A7ECADC-5FC6-D6F1-AA2F-BD66522C52A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
