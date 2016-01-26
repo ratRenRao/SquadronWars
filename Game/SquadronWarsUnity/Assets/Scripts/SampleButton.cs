@@ -1,5 +1,6 @@
 using UnityEngine;
-using SquadronWars2;
+using Assets.GameClasses;
+using Assets.Scripts;
 using UnityEngine.UI;
 using System.Collections;
 using System;
@@ -51,7 +52,7 @@ public class SampleButton : MonoBehaviour
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         character = stats.sampleButton.character;
         string itemName = labelText.text;        
-        Equipment item = (Equipment)GlobalConstants.itemList[itemName];
+        Equipment item = (Equipment)GlobalConstants.ItemList[itemName];
         Equipment prevItem = null;
         foreach(Equipment charEquipment in character.equipment.Values)
         {
@@ -162,7 +163,7 @@ public class SampleButton : MonoBehaviour
         dropdowns.glovesSlot.options.Clear();
         dropdowns.legsSlot.options.Clear();
         dropdowns.bootsSlot.options.Clear();
-        foreach(Item item in GlobalConstants.itemList.Values)
+        foreach(Item item in GlobalConstants.ItemList.Values)
         {
             if (item.itemType == ItemType.HELM)
             {

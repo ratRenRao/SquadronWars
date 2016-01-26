@@ -7,6 +7,8 @@ namespace Assets.Scripts
         public Image characterSprite;
         public SampleButton sampleButton;
         public Text characterName;
+        public Text remainingStatPoints;
+        public Text remainingSkillPoints;
         public Text strengthStat;
         public Text agilityStat;
         public Text intelligenceStat;
@@ -26,6 +28,18 @@ namespace Assets.Scripts
         public Text criticalRateStat;
         public Text levelStat;
         public Text experienceStat;
+        public Text fireLvl;
+        public Text cureLvl;
+        public Text bashLvl;
+        public Text focusLvl;
+        public Text hasteLvl;
+        public Text regenLvl;
+        public Text bioLvl;
+        public Text iceLvl;
+        public Text flameStrikeLvl;
+        public Text armorBreakLvl;
+        public Text chargeLvl;
+        public Text doubleAttackLvl;
         public Slider ProgressBar;
         public Dropdown helmSlot;
         public Dropdown shoulderSlot;
