@@ -9,8 +9,8 @@ namespace Assets.GameClasses
     public class Player : MonoBehaviour
     {
         //DbConnection dbConnection = new DbConnection();
-        private string username { get; set; } // remove and create LoginChange class for changes
-        private string password { get; set; } // remove and create LoginChange class for changes
+        public string username { get; set; } // remove and create LoginChange class for changes
+        public string password { get; set; } // remove and create LoginChange class for changes
         private string firstName { get; set; }
         private string lastName { get; set; }
         private string email { get; set; }

@@ -2,16 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Assets.GameClasses;
-using UnityEngine.Experimental.Networking;
+using System.Reflection;
 using UnityEngine;
 
 namespace Assets.Data
 {
-    class DbConnection : MonoBehaviour
+    public class DbConnection : MonoBehaviour
     {
-
         public static bool ResponseError = false;
 
         public T PopulateObjectFromDb<T>(string url)
@@ -23,7 +20,8 @@ namespace Assets.Data
 
         private Dictionary<string, string> CreatePropertyDictionary<T>(Type type)
         {
-            return type.GetProperties().Where(attribute => !string.IsNullOrEmpty(attribute.ToString()))
+            return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
+                .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()))
                 .ToDictionary(attribute => attribute.Name, attribute => attribute.ToString());
         }
 
@@ -48,13 +46,13 @@ namespace Assets.Data
         private string ExecuteApiCall(string url, Dictionary<string, string> parameters)
         {
             var form = new WWWForm();
-
             foreach (var param in parameters)
                 form.AddField(param.Key, param.Value);
 
             var www = new WWW(url, form);
             var response = StartCoroutine(WaitForRequest(www));
 
+            Debug.Log(response.ToString());
             return response.ToString();
         }
 
@@ -116,6 +114,5 @@ namespace Assets.Data
         {
             //TODO: Code for updating a squad.
         }*/
-
     }
 }

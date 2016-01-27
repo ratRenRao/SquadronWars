@@ -88,8 +88,25 @@
     <Compile Include="Assets\Scripts\SampleButton.cs" />
     <Compile Include="Assets\Scripts\SetLoginPassword.cs" />
     <Compile Include="Assets\Scripts\SetLoginUsername.cs" />
+    <Compile Include="Assets\Scripts\Tile.cs" />
+    <Compile Include="Assets\Scripts\TileMap.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledInitialShaderProperties.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Imported\battlemap.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\License.txt" />
+    <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Meshes\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
+    <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
+    <None Include="Assets\TiledMaps\rules.txt" />
     <None Include="Assets\obj\Debug\SquadronWars.csproj.FileListAbsolute.txt" />
     <None Include="Assets\obj\x86\Debug\SquadronWars.csproj.FileListAbsolute.txt" />
   </ItemGroup>
