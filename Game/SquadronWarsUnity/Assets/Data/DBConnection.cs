@@ -1,21 +1,75 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using UnityEngine.Experimental.Networking;
-using SquadronWars2;
+using System.Reflection;
+using UnityEngine;
 
 namespace Assets.Data
 {
-    class DBConnection
+    public class DbConnection : MonoBehaviour
     {
+        public static bool ResponseError = false;
+
+        public T PopulateObjectFromDb<T>(string url)
+        {
+            var parameters = CreatePropertyDictionary<T>(typeof(T));
+            var response = ExecuteApiCall(url, parameters);
+            return DeserializeData<T>(response);
+        }
+
+        private Dictionary<string, string> CreatePropertyDictionary<T>(Type type)
+        {
+            return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
+                .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()))
+                .ToDictionary(attribute => attribute.Name, attribute => attribute.ToString());
+        }
+
+        public string PushDataToDb(string url, Dictionary<string, string> parameters)
+        {
+            return ExecuteApiCall(url, parameters);
+        }
+
+        private IEnumerator WaitForRequest(WWW www)
+        {
+            yield return www;
+
+            if (www.error == null)
+            {
+                Debug.Log("Success : " + www.text);
+            }
+            else {
+                Debug.Log("Error: " + www.error);
+            }
+        }
+
+        private string ExecuteApiCall(string url, Dictionary<string, string> parameters)
+        {
+            var form = new WWWForm();
+            foreach (var param in parameters)
+                form.AddField(param.Key, param.Value);
+
+            var www = new WWW(url, form);
+            var response = StartCoroutine(WaitForRequest(www));
+
+            Debug.Log(response.ToString());
+            return response.ToString();
+        }
+
+        private T DeserializeData<T>(string data)
+        {
+            var obj = JsonUtility.FromJson<T>(data);
+            return obj;
+        }
+
+        /*
         //Asynch web request in UnityEngines framework.
         private UnityWebRequest request;
         private DownloadHandler download;
         private UploadHandler upload;
 
         //May change constructor
-        public DBConnection()
+        public DbConnection()
         {
             request = new UnityWebRequest();
             request.uploadHandler = upload;
@@ -26,7 +80,7 @@ namespace Assets.Data
         //public calls to send and receive with web API
         public void LoginPlayer(string username, string password)
         {
-            request.url = GlobalConstants.playerDbUrl;
+            request.url = GlobalConstants.PlayerDbUrl;
             
             //TODO: create log in calls to API will need to change the return type to what we want to return to the client
         }
@@ -59,9 +113,6 @@ namespace Assets.Data
         public void UpdateSquad(string username, string password, Squad squad)
         {
             //TODO: Code for updating a squad.
-        }
-
-
-
+        }*/
     }
 }

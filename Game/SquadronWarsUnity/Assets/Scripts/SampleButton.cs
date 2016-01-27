@@ -1,5 +1,6 @@
 using UnityEngine;
-using SquadronWars2;
+using Assets.GameClasses;
+using Assets.Scripts;
 using UnityEngine.UI;
 using System.Collections;
 using System;
@@ -11,6 +12,7 @@ public class SampleButton : MonoBehaviour
     public Button button;
     public Character character;
     public Text nameLabel;
+    public CharacterScreen menuStats;
 
     public void BuildCharacterScreen()
     {        
@@ -38,6 +40,7 @@ public class SampleButton : MonoBehaviour
         Debug.Log(character.equipment[ItemType.HELM].name);
         Debug.Log(character.baseStats.intelligence);
         BuildDropdowns(stats);
+        EvaluateSkills();
     }
 
     public void ReevaluateStats(Text labelText)
@@ -49,7 +52,7 @@ public class SampleButton : MonoBehaviour
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         character = stats.sampleButton.character;
         string itemName = labelText.text;        
-        Equipment item = (Equipment)GlobalConstants.itemList[itemName];
+        Equipment item = (Equipment)GlobalConstants.ItemList[itemName];
         Equipment prevItem = null;
         foreach(Equipment charEquipment in character.equipment.Values)
         {
@@ -90,6 +93,8 @@ public class SampleButton : MonoBehaviour
         menuStats.hitRateStat.text = concatStats.calculateHitRate(character.level).ToString();
         menuStats.dodgeRateStat.text = concatStats.calculateDodgeRate(character.level).ToString();
         menuStats.criticalRateStat.text = concatStats.calculateCritRate(character.level).ToString();
+        menuStats.remainingStatPoints.text = character.statPoints.ToString();
+        menuStats.remainingSkillPoints.text = character.skillPoints.ToString();
     }
 
     
@@ -104,6 +109,51 @@ public class SampleButton : MonoBehaviour
             return string.Format("{0} + {1}", stats.ToString(), bonusStats.ToString());
         }
     }
+
+    public void incrementStat(string stat)
+    {
+        GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
+        GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
+        SampleButton button = gameObject.GetComponent<SampleButton>();
+        MenuManager menu = menuManager.GetComponent<MenuManager>();
+        CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
+        character = stats.sampleButton.character;
+        if (character.statPoints > 0)
+        {
+            if (stat.Equals("strength"))
+            {
+                character.baseStats.strength++;                
+            }
+            if (stat.Equals("agility"))
+            {
+                character.baseStats.agility++;
+            }
+            if (stat.Equals("intelligence"))
+            {
+                character.baseStats.intelligence++;
+            }
+            if (stat.Equals("vitality"))
+            {
+                character.baseStats.vitality++;
+            }
+            if (stat.Equals("dexterity"))
+            {
+                character.baseStats.dexterity++;
+            }
+            if (stat.Equals("wisdom"))
+            {
+                character.baseStats.wisdom++;
+            }
+            if (stat.Equals("luck"))
+            {
+                character.baseStats.luck++;
+            }
+            character.statPoints--;
+            UpdateStats(character);
+
+        }
+    }
+
     public void BuildDropdowns(CharacterScreen dropdowns)
     {
         Debug.Log("called");
@@ -113,7 +163,7 @@ public class SampleButton : MonoBehaviour
         dropdowns.glovesSlot.options.Clear();
         dropdowns.legsSlot.options.Clear();
         dropdowns.bootsSlot.options.Clear();
-        foreach(Item item in GlobalConstants.itemList.Values)
+        foreach(Item item in GlobalConstants.ItemList.Values)
         {
             if (item.itemType == ItemType.HELM)
             {
@@ -154,5 +204,91 @@ public class SampleButton : MonoBehaviour
 
     }
 
-    
+    public void LevelSkill(string skill)
+    {
+        GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
+        GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
+        SampleButton button = gameObject.GetComponent<SampleButton>();
+        MenuManager menu = menuManager.GetComponent<MenuManager>();
+        CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
+        character = stats.sampleButton.character;
+        if (character.skillPoints > 0)
+        {
+            if (character.skillList.ContainsKey(skill))
+            {
+                character.skillList[skill]++;
+            }
+            else
+            {
+                character.skillList.Add(skill, 1);
+            }
+            if (skill.Equals("fire"))
+            {                                
+                stats.fireLvl.text = "L" + character.skillList[skill];
+            }
+            if (skill.Equals("cure"))
+            {
+                stats.cureLvl.text = "L" + character.skillList[skill];
+            }
+            if (skill.Equals("focus"))
+            {
+                stats.focusLvl.text = "L" + character.skillList[skill];
+            }
+            if (skill.Equals("bash"))
+            {
+                stats.bashLvl.text = "L" + character.skillList[skill];
+            }
+            character.skillPoints--;
+            UpdateStats(character);
+
+        }
+    }
+
+    public void EvaluateSkills()
+    {
+        GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
+        GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
+        SampleButton button = gameObject.GetComponent<SampleButton>();
+        MenuManager menu = menuManager.GetComponent<MenuManager>();
+        CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
+        character = stats.sampleButton.character;
+        if (character.skillList.ContainsKey("fire")){
+            stats.fireLvl.text = "L" + character.skillList["fire"].ToString();
+        }
+        else {
+            stats.fireLvl.text = "";
+        }
+        if (character.skillList.ContainsKey("bash"))
+        {
+            stats.bashLvl.text = "L" + character.skillList["bash"].ToString();
+        }
+        else
+        {
+            stats.bashLvl.text = "";
+        }
+        if (character.skillList.ContainsKey("cure"))
+        {
+            stats.cureLvl.text = "L" + character.skillList["cure"].ToString();
+        }
+        else
+        {
+            stats.cureLvl.text = "";
+        }
+        if (character.skillList.ContainsKey("focus"))
+        {
+            stats.focusLvl.text = "L" + character.skillList["focus"].ToString();
+        }
+        else
+        {
+            stats.focusLvl.text = "";
+        }
+        stats.hasteLvl.text = "";
+        stats.regenLvl.text = "";
+        stats.bioLvl.text = "";
+        stats.iceLvl.text = "";
+        stats.flameStrikeLvl.text = "";
+        stats.armorBreakLvl.text = "";
+        stats.chargeLvl.text = "";
+        stats.doubleAttackLvl.text = "";
+    }
 }
