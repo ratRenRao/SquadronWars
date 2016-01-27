@@ -1,18 +1,16 @@
 using System;
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using UnityEngine;
+
 //using SquadronWars2.Game.SquadronWarsUnity.Repo;
 
-namespace SquadronWars2
+namespace Assets.GameClasses
 {
     public class Player : MonoBehaviour
     {
         //DbConnection dbConnection = new DbConnection();
-        private string username { get; set; } // remove and create LoginChange class for changes
-        private string password { get; set; } // remove and create LoginChange class for changes
+        public string username { get; set; } // remove and create LoginChange class for changes
+        public string password { get; set; } // remove and create LoginChange class for changes
         private string firstName { get; set; }
         private string lastName { get; set; }
         private string email { get; set; }

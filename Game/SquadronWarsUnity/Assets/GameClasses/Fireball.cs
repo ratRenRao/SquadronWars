@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-namespace SquadronWars2
+namespace Assets.GameClasses
 {
     class Fireball : Effect, IEffectable
     {

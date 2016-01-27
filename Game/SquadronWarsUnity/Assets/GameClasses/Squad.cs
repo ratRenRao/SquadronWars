@@ -1,10 +1,8 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 //using SquadronWars2.Game.SquadronWarsUnity.Repo;
 
-namespace SquadronWars2
+namespace Assets.GameClasses
 {
     class Squad
     {

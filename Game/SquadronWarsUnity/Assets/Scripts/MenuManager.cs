@@ -1,26 +1,27 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class MenuManager : MonoBehaviour
+namespace Assets.Scripts
 {
-
-    public int menuID = 0;
-    public GameObject[] menuPanels;
-    public GameObject loginPanel;
-    public GameObject mainMenuPanel;
-    public GameObject homePanel;
-    public GameObject squadPanel;
-    public GameObject squadScreenPanel;
-    public GameObject characterList;
-    public GameObject characterScreenPanel;
-    public GameObject shopPanel;
-    public GameObject shop;
-    // Use this for initialization
-    void Start()
+    public class MenuManager : MonoBehaviour
     {
-        menuPanels = GameObject.FindGameObjectsWithTag("MenuPanel");
 
-        /*mainMenuPanel = GameObject.Find("HomeScreen");
+        public int menuID = 0;
+        public GameObject[] menuPanels;
+        public GameObject loginPanel;
+        public GameObject mainMenuPanel;
+        public GameObject homePanel;
+        public GameObject squadPanel;
+        public GameObject squadScreenPanel;
+        public GameObject characterList;
+        public GameObject characterScreenPanel;
+        public GameObject shopPanel;
+        public GameObject shop;
+        // Use this for initialization
+        void Start()
+        {
+            menuPanels = GameObject.FindGameObjectsWithTag("MenuPanel");
+
+            /*mainMenuPanel = GameObject.Find("HomeScreen");
         loginPanel = GameObject.Find("LoginScreen");
         homePanel = GameObject.Find("HomePanel");
         squadPanel = GameObject.Find("SquadPanel");
@@ -29,24 +30,25 @@ public class MenuManager : MonoBehaviour
         shop = GameObject.Find("Shop");
         shopPanel = GameObject.Find("ShopPanel");
         characterList = GameObject.Find("CharacterList");*/
-        setup();
-    }
+            setup();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Update is called once per frame
+        void Update()
+        {
 
-    }
+        }
 
-    void setup()
-    {
-        //loginPanel.SetActive(false);
-        mainMenuPanel.SetActive(false);
-        //homePanel.SetActive(false);
-        squadPanel.SetActive(false);
-        characterScreenPanel.SetActive(false);
-        shopPanel.SetActive(false);
-    }
+        void setup()
+        {
+            //loginPanel.SetActive(false);
+            mainMenuPanel.SetActive(false);
+            //homePanel.SetActive(false);
+            squadPanel.SetActive(false);
+            characterScreenPanel.SetActive(false);
+            shopPanel.SetActive(false);
+        }
 
    
+    }
 }

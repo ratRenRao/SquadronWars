@@ -1,9 +1,11 @@
 using System;
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
+
+using UnityEngine.UI;
 //using SquadronWars2.Game.SquadronWarsUnity.Repo;
 
-namespace SquadronWars2
+namespace Assets.GameClasses
 {
     public class Character : MonoBehaviour
     {
@@ -14,6 +16,7 @@ namespace SquadronWars2
         public int characterListId { get; set; }
         public string characterName { get; set; }
         public Dictionary<ItemType, Item> equipment = new Dictionary<ItemType, Item>();
+        public Dictionary<string, int> skillList = new Dictionary<string, int>();
         public int level { get; set; }
         public int experience { get; set; }
         public int statPoints { get; set; }
@@ -73,6 +76,7 @@ namespace SquadronWars2
             return Convert.ToInt32(percentComplete);
         }
 
+        
         /*public async Task UpdateCharacterFromDb()
         {
             await dbConnection.ExecuteApiCall(GlobalConstants.squadDbUrl);
