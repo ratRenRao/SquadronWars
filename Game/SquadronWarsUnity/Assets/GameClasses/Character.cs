@@ -1,15 +1,13 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
-using UnityEngine.UI;
 //using SquadronWars2.Game.SquadronWarsUnity.Repo;
 
 namespace Assets.GameClasses
 {
     public class Character : MonoBehaviour
     {
-        //DbConnection dbConnection = new DbConnection();
+        //DBConnection dbConnection = new DBConnection();
         public int characterId { get; set; }
         public Stats baseStats { get; set; }
         public Stats alteredStats { get; set; }

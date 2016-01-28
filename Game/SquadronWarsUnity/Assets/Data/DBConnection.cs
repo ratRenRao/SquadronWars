@@ -7,14 +7,14 @@ using UnityEngine;
 
 namespace Assets.Data
 {
-    public class DbConnection : MonoBehaviour
+    public class DBConnection : MonoBehaviour
     {
         public static bool ResponseError = false;
 
         public T PopulateObjectFromDb<T>(string url)
         {
             var parameters = CreatePropertyDictionary<T>(typeof(T));
-            var response = ExecuteApiCall(url, parameters);
+            var response = ExecuteApiCall(url, PopulateParameters(parameters));
             return DeserializeData<T>(response);
         }
 
@@ -25,10 +25,10 @@ namespace Assets.Data
                 .ToDictionary(attribute => attribute.Name, attribute => attribute.ToString());
         }
 
-        public string PushDataToDb(string url, Dictionary<string, string> parameters)
+        /*public string PushDataToDb(string url, Dictionary<string, string> parameters)
         {
             return ExecuteApiCall(url, parameters);
-        }
+        }*/
 
         private IEnumerator WaitForRequest(WWW www)
         {
@@ -43,17 +43,23 @@ namespace Assets.Data
             }
         }
 
-        private string ExecuteApiCall(string url, Dictionary<string, string> parameters)
+        private string ExecuteApiCall(string url, WWWForm form)
         {
-            var form = new WWWForm();
-            foreach (var param in parameters)
-                form.AddField(param.Key, param.Value);
-
             var www = new WWW(url, form);
             var response = StartCoroutine(WaitForRequest(www));
 
             Debug.Log(response.ToString());
             return response.ToString();
+        }
+
+        private WWWForm PopulateParameters(Dictionary<string, string> parameters)
+        {
+            var form = new WWWForm();
+
+            foreach (var param in parameters)
+                form.AddField(param.Key, param.Value);
+
+            return form;
         }
 
         private T DeserializeData<T>(string data)
@@ -69,7 +75,7 @@ namespace Assets.Data
         private UploadHandler upload;
 
         //May change constructor
-        public DbConnection()
+        public DBConnection()
         {
             request = new UnityWebRequest();
             request.uploadHandler = upload;

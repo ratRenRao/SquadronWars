@@ -1,6 +1,6 @@
-﻿using Assets.GameClasses;
+﻿using Assets.Data;
+using Assets.GameClasses;
 using UnityEngine;
-using DbConnection = Assets.Data.DbConnection;
 
 namespace Assets.Scripts
 {
@@ -9,7 +9,7 @@ namespace Assets.Scripts
 
         public string Username { get; set; }
         public string Password { get; set; }
-        private static DbConnection _dbConnection;
+        private static DBConnection _dbConnection;
         private Player _player;
 
         // Use this for initialization
@@ -40,8 +40,8 @@ namespace Assets.Scripts
 
         private void SetDbConnection()
         {
-            gameObject.AddComponent<DbConnection>();
-            _dbConnection = gameObject.GetComponent<DbConnection>();
+            gameObject.AddComponent<DBConnection>();
+            _dbConnection = gameObject.GetComponent<DBConnection>();
         }
     }
 }

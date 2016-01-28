@@ -6,9 +6,10 @@ using UnityEngine;
 
 namespace Assets.GameClasses
 {
+    [Serializable]
     public class Player : MonoBehaviour
     {
-        //DbConnection dbConnection = new DbConnection();
+        //DBConnection dbConnection = new DBConnection();
         public string username { get; set; } // remove and create LoginChange class for changes
         public string password { get; set; } // remove and create LoginChange class for changes
         private string firstName { get; set; }
