@@ -6,7 +6,7 @@ namespace Assets.GameClasses
 {
     class Squad
     {
-        //DbConnection dbConnection = new DbConnection();
+        //DBConnection dbConnection = new DBConnection();
 
         private int squadId { get; set; }
         private string squadDetails { get; set; }
