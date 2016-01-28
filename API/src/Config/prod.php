@@ -9,6 +9,6 @@
 // Define Production Specific Configurations here
 
 //create Username and password handle for production environment. will need to store file where it cannot be read.
-//$credentials = json_decode(file_get_contents(json encoded file path here));
+$credentials = json_decode(file_get_contents(basedir.DIRECTORY_SEPARATOR.'devconfiginfo.json'));
 define("dbuser", $credentials->{"username"});
 define("dbpass", $credentials->{"password"});
