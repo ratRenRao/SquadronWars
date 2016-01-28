@@ -4,7 +4,7 @@ namespace Assets.GameClasses
 {
     static public class GlobalConstants
     {
-        public static string WebServerUrl = "HTTP://squadronwars.ddns.net";
+        public static string WebServerUrl = "http://squadronwars.ddns.net";
         public static string SquadDbUrl = WebServerUrl + "temp/temp";
         public static string CharacterDbUrl = WebServerUrl + "/api/getchars";
         public static string PlayerDbUrl = WebServerUrl + "/api/auth";

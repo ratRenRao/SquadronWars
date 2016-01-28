@@ -10,7 +10,7 @@ namespace Assets.Scripts
         public string Username { get; set; }
         public string Password { get; set; }
         private static DBConnection _dbConnection;
-        private Player _player;
+        private static Player _player = new Player();
 
         // Use this for initialization
         void Start()
@@ -34,8 +34,16 @@ namespace Assets.Scripts
         public bool ValidateLogins()
         {
             SetDbConnection();
-            _player = _dbConnection.PopulateObjectFromDb<Player>(GlobalConstants.PlayerDbUrl);
+            SetLoginInfo();
+            
+            _player = _dbConnection.PopulateObjectFromDb<Player>(GlobalConstants.PlayerDbUrl, _player);
             return false;
+        }
+
+        private void SetLoginInfo()
+        {
+            _player.username = Username;
+            _player.password = Password;
         }
 
         private void SetDbConnection()

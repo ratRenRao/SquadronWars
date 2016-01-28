@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 using UnityEngine;
 
 namespace Assets.Data
@@ -10,19 +12,40 @@ namespace Assets.Data
     public class DBConnection : MonoBehaviour
     {
         public static bool ResponseError = false;
+        private WWW www = null;
+        //private string response = null; 
 
-        public T PopulateObjectFromDb<T>(string url)
+        public T PopulateObjectFromDb<T>(string url, T obj)
         {
-            var parameters = CreatePropertyDictionary<T>(typeof(T));
+            var parameters = CreateGetPropertyDictionary(obj);
             var response = ExecuteApiCall(url, PopulateParameters(parameters));
             return DeserializeData<T>(response);
         }
 
-        private Dictionary<string, string> CreatePropertyDictionary<T>(Type type)
+        /// <summary>
+        /// Creates a dictionary of string objects containing only public parameters of the 
+        /// object passed in, and their corresponding values.
+        /// </summary>
+        /// <param name="obj">Object to create param dictionary from</param>
+        /// <returns>Dictionary&ltstring, string&gt</returns>
+        private Dictionary<string, string> CreateGetPropertyDictionary<T>(T obj)
         {
-            return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
+            return obj.GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
                 .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()))
-                .ToDictionary(attribute => attribute.Name, attribute => attribute.ToString());
+                .ToDictionary(attribute => attribute.Name, attribute => obj.GetType().GetProperty(attribute.Name).GetValue(obj, null).ToString());
+        }
+
+        /// <summary>
+        /// Creates a dictionary of string objects containing all parameters of the
+        /// object passed in, and their corresponding values. 
+        /// </summary>
+        /// <param name="obj">Object to create the param dictionary from</param>
+        /// <returns>Dictionary&ltstring, string$gt</returns>
+        private Dictionary<string, string> CreatePostPropertyDictionary<T>(T obj)
+        {
+            return obj.GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
+                .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()))
+                .ToDictionary(attribute => attribute.Name, attribute => obj.GetType().GetProperty(attribute.Name).ToString());
         }
 
         /*public string PushDataToDb(string url, Dictionary<string, string> parameters)
@@ -30,27 +53,19 @@ namespace Assets.Data
             return ExecuteApiCall(url, parameters);
         }*/
 
-        private IEnumerator WaitForRequest(WWW www)
-        {
-            yield return www;
-
-            if (www.error == null)
-            {
-                Debug.Log("Success : " + www.text);
-            }
-            else {
-                Debug.Log("Error: " + www.error);
-            }
-        }
-
         private string ExecuteApiCall(string url, WWWForm form)
         {
-            var www = new WWW(url, form);
-            var response = StartCoroutine(WaitForRequest(www));
-
-            Debug.Log(response.ToString());
-            return response.ToString();
+            www = new WWW(url, form);
+            StartCoroutine(WaitForRequest()); 
+            return www.text;
         }
+
+        /*
+        private IEnumerator CoroutineWaitFunction(WWW request)
+        {
+            yield return StartCoroutine(WaitForRequest(request));
+        }
+        */
 
         private WWWForm PopulateParameters(Dictionary<string, string> parameters)
         {
@@ -60,6 +75,21 @@ namespace Assets.Data
                 form.AddField(param.Key, param.Value);
 
             return form;
+        }
+
+        private IEnumerator WaitForRequest()
+        {
+            yield return www;
+
+            if (www.error == null)
+            {
+                Debug.Log("API Success: " + www.text);
+                yield return www.text;
+            }
+            else {
+                Debug.Log("API Error: " + www.error);
+                yield return "ERROR";
+            }
         }
 
         private T DeserializeData<T>(string data)

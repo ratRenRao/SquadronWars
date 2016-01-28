@@ -63,7 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Data\DBConnection.cs" />
+    <Compile Include="Assets\Data\DbConnection.cs" />
     <Compile Include="Assets\GameClasses\Ablilty.cs" />
     <Compile Include="Assets\GameClasses\Burn.cs" />
     <Compile Include="Assets\GameClasses\Character.cs" />

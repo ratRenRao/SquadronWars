@@ -19,8 +19,8 @@ namespace Assets.GameClasses
         private Squad squad { get; set; }
         private List<Item> itemList { get; set; }
 
-        public Player(string username, string password, string firstName, string lastName, string email,
-            DateTime? lastLogin, int itemListId, int squadListId)
+        public Player(string username = null,  string password = null, string firstName = null, string lastName = null, string email = null,
+            DateTime? lastLogin = null, int? itemListId = null, int? squadListId = null)
         {
             this.username = username;
             this.password = password;
