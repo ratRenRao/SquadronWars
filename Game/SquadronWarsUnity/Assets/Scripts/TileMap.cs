@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
 
-namespace Assets.Scripts {
+namespace Assets.Scripts
+{
     public class TileMap : MonoBehaviour
     {
 

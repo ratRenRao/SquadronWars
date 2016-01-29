@@ -4,7 +4,8 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using Assets.GameClasses;
 
-namespace Assets.Scripts {
+namespace Assets.Scripts
+{
     public class GameController : MonoBehaviour
     {
         public enum Action
