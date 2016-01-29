@@ -85,25 +85,22 @@
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
      <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
+     <None Include="Assets\Tiled2Unity\Imported\BattleMapLava.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Imported\battlemap.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Imported\testmap.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
+     <None Include="Assets\Tiled2Unity\Imported\BattleMapForest.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\License.txt" />
      <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
+     <None Include="Assets\Tiled2Unity\Imported\BattleMapDesert.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Meshes\_ReadMe.txt" />
      <None Include="Assets\TiledMaps\rules.txt" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
