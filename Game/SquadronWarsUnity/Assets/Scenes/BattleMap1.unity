@@ -693,47 +693,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!1001 &1304348892
+--- !u!1001 &1442882654
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 402958, guid: 1b688e89d59e2fe47852ad225aad8ee3, type: 2}
+    - target: {fileID: 474214, guid: 70ecf3a4517391f4d985687f0aacdce1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 35.7830658
+      value: 35.482338
       objectReference: {fileID: 0}
-    - target: {fileID: 402958, guid: 1b688e89d59e2fe47852ad225aad8ee3, type: 2}
+    - target: {fileID: 474214, guid: 70ecf3a4517391f4d985687f0aacdce1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -11.290143
+      value: -10.9034929
       objectReference: {fileID: 0}
-    - target: {fileID: 402958, guid: 1b688e89d59e2fe47852ad225aad8ee3, type: 2}
+    - target: {fileID: 474214, guid: 70ecf3a4517391f4d985687f0aacdce1, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 402958, guid: 1b688e89d59e2fe47852ad225aad8ee3, type: 2}
+    - target: {fileID: 474214, guid: 70ecf3a4517391f4d985687f0aacdce1, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 402958, guid: 1b688e89d59e2fe47852ad225aad8ee3, type: 2}
+    - target: {fileID: 474214, guid: 70ecf3a4517391f4d985687f0aacdce1, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 402958, guid: 1b688e89d59e2fe47852ad225aad8ee3, type: 2}
+    - target: {fileID: 474214, guid: 70ecf3a4517391f4d985687f0aacdce1, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 402958, guid: 1b688e89d59e2fe47852ad225aad8ee3, type: 2}
+    - target: {fileID: 474214, guid: 70ecf3a4517391f4d985687f0aacdce1, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 402958, guid: 1b688e89d59e2fe47852ad225aad8ee3, type: 2}
+    - target: {fileID: 474214, guid: 70ecf3a4517391f4d985687f0aacdce1, type: 2}
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 138242, guid: 70ecf3a4517391f4d985687f0aacdce1, type: 2}
+      propertyPath: m_Name
+      value: Fire Attack Ser Lance_0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 1b688e89d59e2fe47852ad225aad8ee3, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 70ecf3a4517391f4d985687f0aacdce1, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1593291454
 Prefab:
