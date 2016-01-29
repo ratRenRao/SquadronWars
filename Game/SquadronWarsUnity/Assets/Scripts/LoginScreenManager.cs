@@ -1,6 +1,7 @@
 ﻿using Assets.Data;
 using Assets.GameClasses;
 using UnityEngine;
+using Object = System.Object;
 
 namespace Assets.Scripts
 {
@@ -9,8 +10,9 @@ namespace Assets.Scripts
 
         public string Username { get; set; }
         public string Password { get; set; }
-        private static DBConnection _dbConnection;
-        private static Player _player = new Player();
+        private static DbConnection _dbConnection;
+        private static Player _player;
+        private static Player.Logins _logins = new Player.Logins();
 
         // Use this for initialization
         void Start()
@@ -26,9 +28,7 @@ namespace Assets.Scripts
 
         public void UpdateLogins()
         {
-            // 
-            Debug.Log(Username);
-            Debug.Log(Password);
+
         }
 
         public bool ValidateLogins()
@@ -36,20 +36,26 @@ namespace Assets.Scripts
             SetDbConnection();
             SetLoginInfo();
             
-            _player = _dbConnection.PopulateObjectFromDb<Player>(GlobalConstants.PlayerDbUrl, _player);
+            _player = _dbConnection.PopulateObjectFromDb<Player>(GlobalConstants.PlayerDbUrl, _logins);
+            Debug.Log(_player.ToString());
             return false;
         }
 
         private void SetLoginInfo()
         {
-            _player.username = Username;
-            _player.password = Password;
+#if DEBUG
+            _logins.username = "test";
+            _logins.password = "testing123";
+#else
+            _logins.username = Username;
+            _logins.password = Password;
+#endif
         }
 
         private void SetDbConnection()
         {
-            gameObject.AddComponent<DBConnection>();
-            _dbConnection = gameObject.GetComponent<DBConnection>();
+            gameObject.AddComponent<DbConnection>();
+            _dbConnection = gameObject.GetComponent<DbConnection>();
         }
     }
 }

@@ -22812,6 +22812,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0eacc9539ff3e479f0b0d639f51e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  helm: 0
+  chest: 0
+  gloves: 0
+  pants: 0
+  shoulders: 0
+  boots: 0
+  accessory1: 0
+  accessory2: 0
+  IsStandard: 0
+  name: 
+  statId: 0
   sprite: {fileID: 0}
 --- !u!1 &2062297692
 GameObject:
