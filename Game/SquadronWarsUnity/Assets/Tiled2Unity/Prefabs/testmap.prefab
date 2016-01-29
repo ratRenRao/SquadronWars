@@ -1369,7 +1369,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 445408}
   - 114: {fileID: 11432220}
-  - 114: {fileID: 11406332}
   m_Layer: 0
   m_Name: testmap
   m_TagString: Untagged
@@ -2202,7 +2201,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 406338}
   - 114: {fileID: 11459098}
-  - 114: {fileID: 11429450}
   m_Layer: 0
   m_Name: tile
   m_TagString: Untagged
@@ -6917,24 +6915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca52f6306cb21524380292b8b8626a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11406332
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0619e460a775cc458d37cb4a214a189, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumTilesWide: 15
-  NumTilesHigh: 10
-  TileWidth: 32
-  TileHeight: 32
-  ExportScale: 0.1
-  MapWidthInPixels: 480
-  MapHeightInPixels: 320
 --- !u!114 &11407254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7232,19 +7212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca52f6306cb21524380292b8b8626a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11429450
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 184018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee18a3ea089d7104ca4f30a8d0268ed3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xLength: 15
-  yLength: 10
 --- !u!114 &11430642
 MonoBehaviour:
   m_ObjectHideFlags: 1
