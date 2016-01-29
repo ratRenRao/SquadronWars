@@ -1,7 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
+using UnityEngine.UI;
 
 public class TileMap : MonoBehaviour {
+
+    public enum Objective
+    {
+        Pathfinder,
+        Timed,
+        Collector
+    }
 
     List<GameObject> tiles = new List<GameObject>();
     public Tile[,] tileArray { get; set; }
@@ -25,11 +34,22 @@ public class TileMap : MonoBehaviour {
     {
         foreach (Transform child in transform)
         {
+            //if (positionY != child.localPosition.y)
+            //{
+            //    positionY = child.localPosition.y;
+            //    x = 0;
+            //    y += 1;
+            //}
             Tile tile = child.gameObject.GetComponent<Tile>();
             float floatX = Mathf.Abs((child.localPosition.x / 3.2f));
             float floatY = Mathf.Abs((child.localPosition.y / 3.2f));
+            tile.x = (int)floatX;
+            tile.y = (int)floatY;
             //tile.x = x;
             //tile.y = y;
+
+            //tiles.Add(child.gameObject);
+            Debug.Log("Tile X:" + tile.x + ", Tile Y:" + tile.y);
             tiles.Add(child.gameObject);
         }
         tileArray = new Tile[xLength, yLength];
@@ -48,4 +68,5 @@ public class TileMap : MonoBehaviour {
         }
         //Debug.Log(tiles.Count);
     }
+
 }

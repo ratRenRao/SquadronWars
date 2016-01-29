@@ -18,7 +18,8 @@ namespace Assets.GameClasses
         public int accessory1;
         public int accessory2;
         public bool IsStandard;
-
+        public int x;
+        public int y;
         //DBConnection dbConnection = new DBConnection();
         public string name;
         public int characterId { get; set; }

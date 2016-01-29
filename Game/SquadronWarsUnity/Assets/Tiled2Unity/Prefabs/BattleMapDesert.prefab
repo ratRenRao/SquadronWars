@@ -342,7 +342,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: ce2812365cee0c54a8bf116649782edf, type: 2}
+  - {fileID: 2100000, guid: 50b65f93460e1e74497035977a6d5daf, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -350,8 +350,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -366,7 +368,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9c9584b35db6074f9c58683231fa431, type: 2}
+  - {fileID: 2100000, guid: 2c5a1f7af62666d478b4ac56547ad524, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -374,8 +376,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -390,7 +394,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: e591de37d30576149ab3efba068d08e6, type: 2}
+  - {fileID: 2100000, guid: f2e7690e4ac3c3e46aec94f51dbbd0ab, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -398,8 +402,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -414,7 +420,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9c9584b35db6074f9c58683231fa431, type: 2}
+  - {fileID: 2100000, guid: 2c5a1f7af62666d478b4ac56547ad524, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -422,8 +428,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -438,7 +446,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: e591de37d30576149ab3efba068d08e6, type: 2}
+  - {fileID: 2100000, guid: f2e7690e4ac3c3e46aec94f51dbbd0ab, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -446,8 +454,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -462,7 +472,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4a966a6ebaf4c43489131cc5bb3a83f3, type: 2}
+  - {fileID: 2100000, guid: 4bf6129adf3adc341ab393b65e0975a5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -470,8 +480,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -482,42 +494,42 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102324}
-  m_Mesh: {fileID: 4300008, guid: bffc1d6a0f410b745bc7469e36b12687, type: 3}
+  m_Mesh: {fileID: 4300008, guid: 11e93b0115228dd469dbb5ac867de4f2, type: 3}
 --- !u!33 &3328510
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187092}
-  m_Mesh: {fileID: 4300004, guid: bffc1d6a0f410b745bc7469e36b12687, type: 3}
+  m_Mesh: {fileID: 4300004, guid: 11e93b0115228dd469dbb5ac867de4f2, type: 3}
 --- !u!33 &3338234
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132504}
-  m_Mesh: {fileID: 4300002, guid: bffc1d6a0f410b745bc7469e36b12687, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 11e93b0115228dd469dbb5ac867de4f2, type: 3}
 --- !u!33 &3361924
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189840}
-  m_Mesh: {fileID: 4300010, guid: bffc1d6a0f410b745bc7469e36b12687, type: 3}
+  m_Mesh: {fileID: 4300010, guid: 11e93b0115228dd469dbb5ac867de4f2, type: 3}
 --- !u!33 &3380650
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 113392}
-  m_Mesh: {fileID: 4300000, guid: bffc1d6a0f410b745bc7469e36b12687, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 11e93b0115228dd469dbb5ac867de4f2, type: 3}
 --- !u!33 &3384904
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125764}
-  m_Mesh: {fileID: 4300006, guid: bffc1d6a0f410b745bc7469e36b12687, type: 3}
+  m_Mesh: {fileID: 4300006, guid: 11e93b0115228dd469dbb5ac867de4f2, type: 3}
 --- !u!114 &11403638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -591,7 +603,7 @@ MonoBehaviour:
   NumTilesHigh: 25
   TileWidth: 16
   TileHeight: 16
-  ExportScale: .100000001
+  ExportScale: 0.1
   MapWidthInPixels: 400
   MapHeightInPixels: 400
 --- !u!114 &11461750
