@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="10" tilewidth="32" tileheight="32" nextobjectid="301">
+ <tileset firstgid="1" name="tiledmapsheet" tilewidth="32" tileheight="32" margin="20" tilecount="312" columns="26">
+  <image source="../images/tiledmapsheet.png" width="872" height="412"/>
+ </tileset>
+ <layer name="dirt" width="15" height="10" offsetx="2" offsety="0">
+  <data encoding="csv">
+100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,
+100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,
+100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,
+100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,
+100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,
+100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,
+100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,
+100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,
+100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,
+100,100,100,100,100,100,100,100,100,100,100,100,100,100,100
+</data>
+ </layer>
+ <objectgroup name="tile">
+  <object id="151" name="dirt" x="0" y="0" width="32" height="32"/>
+  <object id="152" name="dirt" x="32" y="0" width="32" height="32"/>
+  <object id="153" name="dirt" x="64" y="0" width="32" height="32"/>
+  <object id="154" name="dirt" x="96" y="0" width="32" height="32"/>
+  <object id="155" name="dirt" x="128" y="0" width="32" height="32"/>
+  <object id="156" name="dirt" x="160" y="0" width="32" height="32"/>
+  <object id="157" name="dirt" x="192" y="0" width="32" height="32"/>
+  <object id="158" name="dirt" x="224" y="0" width="32" height="32"/>
+  <object id="159" name="dirt" x="256" y="0" width="32" height="32"/>
+  <object id="160" name="dirt" x="288" y="0" width="32" height="32"/>
+  <object id="161" name="dirt" x="320" y="0" width="32" height="32"/>
+  <object id="162" name="dirt" x="352" y="0" width="32" height="32"/>
+  <object id="163" name="dirt" x="384" y="0" width="32" height="32"/>
+  <object id="164" name="dirt" x="416" y="0" width="32" height="32"/>
+  <object id="165" name="dirt" x="448" y="0" width="32" height="32"/>
+  <object id="166" name="dirt" x="0" y="32" width="32" height="32"/>
+  <object id="167" name="dirt" x="32" y="32" width="32" height="32"/>
+  <object id="168" name="dirt" x="64" y="32" width="32" height="32"/>
+  <object id="169" name="dirt" x="96" y="32" width="32" height="32"/>
+  <object id="170" name="dirt" x="128" y="32" width="32" height="32"/>
+  <object id="171" name="dirt" x="160" y="32" width="32" height="32"/>
+  <object id="172" name="dirt" x="192" y="32" width="32" height="32"/>
+  <object id="173" name="dirt" x="224" y="32" width="32" height="32"/>
+  <object id="174" name="dirt" x="256" y="32" width="32" height="32"/>
+  <object id="175" name="dirt" x="288" y="32" width="32" height="32"/>
+  <object id="176" name="dirt" x="320" y="32" width="32" height="32"/>
+  <object id="177" name="dirt" x="352" y="32" width="32" height="32"/>
+  <object id="178" name="dirt" x="384" y="32" width="32" height="32"/>
+  <object id="179" name="dirt" x="416" y="32" width="32" height="32"/>
+  <object id="180" name="dirt" x="448" y="32" width="32" height="32"/>
+  <object id="181" name="dirt" x="0" y="64" width="32" height="32"/>
+  <object id="182" name="dirt" x="32" y="64" width="32" height="32"/>
+  <object id="183" name="dirt" x="64" y="64" width="32" height="32"/>
+  <object id="184" name="dirt" x="96" y="64" width="32" height="32"/>
+  <object id="185" name="dirt" x="128" y="64" width="32" height="32"/>
+  <object id="186" name="dirt" x="160" y="64" width="32" height="32"/>
+  <object id="187" name="dirt" x="192" y="64" width="32" height="32"/>
+  <object id="188" name="dirt" x="224" y="64" width="32" height="32"/>
+  <object id="189" name="dirt" x="256" y="64" width="32" height="32"/>
+  <object id="190" name="dirt" x="288" y="64" width="32" height="32"/>
+  <object id="191" name="dirt" x="320" y="64" width="32" height="32"/>
+  <object id="192" name="dirt" x="352" y="64" width="32" height="32"/>
+  <object id="193" name="dirt" x="384" y="64" width="32" height="32"/>
+  <object id="194" name="dirt" x="416" y="64" width="32" height="32"/>
+  <object id="195" name="dirt" x="448" y="64" width="32" height="32"/>
+  <object id="196" name="dirt" x="0" y="96" width="32" height="32"/>
+  <object id="197" name="dirt" x="32" y="96" width="32" height="32"/>
+  <object id="198" name="dirt" x="64" y="96" width="32" height="32"/>
+  <object id="199" name="dirt" x="96" y="96" width="32" height="32"/>
+  <object id="200" name="dirt" x="128" y="96" width="32" height="32"/>
+  <object id="201" name="dirt" x="160" y="96" width="32" height="32"/>
+  <object id="202" name="dirt" x="192" y="96" width="32" height="32"/>
+  <object id="203" name="dirt" x="224" y="96" width="32" height="32"/>
+  <object id="204" name="dirt" x="256" y="96" width="32" height="32"/>
+  <object id="205" name="dirt" x="288" y="96" width="32" height="32"/>
+  <object id="206" name="dirt" x="320" y="96" width="32" height="32"/>
+  <object id="207" name="dirt" x="352" y="96" width="32" height="32"/>
+  <object id="208" name="dirt" x="384" y="96" width="32" height="32"/>
+  <object id="209" name="dirt" x="416" y="96" width="32" height="32"/>
+  <object id="210" name="dirt" x="448" y="96" width="32" height="32"/>
+  <object id="211" name="dirt" x="0" y="128" width="32" height="32"/>
+  <object id="212" name="dirt" x="32" y="128" width="32" height="32"/>
+  <object id="213" name="dirt" x="64" y="128" width="32" height="32"/>
+  <object id="214" name="dirt" x="96" y="128" width="32" height="32"/>
+  <object id="215" name="dirt" x="128" y="128" width="32" height="32"/>
+  <object id="216" name="dirt" x="160" y="128" width="32" height="32"/>
+  <object id="217" name="dirt" x="192" y="128" width="32" height="32"/>
+  <object id="218" name="dirt" x="224" y="128" width="32" height="32"/>
+  <object id="219" name="dirt" x="256" y="128" width="32" height="32"/>
+  <object id="220" name="dirt" x="288" y="128" width="32" height="32"/>
+  <object id="221" name="dirt" x="320" y="128" width="32" height="32"/>
+  <object id="222" name="dirt" x="352" y="128" width="32" height="32"/>
+  <object id="223" name="dirt" x="384" y="128" width="32" height="32"/>
+  <object id="224" name="dirt" x="416" y="128" width="32" height="32"/>
+  <object id="225" name="dirt" x="448" y="128" width="32" height="32"/>
+  <object id="226" name="dirt" x="0" y="160" width="32" height="32"/>
+  <object id="227" name="dirt" x="32" y="160" width="32" height="32"/>
+  <object id="228" name="dirt" x="64" y="160" width="32" height="32"/>
+  <object id="229" name="dirt" x="96" y="160" width="32" height="32"/>
+  <object id="230" name="dirt" x="128" y="160" width="32" height="32"/>
+  <object id="231" name="dirt" x="160" y="160" width="32" height="32"/>
+  <object id="232" name="dirt" x="192" y="160" width="32" height="32"/>
+  <object id="233" name="dirt" x="224" y="160" width="32" height="32"/>
+  <object id="234" name="dirt" x="256" y="160" width="32" height="32"/>
+  <object id="235" name="dirt" x="288" y="160" width="32" height="32"/>
+  <object id="236" name="dirt" x="320" y="160" width="32" height="32"/>
+  <object id="237" name="dirt" x="352" y="160" width="32" height="32"/>
+  <object id="238" name="dirt" x="384" y="160" width="32" height="32"/>
+  <object id="239" name="dirt" x="416" y="160" width="32" height="32"/>
+  <object id="240" name="dirt" x="448" y="160" width="32" height="32"/>
+  <object id="241" name="dirt" x="0" y="192" width="32" height="32"/>
+  <object id="242" name="dirt" x="32" y="192" width="32" height="32"/>
+  <object id="243" name="dirt" x="64" y="192" width="32" height="32"/>
+  <object id="244" name="dirt" x="96" y="192" width="32" height="32"/>
+  <object id="245" name="dirt" x="128" y="192" width="32" height="32"/>
+  <object id="246" name="dirt" x="160" y="192" width="32" height="32"/>
+  <object id="247" name="dirt" x="192" y="192" width="32" height="32"/>
+  <object id="248" name="dirt" x="224" y="192" width="32" height="32"/>
+  <object id="249" name="dirt" x="256" y="192" width="32" height="32"/>
+  <object id="250" name="dirt" x="288" y="192" width="32" height="32"/>
+  <object id="251" name="dirt" x="320" y="192" width="32" height="32"/>
+  <object id="252" name="dirt" x="352" y="192" width="32" height="32"/>
+  <object id="253" name="dirt" x="384" y="192" width="32" height="32"/>
+  <object id="254" name="dirt" x="416" y="192" width="32" height="32"/>
+  <object id="255" name="dirt" x="448" y="192" width="32" height="32"/>
+  <object id="256" name="dirt" x="0" y="224" width="32" height="32"/>
+  <object id="257" name="dirt" x="32" y="224" width="32" height="32"/>
+  <object id="258" name="dirt" x="64" y="224" width="32" height="32"/>
+  <object id="259" name="dirt" x="96" y="224" width="32" height="32"/>
+  <object id="260" name="dirt" x="128" y="224" width="32" height="32"/>
+  <object id="261" name="dirt" x="160" y="224" width="32" height="32"/>
+  <object id="262" name="dirt" x="192" y="224" width="32" height="32"/>
+  <object id="263" name="dirt" x="224" y="224" width="32" height="32"/>
+  <object id="264" name="dirt" x="256" y="224" width="32" height="32"/>
+  <object id="265" name="dirt" x="288" y="224" width="32" height="32"/>
+  <object id="266" name="dirt" x="320" y="224" width="32" height="32"/>
+  <object id="267" name="dirt" x="352" y="224" width="32" height="32"/>
+  <object id="268" name="dirt" x="384" y="224" width="32" height="32"/>
+  <object id="269" name="dirt" x="416" y="224" width="32" height="32"/>
+  <object id="270" name="dirt" x="448" y="224" width="32" height="32"/>
+  <object id="271" name="dirt" x="0" y="256" width="32" height="32"/>
+  <object id="272" name="dirt" x="32" y="256" width="32" height="32"/>
+  <object id="273" name="dirt" x="64" y="256" width="32" height="32"/>
+  <object id="274" name="dirt" x="96" y="256" width="32" height="32"/>
+  <object id="275" name="dirt" x="128" y="256" width="32" height="32"/>
+  <object id="276" name="dirt" x="160" y="256" width="32" height="32"/>
+  <object id="277" name="dirt" x="192" y="256" width="32" height="32"/>
+  <object id="278" name="dirt" x="224" y="256" width="32" height="32"/>
+  <object id="279" name="dirt" x="256" y="256" width="32" height="32"/>
+  <object id="280" name="dirt" x="288" y="256" width="32" height="32"/>
+  <object id="281" name="dirt" x="320" y="256" width="32" height="32"/>
+  <object id="282" name="dirt" x="352" y="256" width="32" height="32"/>
+  <object id="283" name="dirt" x="384" y="256" width="32" height="32"/>
+  <object id="284" name="dirt" x="416" y="256" width="32" height="32"/>
+  <object id="285" name="dirt" x="448" y="256" width="32" height="32"/>
+  <object id="286" name="dirt" x="0" y="288" width="32" height="32"/>
+  <object id="287" name="dirt" x="32" y="288" width="32" height="32"/>
+  <object id="288" name="dirt" x="64" y="288" width="32" height="32"/>
+  <object id="289" name="dirt" x="96" y="288" width="32" height="32"/>
+  <object id="290" name="dirt" x="128" y="288" width="32" height="32"/>
+  <object id="291" name="dirt" x="160" y="288" width="32" height="32"/>
+  <object id="292" name="dirt" x="192" y="288" width="32" height="32"/>
+  <object id="293" name="dirt" x="224" y="288" width="32" height="32"/>
+  <object id="294" name="dirt" x="256" y="288" width="32" height="32"/>
+  <object id="295" name="dirt" x="288" y="288" width="32" height="32"/>
+  <object id="296" name="dirt" x="320" y="288" width="32" height="32"/>
+  <object id="297" name="dirt" x="352" y="288" width="32" height="32"/>
+  <object id="298" name="dirt" x="384" y="288" width="32" height="32"/>
+  <object id="299" name="dirt" x="416" y="288" width="32" height="32"/>
+  <object id="300" name="dirt" x="448" y="288" width="32" height="32"/>
+ </objectgroup>
+</map>
