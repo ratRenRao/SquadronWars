@@ -40,6 +40,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClassLibrary, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SquadronWars\Assets\bin\Debug\ClassLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,6 +64,18 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEditor">
+      <HintPath>..\..\..\SquadronWars\Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\SquadronWars\Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>..\..\..\SquadronWars\Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\SquadronWars\Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
@@ -256,6 +272,7 @@
     <!--Compile Include="Game\SquadronWarsUnity\Assets\Scripts\MenuManager.cs" /-->
     <!--Compile Include="Game\SquadronWarsUnity\Assets\Scripts\SampleButton.cs" /-->
     <Compile Include="Game\SquadronWarsUnity\Assets\Data\DbConnection.cs" />
+    <Compile Include="Game\SquadronWarsUnity\Assets\Utilities\Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".git\" />

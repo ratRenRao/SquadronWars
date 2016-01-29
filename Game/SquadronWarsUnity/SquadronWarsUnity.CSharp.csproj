@@ -63,7 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Data\DBConnection.cs" />
+    <Compile Include="Assets\Data\DbConnection.cs" />
     <Compile Include="Assets\GameClasses\Ablilty.cs" />
     <Compile Include="Assets\GameClasses\Burn.cs" />
     <Compile Include="Assets\GameClasses\Character.cs" />
@@ -80,6 +80,9 @@
     <Compile Include="Assets\GameClasses\Squad.cs" />
     <Compile Include="Assets\GameClasses\Stats.cs" />
     <Compile Include="Assets\GameClasses\Weaken.cs" />
+    <Compile Include="Assets\JSON\JSONObject.cs" />
+    <Compile Include="Assets\JSON\JSONTemplates.cs" />
+    <Compile Include="Assets\JSON\VectorTemplates.cs" />
     <Compile Include="Assets\Scripts\CharacterScreen.cs" />
     <Compile Include="Assets\Scripts\CreateUnitList.cs" />
     <Compile Include="Assets\Scripts\LoginButton.cs" />
@@ -95,8 +98,10 @@
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledInitialShaderProperties.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
+    <Compile Include="Assets\Utilities\Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\JSON\readme.txt" />
     <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
     <None Include="Assets\Tiled2Unity\Imported\battlemap.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\License.txt" />

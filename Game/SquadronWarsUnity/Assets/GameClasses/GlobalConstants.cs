@@ -4,10 +4,10 @@ namespace Assets.GameClasses
 {
     static public class GlobalConstants
     {
-        public static string WebServerUrl = "HTTP://squadronwars.ddns.net";
-        public static string SquadDbUrl = WebServerUrl + "temp/temp";
-        public static string CharacterDbUrl = WebServerUrl + "/api/getchars";
-        public static string PlayerDbUrl = WebServerUrl + "/api/auth";
+        public const string WebServerUrl = "http://squadronwars.ddns.net";
+        public const string SquadDbUrl = WebServerUrl + "temp/temp";
+        public const string CharacterDbUrl = WebServerUrl + "/api/getchars";
+        public const string PlayerDbUrl = WebServerUrl + "/api/auth";
 		
 		 static public Dictionary<string,Item> ItemList = new Dictionary<string,Item>()
         {
