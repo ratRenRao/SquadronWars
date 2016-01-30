@@ -36,12 +36,20 @@ namespace Assets.Scripts
             SetDbConnection();
             SetLoginInfo();
             
-            _player = _dbConnection.PopulateObjectFromDb<Player>(GlobalConstants.PlayerDbUrl, _logins);
+            _player = (Player) _dbConnection.PopulateObjectFromDb<Player>(GlobalConstants.PlayerDbUrl, _logins);
             Debug.Log(_player.ToString());
+
+            // Change to only continue if player object is populated
+            if (true)
+            {
+                CanvasManager.LoginScreen.SetActive(false);
+                CanvasManager.MenuScreen.SetActive(true);
+            }
+
             return false;
         }
 
-        private void SetLoginInfo()
+        private static void SetLoginInfo()
         {
 #if DEBUG
             _logins.username = "test";

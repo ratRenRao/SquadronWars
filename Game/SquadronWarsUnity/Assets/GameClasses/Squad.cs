@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Assets.GameClasses
 {
-    class Squad
+    class Squad : IJsonable
     {
         //DBConnection dbConnection = new DBConnection();
 
@@ -24,5 +24,9 @@ namespace Assets.GameClasses
             this.characterList = dbSquad.characterList;
             this.squadDetails = dbSquad.squadDetails;
         }*/
+        public string GetJsonObjectName()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
