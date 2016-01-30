@@ -17,12 +17,14 @@ ModelImporter:
     3300002: mesh_[00]_[17]
     4300000: mesh_[00]_[16]
     4300002: mesh_[00]_[17]
+    11400000: mesh_[00]_[16]
+    11400002: mesh_[00]_[17]
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
-    legacyGenerateAnimations: 4
+    legacyGenerateAnimations: 0
     bakeSimulation: 0
     resampleRotations: 1
     optimizeGameObjects: 0
@@ -59,7 +61,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 2
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

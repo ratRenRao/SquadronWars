@@ -37,12 +37,18 @@ ModelImporter:
     4300006: mesh_[02]_[27]
     4300008: mesh_[03]_[12]
     4300010: mesh_[03]_[13]
+    11400000: mesh_[00]_[26]
+    11400002: mesh_[01]_[27]
+    11400004: mesh_[02]_[26]
+    11400006: mesh_[02]_[27]
+    11400008: mesh_[03]_[12]
+    11400010: mesh_[03]_[13]
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
-    legacyGenerateAnimations: 4
+    legacyGenerateAnimations: 0
     bakeSimulation: 0
     resampleRotations: 1
     optimizeGameObjects: 0
@@ -79,7 +85,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 2
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

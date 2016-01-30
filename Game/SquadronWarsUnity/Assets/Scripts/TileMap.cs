@@ -50,11 +50,11 @@ namespace Assets.Scripts
                 float floatY = Mathf.Abs((child.localPosition.y / 3.2f));
                 tile.x = (int)floatX;
                 tile.y = (int)floatY;
+                tile.isValidMove = false;
                 //tile.x = x;
                 //tile.y = y;
 
                 //tiles.Add(child.gameObject);
-                Debug.Log("Tile X:" + tile.x + ", Tile Y:" + tile.y);
                 tiles.Add(child.gameObject);
             }
             tileArray = new Tile[xLength, yLength];
