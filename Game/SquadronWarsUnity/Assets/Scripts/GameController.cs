@@ -59,7 +59,7 @@ namespace Assets.Scripts
             currentCharacter.y = 0;
             prevTile = targetTile.GetComponent<Tile>();
             tile = prevTile;
-            string obj = this.name;
+           // string obj = this.name;
             anim = GetComponent<Animator>();
             
         }
@@ -84,7 +84,7 @@ namespace Assets.Scripts
                     float currentY = (float)(System.Math.Round(transform.localPosition.y, 2));
                     float targetX = (float)(System.Math.Round(targetTile.transform.localPosition.x + 1.6f, 2));
                     float targetY = (float)(System.Math.Round(targetTile.transform.localPosition.y, 2));
-                    Transform targetLocation = targetTile.transform;
+                  //  Transform targetLocation = targetTile.transform;
                     if (currentX - targetX > 0)
                     {
                         anim.SetFloat("x", -1);
@@ -180,8 +180,8 @@ namespace Assets.Scripts
 
         public void showMoves()
         {
-            int currentX = currentCharacter.x;
-            int currentY = currentCharacter.y;
+           // int currentX = currentCharacter.x;
+          //  int currentY = currentCharacter.y;
             int tileX = tile.x;
             int tileY = tile.y;
             Tile[,] tileArray = tileMap.tileArray;
@@ -384,8 +384,8 @@ namespace Assets.Scripts
         {
             int currentX = currentCharacter.x;
             int currentY = currentCharacter.y;
-            int tileX = tile.x;
-            int tileY = tile.y;
+          //  int tileX = tile.x;
+          //  int tileY = tile.y;
             //top left
             if (currentX - 1 == tile.x && currentY - 1 == tile.y)
             {

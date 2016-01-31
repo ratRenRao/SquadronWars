@@ -60,13 +60,13 @@ namespace Assets.Utilities
         public IJsonable BuildObjectFromJsonData<T>(string data) where T : IJsonable, new()
         {
             JsonObject = FlattenJsonObject(DeserializeData(data));
-            dynamic temp = new T();
-            var obj = MapJsonToObject(ref temp);
+            var obj = new T();
+            obj = MapJsonToObject(ref obj);
 
             return obj;
         }
 
-        public T MapJsonToObject<T>(ref T obj) where T : new()
+        public T MapJsonToObject<T>(ref T obj) 
         {
             //var obj = new T(); 
             var attributes =
@@ -87,12 +87,12 @@ namespace Assets.Utilities
                 }
                 else
                 {
-                    dynamic subObject = attribute.ReflectedType.GetConstructor(null);
+                    var subObject = obj.GetType().GetProperty(attribute.Name);
                     var subValue = MapJsonToObject(ref subObject);
 
                     obj.GetType()
                         .GetProperty(attribute.Name)
-                        .SetValue(obj, (IJsonable) subValue, null);
+                        .SetValue(obj, subValue, null);
                 }
             }
 

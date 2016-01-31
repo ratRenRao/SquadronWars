@@ -13,7 +13,7 @@ namespace Assets.GameClasses
             this.duration = duration;
         }
 
-        public void lingeringEffect()
+        public override void lingeringEffect()
         {
             targetStats.currentHP -= burnDamage;
         }

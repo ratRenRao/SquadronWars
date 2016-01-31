@@ -21,7 +21,7 @@ namespace Assets.GameClasses
         public int x;
         public int y;
         //DBConnection dbConnection = new DBConnection();
-        public string name;
+        public new string name;
         public int characterId { get; set; }
         public int statId;
         public Stats baseStats { get; set; }
@@ -62,16 +62,19 @@ namespace Assets.GameClasses
 
         public void addEffect(Effect effect)
         {
-            effect.execute(baseStats);
+            var tempStats = baseStats;
+            effect.execute(ref tempStats);
+            baseStats = tempStats;
             effects.Add(effect);
         }
 
         public void checkEffects()
         {
+            /*
             foreach (Effect effect in effects)
             {
-
             }
+            */
         }
 
         public int startExperience()

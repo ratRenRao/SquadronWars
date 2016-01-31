@@ -57,6 +57,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -89,6 +95,8 @@
     <Compile Include="Assets\Scripts\CanvasManager.cs" />
     <Compile Include="Assets\Scripts\CharacterScreen.cs" />
     <Compile Include="Assets\Scripts\CreateUnitList.cs" />
+    <Compile Include="Assets\Scripts\GameCharacter.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\LoginButton.cs" />
     <Compile Include="Assets\Scripts\LoginScreenManager.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
@@ -106,6 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\JSON\readme.txt" />
+    <None Include="Assets\Tiled2Unity\Imported\BattleMapDesert.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\Imported\BattleMapForest.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\Imported\BattleMapLava.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
     <None Include="Assets\Tiled2Unity\Imported\battlemap.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\testmap.tiled2unity.xml" />
