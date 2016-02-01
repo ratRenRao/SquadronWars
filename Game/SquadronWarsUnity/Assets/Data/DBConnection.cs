@@ -11,7 +11,7 @@ namespace Assets.Data
         public static bool ResponseError = false;
         private static readonly Utilities.Utilities Utilities = new Utilities.Utilities();
 
-        public IJsonable PopulateObjectFromDb<T>(string url, Player.Logins paramObject) where T : IJsonable, new() 
+        public IJsonable PopulateObjectFromDb<T>(string url, object paramObject) where T : IJsonable, new() 
         {
             var parameters = Utilities.CreatePublicPropertyDictionary(paramObject);
             return PopulateObjectFromDb<T>(url, parameters);
@@ -23,7 +23,7 @@ namespace Assets.Data
             return Utilities.BuildObjectFromJsonData<T>(response.text);
         }
 
-        private WWW ExecuteApiCall(string url, WWWForm form)
+        public WWW ExecuteApiCall(string url, WWWForm form)
         {
             var www = new WWW(url, form);
             StartCoroutine(WaitForRequest(www));
@@ -32,7 +32,7 @@ namespace Assets.Data
             return www;
         }
 
-        private WWWForm PopulateParameters(Dictionary<string, string> parameters)
+        public WWWForm PopulateParameters(Dictionary<string, string> parameters)
         {
             var form = new WWWForm();
 

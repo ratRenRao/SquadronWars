@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace Assets.GameClasses
 {
-    class Squad : IJsonable
+    public class Squad : IJsonable
     {
         //DBConnection dbConnection = new DBConnection();
 
-        private int squadId { get; set; }
-        private string squadDetails { get; set; }
-        private List<Character> characterList { get; set; }
+        public int squadId { get; set; }
+        public string squadDetails { get; set; }
+        public List<Character> characterList { get; set; }
         public Squad(int squadId, int playerId)
         {
             this.squadId = squadId;

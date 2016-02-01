@@ -10,12 +10,13 @@ namespace Assets.GameClasses
     {
         //DBConnection dbConnection = new DBConnection();
         
-        private string firstName { get; set; }
-        private string lastName { get; set; }
-        private string email { get; set; }
-        private DateTime? lastLogin { get; set; }
-        private Squad squad { get; set; }
-        private List<Item> itemList { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string email { get; set; }
+        public DateTime? lastLogin { get; set; }
+        public Squad squad { get; set; }
+        public List<Item> itemList { get; set; }
+        public Logins logins = new Logins(); 
 
         public Player()
         {
