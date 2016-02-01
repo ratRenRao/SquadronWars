@@ -11,26 +11,32 @@ namespace Assets.Scripts
         public enum Action
         {
             IDLE,
-            MOVE
+            MOVE,
+            Attack
         }
-
+        public TileMap tileMap;
+        public GameObject currentGameCharacter;
+        public GameObject targetGameCharacter;
         Vector3 hitDown;
         RaycastHit2D hit;
         Animator anim;
+        Animator tarAnim;
         Tile targetTile;
-        public TileMap tileMap;
         Tile tile = null;
         Tile prevTile = null;
         Tile lastTile;
         Tile[,] tileArray;
         Dictionary<string, int> inventory;
-        public GameCharacter currentCharacter;
+        GameCharacter curGameCharacter;
+        GameCharacter tarGameCharacter;
         Character character;
+        Character targetCharacter;
         Action action = Action.IDLE;
         bool isWalking;
         bool isCharacter;
         bool reachedPosition = true;
         bool lifeLost = false;
+        bool arraySet = false;
         int count = 0;
         List<Tile> validMoves = new List<Tile>();
         List<Tile> path = new List<Tile>();
@@ -39,29 +45,12 @@ namespace Assets.Scripts
         // Use this for initialization
         void Start()
         {
-            Dictionary<ItemType, Item> equipment = new Dictionary<ItemType, Item>
-        {
-            {ItemType.HELM, GlobalConstants.ItemList["Cloth Helm"] },
-            {ItemType.SHOULDERS, GlobalConstants.ItemList["Cloth Shoulders"] },
-            {ItemType.CHEST, GlobalConstants.ItemList["Cloth Chest"] },
-            {ItemType.GLOVES, GlobalConstants.ItemList["Cloth Gloves"] },
-            {ItemType.LEGS, GlobalConstants.ItemList["Cloth Legs"] },
-            {ItemType.BOOTS, GlobalConstants.ItemList["Cloth Boots"] },
-        };
-            //screen = ScreenOrientation.Landscape;
-            Stats stat1 = new Stats(5, 4, 6, 3, 2, 9, 5);
-            character = new Character(1, stat1, 1, "Saint Lancelot", 1, 75, equipment);
-            character.alteredStats = new Stats(0, 0, 0, 0, 0, 0, 0);
-            character.alteredStats = GetBonusStats(character);
-            character.alteredStats.speed = 4;
-            targetTile = GameObject.FindGameObjectWithTag("start").GetComponent<Tile>();
-            currentCharacter.x = 0;
-            currentCharacter.y = 0;
+            PrepTest();
             prevTile = targetTile.GetComponent<Tile>();
             tile = prevTile;
-           // string obj = this.name;
-            anim = GetComponent<Animator>();
-            
+            // string obj = this.name;
+            anim = currentGameCharacter.GetComponent<Animator>();
+            tarAnim = targetGameCharacter.GetComponent<Animator>();
         }
 
         public Stats GetBonusStats(Character character)
@@ -75,48 +64,57 @@ namespace Assets.Scripts
 
         void Update()
         {
-            tileArray = tileMap.tileArray;
+            if (!arraySet)
+            {
+                tileArray = tileMap.tileArray;
+                tileArray[0, 0].character = currentGameCharacter;
+                tileArray[0, 0].isOccupied = true;
+                tileArray[1, 0].character = targetGameCharacter;
+                tileArray[1, 0].isOccupied = true;
+                arraySet = true;
+            }
             if (reachedPosition == false && count < path.Count)
             {
-                    isWalking = true;
-                    anim.SetBool("isWalking", isWalking);
-                    float currentX = (float)(System.Math.Round(transform.localPosition.x, 2));
-                    float currentY = (float)(System.Math.Round(transform.localPosition.y, 2));
-                    float targetX = (float)(System.Math.Round(targetTile.transform.localPosition.x + 1.6f, 2));
-                    float targetY = (float)(System.Math.Round(targetTile.transform.localPosition.y, 2));
-                  //  Transform targetLocation = targetTile.transform;
-                    if (currentX - targetX > 0)
-                    {
-                        anim.SetFloat("x", -1);
-                        anim.SetFloat("y", 0);
-                        transform.position += new Vector3(-0.1f, 0);
-                    }
-                    if (currentX - targetX < 0)
-                    {
-                        anim.SetFloat("x", 1);
-                        anim.SetFloat("y", 0);
+                isWalking = true;
+                anim.SetBool("isWalking", isWalking);
+                Debug.Log("Transform: " + currentGameCharacter.transform.localPosition.x + " " + currentGameCharacter.transform.localPosition.y);
+                float currentX = (float)(System.Math.Round(currentGameCharacter.transform.localPosition.x, 2));
+                float currentY = (float)(System.Math.Round(currentGameCharacter.transform.localPosition.y, 2));
+                float targetX = (float)(System.Math.Round(targetTile.transform.localPosition.x + 1.6f, 2));
+                float targetY = (float)(System.Math.Round(targetTile.transform.localPosition.y, 2));
+                //  Transform targetLocation = targetTile.transform;
+                if (currentX - targetX > 0)
+                {
+                    anim.SetFloat("x", -1);
+                    anim.SetFloat("y", 0);
+                    currentGameCharacter.transform.position += new Vector3(-0.1f, 0);
+                }
+                if (currentX - targetX < 0)
+                {
+                    anim.SetFloat("x", 1);
+                    anim.SetFloat("y", 0);
 
-                        transform.position += new Vector3(0.1f, 0);
-                    }
-                    if (currentY - targetY > 0)
-                    {
-                        anim.SetFloat("x", 0);
-                        anim.SetFloat("y", -1);
+                    currentGameCharacter.transform.position += new Vector3(0.1f, 0);
+                }
+                if (currentY - targetY > 0)
+                {
+                    anim.SetFloat("x", 0);
+                    anim.SetFloat("y", -1);
 
 
-                        transform.position += new Vector3(0, -0.1f);
-                    }
+                    currentGameCharacter.transform.position += new Vector3(0, -0.1f);
+                }
 
-                    if (currentY - targetY < 0)
-                    {
-                        anim.SetFloat("x", 0);
-                        anim.SetFloat("y", 1);
+                if (currentY - targetY < 0)
+                {
+                    anim.SetFloat("x", 0);
+                    anim.SetFloat("y", 1);
 
-                        transform.position += new Vector3(0, 0.1f);
-                    }
+                    currentGameCharacter.transform.position += new Vector3(0, 0.1f);
+                }
 
-                    if (currentY - targetY == 0 && currentX - targetX == 0)
-                    {
+                if (currentY - targetY == 0 && currentX - targetX == 0)
+                {
                     Debug.Log((count + 1) + " " + path.Count);
                     if ((count + 1) == path.Count)
                     {
@@ -128,56 +126,75 @@ namespace Assets.Scripts
                         Debug.Log(targetTile.x + "," + targetTile.y);
                         count = 0;
                         action = Action.IDLE;
+                        targetTile.isOccupied = true;
+                        targetTile.character = currentGameCharacter;
                     }
                     else {
                         count++;
                         targetTile = path[count];
                     }
-                    }
+                }
             }
             else
             {
 
-                if (Input.GetMouseButtonUp(0) && reachedPosition && action == Action.MOVE)
+                if (Input.GetMouseButtonUp(0) && reachedPosition)
                 {
 
                     hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                     if (action == Action.MOVE)
                     {
+                        Move();
+                    }
+                    if (action == Action.Attack)
+                    {
                         if (hit.collider != null)
                         {
-                            lastTile = targetTile;
-                            targetTile = hit.collider.gameObject.GetComponent<Tile>();
-                            Tile tempTile = targetTile;
+                            Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
                             if (tempTile.isValidMove)
                             {
-                                tile = tempTile;
-                                prevTile = lastTile.GetComponent<Tile>();
-                                currentCharacter.x = tile.x;
-                                currentCharacter.y = tile.y;
-                                path = buildPath(prevTile, tile);
-                                Debug.Log(path.Count);
-                                targetTile = path[0];
-                                reachedPosition = false;                    
+                                Attack(tempTile);
                                 clearHighlights(validMoves);
                             }
-                            else
-                            {
-                                targetTile = lastTile;
-                            }
                         }
-                        //Debug.Log("Tile: " + hit.collider.gameObject.name);
-                    }
-                    else
-                    {
-                        //Debug.Log("Invaliad hit");
                     }
                 }
 
             }
         }
 
+        private void Move()
+        {
+            if (hit.collider != null)
+            {
+                lastTile = targetTile;
+                targetTile = hit.collider.gameObject.GetComponent<Tile>();
+                Tile tempTile = targetTile;
+                if (tempTile.isValidMove)
+                {
+                    tile = tempTile;
+                    prevTile = lastTile;
+                    Debug.Log("Move Location: " + curGameCharacter.x + " " + curGameCharacter.y);
+                    curGameCharacter.x = tile.x;
+                    curGameCharacter.y = tile.y;
+                    path = buildPath(prevTile, tile);
+                    prevTile.isOccupied = false;
+                    prevTile.character = null;
+                    targetTile = path[0];
+                    reachedPosition = false;
+                    clearHighlights(validMoves);
+                }
+                else
+                {
+                    targetTile = lastTile;
+                }
+            }
+        }
 
+        public void buttonMove()
+        {
+
+        }
         public void showMoves()
         {
            // int currentX = currentCharacter.x;
@@ -185,6 +202,7 @@ namespace Assets.Scripts
             int tileX = tile.x;
             int tileY = tile.y;
             Tile[,] tileArray = tileMap.tileArray;
+            clearHighlights(validMoves);
             //tileArray[1, 0].isObstructed = true;
             int move = character.alteredStats.speed;
             
@@ -199,6 +217,7 @@ namespace Assets.Scripts
                     {
                         Debug.Log(tileArray.GetLength(1));
                         Tile tempTile = tileArray[tileX, tileY + i];
+                        tempTile.highlight.GetComponent<Image>().color = new Color32(99, 178, 255, 165);
                         tempTile.highlight.SetActive(true);
                         tempTile.isValidMove = true;
                         validMoves.Add(tempTile);
@@ -214,6 +233,7 @@ namespace Assets.Scripts
                     if (tileY - i >= 0)
                     {
                         Tile tempTile = tileArray[tileX, tileY - i];
+                        tempTile.highlight.GetComponent<Image>().color = new Color32(99, 178, 255, 165);
                         tempTile.highlight.SetActive(true);
                         tempTile.isValidMove = true;
                         validMoves.Add(tempTile);
@@ -228,6 +248,7 @@ namespace Assets.Scripts
                     if (tileX - i >= 0)
                     {
                         Tile tempTile = tileArray[tileX - i, tileY];
+                        tempTile.highlight.GetComponent<Image>().color = new Color32(99, 178, 255, 165);
                         tempTile.highlight.SetActive(true);
                         tempTile.isValidMove = true;
                         validMoves.Add(tempTile);
@@ -243,15 +264,10 @@ namespace Assets.Scripts
                     if (tileX + i < tileArray.GetLength(0))
                     {
                         Tile tempTile = tileArray[tileX + i, tileY];
-                        if (tempTile.isObstructed)
-                        {
-                            move = move - 2;
-                        }
-                        else { 
-                            tempTile.highlight.SetActive(true);
+                        tempTile.highlight.GetComponent<Image>().color = new Color32(99, 178, 255, 165);
+                        tempTile.highlight.SetActive(true);
                             tempTile.isValidMove = true;
                             validMoves.Add(tempTile);
-                        }
                         //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
                         //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
                         //highlight.transform.parent = tempTile.transform;
@@ -270,6 +286,7 @@ namespace Assets.Scripts
                         if (tileX - i >= 0 && tileY - j >= 0)
                         {
                             Tile tempTile = tileArray[tileX - i, tileY - j];
+                            tempTile.highlight.GetComponent<Image>().color = new Color32(99, 178, 255, 165);
                             tempTile.highlight.SetActive(true);
                             tempTile.isValidMove = true;
                             validMoves.Add(tempTile);
@@ -293,6 +310,7 @@ namespace Assets.Scripts
                         if (tileX + i < tileArray.GetLength(0) && tileY - j >= 0)
                         {
                             Tile tempTile = tileArray[tileX + i, tileY - j];
+                            tempTile.highlight.GetComponent<Image>().color = new Color32(99, 178, 255, 165);
                             tempTile.highlight.SetActive(true);
                             tempTile.isValidMove = true;
                             validMoves.Add(tempTile);
@@ -316,6 +334,7 @@ namespace Assets.Scripts
                         if (tileX - i >= 0 && tileY + j < tileArray.GetLength(1))
                         {
                             Tile tempTile = tileArray[tileX - i, tileY + j];
+                            tempTile.highlight.GetComponent<Image>().color = new Color32(99, 178, 255, 165);
                             tempTile.highlight.SetActive(true);
                             tempTile.isValidMove = true;
                             validMoves.Add(tempTile);
@@ -339,6 +358,7 @@ namespace Assets.Scripts
                         if (tileX + i < tileArray.GetLength(0) && tileY + j < tileArray.GetLength(1))
                         {
                             Tile tempTile = tileArray[tileX + i, tileY + j];
+                            tempTile.highlight.GetComponent<Image>().color = new Color32(99, 178, 255, 165);
                             tempTile.highlight.SetActive(true);
                             tempTile.isValidMove = true;
                             validMoves.Add(tempTile);
@@ -362,17 +382,10 @@ namespace Assets.Scripts
             }
         }
 
-        IEnumerator AttackAnimation()
-        {
-            yield return new WaitForSeconds(.5f);
-            Debug.Log("WAITED FOR 3 SECONDS");
-            anim.SetBool("isAttacking", false);
-        }
 
         public void clearHighlights(List<Tile> tiles)
         {
             action = Action.IDLE;
-            Debug.Log(tiles.Count);
             foreach (Tile tile in tiles)
             {
                 tile.highlight.SetActive(false);
@@ -382,8 +395,8 @@ namespace Assets.Scripts
         }
         public bool checkMove(Tile tile)
         {
-            int currentX = currentCharacter.x;
-            int currentY = currentCharacter.y;
+            int currentX = curGameCharacter.x;
+            int currentY = curGameCharacter.y;
           //  int tileX = tile.x;
           //  int tileY = tile.y;
             //top left
@@ -447,29 +460,25 @@ namespace Assets.Scripts
                 else if (currentX < endX && tileArray[currentX + 1, currentY].isValidMove)
                 {
                     Tile tempTile = tileArray[currentX + 1, currentY];
-                    movePath.Add(tempTile);
-                    Debug.Log("X:" + (currentX + 1) + "Y:" + currentY);                    
+                    movePath.Add(tempTile);  
                     currentX++;
                 }//path to left
                 else if (currentX > endX && tileArray[currentX - 1, currentY].isValidMove)
                 {
                     Tile tempTile = tileArray[currentX - 1, currentY];
                     movePath.Add(tempTile);
-                    Debug.Log("X:" + (currentX - 1) + "Y:" + currentY);
                     currentX--;
                 }//path to bottom
                 else if (currentY < endY && tileArray[currentX, currentY + 1].isValidMove)
                 {
                     Tile tempTile = tileArray[currentX, currentY + 1];
                     movePath.Add(tempTile);
-                    Debug.Log("X:" + currentX + "Y:" + (currentY + 1));
                     currentY++;
                 }//path to top
                 else if (currentY > endY && tileArray[currentX, currentY - 1].isValidMove)
                 {
                     Tile tempTile = tileArray[currentX, currentY - 1];
                     movePath.Add(tempTile);
-                    Debug.Log("X:" + currentX + "Y:" + (currentY - 1));
                     currentY--;
                 }
                 else
@@ -486,10 +495,168 @@ namespace Assets.Scripts
 
         }
 
-        public void Attack()
+        public void ShowAttackMoves()
         {
+            int tileX = tile.x;
+            int tileY = tile.y;
+            Tile[,] tileArray = tileMap.tileArray;
+            clearHighlights(validMoves);
+            if (tileY - 1 >= 0)
+            {
+                Tile tempTile = tileArray[tileX, tileY - 1];
+                tempTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
+                tempTile.highlight.SetActive(true);
+                tempTile.isValidMove = true;
+                validMoves.Add(tempTile);
+
+            }
+            if (tileY + 1 < tileArray.GetLength(1))
+            {
+                Tile tempTile = tileArray[tileX, tileY + 1];
+                tempTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
+                tempTile.highlight.SetActive(true);
+                tempTile.isValidMove = true;
+                validMoves.Add(tempTile);
+
+            }
+            if (tileX - 1 >= 0)
+            {
+                Tile tempTile = tileArray[tileX - 1, tileY];
+                tempTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
+                tempTile.highlight.SetActive(true);
+                tempTile.isValidMove = true;
+                validMoves.Add(tempTile);
+
+            }
+            if (tileY + 1 < tileArray.GetLength(0))
+            {
+                Tile tempTile = tileArray[tileX + 1, tileY];
+                tempTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
+                tempTile.highlight.SetActive(true);
+                tempTile.isValidMove = true;
+                validMoves.Add(tempTile);
+
+            }
+            action = Action.Attack;
+        }
+
+        public void Attack(Tile targetTile)
+        {
+            action = Action.IDLE;            
             anim.SetBool("isAttacking", true);
-            StartCoroutine("AttackAnimation");
+            float currentX = (float)(System.Math.Round(tile.transform.localPosition.x, 2));
+            float currentY = (float)(System.Math.Round(tile.transform.localPosition.y, 2));
+            float targetX = (float)(System.Math.Round(targetTile.transform.localPosition.x + 1.6f, 2));
+            float targetY = (float)(System.Math.Round(targetTile.transform.localPosition.y, 2));
+            //  Transform targetLocation = targetTile.transform;
+            if (currentX - targetX > 0)
+            {
+                anim.SetFloat("x", -1);
+                anim.SetFloat("y", 0);
+            }
+            if (currentX - targetX < 0)
+            {
+                anim.SetFloat("x", 1);
+                anim.SetFloat("y", 0);
+            }
+            if (currentY - targetY > 0)
+            {
+                anim.SetFloat("x", 0);
+                anim.SetFloat("y", -1);
+            }
+
+            if (currentY - targetY < 0)
+            {
+                anim.SetFloat("x", 0);
+                anim.SetFloat("y", 1);
+            }
+            if (targetTile.isOccupied)
+            {
+                tarAnim = targetTile.character.GetComponent<Animator>();
+                StartCoroutine("AttackAnimation");
+            }
+            else {
+                StartCoroutine("AttackAnimationNothing");
+            }
+        }
+
+        public void Injured()
+        {
+            tarAnim = targetGameCharacter.GetComponent<Animator>();
+            tarAnim.SetBool("isAttacked", true);
+            StartCoroutine("InjuredAnimation");
+        }
+
+        IEnumerator AttackAnimation()
+        {
+            yield return new WaitForSeconds(.2f);
+            tarAnim.SetBool("isAttacked", true);
+            yield return new WaitForSeconds(.4f);
+            anim.SetBool("isAttacking", false);
+            tarAnim.SetBool("isAttacked", false);
+        }
+        IEnumerator AttackAnimationNothing()
+        {
+            yield return new WaitForSeconds(.5f);
+            anim.SetBool("isAttacking", false);
+        }
+        IEnumerator InjuredAnimation()
+        {
+            yield return new WaitForSeconds(.4f);
+            tarAnim.SetBool("isAttacked", false);
+        }
+
+        public void EndTurn()
+        {
+            int newX = tarGameCharacter.x;
+            int newY = tarGameCharacter.y;
+            Debug.Log(newX + " " + newY);
+            GameObject tempGameCharacter = currentGameCharacter;
+            GameCharacter tempCurGameCharacter = curGameCharacter;
+            Character tempCharacter = character;
+            Animator tempAnim = anim;
+            currentGameCharacter = targetGameCharacter;
+            targetGameCharacter = tempGameCharacter;
+            curGameCharacter = tarGameCharacter;
+            tarGameCharacter = tempCurGameCharacter;
+            character = targetCharacter;            
+            targetCharacter = tempCharacter;
+            anim = tarAnim;
+            tarAnim = tempAnim;
+            
+            prevTile = tileArray[newX, newY];
+            tile = prevTile;
+            targetTile = tile;
+        }
+        private void PrepTest()
+        {
+            Dictionary<ItemType, Item> equipment = new Dictionary<ItemType, Item>
+                {
+                    {ItemType.HELM, GlobalConstants.ItemList["Cloth Helm"] },
+                    {ItemType.SHOULDERS, GlobalConstants.ItemList["Cloth Shoulders"] },
+                    {ItemType.CHEST, GlobalConstants.ItemList["Cloth Chest"] },
+                    {ItemType.GLOVES, GlobalConstants.ItemList["Cloth Gloves"] },
+                    {ItemType.LEGS, GlobalConstants.ItemList["Cloth Legs"] },
+                    {ItemType.BOOTS, GlobalConstants.ItemList["Cloth Boots"] },
+                };
+            //screen = ScreenOrientation.Landscape;
+            Stats stat1 = new Stats(5, 4, 6, 3, 2, 9, 5);
+            character = new Character(1, stat1, 1, "Saint Lancelot", 1, 75, equipment);
+            character.alteredStats = new Stats(0, 0, 0, 0, 0, 0, 0);
+            character.alteredStats = GetBonusStats(character);
+            character.alteredStats.speed = 4;
+            Stats stat2 = new Stats(3, 3, 3, 3, 3, 3, 2);
+            targetCharacter = new Character(1, stat2, 1, "Orc", 1, 75, equipment);
+            targetCharacter.alteredStats = new Stats(0, 0, 0, 0, 0, 0, 0);
+            targetCharacter.alteredStats = GetBonusStats(targetCharacter);
+            targetCharacter.alteredStats.speed = 3;
+            targetTile = GameObject.FindGameObjectWithTag("start").GetComponent<Tile>();
+            curGameCharacter = currentGameCharacter.GetComponent<GameCharacter>();
+            tarGameCharacter = targetGameCharacter.GetComponent<GameCharacter>();
+            curGameCharacter.x = 0;
+            curGameCharacter.y = 0;
+            tarGameCharacter.x = 1;
+            tarGameCharacter.y = 0;
         }
     }
 
