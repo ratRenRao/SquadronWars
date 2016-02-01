@@ -12,7 +12,9 @@ namespace Assets.Scripts
         {
             IDLE,
             MOVE,
-            Attack
+            Attack,
+            AttackAbility,
+            CastAbility
         }
         public TileMap tileMap;
         public GameObject currentGameCharacter;
@@ -37,6 +39,7 @@ namespace Assets.Scripts
         bool reachedPosition = true;
         bool lifeLost = false;
         bool arraySet = false;
+        string selectedAbility;
         int count = 0;
         List<Tile> validMoves = new List<Tile>();
         List<Tile> path = new List<Tile>();
@@ -51,6 +54,8 @@ namespace Assets.Scripts
             // string obj = this.name;
             anim = currentGameCharacter.GetComponent<Animator>();
             tarAnim = targetGameCharacter.GetComponent<Animator>();
+            tarAnim.SetFloat("x", 0);
+            tarAnim.SetFloat("y", -1);
         }
 
         public Stats GetBonusStats(Character character)
@@ -131,6 +136,7 @@ namespace Assets.Scripts
                     }
                     else {
                         count++;
+                        curGameCharacter.GetComponent<SpriteRenderer>().sortingOrder = 6 + (int)currentX;
                         targetTile = path[count];
                     }
                 }
@@ -153,9 +159,27 @@ namespace Assets.Scripts
                             Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
                             if (tempTile.isValidMove)
                             {
-                                Attack(tempTile);
+                                Attack(tempTile, null);
                                 clearHighlights(validMoves);
                             }
+                        }
+                    }
+                    if (action == Action.AttackAbility)
+                    {
+                        if (hit.collider != null)
+                        {
+                            Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
+                            clearHighlights(validMoves);
+                            Attack(tempTile, selectedAbility);                      
+                        }
+                    }
+                    if (action == Action.CastAbility)
+                    {
+                        if (hit.collider != null)
+                        {
+                            Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
+                            clearHighlights(validMoves);
+                            Cast(tempTile, selectedAbility);
                         }
                     }
                 }
@@ -191,8 +215,18 @@ namespace Assets.Scripts
             }
         }
 
-        public void buttonMove()
+        public void AttackAbility(string ability)
         {
+            ShowAttackMoves();
+            action = Action.AttackAbility;
+            selectedAbility = ability;
+            
+        }
+        public void CastAbility(string ability)
+        {
+            ShowAttackMoves();
+            action = Action.CastAbility;
+            selectedAbility = ability;
 
         }
         public void showMoves()
@@ -540,7 +574,48 @@ namespace Assets.Scripts
             action = Action.Attack;
         }
 
-        public void Attack(Tile targetTile)
+        public void Cast(Tile targetTile, string ability)
+        {
+            action = Action.IDLE;
+            anim.SetBool("isCasting", true);
+            float currentX = (float)(System.Math.Round(tile.transform.localPosition.x, 2));
+            float currentY = (float)(System.Math.Round(tile.transform.localPosition.y, 2));
+            float targetX = (float)(System.Math.Round(targetTile.transform.localPosition.x + 1.6f, 2));
+            float targetY = (float)(System.Math.Round(targetTile.transform.localPosition.y, 2));
+            //  Transform targetLocation = targetTile.transform;
+            if (currentX - targetX > 0)
+            {
+                anim.SetFloat("x", -1);
+                anim.SetFloat("y", 0);
+            }
+            if (currentX - targetX < 0)
+            {
+                anim.SetFloat("x", 1);
+                anim.SetFloat("y", 0);
+            }
+            if (currentY - targetY > 0)
+            {
+                anim.SetFloat("x", 0);
+                anim.SetFloat("y", -1);
+            }
+
+            if (currentY - targetY < 0)
+            {
+                anim.SetFloat("x", 0);
+                anim.SetFloat("y", 1);
+            }
+            if (targetTile.isOccupied)
+            {
+                tarAnim = targetTile.character.GetComponent<Animator>();
+                StartCoroutine(CastAnimation(targetTile, ability));
+            }
+            else
+            {
+                StartCoroutine("CastAnimationNothing");
+            }
+        }
+
+        public void Attack(Tile targetTile, string ability)
         {
             action = Action.IDLE;            
             anim.SetBool("isAttacking", true);
@@ -573,7 +648,7 @@ namespace Assets.Scripts
             if (targetTile.isOccupied)
             {
                 tarAnim = targetTile.character.GetComponent<Animator>();
-                StartCoroutine("AttackAnimation");
+                StartCoroutine(AttackAnimation(targetTile, ability));
             }
             else {
                 StartCoroutine("AttackAnimationNothing");
@@ -587,18 +662,40 @@ namespace Assets.Scripts
             StartCoroutine("InjuredAnimation");
         }
 
-        IEnumerator AttackAnimation()
+        IEnumerator AttackAnimation(Tile tempTile, string ability)
         {
             yield return new WaitForSeconds(.2f);
-            tarAnim.SetBool("isAttacked", true);
-            yield return new WaitForSeconds(.4f);
+            tarAnim.SetBool("isAttacked", true);            
+            yield return new WaitForSeconds(.3f);
             anim.SetBool("isAttacking", false);
             tarAnim.SetBool("isAttacked", false);
+            if (ability != null)
+            {
+                GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
+                GameObject spell = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
+                spell.transform.parent = tempTile.transform;
+            }
         }
         IEnumerator AttackAnimationNothing()
         {
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(.4f);
             anim.SetBool("isAttacking", false);
+        }
+        IEnumerator CastAnimation(Tile tempTile, string ability)
+        {
+            yield return new WaitForSeconds(.5f);
+            
+            anim.SetBool("isCasting", false);            
+            if (ability != null)
+            {
+                GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
+                GameObject spell = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
+                spell.transform.parent = tempTile.transform;
+                yield return new WaitForSeconds(.2f);
+                tarAnim.SetBool("isAttacked", true);
+                yield return new WaitForSeconds(.4f);
+                tarAnim.SetBool("isAttacked", false);
+            }
         }
         IEnumerator InjuredAnimation()
         {
@@ -608,6 +705,7 @@ namespace Assets.Scripts
 
         public void EndTurn()
         {
+            clearHighlights(validMoves);
             int newX = tarGameCharacter.x;
             int newY = tarGameCharacter.y;
             Debug.Log(newX + " " + newY);
@@ -622,8 +720,7 @@ namespace Assets.Scripts
             character = targetCharacter;            
             targetCharacter = tempCharacter;
             anim = tarAnim;
-            tarAnim = tempAnim;
-            
+            tarAnim = tempAnim;            
             prevTile = tileArray[newX, newY];
             tile = prevTile;
             targetTile = tile;
