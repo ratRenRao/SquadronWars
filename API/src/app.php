@@ -59,6 +59,24 @@ $app->post('/api/auth', function() use($app)
     return new Response("Failed Authentication", 401);
 });
 
+$app->post('/api/CreateCharacter', function() use($app)
+{
+    //TODO: Create Character
+    return new Response("Failed",401);
+});
+
+$app->post('/api/CreatePlayer', function() use($app)
+{
+    //TODO: Create Player
+    return new Response("Failed",401);
+});
+
+$app->post('/api/CreateSquad', function() use($app)
+{
+    //TODO: Start Game
+    return new Response("Failed",401);
+});
+
 $app->post('/api/UpdateCharacter', function() use($app)
 {
     //create database object to be used.
@@ -130,10 +148,16 @@ $app->post('/api/UpdateSquad', function() use($app)
         $verifyPlayer = $mysql->authenticateUser($app->escape($_POST['username']),$app->escape($_POST['password']));
         if(sizeof($verifyPlayer) > 0)
         {
-
+            //TODO: update squad
         }
     }
-    //TODO: update squad
+
+    return new Response("Failed",401);
+});
+
+$app->post('/api/UpdateCharAbility', function() use($app)
+{
+    //TODO: Update/Insert Character Ability
     return new Response("Failed",401);
 });
 
