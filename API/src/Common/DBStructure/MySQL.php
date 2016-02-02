@@ -220,6 +220,14 @@ class MySQL implements IDBStructure
         $query->execute();
         $returnObject["Inventory"] = $query->fetchAll(PDO::FETCH_ASSOC);
 
+        $query = $dbh->prepare("CALL sp_GetAbilities");
+        $query->execute();
+        $returnObject["Abilities"] = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        $query = $dbh->prepare("CALL sp_GetAbilitiesPreReqs");
+        $query->execute();
+        $returnObject["AbilityPreReqs"] = $query->fetchAll(PDO::FETCH_ASSOC);
+
         $query = $dbh->prepare("CALL sp_GetEquipment");
         $query->execute();
         $returnObject["Equipment"] = $query->fetchAll(PDO::FETCH_ASSOC);
