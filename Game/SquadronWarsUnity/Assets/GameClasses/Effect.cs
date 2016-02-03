@@ -9,7 +9,7 @@ namespace Assets.GameClasses
         public Stats casterStats { get; set; }
         public Stats targetStats { get; set; }
 
-        public void execute(Stats charStats)
+        public virtual void execute(ref Stats charStats)
         {
             if (hasInitialEffect)
             {
@@ -31,23 +31,23 @@ namespace Assets.GameClasses
             return (stat < minStat) ? minStat : (stat > maxStat) ? maxStat : stat;
         }
 
-        public void lingeringEffect() { }
+        public virtual void lingeringEffect() { }
 
-        public void immediateEffect() { }
+        public virtual void immediateEffect() { }
 
-        public void removeEffect() { }
+        public virtual void removeEffect() { }
 
-        public void immediateEffect(ref Stats charStat)
+        public virtual void immediateEffect(ref Stats charStat)
         {
             throw new NotImplementedException();
         }
 
-        public void removeEffect(ref Stats charStat)
+        public  virtual void removeEffect(ref Stats charStat)
         {
             throw new NotImplementedException();
         }
 
-        public void lingeringEffect(ref Stats charStats)
+        public virtual void lingeringEffect(ref Stats charStats)
         {
             throw new NotImplementedException();
         }

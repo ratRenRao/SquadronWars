@@ -1,6 +1,6 @@
 namespace Assets.GameClasses
 {
-    class Weaken : Effect, IEffectable
+    class Weaken : Effect
     {
         private int decreasePercent;
         private int hpRemoved;
@@ -13,13 +13,13 @@ namespace Assets.GameClasses
             this.duration = duration;
         }
 
-        public void immediateEffect()
+        public override void immediateEffect()
         {
             hpRemoved = targetStats.currentHP * (decreasePercent / 100);
             targetStats.currentHP -= hpRemoved;
         }
 
-        public void removeEffect()
+        public override void removeEffect()
         {
             targetStats.currentHP = ValidateStat(targetStats.currentHP + hpRemoved, 0, targetStats.maxHP);
         }

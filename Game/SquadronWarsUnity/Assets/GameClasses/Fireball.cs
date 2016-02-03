@@ -1,6 +1,6 @@
 namespace Assets.GameClasses
 {
-    class Fireball : Effect, IEffectable
+    class Fireball : Effect
     {
         private int fireballDamage;
 
@@ -12,7 +12,7 @@ namespace Assets.GameClasses
             this.duration = duration;
         }
 
-        public void immediateEffect()
+        public override void immediateEffect()
         {
             targetStats.currentHP -= fireballDamage;
         }

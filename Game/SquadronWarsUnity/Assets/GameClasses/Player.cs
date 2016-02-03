@@ -6,8 +6,7 @@ using UnityEngine;
 
 namespace Assets.GameClasses
 {
-    [Serializable]
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, IJsonable
     {
         //DBConnection dbConnection = new DBConnection();
         
@@ -83,5 +82,14 @@ namespace Assets.GameClasses
             this.itemList = dbPlayer.itemList;
         }*/
 
+        public static void BuildFromJson(JSONObject jsonObject)
+        {
+            
+        }
+
+        public string GetJsonObjectName()
+        {
+            return GlobalConstants.PlayerJsonObjectName;
+        }
     }
 }
