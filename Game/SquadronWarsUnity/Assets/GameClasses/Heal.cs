@@ -2,7 +2,7 @@ using System;
 
 namespace Assets.GameClasses
 {
-    class Heal : Effect, IEffectable
+    class Heal : Effect
     {
         private int healthRestored = 50;
         public Heal(Stats casterStats, Stats targetStats, bool initial, int duration)
@@ -13,27 +13,32 @@ namespace Assets.GameClasses
             this.duration = duration;
         }
 
-        public void immediateEffect()
+        public override void immediateEffect()
         {
             targetStats.currentHP = ValidateStat(targetStats.currentHP + healthRestored, 0, targetStats.maxHP);
         }
 
-        public void execute(ref Stats charStats)
+        public override void execute(ref Stats charStats)
         {
             throw new NotImplementedException();
         }
 
-        public void immediateEffect(ref Stats charStat)
+        public override void immediateEffect(ref Stats charStat)
         {
             throw new NotImplementedException();
         }
 
-        public void removeEffect(ref Stats charStat)
+        public override void removeEffect(ref Stats charStat)
         {
             throw new NotImplementedException();
         }
 
-        public void lingeringEffect(ref Stats charStats)
+        public override void lingeringEffect(ref Stats charStats)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetJsonObjectName()
         {
             throw new NotImplementedException();
         }

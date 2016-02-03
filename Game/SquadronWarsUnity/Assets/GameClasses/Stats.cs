@@ -1,6 +1,6 @@
 ﻿namespace Assets.GameClasses
 {
-    public class Stats
+    public class Stats : IJsonable
     {
         public int strength { get; set; }
         public int agility { get; set; }
@@ -126,6 +126,11 @@
             alteredStats.wisdom = charStats.wisdom + itemStats.wisdom;
             alteredStats.luck = charStats.luck + itemStats.luck;
             return alteredStats;
+        }
+
+        public string GetJsonObjectName()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

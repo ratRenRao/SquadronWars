@@ -22,7 +22,7 @@ public class SampleButton : MonoBehaviour
         MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         SpriteRenderer sprite = GameObject.FindGameObjectWithTag("Character1").GetComponent<SpriteRenderer>();
-        Stats baseStats = character.baseStats;
+     //   Stats baseStats = character.baseStats;
         character.sprite = sprite.sprite;
         stats.sampleButton = button;
         menu.squadScreenPanel.SetActive(false);
@@ -33,7 +33,7 @@ public class SampleButton : MonoBehaviour
         UpdateStats(character);
         stats.levelStat.text = character.level.ToString();
         int expToNextLevel = character.experienceNeeded();
-        int startExp = character.startExperience();
+     //   int startExp = character.startExperience();
         stats.experienceStat.text = string.Format("{0} / {1}", character.experience.ToString(), expToNextLevel.ToString());
         int progBar = character.percentToNextLevel();
         stats.ProgressBar.value = progBar;
@@ -45,10 +45,10 @@ public class SampleButton : MonoBehaviour
 
     public void ReevaluateStats(Text labelText)
     {
-        GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
+   //     GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
         GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
-        SampleButton button = gameObject.GetComponent<SampleButton>();
-        MenuManager menu = menuManager.GetComponent<MenuManager>();
+     //   SampleButton button = gameObject.GetComponent<SampleButton>();
+     //   MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         character = stats.sampleButton.character;
         string itemName = labelText.text;        
@@ -71,7 +71,7 @@ public class SampleButton : MonoBehaviour
     public void UpdateStats(Character character)
     {
         GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
-        SampleButton button = gameObject.GetComponent<SampleButton>();
+     //   SampleButton button = gameObject.GetComponent<SampleButton>();
         CharacterScreen menuStats = statsManager.GetComponent<CharacterScreen>();
         Stats stats = character.baseStats;
         Stats bonusStats = character.alteredStats;
@@ -112,10 +112,10 @@ public class SampleButton : MonoBehaviour
 
     public void incrementStat(string stat)
     {
-        GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
+     //   GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
         GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
-        SampleButton button = gameObject.GetComponent<SampleButton>();
-        MenuManager menu = menuManager.GetComponent<MenuManager>();
+     //   SampleButton button = gameObject.GetComponent<SampleButton>();
+     //   MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         character = stats.sampleButton.character;
         if (character.statPoints > 0)
@@ -206,10 +206,10 @@ public class SampleButton : MonoBehaviour
 
     public void LevelSkill(string skill)
     {
-        GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
+     //   GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
         GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
-        SampleButton button = gameObject.GetComponent<SampleButton>();
-        MenuManager menu = menuManager.GetComponent<MenuManager>();
+    //    SampleButton button = gameObject.GetComponent<SampleButton>();
+    //    MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         character = stats.sampleButton.character;
         if (character.skillPoints > 0)
@@ -246,10 +246,10 @@ public class SampleButton : MonoBehaviour
 
     public void EvaluateSkills()
     {
-        GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
+      //  GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
         GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
-        SampleButton button = gameObject.GetComponent<SampleButton>();
-        MenuManager menu = menuManager.GetComponent<MenuManager>();
+     //   SampleButton button = gameObject.GetComponent<SampleButton>();
+     //   MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         character = stats.sampleButton.character;
         if (character.skillList.ContainsKey("fire")){

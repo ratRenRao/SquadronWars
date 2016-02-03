@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Assets.GameClasses;
 using UnityEngine;
-using SquadronWars.Game.SquadronWarsUnity.Assets.Utilities;
 using Object = System.Object;
 
 namespace Assets.Data
@@ -10,18 +9,18 @@ namespace Assets.Data
     public class DbConnection : MonoBehaviour
     {
         public static bool ResponseError = false;
-        private static readonly Utilities Utilities = new Utilities();
+        private static readonly Utilities.Utilities Utilities = new Utilities.Utilities();
 
-        public T PopulateObjectFromDb<T>(string url, Player.Logins paramObject) where T : new()
+        public IJsonable PopulateObjectFromDb<T>(string url, Player.Logins paramObject) where T : IJsonable, new() 
         {
             var parameters = Utilities.CreatePublicPropertyDictionary(paramObject);
             return PopulateObjectFromDb<T>(url, parameters);
         }
 
-        public T PopulateObjectFromDb<T>(string url, Dictionary<string, string> parameters) where T : new()
+        public IJsonable PopulateObjectFromDb<T>(string url, Dictionary<string, string> parameters) where T : IJsonable, new()
         { 
             var response = ExecuteApiCall(url, PopulateParameters(parameters));
-            return Utilities.MapDataToObject<T>(response.text);
+            return Utilities.BuildObjectFromJsonData<T>(response.text);
         }
 
         private WWW ExecuteApiCall(string url, WWWForm form)

@@ -13,6 +13,8 @@ Global
 		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
 		Release|x86 = Release|x86
+		UnitTest|Any CPU = UnitTest|Any CPU
+		UnitTest|x86 = UnitTest|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8784FE5A-A96B-4950-B70A-062D55853DB4}.Debug|Any CPU.ActiveCfg = Debug|x86
@@ -21,6 +23,9 @@ Global
 		{8784FE5A-A96B-4950-B70A-062D55853DB4}.Release|Any CPU.ActiveCfg = Release|x86
 		{8784FE5A-A96B-4950-B70A-062D55853DB4}.Release|x86.ActiveCfg = Release|x86
 		{8784FE5A-A96B-4950-B70A-062D55853DB4}.Release|x86.Build.0 = Release|x86
+		{8784FE5A-A96B-4950-B70A-062D55853DB4}.UnitTest|Any CPU.ActiveCfg = UnitTest|x86
+		{8784FE5A-A96B-4950-B70A-062D55853DB4}.UnitTest|x86.ActiveCfg = UnitTest|x86
+		{8784FE5A-A96B-4950-B70A-062D55853DB4}.UnitTest|x86.Build.0 = UnitTest|x86
 		{14BF2F2B-77E0-4741-A293-A0B1B23DF33F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{14BF2F2B-77E0-4741-A293-A0B1B23DF33F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14BF2F2B-77E0-4741-A293-A0B1B23DF33F}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -29,6 +34,10 @@ Global
 		{14BF2F2B-77E0-4741-A293-A0B1B23DF33F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{14BF2F2B-77E0-4741-A293-A0B1B23DF33F}.Release|x86.ActiveCfg = Release|Any CPU
 		{14BF2F2B-77E0-4741-A293-A0B1B23DF33F}.Release|x86.Build.0 = Release|Any CPU
+		{14BF2F2B-77E0-4741-A293-A0B1B23DF33F}.UnitTest|Any CPU.ActiveCfg = UnitTest|Any CPU
+		{14BF2F2B-77E0-4741-A293-A0B1B23DF33F}.UnitTest|Any CPU.Build.0 = UnitTest|Any CPU
+		{14BF2F2B-77E0-4741-A293-A0B1B23DF33F}.UnitTest|x86.ActiveCfg = UnitTest|Any CPU
+		{14BF2F2B-77E0-4741-A293-A0B1B23DF33F}.UnitTest|x86.Build.0 = UnitTest|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

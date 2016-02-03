@@ -12,7 +12,7 @@
         ACCESSORY2,
     };
 
-    public class Item : IWearable
+    public class Item : IWearable, IJsonable
     {
 
         public ItemType itemType { get; set; }
@@ -20,5 +20,9 @@
         public int id { get; set; }
         public int itemListId { get; set; }
 
+        public string GetJsonObjectName()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

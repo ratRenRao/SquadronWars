@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Assets.GameClasses
 {
     //l,\"accessory2\":null,\"IsStandard\":null},{\"characterId\":\"2\",\"statId\":\"2\",\"statPoints\":\"0\",\"skillPoints\":\"0\",\"LevelID\":\"1\",\"name\":\"TestChar2\",\"experience\":\"0\",\"helm\":\"1\",\"chest\":\"1000\",\"gloves\":\"3000\",\"pants\":\"2000\",\"shoulders\":\"4000\",\"boots\":null,\"accessory1\":null,\"accessory2\":null,\"IsStandard\"
-    public class Character : MonoBehaviour
+    public class Character : MonoBehaviour, IJsonable
     {
         public int helm;
         public int chest;
@@ -18,9 +18,10 @@ namespace Assets.GameClasses
         public int accessory1;
         public int accessory2;
         public bool IsStandard;
-
+        public int x;
+        public int y;
         //DBConnection dbConnection = new DBConnection();
-        public string name;
+        public new string name;
         public int characterId { get; set; }
         public int statId;
         public Stats baseStats { get; set; }
@@ -61,16 +62,19 @@ namespace Assets.GameClasses
 
         public void addEffect(Effect effect)
         {
-            effect.execute(baseStats);
+            var tempStats = baseStats;
+            effect.execute(ref tempStats);
+            baseStats = tempStats;
             effects.Add(effect);
         }
 
         public void checkEffects()
         {
+            /*
             foreach (Effect effect in effects)
             {
-
             }
+            */
         }
 
         public int startExperience()
@@ -99,7 +103,12 @@ namespace Assets.GameClasses
             return Convert.ToInt32(percentComplete);
         }
 
-        
+        public string GetJsonObjectName()
+        {
+            throw new NotImplementedException();
+        }
+
+
         /*public async Task UpdateCharacterFromDb()
         {
             await dbConnection.ExecuteApiCall(GlobalConstants.squadDbUrl);

@@ -4,7 +4,7 @@ namespace Assets.GameClasses
 {
     class Ablilty : IEffectable
     {
-        public void execute(Stats charStats)
+        public void execute(ref Stats charStats)
         {
             throw new NotImplementedException();
         }
