@@ -25,7 +25,7 @@ interface IDBStructure
 
     public function getPlayer($playerID);
 
-    public function createPlayer($email);
+    public function createPlayer($register);
 
     public function updatePlayer($playerObject);
 
