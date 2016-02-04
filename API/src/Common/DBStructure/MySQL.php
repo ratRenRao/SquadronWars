@@ -166,13 +166,13 @@ class MySQL implements IDBStructure
         //Turns the result from the stored procedure (if any) into an associative array.
         $results = $query->fetch(PDO::FETCH_ASSOC);
 
+        //done with database connection. Closing connection.
+        $query->closeCursor();
+
         if(!$results)
         {
             return;
         }
-
-        //done with database connection. Closing connection.
-        $query->closeCursor();
 
         //if there are rows in result set from the query, then successful authentication.
         if(sizeof($results) > 0)
@@ -219,6 +219,14 @@ class MySQL implements IDBStructure
         $query->bindParam(1, $playerID, PDO::PARAM_INT);
         $query->execute();
         $returnObject["Inventory"] = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        $query = $dbh->prepare("CALL sp_GetAbilities");
+        $query->execute();
+        $returnObject["Abilities"] = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        $query = $dbh->prepare("CALL sp_GetAbilitiesPreReqs");
+        $query->execute();
+        $returnObject["AbilityPreReqs"] = $query->fetchAll(PDO::FETCH_ASSOC);
 
         $query = $dbh->prepare("CALL sp_GetEquipment");
         $query->execute();
@@ -270,7 +278,7 @@ class MySQL implements IDBStructure
 
     }
 
-    public function createPlayer($email)
+    public function createPlayer($register)
     {
         // TODO: Implement createPlayer() method.
         //create database reference object
@@ -287,6 +295,28 @@ class MySQL implements IDBStructure
             //this will be ignored in production. do not want to echo back this error.
             echo $e->getMessage();
         }
+
+        $query = $dbh->prepare("CALL sp_CreatePlayer(?,?,?,?,?)");
+        $query->bindParam(1,$register->{"username"},PDO::PARAM_STR);
+        $query->bindParam(2,$register->{"password"},PDO::PARAM_STR);
+        $query->bindParam(3,$register->{"firstname"},PDO::PARAM_STR);
+        $query->bindParam(4,$register->{"lastname"},PDO::PARAM_STR);
+        $query->bindParam(5,$register->{"email"},PDO::PARAM_STR);
+
+        $query->execute();
+
+        $return = null;
+
+        if($query->rowCount() == 1)
+        {
+            $return["PlayerInfo"] = $this->authenticateUser($register->{"username"}, $register->{"password"});
+            $return["PlayerDetails"] = $this->getPlayer($return["PlayerInfo"]["playerId"]);
+        }
+
+        $query->closeCursor();
+
+        return $return;
+
 
     }
 
