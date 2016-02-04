@@ -47,7 +47,7 @@ $app->post('/api/auth', function() use($app)
 //       $returnobject["PlayerInfo"] = $mysql->authenticateUser("test","testing123");
 
 
-        if(sizeof($returnobject) > 0)
+        if($returnobject["PlayerInfo"] != null)
         {
             //Return just character information.
             //$returnobject["Characters"] = $mysql->getCharacters($returnobject["PlayerInfo"]["playerId"]);
@@ -67,7 +67,17 @@ $app->post('/api/CreateCharacter', function() use($app)
 
 $app->post('/api/CreatePlayer', function() use($app)
 {
-    //TODO: Create Player
+    $mysql = new MySQL();
+
+    $register = json_decode($_POST["Register"]);
+
+    $returnObject = $mysql->createPlayer($register);
+
+    if($returnObject != null)
+    {
+        return json_encode($returnObject);
+    }
+
     return new Response("Failed",401);
 });
 
