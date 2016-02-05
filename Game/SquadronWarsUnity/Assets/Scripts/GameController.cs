@@ -697,6 +697,11 @@ namespace Assets.Scripts
                 tarAnim.SetBool("isAttacked", false);
             }
         }
+        IEnumerator CastAnimationNothing()
+        {
+            yield return new WaitForSeconds(.5f);
+            anim.SetBool("isCasting", false);
+        }
         IEnumerator InjuredAnimation()
         {
             yield return new WaitForSeconds(.4f);
