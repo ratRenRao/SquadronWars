@@ -48,9 +48,7 @@ namespace Assets.Scripts
         // Use this for initialization
         void Start()
         {
-            PrepTest();
-            prevTile = targetTile.GetComponent<Tile>();
-            tile = prevTile;
+            PrepTest();            
             // string obj = this.name;
             anim = currentGameCharacter.GetComponent<Animator>();
             tarAnim = targetGameCharacter.GetComponent<Animator>();
@@ -72,10 +70,13 @@ namespace Assets.Scripts
             if (!arraySet)
             {
                 tileArray = tileMap.tileArray;
-                tileArray[0, 0].character = currentGameCharacter;
-                tileArray[0, 0].isOccupied = true;
+                tileArray[0, 4].character = currentGameCharacter;
+                tileArray[0, 4].isOccupied = true;
                 tileArray[1, 0].character = targetGameCharacter;
                 tileArray[1, 0].isOccupied = true;
+                targetTile = tileArray[0, 4];
+                prevTile = targetTile.GetComponent<Tile>();
+                tile = prevTile;
                 arraySet = true;
             }
             if (reachedPosition == false && count < path.Count)
@@ -755,7 +756,7 @@ namespace Assets.Scripts
             targetTile = GameObject.FindGameObjectWithTag("start").GetComponent<Tile>();
             curGameCharacter = currentGameCharacter.GetComponent<GameCharacter>();
             tarGameCharacter = targetGameCharacter.GetComponent<GameCharacter>();
-            curGameCharacter.x = 0;
+            curGameCharacter.x = 4;
             curGameCharacter.y = 0;
             tarGameCharacter.x = 1;
             tarGameCharacter.y = 0;
