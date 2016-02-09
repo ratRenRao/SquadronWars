@@ -1,4 +1,6 @@
-﻿namespace Assets.GameClasses
+﻿using UnityEngine;
+
+namespace Assets.GameClasses
 {
     public enum ItemType
     {
@@ -12,13 +14,25 @@
         ACCESSORY2,
     };
 
-    public class Item : IWearable, IJsonable
+    public class Item : Equipment, IWearable, IJsonable
     {
 
         public ItemType itemType { get; set; }
         public string name { get; set; }
         public int id { get; set; }
         public int itemListId { get; set; }
+        public Stats stats { get; set; }
+
+        public Item()
+        { 
+        }
+
+        public Item(string name, ItemType itemType, Stats stats)
+        {
+            this.name = name;
+            this.itemType = itemType;
+            this.stats = stats;
+        }
 
         public string GetJsonObjectName()
         {

@@ -36,7 +36,7 @@ namespace Assets.Scripts
             SetDbConnection();
             SetLoginInfo();
             
-            _player = (Player) _dbConnection.PopulateObjectFromDb<Player>(GlobalConstants.PlayerDbUrl, _logins);
+            _player = _dbConnection.PopulateObjectFromDb<Player>(GlobalConstants.PlayerDbUrl, _logins);
             Debug.Log(_player.ToString());
 
             // Change to only continue if player object is populated

@@ -6,50 +6,37 @@ using UnityEngine;
 
 namespace Assets.GameClasses
 {
-    //l,\"accessory2\":null,\"IsStandard\":null},{\"characterId\":\"2\",\"statId\":\"2\",\"statPoints\":\"0\",\"skillPoints\":\"0\",\"LevelID\":\"1\",\"name\":\"TestChar2\",\"experience\":\"0\",\"helm\":\"1\",\"chest\":\"1000\",\"gloves\":\"3000\",\"pants\":\"2000\",\"shoulders\":\"4000\",\"boots\":null,\"accessory1\":null,\"accessory2\":null,\"IsStandard\"
-    public class Character : MonoBehaviour, IJsonable
+    //"Characters":[{"characterId":"1","statId":"1","statPoints":"5","skillPoints":"1","LevelID":"1","name":"Lancelot Test","experience":"100","helm":"1","chest":"1000","gloves":"3000","pants":"2000","shoulders":"4000","boots":"5000","accessory1":null,"accessory2":null,"IsStandard":null}
+    public class Character : IJsonable
     {
-        public int helm;
-        public int chest;
-        public int gloves;
-        public int pants;
-        public int shoulders;
-        public int boots;
-        public int accessory1;
-        public int accessory2;
+        
         public bool IsStandard;
         public int x;
         public int y;
         //DBConnection dbConnection = new DBConnection();
-        public new string name;
+        public new string name { get; set; }
         public int characterId { get; set; }
-        public int statId;
+        public int statId { get; set; }
         public Stats baseStats { get; set; }
         public Stats alteredStats { get; set; }
         public int characterListId { get; set; }
         public string characterName { get; set; }
-        public Dictionary<ItemType, Item> equipment = new Dictionary<ItemType, Item>();
-        public Dictionary<string, int> skillList = new Dictionary<string, int>();
+        public Equipment equipment { get; set; }
+        public Dictionary<string, int> skillList { get; set; }
         public int level { get; set; }
         public int experience { get; set; }
         public int statPoints { get; set; }
         public int skillPoints { get; set; }
-        public List<Effect> effects = new List<Effect>();
-        public Sprite sprite;
+        public List<Effect> effects  { get; set; }
+        public Sprite sprite { get; set; }
+        public readonly bool Updated = false;
 
         public Character()
         {
-            Initialize(0, null, 0, null, 0, 0, null); 
         }
 
         public Character(int characterId, Stats baseStats, int characterListId, string characterName,
-            int level, int experience, Dictionary<ItemType, Item> equipment)
-        {
-            Initialize(characterId, baseStats, characterListId, characterName, level, experience, equipment);
-        }
-
-        private void Initialize(int characterId, Stats baseStats, int characterListId, string characterName,
-            int level, int experience, Dictionary<ItemType, Item> equipment)
+            int level, int experience, Equipment equipment)
         {
             this.characterId = characterId;
             this.baseStats = baseStats;

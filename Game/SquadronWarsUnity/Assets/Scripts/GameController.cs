@@ -50,7 +50,7 @@ namespace Assets.Scripts
         };
             //screen = ScreenOrientation.Landscape;
             Stats stat1 = new Stats(5, 4, 6, 3, 2, 9, 5);
-            character = new Character(1, stat1, 1, "Saint Lancelot", 1, 75, equipment);
+            //character = new Character(1, stat1, 1, "Saint Lancelot", 1, 75, equipment);
             character.alteredStats = new Stats(0, 0, 0, 0, 0, 0, 0);
             character.alteredStats = GetBonusStats(character);
             character.alteredStats.speed = 4;
@@ -66,11 +66,14 @@ namespace Assets.Scripts
 
         public Stats GetBonusStats(Character character)
         {
+            /*
             foreach (Equipment equipment in character.equipment.Values)
             {
                 character.alteredStats = character.alteredStats.concatStats(character.alteredStats, equipment.stats);
             }
+            */
             return character.alteredStats;
+            
         }
 
         void Update()

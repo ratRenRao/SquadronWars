@@ -37,7 +37,7 @@ public class SampleButton : MonoBehaviour
         stats.experienceStat.text = string.Format("{0} / {1}", character.experience.ToString(), expToNextLevel.ToString());
         int progBar = character.percentToNextLevel();
         stats.ProgressBar.value = progBar;
-        Debug.Log(character.equipment[ItemType.HELM].name);
+        //Debug.Log(character.equipment[ItemType.HELM].name);
         Debug.Log(character.baseStats.intelligence);
         BuildDropdowns(stats);
         EvaluateSkills();
@@ -51,21 +51,23 @@ public class SampleButton : MonoBehaviour
      //   MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         character = stats.sampleButton.character;
-        string itemName = labelText.text;        
-        Equipment item = (Equipment)GlobalConstants.ItemList[itemName];
+        string itemName = labelText.text;
+        Equipment equipment = character.equipment; 
         Equipment prevItem = null;
-        foreach(Equipment charEquipment in character.equipment.Values)
+        /*
+        foreach (var item in equipment.GetEquipmentItems())
         {
-            if(charEquipment.itemType == item.itemType)
+            if (item.itemType == item.itemType)
             {
                 prevItem = charEquipment;
                 break;
             }
+            character.alteredStats = item.stats.removeAlteredStats(character.alteredStats, prevItem.stats);
+            character.alteredStats = item.stats.concatStats(character.alteredStats, item.stats);
+            character.equipment. = item;
+            UpdateStats(character);
         }
-        character.alteredStats = item.stats.removeAlteredStats(character.alteredStats, prevItem.stats);
-        character.alteredStats = item.stats.concatStats(character.alteredStats, item.stats);
-        character.equipment[item.itemType] = item;
-        UpdateStats(character);
+        */
     }
 
     public void UpdateStats(Character character)
@@ -194,14 +196,14 @@ public class SampleButton : MonoBehaviour
 
             }
         }
-        Debug.Log(character.equipment[ItemType.HELM].name);
+   /*     Debug.Log(character.equipment[ItemType.HELM].name);
         dropdowns.helmSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.HELM].name;
         dropdowns.shoulderSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.SHOULDERS].name;
         dropdowns.chestSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.CHEST].name;
         dropdowns.glovesSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.GLOVES].name;
         dropdowns.legsSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.LEGS].name;
         dropdowns.bootsSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.BOOTS].name;
-
+*/
     }
 
     public void LevelSkill(string skill)

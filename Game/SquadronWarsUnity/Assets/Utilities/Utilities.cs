@@ -4,12 +4,216 @@ using System.Linq;
 using System.Reflection;
 using Assets.GameClasses;
 using UnityEngine;
+using UnityEngine.Networking.NetworkSystem;
 
 namespace Assets.Utilities
 {
-    public class Utilities
+    public class Utilities : MonoBehaviour
     {
         private JSONObject _jsonObject = new JSONObject(); 
+      
+        public JSONObject DeserializeData(string data)
+        {
+            var obj = new JSONObject(data);
+            Debug.Log("New Object = " + obj.Count);
+            //var obj = JsonUtility.FromJson<object>(data);
+            _jsonObject = obj;
+            return obj;
+        }
+
+        public T BuildObjectFromJsonData<T>(string data) where T : IJsonable
+        {
+            var deserializedJson = DeserializeData(data);
+            _jsonObject = deserializedJson;
+            Debug.Log(deserializedJson.ToString());
+            var obj = Activator.CreateInstance<T>();
+            obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(typeof (T).Name.ToLower())), typeof(T));
+
+            return obj;
+        }
+
+        private JSONObject FindJsonObject(JSONObject jsonObject, string objName)
+        {
+            JSONObject result = null;
+
+            if (jsonObject.type == JSONObject.Type.NULL) return null; 
+
+            foreach (var key in jsonObject.keys)
+            {
+                if (string.Equals(key, objName, StringComparison.CurrentCultureIgnoreCase))
+                    result = jsonObject[key];
+                else if (jsonObject[key].IsObject)
+                    result = FindJsonObject(jsonObject[key], objName);
+
+                if(result != null)                    
+                    return result;
+            }
+
+            return result;
+        }
+
+        public object Decode(JSONObject obj, Type type)
+        {
+            if (obj.type == JSONObject.Type.NULL || obj == null)
+                return null;
+
+            var objectAttributes =
+                type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
+                    .ToList();
+
+            
+
+            Debug.Log("Post object attribute: " + objectAttributes.ToString());
+
+            switch (obj.type)
+            {
+                case JSONObject.Type.OBJECT:
+                    var builder = Activator.CreateInstance(type);
+
+                    foreach (var param in objectAttributes)
+                    {
+                        Debug.Log("In param loop: " + param.Name);
+                        JSONObject j = null;
+                        //var keyIndex = obj.keys.Where(key => key.ToLower().Equals(param.Name.ToLower())).ToList();
+                        var keyIndex = obj.keys.SingleOrDefault(key => param != null && key.ToLower().Equals(param.Name.ToLower()));
+
+                        // If json object isnt found in the subset, search all the json data for it 
+                        if (keyIndex == null)
+                        {
+                            j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.Name.ToLower()));
+
+                            if(j != null)
+                                Debug.Log(j.ToString());
+                        }
+                        else
+                            j = obj[keyIndex];
+
+                        builder.GetType()
+                            .GetProperty(param.Name)
+                            .SetValue(builder, j != null 
+                                ? Decode(j, builder.GetType().GetProperty(param.Name).PropertyType) 
+                                : null,
+                                null);
+                    }
+
+                    return builder;
+
+                case JSONObject.Type.ARRAY:
+                    //var listBuilder = Activator.CreateInstance(type) as List<object>;
+                    var listBuilder = new List<object>();
+
+                    foreach (var value in obj.list)
+                    {
+                        var item = Decode(value, type.GetGenericArguments().Single());
+                        if (item != null)
+                            listBuilder.Add(item);
+                    }
+
+//                    if (type == typeof (List<>))
+//                        return listBuilder.ToList();
+//                    else
+                        return listBuilder;
+
+                case JSONObject.Type.STRING:
+                    if(type != typeof(string))
+                        return ChangeJsonType(obj, type);
+                    else
+                        return obj.str;
+
+                case JSONObject.Type.NUMBER:
+                    return obj.n;
+
+                case JSONObject.Type.BOOL:
+                    return obj.b;
+
+                case JSONObject.Type.NULL:
+                    return null;
+
+            }
+
+            return null;
+        }
+
+        private object ChangeJsonType(JSONObject obj, Type type)
+        {
+            if (type == typeof (int))
+                return int.Parse(obj.str); 
+            if (type == typeof (bool))
+                return bool.Parse(obj.str);
+
+            return obj.str;
+        }
+
+        public static Type GetType(string TypeName)
+        {
+
+            // Try Type.GetType() first. This will work with types defined
+            // by the Mono runtime, in the same assembly as the caller, etc.
+            var type = Type.GetType(TypeName);
+
+            // If it worked, then we're done here
+            if (type != null)
+                return type;
+
+            // If the TypeName is a full name, then we can try loading the defining assembly directly
+            if (TypeName.Contains("."))
+            {
+
+                // Get the name of the assembly (Assumption is that we are using 
+                // fully-qualified type names)
+                var assemblyName = TypeName.Substring(0, TypeName.IndexOf('.'));
+
+                // Attempt to load the indicated Assembly
+                var assembly = Assembly.Load(assemblyName);
+                if (assembly == null)
+                    return null;
+
+                // Ask that assembly to return the proper Type
+                type = assembly.GetType(TypeName);
+                if (type != null)
+                    return type;
+
+            }
+
+            // If we still haven't found the proper type, we can enumerate all of the 
+            // loaded assemblies and see if any of them define the type
+            var currentAssembly = Assembly.GetExecutingAssembly();
+            var referencedAssemblies = currentAssembly.GetReferencedAssemblies();
+            foreach (var assemblyName in referencedAssemblies)
+            {
+
+                // Load the referenced assembly
+                var assembly = Assembly.Load(assemblyName);
+                if (assembly != null)
+                {
+                    // See if that assembly defines the named type
+                    type = assembly.GetType(TypeName);
+                    if (type != null)
+                        return type;
+                }
+            }
+
+            // The type just couldn't be found...
+            return null;
+
+        }
+
+        private bool IsIJsonable(Type type)
+        {
+            return type.GetInterfaces().Any(x =>
+                x.IsGenericType &&
+                x.GetGenericTypeDefinition() == typeof (IJsonable));
+        }
+
+        public string ObjectToString(object obj)
+        {
+            string attributes = "";
+            foreach (var attribute in obj.GetType().GetProperties())
+                string.Format(attributes += "{0}: {1} ", attribute.Name, attribute.ToString());
+
+            return attributes;
+        }
+
         /// <summary>
         /// Creates a dictionary of string objects containing only public parameters of the 
         /// object passed in, and their corresponding values.
@@ -49,26 +253,7 @@ namespace Assets.Utilities
                 .ToDictionary(attribute => attribute.Name, attribute => obj.GetType().GetProperty(attribute.Name).GetValue(obj, null).ToString().ToLower());
         }
 
-        public JSONObject DeserializeData(string data)
-        {
-            var obj = new JSONObject(data);
-            Debug.Log("New Object = " + obj.Count);
-            //var obj = JsonUtility.FromJson<object>(data);
-            return obj;
-        }
-
-        public IJsonable BuildObjectFromJsonData<T>(string data) where T : IJsonable, new()
-        {
-            var deserializedJson = DeserializeData(data);
-            Debug.Log(deserializedJson.ToString());
-            _jsonObject = FlattenJsonObject(deserializedJson);
-            var obj = new T();
-            obj = (T) Decode(_jsonObject, typeof(T));
-
-            return obj;
-        }
-
-        public T MapJsonToObject<T>(ref T obj) 
+        public T MapJsonToObject<T>(ref T obj)
         {
             //var obj = new T(); 
             var attributes =
@@ -79,8 +264,8 @@ namespace Assets.Utilities
                     attributes.Where(atr => _jsonObject.keys.Select(key => key.ToLower()).Contains(atr.Name.ToLower())))
             {
                 Debug.Log(attribute.Name);
-                if (attribute.PropertyType == typeof (int) || attribute.PropertyType == typeof (string) ||
-                    attribute.PropertyType == typeof (bool))
+                if (attribute.PropertyType == typeof(int) || attribute.PropertyType == typeof(string) ||
+                    attribute.PropertyType == typeof(bool))
                 {
                     var key = _jsonObject.keys.Single(k => k.ToLower() == attribute.Name.ToLower());
 
@@ -107,31 +292,31 @@ namespace Assets.Utilities
         public JSONObject FlattenJsonObject(JSONObject jsonObject)
         {
             var flattenedJson = new JSONObject();
-            var index = 0;
 
-            foreach (var item in jsonObject.list)
+            for (var i = 0; i < jsonObject.list.Count; i++)
             {
                 //Debug.Log(item.ToString());
-                if (!item.IsNull)
+                if (!jsonObject[i].IsNull)
                 {
-                    if (item.IsObject)
+                    if (jsonObject[i].IsObject || jsonObject[i].IsArray)
                     {
                         //string keyObject = jsonObject[key].keys[i];
                         //JSONObject listObject = item.list[i];
-                        var flattenResult = FlattenJsonObject(item);
-                        if(!flattenResult.IsNull)
-                            foreach (var resultList in flattenResult.list)
-                                flattenedJson.Add(resultList);
+                        var flattenResult = FlattenJsonObject(jsonObject[i]);
+                        if (!flattenResult.IsNull)
+                            for (var x = 0; x < flattenResult.list.Count; x++)
+                            {
+                                flattenedJson.Add(flattenResult[x]);
+                            }
                     }
-                    else if (!item.IsNull)
-                        flattenedJson.Add(jsonObject[index]);
+                    else
+                        flattenedJson.Add(jsonObject);
                 }
-
-                index++;
             }
 
             return flattenedJson;
         }
+
 
         public object ConvertToType(Type type, string value)
         {
@@ -142,7 +327,7 @@ namespace Assets.Utilities
 
             return value;
         }
-        
+
         public Dictionary<string, JSONObject> GetMatchingJsonAttributes(JSONObject jsonObject, List<PropertyInfo> attributes)
         {
             var parsedJson = new Dictionary<string, JSONObject>();
@@ -185,44 +370,6 @@ namespace Assets.Utilities
             return null;
         }
 
-        public object Decode(JSONObject obj, Type type)
-        {
-            var builder = Activator.CreateInstance(type);
-            switch (obj.type)
-            {
-                case JSONObject.Type.OBJECT:
-                    var objectAttributes =
-                        type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
-                            .ToList()
-                            .Where(attribute => obj.keys.Select(key => key.ToLower()).Contains(attribute.Name.ToLower()));
-
-                    foreach(var param in objectAttributes)
-                    {
-                        var temp = Activator.CreateInstance(param.PropertyType);
-                        var j = obj[obj.keys.Single(key => key.ToLower() == param.Name.ToLower())];
-                        Decode(j, param.PropertyType);
-                        builder.GetType().GetProperty(param.Name).SetValue(builder, temp, null);
-                    }
-                    break; 
-                case JSONObject.Type.ARRAY:
-                    var array = new object[obj.list.Count];
-                    foreach (var t in obj.list)
-                        Decode(t, type.GetElementType());
-
-                    builder = array;
-                    break;
-                case JSONObject.Type.STRING:
-                    builder = obj.str;
-                    break;
-                case JSONObject.Type.NUMBER:
-                    builder = obj.n;
-                    break;
-                case JSONObject.Type.BOOL:
-                    builder = obj.b;
-                    break;
-            }
-
-            return builder;
-        }
+        //     private static string GetJsonObjectName
     }
-}
+} 

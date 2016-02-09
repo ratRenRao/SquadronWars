@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Assets.GameClasses;
 using UnityEngine;
-using Object = System.Object;
 
 namespace Assets.Data
 {
@@ -11,13 +10,13 @@ namespace Assets.Data
         public static bool ResponseError = false;
         private static readonly Utilities.Utilities Utilities = new Utilities.Utilities();
 
-        public IJsonable PopulateObjectFromDb<T>(string url, object paramObject) where T : IJsonable, new() 
+        public T PopulateObjectFromDb<T>(string url, object paramObject) where T : IJsonable
         {
             var parameters = Utilities.CreatePublicPropertyDictionary(paramObject);
             return PopulateObjectFromDb<T>(url, parameters);
         }
 
-        public IJsonable PopulateObjectFromDb<T>(string url, Dictionary<string, string> parameters) where T : IJsonable, new()
+        public T PopulateObjectFromDb<T>(string url, Dictionary<string, string> parameters) where T : IJsonable
         { 
             var response = ExecuteApiCall(url, PopulateParameters(parameters));
             return Utilities.BuildObjectFromJsonData<T>(response.text);

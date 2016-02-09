@@ -1,3 +1,6 @@
+using Assets.GameClasses;
+using UnityEngine;
+
 namespace Assets.GameClasses
 {
     class Weaken : Effect

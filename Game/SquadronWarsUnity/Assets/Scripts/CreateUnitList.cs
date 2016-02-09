@@ -84,6 +84,7 @@ namespace Assets.Scripts
             Stats stat4 = new Stats(12, 7, 6, 4, 4, 4, 5);
             Stats stat5 = new Stats(3, 3, 15, 5, 3, 4, 2);
             Stats stat6 = new Stats(16, 20, 45, 20, 22, 15, 12);
+            /*
             characters.Add(new Character(1, stat1, 1, "Saint Lancelot", 1, 75, equipment));
             characters.Add(new Character(1, stat2, 1, "Sir Charles", 3, 450, equipment1));
             characters.Add(new Character(1, stat3, 1, "Devil Raider", 2, 275, equipment2));
@@ -103,12 +104,14 @@ namespace Assets.Scripts
                 newButton.transform.SetParent(contentPanel, false);
 
             }
+            */
         }
+
         public Stats GetBonusStats(Character character)
         {
-            foreach (Equipment equipment in character.equipment.Values)
+            foreach (var item in character.equipment.GetEquipmentItems())
             {
-                character.alteredStats = character.alteredStats.concatStats(character.alteredStats, equipment.stats);
+                character.alteredStats = character.alteredStats.concatStats(character.alteredStats, item.stats);
             }
             return character.alteredStats;
         }
