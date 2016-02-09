@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: fd467c1fc08372d4b807b1adc005881a
-timeCreated: 1454638251
+timeCreated: 1454985158
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -206,6 +206,12 @@ TextureImporter:
     21300398: Character2Sword_199
     21300400: Character2Sword_200
     21300402: Character2Sword_201
+    21300404: Character2Sword_202
+    21300406: Character2Sword_203
+    21300408: Character2Sword_204
+    21300410: Character2Sword_205
+    21300412: Character2Sword_206
+    21300414: Character2Sword_208
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -219,7 +225,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -244,9 +250,9 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 12
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -255,2023 +261,3938 @@ TextureImporter:
     - name: Character2Sword_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 2049
-        width: 32
-        height: 48
+        x: 0
+        y: 2048
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 18.833374}
+        - {x: -17.5, y: 10.833374}
+        - {x: -17.5, y: -27.166626}
+        - {x: -16.5, y: -31.166626}
+        - {x: 16.5, y: -31.166626}
+        - {x: 16.5, y: 1.833374}
+        - {x: 10.5, y: 18.833374}
     - name: Character2Sword_1
       rect:
         serializedVersion: 2
-        x: 81
-        y: 2049
-        width: 30
-        height: 48
+        x: 64
+        y: 2048
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.541668, y: 18.833374}
+        - {x: -10.458332, y: 18.833374}
+        - {x: -15.458332, y: 17.833374}
+        - {x: -16.458332, y: 13.833374}
+        - {x: -16.458332, y: -31.166626}
+        - {x: 15.541668, y: -31.166626}
+        - {x: 15.541668, y: -2.166626}
+        - {x: 14.541668, y: 12.833374}
     - name: Character2Sword_2
       rect:
         serializedVersion: 2
-        x: 145
-        y: 2049
-        width: 30
-        height: 48
+        x: 128
+        y: 2048
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.416664, y: 18.833374}
+        - {x: -16.416664, y: 9.833374}
+        - {x: -16.416664, y: -30.166626}
+        - {x: -13.416664, y: -31.166626}
+        - {x: 15.583336, y: -31.166626}
+        - {x: 15.583336, y: 13.833374}
+        - {x: 7.583336, y: 18.833374}
     - name: Character2Sword_3
       rect:
         serializedVersion: 2
-        x: 205
-        y: 2049
-        width: 38
-        height: 48
+        x: 192
+        y: 2048
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.375, y: 18.833374}
+        - {x: -20.375, y: 7.833374}
+        - {x: -20.375, y: -29.166626}
+        - {x: -19.375, y: -31.166626}
+        - {x: 17.625, y: -31.166626}
+        - {x: 19.625, y: -25.166626}
+        - {x: 19.625, y: 4.833374}
+        - {x: 8.625, y: 18.833374}
     - name: Character2Sword_4
       rect:
         serializedVersion: 2
-        x: 262
-        y: 2049
-        width: 52
-        height: 48
+        x: 256
+        y: 2048
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.333328, y: 18.833374}
+        - {x: -27.333328, y: 9.833374}
+        - {x: -27.333328, y: -15.166626}
+        - {x: -17.333328, y: -29.166626}
+        - {x: -13.333328, y: -31.166626}
+        - {x: 14.666672, y: -31.166626}
+        - {x: 26.666672, y: -18.166626}
+        - {x: 26.666672, y: 11.833374}
+        - {x: 18.666672, y: 18.833374}
     - name: Character2Sword_5
       rect:
         serializedVersion: 2
-        x: 327
-        y: 2049
-        width: 50
-        height: 48
+        x: 320
+        y: 2048
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.291656, y: 18.833374}
+        - {x: -25.291656, y: 16.833374}
+        - {x: -26.291656, y: 14.833374}
+        - {x: -26.291656, y: -5.166626}
+        - {x: -14.2916565, y: -31.166626}
+        - {x: 15.7083435, y: -31.166626}
+        - {x: 25.708344, y: -14.166626}
+        - {x: 25.708344, y: 16.833374}
+        - {x: 22.708344, y: 18.833374}
     - name: Character2Sword_6
       rect:
         serializedVersion: 2
-        x: 397
-        y: 2049
-        width: 38
-        height: 48
+        x: 384
+        y: 2048
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.75, y: 18.833374}
+        - {x: -13.25, y: 18.833374}
+        - {x: -20.25, y: 6.833374}
+        - {x: -20.25, y: -28.166626}
+        - {x: -19.25, y: -31.166626}
+        - {x: 15.75, y: -31.166626}
+        - {x: 19.75, y: -20.166626}
+        - {x: 19.75, y: -1.166626}
+        - {x: 13.75, y: 17.833374}
     - name: Character2Sword_7
       rect:
         serializedVersion: 2
-        x: 22
-        y: 1985
-        width: 22
-        height: 49
+        x: 0
+        y: 1984
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.5, y: 19.791748}
+        - {x: -10.5, y: 19.791748}
+        - {x: -11.5, y: 17.791748}
+        - {x: -11.5, y: -30.208252}
+        - {x: -3.5, y: -31.208252}
+        - {x: 7.5, y: -31.208252}
+        - {x: 9.5, y: -27.208252}
+        - {x: 12.5, y: -14.208252}
+        - {x: 12.5, y: 18.791748}
     - name: Character2Sword_8
       rect:
         serializedVersion: 2
-        x: 84
-        y: 1985
-        width: 25
-        height: 49
+        x: 64
+        y: 1984
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.458332, y: 19.791748}
+        - {x: -13.458332, y: 14.791748}
+        - {x: -13.458332, y: -25.208252}
+        - {x: -10.458332, y: -30.208252}
+        - {x: -1.4583321, y: -31.208252}
+        - {x: 7.541668, y: -31.208252}
+        - {x: 11.541668, y: -29.208252}
+        - {x: 13.541668, y: -19.208252}
+        - {x: 13.541668, y: 19.791748}
     - name: Character2Sword_9
       rect:
         serializedVersion: 2
-        x: 149
-        y: 1985
-        width: 23
-        height: 49
+        x: 128
+        y: 1984
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.583336, y: 19.791748}
+        - {x: -6.416664, y: 19.791748}
+        - {x: -12.416664, y: 17.791748}
+        - {x: -12.416664, y: -31.208252}
+        - {x: 6.583336, y: -31.208252}
+        - {x: 9.583336, y: -27.208252}
+        - {x: 12.583336, y: -18.208252}
+        - {x: 12.583336, y: 15.791748}
     - name: Character2Sword_10
       rect:
         serializedVersion: 2
-        x: 211
-        y: 1985
-        width: 28
-        height: 49
+        x: 192
+        y: 1984
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.375, y: 19.791748}
+        - {x: -11.375, y: 15.791748}
+        - {x: -14.375, y: 8.791748}
+        - {x: -14.375, y: -23.208252}
+        - {x: -12.375, y: -31.208252}
+        - {x: 9.625, y: -31.208252}
+        - {x: 15.625, y: -17.208252}
+        - {x: 15.625, y: 17.791748}
+        - {x: 8.625, y: 19.791748}
     - name: Character2Sword_11
       rect:
         serializedVersion: 2
-        x: 273
-        y: 1985
-        width: 35
-        height: 49
+        x: 256
+        y: 1984
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.333328, y: 19.791748}
+        - {x: -16.333328, y: 7.791748}
+        - {x: -16.333328, y: -14.208252}
+        - {x: -10.333328, y: -31.208252}
+        - {x: 10.666672, y: -31.208252}
+        - {x: 20.666672, y: -16.208252}
+        - {x: 20.666672, y: 3.791748}
+        - {x: 9.666672, y: 19.791748}
     - name: Character2Sword_12
       rect:
         serializedVersion: 2
-        x: 337
-        y: 1985
-        width: 35
-        height: 49
+        x: 320
+        y: 1984
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.7083435, y: 19.791748}
+        - {x: -6.2916565, y: 19.791748}
+        - {x: -16.291656, y: 10.791748}
+        - {x: -16.291656, y: -16.208252}
+        - {x: -14.2916565, y: -29.208252}
+        - {x: -5.2916565, y: -31.208252}
+        - {x: 9.7083435, y: -31.208252}
+        - {x: 20.708344, y: -5.208252}
+        - {x: 20.708344, y: 6.791748}
+        - {x: 19.708344, y: 9.791748}
     - name: Character2Sword_13
       rect:
         serializedVersion: 2
-        x: 403
-        y: 1985
-        width: 30
-        height: 49
+        x: 384
+        y: 1984
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.25, y: 19.791748}
+        - {x: -13.25, y: 17.791748}
+        - {x: -14.25, y: 11.791748}
+        - {x: -14.25, y: -19.208252}
+        - {x: -12.25, y: -28.208252}
+        - {x: -8.25, y: -31.208252}
+        - {x: 8.75, y: -31.208252}
+        - {x: 15.75, y: -29.208252}
+        - {x: 17.75, y: -17.208252}
+        - {x: 17.75, y: 2.791748}
+        - {x: 9.75, y: 19.791748}
     - name: Character2Sword_14
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1921
-        width: 32
-        height: 49
+        x: 0
+        y: 1920
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.5, y: 19.75}
+        - {x: -10.5, y: 19.75}
+        - {x: -17.5, y: 2.75}
+        - {x: -17.5, y: -30.25}
+        - {x: -13.5, y: -31.25}
+        - {x: 13.5, y: -31.25}
+        - {x: 16.5, y: -30.25}
+        - {x: 16.5, y: 5.75}
     - name: Character2Sword_15
       rect:
         serializedVersion: 2
-        x: 80
-        y: 1921
-        width: 32
-        height: 49
+        x: 64
+        y: 1920
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.541668, y: 18.75}
+        - {x: 10.541668, y: 19.75}
+        - {x: -12.458332, y: 19.75}
+        - {x: -17.458332, y: 0.75}
+        - {x: -17.458332, y: -30.25}
+        - {x: -14.458332, y: -31.25}
+        - {x: 13.541668, y: -31.25}
+        - {x: 16.541668, y: -30.25}
+        - {x: 16.541668, y: 3.75}
     - name: Character2Sword_16
       rect:
         serializedVersion: 2
-        x: 145
-        y: 1921
-        width: 30
-        height: 49
+        x: 128
+        y: 1920
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.583336, y: 19.75}
+        - {x: -10.416664, y: 19.75}
+        - {x: -16.416664, y: 6.75}
+        - {x: -16.416664, y: -24.25}
+        - {x: -14.416664, y: -31.25}
+        - {x: 14.583336, y: -31.25}
+        - {x: 15.583336, y: -26.25}
+        - {x: 15.583336, y: 1.75}
+        - {x: 11.583336, y: 15.75}
     - name: Character2Sword_17
       rect:
         serializedVersion: 2
-        x: 205
-        y: 1921
-        width: 38
-        height: 49
+        x: 192
+        y: 1920
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.625, y: 19.75}
+        - {x: -9.375, y: 19.75}
+        - {x: -18.375, y: 15.75}
+        - {x: -20.375, y: 10.75}
+        - {x: -20.375, y: -21.25}
+        - {x: -16.375, y: -31.25}
+        - {x: 15.625, y: -31.25}
+        - {x: 19.625, y: -26.25}
+        - {x: 19.625, y: 7.75}
+        - {x: 13.625, y: 17.75}
     - name: Character2Sword_18
       rect:
         serializedVersion: 2
-        x: 262
-        y: 1921
-        width: 52
-        height: 49
+        x: 256
+        y: 1920
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.333328, y: 19.75}
+        - {x: -27.333328, y: 12.75}
+        - {x: -27.333328, y: -25.25}
+        - {x: -24.333328, y: -31.25}
+        - {x: 15.666672, y: -31.25}
+        - {x: 26.666672, y: -20.25}
+        - {x: 26.666672, y: 13.75}
+        - {x: 20.666672, y: 19.75}
     - name: Character2Sword_19
       rect:
         serializedVersion: 2
-        x: 327
-        y: 1921
-        width: 50
-        height: 49
+        x: 320
+        y: 1920
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.708344, y: 19.75}
+        - {x: -15.2916565, y: 19.75}
+        - {x: -24.291656, y: 16.75}
+        - {x: -26.291656, y: 4.75}
+        - {x: -25.291656, y: -0.25}
+        - {x: -23.291656, y: -3.25}
+        - {x: -17.291656, y: -30.25}
+        - {x: -12.2916565, y: -31.25}
+        - {x: 13.7083435, y: -31.25}
+        - {x: 25.708344, y: -6.25}
+        - {x: 25.708344, y: 13.75}
     - name: Character2Sword_20
       rect:
         serializedVersion: 2
-        x: 398
-        y: 1921
-        width: 36
-        height: 49
+        x: 384
+        y: 1920
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.75, y: 19.75}
+        - {x: -19.25, y: 19.75}
+        - {x: -19.25, y: -31.25}
+        - {x: 12.75, y: -31.25}
+        - {x: 18.75, y: -21.25}
+        - {x: 18.75, y: -0.25}
+        - {x: 13.75, y: 17.75}
     - name: Character2Sword_21
       rect:
         serializedVersion: 2
-        x: 20
-        y: 1857
-        width: 22
-        height: 49
+        x: 0
+        y: 1856
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 19.708374}
+        - {x: -13.5, y: -29.291626}
+        - {x: -8.5, y: -31.291626}
+        - {x: 10.5, y: -31.291626}
+        - {x: 10.5, y: 17.708374}
+        - {x: 7.5, y: 19.708374}
     - name: Character2Sword_22
       rect:
         serializedVersion: 2
-        x: 83
-        y: 1857
-        width: 25
-        height: 49
+        x: 64
+        y: 1856
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.458332, y: 19.708374}
+        - {x: -14.458332, y: -31.291626}
+        - {x: 12.541668, y: -31.291626}
+        - {x: 12.541668, y: 18.708374}
+        - {x: 8.541668, y: 19.708374}
     - name: Character2Sword_23
       rect:
         serializedVersion: 2
-        x: 148
-        y: 1857
-        width: 23
-        height: 49
+        x: 128
+        y: 1856
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.416664, y: 19.708374}
+        - {x: -13.416664, y: 18.708374}
+        - {x: -13.416664, y: -19.291626}
+        - {x: -9.416664, y: -31.291626}
+        - {x: 11.583336, y: -31.291626}
+        - {x: 11.583336, y: 17.708374}
+        - {x: 8.583336, y: 19.708374}
     - name: Character2Sword_24
       rect:
         serializedVersion: 2
-        x: 209
-        y: 1857
-        width: 28
-        height: 49
+        x: 192
+        y: 1856
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.375, y: 19.708374}
+        - {x: -15.375, y: 18.708374}
+        - {x: -16.375, y: 9.708374}
+        - {x: -16.375, y: -17.291626}
+        - {x: -8.375, y: -31.291626}
+        - {x: 13.625, y: -31.291626}
+        - {x: 13.625, y: 18.708374}
+        - {x: 10.625, y: 19.708374}
     - name: Character2Sword_25
       rect:
         serializedVersion: 2
-        x: 268
-        y: 1857
-        width: 35
-        height: 49
+        x: 256
+        y: 1856
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.333328, y: 19.708374}
+        - {x: -21.333328, y: 9.708374}
+        - {x: -21.333328, y: -11.291626}
+        - {x: -14.333328, y: -30.291626}
+        - {x: -9.333328, y: -31.291626}
+        - {x: 12.666672, y: -31.291626}
+        - {x: 15.666672, y: -19.291626}
+        - {x: 15.666672, y: 6.708374}
+        - {x: 6.6666718, y: 19.708374}
     - name: Character2Sword_26
       rect:
         serializedVersion: 2
-        x: 332
-        y: 1857
-        width: 35
-        height: 49
+        x: 320
+        y: 1856
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.2916565, y: 19.708374}
+        - {x: -21.291656, y: 6.708374}
+        - {x: -21.291656, y: -4.291626}
+        - {x: -9.2916565, y: -31.291626}
+        - {x: 10.7083435, y: -31.291626}
+        - {x: 15.7083435, y: -6.291626}
+        - {x: 15.7083435, y: 9.708374}
+        - {x: 7.7083435, y: 19.708374}
     - name: Character2Sword_27
       rect:
         serializedVersion: 2
-        x: 399
-        y: 1857
-        width: 30
-        height: 49
+        x: 384
+        y: 1856
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.25, y: 19.708374}
+        - {x: -15.25, y: 18.708374}
+        - {x: -18.25, y: 9.708374}
+        - {x: -18.25, y: -13.291626}
+        - {x: -10.25, y: -31.291626}
+        - {x: 13.75, y: -31.291626}
+        - {x: 13.75, y: 17.708374}
+        - {x: 10.75, y: 19.708374}
     - name: Character2Sword_28
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1793
-        width: 32
-        height: 48
+        x: 0
+        y: 1792
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 18.666748}
+        - {x: -14.5, y: 16.666748}
+        - {x: -17.5, y: 8.666748}
+        - {x: -17.5, y: -21.333252}
+        - {x: -13.5, y: -31.333252}
+        - {x: 11.5, y: -31.333252}
+        - {x: 16.5, y: -18.333252}
+        - {x: 16.5, y: 7.666748}
+        - {x: 12.5, y: 18.666748}
     - name: Character2Sword_29
       rect:
         serializedVersion: 2
-        x: 83
-        y: 1791
-        width: 28
-        height: 49
+        x: 64
+        y: 1792
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.541668, y: 17.666748}
+        - {x: -8.458332, y: 17.666748}
+        - {x: -14.458332, y: 11.666748}
+        - {x: -14.458332, y: -20.333252}
+        - {x: -13.458332, y: -28.333252}
+        - {x: -11.458332, y: -31.333252}
+        - {x: 15.541668, y: -31.333252}
+        - {x: 15.541668, y: 12.666748}
     - name: Character2Sword_30
       rect:
         serializedVersion: 2
-        x: 149
-        y: 1791
-        width: 24
-        height: 50
+        x: 128
+        y: 1792
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.416664, y: 18.666748}
+        - {x: -12.416664, y: -20.333252}
+        - {x: -10.416664, y: -31.333252}
+        - {x: 13.583336, y: -31.333252}
+        - {x: 13.583336, y: 18.666748}
     - name: Character2Sword_31
       rect:
         serializedVersion: 2
-        x: 213
-        y: 1791
-        width: 24
-        height: 50
+        x: 192
+        y: 1792
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.625, y: 18.666748}
+        - {x: -12.375, y: 18.666748}
+        - {x: -12.375, y: -15.333252}
+        - {x: -11.375, y: -24.333252}
+        - {x: -2.375, y: -31.333252}
+        - {x: 9.625, y: -31.333252}
+        - {x: 11.625, y: -30.333252}
+        - {x: 13.625, y: -8.333252}
+        - {x: 13.625, y: 15.666748}
     - name: Character2Sword_32
       rect:
         serializedVersion: 2
-        x: 278
-        y: 1791
-        width: 24
-        height: 49
+        x: 256
+        y: 1792
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.333328, y: 17.666748}
+        - {x: -11.333328, y: 14.666748}
+        - {x: -11.333328, y: -22.333252}
+        - {x: -10.333328, y: -24.333252}
+        - {x: -1.3333282, y: -31.333252}
+        - {x: 11.666672, y: -31.333252}
+        - {x: 14.666672, y: -26.333252}
+        - {x: 14.666672, y: 10.666748}
+        - {x: 12.666672, y: 17.666748}
     - name: Character2Sword_33
       rect:
         serializedVersion: 2
-        x: 342
-        y: 1791
-        width: 24
-        height: 49
+        x: 320
+        y: 1792
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.2916565, y: 17.666748}
+        - {x: -11.2916565, y: -24.333252}
+        - {x: -4.2916565, y: -31.333252}
+        - {x: 13.7083435, y: -31.333252}
+        - {x: 14.7083435, y: -26.333252}
+        - {x: 14.7083435, y: 13.666748}
+        - {x: 13.7083435, y: 17.666748}
     - name: Character2Sword_34
       rect:
         serializedVersion: 2
-        x: 406
-        y: 1791
-        width: 24
-        height: 49
+        x: 384
+        y: 1792
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.75, y: 11.666748}
+        - {x: 11.75, y: 17.666748}
+        - {x: -5.25, y: 17.666748}
+        - {x: -11.25, y: 15.666748}
+        - {x: -11.25, y: -23.333252}
+        - {x: -7.25, y: -31.333252}
+        - {x: 9.75, y: -31.333252}
+        - {x: 10.75, y: -29.333252}
+        - {x: 14.75, y: -13.333252}
     - name: Character2Sword_35
       rect:
         serializedVersion: 2
-        x: 469
-        y: 1791
-        width: 24
-        height: 50
+        x: 448
+        y: 1792
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.208313, y: 18.666748}
+        - {x: -12.208313, y: 16.666748}
+        - {x: -12.208313, y: -28.333252}
+        - {x: -4.208313, y: -31.333252}
+        - {x: 11.791687, y: -31.333252}
+        - {x: 11.791687, y: -29.333252}
+        - {x: 13.791687, y: -15.333252}
+        - {x: 13.791687, y: 18.666748}
     - name: Character2Sword_36
       rect:
         serializedVersion: 2
-        x: 22
-        y: 1729
-        width: 22
-        height: 49
+        x: 0
+        y: 1728
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 19.625}
+        - {x: -11.5, y: 18.625}
+        - {x: -11.5, y: -31.375}
+        - {x: 11.5, y: -31.375}
+        - {x: 12.5, y: -27.375}
+        - {x: 12.5, y: 19.625}
     - name: Character2Sword_37
       rect:
         serializedVersion: 2
-        x: 82
-        y: 1729
-        width: 27
-        height: 49
+        x: 64
+        y: 1728
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.458332, y: 19.625}
+        - {x: -15.458332, y: -31.375}
+        - {x: 11.541668, y: -31.375}
+        - {x: 13.541668, y: -22.375}
+        - {x: 13.541668, y: 19.625}
+      - - {x: -0.45833206, y: 31.625}
+        - {x: 0.54166794, y: 28.625}
+        - {x: 7.541668, y: 28.625}
+        - {x: 9.541668, y: 30.625}
+        - {x: 9.541668, y: 31.625}
     - name: Character2Sword_38
       rect:
         serializedVersion: 2
-        x: 146
-        y: 1729
-        width: 29
-        height: 49
+        x: 128
+        y: 1728
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.416664, y: 19.625}
+        - {x: -15.416664, y: 18.625}
+        - {x: -15.416664, y: -31.375}
+        - {x: 9.583336, y: -31.375}
+        - {x: 15.583336, y: -20.375}
+        - {x: 15.583336, y: 17.625}
+        - {x: 9.583336, y: 19.625}
+      - - {x: -1.4166641, y: 31.625}
+        - {x: -0.41666412, y: 28.625}
+        - {x: 6.583336, y: 28.625}
+        - {x: 8.583336, y: 30.625}
+        - {x: 8.583336, y: 31.625}
     - name: Character2Sword_39
       rect:
         serializedVersion: 2
-        x: 213
-        y: 1729
-        width: 27
-        height: 49
+        x: 192
+        y: 1728
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.375, y: 19.625}
+        - {x: -11.375, y: 15.625}
+        - {x: -12.375, y: 5.625}
+        - {x: -12.375, y: -31.375}
+        - {x: 13.625, y: -31.375}
+        - {x: 16.625, y: -15.375}
+        - {x: 16.625, y: 19.625}
+      - - {x: -1.375, y: 31.625}
+        - {x: -0.375, y: 28.625}
+        - {x: 6.625, y: 28.625}
+        - {x: 8.625, y: 30.625}
+        - {x: 8.625, y: 31.625}
     - name: Character2Sword_40
       rect:
         serializedVersion: 2
-        x: 270
-        y: 1729
-        width: 29
-        height: 49
+        x: 256
+        y: 1728
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.333328, y: 19.625}
+        - {x: -19.333328, y: 9.625}
+        - {x: -19.333328, y: -21.375}
+        - {x: -14.333328, y: -29.375}
+        - {x: -8.333328, y: -31.375}
+        - {x: 11.666672, y: -31.375}
+        - {x: 11.666672, y: 18.625}
+        - {x: 7.6666718, y: 19.625}
+      - - {x: -1.3333282, y: 31.625}
+        - {x: -0.33332825, y: 28.625}
+        - {x: 6.6666718, y: 28.625}
+        - {x: 8.666672, y: 30.625}
+        - {x: 8.666672, y: 31.625}
     - name: Character2Sword_41
       rect:
         serializedVersion: 2
-        x: 331
-        y: 1729
-        width: 32
-        height: 49
+        x: 320
+        y: 1728
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.2916565, y: 19.625}
+        - {x: -15.2916565, y: 17.625}
+        - {x: -22.291656, y: 4.625}
+        - {x: -22.291656, y: -22.375}
+        - {x: -9.2916565, y: -31.375}
+        - {x: 11.7083435, y: -31.375}
+        - {x: 11.7083435, y: 6.625}
+        - {x: 8.7083435, y: 19.625}
+      - - {x: -1.2916565, y: 31.625}
+        - {x: -0.2916565, y: 28.625}
+        - {x: 6.7083435, y: 28.625}
+        - {x: 8.7083435, y: 30.625}
+        - {x: 8.7083435, y: 31.625}
     - name: Character2Sword_42
       rect:
         serializedVersion: 2
-        x: 398
-        y: 1729
-        width: 29
-        height: 49
+        x: 384
+        y: 1728
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.75, y: 19.625}
+        - {x: -8.25, y: 19.625}
+        - {x: -16.25, y: 17.625}
+        - {x: -19.25, y: 1.625}
+        - {x: -19.25, y: -14.375}
+        - {x: -10.25, y: -31.375}
+        - {x: 10.75, y: -31.375}
+        - {x: 11.75, y: -30.375}
+        - {x: 11.75, y: 2.625}
+        - {x: 10.75, y: 15.625}
+      - - {x: -1.25, y: 31.625}
+        - {x: -0.25, y: 28.625}
+        - {x: 7.75, y: 28.625}
+        - {x: 9.75, y: 30.625}
+        - {x: 9.75, y: 31.625}
     - name: Character2Sword_43
       rect:
         serializedVersion: 2
-        x: 469
-        y: 1729
-        width: 27
-        height: 49
+        x: 448
+        y: 1728
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.791687, y: 19.625}
+        - {x: -10.208313, y: 19.625}
+        - {x: -12.208313, y: 17.625}
+        - {x: -12.208313, y: -28.375}
+        - {x: -10.208313, y: -30.375}
+        - {x: -6.208313, y: -31.375}
+        - {x: 13.791687, y: -31.375}
+        - {x: 16.791687, y: -25.375}
+        - {x: 16.791687, y: 13.625}
+        - {x: 15.791687, y: 17.625}
+      - - {x: -1.208313, y: 31.625}
+        - {x: -0.20831299, y: 28.625}
+        - {x: 7.791687, y: 28.625}
+        - {x: 9.791687, y: 30.625}
+        - {x: 9.791687, y: 31.625}
     - name: Character2Sword_44
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1665
-        width: 32
-        height: 49
+        x: 0
+        y: 1664
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 19.583374}
+        - {x: -11.5, y: 19.583374}
+        - {x: -17.5, y: 16.583374}
+        - {x: -17.5, y: -22.416626}
+        - {x: -16.5, y: -30.416626}
+        - {x: -13.5, y: -31.416626}
+        - {x: 13.5, y: -31.416626}
+        - {x: 16.5, y: -30.416626}
+        - {x: 16.5, y: 1.583374}
     - name: Character2Sword_45
       rect:
         serializedVersion: 2
-        x: 82
-        y: 1666
-        width: 26
-        height: 48
+        x: 64
+        y: 1664
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.458332, y: 19.583374}
+        - {x: -15.458332, y: 10.583374}
+        - {x: -15.458332, y: -26.416626}
+        - {x: -11.458332, y: -30.416626}
+        - {x: 12.541668, y: -30.416626}
+        - {x: 12.541668, y: 14.583374}
+        - {x: 10.541668, y: 19.583374}
     - name: Character2Sword_46
       rect:
         serializedVersion: 2
-        x: 148
-        y: 1666
-        width: 24
-        height: 48
+        x: 128
+        y: 1664
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.416664, y: 19.583374}
+        - {x: -13.416664, y: 12.583374}
+        - {x: -13.416664, y: -28.416626}
+        - {x: -5.416664, y: -30.416626}
+        - {x: 12.583336, y: -30.416626}
+        - {x: 12.583336, y: 19.583374}
     - name: Character2Sword_47
       rect:
         serializedVersion: 2
-        x: 209
-        y: 1666
-        width: 27
-        height: 48
+        x: 192
+        y: 1664
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.375, y: 19.583374}
+        - {x: -16.375, y: -30.416626}
+        - {x: 8.625, y: -30.416626}
+        - {x: 12.625, y: -29.416626}
+        - {x: 12.625, y: 17.583374}
+        - {x: 7.625, y: 19.583374}
     - name: Character2Sword_48
       rect:
         serializedVersion: 2
-        x: 276
-        y: 1666
-        width: 24
-        height: 47
+        x: 256
+        y: 1664
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.333328, y: 18.583374}
+        - {x: -13.333328, y: -25.416626}
+        - {x: -10.333328, y: -29.416626}
+        - {x: -3.3333282, y: -30.416626}
+        - {x: 11.666672, y: -30.416626}
+        - {x: 12.666672, y: -28.416626}
+        - {x: 12.666672, y: 10.583374}
+        - {x: 11.666672, y: 18.583374}
     - name: Character2Sword_49
       rect:
         serializedVersion: 2
-        x: 340
-        y: 1666
-        width: 24
-        height: 47
+        x: 320
+        y: 1664
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.2916565, y: 18.583374}
+        - {x: -13.2916565, y: 14.583374}
+        - {x: -13.2916565, y: -29.416626}
+        - {x: -9.2916565, y: -30.416626}
+        - {x: 11.7083435, y: -30.416626}
+        - {x: 12.7083435, y: -28.416626}
+        - {x: 12.7083435, y: 17.583374}
+        - {x: 9.7083435, y: 18.583374}
     - name: Character2Sword_50
       rect:
         serializedVersion: 2
-        x: 404
-        y: 1666
-        width: 24
-        height: 47
+        x: 384
+        y: 1664
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.75, y: 18.583374}
+        - {x: -10.25, y: 18.583374}
+        - {x: -13.25, y: 14.583374}
+        - {x: -13.25, y: -28.416626}
+        - {x: -0.25, y: -30.416626}
+        - {x: 10.75, y: -30.416626}
+        - {x: 12.75, y: -28.416626}
+        - {x: 12.75, y: 14.583374}
     - name: Character2Sword_51
       rect:
         serializedVersion: 2
-        x: 465
-        y: 1666
-        width: 27
-        height: 48
+        x: 448
+        y: 1664
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.208313, y: 19.583374}
+        - {x: -16.208313, y: 15.583374}
+        - {x: -16.208313, y: -22.416626}
+        - {x: -10.208313, y: -30.416626}
+        - {x: 12.791687, y: -30.416626}
+        - {x: 12.791687, y: 15.583374}
+        - {x: 7.791687, y: 19.583374}
     - name: Character2Sword_52
       rect:
         serializedVersion: 2
-        x: 20
-        y: 1601
-        width: 22
-        height: 49
+        x: 0
+        y: 1600
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 19.541748}
+        - {x: -13.5, y: 17.541748}
+        - {x: -13.5, y: -26.458252}
+        - {x: -11.5, y: -31.458252}
+        - {x: 10.5, y: -31.458252}
+        - {x: 10.5, y: 18.541748}
+        - {x: 8.5, y: 19.541748}
     - name: Character2Sword_53
       rect:
         serializedVersion: 2
-        x: 83
-        y: 1601
-        width: 27
-        height: 49
+        x: 64
+        y: 1600
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.541668, y: 19.541748}
+        - {x: -10.458332, y: 19.541748}
+        - {x: -14.458332, y: 10.541748}
+        - {x: -14.458332, y: -19.458252}
+        - {x: -9.458332, y: -31.458252}
+        - {x: 9.541668, y: -31.458252}
+        - {x: 14.541668, y: -23.458252}
+        - {x: 14.541668, y: 18.541748}
     - name: Character2Sword_54
       rect:
         serializedVersion: 2
-        x: 145
-        y: 1601
-        width: 29
-        height: 49
+        x: 128
+        y: 1600
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.416664, y: 19.541748}
+        - {x: -14.416664, y: 17.541748}
+        - {x: -16.416664, y: 3.541748}
+        - {x: -16.416664, y: -17.458252}
+        - {x: -8.416664, y: -31.458252}
+        - {x: 14.583336, y: -31.458252}
+        - {x: 14.583336, y: 18.541748}
+        - {x: 11.583336, y: 19.541748}
     - name: Character2Sword_55
       rect:
         serializedVersion: 2
-        x: 208
-        y: 1601
-        width: 27
-        height: 49
+        x: 192
+        y: 1600
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.375, y: 19.541748}
+        - {x: -17.375, y: 10.541748}
+        - {x: -17.375, y: -19.458252}
+        - {x: -15.375, y: -24.458252}
+        - {x: -11.375, y: -31.458252}
+        - {x: 10.625, y: -31.458252}
+        - {x: 11.625, y: -25.458252}
+        - {x: 11.625, y: 19.541748}
     - name: Character2Sword_56
       rect:
         serializedVersion: 2
-        x: 277
-        y: 1601
-        width: 29
-        height: 49
+        x: 256
+        y: 1600
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.333328, y: 19.541748}
+        - {x: -12.333328, y: 11.541748}
+        - {x: -12.333328, y: -28.458252}
+        - {x: -11.333328, y: -31.458252}
+        - {x: 10.666672, y: -31.458252}
+        - {x: 18.666672, y: -15.458252}
+        - {x: 18.666672, y: -4.458252}
+        - {x: 11.666672, y: 19.541748}
     - name: Character2Sword_57
       rect:
         serializedVersion: 2
-        x: 341
-        y: 1601
-        width: 32
-        height: 49
+        x: 320
+        y: 1600
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.7083435, y: 19.541748}
+        - {x: -8.2916565, y: 19.541748}
+        - {x: -10.2916565, y: 15.541748}
+        - {x: -11.2916565, y: 1.541748}
+        - {x: -12.2916565, y: -10.458252}
+        - {x: -12.2916565, y: -28.458252}
+        - {x: -11.2916565, y: -31.458252}
+        - {x: 11.7083435, y: -31.458252}
+        - {x: 21.708344, y: -13.458252}
+        - {x: 21.708344, y: 5.541748}
+        - {x: 19.708344, y: 16.541748}
     - name: Character2Sword_58
       rect:
         serializedVersion: 2
-        x: 405
-        y: 1601
-        width: 29
-        height: 49
+        x: 384
+        y: 1600
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.75, y: 19.541748}
+        - {x: -4.25, y: 19.541748}
+        - {x: -10.25, y: 15.541748}
+        - {x: -12.25, y: -6.458252}
+        - {x: -12.25, y: -31.458252}
+        - {x: 11.75, y: -31.458252}
+        - {x: 18.75, y: -14.458252}
+        - {x: 18.75, y: -3.458252}
+        - {x: 16.75, y: 2.541748}
     - name: Character2Sword_59
       rect:
         serializedVersion: 2
-        x: 464
-        y: 1601
-        width: 27
-        height: 49
+        x: 448
+        y: 1600
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.208313, y: 19.541748}
+        - {x: -17.208313, y: 1.541748}
+        - {x: -17.208313, y: -14.458252}
+        - {x: -14.208313, y: -23.458252}
+        - {x: -11.208313, y: -31.458252}
+        - {x: 10.791687, y: -31.458252}
+        - {x: 11.791687, y: -30.458252}
+        - {x: 11.791687, y: 19.541748}
     - name: Character2Sword_60
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1538
-        width: 32
-        height: 48
+        x: 0
+        y: 1536
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.5, y: 18.5}
+        - {x: -11.5, y: 18.5}
+        - {x: -17.5, y: 2.5}
+        - {x: -17.5, y: -28.5}
+        - {x: -11.5, y: -30.5}
+        - {x: 12.5, y: -30.5}
+        - {x: 16.5, y: -28.5}
+        - {x: 16.5, y: 9.5}
     - name: Character2Sword_61
       rect:
         serializedVersion: 2
-        x: 80
-        y: 1538
-        width: 32
-        height: 48
+        x: 64
+        y: 1536
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.458332, y: 18.5}
+        - {x: -17.458332, y: -0.5}
+        - {x: -17.458332, y: -25.5}
+        - {x: -14.458332, y: -30.5}
+        - {x: 16.541668, y: -30.5}
+        - {x: 16.541668, y: 18.5}
     - name: Character2Sword_62
       rect:
         serializedVersion: 2
-        x: 144
-        y: 1537
-        width: 32
-        height: 49
+        x: 128
+        y: 1536
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.583336, y: 18.5}
+        - {x: -12.416664, y: 18.5}
+        - {x: -17.416664, y: 1.5}
+        - {x: -17.416664, y: -18.5}
+        - {x: -10.416664, y: -29.5}
+        - {x: -3.4166641, y: -31.5}
+        - {x: 11.583336, y: -31.5}
+        - {x: 16.583336, y: -25.5}
+        - {x: 16.583336, y: 6.5}
+        - {x: 15.583336, y: 15.5}
     - name: Character2Sword_63
       rect:
         serializedVersion: 2
-        x: 208
+        x: 192
         y: 1536
-        width: 31
-        height: 49
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.375, y: 17.5}
+        - {x: -17.375, y: 5.5}
+        - {x: -17.375, y: -25.5}
+        - {x: -12.375, y: -31.5}
+        - {x: 15.625, y: -31.5}
+        - {x: 15.625, y: 17.5}
     - name: Character2Sword_64
       rect:
         serializedVersion: 2
-        x: 272
-        y: 1537
-        width: 32
-        height: 49
+        x: 256
+        y: 1536
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.333328, y: 18.5}
+        - {x: -15.333328, y: 14.5}
+        - {x: -17.333328, y: -1.5}
+        - {x: -17.333328, y: -19.5}
+        - {x: -9.333328, y: -31.5}
+        - {x: 11.666672, y: -31.5}
+        - {x: 16.666672, y: -26.5}
+        - {x: 16.666672, y: 16.5}
+        - {x: 8.666672, y: 18.5}
     - name: Character2Sword_65
       rect:
         serializedVersion: 2
-        x: 336
-        y: 1538
-        width: 32
-        height: 48
+        x: 320
+        y: 1536
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.2916565, y: 18.5}
+        - {x: -17.291656, y: 15.5}
+        - {x: -17.291656, y: -19.5}
+        - {x: -10.2916565, y: -30.5}
+        - {x: 12.7083435, y: -30.5}
+        - {x: 16.708344, y: -21.5}
+        - {x: 16.708344, y: 8.5}
+        - {x: 11.7083435, y: 18.5}
     - name: Character2Sword_66
       rect:
         serializedVersion: 2
-        x: 400
-        y: 1537
-        width: 32
-        height: 49
+        x: 384
+        y: 1536
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.25, y: 18.5}
+        - {x: -17.25, y: 12.5}
+        - {x: -17.25, y: -28.5}
+        - {x: -11.25, y: -31.5}
+        - {x: 4.75, y: -31.5}
+        - {x: 10.75, y: -30.5}
+        - {x: 16.75, y: -21.5}
+        - {x: 16.75, y: -4.5}
+        - {x: 10.75, y: 18.5}
     - name: Character2Sword_67
       rect:
         serializedVersion: 2
-        x: 465
+        x: 448
         y: 1536
-        width: 31
-        height: 49
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.208313, y: 17.5}
+        - {x: -14.208313, y: 16.5}
+        - {x: -16.208313, y: 9.5}
+        - {x: -16.208313, y: -17.5}
+        - {x: -12.208313, y: -31.5}
+        - {x: 16.791687, y: -31.5}
+        - {x: 16.791687, y: 17.5}
     - name: Character2Sword_68
       rect:
         serializedVersion: 2
-        x: 528
-        y: 1537
-        width: 32
-        height: 49
+        x: 512
+        y: 1536
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.8333435, y: 18.5}
+        - {x: -10.1666565, y: 18.5}
+        - {x: -13.1666565, y: 12.5}
+        - {x: -17.166656, y: -1.5}
+        - {x: -17.166656, y: -14.5}
+        - {x: -15.1666565, y: -29.5}
+        - {x: -13.1666565, y: -31.5}
+        - {x: 9.8333435, y: -31.5}
+        - {x: 16.833344, y: -25.5}
+        - {x: 16.833344, y: 4.5}
+        - {x: 13.8333435, y: 13.5}
     - name: Character2Sword_69
       rect:
         serializedVersion: 2
-        x: 22
-        y: 1473
-        width: 22
-        height: 49
+        x: 0
+        y: 1472
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 20.458374}
+        - {x: -11.5, y: 19.458374}
+        - {x: -11.5, y: -28.541626}
+        - {x: -6.5, y: -29.541626}
+        - {x: 9.5, y: -29.541626}
+        - {x: 12.5, y: -25.541626}
+        - {x: 12.5, y: 14.458374}
+        - {x: 10.5, y: 20.458374}
     - name: Character2Sword_70
       rect:
         serializedVersion: 2
-        x: 82
-        y: 1473
-        width: 27
-        height: 48
+        x: 64
+        y: 1472
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.541668, y: 19.458374}
+        - {x: -7.458332, y: 19.458374}
+        - {x: -12.458332, y: 14.458374}
+        - {x: -15.458332, y: 1.458374}
+        - {x: -15.458332, y: -28.541626}
+        - {x: -11.458332, y: -29.541626}
+        - {x: 13.541668, y: -29.541626}
+        - {x: 13.541668, y: 15.458374}
+        - {x: 10.541668, y: 18.458374}
     - name: Character2Sword_71
       rect:
         serializedVersion: 2
-        x: 148
-        y: 1474
-        width: 24
-        height: 48
+        x: 128
+        y: 1472
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.416664, y: 20.458374}
+        - {x: -13.416664, y: 18.458374}
+        - {x: -13.416664, y: -28.541626}
+        - {x: 12.583336, y: -28.541626}
+        - {x: 12.583336, y: 20.458374}
     - name: Character2Sword_72
       rect:
         serializedVersion: 2
-        x: 214
-        y: 1474
-        width: 24
-        height: 48
+        x: 192
+        y: 1472
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.375, y: 20.458374}
+        - {x: -7.375, y: 19.458374}
+        - {x: -11.375, y: 16.458374}
+        - {x: -11.375, y: -26.541626}
+        - {x: -5.375, y: -28.541626}
+        - {x: 11.625, y: -28.541626}
+        - {x: 14.625, y: -25.541626}
+        - {x: 14.625, y: 5.458374}
+        - {x: 10.625, y: 20.458374}
     - name: Character2Sword_73
       rect:
         serializedVersion: 2
-        x: 277
-        y: 1473
-        width: 26
-        height: 49
+        x: 256
+        y: 1472
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.333328, y: 20.458374}
+        - {x: -11.333328, y: 14.458374}
+        - {x: -12.333328, y: 8.458374}
+        - {x: -12.333328, y: -24.541626}
+        - {x: -9.333328, y: -29.541626}
+        - {x: 15.666672, y: -29.541626}
+        - {x: 15.666672, y: 20.458374}
     - name: Character2Sword_74
       rect:
         serializedVersion: 2
-        x: 339
-        y: 1473
-        width: 30
-        height: 48
+        x: 320
+        y: 1472
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.2916565, y: 19.458374}
+        - {x: -14.2916565, y: -29.541626}
+        - {x: 7.7083435, y: -29.541626}
+        - {x: 17.708344, y: -20.541626}
+        - {x: 17.708344, y: -4.541626}
+        - {x: 12.7083435, y: 19.458374}
     - name: Character2Sword_75
       rect:
         serializedVersion: 2
-        x: 406
-        y: 1473
-        width: 25
-        height: 49
+        x: 384
+        y: 1472
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.75, y: 20.458374}
+        - {x: -6.25, y: 20.458374}
+        - {x: -11.25, y: 16.458374}
+        - {x: -11.25, y: -27.541626}
+        - {x: -8.25, y: -29.541626}
+        - {x: 8.75, y: -29.541626}
+        - {x: 15.75, y: -21.541626}
+        - {x: 15.75, y: -2.541626}
+        - {x: 12.75, y: 15.458374}
     - name: Character2Sword_76
       rect:
         serializedVersion: 2
-        x: 470
-        y: 1473
-        width: 24
-        height: 49
+        x: 448
+        y: 1472
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.208313, y: 20.458374}
+        - {x: -11.208313, y: 17.458374}
+        - {x: -11.208313, y: -1.541626}
+        - {x: -9.208313, y: -25.541626}
+        - {x: -3.208313, y: -29.541626}
+        - {x: 7.791687, y: -29.541626}
+        - {x: 14.791687, y: -18.541626}
+        - {x: 14.791687, y: 18.458374}
+        - {x: 8.791687, y: 20.458374}
     - name: Character2Sword_77
       rect:
         serializedVersion: 2
-        x: 534
-        y: 1473
-        width: 23
-        height: 49
+        x: 512
+        y: 1472
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.1666565, y: 20.458374}
+        - {x: -11.1666565, y: 15.458374}
+        - {x: -11.1666565, y: -26.541626}
+        - {x: -7.1666565, y: -29.541626}
+        - {x: 9.8333435, y: -29.541626}
+        - {x: 13.8333435, y: -27.541626}
+        - {x: 13.8333435, y: 18.458374}
+        - {x: 7.8333435, y: 20.458374}
     - name: Character2Sword_78
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1409
-        width: 32
-        height: 49
+        x: 0
+        y: 1408
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: 20.416748}
+        - {x: -17.5, y: -29.583252}
+        - {x: 15.5, y: -29.583252}
+        - {x: 16.5, y: -28.583252}
+        - {x: 16.5, y: 8.416748}
+        - {x: 12.5, y: 20.416748}
     - name: Character2Sword_79
       rect:
         serializedVersion: 2
-        x: 80
-        y: 1409
-        width: 32
-        height: 49
+        x: 64
+        y: 1408
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.458332, y: 20.416748}
+        - {x: -17.458332, y: 9.416748}
+        - {x: -17.458332, y: -26.583252}
+        - {x: -14.458332, y: -29.583252}
+        - {x: 12.541668, y: -29.583252}
+        - {x: 16.541668, y: -24.583252}
+        - {x: 16.541668, y: 4.416748}
+        - {x: 10.541668, y: 20.416748}
     - name: Character2Sword_80
       rect:
         serializedVersion: 2
-        x: 144
+        x: 128
         y: 1408
-        width: 32
-        height: 50
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.416664, y: 20.416748}
+        - {x: -17.416664, y: 7.416748}
+        - {x: -17.416664, y: -23.583252}
+        - {x: -14.416664, y: -30.583252}
+        - {x: 16.583336, y: -30.583252}
+        - {x: 16.583336, y: 4.416748}
+        - {x: 9.583336, y: 20.416748}
     - name: Character2Sword_81
       rect:
         serializedVersion: 2
-        x: 209
+        x: 192
         y: 1408
-        width: 31
-        height: 49
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.625, y: 19.416748}
+        - {x: -10.375, y: 19.416748}
+        - {x: -14.375, y: 14.416748}
+        - {x: -16.375, y: -3.583252}
+        - {x: -16.375, y: -21.583252}
+        - {x: -11.375, y: -29.583252}
+        - {x: -8.375, y: -30.583252}
+        - {x: 12.625, y: -30.583252}
+        - {x: 16.625, y: -18.583252}
+        - {x: 16.625, y: 14.416748}
+        - {x: 15.625, y: 16.416748}
     - name: Character2Sword_82
       rect:
         serializedVersion: 2
-        x: 272
+        x: 256
         y: 1408
-        width: 32
-        height: 50
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.333328, y: 20.416748}
+        - {x: -17.333328, y: 14.416748}
+        - {x: -17.333328, y: -24.583252}
+        - {x: -14.333328, y: -30.583252}
+        - {x: 11.666672, y: -30.583252}
+        - {x: 16.666672, y: -23.583252}
+        - {x: 16.666672, y: 20.416748}
     - name: Character2Sword_83
       rect:
         serializedVersion: 2
-        x: 336
-        y: 1409
-        width: 32
-        height: 49
+        x: 320
+        y: 1408
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.2916565, y: 20.416748}
+        - {x: -15.2916565, y: 19.416748}
+        - {x: -17.291656, y: 3.416748}
+        - {x: -17.291656, y: -24.583252}
+        - {x: -15.2916565, y: -29.583252}
+        - {x: 16.708344, y: -29.583252}
+        - {x: 16.708344, y: 7.416748}
+        - {x: 12.7083435, y: 20.416748}
     - name: Character2Sword_84
       rect:
         serializedVersion: 2
-        x: 400
+        x: 384
         y: 1408
-        width: 32
-        height: 50
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.75, y: 20.416748}
+        - {x: -9.25, y: 20.416748}
+        - {x: -15.25, y: 15.416748}
+        - {x: -17.25, y: 0.41674805}
+        - {x: -17.25, y: -18.583252}
+        - {x: -13.25, y: -26.583252}
+        - {x: -10.25, y: -30.583252}
+        - {x: -3.25, y: -30.583252}
+        - {x: 9.75, y: -29.583252}
+        - {x: 16.75, y: -21.583252}
+        - {x: 16.75, y: 1.416748}
+        - {x: 13.75, y: 19.416748}
     - name: Character2Sword_85
       rect:
         serializedVersion: 2
-        x: 464
+        x: 448
         y: 1408
-        width: 31
-        height: 49
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.208313, y: 19.416748}
+        - {x: -16.208313, y: 17.416748}
+        - {x: -17.208313, y: 13.416748}
+        - {x: -17.208313, y: -17.583252}
+        - {x: -14.208313, y: -29.583252}
+        - {x: -10.208313, y: -30.583252}
+        - {x: 15.791687, y: -30.583252}
+        - {x: 15.791687, y: 19.416748}
     - name: Character2Sword_86
       rect:
         serializedVersion: 2
-        x: 528
+        x: 512
         y: 1408
-        width: 32
-        height: 50
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.1666565, y: 20.416748}
+        - {x: -14.1666565, y: 18.416748}
+        - {x: -17.166656, y: 10.416748}
+        - {x: -17.166656, y: -17.583252}
+        - {x: -12.1666565, y: -30.583252}
+        - {x: 14.8333435, y: -30.583252}
+        - {x: 16.833344, y: -26.583252}
+        - {x: 16.833344, y: 11.416748}
+        - {x: 11.8333435, y: 20.416748}
     - name: Character2Sword_87
       rect:
         serializedVersion: 2
-        x: 20
-        y: 1345
-        width: 22
-        height: 49
+        x: 0
+        y: 1344
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 20.375}
+        - {x: -13.5, y: 15.375}
+        - {x: -13.5, y: -28.625}
+        - {x: -9.5, y: -29.625}
+        - {x: 10.5, y: -29.625}
+        - {x: 10.5, y: 20.375}
     - name: Character2Sword_88
       rect:
         serializedVersion: 2
-        x: 83
-        y: 1345
-        width: 27
-        height: 48
+        x: 64
+        y: 1344
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.541668, y: 19.375}
+        - {x: -9.458332, y: 19.375}
+        - {x: -14.458332, y: 12.375}
+        - {x: -14.458332, y: -27.625}
+        - {x: -10.458332, y: -29.625}
+        - {x: 7.541668, y: -29.625}
+        - {x: 14.541668, y: -27.625}
+        - {x: 14.541668, y: 4.375}
+        - {x: 12.541668, y: 16.375}
     - name: Character2Sword_89
       rect:
         serializedVersion: 2
-        x: 148
-        y: 1346
-        width: 24
-        height: 48
+        x: 128
+        y: 1344
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.416664, y: 20.375}
+        - {x: -13.416664, y: 15.375}
+        - {x: -13.416664, y: -20.625}
+        - {x: -9.416664, y: -28.625}
+        - {x: 12.583336, y: -28.625}
+        - {x: 12.583336, y: 18.375}
+        - {x: 7.583336, y: 20.375}
     - name: Character2Sword_90
       rect:
         serializedVersion: 2
-        x: 210
-        y: 1346
-        width: 24
-        height: 48
+        x: 192
+        y: 1344
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.375, y: 20.375}
+        - {x: -15.375, y: 19.375}
+        - {x: -15.375, y: -28.625}
+        - {x: 8.625, y: -28.625}
+        - {x: 10.625, y: -20.625}
+        - {x: 10.625, y: 20.375}
     - name: Character2Sword_91
       rect:
         serializedVersion: 2
-        x: 273
-        y: 1345
-        width: 26
-        height: 49
+        x: 256
+        y: 1344
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.3333282, y: 20.375}
+        - {x: -14.333328, y: 14.375}
+        - {x: -16.333328, y: -0.625}
+        - {x: -16.333328, y: -20.625}
+        - {x: -8.333328, y: -29.625}
+        - {x: 6.6666718, y: -29.625}
+        - {x: 11.666672, y: -26.625}
+        - {x: 11.666672, y: 14.375}
+        - {x: 5.6666718, y: 20.375}
     - name: Character2Sword_92
       rect:
         serializedVersion: 2
-        x: 335
-        y: 1345
-        width: 30
-        height: 48
+        x: 320
+        y: 1344
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.2916565, y: 19.375}
+        - {x: -13.2916565, y: 12.375}
+        - {x: -18.291656, y: -7.625}
+        - {x: -18.291656, y: -22.625}
+        - {x: -14.2916565, y: -28.625}
+        - {x: -6.2916565, y: -29.625}
+        - {x: 13.7083435, y: -29.625}
+        - {x: 13.7083435, y: 19.375}
     - name: Character2Sword_93
       rect:
         serializedVersion: 2
-        x: 401
-        y: 1345
-        width: 25
-        height: 49
+        x: 384
+        y: 1344
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.25, y: 20.375}
+        - {x: -16.25, y: 9.375}
+        - {x: -16.25, y: -19.625}
+        - {x: -8.25, y: -28.625}
+        - {x: -6.25, y: -29.625}
+        - {x: 7.75, y: -29.625}
+        - {x: 10.75, y: -28.625}
+        - {x: 10.75, y: 20.375}
     - name: Character2Sword_94
       rect:
         serializedVersion: 2
-        x: 466
-        y: 1345
-        width: 24
-        height: 49
+        x: 448
+        y: 1344
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.208313, y: 20.375}
+        - {x: -15.208313, y: 18.375}
+        - {x: -15.208313, y: -23.625}
+        - {x: -12.208313, y: -29.625}
+        - {x: 11.791687, y: -29.625}
+        - {x: 11.791687, y: 20.375}
     - name: Character2Sword_95
       rect:
         serializedVersion: 2
-        x: 531
-        y: 1345
-        width: 23
-        height: 49
+        x: 512
+        y: 1344
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.1666565, y: 20.375}
+        - {x: -14.1666565, y: 7.375}
+        - {x: -14.1666565, y: -20.625}
+        - {x: -9.1666565, y: -29.625}
+        - {x: 7.8333435, y: -29.625}
+        - {x: 11.8333435, y: -28.625}
+        - {x: 11.8333435, y: 20.375}
     - name: Character2Sword_96
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1281
-        width: 32
-        height: 48
+        x: 0
+        y: 1280
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 19.333374}
+        - {x: -17.5, y: 13.333374}
+        - {x: -17.5, y: -27.666626}
+        - {x: -16.5, y: -29.666626}
+        - {x: 16.5, y: -29.666626}
+        - {x: 16.5, y: 19.333374}
     - name: Character2Sword_97
       rect:
         serializedVersion: 2
-        x: 82
+        x: 64
         y: 1280
-        width: 28
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.458332, y: 11.333374}
+        - {x: -15.458332, y: -29.666626}
+        - {x: -13.458332, y: -30.666626}
+        - {x: 14.541668, y: -30.666626}
+        - {x: 14.541668, y: 3.333374}
+        - {x: 13.541668, y: 15.333374}
+        - {x: 10.541668, y: 18.333374}
+        - {x: -8.458332, y: 18.333374}
+        - {x: -14.458332, y: 16.333374}
     - name: Character2Sword_98
       rect:
         serializedVersion: 2
-        x: 147
+        x: 128
         y: 1280
-        width: 27
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.416664, y: 18.333374}
+        - {x: -14.416664, y: 12.333374}
+        - {x: -14.416664, y: -30.666626}
+        - {x: 14.583336, y: -30.666626}
+        - {x: 14.583336, y: 9.333374}
+        - {x: 6.583336, y: 18.333374}
     - name: Character2Sword_99
       rect:
         serializedVersion: 2
-        x: 210
+        x: 192
         y: 1280
-        width: 29
-        height: 49
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.625, y: 19.333374}
+        - {x: -8.375, y: 19.333374}
+        - {x: -11.375, y: 15.333374}
+        - {x: -15.375, y: 5.333374}
+        - {x: -15.375, y: -22.666626}
+        - {x: -13.375, y: -30.666626}
+        - {x: 12.625, y: -30.666626}
+        - {x: 15.625, y: -29.666626}
+        - {x: 15.625, y: 15.333374}
+        - {x: 14.625, y: 17.333374}
     - name: Character2Sword_100
       rect:
         serializedVersion: 2
-        x: 273
+        x: 256
         y: 1280
-        width: 38
-        height: 49
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.333328, y: 19.333374}
+        - {x: -13.333328, y: 17.333374}
+        - {x: -16.333328, y: -1.666626}
+        - {x: -16.333328, y: -21.666626}
+        - {x: -12.333328, y: -30.666626}
+        - {x: 14.666672, y: -30.666626}
+        - {x: 23.666672, y: -14.666626}
+        - {x: 23.666672, y: 8.333374}
+        - {x: 15.666672, y: 19.333374}
     - name: Character2Sword_101
       rect:
         serializedVersion: 2
-        x: 337
+        x: 320
         y: 1280
-        width: 41
-        height: 49
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.2916565, y: 19.333374}
+        - {x: -16.291656, y: 9.333374}
+        - {x: -16.291656, y: -29.666626}
+        - {x: -15.2916565, y: -30.666626}
+        - {x: 20.708344, y: -30.666626}
+        - {x: 26.708344, y: -15.666626}
+        - {x: 26.708344, y: 2.333374}
+        - {x: 17.708344, y: 19.333374}
     - name: Character2Sword_102
       rect:
         serializedVersion: 2
-        x: 22
-        y: 1217
-        width: 22
-        height: 49
+        x: 0
+        y: 1216
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: 20.291748}
+        - {x: -9.5, y: 20.291748}
+        - {x: -11.5, y: 18.291748}
+        - {x: -11.5, y: -28.708252}
+        - {x: -4.5, y: -29.708252}
+        - {x: 7.5, y: -29.708252}
+        - {x: 12.5, y: -19.708252}
+        - {x: 12.5, y: 18.291748}
     - name: Character2Sword_103
       rect:
         serializedVersion: 2
-        x: 80
-        y: 1217
-        width: 27
-        height: 47
+        x: 64
+        y: 1216
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.458332, y: 18.291748}
+        - {x: -17.458332, y: -28.708252}
+        - {x: -15.458332, y: -29.708252}
+        - {x: 11.541668, y: -29.708252}
+        - {x: 11.541668, y: 18.291748}
     - name: Character2Sword_104
       rect:
         serializedVersion: 2
-        x: 147
-        y: 1217
-        width: 26
-        height: 49
+        x: 128
+        y: 1216
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.416664, y: 20.291748}
+        - {x: -14.416664, y: 16.291748}
+        - {x: -14.416664, y: -29.708252}
+        - {x: 13.583336, y: -29.708252}
+        - {x: 13.583336, y: 20.291748}
     - name: Character2Sword_105
       rect:
         serializedVersion: 2
-        x: 202
-        y: 1217
-        width: 36
-        height: 49
+        x: 192
+        y: 1216
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.375, y: 20.291748}
+        - {x: -23.375, y: -3.708252}
+        - {x: -23.375, y: -19.708252}
+        - {x: -16.375, y: -27.708252}
+        - {x: -6.375, y: -29.708252}
+        - {x: 9.625, y: -29.708252}
+        - {x: 14.625, y: -24.708252}
+        - {x: 14.625, y: 0.29174805}
+        - {x: 6.625, y: 20.291748}
     - name: Character2Sword_106
       rect:
         serializedVersion: 2
-        x: 263
-        y: 1217
-        width: 38
-        height: 49
+        x: 256
+        y: 1216
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.333328, y: 20.291748}
+        - {x: -26.333328, y: 13.291748}
+        - {x: -26.333328, y: -20.708252}
+        - {x: -22.333328, y: -29.708252}
+        - {x: 10.666672, y: -29.708252}
+        - {x: 13.666672, y: -22.708252}
+        - {x: 13.666672, y: 1.291748}
+        - {x: 5.6666718, y: 20.291748}
     - name: Character2Sword_107
       rect:
         serializedVersion: 2
-        x: 330
-        y: 1217
-        width: 35
-        height: 49
+        x: 320
+        y: 1216
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.7083435, y: 14.291748}
+        - {x: 3.7083435, y: 20.291748}
+        - {x: -11.2916565, y: 20.291748}
+        - {x: -23.291656, y: 10.291748}
+        - {x: -23.291656, y: -10.708252}
+        - {x: -17.291656, y: -27.708252}
+        - {x: -12.2916565, y: -28.708252}
+        - {x: -1.2916565, y: -29.708252}
+        - {x: 7.7083435, y: -29.708252}
+        - {x: 9.7083435, y: -26.708252}
+        - {x: 13.7083435, y: -19.708252}
+        - {x: 13.7083435, y: -4.708252}
     - name: Character2Sword_108
       rect:
         serializedVersion: 2
-        x: 16
-        y: 1153
-        width: 32
-        height: 49
+        x: 0
+        y: 1152
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.5, y: 16.25}
+        - {x: 9.5, y: 20.25}
+        - {x: -7.5, y: 20.25}
+        - {x: -17.5, y: 16.25}
+        - {x: -17.5, y: -26.75}
+        - {x: -16.5, y: -28.75}
+        - {x: -13.5, y: -29.75}
+        - {x: 13.5, y: -29.75}
+        - {x: 16.5, y: -28.75}
+        - {x: 16.5, y: -3.75}
     - name: Character2Sword_109
       rect:
         serializedVersion: 2
-        x: 82
-        y: 1153
-        width: 28
-        height: 49
+        x: 64
+        y: 1152
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.458332, y: 20.25}
+        - {x: -15.458332, y: 19.25}
+        - {x: -15.458332, y: -29.75}
+        - {x: 14.541668, y: -29.75}
+        - {x: 14.541668, y: 20.25}
     - name: Character2Sword_110
       rect:
         serializedVersion: 2
-        x: 146
-        y: 1153
-        width: 28
-        height: 47
+        x: 128
+        y: 1152
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.583336, y: 18.25}
+        - {x: -15.416664, y: 18.25}
+        - {x: -15.416664, y: -23.75}
+        - {x: -13.416664, y: -29.75}
+        - {x: 13.583336, y: -29.75}
+        - {x: 14.583336, y: -28.75}
+        - {x: 14.583336, y: -15.75}
+        - {x: 11.583336, y: 11.25}
     - name: Character2Sword_111
       rect:
         serializedVersion: 2
-        x: 211
-        y: 1153
-        width: 28
-        height: 48
+        x: 192
+        y: 1152
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.375, y: 19.25}
+        - {x: -14.375, y: 6.25}
+        - {x: -14.375, y: -29.75}
+        - {x: 15.625, y: -29.75}
+        - {x: 15.625, y: 14.25}
+        - {x: 9.625, y: 19.25}
     - name: Character2Sword_112
       rect:
         serializedVersion: 2
-        x: 275
-        y: 1153
-        width: 37
-        height: 49
+        x: 256
+        y: 1152
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.666672, y: 20.25}
+        - {x: -8.333328, y: 20.25}
+        - {x: -10.333328, y: 17.25}
+        - {x: -14.333328, y: -2.75}
+        - {x: -14.333328, y: -28.75}
+        - {x: -13.333328, y: -29.75}
+        - {x: 16.666672, y: -29.75}
+        - {x: 24.666672, y: -21.75}
+        - {x: 24.666672, y: 4.25}
+        - {x: 19.666672, y: 17.25}
     - name: Character2Sword_113
       rect:
         serializedVersion: 2
-        x: 338
-        y: 1153
-        width: 41
-        height: 49
+        x: 320
+        y: 1152
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.2916565, y: 20.25}
+        - {x: -15.2916565, y: 2.25}
+        - {x: -15.2916565, y: -25.75}
+        - {x: -14.2916565, y: -29.75}
+        - {x: 27.708344, y: -29.75}
+        - {x: 27.708344, y: 20.25}
     - name: Character2Sword_114
       rect:
         serializedVersion: 2
-        x: 20
-        y: 1089
-        width: 22
-        height: 49
+        x: 0
+        y: 1088
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 20.208374}
+        - {x: -13.5, y: 18.208374}
+        - {x: -13.5, y: -30.791626}
+        - {x: 10.5, y: -30.791626}
+        - {x: 10.5, y: 20.208374}
     - name: Character2Sword_115
       rect:
         serializedVersion: 2
-        x: 85
-        y: 1089
-        width: 27
-        height: 47
+        x: 64
+        y: 1088
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.458332, y: 18.208374}
+        - {x: -10.458332, y: 14.208374}
+        - {x: -11.458332, y: 1.208374}
+        - {x: -12.458332, y: -4.791626}
+        - {x: -12.458332, y: -22.791626}
+        - {x: -9.458332, y: -30.791626}
+        - {x: 5.541668, y: -30.791626}
+        - {x: 15.541668, y: -28.791626}
+        - {x: 16.541668, y: -25.791626}
+        - {x: 16.541668, y: 15.208374}
+        - {x: 8.541668, y: 18.208374}
     - name: Character2Sword_116
       rect:
         serializedVersion: 2
-        x: 147
-        y: 1089
-        width: 26
-        height: 49
+        x: 128
+        y: 1088
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.416664, y: 20.208374}
+        - {x: -14.416664, y: -30.791626}
+        - {x: 6.583336, y: -30.791626}
+        - {x: 13.583336, y: -27.791626}
+        - {x: 13.583336, y: 17.208374}
+        - {x: 12.583336, y: 20.208374}
     - name: Character2Sword_117
       rect:
         serializedVersion: 2
-        x: 210
-        y: 1089
-        width: 36
-        height: 49
+        x: 192
+        y: 1088
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.375, y: 20.208374}
+        - {x: -12.375, y: 18.208374}
+        - {x: -15.375, y: 4.208374}
+        - {x: -15.375, y: -23.791626}
+        - {x: -10.375, y: -30.791626}
+        - {x: 8.625, y: -30.791626}
+        - {x: 11.625, y: -29.791626}
+        - {x: 22.625, y: -17.791626}
+        - {x: 22.625, y: -4.791626}
+        - {x: 14.625, y: 20.208374}
     - name: Character2Sword_118
       rect:
         serializedVersion: 2
-        x: 275
-        y: 1089
-        width: 38
-        height: 49
+        x: 256
+        y: 1088
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.333328, y: 20.208374}
+        - {x: -14.333328, y: 7.208374}
+        - {x: -14.333328, y: -24.791626}
+        - {x: -10.333328, y: -30.791626}
+        - {x: 12.666672, y: -30.791626}
+        - {x: 25.666672, y: -9.791626}
+        - {x: 25.666672, y: 15.208374}
+        - {x: 17.666672, y: 20.208374}
     - name: Character2Sword_119
       rect:
         serializedVersion: 2
-        x: 339
-        y: 1089
-        width: 35
-        height: 49
+        x: 320
+        y: 1088
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.7083435, y: 20.208374}
+        - {x: -3.2916565, y: 20.208374}
+        - {x: -10.2916565, y: 18.208374}
+        - {x: -14.2916565, y: -1.791626}
+        - {x: -14.2916565, y: -22.791626}
+        - {x: -10.2916565, y: -30.791626}
+        - {x: 12.7083435, y: -30.791626}
+        - {x: 22.708344, y: -4.791626}
+        - {x: 22.708344, y: 4.208374}
+        - {x: 16.708344, y: 14.208374}
     - name: Character2Sword_120
       rect:
         serializedVersion: 2
-        x: 15
-        y: 1025
-        width: 32
-        height: 48
+        x: 0
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 19.166687}
+        - {x: -18.5, y: 13.166687}
+        - {x: -18.5, y: -30.833313}
+        - {x: 11.5, y: -30.833313}
+        - {x: 15.5, y: -26.833313}
+        - {x: 15.5, y: 8.166687}
+        - {x: 11.5, y: 19.166687}
     - name: Character2Sword_121
       rect:
         serializedVersion: 2
-        x: 82
-        y: 1023
-        width: 28
-        height: 49
+        x: 64
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.458332, y: 18.166687}
+        - {x: -15.458332, y: -30.833313}
+        - {x: 14.541668, y: -30.833313}
+        - {x: 14.541668, y: 13.166687}
+        - {x: 10.541668, y: 18.166687}
     - name: Character2Sword_122
       rect:
         serializedVersion: 2
-        x: 148
-        y: 1023
-        width: 24
-        height: 50
+        x: 128
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.416664, y: 19.166687}
+        - {x: -13.416664, y: 13.166687}
+        - {x: -13.416664, y: -18.833313}
+        - {x: -12.416664, y: -25.833313}
+        - {x: -4.416664, y: -30.833313}
+        - {x: 11.583336, y: -30.833313}
+        - {x: 12.583336, y: -29.833313}
+        - {x: 12.583336, y: 12.166687}
+        - {x: 9.583336, y: 19.166687}
     - name: Character2Sword_123
       rect:
         serializedVersion: 2
-        x: 211
-        y: 1023
-        width: 24
-        height: 50
+        x: 192
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.375, y: 19.166687}
+        - {x: -14.375, y: 18.166687}
+        - {x: -14.375, y: -14.833313}
+        - {x: -10.375, y: -30.833313}
+        - {x: 11.625, y: -30.833313}
+        - {x: 11.625, y: 17.166687}
+        - {x: 9.625, y: 19.166687}
     - name: Character2Sword_124
       rect:
         serializedVersion: 2
-        x: 275
-        y: 1023
-        width: 29
-        height: 50
+        x: 256
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.333328, y: 19.166687}
+        - {x: -14.333328, y: -18.833313}
+        - {x: -6.3333282, y: -30.833313}
+        - {x: 13.666672, y: -30.833313}
+        - {x: 16.666672, y: -18.833313}
+        - {x: 16.666672, y: -0.833313}
+        - {x: 8.666672, y: 19.166687}
     - name: Character2Sword_125
       rect:
         serializedVersion: 2
-        x: 339
-        y: 1023
-        width: 27
-        height: 50
+        x: 320
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.2916565, y: 19.166687}
+        - {x: -14.2916565, y: 18.166687}
+        - {x: -14.2916565, y: -14.833313}
+        - {x: -10.2916565, y: -30.833313}
+        - {x: 9.7083435, y: -30.833313}
+        - {x: 14.7083435, y: -19.833313}
+        - {x: 14.7083435, y: 11.166687}
+        - {x: 10.7083435, y: 19.166687}
     - name: Character2Sword_126
       rect:
         serializedVersion: 2
-        x: 403
-        y: 1023
-        width: 28
-        height: 50
+        x: 384
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.25, y: 19.166687}
+        - {x: -14.25, y: 15.166687}
+        - {x: -14.25, y: -6.833313}
+        - {x: -12.25, y: -17.833313}
+        - {x: -7.25, y: -30.833313}
+        - {x: 12.75, y: -30.833313}
+        - {x: 15.75, y: -23.833313}
+        - {x: 15.75, y: 18.166687}
+        - {x: 9.75, y: 19.166687}
     - name: Character2Sword_127
       rect:
         serializedVersion: 2
-        x: 467
-        y: 1023
-        width: 29
-        height: 50
+        x: 448
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.208313, y: 19.166687}
+        - {x: -14.208313, y: 15.166687}
+        - {x: -14.208313, y: -14.833313}
+        - {x: -9.208313, y: -30.833313}
+        - {x: 14.791687, y: -30.833313}
+        - {x: 16.791687, y: -17.833313}
+        - {x: 16.791687, y: 5.166687}
+        - {x: 9.791687, y: 19.166687}
     - name: Character2Sword_128
       rect:
         serializedVersion: 2
-        x: 531
-        y: 1023
-        width: 30
-        height: 50
+        x: 512
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.1666565, y: 19.166687}
+        - {x: -14.1666565, y: 13.166687}
+        - {x: -14.1666565, y: -19.833313}
+        - {x: -6.1666565, y: -30.833313}
+        - {x: 9.8333435, y: -30.833313}
+        - {x: 17.833344, y: -14.833313}
+        - {x: 17.833344, y: 4.166687}
+        - {x: 8.8333435, y: 19.166687}
     - name: Character2Sword_129
       rect:
         serializedVersion: 2
-        x: 595
-        y: 1023
-        width: 29
-        height: 50
+        x: 576
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.125, y: 19.166687}
+        - {x: -14.125, y: 18.166687}
+        - {x: -14.125, y: -22.833313}
+        - {x: -7.125, y: -30.833313}
+        - {x: 8.875, y: -30.833313}
+        - {x: 16.875, y: -22.833313}
+        - {x: 16.875, y: 10.166687}
+        - {x: 13.875, y: 19.166687}
     - name: Character2Sword_130
       rect:
         serializedVersion: 2
-        x: 659
-        y: 1023
-        width: 24
-        height: 50
+        x: 640
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.916687, y: 19.166687}
+        - {x: -14.083313, y: 19.166687}
+        - {x: -14.083313, y: -14.833313}
+        - {x: -9.083313, y: -30.833313}
+        - {x: 10.916687, y: -30.833313}
+        - {x: 12.916687, y: -29.833313}
+        - {x: 12.916687, y: 15.166687}
     - name: Character2Sword_131
       rect:
         serializedVersion: 2
-        x: 723
-        y: 1023
-        width: 24
-        height: 50
+        x: 704
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.041626, y: 19.166687}
+        - {x: -14.041626, y: -17.833313}
+        - {x: -6.041626, y: -30.833313}
+        - {x: 12.958374, y: -30.833313}
+        - {x: 12.958374, y: 14.166687}
+        - {x: 11.958374, y: 19.166687}
     - name: Character2Sword_132
       rect:
         serializedVersion: 2
-        x: 787
-        y: 1023
-        width: 24
-        height: 50
+        x: 768
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 19.166687}
+        - {x: -14, y: 19.166687}
+        - {x: -14, y: -14.833313}
+        - {x: -9, y: -30.833313}
+        - {x: 11, y: -30.833313}
+        - {x: 13, y: -29.833313}
+        - {x: 13, y: 15.166687}
     - name: Character2Sword_133
       rect:
         serializedVersion: 2
-        x: 23
-        y: 961
-        width: 22
-        height: 49
+        x: 0
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 20.125}
+        - {x: -10.5, y: 18.125}
+        - {x: -10.5, y: -29.875}
+        - {x: -5.5, y: -30.875}
+        - {x: 9.5, y: -30.875}
+        - {x: 13.5, y: -17.875}
+        - {x: 13.5, y: 19.125}
+        - {x: 10.5, y: 20.125}
     - name: Character2Sword_134
       rect:
         serializedVersion: 2
-        x: 83
-        y: 961
-        width: 27
-        height: 49
+        x: 64
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.541668, y: 1.125}
+        - {x: 13.541668, y: 14.125}
+        - {x: 8.541668, y: 20.125}
+        - {x: -14.458332, y: 20.125}
+        - {x: -14.458332, y: -30.875}
+        - {x: 9.541668, y: -30.875}
+        - {x: 14.541668, y: -10.875}
+      - - {x: -1.4583321, y: 32.125}
+        - {x: -0.45833206, y: 29.125}
+        - {x: 6.541668, y: 29.125}
+        - {x: 8.541668, y: 31.125}
+        - {x: 8.541668, y: 32.125}
     - name: Character2Sword_135
       rect:
         serializedVersion: 2
-        x: 142
-        y: 961
-        width: 34
-        height: 49
+        x: 128
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.583336, y: 20.125}
+        - {x: -10.416664, y: 20.125}
+        - {x: -19.416664, y: 12.125}
+        - {x: -19.416664, y: -24.875}
+        - {x: -12.416664, y: -30.875}
+        - {x: 8.583336, y: -30.875}
+        - {x: 16.583336, y: -14.875}
+        - {x: 16.583336, y: 0.125}
+        - {x: 14.583336, y: 14.125}
+      - - {x: -2.4166641, y: 32.125}
+        - {x: -1.4166641, y: 29.125}
+        - {x: 5.583336, y: 29.125}
+        - {x: 7.583336, y: 31.125}
+        - {x: 7.583336, y: 32.125}
     - name: Character2Sword_136
       rect:
         serializedVersion: 2
-        x: 204
-        y: 961
-        width: 37
-        height: 49
+        x: 192
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.625, y: 20.125}
+        - {x: -9.375, y: 20.125}
+        - {x: -11.375, y: 17.125}
+        - {x: -21.375, y: -4.875}
+        - {x: -21.375, y: -16.875}
+        - {x: -13.375, y: -28.875}
+        - {x: -3.375, y: -30.875}
+        - {x: 12.625, y: -30.875}
+        - {x: 13.625, y: -28.875}
+        - {x: 17.625, y: -13.875}
+        - {x: 17.625, y: 18.125}
+      - - {x: -4.375, y: 32.125}
+        - {x: -3.375, y: 29.125}
+        - {x: 4.625, y: 29.125}
+        - {x: 6.625, y: 31.125}
+        - {x: 6.625, y: 32.125}
     - name: Character2Sword_137
       rect:
         serializedVersion: 2
-        x: 268
-        y: 961
-        width: 37
-        height: 49
+        x: 256
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.3333282, y: 20.125}
+        - {x: -9.333328, y: 16.125}
+        - {x: -21.333328, y: 8.125}
+        - {x: -21.333328, y: -26.875}
+        - {x: -19.333328, y: -30.875}
+        - {x: 14.666672, y: -30.875}
+        - {x: 17.666672, y: -24.875}
+        - {x: 17.666672, y: 16.125}
+        - {x: 8.666672, y: 20.125}
+      - - {x: -4.3333282, y: 32.125}
+        - {x: -3.3333282, y: 29.125}
+        - {x: 4.6666718, y: 29.125}
+        - {x: 6.6666718, y: 31.125}
+        - {x: 6.6666718, y: 32.125}
     - name: Character2Sword_138
       rect:
         serializedVersion: 2
-        x: 331
-        y: 961
-        width: 34
-        height: 49
+        x: 320
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.2916565, y: 20.125}
+        - {x: -12.2916565, y: 18.125}
+        - {x: -22.291656, y: 11.125}
+        - {x: -22.291656, y: -24.875}
+        - {x: -20.291656, y: -30.875}
+        - {x: 12.7083435, y: -30.875}
+        - {x: 13.7083435, y: -28.875}
+        - {x: 13.7083435, y: 16.125}
+        - {x: 10.7083435, y: 20.125}
+      - - {x: -4.2916565, y: 32.125}
+        - {x: -3.2916565, y: 29.125}
+        - {x: 4.7083435, y: 29.125}
+        - {x: 6.7083435, y: 31.125}
+        - {x: 6.7083435, y: 32.125}
     - name: Character2Sword_139
       rect:
         serializedVersion: 2
-        x: 395
-        y: 961
-        width: 36
-        height: 49
+        x: 384
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.25, y: 20.125}
+        - {x: -22.25, y: 7.125}
+        - {x: -22.25, y: -3.875}
+        - {x: -12.25, y: -28.875}
+        - {x: -5.25, y: -30.875}
+        - {x: 14.75, y: -30.875}
+        - {x: 15.75, y: -26.875}
+        - {x: 15.75, y: 13.125}
+        - {x: 10.75, y: 20.125}
+      - - {x: -4.25, y: 32.125}
+        - {x: -3.25, y: 29.125}
+        - {x: 4.75, y: 29.125}
+        - {x: 6.75, y: 31.125}
+        - {x: 6.75, y: 32.125}
     - name: Character2Sword_140
       rect:
         serializedVersion: 2
-        x: 460
-        y: 961
-        width: 38
-        height: 49
+        x: 448
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.208313, y: 20.125}
+        - {x: -21.208313, y: 12.125}
+        - {x: -21.208313, y: -11.875}
+        - {x: -11.208313, y: -30.875}
+        - {x: 13.791687, y: -30.875}
+        - {x: 18.791687, y: -8.875}
+        - {x: 18.791687, y: 12.125}
+        - {x: 15.791687, y: 20.125}
+      - - {x: -4.208313, y: 32.125}
+        - {x: -3.208313, y: 29.125}
+        - {x: 4.791687, y: 29.125}
+        - {x: 6.791687, y: 31.125}
+        - {x: 6.791687, y: 32.125}
     - name: Character2Sword_141
       rect:
         serializedVersion: 2
-        x: 524
-        y: 961
-        width: 40
-        height: 49
+        x: 512
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.8333435, y: 20.125}
+        - {x: -8.1666565, y: 20.125}
+        - {x: -21.166656, y: 4.125}
+        - {x: -21.166656, y: -16.875}
+        - {x: -11.1666565, y: -30.875}
+        - {x: 15.8333435, y: -30.875}
+        - {x: 20.833344, y: -25.875}
+        - {x: 20.833344, y: 5.125}
+        - {x: 15.8333435, y: 18.125}
+      - - {x: -4.1666565, y: 32.125}
+        - {x: -3.1666565, y: 29.125}
+        - {x: 4.8333435, y: 29.125}
+        - {x: 6.8333435, y: 31.125}
+        - {x: 6.8333435, y: 32.125}
     - name: Character2Sword_142
       rect:
         serializedVersion: 2
-        x: 589
-        y: 961
-        width: 36
-        height: 49
+        x: 576
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.125, y: 20.125}
+        - {x: -14.125, y: 19.125}
+        - {x: -20.125, y: 9.125}
+        - {x: -20.125, y: -24.875}
+        - {x: -11.125, y: -30.875}
+        - {x: 17.875, y: -30.875}
+        - {x: 17.875, y: 12.125}
+        - {x: 13.875, y: 20.125}
+      - - {x: -4.125, y: 32.125}
+        - {x: -3.125, y: 29.125}
+        - {x: 4.875, y: 29.125}
+        - {x: 6.875, y: 31.125}
+        - {x: 6.875, y: 32.125}
     - name: Character2Sword_143
       rect:
         serializedVersion: 2
-        x: 652
-        y: 961
-        width: 36
-        height: 49
+        x: 640
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.083313, y: 20.125}
+        - {x: -20.083313, y: 8.125}
+        - {x: -20.083313, y: -19.875}
+        - {x: -9.083313, y: -30.875}
+        - {x: 13.916687, y: -30.875}
+        - {x: 16.916687, y: -19.875}
+        - {x: 16.916687, y: 17.125}
+        - {x: 9.916687, y: 20.125}
+      - - {x: -4.083313, y: 32.125}
+        - {x: -3.083313, y: 29.125}
+        - {x: 5.916687, y: 29.125}
+        - {x: 7.916687, y: 31.125}
+        - {x: 7.916687, y: 32.125}
     - name: Character2Sword_144
       rect:
         serializedVersion: 2
-        x: 716
-        y: 961
-        width: 32
-        height: 49
+        x: 704
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.958374, y: 20.125}
+        - {x: -13.041626, y: 20.125}
+        - {x: -20.041626, y: 14.125}
+        - {x: -20.041626, y: -17.875}
+        - {x: -9.041626, y: -30.875}
+        - {x: 13.958374, y: -30.875}
+        - {x: 13.958374, y: 15.125}
+        - {x: 9.958374, y: 19.125}
+      - - {x: -4.041626, y: 32.125}
+        - {x: -3.041626, y: 29.125}
+        - {x: 5.958374, y: 29.125}
+        - {x: 7.958374, y: 31.125}
+        - {x: 7.958374, y: 32.125}
     - name: Character2Sword_145
       rect:
         serializedVersion: 2
-        x: 780
-        y: 961
-        width: 36
-        height: 49
+        x: 768
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 20.125}
+        - {x: -11, y: 20.125}
+        - {x: -20, y: 9.125}
+        - {x: -20, y: -11.875}
+        - {x: -12, y: -27.875}
+        - {x: -5, y: -30.875}
+        - {x: 12, y: -30.875}
+        - {x: 17, y: -29.875}
+        - {x: 18, y: -20.875}
+        - {x: 18, y: 3.125}
+        - {x: 15, y: 13.125}
+      - - {x: -4, y: 32.125}
+        - {x: -3, y: 29.125}
+        - {x: 6, y: 29.125}
+        - {x: 8, y: 31.125}
+        - {x: 8, y: 32.125}
     - name: Character2Sword_146
       rect:
         serializedVersion: 2
-        x: 15
-        y: 897
-        width: 32
-        height: 49
+        x: 0
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 16.083374}
+        - {x: 8.5, y: 20.083374}
+        - {x: -9.5, y: 20.083374}
+        - {x: -18.5, y: 16.083374}
+        - {x: -18.5, y: -29.916626}
+        - {x: -14.5, y: -30.916626}
+        - {x: 12.5, y: -30.916626}
+        - {x: 15.5, y: -29.916626}
+        - {x: 15.5, y: -3.916626}
     - name: Character2Sword_147
       rect:
         serializedVersion: 2
-        x: 81
-        y: 898
-        width: 27
-        height: 48
+        x: 64
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.458332, y: 20.083374}
+        - {x: -16.458332, y: 10.083374}
+        - {x: -16.458332, y: -16.916626}
+        - {x: -12.458332, y: -29.916626}
+        - {x: 9.541668, y: -29.916626}
+        - {x: 12.541668, y: -27.916626}
+        - {x: 12.541668, y: 19.083374}
+        - {x: 9.541668, y: 20.083374}
     - name: Character2Sword_148
       rect:
         serializedVersion: 2
-        x: 145
-        y: 898
-        width: 26
-        height: 48
+        x: 128
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.416664, y: 20.083374}
+        - {x: -16.416664, y: -29.916626}
+        - {x: 5.583336, y: -29.916626}
+        - {x: 11.583336, y: -27.916626}
+        - {x: 11.583336, y: 18.083374}
+        - {x: 6.583336, y: 20.083374}
     - name: Character2Sword_149
       rect:
         serializedVersion: 2
-        x: 209
-        y: 897
-        width: 26
-        height: 49
+        x: 192
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.375, y: 20.083374}
+        - {x: -16.375, y: 19.083374}
+        - {x: -16.375, y: -29.916626}
+        - {x: -14.375, y: -30.916626}
+        - {x: 9.625, y: -30.916626}
+        - {x: 11.625, y: -21.916626}
+        - {x: 11.625, y: 17.083374}
+        - {x: 8.625, y: 20.083374}
     - name: Character2Sword_150
       rect:
         serializedVersion: 2
-        x: 274
-        y: 897
-        width: 25
-        height: 49
+        x: 256
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.333328, y: 20.083374}
+        - {x: -15.333328, y: 14.083374}
+        - {x: -15.333328, y: -28.916626}
+        - {x: -7.3333282, y: -30.916626}
+        - {x: 8.666672, y: -30.916626}
+        - {x: 11.666672, y: -17.916626}
+        - {x: 11.666672, y: 14.083374}
+        - {x: 9.666672, y: 20.083374}
     - name: Character2Sword_151
       rect:
         serializedVersion: 2
-        x: 338
-        y: 897
-        width: 25
-        height: 49
+        x: 320
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.2916565, y: 20.083374}
+        - {x: -15.2916565, y: 6.083374}
+        - {x: -15.2916565, y: -27.916626}
+        - {x: -7.2916565, y: -30.916626}
+        - {x: 10.7083435, y: -30.916626}
+        - {x: 11.7083435, y: -27.916626}
+        - {x: 11.7083435, y: 18.083374}
+        - {x: 10.7083435, y: 20.083374}
     - name: Character2Sword_152
       rect:
         serializedVersion: 2
-        x: 402
-        y: 897
-        width: 25
-        height: 49
+        x: 384
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.25, y: 20.083374}
+        - {x: -15.25, y: 11.083374}
+        - {x: -15.25, y: -27.916626}
+        - {x: -7.25, y: -30.916626}
+        - {x: 11.75, y: -30.916626}
+        - {x: 11.75, y: 15.083374}
+        - {x: 8.75, y: 20.083374}
     - name: Character2Sword_153
       rect:
         serializedVersion: 2
-        x: 465
-        y: 897
-        width: 26
-        height: 49
+        x: 448
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.208313, y: 20.083374}
+        - {x: -16.208313, y: 14.083374}
+        - {x: -16.208313, y: -17.916626}
+        - {x: -9.208313, y: -30.916626}
+        - {x: 7.791687, y: -30.916626}
+        - {x: 10.791687, y: -29.916626}
+        - {x: 11.791687, y: -18.916626}
+        - {x: 11.791687, y: 16.083374}
+        - {x: 6.791687, y: 20.083374}
     - name: Character2Sword_154
       rect:
         serializedVersion: 2
-        x: 529
-        y: 897
-        width: 26
-        height: 49
+        x: 512
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.1666565, y: 20.083374}
+        - {x: -16.166656, y: 12.083374}
+        - {x: -16.166656, y: -16.916626}
+        - {x: -12.1666565, y: -25.916626}
+        - {x: -7.1666565, y: -30.916626}
+        - {x: 5.8333435, y: -30.916626}
+        - {x: 10.8333435, y: -29.916626}
+        - {x: 12.8333435, y: -19.916626}
+        - {x: 12.8333435, y: 12.083374}
+        - {x: 9.8333435, y: 20.083374}
     - name: Character2Sword_155
       rect:
         serializedVersion: 2
-        x: 594
-        y: 897
-        width: 25
-        height: 49
+        x: 576
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.875, y: 20.083374}
+        - {x: -8.125, y: 20.083374}
+        - {x: -15.125, y: 14.083374}
+        - {x: -15.125, y: -27.916626}
+        - {x: -5.125, y: -30.916626}
+        - {x: 8.875, y: -30.916626}
+        - {x: 9.875, y: -28.916626}
+        - {x: 12.875, y: -14.916626}
+        - {x: 12.875, y: 12.083374}
     - name: Character2Sword_156
       rect:
         serializedVersion: 2
-        x: 657
-        y: 897
-        width: 26
-        height: 49
+        x: 640
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.083313, y: 20.083374}
+        - {x: -15.083313, y: 14.083374}
+        - {x: -16.083313, y: 10.083374}
+        - {x: -16.083313, y: -20.916626}
+        - {x: -9.083313, y: -30.916626}
+        - {x: 7.916687, y: -30.916626}
+        - {x: 12.916687, y: -16.916626}
+        - {x: 12.916687, y: 16.083374}
+        - {x: 10.916687, y: 20.083374}
     - name: Character2Sword_157
       rect:
         serializedVersion: 2
-        x: 723
-        y: 897
-        width: 24
-        height: 49
+        x: 704
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.041626, y: 20.083374}
+        - {x: -14.041626, y: 16.083374}
+        - {x: -14.041626, y: -11.916626}
+        - {x: -13.041626, y: -25.916626}
+        - {x: -8.041626, y: -30.916626}
+        - {x: 5.958374, y: -30.916626}
+        - {x: 10.958374, y: -28.916626}
+        - {x: 12.958374, y: -19.916626}
+        - {x: 12.958374, y: 14.083374}
+        - {x: 10.958374, y: 20.083374}
     - name: Character2Sword_158
       rect:
         serializedVersion: 2
-        x: 785
-        y: 897
-        width: 26
-        height: 49
+        x: 768
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 20.083374}
+        - {x: -15, y: 14.083374}
+        - {x: -16, y: 1.083374}
+        - {x: -16, y: -11.916626}
+        - {x: -11, y: -28.916626}
+        - {x: -7, y: -30.916626}
+        - {x: 7, y: -30.916626}
+        - {x: 12, y: -29.916626}
+        - {x: 13, y: -21.916626}
+        - {x: 13, y: 14.083374}
+        - {x: 11, y: 20.083374}
     - name: Character2Sword_159
       rect:
         serializedVersion: 2
-        x: 19
-        y: 833
-        width: 22
-        height: 49
+        x: 0
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: 20.041687}
+        - {x: -14.5, y: -28.958313}
+        - {x: -9.5, y: -30.958313}
+        - {x: 9.5, y: -30.958313}
+        - {x: 9.5, y: 18.041687}
+        - {x: 6.5, y: 20.041687}
     - name: Character2Sword_160
       rect:
         serializedVersion: 2
-        x: 82
-        y: 833
-        width: 27
-        height: 49
+        x: 64
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.458332, y: 20.041687}
+        - {x: -13.458332, y: 16.041687}
+        - {x: -15.458332, y: 4.041687}
+        - {x: -15.458332, y: -17.958313}
+        - {x: -9.458332, y: -30.958313}
+        - {x: 12.541668, y: -30.958313}
+        - {x: 13.541668, y: -23.958313}
+        - {x: 13.541668, y: 20.041687}
     - name: Character2Sword_161
       rect:
         serializedVersion: 2
-        x: 144
-        y: 833
-        width: 34
-        height: 49
+        x: 128
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.583336, y: 20.041687}
+        - {x: -13.416664, y: 20.041687}
+        - {x: -17.416664, y: 7.041687}
+        - {x: -17.416664, y: -21.958313}
+        - {x: -9.416664, y: -30.958313}
+        - {x: 11.583336, y: -30.958313}
+        - {x: 18.583336, y: -21.958313}
+        - {x: 18.583336, y: 8.041687}
+        - {x: 16.583336, y: 17.041687}
     - name: Character2Sword_162
       rect:
         serializedVersion: 2
-        x: 207
-        y: 833
-        width: 37
-        height: 49
+        x: 192
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.375, y: 20.041687}
+        - {x: -18.375, y: -30.958313}
+        - {x: 19.625, y: -30.958313}
+        - {x: 20.625, y: -29.958313}
+        - {x: 20.625, y: 11.041687}
+        - {x: 18.625, y: 20.041687}
     - name: Character2Sword_163
       rect:
         serializedVersion: 2
-        x: 271
-        y: 833
-        width: 37
-        height: 49
+        x: 256
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.666672, y: 20.041687}
+        - {x: -11.333328, y: 20.041687}
+        - {x: -18.333328, y: 9.041687}
+        - {x: -18.333328, y: -17.958313}
+        - {x: -13.333328, y: -28.958313}
+        - {x: -12.333328, y: -30.958313}
+        - {x: 8.666672, y: -30.958313}
+        - {x: 10.666672, y: -27.958313}
+        - {x: 20.666672, y: -8.958313}
+        - {x: 20.666672, y: 7.041687}
     - name: Character2Sword_164
       rect:
         serializedVersion: 2
-        x: 339
-        y: 833
-        width: 34
-        height: 49
+        x: 320
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.2916565, y: 20.041687}
+        - {x: -14.2916565, y: 19.041687}
+        - {x: -14.2916565, y: -29.958313}
+        - {x: -13.2916565, y: -30.958313}
+        - {x: 4.7083435, y: -30.958313}
+        - {x: 8.7083435, y: -29.958313}
+        - {x: 21.708344, y: -7.958313}
+        - {x: 21.708344, y: 10.041687}
+        - {x: 12.7083435, y: 20.041687}
     - name: Character2Sword_165
       rect:
         serializedVersion: 2
-        x: 401
-        y: 833
-        width: 36
-        height: 49
+        x: 384
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.75, y: 20.041687}
+        - {x: -16.25, y: 20.041687}
+        - {x: -16.25, y: -30.958313}
+        - {x: 12.75, y: -30.958313}
+        - {x: 21.75, y: -13.958313}
+        - {x: 21.75, y: 3.041687}
     - name: Character2Sword_166
       rect:
         serializedVersion: 2
-        x: 462
-        y: 833
-        width: 38
-        height: 49
+        x: 448
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.791687, y: 20.041687}
+        - {x: -19.208313, y: 20.041687}
+        - {x: -19.208313, y: -17.958313}
+        - {x: -13.208313, y: -30.958313}
+        - {x: 9.791687, y: -30.958313}
+        - {x: 11.791687, y: -27.958313}
+        - {x: 20.791687, y: -8.958313}
+        - {x: 20.791687, y: 15.041687}
     - name: Character2Sword_167
       rect:
         serializedVersion: 2
-        x: 524
-        y: 833
-        width: 40
-        height: 49
+        x: 512
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.8333435, y: 20.041687}
+        - {x: -14.1666565, y: 20.041687}
+        - {x: -21.166656, y: 4.041687}
+        - {x: -21.166656, y: -11.958313}
+        - {x: -12.1666565, y: -30.958313}
+        - {x: 5.8333435, y: -30.958313}
+        - {x: 9.8333435, y: -29.958313}
+        - {x: 20.833344, y: -7.958313}
+        - {x: 20.833344, y: 13.041687}
+        - {x: 17.833344, y: 19.041687}
     - name: Character2Sword_168
       rect:
         serializedVersion: 2
-        x: 591
-        y: 833
-        width: 37
-        height: 49
+        x: 576
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.875, y: 20.041687}
+        - {x: -12.125, y: 20.041687}
+        - {x: -18.125, y: 8.041687}
+        - {x: -18.125, y: -22.958313}
+        - {x: -14.125, y: -30.958313}
+        - {x: 12.875, y: -30.958313}
+        - {x: 20.875, y: -14.958313}
+        - {x: 20.875, y: 10.041687}
+        - {x: 14.875, y: 16.041687}
     - name: Character2Sword_169
       rect:
         serializedVersion: 2
-        x: 656
-        y: 833
-        width: 36
-        height: 49
+        x: 640
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.083313, y: 20.041687}
+        - {x: -17.083313, y: -30.958313}
+        - {x: 12.916687, y: -30.958313}
+        - {x: 20.916687, y: -14.958313}
+        - {x: 20.916687, y: 9.041687}
+        - {x: 8.916687, y: 20.041687}
     - name: Character2Sword_170
       rect:
         serializedVersion: 2
-        x: 724
-        y: 833
-        width: 32
-        height: 49
+        x: 704
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.041626, y: 20.041687}
+        - {x: -13.041626, y: -30.958313}
+        - {x: 12.958374, y: -30.958313}
+        - {x: 20.958374, y: -14.958313}
+        - {x: 20.958374, y: 10.041687}
+        - {x: 11.958374, y: 20.041687}
     - name: Character2Sword_171
       rect:
         serializedVersion: 2
-        x: 785
-        y: 833
-        width: 35
-        height: 49
+        x: 768
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 20.041687}
+        - {x: -16, y: -30.958313}
+        - {x: 16, y: -30.958313}
+        - {x: 21, y: -17.958313}
+        - {x: 21, y: 9.041687}
+        - {x: 10, y: 20.041687}
     - name: Character2Sword_172
       rect:
         serializedVersion: 2
-        x: 16
-        y: 769
-        width: 32
-        height: 49
+        x: 0
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 20}
+        - {x: -11.5, y: 20}
+        - {x: -17.5, y: 17}
+        - {x: -17.5, y: -22}
+        - {x: -16.5, y: -30}
+        - {x: -13.5, y: -31}
+        - {x: 13.5, y: -31}
+        - {x: 16.5, y: -30}
+        - {x: 16.5, y: 2}
     - name: Character2Sword_173
       rect:
         serializedVersion: 2
-        x: 81
-        y: 769
-        width: 33
-        height: 48
+        x: 64
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.541668, y: 19}
+        - {x: -16.458332, y: 19}
+        - {x: -16.458332, y: -31}
+        - {x: 14.541668, y: -31}
+        - {x: 18.541668, y: -19}
+        - {x: 18.541668, y: 8}
+        - {x: 15.541668, y: 17}
     - name: Character2Sword_174
       rect:
         serializedVersion: 2
-        x: 146
-        y: 769
-        width: 32
-        height: 41
+        x: 128
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.583336, y: 10}
+        - {x: 9.583336, y: 12}
+        - {x: -8.416664, y: 12}
+        - {x: -10.416664, y: 9}
+        - {x: -15.416664, y: -13}
+        - {x: -15.416664, y: -30}
+        - {x: -5.416664, y: -31}
+        - {x: 13.583336, y: -31}
+        - {x: 18.583336, y: -25}
+        - {x: 18.583336, y: -7}
     - name: Character2Sword_175
       rect:
         serializedVersion: 2
-        x: 210
-        y: 770
-        width: 32
-        height: 36
+        x: 192
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.625, y: 8}
+        - {x: -6.375, y: 8}
+        - {x: -12.375, y: 6}
+        - {x: -15.375, y: -11}
+        - {x: -15.375, y: -28}
+        - {x: -14.375, y: -30}
+        - {x: 13.625, y: -30}
+        - {x: 18.625, y: -27}
+        - {x: 18.625, y: -10}
+        - {x: 15.625, y: 5}
     - name: Character2Sword_176
       rect:
         serializedVersion: 2
-        x: 274
-        y: 770
-        width: 33
-        height: 30
+        x: 256
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.666672, y: 2}
+        - {x: -9.333328, y: 2}
+        - {x: -15.333328, y: -5}
+        - {x: -15.333328, y: -30}
+        - {x: 19.666672, y: -30}
+        - {x: 19.666672, y: -4}
+        - {x: 14.666672, y: 0}
     - name: Character2Sword_177
       rect:
         serializedVersion: 2
-        x: 337
+        x: 320
         y: 768
-        width: 36
-        height: 37
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.2916565, y: 7}
+        - {x: -16.291656, y: -4}
+        - {x: -16.291656, y: -31}
+        - {x: 21.708344, y: -31}
+        - {x: 21.708344, y: 7}
     - name: Character2Sword_178
       rect:
         serializedVersion: 2
-        x: 80
-        y: 641
-        width: 33
-        height: 48
+        x: 64
+        y: 635
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.458332, y: 24.069702}
+        - {x: -17.458332, y: 16.069702}
+        - {x: -17.458332, y: -21.930298}
+        - {x: -16.458332, y: -25.930298}
+        - {x: 17.541668, y: -25.930298}
+        - {x: 17.541668, y: 8.069702}
+        - {x: 12.541668, y: 24.069702}
     - name: Character2Sword_179
       rect:
         serializedVersion: 2
-        x: 274
-        y: 640
-        width: 28
-        height: 48
+        x: 256
+        y: 635
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.333328, y: 23.069702}
+        - {x: -15.333328, y: 11.069702}
+        - {x: -15.333328, y: -22.930298}
+        - {x: -12.333328, y: -26.930298}
+        - {x: 12.666672, y: -26.930298}
+        - {x: 14.666672, y: -22.930298}
+        - {x: 14.666672, y: 21.069702}
+        - {x: 10.666672, y: 23.069702}
     - name: Character2Sword_180
       rect:
         serializedVersion: 2
-        x: 454
-        y: 640
-        width: 40
-        height: 48
+        x: 448
+        y: 635
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.208313, y: 23.069702}
+        - {x: -26.208313, y: 17.069702}
+        - {x: -26.208313, y: -10.930298}
+        - {x: -19.208313, y: -26.930298}
+        - {x: 14.791687, y: -26.930298}
+        - {x: 14.791687, y: 22.069702}
+        - {x: 10.791687, y: 23.069702}
     - name: Character2Sword_181
       rect:
         serializedVersion: 2
-        x: 658
-        y: 640
-        width: 29
-        height: 49
+        x: 640
+        y: 635
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.083313, y: 24.069702}
+        - {x: -15.083313, y: -24.930298}
+        - {x: -14.083313, y: -26.930298}
+        - {x: 15.916687, y: -26.930298}
+        - {x: 15.916687, y: 20.069702}
+        - {x: 13.916687, y: 24.069702}
     - name: Character2Sword_182
       rect:
         serializedVersion: 2
-        x: 849
-        y: 640
-        width: 47
-        height: 49
+        x: 832
+        y: 635
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.958313, y: 24.069702}
+        - {x: -14.958313, y: 13.069702}
+        - {x: -14.958313, y: -26.930298}
+        - {x: 16.041687, y: -26.930298}
+        - {x: 32.041687, y: 6.069702}
+        - {x: 32.041687, y: 22.069702}
+        - {x: 29.041687, y: 24.069702}
     - name: Character2Sword_183
       rect:
         serializedVersion: 2
-        x: 1041
-        y: 640
-        width: 64
-        height: 49
+        x: 1010
+        y: 635
+        width: 95
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character2Sword_184
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 449
-        width: 36
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.404907, y: 24.069702}
+        - {x: -17.404907, y: 17.069702}
+        - {x: -17.404907, y: -25.930298}
+        - {x: -15.404907, y: -26.930298}
+        - {x: 18.595093, y: -26.930298}
+        - {x: 46.595093, y: 0.06970215}
+        - {x: 46.595093, y: 24.069702}
     - name: Character2Sword_185
       rect:
         serializedVersion: 2
-        x: 272
-        y: 449
-        width: 27
-        height: 47
+        x: 64
+        y: 440
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.458332, y: 27.036469}
+        - {x: -25.458332, y: 3.0364685}
+        - {x: -25.458332, y: -20.963531}
+        - {x: -16.458332, y: -22.963531}
+        - {x: 6.541668, y: -22.963531}
+        - {x: 12.541668, y: -20.963531}
+        - {x: 12.541668, y: 27.036469}
     - name: Character2Sword_186
       rect:
         serializedVersion: 2
-        x: 467
-        y: 449
-        width: 26
-        height: 49
+        x: 256
+        y: 440
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.333328, y: 25.036469}
+        - {x: -17.333328, y: 16.036469}
+        - {x: -17.333328, y: -18.963531}
+        - {x: -16.333328, y: -21.963531}
+        - {x: -9.333328, y: -22.963531}
+        - {x: 9.666672, y: -22.963531}
+        - {x: 11.666672, y: -19.963531}
+        - {x: 11.666672, y: 24.036469}
+        - {x: 8.666672, y: 25.036469}
     - name: Character2Sword_187
       rect:
         serializedVersion: 2
-        x: 649
-        y: 449
-        width: 37
-        height: 49
+        x: 448
+        y: 440
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.208313, y: 27.036469}
+        - {x: -14.208313, y: 24.036469}
+        - {x: -14.208313, y: -20.963531}
+        - {x: -9.208313, y: -22.963531}
+        - {x: 9.791687, y: -22.963531}
+        - {x: 13.791687, y: -21.963531}
+        - {x: 13.791687, y: 24.036469}
+        - {x: 5.791687, y: 27.036469}
     - name: Character2Sword_188
       rect:
         serializedVersion: 2
-        x: 822
-        y: 449
-        width: 55
-        height: 49
+        x: 640
+        y: 440
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character2Sword_189
-      rect:
-        serializedVersion: 2
-        x: 1011
-        y: 449
-        width: 58
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.916687, y: 22.036469}
+        - {x: 7.916687, y: 27.036469}
+        - {x: -9.083313, y: 27.036469}
+        - {x: -19.083313, y: 23.036469}
+        - {x: -23.083313, y: 2.0364685}
+        - {x: -23.083313, y: -7.9635315}
+        - {x: -14.083313, y: -19.963531}
+        - {x: -12.083313, y: -21.963531}
+        - {x: -2.083313, y: -22.963531}
+        - {x: 9.916687, y: -22.963531}
+        - {x: 11.916687, y: -20.963531}
+        - {x: 15.916687, y: -12.9635315}
+        - {x: 15.916687, y: 0.036468506}
     - name: Character2Sword_190
       rect:
         serializedVersion: 2
-        x: 80
-        y: 257
-        width: 34
-        height: 49
+        x: 820
+        y: 440
+        width: 95
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character2Sword_191
-      rect:
-        serializedVersion: 2
-        x: 264
-        y: 257
-        width: 38
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45.091125, y: -2.9635315}
+        - {x: -24.091125, y: -22.963531}
+        - {x: 11.9088745, y: -22.963531}
+        - {x: 11.9088745, y: 19.036469}
+        - {x: 10.9088745, y: 24.036469}
+        - {x: 8.9088745, y: 27.036469}
+        - {x: -31.091125, y: 27.036469}
+        - {x: -45.091125, y: 22.036469}
     - name: Character2Sword_192
       rect:
         serializedVersion: 2
-        x: 454
-        y: 257
-        width: 40
-        height: 47
+        x: 1010
+        y: 440
+        width: 95
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.595093, y: 27.036469}
+        - {x: -24.404907, y: 27.036469}
+        - {x: -42.404907, y: 17.036469}
+        - {x: -46.404907, y: 12.0364685}
+        - {x: -46.404907, y: 0.036468506}
+        - {x: -13.404907, y: -22.963531}
+        - {x: 10.595093, y: -22.963531}
+        - {x: 12.595093, y: -20.963531}
+        - {x: 12.595093, y: 25.036469}
     - name: Character2Sword_193
       rect:
         serializedVersion: 2
-        x: 653
-        y: 257
-        width: 34
-        height: 48
+        x: 64
+        y: 250
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.458332, y: 24.850266}
+        - {x: -17.458332, y: 14.8502655}
+        - {x: -17.458332, y: -25.149734}
+        - {x: 15.541668, y: -25.149734}
+        - {x: 18.541668, y: -21.149734}
+        - {x: 18.541668, y: 3.8502655}
+        - {x: 10.541668, y: 24.850266}
     - name: Character2Sword_194
       rect:
         serializedVersion: 2
-        x: 851
-        y: 251
-        width: 46
-        height: 55
+        x: 256
+        y: 250
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.333328, y: 24.850266}
+        - {x: -25.333328, y: -0.1497345}
+        - {x: -25.333328, y: -18.149734}
+        - {x: -16.333328, y: -25.149734}
+        - {x: 12.666672, y: -25.149734}
+        - {x: 14.666672, y: -24.149734}
+        - {x: 14.666672, y: 12.8502655}
+        - {x: 9.666672, y: 24.850266}
     - name: Character2Sword_195
       rect:
         serializedVersion: 2
-        x: 1042
-        y: 257
+        x: 448
+        y: 250
         width: 64
-        height: 49
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.208313, y: 22.850266}
+        - {x: -26.208313, y: 11.8502655}
+        - {x: -26.208313, y: -7.1497345}
+        - {x: -14.208313, y: -22.149734}
+        - {x: -11.208313, y: -25.149734}
+        - {x: 13.791687, y: -25.149734}
+        - {x: 14.791687, y: -22.149734}
+        - {x: 14.791687, y: 18.850266}
+        - {x: 7.791687, y: 22.850266}
     - name: Character2Sword_196
       rect:
         serializedVersion: 2
-        x: 84
-        y: 65
-        width: 36
-        height: 49
+        x: 640
+        y: 250
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.916687, y: 23.850266}
+        - {x: -6.083313, y: 23.850266}
+        - {x: -13.083313, y: 21.850266}
+        - {x: -19.083313, y: 4.8502655}
+        - {x: -19.083313, y: -21.149734}
+        - {x: -15.083313, y: -25.149734}
+        - {x: 15.916687, y: -25.149734}
+        - {x: 15.916687, y: 13.8502655}
+        - {x: 14.916687, y: 20.850266}
     - name: Character2Sword_197
       rect:
         serializedVersion: 2
-        x: 277
-        y: 65
-        width: 27
-        height: 47
+        x: 820
+        y: 250
+        width: 95
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character2Sword_198
-      rect:
-        serializedVersion: 2
-        x: 467
-        y: 65
-        width: 26
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.9088745, y: 24.850266}
+        - {x: -14.0911255, y: 24.850266}
+        - {x: -17.091125, y: 15.8502655}
+        - {x: -17.091125, y: -30.149734}
+        - {x: -5.0911255, y: -31.149734}
+        - {x: 25.908875, y: -31.149734}
+        - {x: 30.908875, y: -28.149734}
+        - {x: 30.908875, y: -12.1497345}
+        - {x: 19.908875, y: 23.850266}
     - name: Character2Sword_199
       rect:
         serializedVersion: 2
-        x: 658
-        y: 65
-        width: 37
-        height: 49
+        x: 1010
+        y: 250
+        width: 95
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character2Sword_200
+      outline:
+      - - {x: -13.404907, y: 24.850266}
+        - {x: -16.404907, y: 19.850266}
+        - {x: -16.404907, y: -25.149734}
+        - {x: 46.595093, y: -25.149734}
+        - {x: 46.595093, y: 5.8502655}
+        - {x: 12.595093, y: 24.850266}
+    - name: Character2Sword_202
       rect:
         serializedVersion: 2
-        x: 851
-        y: 65
-        width: 55
-        height: 49
+        x: 64
+        y: 59
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character2Sword_201
+      outline:
+      - - {x: -13.458332, y: 23.694664}
+        - {x: -13.458332, y: -25.305336}
+        - {x: -11.458332, y: -26.305336}
+        - {x: 24.541668, y: -26.305336}
+        - {x: 24.541668, y: 0.694664}
+        - {x: 17.541668, y: 23.694664}
+    - name: Character2Sword_203
       rect:
         serializedVersion: 2
-        x: 1043
-        y: 65
-        width: 58
-        height: 49
+        x: 256
+        y: 59
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.333328, y: 21.694664}
+        - {x: -12.333328, y: 8.694664}
+        - {x: -12.333328, y: -23.305336}
+        - {x: -10.333328, y: -26.305336}
+        - {x: 16.666672, y: -26.305336}
+        - {x: 16.666672, y: 20.694664}
+        - {x: 14.666672, y: 21.694664}
+    - name: Character2Sword_204
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 59
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.208313, y: 23.694664}
+        - {x: -14.208313, y: 10.694664}
+        - {x: -14.208313, y: -20.305336}
+        - {x: -12.208313, y: -26.305336}
+        - {x: 13.791687, y: -26.305336}
+        - {x: 13.791687, y: 23.694664}
+    - name: Character2Sword_205
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 59
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.083313, y: 23.694664}
+        - {x: -15.083313, y: 21.694664}
+        - {x: -15.083313, y: -26.305336}
+        - {x: 15.916687, y: -26.305336}
+        - {x: 23.916687, y: -14.305336}
+        - {x: 23.916687, y: 9.694664}
+        - {x: 12.916687, y: 23.694664}
+    - name: Character2Sword_206
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 59
+        width: 95
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.0911255, y: 23.694664}
+        - {x: -17.091125, y: 3.694664}
+        - {x: -17.091125, y: -21.305336}
+        - {x: -13.0911255, y: -26.305336}
+        - {x: 18.908875, y: -26.305336}
+        - {x: 39.908875, y: 0.694664}
+        - {x: 39.908875, y: 12.694664}
+        - {x: 13.9088745, y: 23.694664}
+    - name: Character2Sword_208
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 59
+        width: 95
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.404907, y: 23.694664}
+        - {x: -13.404907, y: 21.694664}
+        - {x: -15.404907, y: 14.694664}
+        - {x: -15.404907, y: -22.305336}
+        - {x: -13.404907, y: -26.305336}
+        - {x: 12.595093, y: -26.305336}
+        - {x: 43.595093, y: -0.305336}
+        - {x: 43.595093, y: 13.694664}
+        - {x: 22.595093, y: 23.694664}
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

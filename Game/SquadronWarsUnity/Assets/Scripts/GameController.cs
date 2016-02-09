@@ -679,7 +679,7 @@ namespace Assets.Scripts
         }
         IEnumerator AttackAnimationNothing()
         {
-            yield return new WaitForSeconds(.4f);
+            yield return new WaitForSeconds(.5f);
             anim.SetBool("isAttacking", false);
         }
         IEnumerator CastAnimation(Tile tempTile, string ability)
@@ -756,8 +756,8 @@ namespace Assets.Scripts
             targetTile = GameObject.FindGameObjectWithTag("start").GetComponent<Tile>();
             curGameCharacter = currentGameCharacter.GetComponent<GameCharacter>();
             tarGameCharacter = targetGameCharacter.GetComponent<GameCharacter>();
-            curGameCharacter.x = 4;
-            curGameCharacter.y = 0;
+            curGameCharacter.x = 0;
+            curGameCharacter.y = 4;
             tarGameCharacter.x = 1;
             tarGameCharacter.y = 0;
         }
