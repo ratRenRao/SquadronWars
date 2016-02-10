@@ -9,6 +9,7 @@ namespace Assets.Scripts
         public GameObject[] menuPanels;
         public GameObject loginPanel;
         public GameObject mainMenuPanel;
+        public GameObject registerPanel;
         public GameObject homePanel;
         public GameObject squadPanel;
         public GameObject squadScreenPanel;
@@ -47,6 +48,7 @@ namespace Assets.Scripts
             squadPanel.SetActive(false);
             characterScreenPanel.SetActive(false);
             shopPanel.SetActive(false);
+            registerPanel.SetActive(false);
         }
 
    
