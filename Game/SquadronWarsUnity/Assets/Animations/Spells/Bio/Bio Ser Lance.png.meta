@@ -1,9 +1,36 @@
 fileFormatVersion: 2
 guid: d9bd2e048aa5ed346822b47bd440767a
-timeCreated: 1454087501
+timeCreated: 1454366894
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Bio Ser Lance_0
+    21300002: Bio Ser Lance_1
+    21300004: Bio Ser Lance_2
+    21300006: Bio Ser Lance_3
+    21300008: Bio Ser Lance_4
+    21300010: Bio Ser Lance_5
+    21300012: Bio Ser Lance_6
+    21300014: Bio Ser Lance_7
+    21300016: Bio Ser Lance_8
+    21300018: Bio Ser Lance_9
+    21300020: Bio Ser Lance_10
+    21300022: Bio Ser Lance_11
+    21300024: Bio Ser Lance_12
+    21300026: Bio Ser Lance_13
+    21300028: Bio Ser Lance_14
+    21300030: Bio Ser Lance_21
+    21300032: Bio Ser Lance_25
+    21300034: Bio Ser Lance_27
+    21300036: Bio Ser Lance_29
+    21300038: Bio Ser Lance_30
+    21300040: Bio Ser Lance_31
+    21300042: Bio Ser Lance_32
+    21300044: Bio Ser Lance_33
+    21300046: Bio Ser Lance_34
+    21300048: Bio Ser Lance_42
+    21300050: Bio Ser Lance_15
+    21300052: Bio Ser Lance_16
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +57,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,18 +65,647 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 40
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Bio Ser Lance_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 967
+        width: 192
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73, y: -36}
+        - {x: -94, y: -43}
+        - {x: -96, y: -46}
+        - {x: -96, y: -58}
+        - {x: -58, y: -69}
+        - {x: 74, y: -69}
+        - {x: 96, y: -63}
+        - {x: 96, y: -39}
+        - {x: 93, y: -36}
+    - name: Bio Ser Lance_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 967
+        width: 184
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -92, y: -36}
+        - {x: -92, y: -61}
+        - {x: -66, y: -69}
+        - {x: 34, y: -69}
+        - {x: 92, y: -61}
+        - {x: 92, y: -36}
+    - name: Bio Ser Lance_2
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 967
+        width: 184
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -83, y: -29}
+        - {x: -92, y: -42}
+        - {x: -92, y: -59}
+        - {x: -78, y: -67}
+        - {x: 52, y: -67}
+        - {x: 92, y: -65}
+        - {x: 92, y: -31}
+        - {x: 85, y: -29}
+    - name: Bio Ser Lance_3
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 967
+        width: 185
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 63.5, y: 84}
+        - {x: 30.5, y: 90}
+        - {x: -33.5, y: 90}
+        - {x: -46.5, y: 83}
+        - {x: -92.5, y: 40}
+        - {x: -92.5, y: -67}
+        - {x: -35.5, y: -90}
+        - {x: 33.5, y: -90}
+        - {x: 90.5, y: -64}
+        - {x: 92.5, y: -47}
+        - {x: 92.5, y: 27}
+    - name: Bio Ser Lance_4
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 971
+        width: 179
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85.5, y: -45}
+        - {x: 89.5, y: -29}
+        - {x: 89.5, y: 36}
+        - {x: 78.5, y: 86}
+        - {x: -76.5, y: 86}
+        - {x: -89.5, y: 47}
+        - {x: -89.5, y: -72}
+        - {x: -28.5, y: -86}
+        - {x: 48.5, y: -86}
+        - {x: 87.5, y: -61}
+        - {x: 89.5, y: -57}
+        - {x: 89.5, y: -47}
+    - name: Bio Ser Lance_5
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 787
+        width: 175
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36.5, y: 77}
+        - {x: -17.5, y: 77}
+        - {x: -51.5, y: 58}
+        - {x: -81.5, y: 31}
+        - {x: -87.5, y: -4}
+        - {x: -87.5, y: -61}
+        - {x: -47.5, y: -77}
+        - {x: 55.5, y: -77}
+        - {x: 87.5, y: -73}
+        - {x: 87.5, y: 1}
+        - {x: 80.5, y: 49}
+    - name: Bio Ser Lance_6
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 797
+        width: 174
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 72, y: 68}
+        - {x: -85, y: 68}
+        - {x: -87, y: 61}
+        - {x: -87, y: -68}
+        - {x: 87, y: -68}
+        - {x: 87, y: 40}
+        - {x: 82, y: 66}
+    - name: Bio Ser Lance_7
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 800
+        width: 166
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 75, y: 45}
+        - {x: 15, y: 63}
+        - {x: -32, y: 63}
+        - {x: -75, y: 34}
+        - {x: -83, y: 6}
+        - {x: -83, y: -59}
+        - {x: -66, y: -63}
+        - {x: 42, y: -63}
+        - {x: 79, y: -57}
+        - {x: 83, y: -54}
+        - {x: 83, y: -27}
+    - name: Bio Ser Lance_8
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 801
+        width: 172
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -86, y: 59}
+        - {x: -86, y: -57}
+        - {x: -84, y: -59}
+        - {x: 86, y: -59}
+        - {x: 86, y: 59}
+    - name: Bio Ser Lance_9
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 801
+        width: 150
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -75, y: 63.5}
+        - {x: -75, y: -62.5}
+        - {x: -71, y: -63.5}
+        - {x: 70, y: -63.5}
+        - {x: 75, y: -62.5}
+        - {x: 75, y: 63.5}
+    - name: Bio Ser Lance_10
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 599
+        width: 154
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53, y: 74}
+        - {x: -77, y: 70}
+        - {x: -77, y: -74}
+        - {x: 77, y: -74}
+        - {x: 77, y: 63}
+        - {x: 69, y: 74}
+    - name: Bio Ser Lance_11
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 586
+        width: 172
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 42, y: 86.5}
+        - {x: -86, y: 86.5}
+        - {x: -86, y: -68.5}
+        - {x: -34, y: -86.5}
+        - {x: 46, y: -86.5}
+        - {x: 86, y: -61.5}
+        - {x: 86, y: 49.5}
+        - {x: 75, y: 63.5}
+    - name: Bio Ser Lance_12
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 576
+        width: 192
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 93, y: 19}
+        - {x: 93, y: -20}
+        - {x: 95, y: -22}
+        - {x: 96, y: -22}
+        - {x: 96, y: 36}
+        - {x: 93, y: 35}
+        - {x: 96, y: 41}
+        - {x: 96, y: 73}
+        - {x: 58, y: 94}
+        - {x: -67, y: 94}
+        - {x: -96, y: 61}
+        - {x: -96, y: -58}
+        - {x: -40, y: -93}
+        - {x: 36, y: -93}
+        - {x: 84, y: -62}
+        - {x: 93, y: -22}
+        - {x: 93, y: -14}
+        - {x: 91, y: -5}
+    - name: Bio Ser Lance_13
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 416
+        width: 161
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52.5, y: 69.5}
+        - {x: -80.5, y: 60.5}
+        - {x: -80.5, y: -58.5}
+        - {x: -65.5, y: -69.5}
+        - {x: 80.5, y: -69.5}
+        - {x: 80.5, y: 68.5}
+        - {x: 73.5, y: 69.5}
+    - name: Bio Ser Lance_14
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 416
+        width: 161
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -80.5, y: -41.5}
+        - {x: -80.5, y: -69.5}
+        - {x: 71.5, y: -69.5}
+        - {x: 77.5, y: -61.5}
+        - {x: 77.5, y: -41.5}
+      - - {x: -80.5, y: 9.5}
+        - {x: -80.5, y: -16.5}
+        - {x: -76.5, y: -19.5}
+        - {x: 75.5, y: -19.5}
+        - {x: 75.5, y: 9.5}
+      - - {x: 51.5, y: 69.5}
+        - {x: -59.5, y: 69.5}
+        - {x: -66.5, y: 67.5}
+        - {x: -80.5, y: 56.5}
+        - {x: -80.5, y: 39.5}
+        - {x: -75.5, y: 32.5}
+        - {x: -48.5, y: 27.5}
+        - {x: -29.5, y: 25.5}
+        - {x: 25.5, y: 25.5}
+        - {x: 71.5, y: 32.5}
+        - {x: 72.5, y: 33.5}
+        - {x: 72.5, y: 61.5}
+    - name: Bio Ser Lance_21
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 420
+        width: 141
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 70.5, y: 59.5}
+        - {x: -29.5, y: 59.5}
+        - {x: -70.5, y: 40.5}
+        - {x: -70.5, y: 33.5}
+        - {x: -63.5, y: 27.5}
+        - {x: -54.5, y: 23.5}
+        - {x: -58.5, y: 11.5}
+        - {x: -52.5, y: 8.5}
+        - {x: -59.5, y: -9.5}
+        - {x: -56.5, y: -15.5}
+        - {x: -30.5, y: -13.5}
+        - {x: -54.5, y: -49.5}
+        - {x: -57.5, y: -59.5}
+        - {x: 43.5, y: -59.5}
+        - {x: 45.5, y: -57.5}
+        - {x: 46.5, y: -52.5}
+        - {x: 45.5, y: -47.5}
+        - {x: 70.5, y: 9.5}
+    - name: Bio Ser Lance_25
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 413
+        width: 170
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 51, y: 2}
+        - {x: 73, y: 24}
+        - {x: 80, y: 37}
+        - {x: 76, y: 40}
+        - {x: 66, y: 39}
+        - {x: 61, y: 36}
+        - {x: 62, y: 43}
+        - {x: 62, y: 51}
+        - {x: 40, y: 59}
+        - {x: 16, y: 59}
+        - {x: 13, y: 57}
+        - {x: 0, y: 7}
+        - {x: 0, y: 1}
+        - {x: 1, y: -2}
+        - {x: 2, y: -6}
+        - {x: -1, y: -8}
+        - {x: 0, y: -6}
+        - {x: -2, y: 11}
+        - {x: -9, y: 24}
+        - {x: -33, y: 54}
+        - {x: -37, y: 54}
+        - {x: -41, y: 51}
+        - {x: -39, y: 41}
+        - {x: -68, y: 39}
+        - {x: -76, y: 38}
+        - {x: -81, y: 35}
+        - {x: -79, y: 26}
+        - {x: -73, y: 21}
+        - {x: -82, y: 21}
+        - {x: -85, y: 20}
+        - {x: -85, y: 12}
+        - {x: -74, y: 5}
+        - {x: -85, y: -9}
+        - {x: -85, y: -28}
+        - {x: -60, y: -28}
+        - {x: -57, y: -65}
+        - {x: -49, y: -66}
+        - {x: -44, y: -63}
+        - {x: -52, y: -71}
+        - {x: 65, y: -71}
+        - {x: 74, y: -62}
+        - {x: 85, y: -26}
+        - {x: 85, y: 2}
+    - name: Bio Ser Lance_27
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 415
+        width: 154
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -77, y: 64}
+        - {x: -77, y: -22}
+        - {x: -37, y: -18}
+        - {x: -53, y: -54}
+        - {x: -54, y: -58}
+        - {x: -37, y: -66}
+        - {x: 77, y: -66}
+        - {x: 77, y: 64}
+    - name: Bio Ser Lance_29
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 244
+        width: 90
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 44}
+        - {x: -45, y: 42}
+        - {x: -45, y: -44}
+        - {x: 21, y: -44}
+        - {x: 45, y: -13}
+        - {x: 45, y: 41}
+        - {x: 42, y: 44}
+    - name: Bio Ser Lance_30
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 256
+        width: 109
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46.5, y: 9.5}
+        - {x: -54.5, y: 3.5}
+        - {x: -54.5, y: -31.5}
+        - {x: -50.5, y: -34.5}
+        - {x: 54.5, y: -34.5}
+        - {x: 54.5, y: 29.5}
+        - {x: 41.5, y: 34.5}
+        - {x: -37.5, y: 34.5}
+        - {x: -52.5, y: 15.5}
+        - {x: -50.5, y: 11.5}
+    - name: Bio Ser Lance_31
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 246
+        width: 140
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: -10.5}
+        - {x: 18, y: -9.5}
+        - {x: 20, y: -9.5}
+        - {x: 21, y: -10.5}
+        - {x: 39, y: -11.5}
+        - {x: 38, y: -14.5}
+        - {x: 70, y: -21.5}
+        - {x: 70, y: 44.5}
+        - {x: -70, y: 44.5}
+        - {x: -70, y: -40.5}
+        - {x: -43, y: -44.5}
+        - {x: 54, y: -44.5}
+        - {x: 57, y: -41.5}
+        - {x: 49, y: -30.5}
+        - {x: 28, y: -14.5}
+    - name: Bio Ser Lance_32
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 235
+        width: 173
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 86.5, y: 23.5}
+        - {x: 39.5, y: 56.5}
+        - {x: -48.5, y: 56.5}
+        - {x: -81.5, y: 35.5}
+        - {x: -86.5, y: 3.5}
+        - {x: -86.5, y: -52.5}
+        - {x: -60.5, y: -56.5}
+        - {x: 86.5, y: -56.5}
+    - name: Bio Ser Lance_33
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 232
+        width: 187
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 61.5, y: -20.5}
+        - {x: 69.5, y: -21.5}
+        - {x: 93.5, y: -30.5}
+        - {x: 93.5, y: 44.5}
+        - {x: 62.5, y: 59.5}
+        - {x: -81.5, y: 59.5}
+        - {x: -93.5, y: 48.5}
+        - {x: -93.5, y: -36.5}
+        - {x: -86.5, y: -59.5}
+        - {x: 68.5, y: -59.5}
+        - {x: 73.5, y: -47.5}
+        - {x: 37.5, y: -18.5}
+        - {x: 26.5, y: -13.5}
+        - {x: 21.5, y: -11.5}
+    - name: Bio Ser Lance_34
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 33
+        width: 190
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 64, y: -41.5}
+        - {x: 58, y: -37.5}
+        - {x: 95, y: -23.5}
+        - {x: 95, y: -13.5}
+        - {x: 94, y: -12.5}
+        - {x: 95, y: -10.5}
+        - {x: 95, y: 63.5}
+        - {x: -95, y: 63.5}
+        - {x: -95, y: 50.5}
+        - {x: -77, y: 35.5}
+        - {x: -70, y: 30.5}
+        - {x: -64, y: 26.5}
+        - {x: -59, y: 23.5}
+        - {x: -87, y: 34.5}
+        - {x: -95, y: 29.5}
+        - {x: -95, y: -16.5}
+        - {x: -83, y: -37.5}
+        - {x: -81, y: -41.5}
+        - {x: -40, y: -64.5}
+        - {x: 62, y: -64.5}
+        - {x: 71, y: -56.5}
+        - {x: 71, y: -46.5}
+    - name: Bio Ser Lance_42
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 28
+        width: 190
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 95, y: -56}
+        - {x: 95, y: 51}
+        - {x: 82, y: 66}
+        - {x: -75, y: 66}
+        - {x: -87, y: 59}
+        - {x: -79, y: 40}
+        - {x: -68, y: 31}
+        - {x: -63, y: 28}
+        - {x: -56, y: 25}
+        - {x: -52, y: 24}
+        - {x: -64, y: 27}
+        - {x: -81, y: 40}
+        - {x: -95, y: 33}
+        - {x: -95, y: -27}
+        - {x: -75, y: -49}
+        - {x: -42, y: -63}
+        - {x: -2, y: -63}
+        - {x: 0, y: -58}
+        - {x: 12, y: -63}
+        - {x: 64, y: -63}
+    - name: Bio Ser Lance_15
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 592
+        width: 169
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55.5, y: 85.5}
+        - {x: -54.5, y: 85.5}
+        - {x: -73.5, y: 69.5}
+        - {x: -84.5, y: 44.5}
+        - {x: -84.5, y: -62.5}
+        - {x: -62.5, y: -85.5}
+        - {x: 72.5, y: -85.5}
+        - {x: 84.5, y: -68.5}
+        - {x: 84.5, y: 57.5}
+        - {x: 72.5, y: 72.5}
+    - name: Bio Ser Lance_16
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 589
+        width: 163
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52.5, y: 87.5}
+        - {x: -49.5, y: 87.5}
+        - {x: -69.5, y: 79.5}
+        - {x: -80.5, y: 66.5}
+        - {x: -81.5, y: 58.5}
+        - {x: -81.5, y: -73.5}
+        - {x: -64.5, y: -87.5}
+        - {x: 64.5, y: -87.5}
+        - {x: 81.5, y: -68.5}
+        - {x: 81.5, y: 64.5}
     outline: []
   spritePackingTag: 
   userData: 

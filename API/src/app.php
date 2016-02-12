@@ -47,7 +47,7 @@ $app->post('/api/auth', function() use($app)
 //       $returnobject["PlayerInfo"] = $mysql->authenticateUser("test","testing123");
 
 
-        if(sizeof($returnobject) > 0)
+        if($returnobject["PlayerInfo"] != null)
         {
             //Return just character information.
             //$returnobject["Characters"] = $mysql->getCharacters($returnobject["PlayerInfo"]["playerId"]);
@@ -57,6 +57,34 @@ $app->post('/api/auth', function() use($app)
     }
 
     return new Response("Failed Authentication", 401);
+});
+
+$app->post('/api/CreateCharacter', function() use($app)
+{
+    //TODO: Create Character
+    return new Response("Failed",401);
+});
+
+$app->post('/api/CreatePlayer', function() use($app)
+{
+    $mysql = new MySQL();
+
+    $register = json_decode($_POST["Register"]);
+
+    $returnObject = $mysql->createPlayer($register);
+
+    if($returnObject != null)
+    {
+        return json_encode($returnObject);
+    }
+
+    return new Response("Failed",401);
+});
+
+$app->post('/api/CreateSquad', function() use($app)
+{
+    //TODO: Start Game
+    return new Response("Failed",401);
 });
 
 $app->post('/api/UpdateCharacter', function() use($app)
@@ -130,10 +158,16 @@ $app->post('/api/UpdateSquad', function() use($app)
         $verifyPlayer = $mysql->authenticateUser($app->escape($_POST['username']),$app->escape($_POST['password']));
         if(sizeof($verifyPlayer) > 0)
         {
-
+            //TODO: update squad
         }
     }
-    //TODO: update squad
+
+    return new Response("Failed",401);
+});
+
+$app->post('/api/UpdateCharAbility', function() use($app)
+{
+    //TODO: Update/Insert Character Ability
     return new Response("Failed",401);
 });
 
