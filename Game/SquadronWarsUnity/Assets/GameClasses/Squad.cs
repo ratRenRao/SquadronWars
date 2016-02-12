@@ -31,7 +31,8 @@ namespace Assets.GameClasses
         }*/
         public string GetJsonObjectName()
         {
-            return GlobalConstants.SquadJsonObjectName;
+            //return GlobalConstants.SquadJsonObjectName;
+            return "";
         }
 
         #region IEnumerable<T> Members

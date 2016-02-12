@@ -14,7 +14,8 @@ namespace Assets.GameClasses
         public string lastName { get; set; }
         public string email { get; set; }
         //private DateTime? lastLogin { get; set; }
-        public Squad squad { get; set; }
+        //public Squad squad { get; set; }
+        public List<Character> Characters { get; set; }
         public Logins logins = new Logins();
         public readonly bool Updated = false;
         /*

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Assets.Data;
 using Assets.GameClasses;
 using UnityEngine;
 using UnityEngine.Networking.NetworkSystem;
@@ -54,11 +55,11 @@ namespace Assets.Utilities
 
         public object Decode(JSONObject obj, Type type)
         {
-            if (obj.type == JSONObject.Type.NULL || obj == null)
+            if (obj == null || obj.type == JSONObject.Type.NULL)
                 return null;
 
             var objectAttributes =
-                type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
+                type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).Select(x => x.Name)
                     .ToList();
 
             
@@ -70,17 +71,17 @@ namespace Assets.Utilities
                 case JSONObject.Type.OBJECT:
                     var builder = Activator.CreateInstance(type);
 
-                    foreach (var param in objectAttributes)
+                    foreach (var param in objectAttributes.AsEnumerable())
                     {
-                        Debug.Log("In param loop: " + param.Name);
+                        Debug.Log("In param loop: " + param);
                         JSONObject j = null;
                         //var keyIndex = obj.keys.Where(key => key.ToLower().Equals(param.Name.ToLower())).ToList();
-                        var keyIndex = obj.keys.SingleOrDefault(key => param != null && key.ToLower().Equals(param.Name.ToLower()));
+                        var keyIndex = obj.keys.SingleOrDefault(key => key.ToLower().Equals(param.ToLower()));
 
                         // If json object isnt found in the subset, search all the json data for it 
                         if (keyIndex == null)
                         {
-                            j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.Name.ToLower()));
+                            j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.ToLower()));
 
                             if(j != null)
                                 Debug.Log(j.ToString());
@@ -89,9 +90,9 @@ namespace Assets.Utilities
                             j = obj[keyIndex];
 
                         builder.GetType()
-                            .GetProperty(param.Name)
+                            .GetProperty(param)
                             .SetValue(builder, j != null 
-                                ? Decode(j, builder.GetType().GetProperty(param.Name).PropertyType) 
+                                ? Decode(j, builder.GetType().GetProperty(param).PropertyType) 
                                 : null,
                                 null);
                     }
@@ -99,19 +100,15 @@ namespace Assets.Utilities
                     return builder;
 
                 case JSONObject.Type.ARRAY:
-                    //var listBuilder = Activator.CreateInstance(type) as List<object>;
-                    var listBuilder = new List<object>();
-
+                    var listBuilder = Activator.CreateInstance(type);
+                    Type listType = type.GetGenericArguments().Single();
+                    
                     foreach (var value in obj.list)
                     {
-                        var item = Decode(value, type.GetGenericArguments().Single());
+                        var item = Decode(value, listType);
                         if (item != null)
-                            listBuilder.Add(item);
+                            (listBuilder as System.Collections.IList).Add(item);
                     }
-
-//                    if (type == typeof (List<>))
-//                        return listBuilder.ToList();
-//                    else
                         return listBuilder;
 
                 case JSONObject.Type.STRING:
@@ -132,6 +129,18 @@ namespace Assets.Utilities
             }
 
             return null;
+        }
+
+        private void ConvertList(ref List<object> list, Type type)
+        {
+            switch (type.ToString())
+            {
+                case "CharacterData":
+                    var newList = list.Select(x => x as Character).Cast<Character>().ToList();
+                //    (List<Character>) list = newList.ConvertAll(x => );
+                    break;
+            }
+
         }
 
         private object ChangeJsonType(JSONObject obj, Type type)
@@ -328,7 +337,7 @@ namespace Assets.Utilities
             return value;
         }
 
-        public Dictionary<string, JSONObject> GetMatchingJsonAttributes(JSONObject jsonObject, List<PropertyInfo> attributes)
+        public Dictionary<string, JSONObject> GetMatchingJsonAttributes(JSONObject jsonObject, System.Collections.Generic.List<PropertyInfo> attributes)
         {
             var parsedJson = new Dictionary<string, JSONObject>();
             foreach (var key in jsonObject.keys.Where(key => attributes.Select(attribute => attribute.Name.ToLower())

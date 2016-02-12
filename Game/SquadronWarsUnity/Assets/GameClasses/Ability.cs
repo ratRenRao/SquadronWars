@@ -2,8 +2,11 @@ using System;
 
 namespace Assets.GameClasses
 {
-    class Ablilty : IEffectable
+    public class Ability : IEffectable
     {
+        public int AbilityId { get; set; }
+        public int CharacterId { get; set; }
+        public int AbilityLevel { get; set; }
         public void execute(ref Stats charStats)
         {
             throw new NotImplementedException();

@@ -12,7 +12,7 @@ namespace Assets.GameClasses
 
         public const string PlayerJsonObjectName = "PlayerInfo";
         public const string CharacterJsonObjectName = "Characters";
-        public const string SquadJsonObjectName = "PlayerDetails";
+        public const string StartupDataJsonName = "PlayerDetails";
 		
 		public static Dictionary<string,Item> ItemList = new Dictionary<string,Item>()
         {
@@ -59,11 +59,15 @@ namespace Assets.GameClasses
                 case "player":
                     name = PlayerJsonObjectName;
                     break;
-                case "squad":
-                    name = SquadJsonObjectName;
-                    break;
+             //   case "squad":
+              //      name = SquadJsonObjectName;
+              //      break;
                 case "characterlist":
                     name = CharacterJsonObjectName;
+                    break;
+                case "startupdata" :
+                case "squad":
+                    name = StartupDataJsonName;
                     break;
             }
 

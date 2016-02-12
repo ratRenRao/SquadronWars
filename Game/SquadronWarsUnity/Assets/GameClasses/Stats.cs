@@ -22,6 +22,8 @@
         public int critRate { get; set; }
         public int dodgeRate { get; set; }
         public int statPoints { get; set; }
+        public int SkillPoints { get; set; }
+        public int Experience { get; set; }
 
         public Stats(int strength, int agility, int intelligence, int vitality, int wisdom, int dexterity, int luck)
         {
