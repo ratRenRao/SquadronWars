@@ -28,10 +28,9 @@ namespace Assets.Scripts
 
         void Start()
         {
-            character.alteredStats.currentHP = character.alteredStats.calculateHP(character.level);
-            character.alteredStats.currentMP = character.alteredStats.calculateMP(character.level);
-            Debug.Log(character.alteredStats.currentHP);
-            Debug.Log(character.alteredStats.currentMP);
+            character.alteredStats.InitializeStats(character.level);
+            character.alteredStats.currentHP = character.alteredStats.maxHP;
+            character.alteredStats.currentMP = character.alteredStats.maxMP;
         }
     }
 }

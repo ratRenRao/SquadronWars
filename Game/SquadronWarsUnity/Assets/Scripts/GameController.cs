@@ -634,6 +634,7 @@ namespace Assets.Scripts
             {
                 tarAnim = tile.characterObject.GetComponent<Animator>();
                 targetGameCharacter = tile.characterObject;
+                tarGameCharacter = tile.character;
             }
             //tarGameCharacter = tile.GetComponent<GameCharacter>();
             //targetGameCharacter = tarGameCharacter.transform.parent.gameObject;
@@ -730,7 +731,10 @@ namespace Assets.Scripts
         int CalculateDamage()
         {
             int dmg = curGameCharacter.character.alteredStats.damage;
-            return 0;
+            int def = tarGameCharacter.character.alteredStats.defense;
+            Debug.Log("Damage: " + dmg);
+            Debug.Log("Def: " + def);
+            return dmg - def;
         }
 
         IEnumerator AttackAnimation(Tile tempTile, string ability)
@@ -749,6 +753,8 @@ namespace Assets.Scripts
 
             }
             int damage = CalculateDamage();
+            tarGameCharacter.character.alteredStats.currentHP -= damage;
+            Debug.Log(tarGameCharacter.character.alteredStats.currentHP);
             hidePanel = false;
         }
         IEnumerator AttackAnimationNothing()
@@ -807,7 +813,7 @@ namespace Assets.Scripts
             character1.alteredStats = GetBonusStats(character1);
             character1.alteredStats.speed = 4;
             character1.spriteId = 1;
-            Stats stat2 = new Stats(3, 3, 3, 3, 3, 3, 2);
+            Stats stat2 = new Stats(3, 3, 3, 4, 3, 3, 2);
             Character character2 = new Character(1, stat2, 1, "Ragthar", 1, 75, equipment);
             character2.alteredStats = new Stats(0, 0, 0, 0, 0, 0, 0);
             character2.alteredStats = GetBonusStats(character2);
