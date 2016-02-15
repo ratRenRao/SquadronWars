@@ -6,7 +6,8 @@ namespace Assets.Scripts
     public class Tile : MonoBehaviour
     {
         public GameObject highlight;
-        public GameObject character;
+        public GameObject characterObject;
+        public GameCharacter character;
         //public GameCharacter gameCharacter;
         public int x { get; set; }
         public int y { get; set; }

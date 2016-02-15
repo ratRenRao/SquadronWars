@@ -35,7 +35,7 @@ namespace Assets.GameClasses
         public int statPoints { get; set; }
         public int skillPoints { get; set; }
         public List<Effect> effects = new List<Effect>();
-        public Sprite sprite;
+        public int spriteId;
 
         public Character()
         {

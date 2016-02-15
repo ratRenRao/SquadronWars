@@ -21,13 +21,13 @@ public class SampleButton : MonoBehaviour
         SampleButton button = gameObject.GetComponent<SampleButton>();
         MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
-        SpriteRenderer sprite = GameObject.FindGameObjectWithTag("Character1").GetComponent<SpriteRenderer>();
-     //   Stats baseStats = character.baseStats;
-        character.sprite = sprite.sprite;
+        GameObject temp = (GameObject)Resources.Load(("Prefabs/Character1"), typeof(GameObject));
+        SpriteRenderer sprite = temp.GetComponent<SpriteRenderer>();
+        //   Stats baseStats = character.baseStats;
         stats.sampleButton = button;
         menu.squadScreenPanel.SetActive(false);
         menu.characterScreenPanel.SetActive(true);
-        stats.characterSprite.sprite = character.sprite;
+        stats.characterSprite.sprite = sprite.sprite;
         stats.characterName.text = character.characterName;
         
         UpdateStats(character);

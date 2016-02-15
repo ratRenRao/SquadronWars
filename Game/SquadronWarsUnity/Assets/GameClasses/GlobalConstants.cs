@@ -8,7 +8,7 @@ namespace Assets.GameClasses
         public const string SquadDbUrl = WebServerUrl + "temp/temp";
         public const string CharacterDbUrl = WebServerUrl + "/api/getchars";
         public const string PlayerDbUrl = WebServerUrl + "/api/auth";
-
+        static public List<Character> matchCharacters = new List<Character>();
         public const string PlayerJsonObjectName = "PlayerData";
 		
 		 static public Dictionary<string,Item> ItemList = new Dictionary<string,Item>()
