@@ -41,9 +41,10 @@ $app->post('/api/auth', function() use($app)
     $mysql = new MySQL();
 
     //verify post request contains username and password.
-    if(isset($_POST['username']) && isset($_POST['password']))
+    if(isset($_POST['GameObject']))
     {
-        $returnobject["PlayerInfo"] = $mysql->authenticateUser($app->escape($_POST['username']),$app->escape($_POST['password']));
+        $gameObject = json_decode($_POST['GameObject']);
+        $returnobject["PlayerInfo"] = $mysql->authenticateUser($gameObject->{"username"}, $gameObject->{"password"});
 //       $returnobject["PlayerInfo"] = $mysql->authenticateUser("test","testing123");
 
 
@@ -61,17 +62,37 @@ $app->post('/api/auth', function() use($app)
 
 $app->post('/api/CreateCharacter', function() use($app)
 {
-    //TODO: Create Character
-    return new Response("Failed",401);
+    $mysql = new MySQL();
+    $returnCode = 401;
+
+    $createRequest = null;
+
+    if(isset($_POST['GameObject']))
+    {
+        $createRequest = json_decode($_POST['GameObject']);
+    }
+
+    if($returnCode == 200)
+    {
+        return new Response("Successful Create Player", 200);
+    }
+    else
+    {
+        return new Response("Failed",401);
+    }
 });
 
 $app->post('/api/CreatePlayer', function() use($app)
 {
     $mysql = new MySQL();
 
-    $register = json_decode($_POST["Register"]);
+    $returnObject = null;
 
-    $returnObject = $mysql->createPlayer($register);
+    if(isset($_POST['GameObject']))
+    {
+        $register = json_decode($_POST['GameObject']);
+        $returnObject = $mysql->createPlayer($register);
+    }
 
     if($returnObject != null)
     {
@@ -83,7 +104,7 @@ $app->post('/api/CreatePlayer', function() use($app)
 
 $app->post('/api/CreateSquad', function() use($app)
 {
-    //TODO: Start Game
+    //TODO: Create Squad
     return new Response("Failed",401);
 });
 
@@ -94,12 +115,13 @@ $app->post('/api/UpdateCharacter', function() use($app)
     $response = 401;
 
     //verify post request contains username and password.
-    if(isset($_POST['username']) && isset($_POST['password']))
+    if(isset($_POST['GameObject']))
     {
-        $verifyPlayer = $mysql->authenticateUser($app->escape($_POST['username']),$app->escape($_POST['password']));
+        $gameObject = json_decode($_POST['GameObject']);
+        $verifyPlayer = $mysql->authenticateUser($gameObject->{"username"}, $gameObject->{"password"});
         if(sizeof($verifyPlayer) > 0)
         {
-            $response = $mysql->updateCharacter($_POST['player'], json_decode($_POST['character']));
+            $response = $mysql->updateCharacter($verifyPlayer["playerId"], $gameObject->{"character"});
         }
     }
 
@@ -125,12 +147,13 @@ $app->post('/api/UpdatePlayer', function() use($app)
 
     //verify post request contains username and password.
 
-    if(isset($_POST['username']) && isset($_POST['password']))
+    if(isset($_POST['GameObject']))
     {
-        $verifyPlayer = $mysql->authenticateUser($app->escape($_POST['username']),$app->escape($_POST['password']));
+        $gameObject = json_decode($_POST['GameObject']);
+        $verifyPlayer = $mysql->authenticateUser($gameObject->{"username"}, $gameObject->{"password"});
         if(sizeof($verifyPlayer) > 0)
         {
-            $response = $mysql->updatePlayer(json_decode($_POST['player']));
+            $response = $mysql->updatePlayer($gameObject->{"player"});
         }
     }
     if($response == 200)
@@ -153,9 +176,10 @@ $app->post('/api/UpdateSquad', function() use($app)
     $mysql = new MySQL();
 
     //verify post request contains username and password.
-    if(isset($_POST['username']) && isset($_POST['password']))
+    if(isset($_POST['GameObject']))
     {
-        $verifyPlayer = $mysql->authenticateUser($app->escape($_POST['username']),$app->escape($_POST['password']));
+        $gameObject = json_decode($_POST['GameObject']);
+        $verifyPlayer = $mysql->authenticateUser($gameObject->{"username"}, $gameObject->{"password"});
         if(sizeof($verifyPlayer) > 0)
         {
             //TODO: update squad
@@ -188,10 +212,10 @@ $app->post('/api/GetGameInfo', function() use($app)
  *
 $app->get('/test', function() use($app){
     $mysql = new MySQL();
-    $test = $mysql->getPlayer(9);
+    $test["Characters"] = $mysql->getCharacters(9);
     var_dump($test);
     return '';
 });
-*/
+**/
 
 $app->run();
