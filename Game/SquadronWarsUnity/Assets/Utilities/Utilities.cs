@@ -2,27 +2,203 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Assets.Data;
 using Assets.GameClasses;
 using UnityEngine;
-
+using UnityEngine.Networking.NetworkSystem;
 namespace Assets.Utilities
 {
-    public class Utilities
+    public class Utilities : MonoBehaviour
     {
-        private JSONObject JsonObject { get; set; }
+        private JSONObject _jsonObject = new JSONObject();
+
+        public JSONObject DeserializeData(string data)
+        {
+            var obj = new JSONObject(data);
+            Debug.Log("New Object = " + obj.Count);
+            //var obj = JsonUtility.FromJson<object>(data);
+            _jsonObject = obj;
+            return obj;
+        }
+        /*
+        public T BuildObjectFromJsonData<T>(string data) where T : IJsonable
+        {
+            var deserializedJson = DeserializeData(data);
+            _jsonObject = deserializedJson;
+            Debug.Log(deserializedJson.ToString());
+            var obj = Activator.CreateInstance<T>();
+            obj = (T)Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(typeof(T).Name.ToLower())), typeof(T));
+            return obj;
+        }
+        */
+        private JSONObject FindJsonObject(JSONObject jsonObject, string objName)
+        {
+            JSONObject result = null;
+            if (jsonObject.type == JSONObject.Type.NULL) return null;
+            foreach (var key in jsonObject.keys)
+            {
+                if (string.Equals(key, objName, StringComparison.CurrentCultureIgnoreCase))
+                    result = jsonObject[key];
+                else if (jsonObject[key].IsObject)
+                    result = FindJsonObject(jsonObject[key], objName);
+                if (result != null)
+                    return result;
+            }
+            return result;
+        }
+        /*
+        public object Decode(JSONObject obj, Type type)
+        {
+            if (obj == null || obj.type == JSONObject.Type.NULL)
+                return null;
+            var objectAttributes =
+                type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).Select(x => x.Name)
+                    .ToList();
+
+            Debug.Log("Post object attribute: " + objectAttributes.ToString());
+            switch (obj.type)
+            {
+                case JSONObject.Type.OBJECT:
+                    var builder = Activator.CreateInstance(type);
+                    foreach (var param in objectAttributes.AsEnumerable())
+                    {
+                        Debug.Log("In param loop: " + param);
+                        JSONObject j = null;
+                        //var keyIndex = obj.keys.Where(key => key.ToLower().Equals(param.Name.ToLower())).ToList();
+                        var keyIndex = obj.keys.SingleOrDefault(key => key.ToLower().Equals(param.ToLower()));
+                        // If json object isnt found in the subset, search all the json data for it 
+                        if (keyIndex == null)
+                        {
+                            j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.ToLower()));
+                            if (j != null)
+                                Debug.Log(j.ToString());
+                        }
+                        else
+                            j = obj[keyIndex];
+                        builder.GetType()
+                            .GetProperty(param)
+                            .SetValue(builder, j != null
+                                ? Decode(j, builder.GetType().GetProperty(param).PropertyType)
+                                : null,
+                                null);
+                    }
+                    return builder;
+                case JSONObject.Type.ARRAY:
+                    var listBuilder = Activator.CreateInstance(type);
+                    Type listType = type.GetGenericArguments().Single();
+
+                    foreach (var value in obj.list)
+                    {
+                        var item = Decode(value, listType);
+                        if (item != null)
+                            (listBuilder as System.Collections.IList).Add(item);
+                    }
+                    return listBuilder;
+                case JSONObject.Type.STRING:
+                    if (type != typeof(string))
+                        return ChangeJsonType(obj, type);
+                    else
+                        return obj.str;
+                case JSONObject.Type.NUMBER:
+                    return obj.n;
+                case JSONObject.Type.BOOL:
+                    return obj.b;
+                case JSONObject.Type.NULL:
+                    return null;
+            }
+            return null;
+        }
+        */
+        private void ConvertList(ref List<object> list, Type type)
+        {
+            switch (type.ToString())
+            {
+                case "CharacterData":
+                    var newList = list.Select(x => x as Character).Cast<Character>().ToList();
+                    //    (List<Character>) list = newList.ConvertAll(x => );
+                    break;
+            }
+        }
+
+        private object ChangeJsonType(JSONObject obj, Type type)
+        {
+            if (type == typeof(int))
+                return int.Parse(obj.str);
+            if (type == typeof(bool))
+                return bool.Parse(obj.str);
+            return obj.str;
+        }
+
+        public static Type GetType(string TypeName)
+        {
+            // Try Type.GetType() first. This will work with types defined
+            // by the Mono runtime, in the same assembly as the caller, etc.
+            var type = Type.GetType(TypeName);
+            // If it worked, then we're done here
+            if (type != null)
+                return type;
+            // If the TypeName is a full name, then we can try loading the defining assembly directly
+            if (TypeName.Contains("."))
+            {
+                // Get the name of the assembly (Assumption is that we are using 
+                // fully-qualified type names)
+                var assemblyName = TypeName.Substring(0, TypeName.IndexOf('.'));
+                // Attempt to load the indicated Assembly
+                var assembly = Assembly.Load(assemblyName);
+                if (assembly == null)
+                    return null;
+                // Ask that assembly to return the proper Type
+                type = assembly.GetType(TypeName);
+                if (type != null)
+                    return type;
+            }
+            // If we still haven't found the proper type, we can enumerate all of the 
+            // loaded assemblies and see if any of them define the type
+            var currentAssembly = Assembly.GetExecutingAssembly();
+            var referencedAssemblies = currentAssembly.GetReferencedAssemblies();
+            foreach (var assemblyName in referencedAssemblies)
+            {
+                // Load the referenced assembly
+                var assembly = Assembly.Load(assemblyName);
+                if (assembly != null)
+                {
+                    // See if that assembly defines the named type
+                    type = assembly.GetType(TypeName);
+                    if (type != null)
+                        return type;
+                }
+            }
+            // The type just couldn't be found...
+            return null;
+        }
+
+        private bool IsIJsonable(Type type)
+        {
+            return type.GetInterfaces().Any(x =>
+                x.IsGenericType &&
+                x.GetGenericTypeDefinition() == typeof(IJsonable));
+        }
+
+        public string ObjectToString(object obj)
+        {
+            string attributes = "";
+            foreach (var attribute in obj.GetType().GetProperties())
+                string.Format(attributes += "{0}: {1} ", attribute.Name, attribute.ToString());
+            return attributes;
+        }
         /// <summary>
         /// Creates a dictionary of string objects containing only public parameters of the 
         /// object passed in, and their corresponding values.
         /// </summary>
         /// <param name="obj">Object to create param dictionary from</param>
         /// <returns>Dictionary&ltstring, string&gt</returns>
+        /// 
         public Dictionary<string, string> CreatePublicPropertyDictionary<T>(T obj)
         {
             return obj.GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
                 .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()))
                 .ToDictionary(attribute => attribute.Name, attribute => obj.GetType().GetProperty(attribute.Name).GetValue(obj, null).ToString().ToLower());
         }
-
         /// <summary>
         /// Creates a dictionary of string objects containing only private parameters of the 
         /// object passed in, and their corresponding values.
@@ -35,7 +211,6 @@ namespace Assets.Utilities
                 .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()))
                 .ToDictionary(attribute => attribute.Name, attribute => obj.GetType().GetProperty(attribute.Name).GetValue(obj, null).ToString().ToLower());
         }
-
         /// <summary>
         /// Creates a dictionary of string objects containing all parameters of the
         /// object passed in, and their corresponding values. 
@@ -49,72 +224,60 @@ namespace Assets.Utilities
                 .ToDictionary(attribute => attribute.Name, attribute => obj.GetType().GetProperty(attribute.Name).GetValue(obj, null).ToString().ToLower());
         }
 
-        public JSONObject DeserializeData(string data)
-        {
-            var obj = new JSONObject(data);
-            Debug.Log("New Object = " + obj.Count);
-            //var obj = JsonUtility.FromJson<object>(data);
-            return obj;
-        }
-
-        public IJsonable BuildObjectFromJsonData<T>(string data) where T : IJsonable, new()
-        {
-            JsonObject = FlattenJsonObject(DeserializeData(data));
-            var obj = new T();
-            obj = MapJsonToObject(ref obj);
-
-            return obj;
-        }
-
-        public T MapJsonToObject<T>(ref T obj) 
+        public T MapJsonToObject<T>(ref T obj)
         {
             //var obj = new T(); 
             var attributes =
                 obj.GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
-
             foreach (
                 var attribute in
-                    attributes.Where(atr => JsonObject.keys.Select(key => key.ToLower()).Contains(atr.Name.ToLower())))
+                    attributes.Where(atr => _jsonObject.keys.Select(key => key.ToLower()).Contains(atr.Name.ToLower())))
             {
-                if (attribute.PropertyType == typeof (int) || attribute.PropertyType == typeof (string) ||
-                    attribute.PropertyType == typeof (bool))
+                Debug.Log(attribute.Name);
+                if (attribute.PropertyType == typeof(int) || attribute.PropertyType == typeof(string) ||
+                    attribute.PropertyType == typeof(bool))
                 {
-                    var value = JsonObject[JsonObject.keys.Single(key => key.ToLower() == attribute.Name.ToLower())];
-
+                    var key = _jsonObject.keys.Single(k => k.ToLower() == attribute.Name.ToLower());
+                    Debug.Log(key);
                     obj.GetType()
                         .GetProperty(attribute.Name)
-                        .SetValue(obj, ConvertToType(attribute.PropertyType, value.str), null);
+                        .SetValue(obj, ConvertToType(attribute.PropertyType, _jsonObject[key].ToString()), null);
                 }
                 else
                 {
                     var subObject = obj.GetType().GetProperty(attribute.Name);
                     var subValue = MapJsonToObject(ref subObject);
-
                     obj.GetType()
                         .GetProperty(attribute.Name)
                         .SetValue(obj, subValue, null);
                 }
             }
-
             return obj;
         }
 
         public JSONObject FlattenJsonObject(JSONObject jsonObject)
         {
             var flattenedJson = new JSONObject();
-
-            foreach (var key in jsonObject.keys)
+            for (var i = 0; i < jsonObject.list.Count; i++)
             {
-                if (jsonObject[key].keys.Count > 1)
+                //Debug.Log(item.ToString());
+                if (!jsonObject[i].IsNull)
                 {
-                    var flattenResult = FlattenJsonObject(jsonObject[key]);
-                    foreach(var resultKey in flattenResult.keys)
-                        flattenedJson.Add(flattenResult[resultKey]);
+                    if (jsonObject[i].IsObject || jsonObject[i].IsArray)
+                    {
+                        //string keyObject = jsonObject[key].keys[i];
+                        //JSONObject listObject = item.list[i];
+                        var flattenResult = FlattenJsonObject(jsonObject[i]);
+                        if (!flattenResult.IsNull)
+                            for (var x = 0; x < flattenResult.list.Count; x++)
+                            {
+                                flattenedJson.Add(flattenResult[x]);
+                            }
+                    }
+                    else
+                        flattenedJson.Add(jsonObject);
                 }
-                else
-                    flattenedJson.Add(jsonObject[key]);
             }
-
             return flattenedJson;
         }
 
@@ -124,74 +287,20 @@ namespace Assets.Utilities
                 return int.Parse(value);
             if (type == typeof(bool))
                 return bool.Parse(value);
-
             return value;
-
-/*            switch (jsonObject.type)
-            {
-                case JSONObject.Type.OBJECT:
-                    var jsonDictionary = new Dictionary<string, jsonObject.ct>();
-                    for (var i = 0; i < jsonObject.list.Count; i++)
-                    {
-                        var key = jsonObject.keys[i];
-                        var j = jsonObject.list[i];
-                        jsonDictionary.Add(key, Decode(j));
-                    }
-                    return jsonDictionary;
-                case JSONObject.Type.ARRAY:
-                    var jsonArray = new jsonObject.ct[jsonObject.list.Count];
-                    for (var i = 0; i < jsonObject.list.Count; i++)
-                    {
-                        jsonArray[i] = Decode(jsonObject.list[i]).Values;
-                    }
-                    return new Dictionary<string, jsonObject.ct>() { { "TEMP", jsonArray.ToArray() } };
-                case JSONObject.Type.STRING:
-                    return new Dictionary<string, jsonObject.ct>() { { "TEMP", jsonObject.ToString() } };
-                case JSONObject.Type.NUMBER:
-                    return new Dictionary<string, jsonObject.ct>() { { "TEMP", int.Parse(jsonObject.ToString()) } };
-                case JSONObject.Type.BOOL:
-                    return new Dictionary<string, jsonObject.ct>() { { "TEMP", bool.Parse(jsonObject.ToString()) } };
-                case JSONObject.Type.NULL:
-                    return new Dictionary<string, jsonObject.ct>() { { "TEMP", null } };
-                case JSONObject.Type.BAKED:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }  */
         }
 
-        public Dictionary<string, JSONObject> TraverseJsonForObjectMapping<T>(Dictionary<string, JSONObject> jsonDictionary, ref T obj)
+        public Dictionary<string, JSONObject> GetMatchingJsonAttributes(JSONObject jsonObject, System.Collections.Generic.List<PropertyInfo> attributes)
         {
-            foreach (var kvp in jsonDictionary)
-            {
-                if (obj.GetType().Equals(JSONObject.Type.OBJECT))
-                    jsonDictionary.Concat(ToSingleDimensionDictionary(kvp.Value));
-                else
-                {
-                   // jsonDictionary.Add(kvp.Key, obj[kvp.Key]);
-                }
-            }
-            return jsonDictionary;
-        }
-        
-        public JSONObject GetMatchingJsonAttributes<T>(JSONObject jsonObject)
-        {
-            Debug.Log("Entered getmatchingjsonatributes");
-            var parsedJson = new JSONObject();
-            //var jsonDictionary = ToSingleDimensionDictionary(jsonObject); 
-            var objectAttributes =
-                typeof(T).GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).ToList();
-            Debug.Log("Obj count" + jsonObject.Count);
-            foreach (var key in jsonObject.keys.Where(key => objectAttributes.Select(attribute => attribute.Name.ToLower())
+            var parsedJson = new Dictionary<string, JSONObject>();
+            foreach (var key in jsonObject.keys.Where(key => attributes.Select(attribute => attribute.Name.ToLower())
                 .Contains(key.ToLower())))
             {
-                parsedJson.AddField(key, jsonObject[key]);
+                parsedJson.Add(attributes.Single(attribute => attribute.Name.ToLower() == key.ToLower()).Name, jsonObject[key]);
                 Debug.Log(jsonObject[key]);
             }
-
             return parsedJson;
         }
-
         /*
         public JSONObject SyncAttributeName<T>(JSONObject jsonObject)
         {
@@ -220,57 +329,6 @@ namespace Assets.Utilities
             }
             return null;
         }
-
-        public Dictionary<string, JSONObject> ToSingleDimensionDictionary(JSONObject obj)
-        {
-            var jsonDictionary = new Dictionary<string, JSONObject>();
-            foreach (var key in obj.keys)
-            {
-                if (obj.type.Equals(JSONObject.Type.OBJECT))
-                    jsonDictionary.Concat(ToSingleDimensionDictionary(obj[key]));
-                else
-                {
-                    jsonDictionary.Add(key, obj[key]); 
-                }
-            }
-            return jsonDictionary;
-        }
-
-        public Dictionary<string, object> Decode(JSONObject obj)
-        {
-            switch (obj.type)
-            {
-                case JSONObject.Type.OBJECT:
-                    var jsonDictionary = new Dictionary<string, object>();
-                    for (var i = 0; i < obj.list.Count; i++)
-                    {
-                        var key = obj.keys[i];
-                        var j = obj.list[i];
-                        jsonDictionary.Add(key, Decode(j));
-                    }
-                    return jsonDictionary;
-                case JSONObject.Type.ARRAY:
-                    var jsonArray = new object[obj.list.Count];
-                    for (var i = 0; i < obj.list.Count; i++)
-                    {
-                        jsonArray[i] = Decode(obj.list[i]).Values;
-                    }
-                    return new Dictionary<string, object>() { { "TEMP", jsonArray.ToArray() } };
-                case JSONObject.Type.STRING:
-                    return new Dictionary<string, object>() { { "TEMP", obj.ToString() } };
-                case JSONObject.Type.NUMBER:
-                    return new Dictionary<string, object>() { { "TEMP", int.Parse(obj.ToString())} };
-                case JSONObject.Type.BOOL:
-                    return new Dictionary<string, object>() { { "TEMP", bool.Parse(obj.ToString()) } };
-                case JSONObject.Type.NULL:
-                    return new Dictionary<string, object>() { { "TEMP", null } };
-                case JSONObject.Type.BAKED:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            return null;
-        }
+        //     private static string GetJsonObjectName
     }
 }

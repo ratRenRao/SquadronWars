@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Assets.GameClasses;
 using UnityEngine;
-using Object = System.Object;
 
 namespace Assets.Data
 {
@@ -10,20 +9,26 @@ namespace Assets.Data
     {
         public static bool ResponseError = false;
         private static readonly Utilities.Utilities Utilities = new Utilities.Utilities();
-
-        public IJsonable PopulateObjectFromDb<T>(string url, Player.Logins paramObject) where T : IJsonable, new() 
+        /*
+        public T PopulateObjectFromDb<T>(string url, object paramObject) where T : IJsonable
         {
             var parameters = Utilities.CreatePublicPropertyDictionary(paramObject);
             return PopulateObjectFromDb<T>(url, parameters);
         }
-
-        public IJsonable PopulateObjectFromDb<T>(string url, Dictionary<string, string> parameters) where T : IJsonable, new()
-        { 
+        
+        public T PopulateObjectFromDb<T>(string url, Dictionary<string, string> parameters) where T : IJsonable
+        {
             var response = ExecuteApiCall(url, PopulateParameters(parameters));
             return Utilities.BuildObjectFromJsonData<T>(response.text);
         }
+        */
+        public void MakePostRequest(string url, object paramObject)
+        {
+            var parameters = Utilities.CreatePublicPropertyDictionary(paramObject);
+            ExecuteApiCall(url, PopulateParameters(parameters));
+        }
 
-        private WWW ExecuteApiCall(string url, WWWForm form)
+        public WWW ExecuteApiCall(string url, WWWForm form)
         {
             var www = new WWW(url, form);
             StartCoroutine(WaitForRequest(www));
@@ -32,7 +37,7 @@ namespace Assets.Data
             return www;
         }
 
-        private WWWForm PopulateParameters(Dictionary<string, string> parameters)
+        public WWWForm PopulateParameters(Dictionary<string, string> parameters)
         {
             var form = new WWWForm();
 
