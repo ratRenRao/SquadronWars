@@ -32,7 +32,7 @@ namespace Assets.Scripts
         Dictionary<string, int> inventory;
         GameCharacter curGameCharacter;
         GameCharacter tarGameCharacter;
-        List<Character> characters = new List<Character>();
+        List<CharacterGameObject> characters = new List<CharacterGameObject>();
         List<GameObject> myCharacters = new List<GameObject>();
         //Character character;
         //Character targetCharacter;
@@ -61,14 +61,15 @@ namespace Assets.Scripts
             //tarAnim.SetFloat("y", -1);
         }
 
-        public Stats GetBonusStats(Character character)
+        public Stats GetBonusStats(CharacterGameObject character)
         {
-            /*
-            foreach (Equipment equipment in character.equipment.Values)
+            List<Item> equip = character.equipment.GetEquipmentItems();
+            foreach (Item equipment in equip)
             {
+                
                 character.alteredStats = character.alteredStats.concatStats(character.baseStats, equipment.stats);
             }
-            */
+            
             return character.alteredStats;
             
         }
@@ -84,7 +85,6 @@ namespace Assets.Scripts
             }
             if (hidePanel)
             {
-                Debug.Log("Hide Panel Called");
                 actionPanel.SetActive(false);
             }
             if (!hidePanel)
@@ -800,7 +800,7 @@ namespace Assets.Scripts
 
         private void PrepTest()
         {
-            Dictionary<ItemType, Item> equipment = new Dictionary<ItemType, Item>
+           /* Dictionary<ItemType, Item> equipment = new Dictionary<ItemType, Item>
                 {
                     {ItemType.HELM, GlobalConstants.ItemList["Cloth Helm"] },
                     {ItemType.SHOULDERS, GlobalConstants.ItemList["Cloth Shoulders"] },
@@ -808,16 +808,25 @@ namespace Assets.Scripts
                     {ItemType.GLOVES, GlobalConstants.ItemList["Cloth Gloves"] },
                     {ItemType.LEGS, GlobalConstants.ItemList["Cloth Legs"] },
                     {ItemType.BOOTS, GlobalConstants.ItemList["Cloth Boots"] },
-                };
+                };*/
+            Equipment equipment = new Equipment();
+            equipment.helmObject = GlobalConstants.ItemList["Cloth Helm"];
+            equipment.shouldersObject = GlobalConstants.ItemList["Cloth Shoulders"];
+            equipment.chestObject = GlobalConstants.ItemList["Cloth Chest"];
+            equipment.glovesObject = GlobalConstants.ItemList["Cloth Gloves"];
+            equipment.pantsObject = GlobalConstants.ItemList["Cloth Legs"];
+            equipment.bootsObject = GlobalConstants.ItemList["Cloth Boots"];
+            equipment.accessory1Object = GlobalConstants.ItemList["None(Accessory)"];
+            equipment.accessory2Object = GlobalConstants.ItemList["None(Accessory)"];
             //screen = ScreenOrientation.Landscape;
             Stats stat1 = new Stats(5, 4, 6, 3, 2, 9, 5);
-            Character character1 = new Character(1, stat1, 1, "Saint Lancelot", 1, 75, equipment);
+            CharacterGameObject character1 = new CharacterGameObject(1, stat1, 1, "Saint Lancelot", 1, 75, equipment);
             character1.alteredStats = new Stats(0, 0, 0, 0, 0, 0, 0);
             character1.alteredStats = GetBonusStats(character1);
             character1.alteredStats.speed = 4;
             character1.spriteId = 1;
             Stats stat2 = new Stats(3, 3, 3, 4, 3, 3, 2);
-            Character character2 = new Character(1, stat2, 1, "Ragthar", 1, 75, equipment);
+            CharacterGameObject character2 = new CharacterGameObject(1, stat2, 1, "Ragthar", 1, 75, equipment);
             character2.alteredStats = new Stats(0, 0, 0, 0, 0, 0, 0);
             character2.alteredStats = GetBonusStats(character2);
             character2.alteredStats.speed = 3;

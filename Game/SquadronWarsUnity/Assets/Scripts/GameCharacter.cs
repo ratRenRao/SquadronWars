@@ -7,7 +7,7 @@ namespace Assets.Scripts
     public class GameCharacter : MonoBehaviour
     {
 
-        public Character character;
+        public CharacterGameObject character;
         public int x
         {
             get;
@@ -19,7 +19,7 @@ namespace Assets.Scripts
             set;
         }
 
-        public GameCharacter(Character character, int x, int y)
+        public GameCharacter(CharacterGameObject character, int x, int y)
         {
             this.character = character;
             this.x = x;
