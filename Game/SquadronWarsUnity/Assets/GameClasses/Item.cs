@@ -10,8 +10,7 @@ namespace Assets.GameClasses
         LEGS,
         SHOULDERS,
         BOOTS,
-        ACCESSORY1,
-        ACCESSORY2,
+        ACCESSORY,
     };
 
     public class Item : Equipment, IWearable, IJsonable

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.GameClasses
 {
-    class CharacterGameObject : MonoBehaviour
+    public class CharacterGameObject : MonoBehaviour
     {
         public bool IsStandard;
         public int x;
@@ -26,8 +26,20 @@ namespace Assets.GameClasses
         public int statPoints { get; set; }
         public int skillPoints { get; set; }
         public List<Effect> effects { get; set; }
-        public Sprite sprite { get; set; }
+        public int spriteId { get; set; }
         public readonly Character characterClassObject;
+
+        public CharacterGameObject(int characterId, Stats baseStats, int characterListId, string characterName,
+            int level, int experience, Equipment equipment)
+        {
+            this.characterId = characterId;
+            this.baseStats = baseStats;
+            this.equipment = equipment;
+            this.characterListId = characterListId;
+            this.characterName = characterName;
+            this.level = level;
+            this.experience = experience;
+        }
 
         void Update()
         {

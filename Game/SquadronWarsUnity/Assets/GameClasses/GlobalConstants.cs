@@ -9,7 +9,7 @@ namespace Assets.GameClasses
         public const string SquadDbUrl = WebServerUrl + "temp/temp";
         public const string CharacterDbUrl = WebServerUrl + "/api/getchars";
         public const string PlayerDbUrl = WebServerUrl + "/api/auth";
-
+        public static List<CharacterGameObject> matchCharacters = new List<CharacterGameObject>();
         public const string PlayerJsonObjectName = "PlayerInfo";
         public const string CharacterJsonObjectName = "Characters";
         public const string StartupDataJsonName = "PlayerDetails";
@@ -46,6 +46,8 @@ namespace Assets.GameClasses
         { "Cloth Boots",new Item("Cloth Boots", ItemType.BOOTS, new Stats(0,0,1,0,0,0,0)) },
         { "Leather Boots",new Item("Leather Boots", ItemType.BOOTS, new Stats(0,1,0,0,0,0,0)) },
         { "Bronze Boots",new Item("Bronze Boots", ItemType.BOOTS, new Stats(1,0,0,0,0,0,0)) },
+        //Accessory
+        { "None(Accessory)",new Item("None(Accessory)", ItemType.ACCESSORY, new Stats(0, 0, 0, 0, 0, 0, 0)) }
         };
         //inventory.Add(new Item("None", ItemType.HELM, new Stats(0, 0, 0, 0, 0, 0, 0)));
         //inventory.Add(new Equipment("Leather Helm", ItemType.HELM, new Stats(1,1,1,0,0,0,0)));

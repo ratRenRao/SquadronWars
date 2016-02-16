@@ -57,6 +57,21 @@
             this.critRate = critRate;
         }
 
+        public void InitializeStats(int level)
+        {
+            maxHP = calculateHP(level);
+            maxMP = calculateMP(level);
+            damage = calculateDamage(level);
+            magicDmg = calculateMagicDamage(level);
+            hitRate = calculateSpeed(level);
+            defense = calculateDefense(level);
+            magicDef = calculateMagicDefense(level);
+            hitRate = calculateHitRate(level);
+            dodgeRate = calculateDodgeRate(level);
+            critRate = calculateCritRate(level);
+
+        }
+
         public int calculateHP(int level) {
             return (level * 5) + (vitality * 10) + (strength * 2);
         }

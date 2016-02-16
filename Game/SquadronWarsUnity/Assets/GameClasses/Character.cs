@@ -29,7 +29,7 @@ namespace Assets.GameClasses
         
         //public readonly bool Updated = false;
         
-        public Sprite sprite { get; set; }
+        public int spriteId { get; set; }
         public bool Updated = false;
         public int CharacterId { get; set; }
         public Stats stats { get; set; }
