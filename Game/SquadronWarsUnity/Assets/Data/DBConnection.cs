@@ -41,6 +41,20 @@ namespace Assets.Data
             return form;
         }
 
+        public JSONObject ConvertToJson<T>(T obj)
+        {
+            var jsonDictionary = Utilities.CreatePublicPropertyDictionary(obj);
+            var jsonObject = JSONObject.Create(jsonDictionary);
+            return WrapJsonInGameObject(jsonObject);
+        }
+
+        private JSONObject WrapJsonInGameObject(JSONObject obj)
+        {
+            var wrappedJson = new JSONObject(); 
+            wrappedJson.AddField("GameObject", obj);
+            return wrappedJson;
+        } 
+
         private IEnumerator WaitForRequest(WWW www)
         {
             yield return www;
