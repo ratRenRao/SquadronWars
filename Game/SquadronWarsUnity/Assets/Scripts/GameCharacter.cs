@@ -8,6 +8,8 @@ namespace Assets.Scripts
     {
 
         public CharacterGameObject character;
+        public bool hasAttacked = false;
+        public bool hasMoved = false;
         public int x
         {
             get;

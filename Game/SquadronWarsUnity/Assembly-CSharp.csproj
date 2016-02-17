@@ -46,9 +46,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Data\DBConnection.cs" />
-     <Compile Include="Assets\GameClasses\Ablilty.cs" />
+     <Compile Include="Assets\Data\StartupData.cs" />
+     <Compile Include="Assets\GameClasses\Ability.cs" />
      <Compile Include="Assets\GameClasses\Burn.cs" />
      <Compile Include="Assets\GameClasses\Character.cs" />
+     <Compile Include="Assets\GameClasses\CharacterGameObject.cs" />
      <Compile Include="Assets\GameClasses\Effect.cs" />
      <Compile Include="Assets\GameClasses\Equipment.cs" />
      <Compile Include="Assets\GameClasses\Fireball.cs" />
@@ -60,6 +62,7 @@
      <Compile Include="Assets\GameClasses\IWearable.cs" />
      <Compile Include="Assets\GameClasses\Item.cs" />
      <Compile Include="Assets\GameClasses\Player.cs" />
+     <Compile Include="Assets\GameClasses\PlayerGameObject.cs" />
      <Compile Include="Assets\GameClasses\Squad.cs" />
      <Compile Include="Assets\GameClasses\Stats.cs" />
      <Compile Include="Assets\GameClasses\Weaken.cs" />
@@ -69,6 +72,7 @@
      <Compile Include="Assets\Scripts\AutoDestroy.cs" />
      <Compile Include="Assets\Scripts\CanvasManager.cs" />
      <Compile Include="Assets\Scripts\CharacterScreen.cs" />
+     <Compile Include="Assets\Scripts\CharacterStatsPanel.cs" />
      <Compile Include="Assets\Scripts\CreateUnitList.cs" />
      <Compile Include="Assets\Scripts\GameCharacter.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />

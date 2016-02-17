@@ -158,7 +158,6 @@ public class SampleButton : MonoBehaviour
 
     public void BuildDropdowns(CharacterScreen dropdowns)
     {
-        Debug.Log("called");
         dropdowns.helmSlot.options.Clear();        
         dropdowns.shoulderSlot.options.Clear();
         dropdowns.chestSlot.options.Clear();

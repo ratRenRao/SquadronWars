@@ -98,7 +98,7 @@
 
         public int calculateDefense(int level)
         {
-            return (level * 2) + (vitality * 6) + strength;
+            return (level * 2) + (vitality * 4) + strength;
         }
 
         public int calculateMagicDefense(int level)
