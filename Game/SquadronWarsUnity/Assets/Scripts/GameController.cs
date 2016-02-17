@@ -19,7 +19,8 @@ namespace Assets.Scripts
         public TileMap tileMap;
         GameObject currentGameCharacter;
         GameObject targetGameCharacter;
-        public CharacterStatsPanel characterStatsPanel;
+        public GameObject characterStatsPanel;
+        public CharacterStatsPanel statsPanel;
         public GameObject actionPanel;
         Vector3 hitDown;
         RaycastHit2D hit;
@@ -88,10 +89,15 @@ namespace Assets.Scripts
             if (hidePanel)
             {
                 actionPanel.SetActive(false);
+                if (!placeCharacterPhase)
+                {
+                    characterStatsPanel.SetActive(false);
+                }
             }
             if (!hidePanel)
             {
                 actionPanel.SetActive(true);
+                characterStatsPanel.SetActive(true);
             }
             if (reachedPosition == false && count < path.Count)
             {
@@ -150,6 +156,7 @@ namespace Assets.Scripts
                         targetTile.isOccupied = true;
                         targetTile.characterObject = currentGameCharacter;
                         targetTile.character = curGameCharacter;
+                        PositionPanels();
                         hidePanel = false;
                     }
                     else {
@@ -282,6 +289,7 @@ namespace Assets.Scripts
                     reachedPosition = false;
                     clearHighlights(validMoves);
                     curGameCharacter.hasMoved = true;
+                    
                 }
                 else
                 {
@@ -797,6 +805,7 @@ namespace Assets.Scripts
                 tarGameCharacter.character.alteredStats.currentHP = 0;
                 myCharacters.Remove(targetGameCharacter);
             }
+            yield return new WaitForSeconds(.4f);
             hidePanel = false;
         }
         IEnumerator AttackAnimationNothing()
@@ -849,7 +858,7 @@ namespace Assets.Scripts
             }
             if (act == "characterload")
             {
-                selectNextCharacter();
+                SelectNextCharacter();
             }
         }
         private void PrepTest()
@@ -889,12 +898,12 @@ namespace Assets.Scripts
             GlobalConstants.matchCharacters.Add(character2);
             characters = GlobalConstants.matchCharacters;
             placeCharacterPhase = true;
-            characterStatsPanel.charName.text = characters[0].characterName;
+            statsPanel.charName.text = characters[0].characterName;
         }
 
         public void highlightSpawn()
         {
-            for(int i = 0; i < 5; i++)
+            for(int i = 0; i < tileMap.xLength; i++)
             {
                 for(int j = 0; j < tileMap.yLength; j++)
                 {
@@ -937,11 +946,11 @@ namespace Assets.Scripts
             myCharacters.Add(tempchar);
             if (unitPlacedCount + 1 < characters.Count)
             {
-                characterStatsPanel.charName.text = characters[unitPlacedCount + 1].characterName;
+                statsPanel.charName.text = characters[unitPlacedCount + 1].characterName;
             }
         }
 
-        public void selectNextCharacter()
+        public void SelectNextCharacter()
         {
             if (placeCharacterPhase)
             {
@@ -959,11 +968,40 @@ namespace Assets.Scripts
             tile = prevTile;
             anim = currentGameCharacter.GetComponent<Animator>();
             curGameCharacter.hasAttacked = false;
-            curGameCharacter.hasMoved = false;            
-            characterStatsPanel.charName.text = curGameCharacter.character.characterName;
-            characterStatsPanel.hp.text = curGameCharacter.character.alteredStats.currentHP.ToString() + " / " + curGameCharacter.character.alteredStats.maxHP.ToString();
-            characterStatsPanel.mp.text = curGameCharacter.character.alteredStats.currentMP.ToString() + " / " + curGameCharacter.character.alteredStats.maxMP.ToString();
+            curGameCharacter.hasMoved = false;
+            statsPanel.charName.text = curGameCharacter.character.characterName;
+            statsPanel.hp.text = curGameCharacter.character.alteredStats.currentHP.ToString() + " / " + curGameCharacter.character.alteredStats.maxHP.ToString();
+            statsPanel.mp.text = curGameCharacter.character.alteredStats.currentMP.ToString() + " / " + curGameCharacter.character.alteredStats.maxMP.ToString();
+            PositionPanels();
+        }
 
+        public void PositionPanels()
+        {
+            Debug.Log(curGameCharacter.transform.position.x);
+            Debug.Log(curGameCharacter.transform.position.y);
+            characterStatsPanel.transform.position = new Vector3(curGameCharacter.transform.position.x, curGameCharacter.transform.position.y + 8, 0);
+            actionPanel.transform.position = new Vector3(curGameCharacter.transform.position.x + 15, curGameCharacter.transform.position.y - 7, 0);
+            if (tile.x < 3)
+            {
+                characterStatsPanel.transform.position = new Vector3(curGameCharacter.transform.position.x + 10, curGameCharacter.transform.position.y + 8, 0);
+                if(tile.y < 3)
+                {
+                    characterStatsPanel.transform.position = new Vector3(characterStatsPanel.transform.position.x, curGameCharacter.transform.position.y - 21, 0);
+                }
+                
+            }
+            else if (tile.y < 3)
+            {
+                characterStatsPanel.transform.position = new Vector3(curGameCharacter.transform.position.x, curGameCharacter.transform.position.y - 21, 0);
+                if (tile.x > 6)
+                {
+                    actionPanel.transform.position = new Vector3(curGameCharacter.transform.position.x - 10, actionPanel.transform.position.y, 0);
+                }
+            }
+            else if (tile.x > 6)
+            {
+                actionPanel.transform.position = new Vector3(curGameCharacter.transform.position.x - 10, actionPanel.transform.position.y, 0);
+            }
         }
     }
 
