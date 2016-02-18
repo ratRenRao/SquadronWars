@@ -23,6 +23,9 @@ namespace Assets.Scripts
         public CharacterStatsPanel statsPanel;
         public GameObject actionPanel;
         public AudioSource battlesong;
+        public Button attackButton;
+        public Button abilityButton;
+        public Button moveButton;
         Vector3 hitDown;
         RaycastHit2D hit;
         Animator anim;
@@ -176,7 +179,8 @@ namespace Assets.Scripts
                     Debug.Log("move click called");
                     hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                     if (action == Action.MOVE)
-                    {                       
+                    {
+                        moveButton.interactable = false;                
                         Move();
                         curGameCharacter.hasMoved = true;
                     }
@@ -187,6 +191,8 @@ namespace Assets.Scripts
                             Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
                             if (tempTile.isValidMove)
                             {
+                                attackButton.interactable = false;
+                                abilityButton.interactable = false;
                                 hidePanel = true;
                                 GetTarget(tempTile);
                                 Attack(tempTile, null);
@@ -199,7 +205,9 @@ namespace Assets.Scripts
                     if (action == Action.AttackAbility)
                     {
                         if (hit.collider != null)
-                        {                            
+                        {
+                            attackButton.interactable = false;
+                            abilityButton.interactable = false;
                             Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
                             if (tempTile.isValidMove)
                             {
@@ -213,6 +221,8 @@ namespace Assets.Scripts
                     }
                     if (action == Action.CastAbility)
                     {
+                        attackButton.interactable = false;
+                        abilityButton.interactable = false;
                         if (hit.collider != null)
                         {                            
                             Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
@@ -787,8 +797,10 @@ namespace Assets.Scripts
             int currentY = start.y;
             int endX = end.x;
             int endY = end.y;
+            List<Tile> openPath = new List<Tile>();
+            List<Tile> closedPath = new List<Tile>();
             List<Tile> movePath = new List<Tile>();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < curGameCharacter.character.alteredStats.speed; i++)
             {
                 
                 if(currentX == endX && currentY == endY)
@@ -1194,6 +1206,9 @@ namespace Assets.Scripts
             anim = currentGameCharacter.GetComponent<Animator>();
             curGameCharacter.hasAttacked = false;
             curGameCharacter.hasMoved = false;
+            moveButton.interactable = true;
+            attackButton.interactable = true;
+            abilityButton.interactable = true;
             statsPanel.charName.text = curGameCharacter.character.characterName;
             statsPanel.hp.text = curGameCharacter.character.alteredStats.currentHP.ToString() + " / " + curGameCharacter.character.alteredStats.maxHP.ToString();
             statsPanel.mp.text = curGameCharacter.character.alteredStats.currentMP.ToString() + " / " + curGameCharacter.character.alteredStats.maxMP.ToString();

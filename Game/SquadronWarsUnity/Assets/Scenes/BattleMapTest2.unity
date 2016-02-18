@@ -9984,7 +9984,6 @@ MonoBehaviour:
   mainPanel: {fileID: 1575622511}
   abilityPanel: {fileID: 717698915}
   gameController: {fileID: 1863895754}
-  abilityButton: {fileID: 1224674550}
   button: {fileID: 809241705}
   ability: Armor Break
   abilityType: attack
@@ -10842,7 +10841,6 @@ MonoBehaviour:
   mainPanel: {fileID: 1575622511}
   abilityPanel: {fileID: 717698915}
   gameController: {fileID: 1863895754}
-  abilityButton: {fileID: 1224674550}
   button: {fileID: 843718413}
   ability: Flame Strike
   abilityType: attack
@@ -10904,7 +10902,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.048172586, g: 0.28538606, b: 0.5955882, a: 1}
     m_HighlightedColor: {r: 0.011764707, g: 0.1137255, b: 0.24705884, a: 1}
     m_PressedColor: {r: 0.008704582, g: 0.07821691, b: 0.16911763, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.16911763, g: 0.16911763, b: 0.16911763, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -11172,7 +11170,6 @@ MonoBehaviour:
   mainPanel: {fileID: 1575622511}
   abilityPanel: {fileID: 717698915}
   gameController: {fileID: 1863895754}
-  abilityButton: {fileID: 1224674550}
   button: {fileID: 862831903}
   ability: Fire
   abilityType: cast
@@ -13885,7 +13882,6 @@ MonoBehaviour:
   mainPanel: {fileID: 1575622511}
   abilityPanel: {fileID: 717698915}
   gameController: {fileID: 1863895754}
-  abilityButton: {fileID: 1224674550}
   button: {fileID: 1151217958}
   ability: Bio
   abilityType: cast
@@ -18539,7 +18535,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.048172586, g: 0.28538606, b: 0.5955882, a: 1}
     m_HighlightedColor: {r: 0.011764707, g: 0.1137255, b: 0.24705884, a: 1}
     m_PressedColor: {r: 0.008704582, g: 0.07821691, b: 0.16911763, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.16911763, g: 0.16911763, b: 0.16911763, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -24624,6 +24620,9 @@ MonoBehaviour:
   statsPanel: {fileID: 1318910899}
   actionPanel: {fileID: 855276615}
   battlesong: {fileID: 215100521}
+  attackButton: {fileID: 854868668}
+  abilityButton: {fileID: 1224674550}
+  moveButton: {fileID: 1472624579}
 --- !u!1 &1867639176
 GameObject:
   m_ObjectHideFlags: 0
