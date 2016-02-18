@@ -28,19 +28,19 @@ public class SampleButton : MonoBehaviour
         menu.squadScreenPanel.SetActive(false);
         menu.characterScreenPanel.SetActive(true);
         stats.characterSprite.sprite = sprite.sprite;
-        stats.characterName.text = character.characterName;
+        stats.characterName.text = character.Name;
         
         UpdateStats(character);
-        stats.levelStat.text = character.level.ToString();
+        stats.levelStat.text = character.LevelId.ToString();
         int expToNextLevel = character.experienceNeeded();
      //   int startExp = character.startExperience();
-        stats.experienceStat.text = string.Format("{0} / {1}", character.experience.ToString(), expToNextLevel.ToString());
+        stats.experienceStat.text = string.Format("{0} / {1}", character.BaseStats.Experience.ToString(), expToNextLevel.ToString());
         int progBar = character.percentToNextLevel();
         stats.ProgressBar.value = progBar;
         //Debug.Log(character.equipment[ItemType.HELM].name);
-        Debug.Log(character.baseStats.intelligence);
-        BuildDropdowns(stats);
-        EvaluateSkills();
+        Debug.Log(character.BaseStats.Intl);
+      //  BuildDropdowns(stats);
+      //  EvaluateSkills();
     }
 
     public void ReevaluateStats(Text labelText)
@@ -52,7 +52,7 @@ public class SampleButton : MonoBehaviour
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         character = stats.sampleButton.character;
         string itemName = labelText.text;
-        Equipment equipment = character.equipment; 
+        Equipment equipment = character.Equipment; 
         Equipment prevItem = null;
         /*
         foreach (var item in equipment.GetEquipmentItems())
@@ -75,28 +75,28 @@ public class SampleButton : MonoBehaviour
         GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
      //   SampleButton button = gameObject.GetComponent<SampleButton>();
         CharacterScreen menuStats = statsManager.GetComponent<CharacterScreen>();
-        Stats stats = character.baseStats;
-        Stats bonusStats = character.alteredStats;
-        Stats concatStats = stats.concatStats(character.baseStats, character.alteredStats);
-        menuStats.strengthStat.text = formatStats(stats.strength, bonusStats.strength);
-        menuStats.agilityStat.text = formatStats(stats.agility, bonusStats.agility);
-        menuStats.intelligenceStat.text = formatStats(stats.intelligence, bonusStats.intelligence);
-        menuStats.vitalityStat.text = formatStats(stats.vitality, bonusStats.vitality);
-        menuStats.dexterityStat.text = formatStats(stats.dexterity, bonusStats.dexterity);
-        menuStats.wisdomStat.text = formatStats(stats.wisdom, bonusStats.wisdom);
-        menuStats.luckStat.text = formatStats(stats.luck, bonusStats.luck);
-        menuStats.hitPointsStat.text = concatStats.calculateHP(character.level).ToString();
-        menuStats.manaStat.text = concatStats.calculateMP(character.level).ToString();
-        menuStats.damageStat.text = concatStats.calculateDamage(character.level).ToString();
-        menuStats.magicDamageStat.text = concatStats.calculateMagicDamage(character.level).ToString();
-        menuStats.speedStat.text = concatStats.calculateSpeed(character.level).ToString();
-        menuStats.defenseStat.text = concatStats.calculateDefense(character.level).ToString();
-        menuStats.magicDefenseStat.text = concatStats.calculateMagicDefense(character.level).ToString();
-        menuStats.hitRateStat.text = concatStats.calculateHitRate(character.level).ToString();
-        menuStats.dodgeRateStat.text = concatStats.calculateDodgeRate(character.level).ToString();
-        menuStats.criticalRateStat.text = concatStats.calculateCritRate(character.level).ToString();
-        menuStats.remainingStatPoints.text = character.statPoints.ToString();
-        menuStats.remainingSkillPoints.text = character.skillPoints.ToString();
+        Stats stats = character.BaseStats;
+        Stats bonusStats = character.CurrentStats;
+        Stats concatStats = stats.ConcatStats(character.BaseStats, character.CurrentStats);
+        menuStats.strengthStat.text = formatStats(stats.Str, bonusStats.Str);
+        menuStats.agilityStat.text = formatStats(stats.Agi, bonusStats.Agi);
+        menuStats.intelligenceStat.text = formatStats(stats.Intl, bonusStats.Intl);
+        menuStats.vitalityStat.text = formatStats(stats.Vit, bonusStats.Vit);
+        menuStats.dexterityStat.text = formatStats(stats.Dex, bonusStats.Dex);
+        menuStats.wisdomStat.text = formatStats(stats.Wis, bonusStats.Wis);
+        menuStats.luckStat.text = formatStats(stats.Luck, bonusStats.Luck);
+        menuStats.hitPointsStat.text = concatStats.CalculateHp(character.LevelId).ToString();
+        menuStats.manaStat.text = concatStats.CalculateMp(character.LevelId).ToString();
+        menuStats.damageStat.text = concatStats.CalculateDamage(character.LevelId).ToString();
+        menuStats.magicDamageStat.text = concatStats.CalculateMagicDamage(character.LevelId).ToString();
+        menuStats.speedStat.text = concatStats.CalculateSpeed(character.LevelId).ToString();
+        menuStats.defenseStat.text = concatStats.CalculateDefense(character.LevelId).ToString();
+        menuStats.magicDefenseStat.text = concatStats.CalculateMagicDefense(character.LevelId).ToString();
+        menuStats.hitRateStat.text = concatStats.CalculateHitRate(character.LevelId).ToString();
+        menuStats.dodgeRateStat.text = concatStats.CalculateDodgeRate(character.LevelId).ToString();
+        menuStats.criticalRateStat.text = concatStats.CalculateCritRate(character.LevelId).ToString();
+        menuStats.remainingStatPoints.text = character.BaseStats.StatPoints.ToString();
+        menuStats.remainingSkillPoints.text = character.BaseStats.SkillPoints.ToString();
     }
 
     
@@ -112,6 +112,7 @@ public class SampleButton : MonoBehaviour
         }
     }
 
+    /*
     public void incrementStat(string stat)
     {
      //   GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
@@ -120,37 +121,37 @@ public class SampleButton : MonoBehaviour
      //   MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         character = stats.sampleButton.character;
-        if (character.statPoints > 0)
+        if (character.StatPoints > 0)
         {
             if (stat.Equals("strength"))
             {
-                character.baseStats.strength++;                
+                character.BaseStats.strength++;                
             }
             if (stat.Equals("agility"))
             {
-                character.baseStats.agility++;
+                character.BaseStats.agility++;
             }
             if (stat.Equals("intelligence"))
             {
-                character.baseStats.intelligence++;
+                character.BaseStats.intelligence++;
             }
             if (stat.Equals("vitality"))
             {
-                character.baseStats.vitality++;
+                character.BaseStats.vitality++;
             }
             if (stat.Equals("dexterity"))
             {
-                character.baseStats.dexterity++;
+                character.BaseStats.dexterity++;
             }
             if (stat.Equals("wisdom"))
             {
-                character.baseStats.wisdom++;
+                character.BaseStats.wisdom++;
             }
             if (stat.Equals("luck"))
             {
-                character.baseStats.luck++;
+                character.BaseStats.luck++;
             }
-            character.statPoints--;
+            character.StatPoints--;
             UpdateStats(character);
 
         }
@@ -166,43 +167,42 @@ public class SampleButton : MonoBehaviour
         dropdowns.bootsSlot.options.Clear();
         foreach(Item item in GlobalConstants.ItemList.Values)
         {
-            if (item.itemType == ItemType.HELM)
+            if (item.itemType == ItemType.Helm)
             {
-                dropdowns.helmSlot.options.Add(new Dropdown.OptionData() { text = item.name });
+                dropdowns.helmSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.SHOULDERS)
+            else if (item.itemType == ItemType.Shoulders)
             {
-                dropdowns.shoulderSlot.options.Add(new Dropdown.OptionData() { text = item.name });
+                dropdowns.shoulderSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.CHEST)
+            else if (item.itemType == ItemType.Chest)
             {
-                dropdowns.chestSlot.options.Add(new Dropdown.OptionData() { text = item.name });
+                dropdowns.chestSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.LEGS)
+            else if (item.itemType == ItemType.Legs)
             {
-                dropdowns.legsSlot.options.Add(new Dropdown.OptionData() { text = item.name });
+                dropdowns.legsSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.GLOVES)
+            else if (item.itemType == ItemType.Gloves)
             {
-                dropdowns.glovesSlot.options.Add(new Dropdown.OptionData() { text = item.name });
+                dropdowns.glovesSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.BOOTS)
+            else if (item.itemType == ItemType.Boots)
             {
-                dropdowns.bootsSlot.options.Add(new Dropdown.OptionData() { text = item.name });
+                dropdowns.bootsSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
             else
             {
 
             }
         }
-   /*     Debug.Log(character.equipment[ItemType.HELM].name);
+        Debug.Log(character.equipment[ItemType.HELM].name);
         dropdowns.helmSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.HELM].name;
         dropdowns.shoulderSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.SHOULDERS].name;
         dropdowns.chestSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.CHEST].name;
         dropdowns.glovesSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.GLOVES].name;
         dropdowns.legsSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.LEGS].name;
         dropdowns.bootsSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.BOOTS].name;
-*/
     }
 
     public void LevelSkill(string skill)
@@ -213,7 +213,7 @@ public class SampleButton : MonoBehaviour
     //    MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         character = stats.sampleButton.character;
-        if (character.skillPoints > 0)
+        if (character.SkillPoints > 0)
         {
             if (character.skillList.ContainsKey(skill))
             {
@@ -239,7 +239,7 @@ public class SampleButton : MonoBehaviour
             {
                 stats.bashLvl.text = "L" + character.skillList[skill];
             }
-            character.skillPoints--;
+            character.SkillPoints--;
             UpdateStats(character);
 
         }
@@ -292,4 +292,5 @@ public class SampleButton : MonoBehaviour
         stats.chargeLvl.text = "";
         stats.doubleAttackLvl.text = "";
     }
+    */
 }

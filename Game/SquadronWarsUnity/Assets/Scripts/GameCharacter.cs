@@ -7,6 +7,7 @@ namespace Assets.Scripts
     public class GameCharacter : MonoBehaviour
     {
 
+        /*
         public CharacterGameObject character;
         public bool hasAttacked = false;
         public bool hasMoved = false;
@@ -30,9 +31,7 @@ namespace Assets.Scripts
 
         void Start()
         {
-            character.alteredStats.InitializeStats(character.level);
-            character.alteredStats.currentHP = character.alteredStats.maxHP;
-            character.alteredStats.currentMP = character.alteredStats.maxMP;
         }
+        */
     }
 }

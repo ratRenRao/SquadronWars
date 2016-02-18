@@ -4,25 +4,25 @@ namespace Assets.GameClasses
 {
     abstract public class Effect : IEffectable
     {
-        public int duration { get; set; }
-        public bool hasInitialEffect = false;
-        public Stats casterStats { get; set; }
-        public Stats targetStats { get; set; }
+        public int Duration { get; set; }
+        public bool HasInitialEffect = false;
+        public Stats Caster { get; set; }
+        public Stats Target { get; set; }
 
-        public virtual void execute(ref Stats charStats)
+        public virtual void Execute(ref Stats characterStats)
         {
-            if (hasInitialEffect)
+            if (HasInitialEffect)
             {
                 //initialEffect();
-                hasInitialEffect = false;
+                HasInitialEffect = false;
             }
-            else if (duration > 0)
+            else if (Duration > 0)
             {
-                lingeringEffect();
+                LingeringEffect();
             }
-            else if (duration == 0)
+            else if (Duration == 0)
             {
-                removeEffect();
+                RemoveEffect();
             }
         }
 
@@ -31,23 +31,23 @@ namespace Assets.GameClasses
             return (stat < minStat) ? minStat : (stat > maxStat) ? maxStat : stat;
         }
 
-        public virtual void lingeringEffect() { }
+        public virtual void LingeringEffect() { }
 
-        public virtual void immediateEffect() { }
+        public virtual void ImmediateEffect() { }
 
-        public virtual void removeEffect() { }
+        public virtual void RemoveEffect() { }
 
-        public virtual void immediateEffect(ref Stats charStat)
+        public virtual void ImmediateEffect(ref Stats characterStats)
         {
             throw new NotImplementedException();
         }
 
-        public  virtual void removeEffect(ref Stats charStat)
+        public  virtual void RemoveEffect(ref Stats characterStats)
         {
             throw new NotImplementedException();
         }
 
-        public virtual void lingeringEffect(ref Stats charStats)
+        public virtual void LingeringEffect(ref Stats characterStats)
         {
             throw new NotImplementedException();
         }

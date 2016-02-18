@@ -4,36 +4,36 @@ namespace Assets.GameClasses
 {
     class Heal : Effect
     {
-        private int healthRestored = 50;
-        public Heal(Stats casterStats, Stats targetStats, bool initial, int duration)
+        private readonly int _healthRestored = 50;
+        public Heal(Stats caster, Stats target, bool initial, int duration)
         {
-            this.targetStats = targetStats;
-            this.casterStats = casterStats;
-            this.hasInitialEffect = initial;
-            this.duration = duration;
+            Target = target;
+            Caster = caster;
+            HasInitialEffect = initial;
+            Duration = duration;
         }
 
-        public override void immediateEffect()
+        public override void ImmediateEffect()
         {
-            targetStats.currentHP = ValidateStat(targetStats.currentHP + healthRestored, 0, targetStats.maxHP);
+            Target.HitPoints = ValidateStat(Target.HitPoints + _healthRestored, 0, Target.HitPoints);
         }
 
-        public override void execute(ref Stats charStats)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void immediateEffect(ref Stats charStat)
+        public override void Execute(ref Stats characterStats)
         {
             throw new NotImplementedException();
         }
 
-        public override void removeEffect(ref Stats charStat)
+        public override void ImmediateEffect(ref Stats characterStats)
         {
             throw new NotImplementedException();
         }
 
-        public override void lingeringEffect(ref Stats charStats)
+        public override void RemoveEffect(ref Stats characterStats)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void LingeringEffect(ref Stats characterStats)
         {
             throw new NotImplementedException();
         }
