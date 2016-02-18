@@ -800,7 +800,8 @@ namespace Assets.Scripts
             List<Tile> openPath = new List<Tile>();
             List<Tile> closedPath = new List<Tile>();
             List<Tile> movePath = new List<Tile>();
-            for (int i = 0; i < curGameCharacter.character.alteredStats.speed; i++)
+            int moves = curGameCharacter.character.alteredStats.speed;
+            for (int i = 0; i < moves; i++)
             {
                 
                 if(currentX == endX && currentY == endY)
