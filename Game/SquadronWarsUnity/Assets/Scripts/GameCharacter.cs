@@ -4,6 +4,7 @@ using Assets.GameClasses;
 
 namespace Assets.Scripts
 {
+    /*
     public class GameCharacter : MonoBehaviour
     {
 
@@ -32,6 +33,6 @@ namespace Assets.Scripts
         void Start()
         {
         }
-        */
     }
+    */
 }
