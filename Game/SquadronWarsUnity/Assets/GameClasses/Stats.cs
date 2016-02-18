@@ -22,6 +22,8 @@
         public int critRate { get; set; }
         public int dodgeRate { get; set; }
         public int statPoints { get; set; }
+        public int SkillPoints { get; set; }
+        public int Experience { get; set; }
 
         public Stats(int strength, int agility, int intelligence, int vitality, int wisdom, int dexterity, int luck)
         {
@@ -61,12 +63,13 @@
             maxMP = calculateMP(level);
             damage = calculateDamage(level);
             magicDmg = calculateMagicDamage(level);
-            speed = calculateSpeed(level);
+            hitRate = calculateSpeed(level);
             defense = calculateDefense(level);
             magicDef = calculateMagicDefense(level);
             hitRate = calculateHitRate(level);
             dodgeRate = calculateDodgeRate(level);
             critRate = calculateCritRate(level);
+
         }
 
         public int calculateHP(int level) {
@@ -95,7 +98,7 @@
 
         public int calculateDefense(int level)
         {
-            return (level * 2) + (vitality * 3) + strength;
+            return (level * 2) + (vitality * 4) + strength;
         }
 
         public int calculateMagicDefense(int level)

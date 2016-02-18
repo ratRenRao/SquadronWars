@@ -6,17 +6,19 @@ using UnityEngine;
 
 namespace Assets.GameClasses
 {
-    public class Player : MonoBehaviour, IJsonable
+    public class Player : IJsonable
     {
         //DBConnection dbConnection = new DBConnection();
         
-        private string firstName { get; set; }
-        private string lastName { get; set; }
-        private string email { get; set; }
-        private DateTime? lastLogin { get; set; }
-        private Squad squad { get; set; }
-        private List<Item> itemList { get; set; }
-
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string email { get; set; }
+        //private DateTime? lastLogin { get; set; }
+        //public Squad squad { get; set; }
+        public List<Character> Characters { get; set; }
+        public Logins logins = new Logins();
+        public readonly bool Updated = false;
+        /*
         public Player()
         {
             Initialize(null, null, null, null, null, null);
@@ -37,6 +39,7 @@ namespace Assets.GameClasses
             this.lastLogin = lastLogin;
             this.itemList = itemList;
         }
+        */
 
         void Update()
         {

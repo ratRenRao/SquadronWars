@@ -11,7 +11,8 @@ namespace Assets.Scripts
         public string Username { get; set; }
         public string Password { get; set; }
         private static DbConnection _dbConnection;
-        private static Player _player;
+        private StartupData _startupData {get; set; }
+        private Player _player { get; set; }
         private static Player.Logins _logins = new Player.Logins();
 
         // Use this for initialization
@@ -31,22 +32,31 @@ namespace Assets.Scripts
 
         }
 
-        public bool ValidateLogins()
+        public void LoginClicked()
         {
             SetDbConnection();
             SetLoginInfo();
-            
-            //_player = (Player) _dbConnection.PopulateObjectFromDb<Player>(GlobalConstants.PlayerDbUrl, _logins);
+            GetDbData();
+
+            if (_startupData.Player == null)
+                // Change to display error message
+                Debug.Log("Invalid Credentials");
+           // else
+           //     StartupData.PopulateObjects();
+
+            _player = _startupData.Player;
             Debug.Log(_player.ToString());
 
-            // Change to only continue if player object is populated
-            if (true)
+            if (_startupData.Player != null)
             {
                 CanvasManager.LoginScreen.SetActive(false);
                 CanvasManager.MenuScreen.SetActive(true);
             }
+        }
 
-            return false;
+        private void GetDbData()
+        {
+            _startupData = _dbConnection.PopulateObjectFromDb<StartupData>(GlobalConstants.PlayerDbUrl, _logins);
         }
 
         private static void SetLoginInfo()
