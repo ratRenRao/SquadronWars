@@ -1,30 +1,71 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using Assets.GameClasses;
 
 namespace Assets.GameClasses
 {
-    public class Ability : IEffectable
+    public class Ability : IEffectable, IJsonable
     {
         public int AbilityId { get; set; }
         public int CharacterId { get; set; }
         public int AbilityLevel { get; set; }
-        public void execute(ref Stats charStats)
+
+        public void Execute(ref Stats characterStats)
         {
             throw new NotImplementedException();
         }
 
-        public void immediateEffect(ref Stats charStat)
+        public void ImmediateEffect(ref Stats characterStats)
         {
             throw new NotImplementedException();
         }
 
-        public void lingeringEffect(ref Stats charStats)
+        public void LingeringEffect(ref Stats characterStats)
         {
             throw new NotImplementedException();
         }
 
-        public void removeEffect(ref Stats charStat)
+        public void RemoveEffect(ref Stats characterStats)
         {
             throw new NotImplementedException();
         }
+
+        public string GetJsonObjectName()
+        {
+            return "Abilities";
+        }
+
+        public List<PropertyInfo> GetJsonObjectParameters()
+        {
+            return GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).ToList();
+        }
+
+        public void SetJsonObjectParameters(Dictionary<string, object> parameters)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+
+public class AbilityPreReq : IJsonable
+{
+    public int AbilityId { get; set; }
+    public int PrereqAbilityId { get; set; }
+    public int PrereqAbilityLevel { get; set; }
+    public string GetJsonObjectName()
+    {
+        return "AbilityPreReqs";
+    }
+
+    public List<PropertyInfo> GetJsonObjectParameters()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SetJsonObjectParameters(Dictionary<string, object> parameters)
+    {
+        throw new NotImplementedException();
     }
 }

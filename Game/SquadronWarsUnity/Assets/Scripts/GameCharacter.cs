@@ -28,9 +28,6 @@ namespace Assets.Scripts
 
         void Start()
         {
-            character.alteredStats.InitializeStats(character.level);
-            character.alteredStats.currentHP = character.alteredStats.maxHP;
-            character.alteredStats.currentMP = character.alteredStats.maxMP;
         }
     }
 }

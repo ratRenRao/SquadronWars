@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using Assets.GameClasses;
 using UnityEngine;
 //using SquadronWars2.Game.SquadronWarsUnity.Repo;
@@ -9,42 +11,70 @@ namespace Assets.GameClasses
     //"Characters":[{"characterId":"1","statId":"1","statPoints":"5","skillPoints":"1","LevelID":"1","name":"Lancelot Test","experience":"100","helm":"1","chest":"1000","gloves":"3000","pants":"2000","shoulders":"4000","boots":"5000","accessory1":null,"accessory2":null,"IsStandard":null}
     public class Character : IJsonable
     {
-        public int x;
-        public int y;
-        
-        public new string name { get; set; }
-        public int characterId { get; set; }
-        public int statId { get; set; }
+        public int X;
+        public int Y;
+
+        public int CharacterId { get; set; }
+        public int LevelId { get; set; }
+        public string Name { get; set; }
+        /*
+        public int Helm { get; set; }
+        public int Chest { get; set; }
+        public int Gloves { get; set; }
+        public int Pants { get; set; }
+        public int Shoulders { get; set; }
+        public int Boots { get; set; }
+        public int Accessory1 { get; set; }
+        public int Accessory2 { get; set; }
+        public int IsStandard { get; set; }
+        public int StatPoints { get; set; }
+        public int SkillPoints { get; set; }
+        public int Experience { get; set; }
+        public int Str { get; set; }
+        public int Intl { get; set; }
+        public int Agi { get; set; }
+        public int Wis { get; set; }
+        public int Vit { get; set; }
+        public int Dex { get; set; }
+        public int HitPoints { get; set; }
+        public int Dmg { get; set; }
+        public int AbilityPoints { get; set; }
+        public int Speed { get; set; }
+        public int Defense { get; set; }
+        public int MagicDefense { get; set; }
+        public int MagicAttack { get; set; }
+        public int HitRate { get; set; }
+        public int CritRate { get; set; }
+        public int DodgeRate { get; set; }
+        public int Luck { get; set; }
+        */
+        public Sprite Sprite { get; set; }
+
+        public bool Updated = false;
+        public Stats BaseStats { get; set; }
+        public Stats CurrentStats { get; set; }
+        public Equipment Equipment { get; set; }
+        public List<Ability> Abilities { get; set; } 
+
+        //private List<Item> _items { get; set; }
+
+        /*
+        public int StatId { get; set; }
         //public Stats baseStats { get; set; }
         //public Stats alteredStats { get; set; }
-        public int characterListId { get; set; }
-        public string characterName { get; set; }
         //public Equipment equipment { get; set; }
         public Dictionary<string, int> skillList { get; set; }
         public int level { get; set; }
-        public int experience { get; set; }
-        public int statPoints { get; set; }
-        public int skillPoints { get; set; }
         //public List<Effect> effects  { get; set; }
         
         //public readonly bool Updated = false;
         
         public Sprite sprite { get; set; }
         public bool Updated = false;
-        public int CharacterId { get; set; }
         public Stats stats { get; set; }
         public Stats baseStats { get; set; }
         public int LevelId { get; set; }
         public string Name { get; set; }
-        public bool IsStandard { get; set; }
-        public int helm { get; set; }
-        public int chest { get; set; }
-        public int gloves { get; set; }
-        public int pants { get; set; }
-        public int shoulders { get; set; }
-        public int boots { get; set; }
-        public int accessory1 { get; set; }
-        public int accessory2 { get; set; }
         public List<Ability> abilities { get; set; }
         public List<Effect> effects { get; set; }
         public Equipment equipment { get; set; }
@@ -55,20 +85,15 @@ namespace Assets.GameClasses
         public int vitality { get; set; }
         public int dexterity { get; set; }
         public int wisdom { get; set; }
-        public int luck { get; set; }
         public int currentHP { get; set; }
         public int maxHP { get; set; }
         public int damage { get; set; }
-        public int defense { get; set; }
         public int currentMP { get; set; }
         public int maxMP { get; set; }
-        public int speed { get; set; }
         public int magicDef { get; set; }
         public int magicDmg { get; set; }
-        public int hitRate { get; set; }
-        public int critRate { get; set; }
-        public int dodgeRate { get; set; }
-        public int SkillPoints { get; set; }
+        */
+
         public Character()
         {
         }
@@ -92,7 +117,7 @@ namespace Assets.GameClasses
         public void addEffect(Effect effect)
         {
             var tempStats = baseStats;
-            effect.execute(ref tempStats);
+            effect.Execute(ref tempStats);
             baseStats = tempStats;
             effects.Add(effect);
         }
@@ -129,7 +154,7 @@ namespace Assets.GameClasses
         {
             int startExp = startExperience();
             int finishExp = experienceNeeded();
-            double percentComplete = ((double)(stats.Experience - startExp) / (finishExp - startExp) * 100);
+            double percentComplete = ((double)(BaseStats.Experience - startExp) / (finishExp - startExp) * 100);
             return Convert.ToInt32(percentComplete);
         }
 
@@ -138,6 +163,74 @@ namespace Assets.GameClasses
             throw new NotImplementedException();
         }
 
+        public List<PropertyInfo> GetJsonObjectParameters()
+        {
+            return GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).ToList();
+        }
+
+        public void SetJsonObjectParameters(Dictionary<string, object> parameters)
+        {
+            throw new NotImplementedException();
+        }
+
+        /*
+        public void BuildStats()
+        {
+            BaseStats = new Stats(
+                Str,
+                Agi,
+                Intl,
+                Vit,
+                Wis,
+                Dex,
+                Luck,
+                HitPoints,
+                Dmg,
+                MagicAttack,
+                Speed,
+                Defense,
+                MagicDefense,
+                HitRate,
+                DodgeRate,
+                CritRate);
+
+            CurrentStats = BaseStats;
+        }
+
+        public void BuildEquipment()
+        {
+            Func<int, Item> getItemFunc = x => GlobalConstants.ItemsMasterList.Single(item => item.ItemId == x);
+
+            Equipment = new Equipment(
+                    getItemFunc(Helm),
+                    getItemFunc(Chest),
+                    getItemFunc(Gloves),
+                    getItemFunc(Pants),
+                    getItemFunc(Shoulders),
+                    getItemFunc(Boots),
+                    getItemFunc(Accessory1),
+                    getItemFunc(Accessory2)
+                );
+        }
+
+        public List<Item> GetEquipedItems()
+        {
+            Func<int, Item> getItemFunc = x => GlobalConstants.ItemsMasterList.Single(item => item.ItemId == x);
+
+            return new List<Item>()
+            {
+                getItemFunc(Helm),
+                getItemFunc(Chest),
+                getItemFunc(Gloves),
+                getItemFunc(Pants),
+                getItemFunc(Shoulders),
+                getItemFunc(Boots),
+                getItemFunc(Accessory1),
+                getItemFunc(Accessory2)
+            };
+        }
+
+        */
 
         /*public async Task UpdateCharacterFromDb()
         {

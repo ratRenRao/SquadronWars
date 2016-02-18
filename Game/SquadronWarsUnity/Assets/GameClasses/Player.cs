@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using UnityEngine;
 
 //using SquadronWars2.Game.SquadronWarsUnity.Repo;
@@ -92,7 +94,46 @@ namespace Assets.GameClasses
 
         public string GetJsonObjectName()
         {
-            return GlobalConstants.PlayerJsonObjectName;
+            return "PlayerInfo";
+        }
+
+        public List<PropertyInfo> GetJsonObjectParameters()
+        {
+            return GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).ToList();
+        }
+
+        public void SetJsonObjectParameters(Dictionary<string, object> parameters)
+        {
+            throw new NotImplementedException();
+        }
+
+        public class Inventory
+        {
+            // Only contains data for the last added element.  Needs to be public for parameter reflection
+            public int ItemId { get; set; }
+            public int Quantity { get; set; }
+
+            private Dictionary<int, int> _inventoryDictionary;
+
+            public Inventory()
+            {
+                _inventoryDictionary = new Dictionary<int, int>();
+            }
+
+            public void Add(KeyValuePair<int, int> inventoryPair)
+            {
+                _inventoryDictionary.Add(inventoryPair.Key, inventoryPair.Value);
+            }
+
+            public Dictionary<int, int> GetInventoryData()
+            {
+                return _inventoryDictionary;
+            }
+
+            public int? GetItemQuantity(int itemId)
+            {
+                return _inventoryDictionary.Single(x => x.Key == itemId).Value;
+            }
         }
     }
 }

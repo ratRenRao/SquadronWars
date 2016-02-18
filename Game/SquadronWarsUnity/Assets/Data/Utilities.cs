@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Assets.Data;
 using Assets.GameClasses;
 using UnityEngine;
-using UnityEngine.Networking.NetworkSystem;
 
-namespace Assets.Utilities
+namespace Assets.Data
 {
     public class Utilities : MonoBehaviour
     {
@@ -16,7 +14,6 @@ namespace Assets.Utilities
         public JSONObject DeserializeData(string data)
         {
             var obj = new JSONObject(data);
-            Debug.Log("New Object = " + obj.Count);
             //var obj = JsonUtility.FromJson<object>(data);
             _jsonObject = obj;
             return obj;
@@ -58,13 +55,9 @@ namespace Assets.Utilities
             if (obj == null || obj.type == JSONObject.Type.NULL)
                 return null;
 
-            var objectAttributes =
-                type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).Select(x => x.Name)
-                    .ToList();
-
-            
-
-            Debug.Log("Post object attribute: " + objectAttributes.ToString());
+            var objectAttributes = GetParameterList(type);
+                //type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).Select(x => x.Name)
+                //.ToList();;
 
             switch (obj.type)
             {
@@ -73,26 +66,23 @@ namespace Assets.Utilities
 
                     foreach (var param in objectAttributes.AsEnumerable())
                     {
-                        Debug.Log("In param loop: " + param);
                         JSONObject j = null;
                         //var keyIndex = obj.keys.Where(key => key.ToLower().Equals(param.Name.ToLower())).ToList();
-                        var keyIndex = obj.keys.SingleOrDefault(key => key.ToLower().Equals(param.ToLower()));
+                        var keyIndex = obj.keys.SingleOrDefault(key => key.ToLower().Equals(param.Name.ToLower()));
 
                         // If json object isnt found in the subset, search all the json data for it 
                         if (keyIndex == null)
                         {
-                            j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.ToLower()));
+                            j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.Name.ToLower()));
 
-                            if(j != null)
-                                Debug.Log(j.ToString());
                         }
                         else
                             j = obj[keyIndex];
 
                         builder.GetType()
-                            .GetProperty(param)
+                            .GetProperty(param.Name)
                             .SetValue(builder, j != null 
-                                ? Decode(j, builder.GetType().GetProperty(param).PropertyType) 
+                                ? Decode(j, builder.GetType().GetProperty(param.Name).PropertyType) 
                                 : null,
                                 null);
                     }
@@ -129,6 +119,45 @@ namespace Assets.Utilities
             }
 
             return null;
+        }
+
+        public static List<PropertyInfo> GetParameterList(Type type)
+        {
+            switch (type.Name)
+            {
+                case "Character":
+                    return ParameterLists.CharacterParams;
+                case "CharacterData":
+                    return ParameterLists.CharacterDataParams;
+                case "Player":
+                    return ParameterLists.PlayerParams;
+                case "Item":
+                    return ParameterLists.ItemParams;
+                case "Ability":
+                    return ParameterLists.AbilityParams;
+                case "AbilityPreReq":
+                    return ParameterLists.AbilityPreReqParams;
+                case "InventoryElement":
+                    return ParameterLists.InventoryElementParams;
+                case "StartupData":
+                    return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static).ToList();
+                default:
+                    return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).ToList();
+            }            
+        }
+
+        public static class ParameterLists
+        {
+            static Func<Type, List<PropertyInfo>> buildParameterListFunc = (type) => type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).ToList();
+
+            public static List<PropertyInfo> CharacterParams = buildParameterListFunc(typeof (Character));
+            public static List<PropertyInfo> CharacterDataParams = buildParameterListFunc(typeof(StartupData.CharacterData));
+            public static List<PropertyInfo> PlayerParams = buildParameterListFunc(typeof(Player));
+            public static List<PropertyInfo> ItemParams = buildParameterListFunc(typeof(Item));
+            public static List<PropertyInfo> AbilityParams = buildParameterListFunc(typeof(Ability));
+            public static List<PropertyInfo> AbilityPreReqParams = buildParameterListFunc(typeof(AbilityPreReq));
+            public static List<PropertyInfo> InventoryElementParams = buildParameterListFunc(typeof(StartupData.InventoryElement));
+
         }
 
         private void ConvertList(ref List<object> list, Type type)
@@ -265,20 +294,17 @@ namespace Assets.Utilities
         public T MapJsonToObject<T>(ref T obj)
         {
             //var obj = new T(); 
-            var attributes =
-                obj.GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
+            var attributes = GetParameterList(typeof (T));
+                //obj.GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
 
             foreach (
                 var attribute in
                     attributes.Where(atr => _jsonObject.keys.Select(key => key.ToLower()).Contains(atr.Name.ToLower())))
             {
-                Debug.Log(attribute.Name);
                 if (attribute.PropertyType == typeof(int) || attribute.PropertyType == typeof(string) ||
                     attribute.PropertyType == typeof(bool))
                 {
                     var key = _jsonObject.keys.Single(k => k.ToLower() == attribute.Name.ToLower());
-
-                    Debug.Log(key);
 
                     obj.GetType()
                         .GetProperty(attribute.Name)
@@ -304,7 +330,6 @@ namespace Assets.Utilities
 
             for (var i = 0; i < jsonObject.list.Count; i++)
             {
-                //Debug.Log(item.ToString());
                 if (!jsonObject[i].IsNull)
                 {
                     if (jsonObject[i].IsObject || jsonObject[i].IsArray)
@@ -344,7 +369,6 @@ namespace Assets.Utilities
                 .Contains(key.ToLower())))
             {
                 parsedJson.Add(attributes.Single(attribute => attribute.Name.ToLower() == key.ToLower()).Name, jsonObject[key]);
-                Debug.Log(jsonObject[key]);
             }
 
             return parsedJson;

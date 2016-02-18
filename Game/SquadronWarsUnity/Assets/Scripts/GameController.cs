@@ -61,23 +61,20 @@ namespace Assets.Scripts
             //tarAnim.SetFloat("y", -1);
         }
 
-        public Stats GetBonusStats(Character character)
+        public void GetBonusStats(ref Character character)
         {
-            /*
-            foreach (Equipment equipment in character.equipment.Values)
-            {
-                character.alteredStats = character.alteredStats.concatStats(character.baseStats, equipment.stats);
-            }
-            */
-            return character.alteredStats;
             
+            foreach (var item in character.Equipment.GetItemList())
+            {
+                character.CurrentStats = character.CurrentStats.ConcatStats(character.BaseStats, item.Stats);
+            }
         }
 
         void Update()
         {
             if (!arraySet)
             {
-                PrepTest();                
+                //PrepTest();                
                 tileArray = tileMap.tileArray;
                 highlightSpawn();
                 arraySet = true;
@@ -294,14 +291,14 @@ namespace Assets.Scripts
             Tile[,] tileArray = tileMap.tileArray;
             clearHighlights(validMoves);
             //tileArray[1, 0].isObstructed = true;
-            Debug.Log(curGameCharacter.character.alteredStats.speed);
-            int move = curGameCharacter.character.alteredStats.speed;
+            Debug.Log(curGameCharacter.character.CurrentStats.Speed);
+            int move = curGameCharacter.character.CurrentStats.Speed;
             
             if (action == Action.IDLE)
             {                
                 validMoves = new List<Tile>();
                 //Create Bottom Move Tiles
-                for (int i = 1; i <= curGameCharacter.character.alteredStats.speed; i++)
+                for (int i = 1; i <= curGameCharacter.character.CurrentStats.Speed; i++)
                 {
 
                     if (tileY + i < tileArray.GetLength(1))
@@ -319,7 +316,7 @@ namespace Assets.Scripts
                     }
                 }
                 //Create Top Move Tiles
-                for (int i = 1; i <= curGameCharacter.character.alteredStats.speed; i++)
+                for (int i = 1; i <= curGameCharacter.character.CurrentStats.Speed; i++)
                 {
                     if (tileY - i >= 0)
                     {
@@ -334,7 +331,7 @@ namespace Assets.Scripts
                     }
                 }
                 //Create Left Move Tiles
-                for (int i = 1; i <= curGameCharacter.character.alteredStats.speed; i++)
+                for (int i = 1; i <= curGameCharacter.character.CurrentStats.Speed; i++)
                 {
                     if (tileX - i >= 0)
                     {
@@ -349,7 +346,7 @@ namespace Assets.Scripts
                     }
                 }
                 //Create Right Move Tiles
-                move = curGameCharacter.character.alteredStats.speed;
+                move = curGameCharacter.character.CurrentStats.Speed;
                 for (int i = 1; i <= move; i++)
                 {
                     if (tileX + i < tileArray.GetLength(0))
@@ -369,8 +366,8 @@ namespace Assets.Scripts
                     }
                 }
                 //Create Top Left Move Tiles
-                move = curGameCharacter.character.alteredStats.speed;
-                for (int i = 1; i < curGameCharacter.character.alteredStats.speed; i++)
+                move = curGameCharacter.character.CurrentStats.Speed;
+                for (int i = 1; i < curGameCharacter.character.CurrentStats.Speed; i++)
                 {
                     for (int j = 1; j < move; j++)
                     {
@@ -393,8 +390,8 @@ namespace Assets.Scripts
                     move--;
                 }
                 //Create Top Right Move Tiles
-                move = curGameCharacter.character.alteredStats.speed;
-                for (int i = 1; i < curGameCharacter.character.alteredStats.speed; i++)
+                move = curGameCharacter.character.CurrentStats.Speed;
+                for (int i = 1; i < curGameCharacter.character.CurrentStats.Speed; i++)
                 {
                     for (int j = 1; j < move; j++)
                     {
@@ -417,8 +414,8 @@ namespace Assets.Scripts
                     move--;
                 }
                 //Create Bottom Left Move Tiles
-                move = curGameCharacter.character.alteredStats.speed;
-                for (int i = 1; i < curGameCharacter.character.alteredStats.speed; i++)
+                move = curGameCharacter.character.CurrentStats.Speed;
+                for (int i = 1; i < curGameCharacter.character.CurrentStats.Speed; i++)
                 {
                     for (int j = 1; j < move; j++)
                     {
@@ -441,8 +438,8 @@ namespace Assets.Scripts
                     move--;
                 }
                 //Create Bottom Left Move Tiles
-                move = curGameCharacter.character.alteredStats.speed;
-                for (int i = 1; i < curGameCharacter.character.alteredStats.speed; i++)
+                move = curGameCharacter.character.CurrentStats.Speed;
+                for (int i = 1; i < curGameCharacter.character.CurrentStats.Speed; i++)
                 {
                     for (int j = 1; j < move; j++)
                     {
@@ -733,8 +730,8 @@ namespace Assets.Scripts
 
         int CalculateDamage()
         {
-            int dmg = curGameCharacter.character.alteredStats.damage;
-            int def = tarGameCharacter.character.alteredStats.defense;
+            int dmg = curGameCharacter.character.CurrentStats.Dmg;
+            int def = tarGameCharacter.character.CurrentStats.Defense;
             Debug.Log("Damage: " + dmg);
             Debug.Log("Def: " + def);
             return dmg - def;
@@ -756,8 +753,8 @@ namespace Assets.Scripts
 
             }
             int damage = CalculateDamage();
-            tarGameCharacter.character.alteredStats.currentHP -= damage;
-            Debug.Log(tarGameCharacter.character.alteredStats.currentHP);
+            tarGameCharacter.character.CurrentStats.HitPoints -= damage;
+            Debug.Log(tarGameCharacter.character.CurrentStats.HitPoints);
             hidePanel = false;
         }
         IEnumerator AttackAnimationNothing()
@@ -798,29 +795,30 @@ namespace Assets.Scripts
             hidePanel = false;
         }
 
+        /*
         private void PrepTest()
         {
             Dictionary<ItemType, Item> equipment = new Dictionary<ItemType, Item>
                 {
-                    {ItemType.HELM, GlobalConstants.ItemList["Cloth Helm"] },
-                    {ItemType.SHOULDERS, GlobalConstants.ItemList["Cloth Shoulders"] },
-                    {ItemType.CHEST, GlobalConstants.ItemList["Cloth Chest"] },
-                    {ItemType.GLOVES, GlobalConstants.ItemList["Cloth Gloves"] },
-                    {ItemType.LEGS, GlobalConstants.ItemList["Cloth Legs"] },
-                    {ItemType.BOOTS, GlobalConstants.ItemList["Cloth Boots"] },
+                    {ItemType.Helm, GlobalConstants.ItemList["Cloth Helm"] },
+                    {ItemType.Shoulders, GlobalConstants.ItemList["Cloth Shoulders"] },
+                    {ItemType.Chest, GlobalConstants.ItemList["Cloth Chest"] },
+                    {ItemType.Gloves, GlobalConstants.ItemList["Cloth Gloves"] },
+                    {ItemType.Legs, GlobalConstants.ItemList["Cloth Legs"] },
+                    {ItemType.Boots, GlobalConstants.ItemList["Cloth Boots"] },
                 };
             //screen = ScreenOrientation.Landscape;
             Stats stat1 = new Stats(5, 4, 6, 3, 2, 9, 5);
             Character character1 = new Character(1, stat1, 1, "Saint Lancelot", 1, 75, equipment);
-            character1.alteredStats = new Stats(0, 0, 0, 0, 0, 0, 0);
-            character1.alteredStats = GetBonusStats(character1);
-            character1.alteredStats.speed = 4;
+            character1.CurrentStats = new Stats(0, 0, 0, 0, 0, 0, 0);
+            character1.CurrentStats = GetBonusStats(character1);
+            character1.CurrentStats.Speed = 4;
             character1.spriteId = 1;
             Stats stat2 = new Stats(3, 3, 3, 4, 3, 3, 2);
             Character character2 = new Character(1, stat2, 1, "Ragthar", 1, 75, equipment);
-            character2.alteredStats = new Stats(0, 0, 0, 0, 0, 0, 0);
-            character2.alteredStats = GetBonusStats(character2);
-            character2.alteredStats.speed = 3;
+            character2.CurrentStats = new Stats(0, 0, 0, 0, 0, 0, 0);
+            character2.CurrentStats = GetBonusStats(character2);
+            character2.CurrentStats.Speed = 3;
             character2.spriteId = 2;
             GlobalConstants.matchCharacters.Add(character1);
             GlobalConstants.matchCharacters.Add(character2);
@@ -828,6 +826,7 @@ namespace Assets.Scripts
             placeCharacterPhase = true;
             
         }
+        */
 
         public void highlightSpawn()
         {
@@ -848,7 +847,7 @@ namespace Assets.Scripts
             tempTile.isOccupied = true;            
             tempTile.character = new GameCharacter(characters[unitPlacedCount], tempTile.x, tempTile.y);
             
-            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + characters[unitPlacedCount].spriteId), typeof(GameObject));
+            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + characters[unitPlacedCount].Sprite), typeof(GameObject));
             GameObject tempchar = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;
             tempchar.GetComponent<SpriteRenderer>().sortingOrder = 6 + (tempTile.y * 2);
             tempchar.transform.parent = tileMap.transform;
