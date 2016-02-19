@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using Assets.Data;
 using Assets.GameClasses;
 using UnityEngine;
 
@@ -6,9 +8,12 @@ namespace Assets.Scripts
 {
     public class CreateUnitList : MonoBehaviour
     {
-        public static GameObject SampleButton;
+        public GameObject SampleButton;
+        public CharacterGameObject temp;
         public List<Character> Characters;
+        public static List<CharacterGameObject> MatchCharacters { get; set; }
         public static Transform ContentPanel;
+
         // Use this for initialization
         void Start()
         {
@@ -18,30 +23,44 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-
+            if (GlobalConstants.CharacterLoadReady)
+            {
+                GlobalConstants.CharacterLoadReady = false;
+                PopulateList();
+            }
         }
 
-        public static void PopulateList()
+        public void PopulateList()
         {
             Debug.Log(GlobalConstants.Player.Characters[0]);
             foreach (Character character in GlobalConstants.Player.Characters)
             {
                 character.CurrentStats = GetBonusStats(character);
-                GameObject newButton = Instantiate(SampleButton);
+                GameObject newButton = Instantiate(SampleButton) as GameObject;
                 SampleButton tempButton = newButton.GetComponent<SampleButton>();
                 tempButton.nameLabel.text = character.Name;
                 tempButton.character = character;
                 newButton.transform.SetParent(ContentPanel, false);
-
             }
 
+            BuildCharacterGameObjects();
         }
+
+        public static void BuildCharacterGameObjects()
+        {
+            foreach (var character in GlobalConstants.Player.Characters)
+                MatchCharacters.Add(new CharacterGameObject(character, 0, 0));
+
+            GlobalConstants.MatchCharacters = MatchCharacters;
+        }
+
 
         public static Stats GetBonusStats(Character character)
         {
             foreach (var item in character.Equipment.GetItemList())
             {
-                character.CurrentStats = character.CurrentStats.ConcatStats(character.CurrentStats, item.Stats);
+                if(item != null)
+                    character.CurrentStats = character.CurrentStats.ConcatStats(character.CurrentStats, item.Stats);
             }
             return character.CurrentStats;
         }

@@ -14,7 +14,6 @@ namespace Assets.Data
         public static List<CharacterData> Characters { get; set; }
         public static List<Ability> Abilities { get; set; }
         public static List<AbilityPreReq> AbilityPreReqs { get; set; }
-        public static List<CharacterGameObject> MatchCharacters { get; set; }
         public static List<Item> Items { get; set; }
 
         private Player.Inventory _inventory { get; set; }
@@ -28,12 +27,12 @@ namespace Assets.Data
         {
             PopulateGlobalConstants();
 
-            // Fix this hack. Probably and issue w/ being populated in Utilities.BuildObject
-            Player = new Player();
+            // Fix this hack. Probably an issue w/ being populated in Utilities.BuildObject
+            Player.Characters = new List<Character>(); 
 
             BuildCharacterObjects();
             GlobalConstants.Player = Player;
-            CreateUnitList.PopulateList();
+            GlobalConstants.CharacterLoadReady = true;
         }
 
         public static void PopulateGlobalConstants()
@@ -41,18 +40,12 @@ namespace Assets.Data
             GlobalConstants.AbilityPreReqs = AbilityPreReqs;
             GlobalConstants.ItemsMasterList = Items;
             GlobalConstants.AbilityMasterList = Abilities;
-            GlobalConstants.MatchCharacters = MatchCharacters;
-        }
-
-        public static void BuildCharacterGameObjects(Character character)
-        {
-            //foreach (var character in GlobalConstants.Player.Characters)
-                MatchCharacters.Add(new CharacterGameObject(character, 0, 0));
         }
 
         public static void BuildCharacterObjects()
         {
-            foreach (var character in Characters)
+            var tempCharacterData = Characters;
+            foreach (var character in tempCharacterData)
             {
                 var characterBuilder = new Character();
                 foreach (var property in  Utilities.GetParameterList(typeof(Character))
@@ -67,7 +60,6 @@ namespace Assets.Data
                 characterBuilder.Equipment = character.BuildEquipment();
                 characterBuilder.Abilities = Abilities.Where(ability => ability.CharacterId == character.CharacterId).ToList();
 
-                BuildCharacterGameObjects(characterBuilder);
                 Player.Characters.Add(characterBuilder);
             }
         }

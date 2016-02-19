@@ -85,6 +85,10 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &18327390 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 163718, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
+  m_PrefabInternal: {fileID: 1024292545}
 --- !u!1 &20844263
 GameObject:
   m_ObjectHideFlags: 0
@@ -5538,7 +5542,6 @@ GameObject:
   - 222: {fileID: 469225612}
   - 114: {fileID: 469225611}
   - 114: {fileID: 469225610}
-  - 114: {fileID: 469225614}
   m_Layer: 5
   m_Name: ScrollView
   m_TagString: Untagged
@@ -5645,19 +5648,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &469225614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 469225608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07342e9b594bb284c8baef76a56df22d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SampleButton: {fileID: 0}
-  ContentPanel: {fileID: 0}
 --- !u!1 &469236023
 GameObject:
   m_ObjectHideFlags: 0
@@ -10300,8 +10290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07342e9b594bb284c8baef76a56df22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SampleButton: {fileID: 0}
-  ContentPanel: {fileID: 0}
+  SampleButton: {fileID: 18327390}
+  temp: {fileID: 0}
 --- !u!4 &844143459
 Transform:
   m_ObjectHideFlags: 0
