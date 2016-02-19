@@ -5,40 +5,42 @@ using UnityEngine.UI;
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class SampleButton : MonoBehaviour
 {
 
     public Button button;
-    public Character character;
+    public CharacterGameObject character;
     public Text nameLabel;
     public CharacterScreen menuStats;
 
     public void BuildCharacterScreen()
     {        
-        GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
-        GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
-        SampleButton button = gameObject.GetComponent<SampleButton>();
-        MenuManager menu = menuManager.GetComponent<MenuManager>();
-        CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
-        GameObject temp = (GameObject)Resources.Load(("Prefabs/Character1"), typeof(GameObject));
-        SpriteRenderer sprite = temp.GetComponent<SpriteRenderer>();
-        //   Stats baseStats = character.baseStats;
+        var menuManager = GameObject.FindGameObjectWithTag("MenuManager");
+        var statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
+        var button = gameObject.GetComponent<SampleButton>();
+        var menu = menuManager.GetComponent<MenuManager>();
+        var stats = statsManager.GetComponent<CharacterScreen>();
+        var temp = (GameObject)Resources.Load(("Prefabs/Character1"), typeof(GameObject));
+        var sprite = temp.GetComponent<SpriteRenderer>();
+
         stats.sampleButton = button;
-        menu.squadScreenPanel.SetActive(false);
-        menu.characterScreenPanel.SetActive(true);
+        menu.SquadScreenPanel.SetActive(false);
+        menu.CharacterScreenPanel.SetActive(true);
         stats.characterSprite.sprite = sprite.sprite;
-        stats.characterName.text = character.Name;
+        stats.characterName.text = character.CharacterClassObject.Name;
         
-        UpdateStats(character);
-        stats.levelStat.text = character.LevelId.ToString();
-        int expToNextLevel = character.experienceNeeded();
-     //   int startExp = character.startExperience();
-        stats.experienceStat.text = string.Format("{0} / {1}", character.BaseStats.Experience.ToString(), expToNextLevel.ToString());
-        int progBar = character.percentToNextLevel();
+        UpdateStats(character.CharacterClassObject);
+
+        stats.levelStat.text = character.CharacterClassObject.ToString();
+        int expToNextLevel = character.CharacterClassObject.ExperienceNeeded();
+     //   int startExp = character.CharacterClassObject.startExperience();
+        stats.experienceStat.text = string.Format("{0} / {1}", character.CharacterClassObject.BaseStats.Experience.ToString(), expToNextLevel.ToString());
+        int progBar = character.CharacterClassObject.PercentToNextLevel();
         stats.ProgressBar.value = progBar;
-        //Debug.Log(character.equipment[ItemType.HELM].name);
-        Debug.Log(character.BaseStats.Intl);
+        //Debug.Log(character.CharacterClassObject.equipment[ItemType.HELM].name);
+        Debug.Log(character.CharacterClassObject.BaseStats.Intl);
       //  BuildDropdowns(stats);
       //  EvaluateSkills();
     }
@@ -50,34 +52,34 @@ public class SampleButton : MonoBehaviour
      //   SampleButton button = gameObject.GetComponent<SampleButton>();
      //   MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
-        character = stats.sampleButton.character;
+        character.CharacterClassObject = stats.sampleButton.character.CharacterClassObject;
         string itemName = labelText.text;
-        Equipment equipment = character.Equipment; 
+        Equipment equipment = character.CharacterClassObject.Equipment; 
         Equipment prevItem = null;
-        /*
-        foreach (var item in equipment.GetEquipmentItems())
+
+        foreach (var item in equipment.GetItemList())
         {
-            if (item.itemType == item.itemType)
+            /*
+            if (item.ItemType == item.ItemType)
             {
                 prevItem = charEquipment;
                 break;
             }
-            character.alteredStats = item.stats.removeAlteredStats(character.alteredStats, prevItem.stats);
-            character.alteredStats = item.stats.concatStats(character.alteredStats, item.stats);
-            character.equipment. = item;
-            UpdateStats(character);
+            */
+            character.CharacterClassObject.BaseStats = item.Stats.RemoveAlteredStats(character.CharacterClassObject.CurrentStats, item.Stats);
+            character.CharacterClassObject.BaseStats = item.Stats.ConcatStats(character.CharacterClassObject.CurrentStats, item.Stats);
+            UpdateStats(character.CharacterClassObject);
         }
-        */
     }
 
     public void UpdateStats(Character character)
     {
-        GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
+        var statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
      //   SampleButton button = gameObject.GetComponent<SampleButton>();
-        CharacterScreen menuStats = statsManager.GetComponent<CharacterScreen>();
-        Stats stats = character.BaseStats;
-        Stats bonusStats = character.CurrentStats;
-        Stats concatStats = stats.ConcatStats(character.BaseStats, character.CurrentStats);
+        var menuStats = statsManager.GetComponent<CharacterScreen>();
+        var stats = character.BaseStats;
+        var bonusStats = character.CurrentStats;
+        var concatStats = stats.ConcatStats(character.BaseStats, character.CurrentStats);
         menuStats.strengthStat.text = formatStats(stats.Str, bonusStats.Str);
         menuStats.agilityStat.text = formatStats(stats.Agi, bonusStats.Agi);
         menuStats.intelligenceStat.text = formatStats(stats.Intl, bonusStats.Intl);
@@ -112,47 +114,46 @@ public class SampleButton : MonoBehaviour
         }
     }
 
-    /*
     public void incrementStat(string stat)
     {
      //   GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
-        GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
+        var statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
      //   SampleButton button = gameObject.GetComponent<SampleButton>();
      //   MenuManager menu = menuManager.GetComponent<MenuManager>();
-        CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
-        character = stats.sampleButton.character;
-        if (character.StatPoints > 0)
+        var stats = statsManager.GetComponent<CharacterScreen>();
+        character.CharacterClassObject = stats.sampleButton.character.CharacterClassObject;
+        if (character.CharacterClassObject.BaseStats.StatPoints > 0)
         {
             if (stat.Equals("strength"))
             {
-                character.BaseStats.strength++;                
+                character.CharacterClassObject.BaseStats.Str++;                
             }
             if (stat.Equals("agility"))
             {
-                character.BaseStats.agility++;
+                character.CharacterClassObject.BaseStats.Agi++;
             }
             if (stat.Equals("intelligence"))
             {
-                character.BaseStats.intelligence++;
+                character.CharacterClassObject.BaseStats.Intl++;
             }
             if (stat.Equals("vitality"))
             {
-                character.BaseStats.vitality++;
+                character.CharacterClassObject.BaseStats.Vit++;
             }
             if (stat.Equals("dexterity"))
             {
-                character.BaseStats.dexterity++;
+                character.CharacterClassObject.BaseStats.Dex++;
             }
             if (stat.Equals("wisdom"))
             {
-                character.BaseStats.wisdom++;
+                character.CharacterClassObject.BaseStats.Wis++;
             }
             if (stat.Equals("luck"))
             {
-                character.BaseStats.luck++;
+                character.CharacterClassObject.BaseStats.Luck++;
             }
-            character.StatPoints--;
-            UpdateStats(character);
+            character.CharacterClassObject.BaseStats.StatPoints--;
+            UpdateStats(character.CharacterClassObject);
 
         }
     }
@@ -165,29 +166,29 @@ public class SampleButton : MonoBehaviour
         dropdowns.glovesSlot.options.Clear();
         dropdowns.legsSlot.options.Clear();
         dropdowns.bootsSlot.options.Clear();
-        foreach(Item item in GlobalConstants.ItemList.Values)
+        foreach(Item item in GlobalConstants.ItemsMasterList)
         {
-            if (item.itemType == ItemType.Helm)
+            if (item.ItemType == ItemType.Helm)
             {
                 dropdowns.helmSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.Shoulders)
+            else if (item.ItemType == ItemType.Shoulders)
             {
                 dropdowns.shoulderSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.Chest)
+            else if (item.ItemType == ItemType.Chest)
             {
                 dropdowns.chestSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.Legs)
+            else if (item.ItemType == ItemType.Legs)
             {
                 dropdowns.legsSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.Gloves)
+            else if (item.ItemType == ItemType.Gloves)
             {
                 dropdowns.glovesSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.Boots)
+            else if (item.ItemType == ItemType.Boots)
             {
                 dropdowns.bootsSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
@@ -196,13 +197,13 @@ public class SampleButton : MonoBehaviour
 
             }
         }
-        Debug.Log(character.equipment[ItemType.HELM].name);
-        dropdowns.helmSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.HELM].name;
-        dropdowns.shoulderSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.SHOULDERS].name;
-        dropdowns.chestSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.CHEST].name;
-        dropdowns.glovesSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.GLOVES].name;
-        dropdowns.legsSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.LEGS].name;
-        dropdowns.bootsSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.BOOTS].name;
+        Debug.Log(character.CharacterClassObject.Equipment.Helm.Name);
+        dropdowns.helmSlot.GetComponentsInChildren<Text>()[0].text = character.CharacterClassObject.Equipment.Helm.Name;
+        dropdowns.shoulderSlot.GetComponentsInChildren<Text>()[0].text = character.CharacterClassObject.Equipment.Shoulders.Name;
+        dropdowns.chestSlot.GetComponentsInChildren<Text>()[0].text = character.CharacterClassObject.Equipment.Chest.Name;
+        dropdowns.glovesSlot.GetComponentsInChildren<Text>()[0].text = character.CharacterClassObject.Equipment.Gloves.Name;
+        dropdowns.legsSlot.GetComponentsInChildren<Text>()[0].text = character.CharacterClassObject.Equipment.Pants.Name;
+        dropdowns.bootsSlot.GetComponentsInChildren<Text>()[0].text = character.CharacterClassObject.Equipment.Boots.Name;
     }
 
     public void LevelSkill(string skill)
@@ -212,35 +213,36 @@ public class SampleButton : MonoBehaviour
     //    SampleButton button = gameObject.GetComponent<SampleButton>();
     //    MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
-        character = stats.sampleButton.character;
-        if (character.SkillPoints > 0)
+        character.CharacterClassObject = stats.sampleButton.character.CharacterClassObject;
+        if (character.CharacterClassObject.BaseStats.SkillPoints > 0)
         {
-            if (character.skillList.ContainsKey(skill))
+            var ability = character.CharacterClassObject.Abilities.SingleOrDefault(x => x.Name == skill);
+            if (ability != null)
             {
-                character.skillList[skill]++;
+                character.CharacterClassObject.Abilities.Single(x => x.Name == skill).AbilityLevel++;
             }
             else
             {
-                character.skillList.Add(skill, 1);
+                character.CharacterClassObject.Abilities.Add(GlobalConstants.AbilityMasterList.Single(x => x.Name == skill));
             }
             if (skill.Equals("fire"))
             {                                
-                stats.fireLvl.text = "L" + character.skillList[skill];
+                stats.fireLvl.text = "L" + ability.AbilityLevel;
             }
             if (skill.Equals("cure"))
             {
-                stats.cureLvl.text = "L" + character.skillList[skill];
+                stats.cureLvl.text = "L" + ability.AbilityLevel;
             }
             if (skill.Equals("focus"))
             {
-                stats.focusLvl.text = "L" + character.skillList[skill];
+                stats.focusLvl.text = "L" + ability.AbilityLevel;
             }
             if (skill.Equals("bash"))
             {
-                stats.bashLvl.text = "L" + character.skillList[skill];
+                stats.bashLvl.text = "L" + ability.AbilityLevel;
             }
-            character.SkillPoints--;
-            UpdateStats(character);
+            character.CharacterClassObject.BaseStats.SkillPoints--;
+            UpdateStats(character.CharacterClassObject);
 
         }
     }
@@ -252,36 +254,41 @@ public class SampleButton : MonoBehaviour
      //   SampleButton button = gameObject.GetComponent<SampleButton>();
      //   MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
-        character = stats.sampleButton.character;
-        if (character.skillList.ContainsKey("fire")){
-            stats.fireLvl.text = "L" + character.skillList["fire"].ToString();
-        }
-        else {
-            stats.fireLvl.text = "";
-        }
-        if (character.skillList.ContainsKey("bash"))
+        character.CharacterClassObject = stats.sampleButton.character.CharacterClassObject;
+        foreach (var ability in character.CharacterClassObject.Abilities)
         {
-            stats.bashLvl.text = "L" + character.skillList["bash"].ToString();
-        }
-        else
-        {
-            stats.bashLvl.text = "";
-        }
-        if (character.skillList.ContainsKey("cure"))
-        {
-            stats.cureLvl.text = "L" + character.skillList["cure"].ToString();
-        }
-        else
-        {
-            stats.cureLvl.text = "";
-        }
-        if (character.skillList.ContainsKey("focus"))
-        {
-            stats.focusLvl.text = "L" + character.skillList["focus"].ToString();
-        }
-        else
-        {
-            stats.focusLvl.text = "";
+            if (ability.Name == "fire")
+            {
+                stats.fireLvl.text = "L" + ability.AbilityLevel;
+            }
+            else
+            {
+                stats.fireLvl.text = "";
+            }
+            if (ability.Name == "bash")
+            {
+                stats.bashLvl.text = "L" + ability.AbilityLevel;
+            }
+            else
+            {
+                stats.bashLvl.text = "";
+            }
+            if (ability.Name == "cure")
+            {
+                stats.cureLvl.text = "L" + ability.AbilityLevel;
+            }
+            else
+            {
+                stats.cureLvl.text = "";
+            }
+            if (ability.Name == "focus")
+            {
+                stats.focusLvl.text = "L" + ability.AbilityLevel;
+            }
+            else
+            {
+                stats.focusLvl.text = "";
+            }
         }
         stats.hasteLvl.text = "";
         stats.regenLvl.text = "";
@@ -292,5 +299,4 @@ public class SampleButton : MonoBehaviour
         stats.chargeLvl.text = "";
         stats.doubleAttackLvl.text = "";
     }
-    */
 }

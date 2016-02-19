@@ -9,10 +9,11 @@ namespace Assets.Scripts
     public class CreateUnitList : MonoBehaviour
     {
         public GameObject SampleButton;
+        public GameObject MatchCharacters;
         public CharacterGameObject temp;
         public List<Character> Characters;
-        public static List<CharacterGameObject> MatchCharacters { get; set; }
-        public static Transform ContentPanel;
+        //public List<CharacterGameObject> MatchCharacters { get; set; }
+        public Transform ContentPanel;
 
         // Use this for initialization
         void Start()
@@ -32,26 +33,31 @@ namespace Assets.Scripts
 
         public void PopulateList()
         {
-            Debug.Log(GlobalConstants.Player.Characters[0]);
-            foreach (Character character in GlobalConstants.Player.Characters)
+            Debug.Log(GlobalConstants.Player.Characters[0].Name);
+
+            foreach (var character in GlobalConstants.Player.Characters)
             {
                 character.CurrentStats = GetBonusStats(character);
-                GameObject newButton = Instantiate(SampleButton) as GameObject;
-                SampleButton tempButton = newButton.GetComponent<SampleButton>();
-                tempButton.nameLabel.text = character.Name;
+                GlobalConstants.MatchCharacters.Add(new CharacterGameObject(character));
+                //BuildCharacterGameObject(character);
+            }
+
+            foreach (var character in GlobalConstants.MatchCharacters)
+            {
+                var newButton = Instantiate(SampleButton);
+                var tempButton = newButton.GetComponent<SampleButton>();
+                tempButton.nameLabel.text = character.CharacterClassObject.Name;
                 tempButton.character = character;
                 newButton.transform.SetParent(ContentPanel, false);
             }
-
-            BuildCharacterGameObjects();
         }
 
-        public static void BuildCharacterGameObjects()
+        public void BuildCharacterGameObject(Character character)
         {
-            foreach (var character in GlobalConstants.Player.Characters)
-                MatchCharacters.Add(new CharacterGameObject(character, 0, 0));
-
-            GlobalConstants.MatchCharacters = MatchCharacters;
+                var tempGameObject = new GameObject();
+                tempGameObject.AddComponent<CharacterGameObject>();
+                tempGameObject.GetComponent<CharacterGameObject>().SetValues(0, 0, character);
+                GlobalConstants.MatchCharacters.Add(tempGameObject.GetComponent<CharacterGameObject>());
         }
 
 

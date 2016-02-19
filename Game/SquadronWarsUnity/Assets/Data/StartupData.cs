@@ -16,6 +16,7 @@ namespace Assets.Data
         public static List<AbilityPreReq> AbilityPreReqs { get; set; }
         public static List<Item> Items { get; set; }
 
+
         private Player.Inventory _inventory { get; set; }
 
         public string GetJsonObjectName()

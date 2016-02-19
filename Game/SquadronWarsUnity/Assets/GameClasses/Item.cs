@@ -46,6 +46,7 @@ namespace Assets.GameClasses
         public int DodgeRate { get; set; }
         public int Luck { get; set; }
         public Stats Stats = new Stats();
+        public ItemType ItemType;
 
 
         /*

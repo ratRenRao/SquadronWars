@@ -458,7 +458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4915c476c5d2c0f4b8df3109d6f950eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuManager: {fileID: 939439823}
+  HomeScreen: {fileID: 915128700}
+  LoginScreen: {fileID: 38449024}
 --- !u!1 &46087905
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,6 +805,38 @@ Prefab:
       propertyPath: registerPanel
       value: 
       objectReference: {fileID: 2086386241}
+    - target: {fileID: 11460982, guid: 620a4ada05855a8438a83c99de04cc27, type: 2}
+      propertyPath: LoginPanel
+      value: 
+      objectReference: {fileID: 38449024}
+    - target: {fileID: 11460982, guid: 620a4ada05855a8438a83c99de04cc27, type: 2}
+      propertyPath: HomePanel
+      value: 
+      objectReference: {fileID: 237818262}
+    - target: {fileID: 11460982, guid: 620a4ada05855a8438a83c99de04cc27, type: 2}
+      propertyPath: RegisterPanel
+      value: 
+      objectReference: {fileID: 2086386241}
+    - target: {fileID: 11460982, guid: 620a4ada05855a8438a83c99de04cc27, type: 2}
+      propertyPath: MainMenuPanel
+      value: 
+      objectReference: {fileID: 915128700}
+    - target: {fileID: 11460982, guid: 620a4ada05855a8438a83c99de04cc27, type: 2}
+      propertyPath: SquadPanel
+      value: 
+      objectReference: {fileID: 1573321188}
+    - target: {fileID: 11460982, guid: 620a4ada05855a8438a83c99de04cc27, type: 2}
+      propertyPath: SquadScreenPanel
+      value: 
+      objectReference: {fileID: 738015285}
+    - target: {fileID: 11460982, guid: 620a4ada05855a8438a83c99de04cc27, type: 2}
+      propertyPath: CharacterScreenPanel
+      value: 
+      objectReference: {fileID: 1572668507}
+    - target: {fileID: 11460982, guid: 620a4ada05855a8438a83c99de04cc27, type: 2}
+      propertyPath: ShopPanel
+      value: 
+      objectReference: {fileID: 1860525541}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 620a4ada05855a8438a83c99de04cc27, type: 2}
   m_IsPrefabParent: 0
@@ -2959,7 +2992,7 @@ GameObject:
   - 114: {fileID: 237818264}
   m_Layer: 5
   m_Name: HomePanel
-  m_TagString: MenuPanel
+  m_TagString: HomePanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4031,6 +4064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
+  character: {fileID: 0}
   nameLabel: {fileID: 0}
   menuStats: {fileID: 0}
 --- !u!1 &287826050
@@ -10261,6 +10295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
+  character: {fileID: 0}
   nameLabel: {fileID: 0}
   menuStats: {fileID: 0}
 --- !u!1 &844143457
@@ -10291,7 +10326,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SampleButton: {fileID: 18327390}
+  MatchCharacters: {fileID: 0}
   temp: {fileID: 0}
+  ContentPanel: {fileID: 1916724121}
 --- !u!4 &844143459
 Transform:
   m_ObjectHideFlags: 0
@@ -12214,18 +12251,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65de61b1e202e274faeeb2520033991a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuID: 0
-  menuPanels: []
-  loginPanel: {fileID: 38449024}
-  mainMenuPanel: {fileID: 915128700}
-  registerPanel: {fileID: 2086386241}
-  homePanel: {fileID: 237818262}
-  squadPanel: {fileID: 1573321188}
-  squadScreenPanel: {fileID: 738015285}
-  characterList: {fileID: 1916724120}
-  characterScreenPanel: {fileID: 1572668507}
-  shopPanel: {fileID: 1860525541}
-  shop: {fileID: 282753299}
+  MenuId: 0
+  MenuPanels: []
+  LoginPanel: {fileID: 38449024}
+  MainMenuPanel: {fileID: 915128700}
+  RegisterPanel: {fileID: 2086386241}
+  HomePanel: {fileID: 237818262}
+  SquadPanel: {fileID: 1573321188}
+  SquadScreenPanel: {fileID: 738015285}
+  CharacterList: {fileID: 0}
+  CharacterScreenPanel: {fileID: 1572668507}
+  ShopPanel: {fileID: 1860525541}
+  Shop: {fileID: 0}
 --- !u!1 &939515066
 GameObject:
   m_ObjectHideFlags: 0
