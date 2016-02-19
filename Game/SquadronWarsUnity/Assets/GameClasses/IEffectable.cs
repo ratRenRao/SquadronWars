@@ -2,9 +2,9 @@ namespace Assets.GameClasses
 {
     public interface IEffectable
     {
-        void execute(ref Stats charStats);
-        void immediateEffect(ref Stats charStat);
-        void removeEffect(ref Stats charStat);
-        void lingeringEffect(ref Stats charStats);
+        void Execute(ref Stats characterStats);
+        void ImmediateEffect(ref Stats characterStats);
+        void RemoveEffect(ref Stats characterStats);
+        void LingeringEffect(ref Stats characterStats);
     }
 }

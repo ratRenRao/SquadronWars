@@ -3,19 +3,19 @@ namespace Assets.GameClasses
 
     class Burn : Effect, IEffectable
     {
-        private int burnDamage;
+        private int _burnDamage;
 
-        public Burn(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration)
+        public Burn(Stats caster, Stats target, bool hasInitialEffect, int duration)
         {
-            this.targetStats = targetStats;
-            this.casterStats = casterStats;
-            this.hasInitialEffect = hasInitialEffect;
-            this.duration = duration;
+            Target = target;
+            Caster = caster;
+            HasInitialEffect = hasInitialEffect;
+            Duration = duration;
         }
 
-        public override void lingeringEffect()
+        public override void LingeringEffect()
         {
-            targetStats.currentHP -= burnDamage;
+            Target.HitPoints -= _burnDamage;
         }
     }
 }

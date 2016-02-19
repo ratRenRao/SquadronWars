@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 //using SquadronWars2.Game.SquadronWarsUnity.Repo;
@@ -10,9 +11,9 @@ namespace Assets.GameClasses
     {
         //DBConnection dbConnection = new DBConnection();
 
-        public int squadId { get; set; }
-        public string squadDetails { get; set; }
-        public List<Character> characterList { get; set; }
+        public int SquadId { get; set; }
+        public string SquadDetails { get; set; }
+        public List<Character> CharacterList { get; set; }
 
         public Squad() {}
         /*
@@ -32,14 +33,24 @@ namespace Assets.GameClasses
         public string GetJsonObjectName()
         {
             //return GlobalConstants.SquadJsonObjectName;
-            return "";
+            return "Squad";
+        }
+
+        public List<PropertyInfo> GetJsonObjectParameters()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void SetJsonObjectParameters(Dictionary<string, object> parameters)
+        {
+            throw new System.NotImplementedException();
         }
 
         #region IEnumerable<T> Members
 
         public IEnumerator<Character> GetEnumerator()
         {
-            foreach (Character c in characterList)
+            foreach (Character c in CharacterList)
             {
                if (c == null) 
                    break;

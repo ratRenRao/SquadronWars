@@ -7,7 +7,7 @@ namespace Assets.Scripts
     {
         public GameObject highlight;
         public GameObject characterObject;
-        public GameCharacter character;
+        public CharacterGameObject character;
         //public GameCharacter gameCharacter;
         public int x { get; set; }
         public int y { get; set; }

@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Web v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>WebPlayer:6</UnityBuildTarget>
     <UnityVersion>5.3.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -63,8 +65,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Data\DbConnection.cs" />
+    <Compile Include="Assets\Data\DBConnection.cs" />
     <Compile Include="Assets\Data\StartupData.cs" />
+    <Compile Include="Assets\Data\Utilities.cs" />
     <Compile Include="Assets\GameClasses\Ability.cs" />
     <Compile Include="Assets\GameClasses\Burn.cs" />
     <Compile Include="Assets\GameClasses\Character.cs" />
@@ -72,7 +75,6 @@
     <Compile Include="Assets\GameClasses\Effect.cs" />
     <Compile Include="Assets\GameClasses\Equipment.cs" />
     <Compile Include="Assets\GameClasses\Fireball.cs" />
-    <Compile Include="Assets\GameClasses\GeneralItems.cs" />
     <Compile Include="Assets\GameClasses\GlobalConstants.cs" />
     <Compile Include="Assets\GameClasses\Heal.cs" />
     <Compile Include="Assets\GameClasses\IEffectable.cs" />
@@ -81,21 +83,27 @@
     <Compile Include="Assets\GameClasses\Item.cs" />
     <Compile Include="Assets\GameClasses\Player.cs" />
     <Compile Include="Assets\GameClasses\PlayerGameObject.cs" />
+    <Compile Include="Assets\GameClasses\RegistrationData.cs" />
     <Compile Include="Assets\GameClasses\Squad.cs" />
     <Compile Include="Assets\GameClasses\Stats.cs" />
     <Compile Include="Assets\GameClasses\Weaken.cs" />
     <Compile Include="Assets\JSON\JSONObject.cs" />
     <Compile Include="Assets\JSON\JSONTemplates.cs" />
     <Compile Include="Assets\JSON\VectorTemplates.cs" />
+    <Compile Include="Assets\ProLoading\Example\Script\bl_Test.cs" />
+    <Compile Include="Assets\ProLoading\Script\Internal\PlaceEnum.cs" />
+    <Compile Include="Assets\ProLoading\Script\bl_Loading.cs" />
     <Compile Include="Assets\Scripts\AutoDestroy.cs" />
     <Compile Include="Assets\Scripts\CanvasManager.cs" />
     <Compile Include="Assets\Scripts\CharacterScreen.cs" />
+    <Compile Include="Assets\Scripts\CharacterStatsPanel.cs" />
     <Compile Include="Assets\Scripts\CreateUnitList.cs" />
     <Compile Include="Assets\Scripts\GameCharacter.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\LoginButton.cs" />
     <Compile Include="Assets\Scripts\LoginScreenManager.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\RegisterButton.cs" />
     <Compile Include="Assets\Scripts\SampleButton.cs" />
     <Compile Include="Assets\Scripts\SetLoginPassword.cs" />
     <Compile Include="Assets\Scripts\SetLoginUsername.cs" />
@@ -106,10 +114,13 @@
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledInitialShaderProperties.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
-    <Compile Include="Assets\Utilities\Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\JSON\readme.txt" />
+    <None Include="Assets\ProLoading\Example\Present\BottonLeft.txt" />
+    <None Include="Assets\ProLoading\Example\Present\BottonRight.txt" />
+    <None Include="Assets\ProLoading\Example\Present\TopRight.txt" />
+    <None Include="Assets\ProLoading\ReadMe!.txt" />
     <None Include="Assets\Tiled2Unity\Imported\BattleMapDesert.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\BattleMapForest.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\BattleMapLava.tiled2unity.xml" />
@@ -123,7 +134,6 @@
     <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
     <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
     <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
-    <None Include="Assets\TiledMaps\rules.txt" />
     <None Include="Assets\obj\Debug\SquadronWars.csproj.FileListAbsolute.txt" />
     <None Include="Assets\obj\x86\Debug\SquadronWars.csproj.FileListAbsolute.txt" />
   </ItemGroup>

@@ -1,20 +1,18 @@
 ﻿using Assets.Data;
 using Assets.GameClasses;
 using UnityEngine;
-using Object = System.Object;
 
 namespace Assets.Scripts
 {
     public class LoginScreenManager : MonoBehaviour
     {
-
         public string Username { get; set; }
         public string Password { get; set; }
         private static DbConnection _dbConnection;
         private StartupData _startupData {get; set; }
         private Player _player { get; set; }
         private static Player.Logins _logins = new Player.Logins();
-
+        public GameObject MenuManager;
         // Use this for initialization
         void Start()
         {
@@ -38,20 +36,19 @@ namespace Assets.Scripts
             SetLoginInfo();
             GetDbData();
 
-            if (_startupData.Player == null)
+            if (_startupData == null)
+            {
                 // Change to display error message
                 Debug.Log("Invalid Credentials");
-           // else
-           //     StartupData.PopulateObjects();
-
-            _player = _startupData.Player;
-            Debug.Log(_player.ToString());
-
-            if (_startupData.Player != null)
-            {
-                CanvasManager.LoginScreen.SetActive(false);
-                CanvasManager.MenuScreen.SetActive(true);
+                return;
             }
+            
+            StartupData.BuildAndDistributeData();
+
+            _player = GlobalConstants.Player;
+
+            MenuManager.GetComponent<MenuManager>().loginPanel.SetActive(false);
+            MenuManager.GetComponent<MenuManager>().homePanel.SetActive(true);
         }
 
         private void GetDbData()

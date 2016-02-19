@@ -1,54 +1,96 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Reflection;
 using Assets.GameClasses;
+using Assets.Scripts;
 
 namespace Assets.Data
 {
     class StartupData : IJsonable
     {
-        public Player Player { get; set; }
-        public List<CharacterData> Characters { get; set; }
-        public List<AbilityData> CharacterAbilities { get; set; }
-        public List<InventoryData> Inventory { get; set; }
-        public List<EquipmentData> Equipment { get; set; }
-        public List<ItemData> Items { get; set; }
+        public static Player Player { get; set; }
+        public List<InventoryElement> Inventory { get; set; }
+        public static List<CharacterData> Characters { get; set; }
+        public static List<Ability> Abilities { get; set; }
+        public static List<AbilityPreReq> AbilityPreReqs { get; set; }
+        public static List<Item> Items { get; set; }
+
+        private Player.Inventory _inventory { get; set; }
 
         public string GetJsonObjectName()
         {
-            return GlobalConstants.StartupDataJsonName;
+            return "GameObject";
         }
 
-        public class ItemData : IJsonable, IIdable
+        public static void BuildAndDistributeData()
         {
-            public int ItemId { get; set; }
-            public bool ConsumeId { get; set; }
-            public string Name { get; set; }
-            public string Description { get; set; }
+            PopulateGlobalConstants();
 
-            public string GetJsonObjectName()
-            {
-                return "Items";
-            }
+            // Fix this hack. Probably an issue w/ being populated in Utilities.BuildObject
+            Player.Characters = new List<Character>(); 
 
-            public int GetId()
+            BuildCharacterObjects();
+            GlobalConstants.Player = Player;
+            GlobalConstants.CharacterLoadReady = true;
+        }
+
+        public static void PopulateGlobalConstants()
+        {
+            GlobalConstants.AbilityPreReqs = AbilityPreReqs;
+            GlobalConstants.ItemsMasterList = Items;
+            GlobalConstants.AbilityMasterList = Abilities;
+        }
+
+        public static void BuildCharacterObjects()
+        {
+            var tempCharacterData = Characters;
+            foreach (var character in tempCharacterData)
             {
-                return ItemId;
+                var characterBuilder = new Character();
+                foreach (var property in  Utilities.GetParameterList(typeof(Character))
+                    .Where(param => Utilities.GetParameterList(typeof(CharacterData))
+                    .Select(x => x.Name).Contains(param.Name)).ToList())
+                { 
+                    characterBuilder.GetType().GetProperty(property.Name).SetValue(characterBuilder, character.GetType().GetProperty(property.Name).GetValue(character, null), null); 
+                }
+
+                characterBuilder.BaseStats = character.BuildStats();
+                characterBuilder.CurrentStats = characterBuilder.BaseStats;
+                characterBuilder.Equipment = character.BuildEquipment();
+                characterBuilder.Abilities = Abilities.Where(ability => ability.CharacterId == character.CharacterId).ToList();
+
+                Player.Characters.Add(characterBuilder);
             }
         }
 
-
-        public class EquipmentData : IJsonable, IIdable
+        public List<PropertyInfo> GetJsonObjectParameters()
         {
-            public int ItemId { get; set; }
+            return GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).ToList();
+        }
+
+        public void SetJsonObjectParameters(Dictionary<string, object> parameters)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal class CharacterData : IJsonable
+        {
+            public int CharacterId { get; set; }
+            public int LevelId { get; set; }
             public string Name { get; set; }
-            public string Description { get; set; }
-            public string Slot { get; set; }
-            public int RequiredLevel { get; set; }
-            public int RequiredStr { get; set; }
-            public int RequiredDex { get; set; }
-            public int RequiredInt { get; set; }
+            public int Helm { get; set; }
+            public int Chest { get; set; }
+            public int Gloves { get; set; }
+            public int Pants { get; set; }
+            public int Shoulders { get; set; }
+            public int Boots { get; set; }
+            public int Accessory1 { get; set; }
+            public int Accessory2 { get; set; }
+            public int IsStandard { get; set; }
+            public int StatPoints { get; set; }
+            public int SkillPoints { get; set; }
+            public int Experience { get; set; }
             public int Str { get; set; }
             public int Intl { get; set; }
             public int Agi { get; set; }
@@ -65,19 +107,78 @@ namespace Assets.Data
             public int HitRate { get; set; }
             public int CritRate { get; set; }
             public int DodgeRate { get; set; }
+            public int Luck { get; set; }
 
-            public string GetJsonObjectName()
+            private Equipment _equipment { get; set; }
+            private Stats _stats { get; set; }
+
+            public Stats BuildStats()
             {
-                return "Equipment";
+                _stats = new Stats(
+                    Str,
+                    Agi,
+                    Intl,
+                    Vit,
+                    Wis,
+                    Dex,
+                    Luck,
+                    HitPoints,
+                    Dmg,
+                    MagicAttack,
+                    Speed,
+                    Defense,
+                    MagicDefense,
+                    HitRate,
+                    DodgeRate,
+                    CritRate);
+
+                return _stats;
             }
 
-            public int GetId()
+            public Equipment BuildEquipment()
             {
-                return ItemId;
+                Func<int, Item> getItemFunc = (x) => GlobalConstants.ItemsMasterList.SingleOrDefault(item => item.ItemId == x);
+
+                _equipment = new Equipment(
+                    getItemFunc(Helm),
+                    getItemFunc(Chest),
+                    getItemFunc(Gloves),
+                    getItemFunc(Pants),
+                    getItemFunc(Shoulders),
+                    getItemFunc(Boots),
+                    getItemFunc(Accessory1),
+                    getItemFunc(Accessory2));
+
+                return _equipment;
+            }
+
+            public Equipment GetEquipment()
+            {
+                return _equipment;
+            }
+
+            public Stats GetStats()
+            {
+                return _stats;
+            }
+
+        public string GetJsonObjectName()
+            {
+                return "Characters";
+            }
+
+            public List<PropertyInfo> GetJsonObjectParameters()
+            {
+                throw new NotImplementedException();
+            }
+
+            public void SetJsonObjectParameters(Dictionary<string, object> parameters)
+            {
+                throw new NotImplementedException();
             }
         }
 
-        public class InventoryData : IJsonable, IIdable
+        internal class InventoryElement : IJsonable
         {
             public int ItemId { get; set; }
             public int Quantity { get; set; }
@@ -87,107 +188,15 @@ namespace Assets.Data
                 return "Inventory";
             }
 
-            public int GetId()
+            public List<PropertyInfo> GetJsonObjectParameters()
             {
-                return ItemId;
-            }
-        }
-
-        public class AbilityData : IJsonable, IIdable
-        {
-            public int AbilityId { get; set; }
-            public int CharacterId { get; set; }
-            public int AbilityLevel { get; set; }
-
-            public string GetJsonObjectName()
-            {
-                return "CharacterAbilities";
+                throw new NotImplementedException();
             }
 
-            public int GetId()
+            public void SetJsonObjectParameters(Dictionary<string, object> parameters)
             {
-                return AbilityId;
+                throw new NotImplementedException();
             }
-        }
-
-        public class CharacterData : IJsonable, IIdable
-        {
-            public int CharacterId { get; set; }
-            public int StatId { get; set; }
-            public int StatPoints { get; set; }
-            public int SkillPoints { get; set; }
-            public int LevelId { get; set; }
-            public string Name { get; set; }
-            public int Experience { get; set; }
-            public int Helm { get; set; }
-            public int Chest { get; set; }
-            public int Gloves { get; set; }
-            public int Pants { get; set; }
-            public int Shoulders { get; set; }
-            public int Boots { get; set; }
-            public int Accessory1 { get; set; }
-            public int Accessory2 { get; set; }
-            public bool IsStandard { get; set; }
-
-            public string GetJsonObjectName()
-            {
-                return "";
-            }
-
-            public int GetId()
-            {
-                return CharacterId;
-            }
-        }
-
-        /*
-        public class StartupObjects
-        {
-            public static Player Player { get; set; }
-            public static Squad Squad { get; set; }
-            public static Dictionary<int, EquipmentData> EquipmentDictionary { get; set; }
-            public static Dictionary<int, AbilityData> AbilitiesDictionary { get; set; }
-            public static Dictionary<int, InventoryData> InventoryDictionary { get; set; }
-            public static Dictionary<int, ItemData> ItemDictionary { get; set; }
-
-            public void PopulateObjects()
-            {
-                EquipmentDictionary = ConvertToDictionary(StartupData.Equipment);
-                AbilitiesDictionary = ConvertToDictionary(CharacterAbilities);
-                InventoryDictionary = ConvertToDictionary(Inventory);
-                ItemDictionary = ConvertToDictionary(Items);
-
-                PopulateObjects();
-                Player = StartupData.Player;
-              /*  if (Player.squad == null)
-                {
-                    foreach(var charData in Characters)
-                        Squad.characterList.Add(PopulateObject<Character>(typeof (Character)));
-                }
-                
-            }
-
-            public static T PopulateObject<T>(Type type) where T : new()
-            {
-                var obj = new T();
-                return obj;
-            }
-
-            private static Dictionary<int, T> ConvertToDictionary<T>(List<T> list) where T : IIdable
-            {
-                return list.ToDictionary(key => key.GetId(), value => value); 
-            }  
-        }
-*/
-
-        public interface IIdable
-        {
-            int GetId();
-        }
-
-        string IJsonable.GetJsonObjectName()
-        {
-            return "";
         }
     }
 }
