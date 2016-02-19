@@ -2,13 +2,13 @@
 using System.Collections;
 using Assets.GameClasses;
 
-namespace Assets.Scripts
+/*namespace Assets.Scripts
 {
-    /*
+    
     public class GameCharacter : MonoBehaviour
     {
 
-        /*
+        
         public CharacterGameObject character;
         public bool hasAttacked = false;
         public bool hasMoved = false;
@@ -34,5 +34,5 @@ namespace Assets.Scripts
         {
         }
     }
-    */
-}
+
+}*/

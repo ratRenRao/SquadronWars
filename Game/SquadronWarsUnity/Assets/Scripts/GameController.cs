@@ -74,7 +74,9 @@ namespace Assets.Scripts
         {
             if (!arraySet)
             {
+                battlesong.playOnAwake = true;
                 placeCharacterPhase = true;
+                Debug.Log("arraySet battle song called");
                 statsPanel.charName.text = characters[0].CharacterClassObject.Name;
                 tileArray = tileMap.tileArray;
                 highlightSpawn();
@@ -1087,8 +1089,8 @@ namespace Assets.Scripts
         }
         private void PrepTest()
         {
-            /*
-           Dictionary<ItemType, Item> equipment = new Dictionary<ItemType, Item>
+            
+           /*Dictionary<ItemType, Item> equipment = new Dictionary<ItemType, Item>
                 {
                     {ItemType.Helm, GlobalConstants.ItemList["Cloth Helm"] },
                     {ItemType.SHOULDERS, GlobalConstants.ItemList["Cloth Shoulders"] },
@@ -1106,22 +1108,22 @@ namespace Assets.Scripts
             equipment.bootsObject = GlobalConstants.ItemList["Cloth Boots"];
             equipment.accessory1Object = GlobalConstants.ItemList["None(Accessory)"];
             equipment.accessory2Object = GlobalConstants.ItemList["None(Accessory)"];
-            //screen = ScreenOrientation.Landscape;
-            Stats stat1 = new Stats(5, 4, 6, 3, 2, 9, 5);
+            //screen = ScreenOrientation.Landscape;*/
+            /*Stats stat1 = new Stats(5, 4, 6, 3, 2, 9, 5);
             CharacterGameObject character1 = new CharacterGameObject(1, stat1, 1, "Saint Lancelot", 1, 75, equipment);
             character1.CurrentStats = new Stats(0, 0, 0, 0, 0, 0, 0);
             character1.CurrentStats = GetBonusStats(character1);
             character1.CurrentStats.Speed = 4;
-            character1.spriteId = 1;
+            character1.SpriteId = 1;
             Stats stat2 = new Stats(3, 3, 3, 4, 3, 3, 2);
             CharacterGameObject character2 = new CharacterGameObject(1, stat2, 1, "Ragthar", 1, 75, equipment);
             character2.CurrentStats = new Stats(0, 0, 0, 0, 0, 0, 0);
             character2.CurrentStats = GetBonusStats(character2);
             character2.CurrentStats.Speed = 3;
-            character2.spriteId = 2;
-            GlobalConstants.matchCharacters.Add(character1);
-            GlobalConstants.matchCharacters.Add(character2);
-            characters = GlobalConstants.matchCharacters;
+            character2.SpriteId = 2;
+            GlobalConstants.MatchCharacters.Add(character1);
+            GlobalConstants.MatchCharacters.Add(character2);
+            characters = GlobalConstants.MatchCharacters;
             */
             
         }
@@ -1204,8 +1206,7 @@ namespace Assets.Scripts
             abilityButton.interactable = true;
             statsPanel.charName.text = currentCharacterGameObject.CharacterClassObject.Name;
             statsPanel.hp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints;
-            statsPanel.mp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;
-            battlesong.playOnAwake = true;
+            statsPanel.mp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;            
             PositionPanels();
         }
 
