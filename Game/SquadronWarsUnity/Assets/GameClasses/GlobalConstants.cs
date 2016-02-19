@@ -11,11 +11,13 @@ namespace Assets.GameClasses
         public const string SquadDbUrl = WebServerUrl + "temp/temp";
         public const string CharacterDbUrl = WebServerUrl + "/api/getchars";
         public const string PlayerDbUrl = WebServerUrl + "/api/auth";
-        public static List<CharacterGameObject> matchCharacters = new List<CharacterGameObject>();
+        public const string RegistrationUrl = WebServerUrl + "";
+
         public const string PlayerJsonObjectName = "PlayerInfo";
         public const string CharacterJsonObjectName = "Characters";
         public const string StartupDataJsonName = "PlayerDetails";
 
+        public static List<CharacterGameObject> MatchCharacters = new List<CharacterGameObject>();
         public static List<AbilityPreReq> AbilityPreReqs { get; set; } 
         public static List<Item> ItemsMasterList { get; set; }
         public static Player Player { get; set; }

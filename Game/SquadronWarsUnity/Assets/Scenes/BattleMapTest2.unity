@@ -1103,6 +1103,48 @@ RectTransform:
 GameObject:
   m_PrefabParentObject: {fileID: 145870, guid: 664bbdda53699a64d92003af45428540, type: 2}
   m_PrefabInternal: {fileID: 125714298}
+--- !u!1001 &126111819
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -12.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 951dedca54849764599a07922290997f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &138565900
 Prefab:
   m_ObjectHideFlags: 0
@@ -9981,12 +10023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a7093ee91cb83e428a0c3736df54963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainPanel: {fileID: 1575622511}
-  abilityPanel: {fileID: 717698915}
-  gameController: {fileID: 1863895754}
-  button: {fileID: 809241705}
-  ability: Armor Break
-  abilityType: attack
 --- !u!1 &809529171
 GameObject:
   m_ObjectHideFlags: 0
@@ -10838,12 +10874,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a7093ee91cb83e428a0c3736df54963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainPanel: {fileID: 1575622511}
-  abilityPanel: {fileID: 717698915}
-  gameController: {fileID: 1863895754}
-  button: {fileID: 843718413}
-  ability: Flame Strike
-  abilityType: attack
 --- !u!1 &854868666
 GameObject:
   m_ObjectHideFlags: 0
@@ -11167,12 +11197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a7093ee91cb83e428a0c3736df54963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainPanel: {fileID: 1575622511}
-  abilityPanel: {fileID: 717698915}
-  gameController: {fileID: 1863895754}
-  button: {fileID: 862831903}
-  ability: Fire
-  abilityType: cast
 --- !u!1 &885756327 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 145870, guid: 664bbdda53699a64d92003af45428540, type: 2}
@@ -13879,12 +13903,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a7093ee91cb83e428a0c3736df54963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainPanel: {fileID: 1575622511}
-  abilityPanel: {fileID: 717698915}
-  gameController: {fileID: 1863895754}
-  button: {fileID: 1151217958}
-  ability: Bio
-  abilityType: cast
 --- !u!1 &1152171399
 GameObject:
   m_ObjectHideFlags: 0
@@ -24615,14 +24633,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eeb4f93c8582234e890d442bfb618b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileMap: {fileID: 1331049797}
-  characterStatsPanel: {fileID: 1318910895}
-  statsPanel: {fileID: 1318910899}
-  actionPanel: {fileID: 855276615}
-  battlesong: {fileID: 215100521}
-  attackButton: {fileID: 854868668}
-  abilityButton: {fileID: 1224674550}
-  moveButton: {fileID: 1472624579}
+  tileMap: {fileID: 0}
+  characterStatsPanel: {fileID: 0}
+  statsPanel: {fileID: 0}
+  actionPanel: {fileID: 0}
+  battlesong: {fileID: 0}
+  attackButton: {fileID: 0}
+  abilityButton: {fileID: 0}
+  moveButton: {fileID: 0}
 --- !u!1 &1867639176
 GameObject:
   m_ObjectHideFlags: 0

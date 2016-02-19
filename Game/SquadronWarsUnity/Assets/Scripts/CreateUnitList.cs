@@ -6,13 +6,13 @@ namespace Assets.Scripts
 {
     public class CreateUnitList : MonoBehaviour
     {
-        public GameObject SampleButton;
+        public static GameObject SampleButton;
         public List<Character> Characters;
-        public Transform ContentPanel;
+        public static Transform ContentPanel;
         // Use this for initialization
         void Start()
         {
-            PopulateList();
+            
         }
 
         // Update is called once per frame
@@ -21,8 +21,9 @@ namespace Assets.Scripts
 
         }
 
-        void PopulateList()
+        public static void PopulateList()
         {
+            Debug.Log(GlobalConstants.Player.Characters[0]);
             foreach (Character character in GlobalConstants.Player.Characters)
             {
                 character.CurrentStats = GetBonusStats(character);
@@ -36,7 +37,7 @@ namespace Assets.Scripts
 
         }
 
-        public Stats GetBonusStats(Character character)
+        public static Stats GetBonusStats(Character character)
         {
             foreach (var item in character.Equipment.GetItemList())
             {

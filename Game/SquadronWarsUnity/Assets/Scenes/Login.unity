@@ -454,6 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4915c476c5d2c0f4b8df3109d6f950eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuManager: {fileID: 939439823}
 --- !u!1 &46087905
 GameObject:
   m_ObjectHideFlags: 0
@@ -5537,6 +5538,7 @@ GameObject:
   - 222: {fileID: 469225612}
   - 114: {fileID: 469225611}
   - 114: {fileID: 469225610}
+  - 114: {fileID: 469225614}
   m_Layer: 5
   m_Name: ScrollView
   m_TagString: Untagged
@@ -5643,6 +5645,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &469225614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 469225608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07342e9b594bb284c8baef76a56df22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleButton: {fileID: 0}
+  ContentPanel: {fileID: 0}
 --- !u!1 &469236023
 GameObject:
   m_ObjectHideFlags: 0
@@ -10285,8 +10300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07342e9b594bb284c8baef76a56df22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sampleButton: {fileID: 163718, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
-  contentPanel: {fileID: 1916724121}
+  SampleButton: {fileID: 0}
+  ContentPanel: {fileID: 0}
 --- !u!4 &844143459
 Transform:
   m_ObjectHideFlags: 0
@@ -18992,6 +19007,7 @@ GameObject:
   - 114: {fileID: 1542798529}
   - 222: {fileID: 1542798533}
   - 114: {fileID: 1542798532}
+  - 114: {fileID: 1542798534}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -19107,6 +19123,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1542798527}
+--- !u!114 &1542798534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1542798527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8c618956795694883d832596afeb52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1544111291
 GameObject:
   m_ObjectHideFlags: 0
@@ -23061,28 +23088,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 38449024}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 1
-      - m_Target: {fileID: 915128700}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
       - m_Target: {fileID: 71762918}
         m_MethodName: OnClick
         m_Mode: 1
@@ -23583,8 +23588,8 @@ GameObject:
   - 224: {fileID: 1825064059}
   - 222: {fileID: 1825064062}
   - 114: {fileID: 1825064061}
-  - 114: {fileID: 1825064063}
   - 114: {fileID: 1825064060}
+  - 114: {fileID: 1825064063}
   m_Layer: 5
   m_Name: Register
   m_TagString: Untagged
@@ -23650,7 +23655,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1825064063}
-        m_MethodName: RegisterUser
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23703,15 +23708,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1825064058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0154b0b2047897c438e37e38dc37f55e, type: 3}
+  m_Script: {fileID: 11500000, guid: cd0e7905f4edb3147b3df7bee7c6a243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  username: {fileID: 1152087624}
-  password: {fileID: 644599117}
-  confirmPass: {fileID: 82199386}
-  lastName: {fileID: 1067923215}
-  firstName: {fileID: 874298309}
-  email: {fileID: 27743591}
 --- !u!1 &1839583103
 GameObject:
   m_ObjectHideFlags: 0
@@ -24559,7 +24558,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.19999999}
-  m_AnchoredPosition: {x: 2, y: 208.8}
+  m_AnchoredPosition: {x: 2, y: 208.80003}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1916724122
@@ -25805,9 +25804,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4fd37de1caa3d44936d21344620958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsStandard: 0
-  x: 0
-  y: 0
+  hasAttacked: 0
+  hasMoved: 0
 --- !u!1 &2062297692
 GameObject:
   m_ObjectHideFlags: 0

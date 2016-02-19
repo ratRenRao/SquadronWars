@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using Assets.GameClasses;
+using Assets.Scripts;
 
 namespace Assets.Data
 {
@@ -14,6 +14,7 @@ namespace Assets.Data
         public static List<CharacterData> Characters { get; set; }
         public static List<Ability> Abilities { get; set; }
         public static List<AbilityPreReq> AbilityPreReqs { get; set; }
+        public static List<CharacterGameObject> MatchCharacters { get; set; }
         public static List<Item> Items { get; set; }
 
         private Player.Inventory _inventory { get; set; }
@@ -26,8 +27,13 @@ namespace Assets.Data
         public static void BuildAndDistributeData()
         {
             PopulateGlobalConstants();
+
+            // Fix this hack. Probably and issue w/ being populated in Utilities.BuildObject
+            Player = new Player();
+
             BuildCharacterObjects();
             GlobalConstants.Player = Player;
+            CreateUnitList.PopulateList();
         }
 
         public static void PopulateGlobalConstants()
@@ -35,6 +41,13 @@ namespace Assets.Data
             GlobalConstants.AbilityPreReqs = AbilityPreReqs;
             GlobalConstants.ItemsMasterList = Items;
             GlobalConstants.AbilityMasterList = Abilities;
+            GlobalConstants.MatchCharacters = MatchCharacters;
+        }
+
+        public static void BuildCharacterGameObjects(Character character)
+        {
+            //foreach (var character in GlobalConstants.Player.Characters)
+                MatchCharacters.Add(new CharacterGameObject(character, 0, 0));
         }
 
         public static void BuildCharacterObjects()
@@ -54,6 +67,7 @@ namespace Assets.Data
                 characterBuilder.Equipment = character.BuildEquipment();
                 characterBuilder.Abilities = Abilities.Where(ability => ability.CharacterId == character.CharacterId).ToList();
 
+                BuildCharacterGameObjects(characterBuilder);
                 Player.Characters.Add(characterBuilder);
             }
         }

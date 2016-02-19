@@ -13,9 +13,9 @@ namespace Assets.GameClasses
         public bool hasAttacked = false;
         public bool hasMoved = false;
 
-        public readonly Character CharacterClassObject;
+        public Character CharacterClassObject;
 
-        public CharacterGameObject(ref Character characterClassObject, int x, int y)
+        public CharacterGameObject(Character characterClassObject, int x, int y)
         {
             CharacterClassObject = characterClassObject;
             X = x;
@@ -25,11 +25,13 @@ namespace Assets.GameClasses
         // Updating shouldnt be necessary with ref instantiation
         void Update()
         {
+            /*
             if (CharacterClassObject == null)
                 return;
 
             if (CharacterClassObject.Updated)
                 UpdateCharacterGameObject();
+           */
         }
 
         private void UpdateCharacterGameObject()

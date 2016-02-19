@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Web v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>WebPlayer:6</UnityBuildTarget>
     <UnityVersion>5.3.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -81,6 +83,7 @@
     <Compile Include="Assets\GameClasses\Item.cs" />
     <Compile Include="Assets\GameClasses\Player.cs" />
     <Compile Include="Assets\GameClasses\PlayerGameObject.cs" />
+    <Compile Include="Assets\GameClasses\RegistrationData.cs" />
     <Compile Include="Assets\GameClasses\Squad.cs" />
     <Compile Include="Assets\GameClasses\Stats.cs" />
     <Compile Include="Assets\GameClasses\Weaken.cs" />
@@ -100,6 +103,7 @@
     <Compile Include="Assets\Scripts\LoginButton.cs" />
     <Compile Include="Assets\Scripts\LoginScreenManager.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\RegisterButton.cs" />
     <Compile Include="Assets\Scripts\SampleButton.cs" />
     <Compile Include="Assets\Scripts\SetLoginPassword.cs" />
     <Compile Include="Assets\Scripts\SetLoginUsername.cs" />

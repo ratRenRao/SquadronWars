@@ -48,7 +48,8 @@ namespace Assets.GameClasses
         public int DodgeRate { get; set; }
         public int Luck { get; set; }
         */
-        public Sprite Sprite { get; set; }
+
+        public int SpriteId { get; set; }
 
         public bool Updated = false;
         public Stats BaseStats { get; set; }
@@ -98,30 +99,38 @@ namespace Assets.GameClasses
         {
         }
 
-        
-/*
-        public Character(int characterId, Stats baseStats, int characterListId, string characterName,
-            int level, int experience, Equipment equipment)
-        {
-            this.characterId = characterId;
-            this.baseStats = baseStats;
-            this.equipment = equipment;
-            this.characterListId = characterListId;
-            this.characterName = characterName;
-            this.level = level;
-            this.experience = experience;
-        }
-        */
 
-            /*
-        public void addEffect(Effect effect)
+        /*
+                public Character(int characterId, Stats baseStats, int characterListId, string characterName,
+                    int level, int experience, Equipment equipment)
+                {
+                    this.characterId = characterId;
+                    this.baseStats = baseStats;
+                    this.equipment = equipment;
+                    this.characterListId = characterListId;
+                    this.characterName = characterName;
+                    this.level = level;
+                    this.experience = experience;
+                }
+                */
+
+        /*
+    public void addEffect(Effect effect)
+    {
+        var tempStats = baseStats;
+        effect.Execute(ref tempStats);
+        baseStats = tempStats;
+        effects.Add(effect);
+    }
+    */
+
+    public void GetBonusStats()
+    {
+        foreach (var item in Equipment.GetItemList())
         {
-            var tempStats = baseStats;
-            effect.Execute(ref tempStats);
-            baseStats = tempStats;
-            effects.Add(effect);
+            CurrentStats = CurrentStats.ConcatStats(BaseStats, item.Stats);
         }
-        */
+    }
 
         public void checkEffects()
         {

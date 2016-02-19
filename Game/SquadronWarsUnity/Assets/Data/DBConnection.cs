@@ -13,22 +13,16 @@ namespace Assets.Data
 
         public T PopulateObjectFromDb<T>(string url, object paramObject) where T : IJsonable
         {
-            var jsonParamObject = WrapJsonInGameObject(ConvertToJson(paramObject));
-            var response = ExecuteApiCall(url, jsonParamObject);
+            var response = SendPostData(url, paramObject);
 
             return Utilities.BuildObjectFromJsonData<T>(response.text);
-            
-            //var parameters = Utilities.CreatePublicPropertyDictionary(paramObject);
-            //return PopulateObjectFromDb<T>(url, parameters);
         }
 
-        /*
-        public T PopulateObjectFromDb<T>(string url, Dictionary<string, string> parameters) where T : IJsonable
-        { 
-            var response = ExecuteApiCall(url, PopulateParameters(parameters));
-            return Utilities.BuildObjectFromJsonData<T>(response.text);
+        public WWW SendPostData<T>(string url, T obj)
+        {
+            var jsonParamObject = WrapJsonInGameObject(ConvertToJson(obj));
+            return ExecuteApiCall(url, jsonParamObject);
         }
-        */
 
         public WWW ExecuteApiCall(string url, WWWForm form)
         {
