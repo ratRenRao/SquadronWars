@@ -76,7 +76,8 @@ namespace Assets.Scripts
             {
                 battlesong.playOnAwake = true;
                 placeCharacterPhase = true;
-                Debug.Log("arraySet battle song called");
+                characters = GlobalConstants.MatchCharacters;
+                Debug.Log(characters[0].CharacterClassObject.Name);
                 statsPanel.charName.text = characters[0].CharacterClassObject.Name;
                 tileArray = tileMap.tileArray;
                 highlightSpawn();
@@ -151,7 +152,7 @@ namespace Assets.Scripts
                         currentCharacterGameObject.GetComponent<SpriteRenderer>().sortingOrder = 6 + (targetTile.y * 2);
                         targetTile.isOccupied = true;
                         targetTile.character = currentCharacterGameObject;
-                        targetTile.character = currentCharacterGameObject;
+                        targetTile.characterObject = currentGameCharacter;
                         PositionPanels();
                         hidePanel = false;
                     }
@@ -320,8 +321,9 @@ namespace Assets.Scripts
             int tileX = tile.x;
             int tileY = tile.y;
             Tile[,] tileArray = tileMap.tileArray;
-            clearHighlights(validMoves);           
+            clearHighlights(validMoves);
             //tileArray[1, 0].isObstructed = true;
+            currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed = 4;
             int move = currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed;
             if (!currentCharacterGameObject.hasMoved)
             {
@@ -1157,7 +1159,7 @@ namespace Assets.Scripts
             gameCharacter.Y = tempTile.y;
             tempTile.character = gameCharacter;
 
-            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + characters[unitPlacedCount].CharacterClassObject.SpriteId), typeof(GameObject));
+            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character1" /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
             //gameCharacter.gameObject.transform.position = new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y);
             //gameCharacter.gameObject.transform.rotation = Quaternion.identity;
             GameObject tempchar = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;
@@ -1193,8 +1195,10 @@ namespace Assets.Scripts
                 myCharacters.Add(myCharacters[0]);
                 myCharacters.RemoveAt(0);
             }
-            currentGameCharacter = myCharacters[0];
-            currentCharacterGameObject = currentCharacterGameObject.GetComponent<CharacterGameObject>();
+            currentGameCharacter = myCharacters[0];            
+            currentCharacterGameObject = currentGameCharacter.GetComponent<CharacterGameObject>();
+            Debug.Log(currentCharacterGameObject.X);
+            Debug.Log(currentCharacterGameObject.Y);
             targetTile = tileArray[currentCharacterGameObject.X, currentCharacterGameObject.Y];
             prevTile = targetTile;
             tile = prevTile;

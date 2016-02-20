@@ -1103,48 +1103,6 @@ RectTransform:
 GameObject:
   m_PrefabParentObject: {fileID: 145870, guid: 664bbdda53699a64d92003af45428540, type: 2}
   m_PrefabInternal: {fileID: 125714298}
---- !u!1001 &126111819
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -12.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 410540, guid: 951dedca54849764599a07922290997f, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 951dedca54849764599a07922290997f, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &138565900
 Prefab:
   m_ObjectHideFlags: 0
@@ -10020,9 +9978,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 809241703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a7093ee91cb83e428a0c3736df54963, type: 3}
+  m_Script: {fileID: 11500000, guid: 902e0a6cb1a9a0740af0268ee81fdc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainPanel: {fileID: 1575622511}
+  abilityPanel: {fileID: 717698915}
+  gameController: {fileID: 1863895754}
+  button: {fileID: 809241705}
+  ability: Armor Break
+  abilityType: attack
 --- !u!1 &809529171
 GameObject:
   m_ObjectHideFlags: 0
@@ -10871,9 +10835,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 843718411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a7093ee91cb83e428a0c3736df54963, type: 3}
+  m_Script: {fileID: 11500000, guid: 902e0a6cb1a9a0740af0268ee81fdc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainPanel: {fileID: 1575622511}
+  abilityPanel: {fileID: 717698915}
+  gameController: {fileID: 1863895754}
+  button: {fileID: 843718413}
+  ability: Flame Strike
+  abilityType: attack
 --- !u!1 &854868666
 GameObject:
   m_ObjectHideFlags: 0
@@ -11139,18 +11109,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 862831904}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1863895757}
-        m_MethodName: CastAbility
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: SpellPrefabs/Fire
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &862831904
@@ -11194,9 +11153,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 862831901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a7093ee91cb83e428a0c3736df54963, type: 3}
+  m_Script: {fileID: 11500000, guid: 902e0a6cb1a9a0740af0268ee81fdc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainPanel: {fileID: 1575622511}
+  abilityPanel: {fileID: 717698915}
+  gameController: {fileID: 1863895754}
+  button: {fileID: 862831903}
+  ability: Fire
+  abilityType: cast
 --- !u!1 &885756327 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 145870, guid: 664bbdda53699a64d92003af45428540, type: 2}
@@ -13900,9 +13865,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1151217956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a7093ee91cb83e428a0c3736df54963, type: 3}
+  m_Script: {fileID: 11500000, guid: 902e0a6cb1a9a0740af0268ee81fdc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainPanel: {fileID: 1575622511}
+  abilityPanel: {fileID: 717698915}
+  gameController: {fileID: 1863895754}
+  button: {fileID: 1151217958}
+  ability: Bio
+  abilityType: cast
 --- !u!1 &1152171399
 GameObject:
   m_ObjectHideFlags: 0
