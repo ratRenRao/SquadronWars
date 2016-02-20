@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Assets.GameClasses;
-using Assets.Scripts;
 
 namespace Assets.Data
 {
-    class StartupData : IJsonable
+    public class StartupData : IJsonable
     {
         public static Player Player { get; set; }
-        public List<InventoryElement> Inventory { get; set; }
+        public static List<InventoryElement> Inventory { get; set; }
         public static List<CharacterData> Characters { get; set; }
         public static List<Ability> Abilities { get; set; }
         public static List<AbilityPreReq> AbilityPreReqs { get; set; }
         public static List<Item> Items { get; set; }
 
 
-        private Player.Inventory _inventory { get; set; }
+        //private Player _inventory { get; set; }
 
         public string GetJsonObjectName()
         {
@@ -26,14 +25,26 @@ namespace Assets.Data
 
         public static void BuildAndDistributeData()
         {
-            PopulateGlobalConstants();
-
             // Fix this hack. Probably an issue w/ being populated in Utilities.BuildObject
-            Player.Characters = new List<Character>(); 
+            Player.Characters = new List<Character>();
+            Player.Inventory = new List<InventoryElement>();
+
+            PopulateGlobalConstants();
+            BuildInventoryList();
 
             BuildCharacterObjects();
             GlobalConstants.Player = Player;
             GlobalConstants.CharacterLoadReady = true;
+        }
+
+        public static void BuildInventoryList()
+        {
+            foreach (var invItem in Inventory)
+            {
+                invItem.Item = GlobalConstants.ItemsMasterList.SingleOrDefault(item => item.ItemId == invItem.ItemId);
+            }
+
+            Player.Inventory = Inventory;
         }
 
         public static void PopulateGlobalConstants()
@@ -49,15 +60,15 @@ namespace Assets.Data
             foreach (var character in tempCharacterData)
             {
                 var characterBuilder = new Character();
-                foreach (var property in  Utilities.GetParameterList(typeof(Character))
+                foreach (var property in Utilities.GetParameterList(typeof(Character))
                     .Where(param => Utilities.GetParameterList(typeof(CharacterData))
                     .Select(x => x.Name).Contains(param.Name)).ToList())
-                { 
-                    characterBuilder.GetType().GetProperty(property.Name).SetValue(characterBuilder, character.GetType().GetProperty(property.Name).GetValue(character, null), null); 
+                {
+                    characterBuilder.GetType().GetProperty(property.Name).SetValue(characterBuilder, character.GetType().GetProperty(property.Name).GetValue(character, null), null);
                 }
 
-                characterBuilder.BaseStats = character.BuildStats();
-                characterBuilder.CurrentStats = characterBuilder.BaseStats;
+                characterBuilder.BaseStats = character.BuildBaseStats();
+                characterBuilder.CurrentStats = character.BuildCurrentStats(characterBuilder.BaseStats);
                 characterBuilder.Equipment = character.BuildEquipment();
                 characterBuilder.Abilities = Abilities.Where(ability => ability.CharacterId == character.CharacterId).ToList();
 
@@ -75,7 +86,7 @@ namespace Assets.Data
             throw new NotImplementedException();
         }
 
-        internal class CharacterData : IJsonable
+        public class CharacterData : IJsonable
         {
             public int CharacterId { get; set; }
             public int LevelId { get; set; }
@@ -113,7 +124,7 @@ namespace Assets.Data
             private Equipment _equipment { get; set; }
             private Stats _stats { get; set; }
 
-            public Stats BuildStats()
+            public Stats BuildBaseStats()
             {
                 _stats = new Stats(
                     Str,
@@ -134,6 +145,22 @@ namespace Assets.Data
                     CritRate);
 
                 return _stats;
+            }
+
+            public Stats BuildCurrentStats(Stats stats)
+            {
+                stats.CalculateHp(Player.LevelId);
+                stats.CalculateMp(Player.LevelId);
+                stats.CalculateDamage(Player.LevelId);
+                stats.CalculateMagicDamage(Player.LevelId);
+                stats.CalculateSpeed(Player.LevelId);
+                stats.CalculateDefense(Player.LevelId);
+                stats.CalculateMagicDefense(Player.LevelId);
+                stats.CalculateHitRate(Player.LevelId);
+                stats.CalculateDodgeRate(Player.LevelId);
+                stats.CalculateCritRate(Player.LevelId);
+
+                return stats;
             }
 
             public Equipment BuildEquipment()
@@ -163,7 +190,7 @@ namespace Assets.Data
                 return _stats;
             }
 
-        public string GetJsonObjectName()
+            public string GetJsonObjectName()
             {
                 return "Characters";
             }
@@ -179,10 +206,11 @@ namespace Assets.Data
             }
         }
 
-        internal class InventoryElement : IJsonable
+        public class InventoryElement : IJsonable
         {
             public int ItemId { get; set; }
             public int Quantity { get; set; }
+            public Item Item { get; set; }
 
             public string GetJsonObjectName()
             {

@@ -2,7 +2,9 @@
 {
     public class Stats
     {
-        public int StatPoints { get; set; }
+        // Temp attribute definition
+        public int StatPoints = 2;
+        //public int StatPoints { get; set; }
         public int SkillPoints { get; set; }
         public int Experience { get; set; }
         public int Str { get; set; }
@@ -23,19 +25,6 @@
         public int CritRate { get; set; }
         public int DodgeRate { get; set; }
         public int Luck { get; set; }
-
-        /*
-        public Stats(int strength, int agility, int intelligence, int vitality, int wisdom, int dexterity, int luck)
-        {
-            Str = strength;
-            Agi = agility;
-            Intl = intelligence;
-            Vit = vitality;
-            Wis = wisdom;
-            Dex = dexterity;
-            Luck = luck;
-        }
-        */
 
         public Stats(int strength = 0, int agility = 0, int intelligence = 0, int vitality = 0, int wisdom = 0, int dexterity = 0,
             int luck = 0, int hitPoints = 0, int damage = 0, int magicDmg = 0, int speed = 0, int defense = 0, int magicDef = 0, 

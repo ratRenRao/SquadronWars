@@ -166,8 +166,10 @@ public class SampleButton : MonoBehaviour
         dropdowns.glovesSlot.options.Clear();
         dropdowns.legsSlot.options.Clear();
         dropdowns.bootsSlot.options.Clear();
-        foreach(Item item in GlobalConstants.ItemsMasterList)
+        foreach(var element in GlobalConstants.Player.Inventory)
         {
+            var item = element.Item;
+
             if (item.ItemType == ItemType.Helm)
             {
                 dropdowns.helmSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
