@@ -132,5 +132,20 @@
             alteredStats.Luck = charStats.Luck + itemStats.Luck;
             return alteredStats;
         }
+
+        public void BuildCurrentStats(Character character)
+        {
+            HitPoints = CalculateHp(character.LevelId);
+            MagicPoints = CalculateMp(character.LevelId);
+            Dmg = CalculateDamage(character.LevelId);
+            MagicAttack = CalculateMagicDamage(character.LevelId);
+            Speed = CalculateSpeed(character.LevelId);
+            Defense = CalculateDefense(character.LevelId);
+            MagicDefense = CalculateMagicDefense(character.LevelId);
+            HitRate = CalculateHitRate(character.LevelId);
+            DodgeRate = CalculateDodgeRate(character.LevelId);
+            CritRate = CalculateCritRate(character.LevelId);
+            
+        }
     }
 }

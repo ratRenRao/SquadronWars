@@ -68,7 +68,7 @@ namespace Assets.Data
                 }
 
                 characterBuilder.BaseStats = character.BuildBaseStats();
-                characterBuilder.CurrentStats = character.BuildCurrentStats(characterBuilder.BaseStats);
+                characterBuilder.CurrentStats = character.BuildBaseStats();
                 characterBuilder.Equipment = character.BuildEquipment();
                 characterBuilder.Abilities = Abilities.Where(ability => ability.CharacterId == character.CharacterId).ToList();
 
@@ -145,23 +145,7 @@ namespace Assets.Data
                     CritRate);
 
                 return _stats;
-            }
-
-            public Stats BuildCurrentStats(Stats stats)
-            {
-                stats.CalculateHp(Player.LevelId);
-                stats.CalculateMp(Player.LevelId);
-                stats.CalculateDamage(Player.LevelId);
-                stats.CalculateMagicDamage(Player.LevelId);
-                stats.CalculateSpeed(Player.LevelId);
-                stats.CalculateDefense(Player.LevelId);
-                stats.CalculateMagicDefense(Player.LevelId);
-                stats.CalculateHitRate(Player.LevelId);
-                stats.CalculateDodgeRate(Player.LevelId);
-                stats.CalculateCritRate(Player.LevelId);
-
-                return stats;
-            }
+            }            
 
             public Equipment BuildEquipment()
             {

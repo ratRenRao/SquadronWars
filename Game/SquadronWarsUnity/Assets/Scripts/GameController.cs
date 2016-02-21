@@ -78,7 +78,13 @@ namespace Assets.Scripts
                 placeCharacterPhase = true;
                 characters = GlobalConstants.MatchCharacters;
                 Debug.Log(characters[0].CharacterClassObject.Name);
+                Debug.Log(characters[0].CharacterClassObject.CurrentStats.Str);
+                Debug.Log(characters[0].CharacterClassObject.CurrentStats.Intl);
+                Debug.Log(characters[0].CharacterClassObject.CurrentStats.MagicPoints);
+                Debug.Log(characters[0].CharacterClassObject.CurrentStats.HitPoints);
                 statsPanel.charName.text = characters[0].CharacterClassObject.Name;
+                statsPanel.hp.text = characters[0].CharacterClassObject.CurrentStats.HitPoints + " / " + characters[0].CharacterClassObject.CurrentStats.HitPoints;
+                statsPanel.mp.text = characters[0].CharacterClassObject.CurrentStats.MagicPoints + " / " + characters[0].CharacterClassObject.CurrentStats.MagicPoints;
                 tileArray = tileMap.tileArray;
                 highlightSpawn();
                 arraySet = true;
@@ -1209,8 +1215,9 @@ namespace Assets.Scripts
             attackButton.interactable = true;
             abilityButton.interactable = true;
             statsPanel.charName.text = currentCharacterGameObject.CharacterClassObject.Name;
+            Debug.Log(currentCharacterGameObject.CharacterClassObject.BaseStats.HitPoints);
             statsPanel.hp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints;
-            statsPanel.mp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;            
+            statsPanel.mp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;            
             PositionPanels();
         }
 

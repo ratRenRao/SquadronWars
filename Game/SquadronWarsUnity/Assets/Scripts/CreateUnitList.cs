@@ -37,7 +37,7 @@ namespace Assets.Scripts
 
             foreach (var character in GlobalConstants.Player.Characters)
             {
-                character.CurrentStats = GetBonusStats(character);
+                GetBonusStats(character);
                 GlobalConstants.MatchCharacters.Add(new CharacterGameObject(character));
                 //BuildCharacterGameObject(character);
             }
@@ -61,14 +61,14 @@ namespace Assets.Scripts
         }
 
 
-        public static Stats GetBonusStats(Character character)
+        public static void GetBonusStats(Character character)
         {
             foreach (var item in character.Equipment.GetItemList())
             {
                 if(item != null)
                     character.CurrentStats = character.CurrentStats.ConcatStats(character.CurrentStats, item.Stats);
             }
-            return character.CurrentStats;
+            character.CurrentStats.BuildCurrentStats(character);
         }
 
         /*
