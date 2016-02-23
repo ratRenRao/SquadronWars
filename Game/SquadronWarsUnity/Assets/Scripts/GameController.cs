@@ -14,7 +14,8 @@ namespace Assets.Scripts
             MOVE,
             Attack,
             AttackAbility,
-            CastAbility
+            CastAbility,
+            Occupy
         }
         public TileMap tileMap;
         GameObject currentGameCharacter;
@@ -77,11 +78,6 @@ namespace Assets.Scripts
                 battlesong.playOnAwake = true;
                 placeCharacterPhase = true;
                 characters = GlobalConstants.MatchCharacters;
-                Debug.Log(characters[0].CharacterClassObject.Name);
-                Debug.Log(characters[0].CharacterClassObject.CurrentStats.Str);
-                Debug.Log(characters[0].CharacterClassObject.CurrentStats.Intl);
-                Debug.Log(characters[0].CharacterClassObject.CurrentStats.MagicPoints);
-                Debug.Log(characters[0].CharacterClassObject.CurrentStats.HitPoints);
                 statsPanel.charName.text = characters[0].CharacterClassObject.Name;
                 statsPanel.hp.text = characters[0].CharacterClassObject.CurrentStats.HitPoints + " / " + characters[0].CharacterClassObject.CurrentStats.HitPoints;
                 statsPanel.mp.text = characters[0].CharacterClassObject.CurrentStats.MagicPoints + " / " + characters[0].CharacterClassObject.CurrentStats.MagicPoints;
@@ -111,8 +107,6 @@ namespace Assets.Scripts
                 float currentY = (float)(System.Math.Round(currentCharacterGameObject.transform.localPosition.y, 2));
                 float targetX = (float)(System.Math.Round(targetTile.transform.localPosition.x + 1.6f, 2));
                 float targetY = (float)(System.Math.Round(targetTile.transform.localPosition.y, 2));
-                Debug.Log("current x:" + currentX + "; current y:" + currentY);
-                Debug.Log("target x:" + targetX + "; target y:" + targetY);
                 //  Transform targetLocation = targetTile.transform;
                 if (currentX - targetX > 0)
                 {
@@ -175,7 +169,6 @@ namespace Assets.Scripts
 
                 if (Input.GetMouseButtonUp(0) && reachedPosition && !placeCharacterPhase)
                 {
-                    Debug.Log("move click called");
                     hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                     if (action == Action.MOVE)
                     {
@@ -239,12 +232,10 @@ namespace Assets.Scripts
 
                 if (Input.GetMouseButtonUp(0) && placeCharacterPhase)
                 {
-                    Debug.Log("Place char called");
                     hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                     if (hit.collider != null)
                     {
-
-                        Debug.Log("Place char called: Valid hit");
+                        
                         Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
                         if (tempTile.isValidMove)
                         {
@@ -263,6 +254,16 @@ namespace Assets.Scripts
                         }
                     }
                 }
+                if (Input.GetMouseButtonUp(0) && action == Action.Occupy)
+                {
+                    if (hit.collider != null)
+                    {
+
+                        Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
+                        tempTile.isOccupied = true;
+                        action = Action.IDLE;
+                    }
+                }
                 if (Input.GetKeyDown("escape") && action != Action.IDLE)
                 {
                     Debug.Log("Escape key called");
@@ -273,11 +274,14 @@ namespace Assets.Scripts
             }
         }
 
+        public void OccupyTiles()
+        {
+            action = Action.Occupy;
+        }
         private void Move()
         {
             if (hit.collider != null)
             {
-                Debug.Log(targetTile.x + " ," + targetTile.y);
                 lastTile = targetTile;
                 targetTile = hit.collider.gameObject.GetComponent<Tile>();
                 Tile tempTile = targetTile;
@@ -326,10 +330,12 @@ namespace Assets.Scripts
             //  int currentY = currentCharacter.y;
             int tileX = tile.x;
             int tileY = tile.y;
+            bool rightOccupied = false;
+            bool botOccupied = false;
             Tile[,] tileArray = tileMap.tileArray;
             clearHighlights(validMoves);
             //tileArray[1, 0].isObstructed = true;
-            currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed = 4;
+            currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed = 6;
             int move = currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed;
             if (!currentCharacterGameObject.hasMoved)
             {
@@ -338,7 +344,7 @@ namespace Assets.Scripts
                     hidePanel = true;
                     validMoves = new List<Tile>();
                     //Create Bottom Move Tiles
-                    for (int i = 1; i <= currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed; i++)
+                    for (int i = 1; i <= move; i++)
                     {
 
                         if (tileY + i < tileArray.GetLength(1))
@@ -351,14 +357,15 @@ namespace Assets.Scripts
                                 tempTile.isValidMove = true;
                                 validMoves.Add(tempTile);
                             }
-                            //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
-
-                            // GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
-                            //highlight.transform.parent = tempTile.transform;
+                            else
+                            {
+                                move -= 2;
+                            }
                         }
                     }
+                    move = currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed;
                     //Create Top Move Tiles
-                    for (int i = 1; i <= currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed; i++)
+                    for (int i = 1; i <= move; i++)
                     {
                         if (tileY - i >= 0)
                         {
@@ -370,13 +377,15 @@ namespace Assets.Scripts
                                 tempTile.isValidMove = true;
                                 validMoves.Add(tempTile);
                             }
-                            //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
-                            //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
-                            //highlight.transform.parent = tempTile.transform;
+                            else
+                            {
+                                move -= 2;
+                            }
                         }
                     }
                     //Create Left Move Tiles
-                    for (int i = 1; i <= currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed; i++)
+                    move = currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed;
+                    for (int i = 1; i <= move; i++)
                     {
                         if (tileX - i >= 0)
                         {
@@ -387,6 +396,10 @@ namespace Assets.Scripts
                                 tempTile.highlight.SetActive(true);
                                 tempTile.isValidMove = true;
                                 validMoves.Add(tempTile);
+                            }
+                            else
+                            {
+                                move -= 2;
                             }
                             //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
                             //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
@@ -407,9 +420,10 @@ namespace Assets.Scripts
                                 tempTile.isValidMove = true;
                                 validMoves.Add(tempTile);
                             }
-                            //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
-                            //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
-                            //highlight.transform.parent = tempTile.transform;
+                            else
+                            {
+                                move -= 2;
+                            }
                         }
                         else
                         {
@@ -420,8 +434,10 @@ namespace Assets.Scripts
                     move = currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed;
                     for (int i = 1; i < currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed; i++)
                     {
+                        bool tileOccupied = false;
                         for (int j = 1; j < move; j++)
                         {
+                            
                             if (tileX - i >= 0 && tileY - j >= 0)
                             {
                                 Tile tempTile = tileArray[tileX - i, tileY - j];
@@ -432,14 +448,20 @@ namespace Assets.Scripts
                                     tempTile.isValidMove = true;
                                     validMoves.Add(tempTile);
                                 }
-                                //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
-                                //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
-                                //highlight.transform.parent = tempTile.transform;
+                                else
+                                {
+                                    //tileOccupied = true;
+                                    //move -= 2;
+                                }
                             }
                             else
                             {
                                 break;
                             }
+                        }
+                        if (tileOccupied)
+                        {
+                            //move += 2;
                         }
                         move--;
                     }
@@ -447,6 +469,7 @@ namespace Assets.Scripts
                     move = currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed;
                     for (int i = 1; i < currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed; i++)
                     {
+                        bool tileOccupied = false;
                         for (int j = 1; j < move; j++)
                         {
                             if (tileX + i < tileArray.GetLength(0) && tileY - j >= 0)
@@ -459,14 +482,21 @@ namespace Assets.Scripts
                                     tempTile.isValidMove = true;
                                     validMoves.Add(tempTile);
                                 }
-                                //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
-                                //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
-                                //highlight.transform.parent = tempTile.transform;
+                                else
+                                {
+                                    //tileOccupied = true;
+                                    //move -= 2;
+                                }
                             }
                             else
                             {
                                 break;
                             }
+                            
+                        }
+                        if (tileOccupied)
+                        {
+                            //move += 2;
                         }
                         move--;
                     }
@@ -474,6 +504,7 @@ namespace Assets.Scripts
                     move = currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed;
                     for (int i = 1; i < currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed; i++)
                     {
+                        bool tileOccupied = false;
                         for (int j = 1; j < move; j++)
                         {
                             if (tileX - i >= 0 && tileY + j < tileArray.GetLength(1))
@@ -486,41 +517,54 @@ namespace Assets.Scripts
                                     tempTile.isValidMove = true;
                                     validMoves.Add(tempTile);
                                 }
-                                //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
-                                //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
-                                //highlight.transform.parent = tempTile.transform;
+                                else
+                                {
+                                    //tileOccupied = true;
+                                    //move -= 2;
+                                }
                             }
                             else
                             {
                                 break;
                             }
                         }
+                        if (tileOccupied)
+                        {
+                            //move += 2;
+                        }
                         move--;
                     }
-                    //Create Bottom Left Move Tiles
+                    //Create Bottom Right Move Tiles
                     move = currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed;
                     for (int i = 1; i < currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed; i++)
                     {
+                        bool tileOccupied = false;
                         for (int j = 1; j < move; j++)
                         {
-                            if (tileX + i < tileArray.GetLength(0) && tileY + j < tileArray.GetLength(1))
-                            {
-                                Tile tempTile = tileArray[tileX + i, tileY + j];
-                                if (!tempTile.isOccupied)
+                                if (tileX + i < tileArray.GetLength(0) && tileY + j < tileArray.GetLength(1))
                                 {
-                                    tempTile.highlight.GetComponent<Image>().color = new Color32(99, 178, 255, 165);
-                                    tempTile.highlight.SetActive(true);
-                                    tempTile.isValidMove = true;
-                                    validMoves.Add(tempTile);
+                                    Tile tempTile = tileArray[tileX + i, tileY + j];
+                                    if (!tempTile.isOccupied)
+                                    {
+                                        tempTile.highlight.GetComponent<Image>().color = new Color32(99, 178, 255, 165);
+                                        tempTile.highlight.SetActive(true);
+                                        tempTile.isValidMove = true;
+                                        validMoves.Add(tempTile);
+                                    }
+                                    else
+                                    {
+                                        //tileOccupied = true;
+                                        //move -= 2;
+                                    }
                                 }
-                                //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
-                                //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
-                                //highlight.transform.parent = tempTile.transform;
-                            }
                             else
                             {
                                 break;
                             }
+                        }
+                        if (tileOccupied)
+                        {
+                            move += 2;
                         }
                         move--;
                     }
@@ -793,49 +837,100 @@ namespace Assets.Scripts
             int currentY = start.y;
             int endX = end.x;
             int endY = end.y;
-            List<Tile> openPath = new List<Tile>();
-            List<Tile> closedPath = new List<Tile>();
+            int moveVal = Mathf.Abs(start.x - end.x) + Mathf.Abs(start.y - end.y);
+            int breakInfiniteLoop = 0;
+            bool pathFound = false;
+            List<List<Tile>> openPath = new List<List<Tile>>();
+            List<List<Tile>> curPathList = new List<List<Tile>>();
+            List<Tile> openPathClone = new List<Tile>();
+            List<Tile> endPaths = new List<Tile>();
             List<Tile> movePath = new List<Tile>();
             int moves = currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed;
-            for (int i = 0; i < moves; i++)
-            {
+            movePath.Add(start);
+            openPath.Add(movePath);
+            while (!pathFound)
+            {            
+                           
+                foreach (List<Tile> lt in openPath)
+                {
+                    openPathClone = new List<Tile>();
+                    Tile t = lt[lt.Count - 1];
+                        List<Tile> tempList = GetPossiblePaths(t);
+                        foreach (Tile til in tempList)
+                        {
+                            Debug.Log(til);
+
+                            if (til.Equals(end))
+                            {
+                                Debug.Log("end found");
+                                movePath = lt;
+                                pathFound = true;
+                                break;
+                            }
+                            else
+                            {                                
+                                moveVal = Mathf.Abs(til.x - end.x) + Mathf.Abs(til.y - end.y);
+                                Debug.Log(moveVal);
+                                if (moveVal < moves)
+                                {
+                                    openPathClone = new List<Tile>(lt);
+                                    openPathClone.Add(til);
+                                    if (!endPaths.Contains(til))
+                                    {
+                                        endPaths.Add(til);
+                                        curPathList.Add(openPathClone);
+                                    }
+                                }
+                            }
+                        }
+
+                    }
                 
-                if(currentX == endX && currentY == endY)
+                if (!pathFound)
                 {
-                    break;
-                }
-                //Path to right
-                else if (currentX < endX && tileArray[currentX + 1, currentY].isValidMove)
-                {
-                    Tile tempTile = tileArray[currentX + 1, currentY];
-                    movePath.Add(tempTile);  
-                    currentX++;
-                }//path to left
-                else if (currentX > endX && tileArray[currentX - 1, currentY].isValidMove)
-                {
-                    Tile tempTile = tileArray[currentX - 1, currentY];
-                    movePath.Add(tempTile);
-                    currentX--;
-                }//path to bottom
-                else if (currentY < endY && tileArray[currentX, currentY + 1].isValidMove)
-                {
-                    Tile tempTile = tileArray[currentX, currentY + 1];
-                    movePath.Add(tempTile);
-                    currentY++;
-                }//path to top
-                else if (currentY > endY && tileArray[currentX, currentY - 1].isValidMove)
-                {
-                    Tile tempTile = tileArray[currentX, currentY - 1];
-                    movePath.Add(tempTile);
-                    currentY--;
+                    openPath = curPathList;
+                    curPathList = new List<List<Tile>>();
+                    movePath = new List<Tile>();
+                    breakInfiniteLoop++;
                 }
                 else
                 {
-                    Debug.Log("X:" + currentX + "Y:" + (currentY - 1));
+                    movePath.Add(end);
                 }
-                Debug.Log("X:" + currentX + "Y:" + (currentY - 1));
             }
+            //}
+            Debug.Log(movePath.Count);
+            foreach (Tile t in movePath)
+            {
+                Debug.Log(t.x + " " + t.y);
+            }            
             return movePath;
+        }
+
+        private List<Tile> GetPossiblePaths(Tile t)
+        {
+            List<Tile> tempList = new List<Tile>();
+            if (t.y - 1 >= 0) 
+            {
+                if (tileArray[t.x, t.y - 1].isValidMove)
+                tempList.Add(tileArray[t.x, t.y - 1]);
+            }
+            if (t.y + 1 < tileMap.yLength) 
+            {
+                if (tileArray[t.x, t.y + 1].isValidMove)
+                    tempList.Add(tileArray[t.x, t.y + 1]);
+            }
+            if (t.x - 1 >= 0)
+            {
+                if (tileArray[t.x - 1, t.y].isValidMove)
+                    tempList.Add(tileArray[t.x - 1, t.y]);
+            }
+            if (t.x + 1 < tileMap.xLength)
+            {
+                if (tileArray[t.x + 1, t.y].isValidMove)
+                    tempList.Add(tileArray[t.x + 1, t.y]);
+            }
+            return tempList;
         }
         public void SetAction(string newAction)
         {
@@ -1171,14 +1266,12 @@ namespace Assets.Scripts
             GameObject tempchar = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;
             tempchar.GetComponent<SpriteRenderer>().sortingOrder = 6 + (tempTile.y * 2);
             tempchar.transform.parent = tileMap.transform;
-            Debug.Log(tempchar.transform.localPosition);
-            
+
             tempchar.AddComponent<CharacterGameObject>();
             tempchar.GetComponent<CharacterGameObject>().CharacterClassObject = gameCharacter.CharacterClassObject;
             tempchar.GetComponent<CharacterGameObject>().X = gameCharacter.X;
             tempchar.GetComponent<CharacterGameObject>().Y = gameCharacter.Y;
             tempTile.characterObject = tempchar;
-            Debug.Log(tempTile.character.X);
             //tempGC = gameChar;
             Animator tempAnim = tempchar.GetComponent<Animator>();
             tempAnim.SetFloat("x", 0);
@@ -1203,8 +1296,6 @@ namespace Assets.Scripts
             }
             currentGameCharacter = myCharacters[0];            
             currentCharacterGameObject = currentGameCharacter.GetComponent<CharacterGameObject>();
-            Debug.Log(currentCharacterGameObject.X);
-            Debug.Log(currentCharacterGameObject.Y);
             targetTile = tileArray[currentCharacterGameObject.X, currentCharacterGameObject.Y];
             prevTile = targetTile;
             tile = prevTile;
@@ -1215,7 +1306,6 @@ namespace Assets.Scripts
             attackButton.interactable = true;
             abilityButton.interactable = true;
             statsPanel.charName.text = currentCharacterGameObject.CharacterClassObject.Name;
-            Debug.Log(currentCharacterGameObject.CharacterClassObject.BaseStats.HitPoints);
             statsPanel.hp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints;
             statsPanel.mp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;            
             PositionPanels();
@@ -1223,8 +1313,6 @@ namespace Assets.Scripts
 
         public void PositionPanels()
         {
-            Debug.Log(currentCharacterGameObject.transform.position.x);
-            Debug.Log(currentCharacterGameObject.transform.position.y);
             characterStatsPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x, currentCharacterGameObject.transform.position.y + 8, 0);
             actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 15, currentCharacterGameObject.transform.position.y - 7, 0);
             if (tile.x < 3)
