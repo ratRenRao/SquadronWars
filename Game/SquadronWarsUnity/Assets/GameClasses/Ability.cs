@@ -8,6 +8,7 @@ namespace Assets.GameClasses
 {
     public class Ability : IEffectable, IJsonable
     {
+        public string Name { get; set; }
         public int AbilityId { get; set; }
         public int CharacterId { get; set; }
         public int AbilityLevel { get; set; }

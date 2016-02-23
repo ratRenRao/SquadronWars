@@ -12,7 +12,7 @@ namespace Assets.Scripts
         private StartupData _startupData {get; set; }
         private Player _player { get; set; }
         private static Player.Logins _logins = new Player.Logins();
-        public GameObject MenuManager;
+        public GameObject HomeScreen, LoginScreen;
         // Use this for initialization
         void Start()
         {
@@ -47,8 +47,13 @@ namespace Assets.Scripts
 
             _player = GlobalConstants.Player;
 
-            MenuManager.GetComponent<MenuManager>().loginPanel.SetActive(false);
-            MenuManager.GetComponent<MenuManager>().homePanel.SetActive(true);
+            LoginScreen.gameObject.SetActive(false);
+            HomeScreen.gameObject.SetActive(true);
+            //CanvasManager.HomeScreen.SetActive(true);
+            //CanvasManager.LoginScreen.SetActive(false);
+            //MenuManager.GetComponent<MenuManager>().HomePanel.SetActive(true);
+            //MenuManager.GetComponent<MenuManager>().LoginPanel.SetActive(false);
+            
         }
 
         private void GetDbData()
