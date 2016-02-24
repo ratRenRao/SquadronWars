@@ -33,7 +33,6 @@ namespace Assets.Scripts
 
         public void PopulateList()
         {
-            Debug.Log(GlobalConstants.Player.Characters[0].Name);
 
             foreach (var character in GlobalConstants.Player.Characters)
             {
