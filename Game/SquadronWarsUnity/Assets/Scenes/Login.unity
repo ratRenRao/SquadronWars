@@ -19554,9 +19554,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Cancel
-
-'
+  m_Text: Cancel
 --- !u!222 &1558947840
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20567,7 +20565,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 907188548}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
