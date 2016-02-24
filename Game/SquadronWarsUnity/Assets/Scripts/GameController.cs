@@ -55,6 +55,7 @@ namespace Assets.Scripts
         string selectedAbility;
         int count = 0;
         int unitPlacedCount = 0;
+        List<Tile> walkableTiles = new List<Tile>();
         List<Tile> validMoves = new List<Tile>();
         List<Tile> path = new List<Tile>();
         List<GameObject> turnQueue = new List<GameObject>();
@@ -78,7 +79,7 @@ namespace Assets.Scripts
                 battlesong.playOnAwake = true;
                 placeCharacterPhase = true;
                 characters = GlobalConstants.MatchCharacters;
-                statsPanel.charName.text = characters[0].CharacterClassObject.Name;
+                //statsPanel.charName.text = characters[0].CharacterClassObject.Name;
                 statsPanel.hp.text = characters[0].CharacterClassObject.CurrentStats.HitPoints + " / " + characters[0].CharacterClassObject.CurrentStats.HitPoints;
                 statsPanel.mp.text = characters[0].CharacterClassObject.CurrentStats.MagicPoints + " / " + characters[0].CharacterClassObject.CurrentStats.MagicPoints;
                 tileArray = tileMap.tileArray;
@@ -261,6 +262,7 @@ namespace Assets.Scripts
 
                         Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
                         tempTile.isOccupied = true;
+                        hidePanel = false;
                         action = Action.IDLE;
                     }
                 }
@@ -277,6 +279,7 @@ namespace Assets.Scripts
         public void OccupyTiles()
         {
             action = Action.Occupy;
+            hidePanel = true;
         }
         private void Move()
         {
@@ -316,6 +319,7 @@ namespace Assets.Scripts
                 selectedAbility = ability;
             }
         }
+
         public void CastAbility(string ability)
         {
             if (!currentCharacterGameObject.hasAttacked)
@@ -324,11 +328,22 @@ namespace Assets.Scripts
                 selectedAbility = ability;
             }
         }
+
         public void showMoves()
         {
+            //FindPossibleMoves(tile);
+            foreach (Tile t in walkableTiles)
+            {
+                t.highlight.GetComponent<Image>().color = new Color32(99, 178, 255, 165);
+                t.highlight.SetActive(true);
+                t.isValidMove = true;
+                validMoves.Add(t);
+            }
+            hidePanel = true;
+            StartCoroutine(WaitForClick("move"));
             // int currentX = currentCharacter.x;
             //  int currentY = currentCharacter.y;
-            int tileX = tile.x;
+            /*int tileX = tile.x;
             int tileY = tile.y;
             bool rightOccupied = false;
             bool botOccupied = false;
@@ -575,7 +590,139 @@ namespace Assets.Scripts
                 {
                     clearHighlights(validMoves);
                 }
+            }*/
+        }
+
+        public List<Tile> buildPath(Tile start, Tile end)
+        {
+            int currentX = start.x;
+            int currentY = start.y;
+            int endX = end.x;
+            int endY = end.y;
+            int moveVal = Mathf.Abs(start.x - end.x) + Mathf.Abs(start.y - end.y);
+            int breakInfiniteLoop = 0;
+            bool pathFound = false;
+            List<List<Tile>> openPath = new List<List<Tile>>();
+            List<List<Tile>> curPathList = new List<List<Tile>>();
+            List<Tile> openPathClone = new List<Tile>();
+            List<Tile> endPaths = new List<Tile>();
+            List<Tile> movePath = new List<Tile>();
+            walkableTiles = new List<Tile>();
+            int moves = currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed;
+            movePath.Add(start);
+            openPath.Add(movePath);
+            while (!pathFound)
+            {
+
+                foreach (List<Tile> lt in openPath)
+                {
+                    openPathClone = new List<Tile>();
+                    Tile t = lt[lt.Count - 1];
+                    List<Tile> tempList = GetPossiblePaths(t, false);
+                    foreach (Tile til in tempList)
+                    {
+                        Debug.Log(til);
+
+                        if (til.Equals(end))
+                        {
+                            Debug.Log("end found");
+                            movePath = lt;
+                            pathFound = true;
+                            break;
+                        }
+                        else
+                        {
+                            moveVal = Mathf.Abs(til.x - end.x) + Mathf.Abs(til.y - end.y);
+                            Debug.Log(moveVal);
+                            if (moveVal < moves)
+                            {
+                                openPathClone = new List<Tile>(lt);
+                                openPathClone.Add(til);
+                                if (!endPaths.Contains(til))
+                                {
+                                    endPaths.Add(til);
+                                    curPathList.Add(openPathClone);
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                if (!pathFound)
+                {
+                    openPath = curPathList;
+                    curPathList = new List<List<Tile>>();
+                    movePath = new List<Tile>();
+                    breakInfiniteLoop++;
+                }
+                else
+                {
+                    movePath.Add(end);
+                }
             }
+            //}
+            Debug.Log(movePath.Count);
+            foreach (Tile t in movePath)
+            {
+                Debug.Log(t.x + " " + t.y);
+            }
+            return movePath;
+        }
+
+        private List<Tile> GetPossiblePaths(Tile t, bool isPathSearch)
+        {
+            List<Tile> tempList = new List<Tile>();
+            if (t.y - 1 >= 0)
+            {
+                if ((tileArray[t.x, t.y - 1].isValidMove || (isPathSearch && !walkableTiles.Contains(tileArray[t.x, t.y - 1]))) && !tileArray[t.x, t.y - 1].isOccupied)
+                    tempList.Add(tileArray[t.x, t.y - 1]);
+            }
+            if (t.y + 1 < tileMap.yLength)
+            {
+                if ((tileArray[t.x, t.y + 1].isValidMove || (isPathSearch && !walkableTiles.Contains(tileArray[t.x, t.y + 1]))) && !tileArray[t.x, t.y + 1].isOccupied)
+                    tempList.Add(tileArray[t.x, t.y + 1]);
+            }
+            if (t.x - 1 >= 0)
+            {
+                if ((tileArray[t.x - 1, t.y].isValidMove || (isPathSearch && !walkableTiles.Contains(tileArray[t.x - 1, t.y]))) && !tileArray[t.x - 1, t.y].isOccupied)
+                    tempList.Add(tileArray[t.x - 1, t.y]);
+            }
+            if (t.x + 1 < tileMap.xLength)
+            {
+                if ((tileArray[t.x + 1, t.y].isValidMove  || (isPathSearch && !walkableTiles.Contains(tileArray[t.x + 1, t.y]))) && !tileArray[t.x + 1, t.y].isOccupied)
+                    tempList.Add(tileArray[t.x + 1, t.y]);
+            }
+            return tempList;
+        }
+        private void FindPossibleMoves(Tile tile)
+        {
+            currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed = 15;
+            int move = currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed;
+            int countCheck = 0;
+            List<Tile> openPath = new List<Tile>();
+            List<Tile> openPathTemp = new List<Tile>();
+            walkableTiles = new List<Tile>();            
+            openPath.Add(tile);
+            for (int i = 0; i < move; i++)
+            {
+                openPathTemp = new List<Tile>();
+                foreach (Tile t in openPath)
+                {                    
+                    List<Tile> temp = GetPossiblePaths(t, true);
+                    foreach (Tile til in temp)
+                    {
+                        countCheck++;               
+                        openPathTemp.Add(til);
+                        walkableTiles.Add(til);
+                        
+                    }                    
+                }
+                openPath = new List<Tile>(openPathTemp);
+                
+            }
+            Debug.Log(countCheck);
+            Debug.Log(walkableTiles.Count);
         }
 
         public void showCastMoves()
@@ -831,107 +978,7 @@ namespace Assets.Scripts
             return false;
         }
 
-        public List<Tile> buildPath(Tile start, Tile end)
-        {
-            int currentX = start.x;
-            int currentY = start.y;
-            int endX = end.x;
-            int endY = end.y;
-            int moveVal = Mathf.Abs(start.x - end.x) + Mathf.Abs(start.y - end.y);
-            int breakInfiniteLoop = 0;
-            bool pathFound = false;
-            List<List<Tile>> openPath = new List<List<Tile>>();
-            List<List<Tile>> curPathList = new List<List<Tile>>();
-            List<Tile> openPathClone = new List<Tile>();
-            List<Tile> endPaths = new List<Tile>();
-            List<Tile> movePath = new List<Tile>();
-            int moves = currentCharacterGameObject.CharacterClassObject.CurrentStats.Speed;
-            movePath.Add(start);
-            openPath.Add(movePath);
-            while (!pathFound)
-            {            
-                           
-                foreach (List<Tile> lt in openPath)
-                {
-                    openPathClone = new List<Tile>();
-                    Tile t = lt[lt.Count - 1];
-                        List<Tile> tempList = GetPossiblePaths(t);
-                        foreach (Tile til in tempList)
-                        {
-                            Debug.Log(til);
-
-                            if (til.Equals(end))
-                            {
-                                Debug.Log("end found");
-                                movePath = lt;
-                                pathFound = true;
-                                break;
-                            }
-                            else
-                            {                                
-                                moveVal = Mathf.Abs(til.x - end.x) + Mathf.Abs(til.y - end.y);
-                                Debug.Log(moveVal);
-                                if (moveVal < moves)
-                                {
-                                    openPathClone = new List<Tile>(lt);
-                                    openPathClone.Add(til);
-                                    if (!endPaths.Contains(til))
-                                    {
-                                        endPaths.Add(til);
-                                        curPathList.Add(openPathClone);
-                                    }
-                                }
-                            }
-                        }
-
-                    }
-                
-                if (!pathFound)
-                {
-                    openPath = curPathList;
-                    curPathList = new List<List<Tile>>();
-                    movePath = new List<Tile>();
-                    breakInfiniteLoop++;
-                }
-                else
-                {
-                    movePath.Add(end);
-                }
-            }
-            //}
-            Debug.Log(movePath.Count);
-            foreach (Tile t in movePath)
-            {
-                Debug.Log(t.x + " " + t.y);
-            }            
-            return movePath;
-        }
-
-        private List<Tile> GetPossiblePaths(Tile t)
-        {
-            List<Tile> tempList = new List<Tile>();
-            if (t.y - 1 >= 0) 
-            {
-                if (tileArray[t.x, t.y - 1].isValidMove)
-                tempList.Add(tileArray[t.x, t.y - 1]);
-            }
-            if (t.y + 1 < tileMap.yLength) 
-            {
-                if (tileArray[t.x, t.y + 1].isValidMove)
-                    tempList.Add(tileArray[t.x, t.y + 1]);
-            }
-            if (t.x - 1 >= 0)
-            {
-                if (tileArray[t.x - 1, t.y].isValidMove)
-                    tempList.Add(tileArray[t.x - 1, t.y]);
-            }
-            if (t.x + 1 < tileMap.xLength)
-            {
-                if (tileArray[t.x + 1, t.y].isValidMove)
-                    tempList.Add(tileArray[t.x + 1, t.y]);
-            }
-            return tempList;
-        }
+       
         public void SetAction(string newAction)
         {
             Debug.Log(newAction + " Action Called");
@@ -1190,6 +1237,7 @@ namespace Assets.Scripts
                 SelectNextCharacter();
             }
         }
+
         private void PrepTest()
         {
             
@@ -1302,6 +1350,7 @@ namespace Assets.Scripts
             anim = currentCharacterGameObject.GetComponent<Animator>();
             currentCharacterGameObject.hasAttacked = false;
             currentCharacterGameObject.hasMoved = false;
+            FindPossibleMoves(tile);
             moveButton.interactable = true;
             attackButton.interactable = true;
             abilityButton.interactable = true;
