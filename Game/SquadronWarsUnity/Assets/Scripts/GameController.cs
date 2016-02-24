@@ -77,6 +77,7 @@ namespace Assets.Scripts
             if (!arraySet)
             {
                 battlesong.playOnAwake = true;
+                Debug.Log(battlesong.GetComponent<AudioSource>().isPlaying);
                 placeCharacterPhase = true;
                 characters = GlobalConstants.MatchCharacters;
                 //statsPanel.charName.text = characters[0].CharacterClassObject.Name;
@@ -278,8 +279,8 @@ namespace Assets.Scripts
 
         public void OccupyTiles()
         {
-            action = Action.Occupy;
-            hidePanel = true;
+            anim.SetBool("isDead", true);
+            Debug.Log(anim.GetBool("isDead"));
         }
         private void Move()
         {
@@ -903,13 +904,18 @@ namespace Assets.Scripts
             GameObject dmgObject = GameObject.Instantiate(damageText, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y + 3.2f), Quaternion.identity) as GameObject;
             dmgObject.transform.parent = particleCanvas.transform;
             dmgObject.GetComponent<Text>().text = damage.ToString();
-            targetCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints -= damage;
-            if(targetCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints < 0)
-            {
-                targetCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints = 0;
-                myCharacters.Remove(targetCharacterGameObject.gameObject);
-            }
+            targetCharacterGameObject.curHP -= damage;
+            Debug.Log(targetCharacterGameObject.curHP);            
             yield return new WaitForSeconds(.4f);
+            if (targetCharacterGameObject.curHP < 0)
+            {
+                Debug.Log("Character Died");
+                targetCharacterGameObject.curHP = 0;
+                targetCharacterGameObject.isDead = true;
+                //myCharacters.Remove(targetCharacterGameObject.gameObject);
+                tarAnim.SetBool("isDead", true);
+                yield return new WaitForSeconds(.8f);
+            }
             hidePanel = false;
         }
         IEnumerator AttackAnimationNothing()
@@ -1073,13 +1079,28 @@ namespace Assets.Scripts
         public void SelectNextCharacter()
         {
             if (placeCharacterPhase)
-            {
+            {                
                 placeCharacterPhase = false;
+                foreach(GameObject g in myCharacters){
+                    CharacterGameObject tempGC = g.GetComponent<CharacterGameObject>();
+                    Tile t = tileArray[tempGC.X, tempGC.Y];
+                    t.character.curHP = tempGC.CharacterClassObject.CurrentStats.HitPoints;
+                    t.character.curMP = tempGC.CharacterClassObject.CurrentStats.MagicPoints;
+                }
             }
             else
             {
-                myCharacters.Add(myCharacters[0]);
-                myCharacters.RemoveAt(0);
+                bool getNextAvailableCharacter = false;
+                while (!getNextAvailableCharacter)
+                {
+                    myCharacters.Add(myCharacters[0]);
+                    myCharacters.RemoveAt(0);
+                    Tile t = tileArray[myCharacters[0].GetComponent<CharacterGameObject>().X, myCharacters[0].GetComponent<CharacterGameObject>().Y];
+                    if (!t.character.isDead)
+                    {
+                        getNextAvailableCharacter = true;
+                    }
+                }
             }
             currentGameCharacter = myCharacters[0];            
             currentCharacterGameObject = currentGameCharacter.GetComponent<CharacterGameObject>();
@@ -1094,8 +1115,9 @@ namespace Assets.Scripts
             attackButton.interactable = true;
             abilityButton.interactable = true;
             statsPanel.charName.text = currentCharacterGameObject.CharacterClassObject.Name;
-            statsPanel.hp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints;
-            statsPanel.mp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;            
+            currentCharacterGameObject.CharacterClassObject.CurrentStats.Dmg = 20;
+            statsPanel.hp.text = tile.character.curHP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints;
+            statsPanel.mp.text = tile.character.curMP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;            
             PositionPanels();
         }
 

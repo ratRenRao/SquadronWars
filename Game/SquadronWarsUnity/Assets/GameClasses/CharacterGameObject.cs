@@ -11,14 +11,19 @@ namespace Assets.GameClasses
     {
         public int X { get; set; }
         public int Y { get; set; }
+        public int curHP { get; set; }
+        public int curMP { get; set; }
         public bool hasAttacked = false;
         public bool hasMoved = false;
+        public bool isDead = false;
 
         public Character CharacterClassObject { get; set; }
 
         public CharacterGameObject(Character characterClassObject = null, int x = 0, int y = 0)
         {
             CharacterClassObject = characterClassObject;
+            curHP = characterClassObject.CurrentStats.HitPoints;
+            curMP = characterClassObject.CurrentStats.MagicPoints;
             X = x;
             Y = y;
         }
