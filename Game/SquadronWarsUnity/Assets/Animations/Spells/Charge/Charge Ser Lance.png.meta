@@ -1,9 +1,42 @@
 fileFormatVersion: 2
 guid: 345dd22d163a323429bf2a9cd1e655f6
-timeCreated: 1454087494
+timeCreated: 1455676620
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Charge Ser Lance_0
+    21300002: Charge Ser Lance_1
+    21300004: Charge Ser Lance_2
+    21300006: Charge Ser Lance_3
+    21300008: Charge Ser Lance_4
+    21300010: Charge Ser Lance_5
+    21300012: Charge Ser Lance_6
+    21300014: Charge Ser Lance_7
+    21300016: Charge Ser Lance_8
+    21300018: Charge Ser Lance_9
+    21300020: Charge Ser Lance_10
+    21300022: Charge Ser Lance_11
+    21300024: Charge Ser Lance_12
+    21300026: Charge Ser Lance_13
+    21300028: Charge Ser Lance_14
+    21300030: Charge Ser Lance_15
+    21300032: Charge Ser Lance_16
+    21300034: Charge Ser Lance_17
+    21300036: Charge Ser Lance_18
+    21300038: Charge Ser Lance_19
+    21300040: Charge Ser Lance_20
+    21300042: Charge Ser Lance_21
+    21300044: Charge Ser Lance_22
+    21300046: Charge Ser Lance_23
+    21300048: Charge Ser Lance_24
+    21300050: Charge Ser Lance_25
+    21300052: Charge Ser Lance_26
+    21300054: Charge Ser Lance_27
+    21300056: Charge Ser Lance_28
+    21300058: Charge Ser Lance_29
+    21300060: Charge Ser Lance_30
+    21300062: Charge Ser Lance_31
+    21300064: Charge Ser Lance_32
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -17,7 +50,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: 0.25
+    heightScale: .25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -29,8 +62,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,19 +71,348 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
-    outline: []
+    sprites:
+    - name: Charge Ser Lance_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 794
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_1
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 785
+        width: 84
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_2
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 785
+        width: 129
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_3
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 784
+        width: 134
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_4
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 782
+        width: 136
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_5
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 605
+        width: 114
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_6
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 633
+        width: 121
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_7
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 619
+        width: 123
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_8
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 619
+        width: 99
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_9
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 618
+        width: 104
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_10
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 717
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_11
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 694
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_12
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 618
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_13
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 595
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_14
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 589
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_15
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 601
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_16
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 602
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_17
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 426
+        width: 101
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_18
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 427
+        width: 83
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_19
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 431
+        width: 73
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_20
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 448
+        width: 74
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_21
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 459
+        width: 63
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_22
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 484
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_23
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 454
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_24
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 268
+        width: 44
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_25
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 269
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_26
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 213
+        width: 110
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_27
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 213
+        width: 112
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_28
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 213
+        width: 112
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_29
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 20
+        width: 113
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_30
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 20
+        width: 112
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_31
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 20
+        width: 112
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Charge Ser Lance_32
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 20
+        width: 112
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
