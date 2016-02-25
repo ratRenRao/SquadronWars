@@ -25,16 +25,49 @@ namespace Assets.Data
 
         public static void BuildAndDistributeData()
         {
-            // Fix this hack. Probably an issue w/ being populated in Utilities.BuildObject
+            // Fix this hack. Probably an issue w/ it being partially populated in Utilities.BuildObject
             Player.Characters = new List<Character>();
             Player.Inventory = new List<InventoryElement>();
+            //
 
             PopulateGlobalConstants();
             BuildInventoryList();
+            SetItemType();
 
             BuildCharacterObjects();
             GlobalConstants.Player = Player;
             GlobalConstants.CharacterLoadReady = true;
+        }
+
+        public static void SetItemType()
+        {
+            foreach (var item in Player.Inventory)
+            {
+                item.Item.ItemType = GetType(item.Item.Slot);
+            }        
+        }
+
+        private static ItemType GetType(string typeString)
+        {
+            switch (typeString)
+            {
+                case "H":
+                    return ItemType.Helm;
+                case "C":
+                    return ItemType.Chest;
+                case "L":
+                    return ItemType.Legs;
+                case "G":
+                    return ItemType.Gloves;
+                case "B":
+                    return ItemType.Boots;
+                case "A1":
+                    return ItemType.Accessory1;
+                case "A2":
+                    return ItemType.Accessory2;
+                default:
+                    return ItemType.Unique;
+            }
         }
 
         public static void BuildInventoryList()
@@ -68,6 +101,10 @@ namespace Assets.Data
                 }
 
                 characterBuilder.BaseStats = character.BuildBaseStats();
+
+               // characterBuilder.BaseStats.AbilityPoints = 3;
+               // characterBuilder.BaseStats.SkillPoints = 2;
+
                 characterBuilder.CurrentStats = character.BuildBaseStats();
                 characterBuilder.Equipment = character.BuildEquipment();
                 characterBuilder.Abilities = Abilities.Where(ability => ability.CharacterId == character.CharacterId).ToList();
@@ -142,7 +179,9 @@ namespace Assets.Data
                     MagicDefense,
                     HitRate,
                     DodgeRate,
-                    CritRate);
+                    CritRate,
+                    StatPoints,
+                    SkillPoints);
 
                 return _stats;
             }            

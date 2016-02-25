@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Data;
 using Assets.Scripts;
 
 namespace Assets.GameClasses
@@ -24,6 +25,10 @@ namespace Assets.GameClasses
         public static List<Item> ItemsMasterList { get; set; }
         public static Player Player { get; set; }
         public static List<Ability> AbilityMasterList { get; set; }
+
+        public static Utilities Utilities = new Utilities();
+
+        public static CharacterGameObject ActiveCharacterGameObject { get; set; }
         //public static List<Character> PlayerCharacters { get; set; } 
 
         /*

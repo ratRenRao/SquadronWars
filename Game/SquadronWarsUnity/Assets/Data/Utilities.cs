@@ -403,6 +403,9 @@ namespace Assets.Data
             return null;
         }
 
-        //     private static string GetJsonObjectName
+        public Character GetCharacterById(int id)
+        {
+            return GlobalConstants.Player.Characters.Single(x => x.CharacterId == id);
+        }
     }
 } 

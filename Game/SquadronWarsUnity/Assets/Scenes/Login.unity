@@ -89,6 +89,19 @@ NavMeshSettings:
 GameObject:
   m_PrefabParentObject: {fileID: 163718, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
   m_PrefabInternal: {fileID: 1024292545}
+--- !u!114 &18327396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 18327390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4fd37de1caa3d44936d21344620958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasAttacked: 0
+  hasMoved: 0
 --- !u!1 &20844263
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,9 +4077,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
-  character: {fileID: 0}
+  characterGameObject: {fileID: 0}
+  characterScreen: {fileID: 0}
   nameLabel: {fileID: 0}
-  menuStats: {fileID: 0}
 --- !u!1 &287826050
 GameObject:
   m_ObjectHideFlags: 0
@@ -7438,7 +7451,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 633330404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1900533190}
+        m_MethodName: ConfirmStatChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &633330404
@@ -10295,9 +10319,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
-  character: {fileID: 0}
+  characterGameObject: {fileID: 0}
+  characterScreen: {fileID: 0}
   nameLabel: {fileID: 0}
-  menuStats: {fileID: 0}
 --- !u!1 &844143457
 GameObject:
   m_ObjectHideFlags: 0
@@ -10307,6 +10331,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 844143459}
   - 114: {fileID: 844143458}
+  - 114: {fileID: 844143460}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -10325,10 +10350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07342e9b594bb284c8baef76a56df22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SampleButton: {fileID: 18327390}
-  MatchCharacters: {fileID: 0}
-  temp: {fileID: 0}
-  ContentPanel: {fileID: 1916724121}
+  sampleButton: {fileID: 18327390}
+  matchCharacters: {fileID: 0}
+  characterGameObject: {fileID: 844143460}
+  contentPanel: {fileID: 1916724121}
 --- !u!4 &844143459
 Transform:
   m_ObjectHideFlags: 0
@@ -10341,6 +10366,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &844143460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 844143457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4fd37de1caa3d44936d21344620958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasAttacked: 0
+  hasMoved: 0
 --- !u!1 &844838901
 GameObject:
   m_ObjectHideFlags: 0
@@ -13695,6 +13733,22 @@ Prefab:
     - target: {fileID: 11464476, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
       propertyPath: m_Colors.m_NormalColor.g
       value: 0.58750004
+      objectReference: {fileID: 0}
+    - target: {fileID: 11471314, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
+      propertyPath: characterGameObject
+      value: 
+      objectReference: {fileID: 18327396}
+    - target: {fileID: 11471314, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
+      propertyPath: nameLabel
+      value: 
+      objectReference: {fileID: 1646960870}
+    - target: {fileID: 11471314, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
+      propertyPath: characterScreen
+      value: 
+      objectReference: {fileID: 504933758}
+    - target: {fileID: 166802, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
+      propertyPath: m_Name
+      value: Text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
@@ -23244,7 +23298,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1728059458}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1900533190}
+        m_MethodName: RevertStatChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1728059458
