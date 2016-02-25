@@ -84,8 +84,10 @@ namespace Assets.Scripts
                 statsPanel.hp.text = characters[0].CharacterClassObject.CurrentStats.HitPoints + " / " + characters[0].CharacterClassObject.CurrentStats.HitPoints;
                 statsPanel.mp.text = characters[0].CharacterClassObject.CurrentStats.MagicPoints + " / " + characters[0].CharacterClassObject.CurrentStats.MagicPoints;
                 tileArray = tileMap.tileArray;
-                highlightSpawn();
                 arraySet = true;
+                highlightSpawn();
+                
+                
             }
             if (hidePanel)
             {
@@ -958,6 +960,10 @@ namespace Assets.Scripts
             tarAnim.SetBool("isAttacked", false);
             hidePanel = false;
         }
+        IEnumerator WaitForLoad()
+        {
+            yield return new WaitForSeconds(.5f);
+        }
         IEnumerator WaitForClick(string act)
         {
             yield return new WaitForSeconds(.1f);
@@ -1031,6 +1037,7 @@ namespace Assets.Scripts
                 for(int j = 0; j < tileMap.yLength; j++)
                 {
                     Tile tempTile = tileArray[i, j];
+                    Debug.Log(tempTile.x + ", " + tempTile.y);
                     tempTile.highlight.SetActive(true);
                     tempTile.isValidMove = true;
                     validMoves.Add(tempTile);

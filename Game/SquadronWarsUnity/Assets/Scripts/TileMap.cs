@@ -51,6 +51,13 @@ namespace Assets.Scripts
                 tile.x = (int)floatX;
                 tile.y = (int)floatY;
                 tile.isValidMove = false;
+                GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
+
+                GameObject highlight = GameObject.Instantiate(temp, new Vector3(tile.transform.position.x + 1.6f, tile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
+                highlight.transform.parent = tile.transform;
+                tile.highlight = highlight;
+                tile.highlight.SetActive(false);
+                highlight.transform.localScale = new Vector3(0.072f, 0.072f, 0.0f);
                 //tile.x = x;
                 //tile.y = y;
 
