@@ -1,9 +1,57 @@
 fileFormatVersion: 2
 guid: e3e9762a31aa10141b824d1937998893
-timeCreated: 1454087502
+timeCreated: 1455676723
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Double Attack Ser Lance_0
+    21300002: Double Attack Ser Lance_1
+    21300004: Double Attack Ser Lance_2
+    21300006: Double Attack Ser Lance_3
+    21300008: Double Attack Ser Lance_4
+    21300010: Double Attack Ser Lance_5
+    21300012: Double Attack Ser Lance_6
+    21300014: Double Attack Ser Lance_7
+    21300016: Double Attack Ser Lance_8
+    21300018: Double Attack Ser Lance_9
+    21300020: Double Attack Ser Lance_10
+    21300022: Double Attack Ser Lance_11
+    21300024: Double Attack Ser Lance_12
+    21300026: Double Attack Ser Lance_13
+    21300028: Double Attack Ser Lance_14
+    21300030: Double Attack Ser Lance_15
+    21300032: Double Attack Ser Lance_16
+    21300034: Double Attack Ser Lance_17
+    21300036: Double Attack Ser Lance_18
+    21300038: Double Attack Ser Lance_19
+    21300040: Double Attack Ser Lance_20
+    21300042: Double Attack Ser Lance_21
+    21300044: Double Attack Ser Lance_22
+    21300046: Double Attack Ser Lance_23
+    21300048: Double Attack Ser Lance_24
+    21300050: Double Attack Ser Lance_25
+    21300052: Double Attack Ser Lance_26
+    21300054: Double Attack Ser Lance_27
+    21300056: Double Attack Ser Lance_28
+    21300058: Double Attack Ser Lance_29
+    21300060: Double Attack Ser Lance_30
+    21300062: Double Attack Ser Lance_31
+    21300064: Double Attack Ser Lance_32
+    21300066: Double Attack Ser Lance_33
+    21300068: Double Attack Ser Lance_34
+    21300070: Double Attack Ser Lance_35
+    21300072: Double Attack Ser Lance_36
+    21300074: Double Attack Ser Lance_37
+    21300076: Double Attack Ser Lance_38
+    21300078: Double Attack Ser Lance_39
+    21300080: Double Attack Ser Lance_40
+    21300082: Double Attack Ser Lance_41
+    21300084: Double Attack Ser Lance_42
+    21300086: Double Attack Ser Lance_43
+    21300088: Double Attack Ser Lance_44
+    21300090: Double Attack Ser Lance_45
+    21300092: Double Attack Ser Lance_46
+    21300094: Double Attack Ser Lance_47
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -17,7 +65,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: 0.25
+    heightScale: .25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -29,8 +77,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,19 +86,498 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
-    outline: []
+    sprites:
+    - name: Double Attack Ser Lance_0
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 688
+        width: 75
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_1
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 623
+        width: 139
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_2
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 579
+        width: 182
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_3
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 579
+        width: 182
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_4
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 579
+        width: 182
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_5
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 387
+        width: 182
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_6
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 386
+        width: 156
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_7
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 387
+        width: 154
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_8
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 387
+        width: 154
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_9
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 388
+        width: 154
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_10
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 196
+        width: 154
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_11
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 196
+        width: 154
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_12
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 224
+        width: 33
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_13
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 234
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_14
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 223
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_15
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 235
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_16
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 214
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_17
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 206
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_18
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 222
+        width: 42
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_19
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 235
+        width: 15
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_20
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 216
+        width: 28
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_21
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 215
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_22
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 213
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_23
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 214
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_24
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 43
+        width: 40
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_25
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 41
+        width: 27
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_26
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 56
+        width: 34
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_27
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 83
+        width: 17
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_28
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 69
+        width: 13
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_29
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 51
+        width: 28
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_30
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 88
+        width: 18
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_31
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 101
+        width: 15
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_32
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 85
+        width: 14
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_33
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 80
+        width: 25
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_34
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 62
+        width: 22
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_35
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 103
+        width: 16
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_36
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 116
+        width: 15
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_37
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 97
+        width: 13
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_38
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 98
+        width: 23
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_39
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 80
+        width: 20
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_40
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 36
+        width: 45
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_41
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 49
+        width: 16
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_42
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 31
+        width: 26
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_43
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 53
+        width: 15
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_44
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 33
+        width: 26
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_45
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 87
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_46
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 44
+        width: 25
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Double Attack Ser Lance_47
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 27
+        width: 24
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

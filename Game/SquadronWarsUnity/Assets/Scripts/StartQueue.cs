@@ -16,6 +16,6 @@ public class StartQueue : MonoBehaviour {
 
     public void StartFindingMatch()
     {
-        SceneManager.LoadScene("BattleMapTest2");
+        SceneManager.LoadScene("BattleMap2");
     }
 }

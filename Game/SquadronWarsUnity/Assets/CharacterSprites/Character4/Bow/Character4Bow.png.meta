@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 59a0194eac3f0cc459293db7514c4f77
-timeCreated: 1454638452
+timeCreated: 1455842776
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -246,7 +246,7 @@ TextureImporter:
         width: 30
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_1
       rect:
@@ -256,7 +256,7 @@ TextureImporter:
         width: 28
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_2
       rect:
@@ -266,7 +266,7 @@ TextureImporter:
         width: 28
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_3
       rect:
@@ -276,7 +276,7 @@ TextureImporter:
         width: 36
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_4
       rect:
@@ -286,7 +286,7 @@ TextureImporter:
         width: 50
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_5
       rect:
@@ -296,7 +296,7 @@ TextureImporter:
         width: 48
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_6
       rect:
@@ -306,7 +306,7 @@ TextureImporter:
         width: 36
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_7
       rect:
@@ -316,7 +316,7 @@ TextureImporter:
         width: 20
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_8
       rect:
@@ -326,7 +326,7 @@ TextureImporter:
         width: 23
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_9
       rect:
@@ -336,7 +336,7 @@ TextureImporter:
         width: 21
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_10
       rect:
@@ -346,7 +346,7 @@ TextureImporter:
         width: 26
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_11
       rect:
@@ -356,7 +356,7 @@ TextureImporter:
         width: 33
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_12
       rect:
@@ -366,7 +366,7 @@ TextureImporter:
         width: 33
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_13
       rect:
@@ -376,7 +376,7 @@ TextureImporter:
         width: 28
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_14
       rect:
@@ -386,7 +386,7 @@ TextureImporter:
         width: 30
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_15
       rect:
@@ -396,7 +396,7 @@ TextureImporter:
         width: 30
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_16
       rect:
@@ -406,7 +406,7 @@ TextureImporter:
         width: 28
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_17
       rect:
@@ -416,7 +416,7 @@ TextureImporter:
         width: 36
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_18
       rect:
@@ -426,7 +426,7 @@ TextureImporter:
         width: 50
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_19
       rect:
@@ -436,7 +436,7 @@ TextureImporter:
         width: 48
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_20
       rect:
@@ -446,7 +446,7 @@ TextureImporter:
         width: 34
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_21
       rect:
@@ -456,7 +456,7 @@ TextureImporter:
         width: 20
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_22
       rect:
@@ -466,7 +466,7 @@ TextureImporter:
         width: 23
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_23
       rect:
@@ -476,7 +476,7 @@ TextureImporter:
         width: 21
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_24
       rect:
@@ -486,7 +486,7 @@ TextureImporter:
         width: 26
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_25
       rect:
@@ -496,7 +496,7 @@ TextureImporter:
         width: 33
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_26
       rect:
@@ -506,7 +506,7 @@ TextureImporter:
         width: 33
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_27
       rect:
@@ -516,7 +516,7 @@ TextureImporter:
         width: 28
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_28
       rect:
@@ -526,7 +526,7 @@ TextureImporter:
         width: 30
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_29
       rect:
@@ -536,7 +536,7 @@ TextureImporter:
         width: 26
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_30
       rect:
@@ -546,7 +546,7 @@ TextureImporter:
         width: 24
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_31
       rect:
@@ -556,7 +556,7 @@ TextureImporter:
         width: 24
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_32
       rect:
@@ -566,7 +566,7 @@ TextureImporter:
         width: 24
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_33
       rect:
@@ -576,7 +576,7 @@ TextureImporter:
         width: 24
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_34
       rect:
@@ -586,7 +586,7 @@ TextureImporter:
         width: 24
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_35
       rect:
@@ -596,7 +596,7 @@ TextureImporter:
         width: 24
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_36
       rect:
@@ -606,7 +606,7 @@ TextureImporter:
         width: 20
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_37
       rect:
@@ -616,7 +616,7 @@ TextureImporter:
         width: 25
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_38
       rect:
@@ -626,7 +626,7 @@ TextureImporter:
         width: 27
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_39
       rect:
@@ -636,7 +636,7 @@ TextureImporter:
         width: 25
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_40
       rect:
@@ -646,7 +646,7 @@ TextureImporter:
         width: 27
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_41
       rect:
@@ -656,7 +656,7 @@ TextureImporter:
         width: 30
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_42
       rect:
@@ -666,7 +666,7 @@ TextureImporter:
         width: 27
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_43
       rect:
@@ -676,7 +676,7 @@ TextureImporter:
         width: 25
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_44
       rect:
@@ -686,7 +686,7 @@ TextureImporter:
         width: 30
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_45
       rect:
@@ -696,7 +696,7 @@ TextureImporter:
         width: 25
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_46
       rect:
@@ -706,7 +706,7 @@ TextureImporter:
         width: 24
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_47
       rect:
@@ -716,7 +716,7 @@ TextureImporter:
         width: 26
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_48
       rect:
@@ -726,7 +726,7 @@ TextureImporter:
         width: 24
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_49
       rect:
@@ -736,7 +736,7 @@ TextureImporter:
         width: 24
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_50
       rect:
@@ -746,7 +746,7 @@ TextureImporter:
         width: 24
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_51
       rect:
@@ -756,7 +756,7 @@ TextureImporter:
         width: 26
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_52
       rect:
@@ -766,7 +766,7 @@ TextureImporter:
         width: 20
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_53
       rect:
@@ -776,7 +776,7 @@ TextureImporter:
         width: 25
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_54
       rect:
@@ -786,7 +786,7 @@ TextureImporter:
         width: 27
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_55
       rect:
@@ -796,7 +796,7 @@ TextureImporter:
         width: 25
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_56
       rect:
@@ -806,7 +806,7 @@ TextureImporter:
         width: 27
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_57
       rect:
@@ -816,7 +816,7 @@ TextureImporter:
         width: 30
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_58
       rect:
@@ -826,7 +826,7 @@ TextureImporter:
         width: 27
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_59
       rect:
@@ -836,7 +836,7 @@ TextureImporter:
         width: 25
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_60
       rect:
@@ -846,7 +846,7 @@ TextureImporter:
         width: 30
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_61
       rect:
@@ -856,7 +856,7 @@ TextureImporter:
         width: 30
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_62
       rect:
@@ -866,7 +866,7 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_63
       rect:
@@ -876,7 +876,7 @@ TextureImporter:
         width: 29
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_64
       rect:
@@ -886,7 +886,7 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_65
       rect:
@@ -896,7 +896,7 @@ TextureImporter:
         width: 30
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_66
       rect:
@@ -906,7 +906,7 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_67
       rect:
@@ -916,7 +916,7 @@ TextureImporter:
         width: 29
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_68
       rect:
@@ -926,7 +926,7 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_69
       rect:
@@ -936,7 +936,7 @@ TextureImporter:
         width: 20
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_70
       rect:
@@ -946,7 +946,7 @@ TextureImporter:
         width: 25
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_71
       rect:
@@ -956,7 +956,7 @@ TextureImporter:
         width: 22
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_72
       rect:
@@ -966,7 +966,7 @@ TextureImporter:
         width: 22
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_73
       rect:
@@ -976,7 +976,7 @@ TextureImporter:
         width: 24
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_74
       rect:
@@ -986,7 +986,7 @@ TextureImporter:
         width: 28
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_75
       rect:
@@ -996,7 +996,7 @@ TextureImporter:
         width: 23
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_76
       rect:
@@ -1006,7 +1006,7 @@ TextureImporter:
         width: 22
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_77
       rect:
@@ -1016,7 +1016,7 @@ TextureImporter:
         width: 21
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_78
       rect:
@@ -1026,7 +1026,7 @@ TextureImporter:
         width: 30
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_79
       rect:
@@ -1036,7 +1036,7 @@ TextureImporter:
         width: 30
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_80
       rect:
@@ -1046,7 +1046,7 @@ TextureImporter:
         width: 30
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_81
       rect:
@@ -1056,7 +1056,7 @@ TextureImporter:
         width: 29
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_82
       rect:
@@ -1066,7 +1066,7 @@ TextureImporter:
         width: 30
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_83
       rect:
@@ -1076,7 +1076,7 @@ TextureImporter:
         width: 30
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_84
       rect:
@@ -1086,7 +1086,7 @@ TextureImporter:
         width: 30
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_85
       rect:
@@ -1096,7 +1096,7 @@ TextureImporter:
         width: 29
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_86
       rect:
@@ -1106,7 +1106,7 @@ TextureImporter:
         width: 30
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_87
       rect:
@@ -1116,7 +1116,7 @@ TextureImporter:
         width: 20
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_88
       rect:
@@ -1126,7 +1126,7 @@ TextureImporter:
         width: 25
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_89
       rect:
@@ -1136,7 +1136,7 @@ TextureImporter:
         width: 22
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_90
       rect:
@@ -1146,7 +1146,7 @@ TextureImporter:
         width: 22
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_91
       rect:
@@ -1156,7 +1156,7 @@ TextureImporter:
         width: 24
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_92
       rect:
@@ -1166,7 +1166,7 @@ TextureImporter:
         width: 28
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_93
       rect:
@@ -1176,7 +1176,7 @@ TextureImporter:
         width: 23
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_94
       rect:
@@ -1186,7 +1186,7 @@ TextureImporter:
         width: 22
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_95
       rect:
@@ -1196,7 +1196,7 @@ TextureImporter:
         width: 21
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_96
       rect:
@@ -1206,7 +1206,7 @@ TextureImporter:
         width: 30
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_97
       rect:
@@ -1216,7 +1216,7 @@ TextureImporter:
         width: 26
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_98
       rect:
@@ -1226,7 +1226,7 @@ TextureImporter:
         width: 25
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_99
       rect:
@@ -1236,7 +1236,7 @@ TextureImporter:
         width: 27
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_100
       rect:
@@ -1246,7 +1246,7 @@ TextureImporter:
         width: 36
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_101
       rect:
@@ -1256,7 +1256,7 @@ TextureImporter:
         width: 39
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_102
       rect:
@@ -1266,7 +1266,7 @@ TextureImporter:
         width: 20
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_103
       rect:
@@ -1276,7 +1276,7 @@ TextureImporter:
         width: 25
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_104
       rect:
@@ -1286,7 +1286,7 @@ TextureImporter:
         width: 24
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_105
       rect:
@@ -1296,7 +1296,7 @@ TextureImporter:
         width: 34
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_106
       rect:
@@ -1306,7 +1306,7 @@ TextureImporter:
         width: 36
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_107
       rect:
@@ -1316,7 +1316,7 @@ TextureImporter:
         width: 33
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_108
       rect:
@@ -1326,7 +1326,7 @@ TextureImporter:
         width: 30
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_109
       rect:
@@ -1336,7 +1336,7 @@ TextureImporter:
         width: 26
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_110
       rect:
@@ -1346,7 +1346,7 @@ TextureImporter:
         width: 27
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_111
       rect:
@@ -1356,7 +1356,7 @@ TextureImporter:
         width: 26
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_112
       rect:
@@ -1366,7 +1366,7 @@ TextureImporter:
         width: 35
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_113
       rect:
@@ -1376,7 +1376,7 @@ TextureImporter:
         width: 39
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_114
       rect:
@@ -1386,7 +1386,7 @@ TextureImporter:
         width: 20
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_115
       rect:
@@ -1396,7 +1396,7 @@ TextureImporter:
         width: 25
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_116
       rect:
@@ -1406,7 +1406,7 @@ TextureImporter:
         width: 24
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_117
       rect:
@@ -1416,7 +1416,7 @@ TextureImporter:
         width: 34
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_118
       rect:
@@ -1426,7 +1426,7 @@ TextureImporter:
         width: 36
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_119
       rect:
@@ -1436,87 +1436,7 @@ TextureImporter:
         width: 33
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character4Bow_120
-      rect:
-        serializedVersion: 2
-        x: 220
-        y: 304
-        width: 5
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character4Bow_121
-      rect:
-        serializedVersion: 2
-        x: 281
-        y: 303
-        width: 6
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character4Bow_122
-      rect:
-        serializedVersion: 2
-        x: 345
-        y: 303
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character4Bow_123
-      rect:
-        serializedVersion: 2
-        x: 409
-        y: 303
-        width: 6
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character4Bow_124
-      rect:
-        serializedVersion: 2
-        x: 473
-        y: 303
-        width: 7
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character4Bow_125
-      rect:
-        serializedVersion: 2
-        x: 539
-        y: 304
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character4Bow_126
-      rect:
-        serializedVersion: 2
-        x: 601
-        y: 303
-        width: 7
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Character4Bow_127
-      rect:
-        serializedVersion: 2
-        x: 665
-        y: 303
-        width: 7
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_128
       rect:
@@ -1526,7 +1446,7 @@ TextureImporter:
         width: 7
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_129
       rect:
@@ -1536,117 +1456,117 @@ TextureImporter:
         width: 7
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_130
       rect:
         serializedVersion: 2
         x: 8
         y: 258
-        width: 43
-        height: 41
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_131
       rect:
         serializedVersion: 2
         x: 75
         y: 256
-        width: 39
-        height: 44
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_132
       rect:
         serializedVersion: 2
-        x: 143
+        x: 140
         y: 256
-        width: 36
+        width: 54
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_133
       rect:
         serializedVersion: 2
         x: 211
         y: 256
-        width: 24
-        height: 43
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_134
       rect:
         serializedVersion: 2
         x: 275
         y: 256
-        width: 28
-        height: 45
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_135
       rect:
         serializedVersion: 2
         x: 339
         y: 256
-        width: 26
-        height: 43
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_136
       rect:
         serializedVersion: 2
         x: 403
         y: 256
-        width: 27
-        height: 43
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_137
       rect:
         serializedVersion: 2
         x: 467
         y: 256
-        width: 28
-        height: 43
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_138
       rect:
         serializedVersion: 2
         x: 531
         y: 256
-        width: 29
-        height: 43
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_139
       rect:
         serializedVersion: 2
         x: 595
         y: 256
-        width: 28
-        height: 43
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_140
       rect:
         serializedVersion: 2
         x: 659
         y: 256
-        width: 24
-        height: 43
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_141
       rect:
@@ -1656,7 +1576,7 @@ TextureImporter:
         width: 24
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_142
       rect:
@@ -1666,137 +1586,137 @@ TextureImporter:
         width: 24
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_143
       rect:
         serializedVersion: 2
         x: 7
         y: 194
-        width: 44
-        height: 42
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_144
       rect:
         serializedVersion: 2
         x: 76
         y: 194
-        width: 37
-        height: 42
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_145
       rect:
         serializedVersion: 2
         x: 136
         y: 194
-        width: 39
-        height: 43
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_146
       rect:
         serializedVersion: 2
         x: 201
         y: 194
-        width: 39
-        height: 45
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_147
       rect:
         serializedVersion: 2
-        x: 261
-        y: 194
-        width: 43
-        height: 50
+        x: 262
+        y: 195
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_148
       rect:
         serializedVersion: 2
         x: 320
         y: 194
-        width: 44
-        height: 53
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_149
       rect:
         serializedVersion: 2
         x: 385
         y: 194
-        width: 45
-        height: 55
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_150
       rect:
         serializedVersion: 2
         x: 452
         y: 194
-        width: 45
-        height: 53
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_151
       rect:
         serializedVersion: 2
         x: 519
         y: 194
-        width: 44
-        height: 49
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_152
       rect:
         serializedVersion: 2
         x: 589
         y: 194
-        width: 35
-        height: 51
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_153
       rect:
         serializedVersion: 2
         x: 653
         y: 194
-        width: 34
-        height: 51
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_154
       rect:
         serializedVersion: 2
         x: 717
         y: 194
-        width: 30
-        height: 51
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_155
       rect:
         serializedVersion: 2
         x: 776
         y: 194
-        width: 39
-        height: 51
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_156
       rect:
@@ -1806,7 +1726,7 @@ TextureImporter:
         width: 39
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_157
       rect:
@@ -1816,7 +1736,7 @@ TextureImporter:
         width: 34
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_158
       rect:
@@ -1826,7 +1746,7 @@ TextureImporter:
         width: 36
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_159
       rect:
@@ -1836,7 +1756,7 @@ TextureImporter:
         width: 25
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_160
       rect:
@@ -1846,7 +1766,7 @@ TextureImporter:
         width: 24
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_161
       rect:
@@ -1856,7 +1776,7 @@ TextureImporter:
         width: 24
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_162
       rect:
@@ -1866,7 +1786,7 @@ TextureImporter:
         width: 24
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_163
       rect:
@@ -1876,7 +1796,7 @@ TextureImporter:
         width: 25
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_164
       rect:
@@ -1886,7 +1806,7 @@ TextureImporter:
         width: 25
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_165
       rect:
@@ -1896,7 +1816,7 @@ TextureImporter:
         width: 24
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_166
       rect:
@@ -1906,7 +1826,7 @@ TextureImporter:
         width: 25
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_167
       rect:
@@ -1916,7 +1836,7 @@ TextureImporter:
         width: 24
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_168
       rect:
@@ -1926,137 +1846,137 @@ TextureImporter:
         width: 25
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_169
       rect:
         serializedVersion: 2
         x: 13
         y: 66
-        width: 44
-        height: 42
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_170
       rect:
         serializedVersion: 2
         x: 79
         y: 66
-        width: 37
-        height: 42
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_171
       rect:
         serializedVersion: 2
         x: 145
         y: 66
-        width: 39
-        height: 43
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_172
       rect:
         serializedVersion: 2
         x: 208
         y: 66
-        width: 39
-        height: 45
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_173
       rect:
         serializedVersion: 2
         x: 272
         y: 66
-        width: 43
-        height: 50
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_174
       rect:
         serializedVersion: 2
         x: 340
         y: 66
-        width: 44
-        height: 53
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_175
       rect:
         serializedVersion: 2
         x: 402
         y: 66
-        width: 45
-        height: 55
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_176
       rect:
         serializedVersion: 2
         x: 463
         y: 66
-        width: 45
-        height: 53
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_177
       rect:
         serializedVersion: 2
         x: 525
         y: 66
-        width: 44
-        height: 49
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_178
       rect:
         serializedVersion: 2
         x: 592
         y: 66
-        width: 35
-        height: 51
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_179
       rect:
         serializedVersion: 2
         x: 657
         y: 66
-        width: 34
-        height: 51
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_180
       rect:
         serializedVersion: 2
         x: 725
         y: 66
-        width: 30
-        height: 51
+        width: 54
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_181
       rect:
         serializedVersion: 2
         x: 785
         y: 66
-        width: 39
-        height: 51
+        width: 47
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_182
       rect:
@@ -2066,7 +1986,7 @@ TextureImporter:
         width: 30
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_183
       rect:
@@ -2076,7 +1996,7 @@ TextureImporter:
         width: 31
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_184
       rect:
@@ -2086,7 +2006,7 @@ TextureImporter:
         width: 30
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_185
       rect:
@@ -2096,7 +2016,7 @@ TextureImporter:
         width: 30
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_186
       rect:
@@ -2106,7 +2026,7 @@ TextureImporter:
         width: 31
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Character4Bow_187
       rect:
@@ -2116,7 +2036,7 @@ TextureImporter:
         width: 34
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -1,9 +1,110 @@
 fileFormatVersion: 2
 guid: 9f3fcfdb7456cde479a1b2db91d17d95
-timeCreated: 1454087499
+timeCreated: 1455676926
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Haste Ser Lance_0
+    21300002: Haste Ser Lance_1
+    21300004: Haste Ser Lance_2
+    21300006: Haste Ser Lance_3
+    21300008: Haste Ser Lance_4
+    21300010: Haste Ser Lance_5
+    21300012: Haste Ser Lance_6
+    21300014: Haste Ser Lance_7
+    21300016: Haste Ser Lance_8
+    21300018: Haste Ser Lance_9
+    21300020: Haste Ser Lance_10
+    21300022: Haste Ser Lance_11
+    21300024: Haste Ser Lance_12
+    21300026: Haste Ser Lance_13
+    21300028: Haste Ser Lance_14
+    21300030: Haste Ser Lance_15
+    21300032: Haste Ser Lance_16
+    21300034: Haste Ser Lance_17
+    21300036: Haste Ser Lance_18
+    21300038: Haste Ser Lance_19
+    21300040: Haste Ser Lance_20
+    21300042: Haste Ser Lance_21
+    21300044: Haste Ser Lance_22
+    21300046: Haste Ser Lance_23
+    21300048: Haste Ser Lance_24
+    21300050: Haste Ser Lance_25
+    21300052: Haste Ser Lance_26
+    21300054: Haste Ser Lance_27
+    21300056: Haste Ser Lance_28
+    21300058: Haste Ser Lance_29
+    21300060: Haste Ser Lance_30
+    21300062: Haste Ser Lance_31
+    21300064: Haste Ser Lance_32
+    21300066: Haste Ser Lance_33
+    21300068: Haste Ser Lance_34
+    21300070: Haste Ser Lance_35
+    21300072: Haste Ser Lance_36
+    21300074: Haste Ser Lance_37
+    21300076: Haste Ser Lance_38
+    21300078: Haste Ser Lance_39
+    21300080: Haste Ser Lance_40
+    21300082: Haste Ser Lance_41
+    21300084: Haste Ser Lance_42
+    21300086: Haste Ser Lance_43
+    21300088: Haste Ser Lance_44
+    21300090: Haste Ser Lance_45
+    21300092: Haste Ser Lance_46
+    21300094: Haste Ser Lance_47
+    21300096: Haste Ser Lance_48
+    21300098: Haste Ser Lance_49
+    21300100: Haste Ser Lance_50
+    21300102: Haste Ser Lance_51
+    21300104: Haste Ser Lance_52
+    21300106: Haste Ser Lance_53
+    21300108: Haste Ser Lance_54
+    21300110: Haste Ser Lance_55
+    21300112: Haste Ser Lance_56
+    21300114: Haste Ser Lance_57
+    21300116: Haste Ser Lance_58
+    21300118: Haste Ser Lance_59
+    21300120: Haste Ser Lance_60
+    21300122: Haste Ser Lance_61
+    21300124: Haste Ser Lance_62
+    21300126: Haste Ser Lance_63
+    21300128: Haste Ser Lance_64
+    21300130: Haste Ser Lance_65
+    21300132: Haste Ser Lance_66
+    21300134: Haste Ser Lance_67
+    21300136: Haste Ser Lance_68
+    21300138: Haste Ser Lance_69
+    21300140: Haste Ser Lance_70
+    21300142: Haste Ser Lance_71
+    21300144: Haste Ser Lance_72
+    21300146: Haste Ser Lance_73
+    21300148: Haste Ser Lance_74
+    21300150: Haste Ser Lance_75
+    21300152: Haste Ser Lance_76
+    21300154: Haste Ser Lance_77
+    21300156: Haste Ser Lance_78
+    21300158: Haste Ser Lance_79
+    21300160: Haste Ser Lance_80
+    21300162: Haste Ser Lance_81
+    21300164: Haste Ser Lance_82
+    21300166: Haste Ser Lance_83
+    21300168: Haste Ser Lance_84
+    21300170: Haste Ser Lance_85
+    21300172: Haste Ser Lance_86
+    21300174: Haste Ser Lance_87
+    21300176: Haste Ser Lance_88
+    21300178: Haste Ser Lance_89
+    21300180: Haste Ser Lance_90
+    21300182: Haste Ser Lance_91
+    21300184: Haste Ser Lance_92
+    21300186: Haste Ser Lance_93
+    21300188: Haste Ser Lance_94
+    21300190: Haste Ser Lance_95
+    21300192: Haste Ser Lance_96
+    21300194: Haste Ser Lance_97
+    21300196: Haste Ser Lance_98
+    21300198: Haste Ser Lance_99
+    21300200: Haste Ser Lance_100
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -17,7 +118,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: 0.25
+    heightScale: .25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -29,8 +130,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,19 +139,1028 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
-    outline: []
+    sprites:
+    - name: Haste Ser Lance_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1044
+        width: 105
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_1
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 1044
+        width: 120
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_2
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1046
+        width: 152
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_3
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 1050
+        width: 158
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_4
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 1044
+        width: 156
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_5
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 854
+        width: 147
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_6
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 856
+        width: 148
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_7
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 860
+        width: 154
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_8
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 866
+        width: 152
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_9
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 871
+        width: 147
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_10
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 577
+        width: 121
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_11
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 577
+        width: 134
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_12
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 577
+        width: 120
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_13
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 577
+        width: 114
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_14
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 577
+        width: 128
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_15
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 396
+        width: 120
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_16
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 399
+        width: 126
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_17
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 398
+        width: 132
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_18
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 401
+        width: 126
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_19
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 407
+        width: 105
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_20
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 489
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_21
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 358
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_22
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 350
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_23
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 351
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_24
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 329
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_25
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 276
+        width: 105
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_26
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 328
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_27
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 229
+        width: 64
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_28
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 337
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_29
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 329
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_30
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 313
+        width: 43
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_31
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 278
+        width: 55
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_32
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 329
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_33
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 327
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_34
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 327
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_35
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 328
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_36
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 326
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_37
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 310
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_38
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 327
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_39
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 314
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_40
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 310
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_41
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 292
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_42
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 313
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_43
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 307
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_44
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 254
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_45
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 303
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_46
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 278
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_47
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 299
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_48
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 261
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_49
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 278
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_50
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 266
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_51
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 277
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_52
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 223
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_53
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 240
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_54
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 262
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_55
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 269
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_56
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 261
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_57
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 232
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_58
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 242
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_59
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 235
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_60
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 229
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_61
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 231
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_62
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 234
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_63
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 229
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_64
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 133
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_65
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 135
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_66
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 132
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_67
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 129
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_68
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 131
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_69
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 126
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_70
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 130
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_71
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 113
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_72
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 129
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_73
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 114
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_74
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 110
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_75
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 67
+        width: 76
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_76
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 116
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_77
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 58
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_78
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 37
+        width: 32
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_79
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 77
+        width: 48
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_80
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 87
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_81
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 66
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_82
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 93
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_83
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 99
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_84
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 78
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_85
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 87
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_86
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 86
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_87
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 78
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_88
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 65
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_89
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 80
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_90
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 78
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_91
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 68
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_92
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 63
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_93
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 19
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_94
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 19
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_95
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 18
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_96
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 27
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_97
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 7
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_98
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 24
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_99
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 22
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Haste Ser Lance_100
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 21
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

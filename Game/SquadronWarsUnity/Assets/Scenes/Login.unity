@@ -19554,9 +19554,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Cancel
-
-'
+  m_Text: Cancel
 --- !u!222 &1558947840
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25771,6 +25769,7 @@ GameObject:
   - 4: {fileID: 2062287987}
   - 212: {fileID: 2062287986}
   - 114: {fileID: 2062287988}
+  - 95: {fileID: 2062287989}
   m_Layer: 0
   m_Name: Character1
   m_TagString: Character1
@@ -25815,7 +25814,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2062287985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -25833,6 +25832,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasAttacked: 0
   hasMoved: 0
+--- !u!95 &2062287989
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2062287985}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff33089d7596a37488347f03bed7b3ac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &2062297692
 GameObject:
   m_ObjectHideFlags: 0
