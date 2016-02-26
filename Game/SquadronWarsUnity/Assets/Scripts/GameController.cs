@@ -27,6 +27,9 @@ namespace Assets.Scripts
         public Button attackButton;
         public Button abilityButton;
         public Button moveButton;
+        public int player1SpawnXStart;
+        public int player1SpawnXEnd;
+        public int player1SpawnY;
         Vector3 hitDown;
         RaycastHit2D hit;
         Animator anim;
@@ -1053,17 +1056,18 @@ namespace Assets.Scripts
 
         public void highlightSpawn()
         {
-            for(int i = 0; i < tileMap.xLength; i++)
+            for(int i = player1SpawnXStart; i < player1SpawnXEnd; i++)
             {
-                for(int j = 0; j < tileMap.yLength; j++)
+                for(int j = 0; j < player1SpawnY; j++)
                 {
                     Tile tempTile = tileArray[i, j];
                     //Debug.Log(tempTile);
-                    Debug.Log(tempTile.x + "," + tempTile.y);
-                    Debug.Log(tempTile.highlight);              
-                    tempTile.highlight.SetActive(true);
-                    tempTile.isValidMove = true;
-                    validMoves.Add(tempTile);
+                    if (!tempTile.isOccupied)
+                    {
+                        tempTile.highlight.SetActive(true);
+                        tempTile.isValidMove = true;
+                        validMoves.Add(tempTile);
+                    }
                 }
             }
             /*foreach (GameObject t in tileMap.tiles)

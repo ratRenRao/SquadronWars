@@ -196,6 +196,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OccupyTiles
       objectReference: {fileID: 0}
+    - target: {fileID: 199402, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
   m_IsPrefabParent: 0
@@ -480,6 +484,14 @@ Prefab:
       propertyPath: moveButton
       value: 
       objectReference: {fileID: 787019964}
+    - target: {fileID: 11452996, guid: c715d99ab95759a4e9c38aa86c7e669c, type: 2}
+      propertyPath: player1SpawnY
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452996, guid: c715d99ab95759a4e9c38aa86c7e669c, type: 2}
+      propertyPath: player1SpawnXEnd
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c715d99ab95759a4e9c38aa86c7e669c, type: 2}
   m_IsPrefabParent: 0
