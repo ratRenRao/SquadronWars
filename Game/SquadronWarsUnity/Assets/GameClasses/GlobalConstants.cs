@@ -8,11 +8,24 @@ namespace Assets.GameClasses
 {
     public static class GlobalConstants
     {
+        //Primary Webserver URL
         public const string WebServerUrl = "http://squadronwars.ddns.net";
+        /*
+        * Don't believe these two are used in the code. Commenting out just in case I am wrong.
+        *
         public const string SquadDbUrl = WebServerUrl + "temp/temp";
         public const string CharacterDbUrl = WebServerUrl + "/api/getchars";
+        */
+        //Standard Communication URLs
         public const string PlayerDbUrl = WebServerUrl + "/api/auth";
-        public const string RegistrationUrl = WebServerUrl + "";
+        public const string CreateCharacterUrl = WebServerUrl + "/api/CreateCharacter";
+        public const string CreatePlayerUrl = WebServerUrl + "/api/CreatePlayer";
+        public const string UpdateCharacterUrl = WebServerUrl + "/api/UpdateCharacter";
+        public const string UpdatePlayerUrl = WebServerUrl + "/api/UpdatePlayer";
+        //Battle Related URLs
+        public const string StartGameUrl = WebServerUrl + "/api/StartGame";
+        public const string CheckGameStatusUrl = WebServerUrl + "/api/CheckGameInfo";
+        public const string UpdateGameStatusUrl = WebServerUrl + "/api/UpdateGameInfo";
 
         public const string PlayerJsonObjectName = "PlayerInfo";
         public const string CharacterJsonObjectName = "Characters";
