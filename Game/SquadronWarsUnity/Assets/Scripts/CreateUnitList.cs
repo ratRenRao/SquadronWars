@@ -9,6 +9,7 @@ namespace Assets.Scripts
     public class CreateUnitList : MonoBehaviour
     {
         public GameObject sampleButton;
+        public GameObject createCharacterButton;
         public GameObject matchCharacters;
         public CharacterGameObject characterGameObject;
         public List<Character> characters;
@@ -53,6 +54,14 @@ namespace Assets.Scripts
                 tempButton.nameLabel.text = character.CharacterClassObject.Name;
                 tempButton.characterGameObject = character;
                 tempButton.character = character.CharacterClassObject;
+                newButton.transform.SetParent(contentPanel, false);
+            }
+            if (GlobalConstants.Player.Characters.Count < 10)
+            {
+                //change from sample button to character button
+
+                var newButton = Instantiate(createCharacterButton);
+                var tempButton = newButton.GetComponent<CreateCharacter>();
                 newButton.transform.SetParent(contentPanel, false);
             }
         }
