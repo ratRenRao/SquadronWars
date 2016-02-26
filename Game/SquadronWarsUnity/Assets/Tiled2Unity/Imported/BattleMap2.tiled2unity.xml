@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 2/25/2016 2:15:30 PM-->
+<!--Last exported: 2/25/2016 8:56:28 PM-->
 <Tiled2Unity version="1.0.4.2">
   <AssignMaterial mesh="mesh_0001" material="Map2" />
   <Prefab name="BattleMap2" numTilesWide="20" numTilesHigh="20" tileWidth="32" tileHeight="32" exportScale="0.1" mapWidthInPixels="640" mapHeightInPixels="640">
@@ -957,12 +957,6 @@
       <GameObject name="bridge" x="38.4" y="-9.6" rotation="0" tag="bridge">
         <BoxCollider2D width="3.2" height="3.2" />
       </GameObject>
-      <GameObject name="bridge" x="38.4" y="-9.6" rotation="0" tag="bridge">
-        <BoxCollider2D width="3.2" height="3.2" />
-      </GameObject>
-      <GameObject name="bridge" x="38.4" y="-51.2" rotation="0" tag="bridge">
-        <BoxCollider2D width="3.2" height="3.2" />
-      </GameObject>
       <GameObject name="bridge" x="38.4" y="-51.2" rotation="0" tag="bridge">
         <BoxCollider2D width="3.2" height="3.2" />
       </GameObject>
@@ -1101,7 +1095,7 @@
       <GameObject name="bridge" x="48" y="-19.2" rotation="0" tag="bridge">
         <BoxCollider2D width="3.2" height="3.4" />
       </GameObject>
-      <GameObject name="rockcliff" x="51.2" y="-19" rotation="0" tag="rockcliff">
+      <GameObject name="rockcliff" x="51.2" y="-19.2" rotation="0" tag="rockcliff">
         <BoxCollider2D width="3.2" height="3.2" />
       </GameObject>
       <GameObject name="rockcliff" x="54.4" y="-19.2" rotation="0" tag="rockcliff">
@@ -1203,7 +1197,7 @@
       <GameObject name="rockcliff" x="48" y="-57.6000023" rotation="0" tag="rockcliff">
         <BoxCollider2D width="3.2" height="3.2" />
       </GameObject>
-      <GameObject name="rockcliff" x="54.3" y="-57.6000023" rotation="0" tag="rockcliff">
+      <GameObject name="rockcliff" x="54.4" y="-57.6000023" rotation="0" tag="rockcliff">
         <BoxCollider2D width="3.2" height="3.2" />
       </GameObject>
       <GameObject name="rockcliff" x="57.6000023" y="-57.6000023" rotation="0" tag="rockcliff">

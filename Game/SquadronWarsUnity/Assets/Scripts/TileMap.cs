@@ -53,10 +53,17 @@ namespace Assets.Scripts
                 tile.x = (int)floatX;
                 tile.y = (int)floatY;
                 tile.isValidMove = false;
-                
-                //tile.x = x;
-                //tile.y = y;
 
+                string tagName = child.gameObject.tag;
+                Debug.Log(tagName);
+                if(tagName == "grass" || tagName == "bridge")
+                {
+                    tile.isOccupied = false;
+                }
+                else
+                {
+                    tile.isOccupied = true;
+                }
                 //tiles.Add(child.gameObject);
                 tiles.Add(child.gameObject);
                 count++;
@@ -68,23 +75,33 @@ namespace Assets.Scripts
         public void setTileArray()
         {
             int count = 0;
-            
+
             Debug.Log(xLength + ", " + yLength);
             for (int i = 0; i < xLength; i++)
             {
                 for (int j = 0; j < yLength; j++)
                 {
                     Tile tempTile = tiles[count].GetComponent<Tile>();
-                    tileArray[tempTile.x, tempTile.y] = tiles[count].GetComponent<Tile>();
-                    count++;
+                    while (count < 410)
+                    {
+                        if (tiles[count].GetComponent<Tile>().x == i && tiles[count].GetComponent<Tile>().y == j) {
+                            tempTile = tiles[count].GetComponent<Tile>();
+                            break;
+                        }
+                        count++;
+                    }
+                    
+                    tileArray[i, j] = tiles[count].GetComponent<Tile>();
+                    
                 }
             }
-            
+
         }
 
         public void addHighlightObjects()
         {
             tileArray = new Tile[xLength, yLength];
+
             foreach (GameObject t in tiles)
             {
                 
@@ -94,10 +111,10 @@ namespace Assets.Scripts
                 t.GetComponent<Tile>().highlight = highlight;
                 t.GetComponent<Tile>().highlight.SetActive(false);
                 highlight.transform.localScale = new Vector3(0.072f, 0.072f, 0.0f);
-                //Debug.Log(t.GetComponent<Tile>().x + ", " + t.GetComponent<Tile>().y);
                 tileArray[t.GetComponent<Tile>().x, t.GetComponent<Tile>().y] = t.GetComponent<Tile>();
                 //Debug.Log(tileArray[t.GetComponent<Tile>().x, t.GetComponent<Tile>().y]);
-            }      
+            }
+            
         }
     }
 }
