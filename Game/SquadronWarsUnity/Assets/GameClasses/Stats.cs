@@ -14,6 +14,7 @@
         public int Vit { get; set; }
         public int Dex { get; set; }
         public int HitPoints { get; set; }
+        public int CurHP { get; set; }
         public int Dmg { get; set; }
         public int AbilityPoints { get; set; }
         public int Speed { get; set; }
@@ -21,6 +22,7 @@
         public int MagicDefense { get; set; }
         public int MagicAttack { get; set; }
         public int MagicPoints { get; set; }
+        public int CurMP { get; set; }
         public int HitRate { get; set; }
         public int CritRate { get; set; }
         public int DodgeRate { get; set; }
