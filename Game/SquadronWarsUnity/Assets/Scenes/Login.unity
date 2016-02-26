@@ -11460,7 +11460,7 @@ GameObject:
   - 114: {fileID: 887990542}
   - 114: {fileID: 887990541}
   m_Layer: 5
-  m_Name: Cancel
+  m_Name: CancelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23692,7 +23692,7 @@ GameObject:
   - 114: {fileID: 1825064060}
   - 114: {fileID: 1825064063}
   m_Layer: 5
-  m_Name: Register
+  m_Name: RegisterButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23756,7 +23756,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1825064063}
-        m_MethodName: 
+        m_MethodName: RegisterUser
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23812,6 +23812,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0e7905f4edb3147b3df7bee7c6a243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  username: {fileID: 995471840}
+  password: {fileID: 642785609}
+  confirmPass: {fileID: 1320524973}
+  lastName: {fileID: 1547746703}
+  firstName: {fileID: 1481779001}
+  email: {fileID: 1296346714}
+  HomeScreen: {fileID: 915128700}
+  RegisterScreen: {fileID: 2086386241}
 --- !u!1 &1839583103
 GameObject:
   m_ObjectHideFlags: 0
