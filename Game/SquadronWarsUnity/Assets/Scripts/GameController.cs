@@ -76,8 +76,8 @@ namespace Assets.Scripts
         {
             if (!arraySet)
             {
+                hidePanel = false;
                 battlesong.playOnAwake = true;
-                Debug.Log(battlesong.GetComponent<AudioSource>().isPlaying);
                 placeCharacterPhase = true;
                 characters = GlobalConstants.MatchCharacters;
                 //statsPanel.charName.text = characters[0].CharacterClassObject.Name;
@@ -86,6 +86,7 @@ namespace Assets.Scripts
                 tileArray = tileMap.tileArray;
                 highlightSpawn();
                 arraySet = true;
+                
             }
             if (hidePanel)
             {
@@ -279,8 +280,20 @@ namespace Assets.Scripts
 
         public void OccupyTiles()
         {
-            anim.SetBool("isDead", true);
-            Debug.Log(anim.GetBool("isDead"));
+            //anim.SetBool("isDead", true);
+            //Debug.Log(anim.GetBool("isDead"));
+            /*foreach (Tile t in tileArray)
+            {
+                Debug.Log(t.x + ", " + t.y);
+                GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
+
+                GameObject highlight = GameObject.Instantiate(temp, new Vector3(t.transform.position.x + 1.6f, t.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
+                highlight.transform.parent = t.transform;
+                t.highlight = highlight;
+                t.highlight.SetActive(false);
+                highlight.transform.localScale = new Vector3(0.072f, 0.072f, 0.0f);
+            }*/
+            
         }
         private void Move()
         {
@@ -612,7 +625,6 @@ namespace Assets.Scripts
                                 tempTile.highlight.SetActive(true);
                                 tempTile.isValidMove = true;
                                 validMoves.Add(tempTile);
-                                Debug.Log(range);
                                 //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
                                 //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
                                 //highlight.transform.parent = tempTile.transform;
@@ -721,7 +733,6 @@ namespace Assets.Scripts
        
         public void SetAction(string newAction)
         {
-            Debug.Log(newAction + " Action Called");
 
 
         }
@@ -905,11 +916,9 @@ namespace Assets.Scripts
             dmgObject.transform.parent = particleCanvas.transform;
             dmgObject.GetComponent<Text>().text = damage.ToString();
             targetCharacterGameObject.curHP -= damage;
-            Debug.Log(targetCharacterGameObject.curHP);            
             yield return new WaitForSeconds(.4f);
             if (targetCharacterGameObject.curHP < 0)
             {
-                Debug.Log("Character Died");
                 targetCharacterGameObject.curHP = 0;
                 targetCharacterGameObject.isDead = true;
                 //myCharacters.Remove(targetCharacterGameObject.gameObject);
@@ -935,7 +944,6 @@ namespace Assets.Scripts
                 GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
                 GameObject spell = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
                 spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (tempTile.y * 2);
-                Debug.Log(spell.GetComponent<SpriteRenderer>().sortingOrder);
                 spell.transform.parent = tempTile.transform;
                 yield return new WaitForSeconds(.2f);
                 tarAnim.SetBool("isAttacked", true);
@@ -957,6 +965,10 @@ namespace Assets.Scripts
             yield return new WaitForSeconds(.4f);
             tarAnim.SetBool("isAttacked", false);
             hidePanel = false;
+        }
+        IEnumerator WaitForLoad()
+        {
+            yield return new WaitForSeconds(.5f);
         }
         IEnumerator WaitForClick(string act)
         {
@@ -1026,7 +1038,7 @@ namespace Assets.Scripts
 
         public void highlightSpawn()
         {
-            for(int i = 0; i < tileMap.xLength; i++)
+            /*for(int i = 0; i < tileMap.xLength; i++)
             {
                 for(int j = 0; j < tileMap.yLength; j++)
                 {
@@ -1035,6 +1047,12 @@ namespace Assets.Scripts
                     tempTile.isValidMove = true;
                     validMoves.Add(tempTile);
                 }
+            }*/
+            foreach (GameObject t in tileMap.tiles)
+            {
+                t.GetComponent<Tile>().highlight.SetActive(true);
+                t.GetComponent<Tile>().isValidMove = true;
+                validMoves.Add(t.GetComponent<Tile>());
             }
         }
 
@@ -1058,13 +1076,15 @@ namespace Assets.Scripts
             //gameCharacter.gameObject.transform.rotation = Quaternion.identity;
             GameObject tempchar = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;
             tempchar.GetComponent<SpriteRenderer>().sortingOrder = 6 + (tempTile.y * 2);
+            Debug.Log(tempchar);
             tempchar.transform.parent = tileMap.transform;
-
+            tempchar.transform.localScale = new Vector3(1, 1, 0.0f);
             tempchar.AddComponent<CharacterGameObject>();
             tempchar.GetComponent<CharacterGameObject>().CharacterClassObject = gameCharacter.CharacterClassObject;
             tempchar.GetComponent<CharacterGameObject>().X = gameCharacter.X;
             tempchar.GetComponent<CharacterGameObject>().Y = gameCharacter.Y;
             tempTile.characterObject = tempchar;
+
             //tempGC = gameChar;
             Animator tempAnim = tempchar.GetComponent<Animator>();
             tempAnim.SetFloat("x", 0);

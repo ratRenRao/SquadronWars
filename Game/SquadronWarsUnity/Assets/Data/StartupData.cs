@@ -83,7 +83,7 @@ namespace Assets.Data
         public static void PopulateGlobalConstants()
         {
             GlobalConstants.AbilityPreReqs = AbilityPreReqs;
-            GlobalConstants.ItemsMasterList = Items;
+            GlobalConstants.ItemsMasterList = Items.Where(item => item != null).ToList();
             GlobalConstants.AbilityMasterList = Abilities;
         }
 
@@ -100,13 +100,17 @@ namespace Assets.Data
                     characterBuilder.GetType().GetProperty(property.Name).SetValue(characterBuilder, character.GetType().GetProperty(property.Name).GetValue(character, null), null);
                 }
 
+                characterBuilder.Equipment = character.BuildEquipment();
                 characterBuilder.BaseStats = character.BuildBaseStats();
+                characterBuilder.CurrentStats = AddItemStats(characterBuilder.Equipment.GetItemList(), characterBuilder.BaseStats);
 
                // characterBuilder.BaseStats.AbilityPoints = 3;
                // characterBuilder.BaseStats.SkillPoints = 2;
 
-                characterBuilder.CurrentStats = character.BuildBaseStats();
-                characterBuilder.Equipment = character.BuildEquipment();
+                
+
+                //characterBuilder.CurrentStats = character.BuildBaseStats();
+                
                 characterBuilder.Abilities = Abilities.Where(ability => ability.CharacterId == character.CharacterId).ToList();
 
                 Player.Characters.Add(characterBuilder);
@@ -121,6 +125,18 @@ namespace Assets.Data
         public void SetJsonObjectParameters(Dictionary<string, object> parameters)
         {
             throw new NotImplementedException();
+        }
+
+        public static Stats AddItemStats(List<Item> items, Stats stats)
+        {
+            Stats newStats = new Stats();
+            var itemList = items.Where(item => item != null).Where(item => item.Stats != null).ToList();
+            foreach (var item in itemList)
+            {
+                newStats = item.Stats.ConcatStats(stats, item.Stats);
+            }
+
+            return newStats;
         }
 
         public class CharacterData : IJsonable
@@ -184,7 +200,7 @@ namespace Assets.Data
                     SkillPoints);
 
                 return _stats;
-            }            
+            }
 
             public Equipment BuildEquipment()
             {

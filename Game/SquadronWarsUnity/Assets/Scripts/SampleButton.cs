@@ -3,6 +3,7 @@ using Assets.GameClasses;
 using Assets.Scripts;
 using UnityEngine.UI;
 using System.Linq;
+using Assets.Data;
 
 public class SampleButton : MonoBehaviour
 {
@@ -27,9 +28,9 @@ public class SampleButton : MonoBehaviour
         var button = gameObject.GetComponent<SampleButton>();
         var menu = GameObject.FindGameObjectWithTag("MenuManager").GetComponent<MenuManager>();
         var sprite = temp.GetComponent<SpriteRenderer>();
-        
-        UpdateStats();
+
         SetActiveCharacter();
+        UpdateStats();
 
         characterScreen.sampleButton = button;
         menu.SquadScreenPanel.SetActive(false);
@@ -52,10 +53,7 @@ public class SampleButton : MonoBehaviour
         //unityCharacter = characterGameObject;
         //unityCharacter.CharacterClassObject = character;
 
-        if(characterGameObject != null && characterGameObject.CharacterClassObject != null)
-            GlobalConstants.ActiveCharacterGameObject = characterGameObject;
-        else
-            GetActiveCharacter();
+        GlobalConstants.ActiveCharacterGameObject = characterGameObject;
     }
 
     public void GetActiveCharacter()
@@ -66,33 +64,28 @@ public class SampleButton : MonoBehaviour
 
     public void ReevaluateStats(Text labelText)
     {
-        var equipment = character.Equipment;
-        Equipment prevItem = null;
+        GetActiveCharacter();
+        var item = GlobalConstants.ItemsMasterList.Single(x => x.Name == labelText.text);
 
-        foreach (var item in equipment.GetItemList())
+        character.Equipment.SetItemByType(item);
+        character.CurrentStats = StartupData.AddItemStats(character.Equipment.GetItemList(), character.BaseStats);
+        /*
+        foreach (var equipedItem in character.Equipment.GetItemList())
         {
-            /*
-            if (item.ItemType == item.ItemType)
-            {
-                prevItem = charEquipment;
-                break;
-            }
-            */
-            character.BaseStats = item.Stats.RemoveAlteredStats(character.CurrentStats, item.Stats);
-            character.BaseStats = item.Stats.ConcatStats(character.CurrentStats, item.Stats);
+            character.CurrentStats = item.Stats.ConcatStats(character.BaseStats, equipedItem.Stats);
+        }
+
+            character.CurrentStats = item.Stats.RemoveAlteredStats(character.CurrentStats, item.Stats);
+            character.CurrentStats = item.Stats.ConcatStats(character.CurrentStats, item.Stats);
             UpdateStats();
         }
+        */
     }
 
     public void UpdateStats()
     {
         var characterStats = GameObject.FindGameObjectWithTag("CharacterStats");
         var menuScreen = characterStats.GetComponent <CharacterScreen>();
-        if (character == null)
-        {
-            characterGameObject = gameObject.GetComponent<SampleButton>().characterGameObject;
-            character = GlobalConstants.Player.Characters.Single(x => x.Name == characterGameObject.name.ToString());
-        }
 
         var stats = modifiedStats == null ? character.BaseStats : modifiedStats;
         var bonusStats = character.CurrentStats;
@@ -185,6 +178,8 @@ public class SampleButton : MonoBehaviour
 
     public void BuildDropdowns(CharacterScreen dropdowns)
     {
+        GetActiveCharacter();
+
         dropdowns.helmSlot.options.Clear();        
         dropdowns.shoulderSlot.options.Clear();
         dropdowns.chestSlot.options.Clear();
@@ -237,24 +232,29 @@ public class SampleButton : MonoBehaviour
     {
      //   GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
         GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
-    //    SampleButton button = gameObject.GetComponent<SampleButton>();
+        SampleButton button = gameObject.GetComponent<SampleButton>();
     //    MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
-        character = stats.sampleButton.character;
+        //character = stats.sampleButton.character;
+
+        GetActiveCharacter();
         if (character.BaseStats.SkillPoints > 0)
         {
-            var ability = character.Abilities.SingleOrDefault(x => x.Name == skill);
+            var ability = character.Abilities.SingleOrDefault(x => x.Name.ToLower() == skill.ToLower());
             if (ability != null)
             {
-                character.Abilities.Single(x => x.Name == skill).AbilityLevel++;
+                character.Abilities.Single(x => x.Name.ToLower() == skill.ToLower()).AbilityLevel++;
             }
             else
             {
-                character.Abilities.Add(GlobalConstants.AbilityMasterList.Single(x => x.Name == skill));
+                ability = GlobalConstants.AbilityMasterList.Single(x => x.Name.ToLower() == skill.ToLower());
+                ability.AbilityLevel++;
+                character.Abilities.Add(ability);
             }
             if (skill.Equals("fire"))
-            {                                
-                stats.fireLvl.text = "L" + ability.AbilityLevel;
+            {
+                characterScreen.fireLvl.text = "L" + ability.AbilityLevel;
+                //stats.fireLvl.text = "L" + ability.AbilityLevel;
             }
             if (skill.Equals("cure"))
             {
