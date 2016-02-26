@@ -25,16 +25,49 @@ namespace Assets.Data
 
         public static void BuildAndDistributeData()
         {
-            // Fix this hack. Probably an issue w/ being populated in Utilities.BuildObject
+            // Fix this hack. Probably an issue w/ it being partially populated in Utilities.BuildObject
             Player.Characters = new List<Character>();
             Player.Inventory = new List<InventoryElement>();
+            //
 
             PopulateGlobalConstants();
             BuildInventoryList();
+            SetItemType();
 
             BuildCharacterObjects();
             GlobalConstants.Player = Player;
             GlobalConstants.CharacterLoadReady = true;
+        }
+
+        public static void SetItemType()
+        {
+            foreach (var item in Player.Inventory)
+            {
+                item.Item.ItemType = GetType(item.Item.Slot);
+            }        
+        }
+
+        private static ItemType GetType(string typeString)
+        {
+            switch (typeString)
+            {
+                case "H":
+                    return ItemType.Helm;
+                case "C":
+                    return ItemType.Chest;
+                case "L":
+                    return ItemType.Legs;
+                case "G":
+                    return ItemType.Gloves;
+                case "B":
+                    return ItemType.Boots;
+                case "A1":
+                    return ItemType.Accessory1;
+                case "A2":
+                    return ItemType.Accessory2;
+                default:
+                    return ItemType.Unique;
+            }
         }
 
         public static void BuildInventoryList()
@@ -50,7 +83,7 @@ namespace Assets.Data
         public static void PopulateGlobalConstants()
         {
             GlobalConstants.AbilityPreReqs = AbilityPreReqs;
-            GlobalConstants.ItemsMasterList = Items;
+            GlobalConstants.ItemsMasterList = Items.Where(item => item != null).ToList();
             GlobalConstants.AbilityMasterList = Abilities;
         }
 
@@ -67,9 +100,17 @@ namespace Assets.Data
                     characterBuilder.GetType().GetProperty(property.Name).SetValue(characterBuilder, character.GetType().GetProperty(property.Name).GetValue(character, null), null);
                 }
 
-                characterBuilder.BaseStats = character.BuildBaseStats();
-                characterBuilder.CurrentStats = character.BuildBaseStats();
                 characterBuilder.Equipment = character.BuildEquipment();
+                characterBuilder.BaseStats = character.BuildBaseStats();
+                characterBuilder.CurrentStats = AddItemStats(characterBuilder.Equipment.GetItemList(), characterBuilder.BaseStats);
+
+               // characterBuilder.BaseStats.AbilityPoints = 3;
+               // characterBuilder.BaseStats.SkillPoints = 2;
+
+                
+
+                //characterBuilder.CurrentStats = character.BuildBaseStats();
+                
                 characterBuilder.Abilities = Abilities.Where(ability => ability.CharacterId == character.CharacterId).ToList();
 
                 Player.Characters.Add(characterBuilder);
@@ -84,6 +125,18 @@ namespace Assets.Data
         public void SetJsonObjectParameters(Dictionary<string, object> parameters)
         {
             throw new NotImplementedException();
+        }
+
+        public static Stats AddItemStats(List<Item> items, Stats stats)
+        {
+            Stats newStats = new Stats();
+            var itemList = items.Where(item => item != null).Where(item => item.Stats != null).ToList();
+            foreach (var item in itemList)
+            {
+                newStats = item.Stats.ConcatStats(stats, item.Stats);
+            }
+
+            return newStats;
         }
 
         public class CharacterData : IJsonable
@@ -142,10 +195,12 @@ namespace Assets.Data
                     MagicDefense,
                     HitRate,
                     DodgeRate,
-                    CritRate);
+                    CritRate,
+                    StatPoints,
+                    SkillPoints);
 
                 return _stats;
-            }            
+            }
 
             public Equipment BuildEquipment()
             {

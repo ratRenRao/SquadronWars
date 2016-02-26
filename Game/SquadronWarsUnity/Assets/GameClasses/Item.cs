@@ -15,6 +15,7 @@ namespace Assets.GameClasses
         Boots,
         Accessory1,
         Accessory2,
+        Unique
     };
 
     public class Item : IWearable, IJsonable
@@ -47,30 +48,6 @@ namespace Assets.GameClasses
         public int Luck { get; set; }
         public Stats Stats = new Stats();
         public ItemType ItemType;
-
-
-        /*
-        public string Slot { get; set; }
-        public int RequiredLevel { get; set; }
-        public int Str { get; set; }
-        public int Intl { get; set; }
-        public int Agi { get; set; }
-        public int Wis { get; set; }
-        public int Vit { get; set; }
-        public int Dex { get; set; }
-        public int HitPoints { get; set; }
-        public int Dmg { get; set; }
-        public int AbilityPoints { get; set; }
-        public int Speed { get; set; }
-        public int Defense { get; set; }
-        public int MagicDefense { get; set; }
-        public int MagicAttack { get; set; }
-        public int HitRate { get; set; }
-        public int CritRate { get; set; }
-        public int DodgeRate { get; set; }
-        public ItemType itemType { get; set; }
-        public Stats stats { get; set; }
-        */
 
         public void BuildStats()
         {

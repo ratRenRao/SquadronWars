@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using Assets.Data;
 using UnityEngine;
 
 namespace Assets.GameClasses
@@ -11,33 +12,41 @@ namespace Assets.GameClasses
     {
         public int X { get; set; }
         public int Y { get; set; }
-        public int curHP { get; set; }
-        public int curMP { get; set; }
         public bool hasAttacked = false;
         public bool hasMoved = false;
-        public bool isDead = false;
+        public int curHP { get; set; }
+        public int curMP { get; set; }
+        public bool isDead { get; set; }
+
+        private int _characterId { get; set; }
 
         public Character CharacterClassObject { get; set; }
 
-        public CharacterGameObject(Character characterClassObject = null, int x = 0, int y = 0)
+        public void Initialize(Character characterClassObject, int x = 0, int y = 0)
         {
             CharacterClassObject = characterClassObject;
             curHP = characterClassObject.CurrentStats.HitPoints;
             curMP = characterClassObject.CurrentStats.MagicPoints;
+
             X = x;
             Y = y;
         }
 
-        // Updating shouldnt be necessary with ref instantiation
+        public void SetCharacterId(int id)
+        {
+            _characterId = id;
+            CharacterClassObject =
+                GlobalConstants.Player.Characters.Single(character => character.CharacterId == _characterId);
+        }
+
+        public int GetCharacterId()
+        {
+            return _characterId;
+        }
+
         void Update()
         {
-            /*
-            if (CharacterClassObject == null)
-                return;
 
-            if (CharacterClassObject.Updated)
-                UpdateCharacterGameObject();
-           */
         }
 
         public void SetValues(int x, int y, Character character = null) 

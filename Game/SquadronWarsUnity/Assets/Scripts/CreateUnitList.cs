@@ -8,12 +8,12 @@ namespace Assets.Scripts
 {
     public class CreateUnitList : MonoBehaviour
     {
-        public GameObject SampleButton;
-        public GameObject MatchCharacters;
-        public CharacterGameObject temp;
-        public List<Character> Characters;
+        public GameObject sampleButton;
+        public GameObject matchCharacters;
+        public CharacterGameObject characterGameObject;
+        public List<Character> characters;
         //public List<CharacterGameObject> MatchCharacters { get; set; }
-        public Transform ContentPanel;
+        public Transform contentPanel;
 
         // Use this for initialization
         void Start()
@@ -37,28 +37,25 @@ namespace Assets.Scripts
             foreach (var character in GlobalConstants.Player.Characters)
             {
                 GetBonusStats(character);
-                GlobalConstants.MatchCharacters.Add(new CharacterGameObject(character));
+                var matchCharacterGO = Instantiate(characterGameObject);
+                matchCharacterGO.CharacterClassObject = character;
+                var matchCharacter = matchCharacterGO.GetComponent<CharacterGameObject>();
+                matchCharacter.Initialize(character);
+                GlobalConstants.MatchCharacters.Add(matchCharacter);
                 //BuildCharacterGameObject(character);
             }
 
             foreach (var character in GlobalConstants.MatchCharacters)
+            //foreach(var character in GlobalConstants.Player.Characters)
             {
-                var newButton = Instantiate(SampleButton);
+                var newButton = Instantiate(sampleButton);
                 var tempButton = newButton.GetComponent<SampleButton>();
                 tempButton.nameLabel.text = character.CharacterClassObject.Name;
-                tempButton.character = character;
-                newButton.transform.SetParent(ContentPanel, false);
+                tempButton.characterGameObject = character;
+                tempButton.character = character.CharacterClassObject;
+                newButton.transform.SetParent(contentPanel, false);
             }
         }
-
-        public void BuildCharacterGameObject(Character character)
-        {
-                var tempGameObject = new GameObject();
-                tempGameObject.AddComponent<CharacterGameObject>();
-                tempGameObject.GetComponent<CharacterGameObject>().SetValues(0, 0, character);
-                GlobalConstants.MatchCharacters.Add(tempGameObject.GetComponent<CharacterGameObject>());
-        }
-
 
         public static void GetBonusStats(Character character)
         {
