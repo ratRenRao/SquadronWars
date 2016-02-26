@@ -425,6 +425,7 @@ namespace Assets.Scripts
 
         private List<Tile> GetPossiblePaths(Tile t, bool isPathSearch)
         {
+            Debug.Log(t);
             List<Tile> tempList = new List<Tile>();
             if (t.y - 1 >= 0)
             {
@@ -1130,6 +1131,7 @@ namespace Assets.Scripts
             anim = currentCharacterGameObject.GetComponent<Animator>();
             currentCharacterGameObject.hasAttacked = false;
             currentCharacterGameObject.hasMoved = false;
+            Debug.Log(tileArray[currentCharacterGameObject.X, currentCharacterGameObject.Y]);
             FindPossibleMoves(tile);
             moveButton.interactable = true;
             attackButton.interactable = true;

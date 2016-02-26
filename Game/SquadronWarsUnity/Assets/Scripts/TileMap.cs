@@ -87,14 +87,16 @@ namespace Assets.Scripts
             tileArray = new Tile[xLength, yLength];
             foreach (GameObject t in tiles)
             {
-                tileArray[t.GetComponent<Tile>().x, t.GetComponent<Tile>().y] = t.GetComponent<Tile>();
+                
                 GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
                 GameObject highlight = GameObject.Instantiate(temp, new Vector3(t.transform.position.x + 1.6f, t.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
                 highlight.transform.parent = t.transform;
                 t.GetComponent<Tile>().highlight = highlight;
                 t.GetComponent<Tile>().highlight.SetActive(false);
                 highlight.transform.localScale = new Vector3(0.072f, 0.072f, 0.0f);
-                
+                //Debug.Log(t.GetComponent<Tile>().x + ", " + t.GetComponent<Tile>().y);
+                tileArray[t.GetComponent<Tile>().x, t.GetComponent<Tile>().y] = t.GetComponent<Tile>();
+                //Debug.Log(tileArray[t.GetComponent<Tile>().x, t.GetComponent<Tile>().y]);
             }      
         }
     }
