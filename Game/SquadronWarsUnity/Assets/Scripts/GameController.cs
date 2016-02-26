@@ -930,11 +930,11 @@ namespace Assets.Scripts
             GameObject dmgObject = GameObject.Instantiate(damageText, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y + 3.2f), Quaternion.identity) as GameObject;
             dmgObject.transform.parent = particleCanvas.transform;
             dmgObject.GetComponent<Text>().text = damage.ToString();
-            targetCharacterGameObject.curHP -= damage;
+            targetCharacterGameObject.CharacterClassObject.CurrentStats.CurHP -= damage;
             yield return new WaitForSeconds(.4f);
-            if (targetCharacterGameObject.curHP < 0)
+            if (targetCharacterGameObject.CharacterClassObject.CurrentStats.CurHP < 0)
             {
-                targetCharacterGameObject.curHP = 0;
+                targetCharacterGameObject.CharacterClassObject.CurrentStats.CurHP = 0;
                 targetCharacterGameObject.isDead = true;
                 //myCharacters.Remove(targetCharacterGameObject.gameObject);
                 tarAnim.SetBool("isDead", true);
@@ -1121,8 +1121,8 @@ namespace Assets.Scripts
                 foreach(GameObject g in myCharacters){
                     CharacterGameObject tempGC = g.GetComponent<CharacterGameObject>();
                     Tile t = tileArray[tempGC.X, tempGC.Y];
-                    t.character.curHP = tempGC.CharacterClassObject.CurrentStats.HitPoints;
-                    t.character.curMP = tempGC.CharacterClassObject.CurrentStats.MagicPoints;
+                    tempGC.CharacterClassObject.CurrentStats.CurHP = tempGC.CharacterClassObject.CurrentStats.HitPoints;
+                    tempGC.CharacterClassObject.CurrentStats.CurMP = tempGC.CharacterClassObject.CurrentStats.MagicPoints;
                 }
             }
             else
@@ -1154,8 +1154,8 @@ namespace Assets.Scripts
             abilityButton.interactable = true;
             statsPanel.charName.text = currentCharacterGameObject.CharacterClassObject.Name;
             currentCharacterGameObject.CharacterClassObject.CurrentStats.Dmg = 20;
-            statsPanel.hp.text = tile.character.curHP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints;
-            statsPanel.mp.text = tile.character.curMP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;            
+            statsPanel.hp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurHP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints;
+            statsPanel.mp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurMP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;            
             PositionPanels();
         }
 

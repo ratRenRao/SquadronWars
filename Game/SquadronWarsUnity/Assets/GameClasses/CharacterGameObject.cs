@@ -14,8 +14,6 @@ namespace Assets.GameClasses
         public int Y { get; set; }
         public bool hasAttacked = false;
         public bool hasMoved = false;
-        public int curHP { get; set; }
-        public int curMP { get; set; }
         public bool isDead { get; set; }
 
         private int _characterId { get; set; }
@@ -25,9 +23,6 @@ namespace Assets.GameClasses
         public void Initialize(Character characterClassObject, int x = 0, int y = 0)
         {
             CharacterClassObject = characterClassObject;
-            curHP = characterClassObject.CurrentStats.HitPoints;
-            curMP = characterClassObject.CurrentStats.MagicPoints;
-
             X = x;
             Y = y;
         }

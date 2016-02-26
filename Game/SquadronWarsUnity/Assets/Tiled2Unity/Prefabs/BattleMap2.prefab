@@ -1335,6 +1335,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 495366}
   - 114: {fileID: 11478152}
+  - 114: {fileID: 11465316}
   m_Layer: 0
   m_Name: tile
   m_TagString: Untagged
@@ -1385,7 +1386,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 430188}
   - 114: {fileID: 11429678}
-  - 114: {fileID: 11418898}
+  - 114: {fileID: 11452996}
   m_Layer: 0
   m_Name: BattleMap2
   m_TagString: Untagged
@@ -18857,25 +18858,6 @@ MonoBehaviour:
   highlight: {fileID: 0}
   characterObject: {fileID: 0}
   character: {fileID: 0}
---- !u!114 &11418898
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eeb4f93c8582234e890d442bfb618b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tileMap: {fileID: 11478152}
-  characterStatsPanel: {fileID: 0}
-  statsPanel: {fileID: 0}
-  actionPanel: {fileID: 0}
-  battlesong: {fileID: 0}
-  attackButton: {fileID: 0}
-  abilityButton: {fileID: 0}
-  moveButton: {fileID: 0}
 --- !u!114 &11419266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20784,6 +20766,25 @@ MonoBehaviour:
   highlight: {fileID: 0}
   characterObject: {fileID: 0}
   character: {fileID: 0}
+--- !u!114 &11452996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eeb4f93c8582234e890d442bfb618b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileMap: {fileID: 11465316}
+  characterStatsPanel: {fileID: 0}
+  statsPanel: {fileID: 0}
+  actionPanel: {fileID: 0}
+  battlesong: {fileID: 0}
+  attackButton: {fileID: 0}
+  abilityButton: {fileID: 0}
+  moveButton: {fileID: 0}
 --- !u!114 &11453010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21540,6 +21541,20 @@ MonoBehaviour:
   highlight: {fileID: 0}
   characterObject: {fileID: 0}
   character: {fileID: 0}
+--- !u!114 &11465316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee18a3ea089d7104ca4f30a8d0268ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiles: []
+  xLength: 20
+  yLength: 20
 --- !u!114 &11465872
 MonoBehaviour:
   m_ObjectHideFlags: 1
