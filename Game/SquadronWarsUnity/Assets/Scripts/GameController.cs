@@ -369,7 +369,6 @@ namespace Assets.Scripts
             int endY = end.y;
             int checkCount = 0;
             int moveVal = Mathf.Abs(start.x - end.x) + Mathf.Abs(start.y - end.y);
-            int breakInfiniteLoop = 0;
             bool pathFound = false;
             List<List<Tile>> openPath = new List<List<Tile>>();
             List<List<Tile>> curPathList = new List<List<Tile>>();
@@ -423,7 +422,6 @@ namespace Assets.Scripts
                 }
             }
             //}
-            Debug.Log(checkCount);
             return movePath;
         }
 
@@ -479,7 +477,6 @@ namespace Assets.Scripts
                 openPathTemp = new List<Tile>();
                 foreach (Tile t in openPath)
                 {
-                    Debug.Log(t.x + "," + t.y);
                     List<Tile> temp = GetPossiblePaths(t, true);
                     foreach (Tile til in temp)
                     {
@@ -492,8 +489,6 @@ namespace Assets.Scripts
                 openPath = new List<Tile>(openPathTemp);
                 
             }
-            Debug.Log(countCheck);
-            Debug.Log(walkableTiles.Count);
         }
 
         public void showCastMoves()
@@ -903,6 +898,17 @@ namespace Assets.Scripts
             StartCoroutine("InjuredAnimation");
         }
 
+        int CalculateMagicDamage(string ability)
+        {
+            int mDmg = currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicAttack;
+            int mDef = targetCharacterGameObject.CharacterClassObject.CurrentStats.MagicDefense;
+            if (ability == "fire")
+            {
+                mDmg = mDmg * 2;
+            }
+            return mDmg - mDef;
+        }
+
         int CalculateDamage()
         {
             int dmg = currentCharacterGameObject.CharacterClassObject.CurrentStats.Dmg;
@@ -919,15 +925,19 @@ namespace Assets.Scripts
             yield return new WaitForSeconds(.3f);
             anim.SetBool("isAttacking", false);
             tarAnim.SetBool("isAttacked", false);
+            int damage = 0;
             if (ability != null)
             {
                 GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
                 GameObject spell = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
                 spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (tempTile.y * 2);
                 spell.transform.parent = tempTile.transform;
-
+                damage = CalculateMagicDamage(ability);
             }
-            int damage = CalculateDamage();
+            else
+            {
+                damage = CalculateDamage();
+            }
             GameObject particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
             GameObject damageText = (GameObject)Resources.Load(("Prefabs/DamageText"), typeof(GameObject));
             GameObject dmgObject = GameObject.Instantiate(damageText, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y + 3.2f), Quaternion.identity) as GameObject;
@@ -956,20 +966,40 @@ namespace Assets.Scripts
             yield return new WaitForSeconds(.5f);
             
             anim.SetBool("isCasting", false);
-            float wait = 0;      
+            float wait = 0;
+            int damage = 0;
             if (ability != null)
             {
+                Debug.Log(ability);
                 GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
                 GameObject spell = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
-                spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (tempTile.y * 2);
+                spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (tempTile.y * 2);                
                 spell.transform.parent = tempTile.transform;
+                spell.transform.localScale = new Vector3(1, 1, 0.0f);
                 yield return new WaitForSeconds(.2f);
                 tarAnim.SetBool("isAttacked", true);
                 yield return new WaitForSeconds(.4f);
                 tarAnim.SetBool("isAttacked", false);
                 wait = spell.GetComponent<AutoDestroy>().animTime + .4f;
+                damage = CalculateMagicDamage(ability);
+
+                yield return new WaitForSeconds(wait);
+                GameObject particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
+                GameObject damageText = (GameObject)Resources.Load(("Prefabs/DamageText"), typeof(GameObject));
+                GameObject dmgObject = GameObject.Instantiate(damageText, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y + 3.2f), Quaternion.identity) as GameObject;
+                dmgObject.transform.parent = particleCanvas.transform;
+                dmgObject.GetComponent<Text>().text = damage.ToString();
+                targetCharacterGameObject.CharacterClassObject.CurrentStats.CurHP -= damage;
+                yield return new WaitForSeconds(.4f);
+                if (targetCharacterGameObject.CharacterClassObject.CurrentStats.CurHP < 0)
+                {
+                    targetCharacterGameObject.CharacterClassObject.CurrentStats.CurHP = 0;
+                    targetCharacterGameObject.isDead = true;
+                    //myCharacters.Remove(targetCharacterGameObject.gameObject);
+                    tarAnim.SetBool("isDead", true);
+                    yield return new WaitForSeconds(.8f);
+                }
             }
-            yield return new WaitForSeconds(wait);
             hidePanel = false;
         }
         IEnumerator CastAnimationNothing()
