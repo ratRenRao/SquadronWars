@@ -55,7 +55,6 @@ namespace Assets.Scripts
                 tile.isValidMove = false;
 
                 string tagName = child.gameObject.tag;
-                Debug.Log(tagName);
                 if(tagName == "grass" || tagName == "bridge")
                 {
                     tile.isOccupied = false;
@@ -69,14 +68,10 @@ namespace Assets.Scripts
                 count++;
             }
             
-            Debug.Log(count);
-            
         }
         public void setTileArray()
         {
             int count = 0;
-
-            Debug.Log(xLength + ", " + yLength);
             for (int i = 0; i < xLength; i++)
             {
                 for (int j = 0; j < yLength; j++)
