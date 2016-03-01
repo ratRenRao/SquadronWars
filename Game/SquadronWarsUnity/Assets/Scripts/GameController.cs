@@ -57,6 +57,7 @@ namespace Assets.Scripts
         bool hidePanel = true;
         string selectedAbility;
         int count = 0;
+        int idCount = 1;
         int unitPlacedCount = 0;
         List<Tile> walkableTiles = new List<Tile>();
         List<Tile> validMoves = new List<Tile>();
@@ -75,10 +76,11 @@ namespace Assets.Scripts
             battlesong.playOnAwake = true;
             placeCharacterPhase = true;
             characters = GlobalConstants.MatchCharacters;
-            //statsPanel.charName.text = characters[0].CharacterClassObject.Name;
+            statsPanel.charName.text = characters[0].CharacterClassObject.Name;
             statsPanel.hp.text = characters[0].CharacterClassObject.CurrentStats.HitPoints + " / " + characters[0].CharacterClassObject.CurrentStats.HitPoints;
             statsPanel.mp.text = characters[0].CharacterClassObject.CurrentStats.MagicPoints + " / " + characters[0].CharacterClassObject.CurrentStats.MagicPoints;
-            tileArray = tileMap.tileArray;
+            tileMap.addHighlightObjects();
+            tileArray = tileMap.tileArray;            
             highlightSpawn();
             arraySet = true;
         }
@@ -332,16 +334,17 @@ namespace Assets.Scripts
         public void AttackAbility(string ability)
         {
             if (!currentCharacterGameObject.hasAttacked)
-            {
+            {                
                 ShowAttackMoves("ability");
                 selectedAbility = ability;
+
             }
         }
 
         public void CastAbility(string ability)
         {
             if (!currentCharacterGameObject.hasAttacked)
-            {
+            {                
                 showCastMoves();
                 selectedAbility = ability;
             }
@@ -925,7 +928,7 @@ namespace Assets.Scripts
                     }
                     range--;
                 }
-                StartCoroutine(WaitForClick("attack"));
+                StartCoroutine(WaitForClick("ability"));
 
             }
             else
@@ -990,7 +993,7 @@ namespace Assets.Scripts
         public void Attack(Tile targetTile, string ability)
         {
             action = Action.IDLE;
-            string weaponType = "isAttackingBow";          
+            string weaponType = "isAttacking";          
             anim.SetBool(weaponType, true);
             float currentX = (float)(System.Math.Round(tile.transform.localPosition.x, 2));
             float currentY = (float)(System.Math.Round(tile.transform.localPosition.y, 2));
@@ -1020,7 +1023,7 @@ namespace Assets.Scripts
             }
             if (targetTile.isOccupied)
             {
-
+                Debug.Log(ability);
                 StartCoroutine(AttackAnimation(targetTile, ability, weaponType));
             }
             else {
@@ -1063,6 +1066,7 @@ namespace Assets.Scripts
             anim.SetBool(weaponType, false);
             tarAnim.SetBool("isAttacked", false);
             int damage = 0;
+            Debug.Log(ability);
             if (ability != null)
             {
                 GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
@@ -1093,6 +1097,7 @@ namespace Assets.Scripts
                 tarAnim.SetBool("isDead", true);
                 yield return new WaitForSeconds(.8f);
             }
+            selectedAbility = null;
             hidePanel = false;
         }
         IEnumerator AttackAnimationNothing(string weaponType)
@@ -1141,6 +1146,7 @@ namespace Assets.Scripts
                     yield return new WaitForSeconds(.8f);
                 }
             }
+            selectedAbility = null;
             hidePanel = false;
         }
         IEnumerator CastAnimationNothing()
@@ -1265,7 +1271,7 @@ namespace Assets.Scripts
             tempTile.character = gameCharacter;
             int spriteId = gameCharacter.CharacterClassObject.SpriteId;
             Debug.Log(spriteId);
-            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character2" /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
+            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + idCount /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
             //gameCharacter.gameObject.transform.position = new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y);
             //gameCharacter.gameObject.transform.rotation = Quaternion.identity;
             GameObject tempchar = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;
@@ -1287,6 +1293,7 @@ namespace Assets.Scripts
             {
                 statsPanel.charName.text = characters[unitPlacedCount + 1].CharacterClassObject.Name;
             }
+            idCount++;
         }
 
         public void SelectNextCharacter()

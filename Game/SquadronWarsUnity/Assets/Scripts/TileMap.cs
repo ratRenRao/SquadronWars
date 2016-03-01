@@ -26,7 +26,7 @@ namespace Assets.Scripts
         {
             CreateTileArray();            
             //setTileArray();
-            addHighlightObjects();
+            //addHighlightObjects();
 
         }
 
@@ -96,7 +96,7 @@ namespace Assets.Scripts
         public void addHighlightObjects()
         {
             tileArray = new Tile[xLength, yLength];
-
+            
             foreach (GameObject t in tiles)
             {
                 
