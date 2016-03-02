@@ -32,7 +32,7 @@ namespace Assets.GameClasses
         public const string StartupDataJsonName = "PlayerDetails";
 
         public static bool CharacterLoadReady = false;
-
+        public static int GameId;
         public static List<CharacterGameObject> MatchCharacters = new List<CharacterGameObject>();
         public static List<AbilityPreReq> AbilityPreReqs { get; set; } 
         public static List<Item> ItemsMasterList { get; set; }

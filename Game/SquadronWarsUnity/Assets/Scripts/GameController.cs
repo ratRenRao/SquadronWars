@@ -1348,6 +1348,7 @@ namespace Assets.Scripts
             abilityButton.interactable = true;
             statsPanel.charName.text = currentCharacterGameObject.CharacterClassObject.Name;
             currentCharacterGameObject.CharacterClassObject.CurrentStats.Dmg = 20;
+            Debug.Log(currentCharacterGameObject.CharacterClassObject.CharacterId);
             statsPanel.hp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurHP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints;
             statsPanel.mp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurMP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;            
             PositionPanels();
@@ -1379,5 +1380,9 @@ namespace Assets.Scripts
                 actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x - 10, actionPanel.transform.position.y, 0);
             }
         }
+
+        //TODO
+        //AddAction()
+        //CheckAction()
     }
 }
