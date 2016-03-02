@@ -1,10 +1,27 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-public class BattleAction {
+﻿using System.Collections.Generic;
+using System.Reflection;
 
-    List<Action> ActionOrder = new List<Action>();
-    List<int> CharacterQueue = new List<int>();
+namespace Assets.GameClasses
+{
+    public class BattleAction : IJsonable{
 
-    //BuildQueue for characters turns
+        public List<Action> ActionOrder = new List<Action>();
+        public List<int> CharacterQueue = new List<int>();
+
+        //BuildQueue for characters turns
+        public string GetJsonObjectName()
+        {
+            return "BattleActions";
+        }
+
+        public List<PropertyInfo> GetJsonObjectParameters()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void SetJsonObjectParameters(Dictionary<string, object> parameters)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 }
