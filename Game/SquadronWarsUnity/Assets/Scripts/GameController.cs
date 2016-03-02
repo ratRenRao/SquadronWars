@@ -993,7 +993,7 @@ namespace Assets.Scripts
         public void Attack(Tile targetTile, string ability)
         {
             action = Action.IDLE;
-            string weaponType = "isAttacking";          
+            string weaponType = "isAttackingBow";          
             anim.SetBool(weaponType, true);
             float currentX = (float)(System.Math.Round(tile.transform.localPosition.x, 2));
             float currentY = (float)(System.Math.Round(tile.transform.localPosition.y, 2));
@@ -1061,8 +1061,19 @@ namespace Assets.Scripts
         IEnumerator AttackAnimation(Tile tempTile, string ability, string weaponType)
         {
             yield return new WaitForSeconds(.2f);
-            tarAnim.SetBool("isAttacked", true);            
-            yield return new WaitForSeconds(.3f);
+            tarAnim.SetBool("isAttacked", true);
+            if (weaponType == "isAttackingSpear")
+            {
+                yield return new WaitForSeconds(.55f);
+            }
+            if (weaponType == "isAttacking")
+            {
+                yield return new WaitForSeconds(.3f);
+            }
+            if (weaponType == "isAttackingBow")
+            {
+                yield return new WaitForSeconds(.7f);
+            }
             anim.SetBool(weaponType, false);
             tarAnim.SetBool("isAttacked", false);
             int damage = 0;
