@@ -9,21 +9,22 @@ namespace Assets.Data
     public class DbConnection : MonoBehaviour
     {
         public static bool ResponseError = false;
-        private static readonly Utilities.Utilities Utilities = new Utilities.Utilities();
+        private static readonly Utilities Utilities = new Utilities();
 
-        public IJsonable PopulateObjectFromDb<T>(string url, Player.Logins paramObject) where T : IJsonable, new() 
+        public T PopulateObjectFromDb<T>(string url, object paramObject) where T : IJsonable
         {
-            var parameters = Utilities.CreatePublicPropertyDictionary(paramObject);
-            return PopulateObjectFromDb<T>(url, parameters);
-        }
+            var response = SendPostData(url, paramObject);
 
-        public IJsonable PopulateObjectFromDb<T>(string url, Dictionary<string, string> parameters) where T : IJsonable, new()
-        { 
-            var response = ExecuteApiCall(url, PopulateParameters(parameters));
             return Utilities.BuildObjectFromJsonData<T>(response.text);
         }
 
-        private WWW ExecuteApiCall(string url, WWWForm form)
+        public WWW SendPostData<T>(string url, T obj)
+        {
+            var jsonParamObject = WrapJsonInGameObject(ConvertToJson(obj));
+            return ExecuteApiCall(url, jsonParamObject);
+        }
+
+        public WWW ExecuteApiCall(string url, WWWForm form)
         {
             var www = new WWW(url, form);
             StartCoroutine(WaitForRequest(www));
@@ -32,14 +33,37 @@ namespace Assets.Data
             return www;
         }
 
-        private WWWForm PopulateParameters(Dictionary<string, string> parameters)
+        public WWW ExecuteApiCall(string url, JSONObject jsonObject)
+        {
+            //jsonObject = JSONObject.CreateStringObject("{\"GameObject\": {\"userName\": \"test\",\"password\": \"testing123\"}");
+            var www = new WWW(url, jsonObject);
+            StartCoroutine(WaitForRequest(www));
+            while (!www.isDone) { }
+
+            return www;
+        }
+
+        public WWWForm CreatePostForm(JSONObject jsonParamObject)
         {
             var form = new WWWForm();
 
-            foreach (var param in parameters)
-                form.AddField(param.Key, param.Value);
+            form.AddField("GameObject", jsonParamObject.ToString());
 
             return form;
+        }
+
+        public JSONObject ConvertToJson<T>(T obj)
+        {
+            var jsonDictionary = Utilities.CreatePublicPropertyDictionary(obj);
+            return JSONObject.Create(jsonDictionary);
+        }
+
+        public JSONObject WrapJsonInGameObject(JSONObject jsonObject)
+        {
+            var tempJsonObject = new JSONObject();
+            tempJsonObject.AddField("GameObject", jsonObject);
+
+            return tempJsonObject;
         }
 
         private IEnumerator WaitForRequest(WWW www)

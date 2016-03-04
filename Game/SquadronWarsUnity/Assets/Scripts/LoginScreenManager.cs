@@ -1,19 +1,18 @@
 ﻿using Assets.Data;
 using Assets.GameClasses;
 using UnityEngine;
-using Object = System.Object;
 
 namespace Assets.Scripts
 {
     public class LoginScreenManager : MonoBehaviour
     {
-
         public string Username { get; set; }
         public string Password { get; set; }
         private static DbConnection _dbConnection;
-        private static Player _player;
+        private StartupData _startupData {get; set; }
+        private Player _player { get; set; }
         private static Player.Logins _logins = new Player.Logins();
-
+        public GameObject HomeScreen, LoginScreen;
         // Use this for initialization
         void Start()
         {
@@ -31,22 +30,35 @@ namespace Assets.Scripts
 
         }
 
-        public bool ValidateLogins()
+        public void LoginClicked()
         {
             SetDbConnection();
             SetLoginInfo();
-            
-            _player = (Player) _dbConnection.PopulateObjectFromDb<Player>(GlobalConstants.PlayerDbUrl, _logins);
-            Debug.Log(_player.ToString());
+            GetDbData();
 
-            // Change to only continue if player object is populated
-            if (true)
+            if (_startupData == null)
             {
-                CanvasManager.LoginScreen.SetActive(false);
-                CanvasManager.MenuScreen.SetActive(true);
+                // Change to display error message
+                Debug.Log("Invalid Credentials");
+                return;
             }
+            
+            StartupData.BuildAndDistributeData();
 
-            return false;
+            _player = GlobalConstants.Player;
+
+            LoginScreen.gameObject.SetActive(false);
+            HomeScreen.gameObject.SetActive(true);
+            //CanvasManager.HomeScreen.SetActive(true);
+            //CanvasManager.LoginScreen.SetActive(false);
+            //MenuManager.GetComponent<MenuManager>().HomePanel.SetActive(true);
+            //MenuManager.GetComponent<MenuManager>().LoginPanel.SetActive(false);
+            
+        }
+
+        private void GetDbData()
+        {
+            _startupData = _dbConnection.PopulateObjectFromDb<StartupData>(GlobalConstants.PlayerDbUrl, _logins);
         }
 
         private static void SetLoginInfo()

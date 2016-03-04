@@ -2,244 +2,274 @@ using UnityEngine;
 using Assets.GameClasses;
 using Assets.Scripts;
 using UnityEngine.UI;
-using System.Collections;
-using System;
-using System.Collections.Generic;
+using System.Linq;
+using Assets.Data;
 
 public class SampleButton : MonoBehaviour
 {
 
     public Button button;
-    public Character character;
+    public CharacterGameObject characterGameObject;
+    public Character character { get; set; }
+    public CharacterScreen characterScreen;
+    private Stats modifiedStats { get; set; }
     public Text nameLabel;
-    public CharacterScreen menuStats;
+
+    /*void Start()
+    {
+        character = characterGameObject.CharacterClassObject;
+        characterScreen = GameObject.FindGameObjectWithTag("CharacterStats").GetComponent<CharacterScreen>();
+    }*/
 
     public void BuildCharacterScreen()
-    {        
-        GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
-        GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
-        SampleButton button = gameObject.GetComponent<SampleButton>();
-        MenuManager menu = menuManager.GetComponent<MenuManager>();
-        CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
-        GameObject temp = (GameObject)Resources.Load(("Prefabs/Character1"), typeof(GameObject));
-        SpriteRenderer sprite = temp.GetComponent<SpriteRenderer>();
-        //   Stats baseStats = character.baseStats;
-        stats.sampleButton = button;
-        menu.squadScreenPanel.SetActive(false);
-        menu.characterScreenPanel.SetActive(true);
-        stats.characterSprite.sprite = sprite.sprite;
-        stats.characterName.text = character.characterName;
-        
-        UpdateStats(character);
-        stats.levelStat.text = character.level.ToString();
-        int expToNextLevel = character.experienceNeeded();
-     //   int startExp = character.startExperience();
-        stats.experienceStat.text = string.Format("{0} / {1}", character.experience.ToString(), expToNextLevel.ToString());
-        int progBar = character.percentToNextLevel();
-        stats.ProgressBar.value = progBar;
-        Debug.Log(character.equipment[ItemType.HELM].name);
-        Debug.Log(character.baseStats.intelligence);
-        BuildDropdowns(stats);
-        EvaluateSkills();
+    {
+        characterScreen = GameObject.FindGameObjectWithTag("CharacterStats").GetComponent<CharacterScreen>();
+        var temp = (GameObject)Resources.Load(("Prefabs/Character1"), typeof(GameObject));
+        var button = gameObject.GetComponent<SampleButton>();
+        var menu = GameObject.FindGameObjectWithTag("MenuManager").GetComponent<MenuManager>();
+        var sprite = temp.GetComponent<SpriteRenderer>();
+
+        SetActiveCharacter();
+        UpdateStats();
+
+        characterScreen.sampleButton = button;
+        menu.SquadScreenPanel.SetActive(false);
+        menu.CharacterScreenPanel.SetActive(true);
+        characterScreen.characterSprite.sprite = sprite.sprite;
+        characterScreen.characterName.text = characterGameObject.CharacterClassObject.Name;
+
+
+
+        int expToNextLevel = character.ExperienceNeeded();
+        characterScreen.experienceStat.text = string.Format("{0} / {1}", character.BaseStats.Experience.ToString(), expToNextLevel.ToString());
+        int progBar = character.PercentToNextLevel();
+        characterScreen.ProgressBar.value = progBar;
+        Debug.Log(character.BaseStats.Intl);
+    }
+
+    public void SetActiveCharacter()
+    {
+        //var unityCharacter = GameObject.FindGameObjectWithTag("Character1").GetComponent<CharacterGameObject>();
+        //unityCharacter = characterGameObject;
+        //unityCharacter.CharacterClassObject = character;
+
+        GlobalConstants.ActiveCharacterGameObject = characterGameObject;
+    }
+
+    public void GetActiveCharacter()
+    {
+        characterGameObject = GlobalConstants.ActiveCharacterGameObject;
+        character = characterGameObject.CharacterClassObject;
     }
 
     public void ReevaluateStats(Text labelText)
     {
-   //     GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
-        GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
-     //   SampleButton button = gameObject.GetComponent<SampleButton>();
-     //   MenuManager menu = menuManager.GetComponent<MenuManager>();
-        CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
-        character = stats.sampleButton.character;
-        string itemName = labelText.text;        
-        Equipment item = (Equipment)GlobalConstants.ItemList[itemName];
-        Equipment prevItem = null;
-        foreach(Equipment charEquipment in character.equipment.Values)
+        GetActiveCharacter();
+        var item = GlobalConstants.ItemsMasterList.Single(x => x.Name == labelText.text);
+
+        character.Equipment.SetItemByType(item);
+        character.CurrentStats = StartupData.AddItemStats(character.Equipment.GetItemList(), character.BaseStats);
+        /*
+        foreach (var equipedItem in character.Equipment.GetItemList())
         {
-            if(charEquipment.itemType == item.itemType)
-            {
-                prevItem = charEquipment;
-                break;
-            }
+            character.CurrentStats = item.Stats.ConcatStats(character.BaseStats, equipedItem.Stats);
         }
-        character.alteredStats = item.stats.removeAlteredStats(character.alteredStats, prevItem.stats);
-        character.alteredStats = item.stats.concatStats(character.alteredStats, item.stats);
-        character.equipment[item.itemType] = item;
-        UpdateStats(character);
+
+            character.CurrentStats = item.Stats.RemoveAlteredStats(character.CurrentStats, item.Stats);
+            character.CurrentStats = item.Stats.ConcatStats(character.CurrentStats, item.Stats);
+            UpdateStats();
+        }
+        */
     }
 
-    public void UpdateStats(Character character)
+    public void UpdateStats()
     {
-        GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
-     //   SampleButton button = gameObject.GetComponent<SampleButton>();
-        CharacterScreen menuStats = statsManager.GetComponent<CharacterScreen>();
-        Stats stats = character.baseStats;
-        Stats bonusStats = character.alteredStats;
-        Stats concatStats = stats.concatStats(character.baseStats, character.alteredStats);
-        menuStats.strengthStat.text = formatStats(stats.strength, bonusStats.strength);
-        menuStats.agilityStat.text = formatStats(stats.agility, bonusStats.agility);
-        menuStats.intelligenceStat.text = formatStats(stats.intelligence, bonusStats.intelligence);
-        menuStats.vitalityStat.text = formatStats(stats.vitality, bonusStats.vitality);
-        menuStats.dexterityStat.text = formatStats(stats.dexterity, bonusStats.dexterity);
-        menuStats.wisdomStat.text = formatStats(stats.wisdom, bonusStats.wisdom);
-        menuStats.luckStat.text = formatStats(stats.luck, bonusStats.luck);
-        menuStats.hitPointsStat.text = concatStats.calculateHP(character.level).ToString();
-        menuStats.manaStat.text = concatStats.calculateMP(character.level).ToString();
-        menuStats.damageStat.text = concatStats.calculateDamage(character.level).ToString();
-        menuStats.magicDamageStat.text = concatStats.calculateMagicDamage(character.level).ToString();
-        menuStats.speedStat.text = concatStats.calculateSpeed(character.level).ToString();
-        menuStats.defenseStat.text = concatStats.calculateDefense(character.level).ToString();
-        menuStats.magicDefenseStat.text = concatStats.calculateMagicDefense(character.level).ToString();
-        menuStats.hitRateStat.text = concatStats.calculateHitRate(character.level).ToString();
-        menuStats.dodgeRateStat.text = concatStats.calculateDodgeRate(character.level).ToString();
-        menuStats.criticalRateStat.text = concatStats.calculateCritRate(character.level).ToString();
-        menuStats.remainingStatPoints.text = character.statPoints.ToString();
-        menuStats.remainingSkillPoints.text = character.skillPoints.ToString();
+        var characterStats = GameObject.FindGameObjectWithTag("CharacterStats");
+        var menuScreen = characterStats.GetComponent <CharacterScreen>();
+
+        var stats = modifiedStats == null ? character.BaseStats : modifiedStats;
+        var bonusStats = character.CurrentStats;
+        var concatStats = stats.ConcatStats(stats, character.CurrentStats);
+        menuScreen.strengthStat.text = formatStats(stats.Str, bonusStats.Str);
+        menuScreen.agilityStat.text = formatStats(stats.Agi, bonusStats.Agi);
+        menuScreen.intelligenceStat.text = formatStats(stats.Intl, bonusStats.Intl);
+        menuScreen.vitalityStat.text = formatStats(stats.Vit, bonusStats.Vit);
+        menuScreen.dexterityStat.text = formatStats(stats.Dex, bonusStats.Dex);
+        menuScreen.wisdomStat.text = formatStats(stats.Wis, bonusStats.Wis);
+        menuScreen.luckStat.text = formatStats(stats.Luck, bonusStats.Luck);
+        menuScreen.hitPointsStat.text = concatStats.CalculateHp(character.LevelId).ToString();
+        menuScreen.manaStat.text = concatStats.CalculateMp(character.LevelId).ToString();
+        menuScreen.damageStat.text = concatStats.CalculateDamage(character.LevelId).ToString();
+        menuScreen.magicDamageStat.text = concatStats.CalculateMagicDamage(character.LevelId).ToString();
+        menuScreen.speedStat.text = concatStats.CalculateSpeed(character.LevelId).ToString();
+        menuScreen.defenseStat.text = concatStats.CalculateDefense(character.LevelId).ToString();
+        menuScreen.magicDefenseStat.text = concatStats.CalculateMagicDefense(character.LevelId).ToString();
+        menuScreen.hitRateStat.text = concatStats.CalculateHitRate(character.LevelId).ToString();
+        menuScreen.dodgeRateStat.text = concatStats.CalculateDodgeRate(character.LevelId).ToString();
+        menuScreen.criticalRateStat.text = concatStats.CalculateCritRate(character.LevelId).ToString();
+        menuScreen.remainingStatPoints.text = stats.StatPoints.ToString();
+        menuScreen.remainingSkillPoints.text = stats.SkillPoints.ToString();
     }
 
-    
+
     public string formatStats(int stats, int bonusStats)
     {
-        if (bonusStats == 0)
-        {
-            return stats.ToString();
-        }
-        else
-        {
-            return string.Format("{0} + {1}", stats.ToString(), bonusStats.ToString());
-        }
+        return bonusStats == 0 ? stats.ToString() : string.Format("{0} + {1}", stats.ToString(), bonusStats.ToString());
     }
 
     public void incrementStat(string stat)
     {
-     //   GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
-        GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
-     //   SampleButton button = gameObject.GetComponent<SampleButton>();
-     //   MenuManager menu = menuManager.GetComponent<MenuManager>();
-        CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
-        character = stats.sampleButton.character;
-        if (character.statPoints > 0)
-        {
-            if (stat.Equals("strength"))
-            {
-                character.baseStats.strength++;                
-            }
-            if (stat.Equals("agility"))
-            {
-                character.baseStats.agility++;
-            }
-            if (stat.Equals("intelligence"))
-            {
-                character.baseStats.intelligence++;
-            }
-            if (stat.Equals("vitality"))
-            {
-                character.baseStats.vitality++;
-            }
-            if (stat.Equals("dexterity"))
-            {
-                character.baseStats.dexterity++;
-            }
-            if (stat.Equals("wisdom"))
-            {
-                character.baseStats.wisdom++;
-            }
-            if (stat.Equals("luck"))
-            {
-                character.baseStats.luck++;
-            }
-            character.statPoints--;
-            UpdateStats(character);
+        //   GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
+        //   SampleButton button = gameObject.GetComponent<SampleButton>();
+        //   MenuManager menu = menuManager.GetComponent<MenuManager>();
 
+        //characterGameObject = gameObject.GetComponent<SampleButton>().characterGameObject;
+        //character = GlobalConstants.Player.Characters.Single(x => x.CharacterId == characterGameObject.GetCharacterId());
+
+        //characterGameObject = GameObject.FindGameObjectWithTag("Character1").GetComponent<CharacterGameObject>();
+        //character = characterGameObject.CharacterClassObject;
+
+        GetActiveCharacter();
+        if(modifiedStats == null)
+            modifiedStats = character.BaseStats.Clone();
+
+        if (modifiedStats.StatPoints <= 0) return;
+
+        switch (stat)
+        {
+            case "strength":
+                modifiedStats.Str++;
+                break;
+            case "agility":
+                modifiedStats.Agi++;
+                break;
+            case "intelligence":
+                modifiedStats.Intl++;
+                break;
+            case "vitality":
+                modifiedStats.Vit++;
+                break;
+            case "dexterity":
+                modifiedStats.Dex++;
+                break;
+            case "wisdom":
+                modifiedStats.Wis++;
+                break;
+            case "luck":
+                modifiedStats.Luck++;
+                break;
         }
+        modifiedStats.StatPoints--;
+        UpdateStats();
+    }
+
+    public void ConfirmStatChanges()
+    {
+        character.BaseStats = modifiedStats;
+        modifiedStats = character.BaseStats.Clone();
+    }
+
+    public void RevertStatChanges()
+    {
+        modifiedStats = character.BaseStats.Clone();
+        //character.CurrentStats = character.BaseStats;
+        UpdateStats();
     }
 
     public void BuildDropdowns(CharacterScreen dropdowns)
     {
-        Debug.Log("called");
+        GetActiveCharacter();
+
         dropdowns.helmSlot.options.Clear();        
         dropdowns.shoulderSlot.options.Clear();
         dropdowns.chestSlot.options.Clear();
         dropdowns.glovesSlot.options.Clear();
         dropdowns.legsSlot.options.Clear();
         dropdowns.bootsSlot.options.Clear();
-        foreach(Item item in GlobalConstants.ItemList.Values)
+        foreach(var element in GlobalConstants.Player.Inventory)
         {
-            if (item.itemType == ItemType.HELM)
+            var item = element.Item;
+
+            if (item.ItemType == ItemType.Helm)
             {
-                dropdowns.helmSlot.options.Add(new Dropdown.OptionData() { text = item.name });
+                dropdowns.helmSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.SHOULDERS)
+            else if (item.ItemType == ItemType.Shoulders)
             {
-                dropdowns.shoulderSlot.options.Add(new Dropdown.OptionData() { text = item.name });
+                dropdowns.shoulderSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.CHEST)
+            else if (item.ItemType == ItemType.Chest)
             {
-                dropdowns.chestSlot.options.Add(new Dropdown.OptionData() { text = item.name });
+                dropdowns.chestSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.LEGS)
+            else if (item.ItemType == ItemType.Legs)
             {
-                dropdowns.legsSlot.options.Add(new Dropdown.OptionData() { text = item.name });
+                dropdowns.legsSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.GLOVES)
+            else if (item.ItemType == ItemType.Gloves)
             {
-                dropdowns.glovesSlot.options.Add(new Dropdown.OptionData() { text = item.name });
+                dropdowns.glovesSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
-            else if (item.itemType == ItemType.BOOTS)
+            else if (item.ItemType == ItemType.Boots)
             {
-                dropdowns.bootsSlot.options.Add(new Dropdown.OptionData() { text = item.name });
+                dropdowns.bootsSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
             else
             {
 
             }
         }
-        Debug.Log(character.equipment[ItemType.HELM].name);
-        dropdowns.helmSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.HELM].name;
-        dropdowns.shoulderSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.SHOULDERS].name;
-        dropdowns.chestSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.CHEST].name;
-        dropdowns.glovesSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.GLOVES].name;
-        dropdowns.legsSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.LEGS].name;
-        dropdowns.bootsSlot.GetComponentsInChildren<Text>()[0].text = character.equipment[ItemType.BOOTS].name;
-
+        Debug.Log(character.Equipment.Helm.Name);
+        dropdowns.helmSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Helm.Name;
+        dropdowns.shoulderSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Shoulders.Name;
+        dropdowns.chestSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Chest.Name;
+        dropdowns.glovesSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Gloves.Name;
+        dropdowns.legsSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Pants.Name;
+        dropdowns.bootsSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Boots.Name;
     }
 
     public void LevelSkill(string skill)
     {
      //   GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
         GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
-    //    SampleButton button = gameObject.GetComponent<SampleButton>();
+        SampleButton button = gameObject.GetComponent<SampleButton>();
     //    MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
-        character = stats.sampleButton.character;
-        if (character.skillPoints > 0)
+        //character = stats.sampleButton.character;
+
+        GetActiveCharacter();
+        if (character.BaseStats.SkillPoints > 0)
         {
-            if (character.skillList.ContainsKey(skill))
+            var ability = character.Abilities.SingleOrDefault(x => x.Name.ToLower() == skill.ToLower());
+            if (ability != null)
             {
-                character.skillList[skill]++;
+                character.Abilities.Single(x => x.Name.ToLower() == skill.ToLower()).AbilityLevel++;
             }
             else
             {
-                character.skillList.Add(skill, 1);
+                ability = GlobalConstants.AbilityMasterList.Single(x => x.Name.ToLower() == skill.ToLower());
+                ability.AbilityLevel++;
+                character.Abilities.Add(ability);
             }
             if (skill.Equals("fire"))
-            {                                
-                stats.fireLvl.text = "L" + character.skillList[skill];
+            {
+                characterScreen.fireLvl.text = "L" + ability.AbilityLevel;
+                //stats.fireLvl.text = "L" + ability.AbilityLevel;
             }
             if (skill.Equals("cure"))
             {
-                stats.cureLvl.text = "L" + character.skillList[skill];
+                stats.cureLvl.text = "L" + ability.AbilityLevel;
             }
             if (skill.Equals("focus"))
             {
-                stats.focusLvl.text = "L" + character.skillList[skill];
+                stats.focusLvl.text = "L" + ability.AbilityLevel;
             }
             if (skill.Equals("bash"))
             {
-                stats.bashLvl.text = "L" + character.skillList[skill];
+                stats.bashLvl.text = "L" + ability.AbilityLevel;
             }
-            character.skillPoints--;
-            UpdateStats(character);
+            character.BaseStats.SkillPoints--;
+            UpdateStats();
 
         }
     }
@@ -252,35 +282,40 @@ public class SampleButton : MonoBehaviour
      //   MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         character = stats.sampleButton.character;
-        if (character.skillList.ContainsKey("fire")){
-            stats.fireLvl.text = "L" + character.skillList["fire"].ToString();
-        }
-        else {
-            stats.fireLvl.text = "";
-        }
-        if (character.skillList.ContainsKey("bash"))
+        foreach (var ability in character.Abilities)
         {
-            stats.bashLvl.text = "L" + character.skillList["bash"].ToString();
-        }
-        else
-        {
-            stats.bashLvl.text = "";
-        }
-        if (character.skillList.ContainsKey("cure"))
-        {
-            stats.cureLvl.text = "L" + character.skillList["cure"].ToString();
-        }
-        else
-        {
-            stats.cureLvl.text = "";
-        }
-        if (character.skillList.ContainsKey("focus"))
-        {
-            stats.focusLvl.text = "L" + character.skillList["focus"].ToString();
-        }
-        else
-        {
-            stats.focusLvl.text = "";
+            if (ability.Name == "fire")
+            {
+                stats.fireLvl.text = "L" + ability.AbilityLevel;
+            }
+            else
+            {
+                stats.fireLvl.text = "";
+            }
+            if (ability.Name == "bash")
+            {
+                stats.bashLvl.text = "L" + ability.AbilityLevel;
+            }
+            else
+            {
+                stats.bashLvl.text = "";
+            }
+            if (ability.Name == "cure")
+            {
+                stats.cureLvl.text = "L" + ability.AbilityLevel;
+            }
+            else
+            {
+                stats.cureLvl.text = "";
+            }
+            if (ability.Name == "focus")
+            {
+                stats.focusLvl.text = "L" + ability.AbilityLevel;
+            }
+            else
+            {
+                stats.focusLvl.text = "";
+            }
         }
         stats.hasteLvl.text = "";
         stats.regenLvl.text = "";

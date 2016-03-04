@@ -5,33 +5,36 @@ namespace Assets.Scripts
     public class MenuManager : MonoBehaviour
     {
 
-        public int menuID = 0;
-        public GameObject[] menuPanels;
-        public GameObject loginPanel;
-        public GameObject mainMenuPanel;
-        public GameObject registerPanel;
-        public GameObject homePanel;
-        public GameObject squadPanel;
-        public GameObject squadScreenPanel;
-        public GameObject characterList;
-        public GameObject characterScreenPanel;
-        public GameObject shopPanel;
-        public GameObject shop;
+        public int MenuId = 0;
+        public GameObject[] MenuPanels;
+        public GameObject LoginPanel;
+        public GameObject MainMenuPanel;
+        public GameObject RegisterPanel;
+        public GameObject HomePanel;
+        public GameObject SquadPanel;
+        public GameObject SquadScreenPanel;
+        public GameObject CharacterList;
+        public GameObject CharacterScreenPanel;
+        public GameObject ShopPanel;
+        public GameObject Shop;
+
         // Use this for initialization
         void Start()
         {
-            menuPanels = GameObject.FindGameObjectsWithTag("MenuPanel");
+            MenuPanels = GameObject.FindGameObjectsWithTag("MenuPanel");
+            HomePanel = GameObject.FindGameObjectWithTag("HomePanel");
 
             /*mainMenuPanel = GameObject.Find("HomeScreen");
-        loginPanel = GameObject.Find("LoginScreen");
-        homePanel = GameObject.Find("HomePanel");
-        squadPanel = GameObject.Find("SquadPanel");
-        squadScreenPanel = GameObject.Find("SquadScreen");
-        characterScreenPanel = GameObject.Find("CharacterScreen");
-        shop = GameObject.Find("Shop");
-        shopPanel = GameObject.Find("ShopPanel");
-        characterList = GameObject.Find("CharacterList");*/
-            setup();
+            loginPanel = GameObject.Find("LoginScreen");
+            homePanel = GameObject.Find("HomePanel");
+            squadPanel = GameObject.Find("SquadPanel");
+            squadScreenPanel = GameObject.Find("SquadScreen");
+            characterScreenPanel = GameObject.Find("CharacterScreen");
+            shop = GameObject.Find("Shop");
+            shopPanel = GameObject.Find("ShopPanel");
+            characterList = GameObject.Find("CharacterList");*/
+
+            Setup();
         }
 
         // Update is called once per frame
@@ -40,15 +43,15 @@ namespace Assets.Scripts
 
         }
 
-        void setup()
+        void Setup()
         {
-            //loginPanel.SetActive(false);
-            mainMenuPanel.SetActive(false);
-            //homePanel.SetActive(false);
-            squadPanel.SetActive(false);
-            characterScreenPanel.SetActive(false);
-            shopPanel.SetActive(false);
-            registerPanel.SetActive(false);
+            //LoginPanel.SetActive(true);
+            MainMenuPanel.SetActive(false);
+            //HomePanel.SetActive(false);
+            SquadPanel.SetActive(false);
+            CharacterScreenPanel.SetActive(false);
+            ShopPanel.SetActive(false);
+            RegisterPanel.SetActive(false);
         }
 
    

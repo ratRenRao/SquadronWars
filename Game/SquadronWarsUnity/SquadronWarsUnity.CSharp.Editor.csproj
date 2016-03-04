@@ -119,6 +119,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\FindMissingScripts.cs" />
     <Compile Include="Assets\JSON\Editor\JSONChecker.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Editor\CustomTiledImporterAttribute.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Editor\ICustomTiledImporter.cs" />
@@ -134,6 +135,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\JSON\readme.txt" />
+    <None Include="Assets\ProLoading\Example\Present\BottonLeft.txt" />
+    <None Include="Assets\ProLoading\Example\Present\BottonRight.txt" />
+    <None Include="Assets\ProLoading\Example\Present\TopRight.txt" />
+    <None Include="Assets\ProLoading\ReadMe!.txt" />
+    <None Include="Assets\Tiled2Unity\Imported\BattleMap2.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\BattleMapDesert.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\BattleMapForest.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\BattleMapLava.tiled2unity.xml" />
@@ -147,7 +153,6 @@
     <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
     <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
     <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
-    <None Include="Assets\TiledMaps\rules.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

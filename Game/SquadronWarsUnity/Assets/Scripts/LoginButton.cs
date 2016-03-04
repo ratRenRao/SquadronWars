@@ -15,8 +15,7 @@ namespace Assets.Scripts
 
         public void OnClick()
         {
-            LoginScreenManager.UpdateLogins();
-            LoginScreenManager.ValidateLogins();
+            LoginScreenManager.LoginClicked();
         }
     }
 }

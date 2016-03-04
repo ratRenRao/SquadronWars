@@ -12,6 +12,14 @@ TagManager:
   - ignore
   - start
   - map
+  - ParticleCanvas
+  - HomePanel
+  - grass
+  - rockcliff
+  - bridge
+  - chasm
+  - rock
+  - pebbles
   layers:
   - Default
   - TransparentFX
@@ -44,7 +52,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - DmgText
   m_SortingLayers:
   - name: Default
     uniqueID: 0

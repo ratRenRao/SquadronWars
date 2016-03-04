@@ -1,27 +1,30 @@
+using Assets.GameClasses;
+using UnityEngine;
+
 namespace Assets.GameClasses
 {
     class Weaken : Effect
     {
-        private int decreasePercent;
-        private int hpRemoved;
+        private int _decreasePercent;
+        private int _hpRemoved;
 
-        public Weaken(Stats casterStats, Stats targetStats, bool hasInitialEffect, int duration)
+        public Weaken(Stats caster, Stats target, bool hasInitialEffect, int duration)
         {
-            this.targetStats = targetStats;
-            this.casterStats = casterStats;
-            this.hasInitialEffect = hasInitialEffect;
-            this.duration = duration;
+            Target = target;
+            Caster = caster;
+            HasInitialEffect = hasInitialEffect;
+            Duration = duration;
         }
 
-        public override void immediateEffect()
+        public override void ImmediateEffect()
         {
-            hpRemoved = targetStats.currentHP * (decreasePercent / 100);
-            targetStats.currentHP -= hpRemoved;
+            _hpRemoved = Target.HitPoints * (_decreasePercent / 100);
+            Target.HitPoints -= _hpRemoved;
         }
 
-        public override void removeEffect()
+        public override void RemoveEffect()
         {
-            targetStats.currentHP = ValidateStat(targetStats.currentHP + hpRemoved, 0, targetStats.maxHP);
+            Target.HitPoints = ValidateStat(Target.HitPoints + _hpRemoved, 0, Target.HitPoints);
         }
 
     }

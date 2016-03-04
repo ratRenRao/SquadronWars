@@ -1,9 +1,126 @@
 fileFormatVersion: 2
 guid: c4e9752fd4d961f41a834cdd35cfdffe
-timeCreated: 1454087500
+timeCreated: 1455676790
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Focus Ser Lance_0
+    21300002: Focus Ser Lance_1
+    21300004: Focus Ser Lance_2
+    21300006: Focus Ser Lance_3
+    21300008: Focus Ser Lance_4
+    21300010: Focus Ser Lance_5
+    21300012: Focus Ser Lance_6
+    21300014: Focus Ser Lance_7
+    21300016: Focus Ser Lance_8
+    21300018: Focus Ser Lance_9
+    21300020: Focus Ser Lance_10
+    21300022: Focus Ser Lance_11
+    21300024: Focus Ser Lance_12
+    21300026: Focus Ser Lance_13
+    21300028: Focus Ser Lance_14
+    21300030: Focus Ser Lance_15
+    21300032: Focus Ser Lance_16
+    21300034: Focus Ser Lance_17
+    21300036: Focus Ser Lance_18
+    21300038: Focus Ser Lance_19
+    21300040: Focus Ser Lance_20
+    21300042: Focus Ser Lance_21
+    21300044: Focus Ser Lance_22
+    21300046: Focus Ser Lance_23
+    21300048: Focus Ser Lance_24
+    21300050: Focus Ser Lance_25
+    21300052: Focus Ser Lance_26
+    21300054: Focus Ser Lance_27
+    21300056: Focus Ser Lance_28
+    21300058: Focus Ser Lance_29
+    21300060: Focus Ser Lance_30
+    21300062: Focus Ser Lance_31
+    21300064: Focus Ser Lance_32
+    21300066: Focus Ser Lance_33
+    21300068: Focus Ser Lance_34
+    21300070: Focus Ser Lance_35
+    21300072: Focus Ser Lance_36
+    21300074: Focus Ser Lance_37
+    21300076: Focus Ser Lance_38
+    21300078: Focus Ser Lance_39
+    21300080: Focus Ser Lance_40
+    21300082: Focus Ser Lance_41
+    21300084: Focus Ser Lance_42
+    21300086: Focus Ser Lance_43
+    21300088: Focus Ser Lance_44
+    21300090: Focus Ser Lance_45
+    21300092: Focus Ser Lance_46
+    21300094: Focus Ser Lance_47
+    21300096: Focus Ser Lance_48
+    21300098: Focus Ser Lance_49
+    21300100: Focus Ser Lance_50
+    21300102: Focus Ser Lance_51
+    21300104: Focus Ser Lance_52
+    21300106: Focus Ser Lance_53
+    21300108: Focus Ser Lance_54
+    21300110: Focus Ser Lance_55
+    21300112: Focus Ser Lance_56
+    21300114: Focus Ser Lance_57
+    21300116: Focus Ser Lance_58
+    21300118: Focus Ser Lance_59
+    21300120: Focus Ser Lance_60
+    21300122: Focus Ser Lance_61
+    21300124: Focus Ser Lance_62
+    21300126: Focus Ser Lance_63
+    21300128: Focus Ser Lance_64
+    21300130: Focus Ser Lance_65
+    21300132: Focus Ser Lance_66
+    21300134: Focus Ser Lance_67
+    21300136: Focus Ser Lance_68
+    21300138: Focus Ser Lance_69
+    21300140: Focus Ser Lance_70
+    21300142: Focus Ser Lance_71
+    21300144: Focus Ser Lance_72
+    21300146: Focus Ser Lance_73
+    21300148: Focus Ser Lance_74
+    21300150: Focus Ser Lance_75
+    21300152: Focus Ser Lance_76
+    21300154: Focus Ser Lance_77
+    21300156: Focus Ser Lance_78
+    21300158: Focus Ser Lance_79
+    21300160: Focus Ser Lance_80
+    21300162: Focus Ser Lance_81
+    21300164: Focus Ser Lance_82
+    21300166: Focus Ser Lance_83
+    21300168: Focus Ser Lance_84
+    21300170: Focus Ser Lance_85
+    21300172: Focus Ser Lance_86
+    21300174: Focus Ser Lance_87
+    21300176: Focus Ser Lance_88
+    21300178: Focus Ser Lance_89
+    21300180: Focus Ser Lance_90
+    21300182: Focus Ser Lance_91
+    21300184: Focus Ser Lance_92
+    21300186: Focus Ser Lance_93
+    21300188: Focus Ser Lance_94
+    21300190: Focus Ser Lance_95
+    21300192: Focus Ser Lance_96
+    21300194: Focus Ser Lance_97
+    21300196: Focus Ser Lance_98
+    21300198: Focus Ser Lance_99
+    21300200: Focus Ser Lance_100
+    21300202: Focus Ser Lance_101
+    21300204: Focus Ser Lance_102
+    21300206: Focus Ser Lance_103
+    21300208: Focus Ser Lance_104
+    21300210: Focus Ser Lance_105
+    21300212: Focus Ser Lance_106
+    21300214: Focus Ser Lance_107
+    21300216: Focus Ser Lance_108
+    21300218: Focus Ser Lance_109
+    21300220: Focus Ser Lance_110
+    21300222: Focus Ser Lance_111
+    21300224: Focus Ser Lance_112
+    21300226: Focus Ser Lance_113
+    21300228: Focus Ser Lance_114
+    21300230: Focus Ser Lance_115
+    21300232: Focus Ser Lance_116
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -17,7 +134,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: 0.25
+    heightScale: .25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -29,8 +146,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,19 +155,1188 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
-    outline: []
+    sprites:
+    - name: Focus Ser Lance_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1067
+        width: 95
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_1
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 1031
+        width: 106
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_2
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 997
+        width: 108
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_3
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 961
+        width: 113
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_4
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 1040
+        width: 50
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_5
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 1073
+        width: 29
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 882
+        width: 38
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_7
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 899
+        width: 26
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_8
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 895
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_9
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 782
+        width: 124
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_10
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 782
+        width: 86
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_11
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 782
+        width: 58
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_12
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 782
+        width: 95
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_13
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 771
+        width: 100
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_14
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 586
+        width: 169
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 624
+        width: 51
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_16
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 649
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_17
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 629
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_18
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 648
+        width: 5
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_19
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 634
+        width: 6
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_20
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 637
+        width: 38
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_21
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 652
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_22
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 631
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_23
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 635
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_24
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 587
+        width: 153
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_25
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 583
+        width: 135
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_26
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 634
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_27
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 636
+        width: 25
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_28
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 586
+        width: 111
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_29
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 584
+        width: 123
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_30
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 601
+        width: 55
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_31
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 468
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_32
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 473
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_33
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 477
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_34
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 443
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_35
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 439
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_36
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 460
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_37
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 445
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_38
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 443
+        width: 5
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_39
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 457
+        width: 5
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_40
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 437
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_41
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 432
+        width: 53
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_42
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 456
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_43
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 419
+        width: 82
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_44
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 416
+        width: 94
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_45
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 425
+        width: 46
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_46
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 413
+        width: 60
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_47
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 426
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_48
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 445
+        width: 58
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_49
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 443
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_50
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 442
+        width: 25
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_51
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 416
+        width: 54
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_52
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 409
+        width: 54
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_53
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 404
+        width: 71
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_54
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 431
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_55
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 429
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_56
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 427
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_57
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 424
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_58
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 401
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_59
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 410
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_60
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 401
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_61
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 288
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_62
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 276
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_63
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 235
+        width: 50
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_64
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 254
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_65
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 257
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_66
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 261
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_67
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 234
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_68
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 254
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_69
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 264
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_70
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 246
+        width: 9
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_71
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 253
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_72
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 255
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_73
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 261
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_74
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 255
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_75
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 263
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_76
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 264
+        width: 5
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_77
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 252
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_78
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 251
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_79
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 261
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_80
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 254
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_81
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 246
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_82
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 250
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_83
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 246
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_84
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 260
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_85
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 247
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_86
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 247
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_87
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 260
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_88
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 236
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_89
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 221
+        width: 64
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_90
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 228
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_91
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 233
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_92
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 218
+        width: 45
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_93
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 232
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_94
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 225
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_95
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 229
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_96
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 230
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_97
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 214
+        width: 44
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_98
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 229
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_99
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 225
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_100
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 227
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_101
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 225
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_102
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 229
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_103
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 222
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_104
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 215
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_105
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 210
+        width: 33
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_106
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 204
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_107
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 55
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_108
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 106
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_109
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 85
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_110
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 85
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_111
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 54
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_112
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 33
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_113
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 27
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_114
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 30
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_115
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 24
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Focus Ser Lance_116
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 6
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

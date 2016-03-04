@@ -2,12 +2,16 @@
 using System.Collections;
 using Assets.GameClasses;
 
-namespace Assets.Scripts
+/*namespace Assets.Scripts
 {
+    
     public class GameCharacter : MonoBehaviour
     {
 
-        public Character character;
+        
+        public CharacterGameObject character;
+        public bool hasAttacked = false;
+        public bool hasMoved = false;
         public int x
         {
             get;
@@ -19,7 +23,7 @@ namespace Assets.Scripts
             set;
         }
 
-        public GameCharacter(Character character, int x, int y)
+        public GameCharacter(CharacterGameObject character, int x, int y)
         {
             this.character = character;
             this.x = x;
@@ -28,9 +32,7 @@ namespace Assets.Scripts
 
         void Start()
         {
-            character.alteredStats.InitializeStats(character.level);
-            character.alteredStats.currentHP = character.alteredStats.maxHP;
-            character.alteredStats.currentMP = character.alteredStats.maxMP;
         }
     }
-}
+
+}*/
