@@ -33,6 +33,12 @@ interface IDBStructure
 
     public function updateCharacter($playerID, $characterObject);
 
+    public function startGame($playerID);
+
+    public function checkGame($gameID);
+
+    public function updateGame($gameInfo);
+
     //will need to decide how/if we will use this
     //public function createSquad();
 

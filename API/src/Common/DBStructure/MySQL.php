@@ -76,7 +76,6 @@ class MySQL implements IDBStructure
 
     public function createCharacter($characterObject)
     {
-        // TODO: Implement createCharacter() method.
         //create database reference object
         $dbh='';
 
@@ -108,16 +107,16 @@ class MySQL implements IDBStructure
             return;
         }
 
-        $query = $dbh->prepare("CALL sp_CreatePlayer(?,?)");
+        $query = $dbh->prepare("CALL sp_CreatePlayer(?,?,?)");
         $query->bindParam(1, $characterObject->{"PlayerID"}, PDO::PARAM_INT);
-        $query->bindParam(2, $characterObject->{"CharacterName"}, PDO::PARAM_STR);
+        $query->bindParam(2, $characterObject->{"charactername"}, PDO::PARAM_STR);
+        $query->bindParam(2, $characterObject->{"spriteId"}, PDO::PARAM_INT);
 
 
     }
 
     public function createPlayer($register)
     {
-        // TODO: Implement createPlayer() method.
         //create database reference object
         $dbh='';
 
@@ -133,11 +132,17 @@ class MySQL implements IDBStructure
             echo $e->getMessage();
         }
 
+        //verify that all fields have information before attempting to add a user.
+        if($register->{"username"} == null || $register->{"password"} == null || $register->{"firstName"} == null || $register->{"lastName"} == null || $register->{"email"} == null)
+        {
+            return null;
+        }
+
         $query = $dbh->prepare("CALL sp_CreatePlayer(?,?,?,?,?)");
         $query->bindParam(1,$register->{"username"},PDO::PARAM_STR);
         $query->bindParam(2,$register->{"password"},PDO::PARAM_STR);
-        $query->bindParam(3,$register->{"firstname"},PDO::PARAM_STR);
-        $query->bindParam(4,$register->{"lastname"},PDO::PARAM_STR);
+        $query->bindParam(3,$register->{"firstName"},PDO::PARAM_STR);
+        $query->bindParam(4,$register->{"lastName"},PDO::PARAM_STR);
         $query->bindParam(5,$register->{"email"},PDO::PARAM_STR);
 
         $query->execute();
@@ -266,7 +271,7 @@ class MySQL implements IDBStructure
             return $returnCode;
         }
 
-        $query = $dbh->prepare("CALL sp_UpdateCharacter(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $query = $dbh->prepare("CALL sp_UpdateCharacter(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         $query->bindParam(1, $characterObject->{"characterId"}, PDO::PARAM_INT);
         $query->bindParam(2, $characterObject->{"statPoints"}, PDO::PARAM_INT);
         $query->bindParam(3, $characterObject->{"skillPoints"}, PDO::PARAM_INT);
@@ -299,6 +304,7 @@ class MySQL implements IDBStructure
         $query->bindParam(30, $characterObject->{"hitRate"}, PDO::PARAM_INT);
         $query->bindParam(31, $characterObject->{"critRate"}, PDO::PARAM_INT);
         $query->bindParam(32, $characterObject->{"dodgeRate"}, PDO::PARAM_INT);
+        $query->bindParam(33, $characterObject->{"spriteId"}, PDO::PARAM_INT);
 
 
         //execute procedure.
@@ -359,4 +365,95 @@ class MySQL implements IDBStructure
 
         return $returnCode;
     }
+
+    public function startGame($playerID)
+    {
+        //create database reference object
+        $dbh = '';
+
+        //Try to connect to mysql service
+        try
+        {
+            //created config file to hold user name and password that we will use to obscure and keep off of our repo.
+            $dbh = new PDO("mysql:host=localhost:3306;dbname=dbo", dbuser, dbpass);
+        }
+        catch(PDOException $e)
+        {
+            //return status code to be used in response message. 500 server error.
+            return null;
+        }
+
+        $query = $dbh->prepare("Call sp_MatchMakeGame(?)");
+        $query->bindParam(1,$playerID,PDO::PARAM_INT);
+        $query->execute();
+
+        $returnObject["GameInfo"] = $query->fetch(PDO::FETCH_ASSOC);
+        $query->closeCursor();
+
+        return $returnObject;
+    }
+
+    public function checkGame($gameID)
+    {
+        //create database reference object
+        $dbh = '';
+
+        //Try to connect to mysql service
+        try
+        {
+            //created config file to hold user name and password that we will use to obscure and keep off of our repo.
+            $dbh = new PDO("mysql:host=localhost:3306;dbname=dbo", dbuser, dbpass);
+        }
+        catch(PDOException $e)
+        {
+            //return status code to be used in response message. 500 server error.
+            return null;
+        }
+
+        $query = $dbh->prepare("Call sp_GetGame(?)");
+        $query->bindParam(1,$gameID,PDO::PARAM_INT);
+        $query->execute();
+
+        $returnObject["GameInfo"] = $query->fetch(PDO::FETCH_ASSOC);
+        $query->closeCursor();
+
+        return $returnObject;
+    }
+
+    public function updateGame($gameInfo)
+    {
+        //create database reference object
+        $dbh = '';
+
+        //Try to connect to mysql service
+        try
+        {
+            //created config file to hold user name and password that we will use to obscure and keep off of our repo.
+            $dbh = new PDO("mysql:host=localhost:3306;dbname=dbo", dbuser, dbpass);
+        }
+        catch(PDOException $e)
+        {
+            //return status code to be used in response message. 500 server error.
+            return 401;
+        }
+
+        $test = json_encode($gameInfo->{"gameJSON"});
+
+        $query = $dbh->prepare("Call sp_UpdateGame(?,?,?)");
+        $query->bindParam(1,$gameInfo->{"gameId"},PDO::PARAM_INT);
+        $query->bindParam(2,$test,PDO::PARAM_STR);
+        $query->bindParam(3,$gameInfo->{"Finished"},PDO::PARAM_INT);
+        $query->execute();
+
+        $response = 500;
+        if($query->rowCount() == 1)
+        {
+            $response = 200;
+        }
+        $query->closeCursor();
+
+        return $response;
+    }
+
+
 }
