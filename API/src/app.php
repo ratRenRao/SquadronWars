@@ -70,11 +70,12 @@ $app->post('/api/CreateCharacter', function() use($app)
     if(isset($_POST['GameObject']))
     {
         $createRequest = json_decode($_POST['GameObject']);
+        $returnCode = $mysql->createCharacter($createRequest);
     }
 
     if($returnCode == 200)
     {
-        return new Response("Successful Create Player", 200);
+        return new Response("Successful Create Character", 200);
     }
     else
     {
@@ -90,8 +91,8 @@ $app->post('/api/CreatePlayer', function() use($app)
 
     if(isset($_POST['GameObject']))
     {
-        $register = json_decode($_POST['GameObject']);
-        $returnObject = $mysql->createPlayer($register);
+        $gameObject = json_decode($_POST['GameObject']);
+        $returnObject = $mysql->createPlayer($gameObject);
     }
 
     if($returnObject != null)
@@ -123,6 +124,7 @@ $app->post('/api/UpdateCharacter', function() use($app)
         {
             $response = $mysql->updateCharacter($verifyPlayer["playerId"], $gameObject->{"character"});
         }
+        $response = $mysql->updateCharacter($verifyPlayer["playerId"], $gameObject->{"character"});
     }
 
     if($response == 200)
@@ -197,25 +199,109 @@ $app->post('/api/UpdateCharAbility', function() use($app)
 
 $app->post('/api/StartGame', function() use($app)
 {
-    //TODO: Start Game
+    //create database object to be used.
+    $mysql = new MySQL();
+
+    //verify post request contains username and password.
+    if(isset($_POST['GameObject'])) {
+        $gameObject = json_decode($_POST['GameObject']);
+        $verifyPlayer = $mysql->authenticateUser($gameObject->{"username"}, $gameObject->{"password"});
+        if (sizeof($verifyPlayer) > 0) {
+            $returnObject = $mysql->startGame($verifyPlayer["playerId"]);
+            return json_encode($returnObject);
+        }
+    }
     return new Response("Failed",401);
 });
 
-$app->post('/api/GetGameInfo', function() use($app)
+$app->post('/api/CheckGameInfo', function() use($app)
 {
-    //TODO: Check Game status
+    //create database object to be used.
+    $mysql = new MySQL();
+
+    //verify post request contains username and password.
+    if(isset($_POST['GameObject'])) {
+        $gameObject = json_decode($_POST['GameObject']);
+        $returnObject = $mysql->checkGame($gameObject->{"gameID"});
+        return json_encode($returnObject);
+    }
     return new Response("Failed",401);
+});
+
+$app->post('/api/PlaceCharacters', function() use($app)
+{
+    $returncode =  200;
+    $mysql = new MySQL();
+    if(isset($_POST['GameObject']))
+    {
+        $gameObject = json_decode($_POST['GameObject']);
+        //TODO: call sql for inserting player characters
+    }
+    if($returncode == 200)
+    {
+        return new Response("Updated Game",200);
+
+    }
+    elseif($returncode == 500)
+    {
+        return new Response("Server Error",500);
+    }
+    else
+    {
+        return new Response("Failed",401);
+
+    }
+
+});
+
+$app->post('/api/UpdateGameInfo', function() use($app)
+{
+    $returncode = 401;
+    $mysql = new MySQL();
+    if(isset($_POST['GameObject']))
+    {
+        $gameObject = json_decode($_POST['GameObject']);
+        $returncode = $mysql->updateGame($gameObject);
+    }
+    if($returncode == 200)
+    {
+        return new Response("Updated Game",200);
+
+    }
+    elseif($returncode == 500)
+    {
+        return new Response("Server Error",500);
+    }
+    else
+    {
+        return new Response("Failed",401);
+
+    }
 });
 
 /*
  * Test Method
- *
-$app->get('/test', function() use($app){
+ */
+$app->post('/test', function() use($app){
     $mysql = new MySQL();
-    $test["Characters"] = $mysql->getCharacters(9);
+//    $test = $mysql->startGame(17);
+    $test = $mysql->checkGame(14);
     var_dump($test);
+    if(isset($_POST['GameObject']))
+    {
+        $gameObject = json_decode($_POST['GameObject']);
+        $testing = $mysql->updateGame($gameObject);
+        var_dump($testing);
+    }
+
+//    $game = json_encode($game);
+
+//    $testing = json_decode($game);
+//    var_dump($testing);
+//    $test = $mysql->updateGame();
+
     return '';
 });
-**/
+/**/
 
 $app->run();
