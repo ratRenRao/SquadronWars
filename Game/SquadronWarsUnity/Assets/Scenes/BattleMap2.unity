@@ -124,7 +124,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11413148, guid: f8c7e17148272f74aaecf7b4af08b29d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f8c7e17148272f74aaecf7b4af08b29d, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &334646032 stripped
@@ -7493,11 +7494,11 @@ Prefab:
     - target: {fileID: 11497924, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
       propertyPath: gameController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 334646434}
     - target: {fileID: 11438874, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
       propertyPath: gameController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 334646434}
     - target: {fileID: 499412, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
       propertyPath: m_LocalPosition.x
       value: -41.65
@@ -7509,11 +7510,11 @@ Prefab:
     - target: {fileID: 11452148, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
       propertyPath: gameController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 334646434}
     - target: {fileID: 11433004, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
       propertyPath: gameController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 334646434}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
   m_IsPrefabParent: 0

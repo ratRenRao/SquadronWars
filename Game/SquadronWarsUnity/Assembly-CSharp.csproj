@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Data\DBConnection.cs" />
+     <Compile Include="Assets\Data\MatchData.cs" />
      <Compile Include="Assets\Data\StartupData.cs" />
      <Compile Include="Assets\Data\Utilities.cs" />
      <Compile Include="Assets\GameClasses\Ability.cs" />
@@ -100,12 +101,14 @@
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledInitialShaderProperties.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
+     <None Include="Assets\Tiled2Unity\Imported\BattleMap1.tiled2unity.xml" />
      <None Include="Assets\ProLoading\ReadMe!.txt" />
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
      <None Include="Assets\ProLoading\Example\Present\BottonLeft.txt" />
      <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
      <None Include="Assets\Tiled2Unity\Imported\BattleMapDesert.tiled2unity.xml" />
+     <None Include="Assets\Tiled2Unity\Imported\BattleMap3.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Imported\BattleMapLava.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Imported\BattleMapForest.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Imported\battlemap.tiled2unity.xml" />
@@ -114,6 +117,7 @@
      <None Include="Assets\Tiled2Unity\Imported\testmap.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Imported\BattleMap2.tiled2unity.xml" />
+     <None Include="Assets\Tiled2Unity\Imported\BattleMap4.tiled2unity.xml" />
      <None Include="Assets\ProLoading\Example\Present\BottonRight.txt" />
      <None Include="Assets\ProLoading\Example\Present\TopRight.txt" />
      <None Include="Assets\JSON\readme.txt" />
