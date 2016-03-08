@@ -17,6 +17,7 @@ namespace Assets.Scripts
         public GameObject CharacterScreenPanel;
         public GameObject ShopPanel;
         public GameObject Shop;
+        public GameObject CreateCharacterPanel;
 
         // Use this for initialization
         void Start()
@@ -52,6 +53,7 @@ namespace Assets.Scripts
             CharacterScreenPanel.SetActive(false);
             ShopPanel.SetActive(false);
             RegisterPanel.SetActive(false);
+            CreateCharacterPanel.SetActive(false);
         }
 
    

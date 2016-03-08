@@ -9,22 +9,16 @@
  * all API endpoints should return json encoded objects
  */
 
-//Directory constants
-
-
 use Common\DBStructure\MySQL;
 use \Symfony\Component\HttpFoundation\Response;
 
 $app = new \Silex\Application();
-
-
 
 $app->get('/',function() use($app)
 {
     //loads landing page. under construction
     require_once commonpath.DIRECTORY_SEPARATOR.'html'.DIRECTORY_SEPARATOR.'index.html';
     return '';
-
 });
 
 /**
@@ -70,12 +64,12 @@ $app->post('/api/CreateCharacter', function() use($app)
     if(isset($_POST['GameObject']))
     {
         $createRequest = json_decode($_POST['GameObject']);
-        $returnCode = $mysql->createCharacter($createRequest);
+        $returnObject = $mysql->createCharacter($createRequest);
     }
 
-    if($returnCode == 200)
+    if(sizeof($returnObject) > 0)
     {
-        return new Response("Successful Create Character", 200);
+        return json_encode($returnObject);
     }
     else
     {
@@ -188,12 +182,6 @@ $app->post('/api/UpdateSquad', function() use($app)
         }
     }
 
-    return new Response("Failed",401);
-});
-
-$app->post('/api/UpdateCharAbility', function() use($app)
-{
-    //TODO: Update/Insert Character Ability
     return new Response("Failed",401);
 });
 
