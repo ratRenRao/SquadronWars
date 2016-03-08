@@ -57,6 +57,7 @@ namespace Assets.Scripts
         bool hidePanel = true;
         string selectedAbility;
         int count = 0;
+        int idCount = 1;
         int unitPlacedCount = 0;
         List<Tile> walkableTiles = new List<Tile>();
         List<Tile> validMoves = new List<Tile>();
@@ -75,10 +76,11 @@ namespace Assets.Scripts
             battlesong.playOnAwake = true;
             placeCharacterPhase = true;
             characters = GlobalConstants.MatchCharacters;
-            //statsPanel.charName.text = characters[0].CharacterClassObject.Name;
+            statsPanel.charName.text = characters[0].CharacterClassObject.Name;
             statsPanel.hp.text = characters[0].CharacterClassObject.CurrentStats.HitPoints + " / " + characters[0].CharacterClassObject.CurrentStats.HitPoints;
             statsPanel.mp.text = characters[0].CharacterClassObject.CurrentStats.MagicPoints + " / " + characters[0].CharacterClassObject.CurrentStats.MagicPoints;
-            tileArray = tileMap.tileArray;
+            tileMap.addHighlightObjects();
+            tileArray = tileMap.tileArray;            
             highlightSpawn();
             arraySet = true;
         }
@@ -332,16 +334,17 @@ namespace Assets.Scripts
         public void AttackAbility(string ability)
         {
             if (!currentCharacterGameObject.hasAttacked)
-            {
+            {                
                 ShowAttackMoves("ability");
                 selectedAbility = ability;
+
             }
         }
 
         public void CastAbility(string ability)
         {
             if (!currentCharacterGameObject.hasAttacked)
-            {
+            {                
                 showCastMoves();
                 selectedAbility = ability;
             }
@@ -925,7 +928,7 @@ namespace Assets.Scripts
                     }
                     range--;
                 }
-                StartCoroutine(WaitForClick("attack"));
+                StartCoroutine(WaitForClick("ability"));
 
             }
             else
@@ -1020,7 +1023,7 @@ namespace Assets.Scripts
             }
             if (targetTile.isOccupied)
             {
-
+                Debug.Log(ability);
                 StartCoroutine(AttackAnimation(targetTile, ability, weaponType));
             }
             else {
@@ -1058,11 +1061,23 @@ namespace Assets.Scripts
         IEnumerator AttackAnimation(Tile tempTile, string ability, string weaponType)
         {
             yield return new WaitForSeconds(.2f);
-            tarAnim.SetBool("isAttacked", true);            
-            yield return new WaitForSeconds(.3f);
+            tarAnim.SetBool("isAttacked", true);
+            if (weaponType == "isAttackingSpear")
+            {
+                yield return new WaitForSeconds(.55f);
+            }
+            if (weaponType == "isAttacking")
+            {
+                yield return new WaitForSeconds(.3f);
+            }
+            if (weaponType == "isAttackingBow")
+            {
+                yield return new WaitForSeconds(.7f);
+            }
             anim.SetBool(weaponType, false);
             tarAnim.SetBool("isAttacked", false);
             int damage = 0;
+            Debug.Log(ability);
             if (ability != null)
             {
                 GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
@@ -1093,6 +1108,7 @@ namespace Assets.Scripts
                 tarAnim.SetBool("isDead", true);
                 yield return new WaitForSeconds(.8f);
             }
+            selectedAbility = null;
             hidePanel = false;
         }
         IEnumerator AttackAnimationNothing(string weaponType)
@@ -1141,6 +1157,7 @@ namespace Assets.Scripts
                     yield return new WaitForSeconds(.8f);
                 }
             }
+            selectedAbility = null;
             hidePanel = false;
         }
         IEnumerator CastAnimationNothing()
@@ -1265,7 +1282,7 @@ namespace Assets.Scripts
             tempTile.character = gameCharacter;
             int spriteId = gameCharacter.CharacterClassObject.SpriteId;
             Debug.Log(spriteId);
-            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character2" /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
+            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + idCount /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
             //gameCharacter.gameObject.transform.position = new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y);
             //gameCharacter.gameObject.transform.rotation = Quaternion.identity;
             GameObject tempchar = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;
@@ -1287,6 +1304,7 @@ namespace Assets.Scripts
             {
                 statsPanel.charName.text = characters[unitPlacedCount + 1].CharacterClassObject.Name;
             }
+            idCount++;
         }
 
         public void SelectNextCharacter()
@@ -1330,6 +1348,7 @@ namespace Assets.Scripts
             abilityButton.interactable = true;
             statsPanel.charName.text = currentCharacterGameObject.CharacterClassObject.Name;
             currentCharacterGameObject.CharacterClassObject.CurrentStats.Dmg = 20;
+            Debug.Log(currentCharacterGameObject.CharacterClassObject.CharacterId);
             statsPanel.hp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurHP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints;
             statsPanel.mp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurMP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;            
             PositionPanels();
@@ -1361,5 +1380,9 @@ namespace Assets.Scripts
                 actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x - 10, actionPanel.transform.position.y, 0);
             }
         }
+
+        //TODO
+        //AddAction()
+        //CheckAction()
     }
 }
