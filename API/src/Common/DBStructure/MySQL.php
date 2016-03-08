@@ -93,8 +93,8 @@ class MySQL implements IDBStructure
         }
 
         $query = $dbh->prepare("CALL sp_AuthorizePlayer(?,?)");
-        $query->bindParam(1, $characterObject->{"username"}, PDO::PARAM_STR);
-        $query->bindParam(2, $characterObject->{"password"}, PDO::PARAM_STR);
+        $query->bindParam(1, $characterObject->{"playerinfo"}->{"username"}, PDO::PARAM_STR);
+        $query->bindParam(2, $characterObject->{"playerinfo"}->{"password"}, PDO::PARAM_STR);
 
         $query->execute();
 
@@ -102,17 +102,30 @@ class MySQL implements IDBStructure
 
         $query->closeCursor();
 
+        $result["playerId"] += 0;
+
         if(sizeof($result) < 1)
         {
             return;
         }
 
-        $query = $dbh->prepare("CALL sp_CreatePlayer(?,?,?)");
-        $query->bindParam(1, $characterObject->{"PlayerID"}, PDO::PARAM_INT);
-        $query->bindParam(2, $characterObject->{"charactername"}, PDO::PARAM_STR);
-        $query->bindParam(2, $characterObject->{"spriteId"}, PDO::PARAM_INT);
+        $query1 = $dbh->prepare("CALL sp_CreateCharacter(?,?,?)");
+        $query1->bindParam(1, $result["playerId"], PDO::PARAM_INT);
+        $query1->bindParam(2, $characterObject->{"charactername"}, PDO::PARAM_STR);
+        $query1->bindParam(3, $characterObject->{"spriteId"}, PDO::PARAM_INT);
 
+        $query1->execute();
 
+        $result += $query1->fetch(PDO::FETCH_ASSOC);
+        $test = $query1->rowCount();
+
+        $query1->closeCursor();
+
+        if ($test == 1)
+        {
+            return $this->getCharacters($result["playerId"]);
+        }
+        return null;
     }
 
     public function createPlayer($register)
@@ -305,7 +318,6 @@ class MySQL implements IDBStructure
         $query->bindParam(31, $characterObject->{"critRate"}, PDO::PARAM_INT);
         $query->bindParam(32, $characterObject->{"dodgeRate"}, PDO::PARAM_INT);
         $query->bindParam(33, $characterObject->{"spriteId"}, PDO::PARAM_INT);
-
 
         //execute procedure.
         $query->execute();
