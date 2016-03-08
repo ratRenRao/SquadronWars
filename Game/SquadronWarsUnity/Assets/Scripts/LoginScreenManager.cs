@@ -47,6 +47,8 @@ namespace Assets.Scripts
 
             _player = GlobalConstants.Player;
 
+            GlobalConstants.Player.logins = _logins;
+
             LoginScreen.gameObject.SetActive(false);
             HomeScreen.gameObject.SetActive(true);
             //CanvasManager.HomeScreen.SetActive(true);
@@ -61,11 +63,13 @@ namespace Assets.Scripts
             _startupData = _dbConnection.PopulateObjectFromDb<StartupData>(GlobalConstants.PlayerDbUrl, _logins);
         }
 
-        private static void SetLoginInfo()
+        private void SetLoginInfo()
         {
 #if DEBUG
             _logins.username = "test";
             _logins.password = "testing123";
+            //_logins.username = Username;
+            //_logins.password = Password;
 #else
             _logins.username = Username;
             _logins.password = Password;

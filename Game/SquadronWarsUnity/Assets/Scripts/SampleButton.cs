@@ -44,7 +44,9 @@ public class SampleButton : MonoBehaviour
         characterScreen.experienceStat.text = string.Format("{0} / {1}", character.BaseStats.Experience.ToString(), expToNextLevel.ToString());
         int progBar = character.PercentToNextLevel();
         characterScreen.ProgressBar.value = progBar;
-        Debug.Log(character.BaseStats.Intl);
+        BuildDropdowns(characterScreen);
+        GlobalConstants.curSelectedCharacter = character;
+        Debug.Log(character);
     }
 
     public void SetActiveCharacter()
@@ -272,6 +274,11 @@ public class SampleButton : MonoBehaviour
             UpdateStats();
 
         }
+    }
+
+    public void SaveCharacter()
+    {
+        Debug.Log(GlobalConstants.curSelectedCharacter);
     }
 
     public void EvaluateSkills()
