@@ -69,6 +69,7 @@
      <Compile Include="Assets\GameClasses\RegistrationData.cs" />
      <Compile Include="Assets\GameClasses\Squad.cs" />
      <Compile Include="Assets\GameClasses\Stats.cs" />
+     <Compile Include="Assets\GameClasses\UpdateCharacterPostObject.cs" />
      <Compile Include="Assets\GameClasses\Weaken.cs" />
      <Compile Include="Assets\JSON\JSONObject.cs" />
      <Compile Include="Assets\JSON\JSONTemplates.cs" />
@@ -107,7 +108,6 @@
      <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
      <None Include="Assets\ProLoading\Example\Present\BottonLeft.txt" />
      <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
-     <None Include="Assets\Tiled2Unity\Imported\BattleMap1.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Imported\BattleMapDesert.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Imported\BattleMapLava.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Imported\BattleMap4.tiled2unity.xml" />
@@ -117,7 +117,6 @@
      <None Include="Assets\Tiled2Unity\Imported\testmap.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Imported\BattleMap2.tiled2unity.xml" />
-     <None Include="Assets\Tiled2Unity\Imported\BattleMap4.tiled2unity.xml" />
      <None Include="Assets\ProLoading\Example\Present\BottonRight.txt" />
      <None Include="Assets\ProLoading\Example\Present\TopRight.txt" />
      <None Include="Assets\JSON\readme.txt" />
