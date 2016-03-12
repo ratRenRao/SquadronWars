@@ -66,10 +66,16 @@ namespace Assets.Scripts
         private void SetLoginInfo()
         {
 #if DEBUG
-            _logins.username = "test";
-            _logins.password = "testing123";
-            //_logins.username = Username;
-            //_logins.password = Password;
+            if (Username == "" && Password == "")
+            {
+                _logins.username = "test";
+                _logins.password = "testing123";
+            }
+            else
+            {
+                _logins.username = Username;
+                _logins.password = Password;
+            }
 #else
             _logins.username = Username;
             _logins.password = Password;

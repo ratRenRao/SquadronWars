@@ -9,7 +9,8 @@ namespace Assets.GameClasses
     public static class GlobalConstants
     {
         //Primary Webserver URL
-        public const string WebServerUrl = "http://squadronwars.ddns.net";
+        //public const string WebServerUrl = "http://squadronwars.ddns.net";
+        public const string WebServerUrl = "ec2-52-27-154-55.us-west-2.compute.amazonaws.com";
         //Standard Communication URLs
         public const string PlayerDbUrl = WebServerUrl + "/api/auth";
         public const string CreateCharacterUrl = WebServerUrl + "/api/CreateCharacter";
@@ -41,6 +42,8 @@ namespace Assets.GameClasses
         public static CharacterGameObject ActiveCharacterGameObject { get; set; }
 
         public static Character curSelectedCharacter { get; set; }
+
+        public static DbConnection _dbConnection;
         //public static List<Character> PlayerCharacters { get; set; } 
 
         /*
