@@ -160,18 +160,6 @@ namespace Assets.Data
 
         }
 
-        private void ConvertList(ref List<object> list, Type type)
-        {
-            switch (type.ToString())
-            {
-                case "CharacterData":
-                    var newList = list.Select(x => x as Character).Cast<Character>().ToList();
-                //    (List<Character>) list = newList.ConvertAll(x => );
-                    break;
-            }
-
-        }
-
         private object ChangeJsonType(JSONObject obj, Type type)
         {
             if (type == typeof (int))

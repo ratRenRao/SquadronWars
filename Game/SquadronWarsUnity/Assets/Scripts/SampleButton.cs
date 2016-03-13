@@ -44,7 +44,9 @@ public class SampleButton : MonoBehaviour
         characterScreen.experienceStat.text = string.Format("{0} / {1}", character.BaseStats.Experience.ToString(), expToNextLevel.ToString());
         int progBar = character.PercentToNextLevel();
         characterScreen.ProgressBar.value = progBar;
-        Debug.Log(character.BaseStats.Intl);
+        BuildDropdowns(characterScreen);
+        GlobalConstants.curSelectedCharacter = character;
+        Debug.Log(character);
     }
 
     public void SetActiveCharacter()
@@ -65,11 +67,20 @@ public class SampleButton : MonoBehaviour
     public void ReevaluateStats(Text labelText)
     {
         GetActiveCharacter();
-        var item = GlobalConstants.ItemsMasterList.Single(x => x.Name == labelText.text);
-
+        var item = GlobalConstants.ItemsMasterList.Single(x => x.Name == labelText.text);       
         character.Equipment.SetItemByType(item);
         character.CurrentStats = StartupData.AddItemStats(character.Equipment.GetItemList(), character.BaseStats);
-        /*
+        /*Debug.Log(item.Stats.Intl);
+        Debug.Log(item.Stats.Str);        
+        Debug.Log(item.Stats.Vit);
+        Debug.Log(item.Stats.Wis);*/
+        Debug.Log(item.Name);
+        Debug.Log(item.Stats.Dex);
+        Debug.Log(item.Stats.Agi);
+        Debug.Log(item.Stats.Luck);
+        //Debug.Log(GlobalConstants.Player.Characters[0].BaseStats.Str);
+
+ 
         foreach (var equipedItem in character.Equipment.GetItemList())
         {
             character.CurrentStats = item.Stats.ConcatStats(character.BaseStats, equipedItem.Stats);
@@ -78,8 +89,7 @@ public class SampleButton : MonoBehaviour
             character.CurrentStats = item.Stats.RemoveAlteredStats(character.CurrentStats, item.Stats);
             character.CurrentStats = item.Stats.ConcatStats(character.CurrentStats, item.Stats);
             UpdateStats();
-        }
-        */
+        
     }
 
     public void UpdateStats()
@@ -113,8 +123,9 @@ public class SampleButton : MonoBehaviour
 
 
     public string formatStats(int stats, int bonusStats)
-    {
-        return bonusStats == 0 ? stats.ToString() : string.Format("{0} + {1}", stats.ToString(), bonusStats.ToString());
+    {        
+        return stats.ToString();
+        //return bonusStats == 0 ? stats.ToString() : string.Format("{0} + {1}", stats.ToString(), bonusStats.ToString());
     }
 
     public void incrementStat(string stat)
@@ -272,6 +283,20 @@ public class SampleButton : MonoBehaviour
             UpdateStats();
 
         }
+    }
+
+    public void SaveCharacter()
+    {
+        Debug.Log(GlobalConstants.curSelectedCharacter);
+        SetDbConnection();
+        var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.WebServerUrl, new UpdateCharacterPostObject());
+        Debug.Log(www);
+    }
+
+    private void SetDbConnection()
+    {
+        gameObject.AddComponent<DbConnection>();
+        GlobalConstants._dbConnection = gameObject.GetComponent<DbConnection>();
     }
 
     public void EvaluateSkills()

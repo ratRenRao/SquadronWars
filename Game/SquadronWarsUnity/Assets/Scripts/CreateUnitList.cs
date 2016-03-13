@@ -58,10 +58,8 @@ namespace Assets.Scripts
             }
             if (GlobalConstants.Player.Characters.Count < 10)
             {
-                //change from sample button to character button
-
                 var newButton = Instantiate(createCharacterButton);
-                var tempButton = newButton.GetComponent<CreateCharacter>();
+                //var tempButton = newButton.GetComponent<CreateCharacter>();
                 newButton.transform.SetParent(contentPanel, false);
             }
         }

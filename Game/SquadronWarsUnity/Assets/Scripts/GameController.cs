@@ -15,7 +15,8 @@ namespace Assets.Scripts
             Attack,
             AttackAbility,
             CastAbility,
-            Occupy
+            Occupy,
+            WaitForGameInfo
         }
         public TileMap tileMap;
         GameObject currentGameCharacter;
@@ -30,6 +31,9 @@ namespace Assets.Scripts
         public int player1SpawnXStart;
         public int player1SpawnXEnd;
         public int player1SpawnY;
+        public int player2SpawnXStart;
+        public int player2SpawnXEnd;
+        public int player2SpawnY;
         Vector3 hitDown;
         RaycastHit2D hit;
         Animator anim;
@@ -1281,8 +1285,8 @@ namespace Assets.Scripts
             gameCharacter.Y = tempTile.y;
             tempTile.character = gameCharacter;
             int spriteId = gameCharacter.CharacterClassObject.SpriteId;
-            Debug.Log(spriteId);
-            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + idCount /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
+            Debug.Log(idCount);
+            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + 2 /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
             //gameCharacter.gameObject.transform.position = new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y);
             //gameCharacter.gameObject.transform.rotation = Quaternion.identity;
             GameObject tempchar = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;

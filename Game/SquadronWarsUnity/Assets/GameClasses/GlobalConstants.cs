@@ -9,22 +9,20 @@ namespace Assets.GameClasses
     public static class GlobalConstants
     {
         //Primary Webserver URL
-        public const string WebServerUrl = "http://squadronwars.ddns.net";
-        /*
-        * Don't believe these two are used in the code. Commenting out just in case I am wrong.
-        *
-        public const string SquadDbUrl = WebServerUrl + "temp/temp";
-        public const string CharacterDbUrl = WebServerUrl + "/api/getchars";
-        */
+        //public const string WebServerUrl = "http://squadronwars.ddns.net";
+        public const string WebServerUrl = "ec2-52-27-154-55.us-west-2.compute.amazonaws.com";
         //Standard Communication URLs
         public const string PlayerDbUrl = WebServerUrl + "/api/auth";
         public const string CreateCharacterUrl = WebServerUrl + "/api/CreateCharacter";
         public const string CreatePlayerUrl = WebServerUrl + "/api/CreatePlayer";
+        public const string CreateSquadUrl = WebServerUrl + "/api/CreateSquad"; //not implemented yet
         public const string UpdateCharacterUrl = WebServerUrl + "/api/UpdateCharacter";
         public const string UpdatePlayerUrl = WebServerUrl + "/api/UpdatePlayer";
+        public const string UpdateSquadUrl = WebServerUrl + "/api/UpdateSquad"; //not implemented yet
         //Battle Related URLs
         public const string StartGameUrl = WebServerUrl + "/api/StartGame";
         public const string CheckGameStatusUrl = WebServerUrl + "/api/CheckGameInfo";
+        public const string PlaceCharacterUrl = WebServerUrl + "/api/PlaceCharacters"; //not implemented yet
         public const string UpdateGameStatusUrl = WebServerUrl + "/api/UpdateGameInfo";
 
         public const string PlayerJsonObjectName = "PlayerInfo";
@@ -42,6 +40,10 @@ namespace Assets.GameClasses
         public static Utilities Utilities = new Utilities();
 
         public static CharacterGameObject ActiveCharacterGameObject { get; set; }
+
+        public static Character curSelectedCharacter { get; set; }
+
+        public static DbConnection _dbConnection;
         //public static List<Character> PlayerCharacters { get; set; } 
 
         /*
