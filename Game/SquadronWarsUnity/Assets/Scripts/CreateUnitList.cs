@@ -59,7 +59,7 @@ namespace Assets.Scripts
             if (GlobalConstants.Player.Characters.Count < 10)
             {
                 var newButton = Instantiate(createCharacterButton);
-                var tempButton = newButton.GetComponent<CreateCharacter>();
+                //var tempButton = newButton.GetComponent<CreateCharacter>();
                 newButton.transform.SetParent(contentPanel, false);
             }
         }

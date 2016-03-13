@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-using Assets.GameClasses;
+﻿using Assets.GameClasses;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -16,7 +14,7 @@ public class UpdateCharacterPostObject : IJsonable
     public int statPoints { get; set; }
     public int skillPoints { get; set; }
     public int luck { get; set; }
-    public int LevelID { get; set; }
+    public int LevelId { get; set; }
     public int experience { get; set; }
     public int helm { get; set; }
     public int chest { get; set; }
@@ -71,7 +69,7 @@ public string GetJsonObjectName()
         statPoints = GlobalConstants.curSelectedCharacter.BaseStats.StatPoints;
         skillPoints = GlobalConstants.curSelectedCharacter.BaseStats.SkillPoints;
         luck = GlobalConstants.curSelectedCharacter.BaseStats.Luck;
-        LevelID = GlobalConstants.curSelectedCharacter.LevelID;
+        LevelId = GlobalConstants.curSelectedCharacter.LevelId;
         experience = GlobalConstants.curSelectedCharacter.BaseStats.Experience;
         helm = GlobalConstants.curSelectedCharacter.Equipment.Helm.ItemId;
         chest = GlobalConstants.curSelectedCharacter.Equipment.Chest.ItemId;
@@ -101,7 +99,7 @@ public string GetJsonObjectName()
         statPoints = GlobalConstants.curSelectedCharacter.BaseStats.StatPoints;
         skillPoints = GlobalConstants.curSelectedCharacter.BaseStats.SkillPoints;
         luck = GlobalConstants.curSelectedCharacter.BaseStats.Luck;
-        LevelID = GlobalConstants.curSelectedCharacter.LevelID;
+        LevelId = GlobalConstants.curSelectedCharacter.LevelId;
         experience = GlobalConstants.curSelectedCharacter.BaseStats.Experience;
         helm = GlobalConstants.curSelectedCharacter.Equipment.Helm.ItemId;
         chest = GlobalConstants.curSelectedCharacter.Equipment.Chest.ItemId;

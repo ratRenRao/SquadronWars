@@ -107,16 +107,16 @@ public class SampleButton : MonoBehaviour
         menuScreen.dexterityStat.text = formatStats(stats.Dex, bonusStats.Dex);
         menuScreen.wisdomStat.text = formatStats(stats.Wis, bonusStats.Wis);
         menuScreen.luckStat.text = formatStats(stats.Luck, bonusStats.Luck);
-        menuScreen.hitPointsStat.text = concatStats.CalculateHp(character.LevelID).ToString();
-        menuScreen.manaStat.text = concatStats.CalculateMp(character.LevelID).ToString();
-        menuScreen.damageStat.text = concatStats.CalculateDamage(character.LevelID).ToString();
-        menuScreen.magicDamageStat.text = concatStats.CalculateMagicDamage(character.LevelID).ToString();
-        menuScreen.speedStat.text = concatStats.CalculateSpeed(character.LevelID).ToString();
-        menuScreen.defenseStat.text = concatStats.CalculateDefense(character.LevelID).ToString();
-        menuScreen.magicDefenseStat.text = concatStats.CalculateMagicDefense(character.LevelID).ToString();
-        menuScreen.hitRateStat.text = concatStats.CalculateHitRate(character.LevelID).ToString();
-        menuScreen.dodgeRateStat.text = concatStats.CalculateDodgeRate(character.LevelID).ToString();
-        menuScreen.criticalRateStat.text = concatStats.CalculateCritRate(character.LevelID).ToString();
+        menuScreen.hitPointsStat.text = concatStats.CalculateHp(character.LevelId).ToString();
+        menuScreen.manaStat.text = concatStats.CalculateMp(character.LevelId).ToString();
+        menuScreen.damageStat.text = concatStats.CalculateDamage(character.LevelId).ToString();
+        menuScreen.magicDamageStat.text = concatStats.CalculateMagicDamage(character.LevelId).ToString();
+        menuScreen.speedStat.text = concatStats.CalculateSpeed(character.LevelId).ToString();
+        menuScreen.defenseStat.text = concatStats.CalculateDefense(character.LevelId).ToString();
+        menuScreen.magicDefenseStat.text = concatStats.CalculateMagicDefense(character.LevelId).ToString();
+        menuScreen.hitRateStat.text = concatStats.CalculateHitRate(character.LevelId).ToString();
+        menuScreen.dodgeRateStat.text = concatStats.CalculateDodgeRate(character.LevelId).ToString();
+        menuScreen.criticalRateStat.text = concatStats.CalculateCritRate(character.LevelId).ToString();
         menuScreen.remainingStatPoints.text = stats.StatPoints.ToString();
         menuScreen.remainingSkillPoints.text = stats.SkillPoints.ToString();
     }
