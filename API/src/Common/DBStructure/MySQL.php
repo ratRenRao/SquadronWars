@@ -285,6 +285,7 @@ class MySQL implements IDBStructure
             return $returnCode;
         }
 
+
         $query = $dbh->prepare("CALL sp_UpdateCharacter(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         $query->bindParam(1, $characterObject->{"characterId"}, PDO::PARAM_INT);
         $query->bindParam(2, $characterObject->{"statPoints"}, PDO::PARAM_INT);
@@ -313,7 +314,7 @@ class MySQL implements IDBStructure
         //execute procedure.
         $query->execute();
 
-        if($query->rowCount() > 0)
+        if($query->errorCode() == "00000")
         {
             //return status code to be used in response message. 200 successful.
             $returnCode = 200;
@@ -321,17 +322,19 @@ class MySQL implements IDBStructure
 
         $query->closeCursor();
 
-        if($returnCode == 200)
+        foreach($characterObject->{"abilities"} as $ability)
         {
-            foreach($characterObject->{"abilities"} as $ability)
-                {
-                    $query = $dbh->prepare("CALL sp_UpsertCharacterAbility(?,?,?)");
-                    $query->bindParam(1, $characterObject->{"characterId"}, PDO::PARAM_INT);
-                    $query->bindParam(2, $ability->{"abilityid"}, PDO::PARAM_INT);
-                    $query->bindParam(3, $ability->{"abilitylevel"}, PDO::PARAM_INT);
-                    $query->execute();
-                    $query->closeCursor();
-                }
+            $returnCode = 500;
+            $query = $dbh->prepare("CALL sp_UpsertCharacterAbility(?,?,?)");
+            $query->bindParam(1, $characterObject->{"characterId"}, PDO::PARAM_INT);
+            $query->bindParam(2, $ability->{"abilityid"}, PDO::PARAM_INT);
+            $query->bindParam(3, $ability->{"abilitylevel"}, PDO::PARAM_INT);
+            $query->execute();
+            $query->closeCursor();
+            if($query->errorCode() == "00000")
+            {
+                $returnCode = 200;
+            }
         }
 
         return $returnCode;
