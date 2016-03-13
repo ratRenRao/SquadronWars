@@ -173,6 +173,7 @@ namespace Assets.Data
             public int CritRate { get; set; }
             public int DodgeRate { get; set; }
             public int Luck { get; set; }
+            public int SpriteId { get; set; }
 
             private Equipment _equipment { get; set; }
             private Stats _stats { get; set; }
