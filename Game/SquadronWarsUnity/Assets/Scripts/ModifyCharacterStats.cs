@@ -64,16 +64,16 @@ public class ModifyCharacterStats : MonoBehaviour
         characterScreen.dexterityStat.text = formatStats(stats.Dex, bonusStats.Dex);
         characterScreen.wisdomStat.text = formatStats(stats.Wis, bonusStats.Wis);
         characterScreen.luckStat.text = formatStats(stats.Luck, bonusStats.Luck);
-        characterScreen.hitPointsStat.text = concatStats.CalculateHp(character.LevelID).ToString();
-        characterScreen.manaStat.text = concatStats.CalculateMp(character.LevelID).ToString();
-        characterScreen.damageStat.text = concatStats.CalculateDamage(character.LevelID).ToString();
-        characterScreen.magicDamageStat.text = concatStats.CalculateMagicDamage(character.LevelID).ToString();
-        characterScreen.speedStat.text = concatStats.CalculateSpeed(character.LevelID).ToString();
-        characterScreen.defenseStat.text = concatStats.CalculateDefense(character.LevelID).ToString();
-        characterScreen.magicDefenseStat.text = concatStats.CalculateMagicDefense(character.LevelID).ToString();
-        characterScreen.hitRateStat.text = concatStats.CalculateHitRate(character.LevelID).ToString();
-        characterScreen.dodgeRateStat.text = concatStats.CalculateDodgeRate(character.LevelID).ToString();
-        characterScreen.criticalRateStat.text = concatStats.CalculateCritRate(character.LevelID).ToString();
+        characterScreen.hitPointsStat.text = concatStats.CalculateHp(character.LevelId).ToString();
+        characterScreen.manaStat.text = concatStats.CalculateMp(character.LevelId).ToString();
+        characterScreen.damageStat.text = concatStats.CalculateDamage(character.LevelId).ToString();
+        characterScreen.magicDamageStat.text = concatStats.CalculateMagicDamage(character.LevelId).ToString();
+        characterScreen.speedStat.text = concatStats.CalculateSpeed(character.LevelId).ToString();
+        characterScreen.defenseStat.text = concatStats.CalculateDefense(character.LevelId).ToString();
+        characterScreen.magicDefenseStat.text = concatStats.CalculateMagicDefense(character.LevelId).ToString();
+        characterScreen.hitRateStat.text = concatStats.CalculateHitRate(character.LevelId).ToString();
+        characterScreen.dodgeRateStat.text = concatStats.CalculateDodgeRate(character.LevelId).ToString();
+        characterScreen.criticalRateStat.text = concatStats.CalculateCritRate(character.LevelId).ToString();
         characterScreen.remainingStatPoints.text = character.BaseStats.StatPoints.ToString();
         characterScreen.remainingSkillPoints.text = character.BaseStats.SkillPoints.ToString();
     }

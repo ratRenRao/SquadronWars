@@ -12,7 +12,7 @@ namespace Assets.GameClasses
         public bool Updated = false;
 
         public int CharacterId { get; set; }
-        public int LevelID { get; set; }
+        public int LevelId { get; set; }
         public string Name { get; set; }
         public int SpriteId { get; set; }
         public Stats BaseStats { get; set; }
@@ -39,20 +39,20 @@ namespace Assets.GameClasses
 
         public int StartExperience()
         {
-            if (LevelID == 1)
+            if (LevelId == 1)
             {
                 return 0;
             }
-            return 200 + ((int)Math.Pow(LevelID - 1, 2) * 50);
+            return 200 + ((int)Math.Pow(LevelId - 1, 2) * 50);
         }
 
         public int ExperienceNeeded()
         {
-            if (LevelID == 1)
+            if (LevelId == 1)
             {
                 return 200;
             }
-            return 200 + ((int)Math.Pow(LevelID, 2) * 50);
+            return 200 + ((int)Math.Pow(LevelId, 2) * 50);
         }
 
         public int PercentToNextLevel()
