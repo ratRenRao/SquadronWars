@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using Assets.GameClasses;
 
@@ -25,18 +26,8 @@ namespace Assets.Data
 
         public static void BuildAndDistributeData()
         {
-            // Fix this hack. Probably an issue w/ it being partially populated in Utilities.BuildObject
-            Player.Characters = new List<Character>();
-            Player.Inventory = new List<InventoryElement>();
-            //
-
-            PopulateGlobalConstants();
-            BuildInventoryList();
-            SetItemType();
-
-            BuildCharacterObjects();
-            GlobalConstants.Player = Player;
-            GlobalConstants.CharacterLoadReady = true;
+            BuildGlobalData();
+            BuildPlayerData();
         }
 
         public static void SetItemType()
@@ -45,6 +36,26 @@ namespace Assets.Data
             {
                 item.Item.ItemType = GetType(item.Item.Slot);
             }        
+        }
+
+        public static void BuildPlayerData()
+        {
+            // Fix this hack. Probably an issue w/ it being partially populated in Utilities.BuildObject
+            Player.Characters = new List<Character>();
+
+            BuildCharacterObjects();
+            GlobalConstants.Player = Player;
+            GlobalConstants.CharacterLoadReady = true;
+        }
+
+        public static void BuildGlobalData()
+        {
+            // Fix this hack. Probably and issue w/ it being populated in Utilities.BuildObject
+            Player.Inventory = new List<InventoryElement>();
+
+            PopulateGlobalConstants();
+            BuildInventoryList();
+            SetItemType();
         }
 
         private static ItemType GetType(string typeString)
@@ -106,12 +117,10 @@ namespace Assets.Data
 
                // characterBuilder.BaseStats.AbilityPoints = 3;
                // characterBuilder.BaseStats.SkillPoints = 2;
-
-                
-
+               
                 //characterBuilder.CurrentStats = character.BuildBaseStats();
-                
-                characterBuilder.Abilities = Abilities.Where(ability => ability.CharacterId == character.CharacterId).ToList();
+                character.CharacterAbilities.ForEach(ability => ability.Name = Abilities.Single(x => ability.AbilityId == x.AbilityId).Name);
+                characterBuilder.Abilities = character.CharacterAbilities;
 
                 Player.Characters.Add(characterBuilder);
             }
@@ -137,6 +146,28 @@ namespace Assets.Data
             }
 
             return newStats;
+        }
+
+        public class CharacterAbility : IJsonable
+        {
+            public int AbilityId { get; set; }
+            public int CharacterId { get; set; }
+            public int AbilityLevel { get; set; }
+        
+            public string GetJsonObjectName()
+            {
+                return "CharacterAbilities";
+            }
+
+            public List<PropertyInfo> GetJsonObjectParameters()
+            {
+                throw new NotImplementedException();
+            }
+
+            public void SetJsonObjectParameters(Dictionary<string, object> parameters)
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public class CharacterData : IJsonable
@@ -173,6 +204,8 @@ namespace Assets.Data
             public int CritRate { get; set; }
             public int DodgeRate { get; set; }
             public int Luck { get; set; }
+            public int SpriteId { get; set; }
+            public List<Ability> CharacterAbilities { get; set; } 
 
             private Equipment _equipment { get; set; }
             private Stats _stats { get; set; }
