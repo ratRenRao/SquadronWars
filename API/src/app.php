@@ -116,9 +116,9 @@ $app->post('/api/UpdateCharacter', function() use($app)
         $verifyPlayer = $mysql->authenticateUser($gameObject->{"username"}, $gameObject->{"password"});
         if(sizeof($verifyPlayer) > 0)
         {
-            $response = $mysql->updateCharacter($verifyPlayer["playerId"], $gameObject->{"character"});
+            $response = $mysql->updateCharacter($gameObject);
         }
-        $response = $mysql->updateCharacter($verifyPlayer["playerId"], $gameObject->{"character"});
+       // $response = $mysql->updateCharacter($verifyPlayer["playerId"], $gameObject->{"character"});
     }
 
     if($response == 200)
@@ -269,7 +269,7 @@ $app->post('/api/UpdateGameInfo', function() use($app)
 
 /*
  * Test Method
- */
+ *
 $app->post('/test', function() use($app){
     $mysql = new MySQL();
 //    $test = $mysql->startGame(17);

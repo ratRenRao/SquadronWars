@@ -93,8 +93,8 @@ class MySQL implements IDBStructure
         }
 
         $query = $dbh->prepare("CALL sp_AuthorizePlayer(?,?)");
-        $query->bindParam(1, $characterObject->{"playerinfo"}->{"username"}, PDO::PARAM_STR);
-        $query->bindParam(2, $characterObject->{"playerinfo"}->{"password"}, PDO::PARAM_STR);
+        $query->bindParam(1, $characterObject->{"username"}, PDO::PARAM_STR);
+        $query->bindParam(2, $characterObject->{"password"}, PDO::PARAM_STR);
 
         $query->execute();
 
@@ -102,12 +102,12 @@ class MySQL implements IDBStructure
 
         $query->closeCursor();
 
-        $result["playerId"] += 0;
-
-        if(sizeof($result) < 1)
+        if(sizeof($result) < 1 || !$result)
         {
             return;
         }
+
+        $result["playerId"] += 0;
 
         $query1 = $dbh->prepare("CALL sp_CreateCharacter(?,?,?)");
         $query1->bindParam(1, $result["playerId"], PDO::PARAM_INT);
@@ -123,7 +123,8 @@ class MySQL implements IDBStructure
 
         if ($test == 1)
         {
-            return $this->getCharacters($result["playerId"]);
+            $returnObject["Characters"] = $this->getCharacters($result["playerId"]);
+            return $returnObject;
         }
         return null;
     }
@@ -263,7 +264,7 @@ class MySQL implements IDBStructure
         return $returnObject;
     }
 
-    public function updateCharacter($playerID, $characterObject)
+    public function updateCharacter($characterObject)
     {
         //create database reference object
         $dbh = '';
@@ -284,7 +285,7 @@ class MySQL implements IDBStructure
             return $returnCode;
         }
 
-        $query = $dbh->prepare("CALL sp_UpdateCharacter(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $query = $dbh->prepare("CALL sp_UpdateCharacter(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         $query->bindParam(1, $characterObject->{"characterId"}, PDO::PARAM_INT);
         $query->bindParam(2, $characterObject->{"statPoints"}, PDO::PARAM_INT);
         $query->bindParam(3, $characterObject->{"skillPoints"}, PDO::PARAM_INT);
@@ -301,23 +302,13 @@ class MySQL implements IDBStructure
         $query->bindParam(14, $characterObject->{"accessory1"}, PDO::PARAM_INT);
         $query->bindParam(15, $characterObject->{"accessory2"}, PDO::PARAM_INT);
         $query->bindParam(16, $characterObject->{"IsStandard"}, PDO::PARAM_INT);
-        $query->bindParam(17, $characterObject->{"str"}, PDO::PARAM_INT);
-        $query->bindParam(18, $characterObject->{"int"}, PDO::PARAM_INT);
-        $query->bindParam(19, $characterObject->{"agi"}, PDO::PARAM_INT);
-        $query->bindParam(20, $characterObject->{"wis"}, PDO::PARAM_INT);
-        $query->bindParam(21, $characterObject->{"vit"}, PDO::PARAM_INT);
-        $query->bindParam(22, $characterObject->{"dex"}, PDO::PARAM_INT);
-        $query->bindParam(23, $characterObject->{"hitPoints"}, PDO::PARAM_INT);
-        $query->bindParam(24, $characterObject->{"dmg"}, PDO::PARAM_INT);
-        $query->bindParam(25, $characterObject->{"abilityPoints"}, PDO::PARAM_INT);
-        $query->bindParam(26, $characterObject->{"speed"}, PDO::PARAM_INT);
-        $query->bindParam(27, $characterObject->{"defense"}, PDO::PARAM_INT);
-        $query->bindParam(28, $characterObject->{"magicDefense"}, PDO::PARAM_INT);
-        $query->bindParam(29, $characterObject->{"magicAttack"}, PDO::PARAM_INT);
-        $query->bindParam(30, $characterObject->{"hitRate"}, PDO::PARAM_INT);
-        $query->bindParam(31, $characterObject->{"critRate"}, PDO::PARAM_INT);
-        $query->bindParam(32, $characterObject->{"dodgeRate"}, PDO::PARAM_INT);
-        $query->bindParam(33, $characterObject->{"spriteId"}, PDO::PARAM_INT);
+        $query->bindParam(17, $characterObject->{"strength"}, PDO::PARAM_INT);
+        $query->bindParam(18, $characterObject->{"intelligence"}, PDO::PARAM_INT);
+        $query->bindParam(19, $characterObject->{"agility"}, PDO::PARAM_INT);
+        $query->bindParam(20, $characterObject->{"wisdom"}, PDO::PARAM_INT);
+        $query->bindParam(21, $characterObject->{"vitality"}, PDO::PARAM_INT);
+        $query->bindParam(22, $characterObject->{"dexterity"}, PDO::PARAM_INT);
+        $query->bindParam(23, $characterObject->{"spriteId"}, PDO::PARAM_INT);
 
         //execute procedure.
         $query->execute();
@@ -329,6 +320,19 @@ class MySQL implements IDBStructure
         }
 
         $query->closeCursor();
+
+        if($returnCode == 200)
+        {
+            foreach($characterObject->{"abilities"} as $ability)
+                {
+                    $query = $dbh->prepare("CALL sp_UpsertCharacterAbility(?,?,?)");
+                    $query->bindParam(1, $characterObject->{"characterId"}, PDO::PARAM_INT);
+                    $query->bindParam(2, $ability->{"abilityid"}, PDO::PARAM_INT);
+                    $query->bindParam(3, $ability->{"abilitylevel"}, PDO::PARAM_INT);
+                    $query->execute();
+                    $query->closeCursor();
+                }
+        }
 
         return $returnCode;
     }
