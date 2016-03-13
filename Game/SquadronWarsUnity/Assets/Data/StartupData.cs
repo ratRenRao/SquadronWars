@@ -43,7 +43,7 @@ namespace Assets.Data
             // Fix this hack. Probably an issue w/ it being partially populated in Utilities.BuildObject
             Player.Characters = new List<Character>();
 
-            BuildCharacterObjects();
+            Player.Characters = BuildCharacterObjects();
             GlobalConstants.Player = Player;
             GlobalConstants.CharacterLoadReady = true;
         }
@@ -98,9 +98,11 @@ namespace Assets.Data
             GlobalConstants.AbilityMasterList = Abilities;
         }
 
-        public static void BuildCharacterObjects()
+        public static List<Character> BuildCharacterObjects()
         {
             var tempCharacterData = Characters;
+            List<Character> characterList = new List<Character>();
+
             foreach (var character in tempCharacterData)
             {
                 var characterBuilder = new Character();
@@ -122,8 +124,11 @@ namespace Assets.Data
                 character.CharacterAbilities.ForEach(ability => ability.Name = Abilities.Single(x => ability.AbilityId == x.AbilityId).Name);
                 characterBuilder.Abilities = character.CharacterAbilities;
 
-                Player.Characters.Add(characterBuilder);
+                characterList.Add(characterBuilder);
+                //Player.Characters.Add(characterBuilder);
             }
+
+            return characterList;
         }
 
         public List<PropertyInfo> GetJsonObjectParameters()

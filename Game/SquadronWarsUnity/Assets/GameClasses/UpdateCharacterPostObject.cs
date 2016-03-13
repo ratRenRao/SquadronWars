@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-using Assets.GameClasses;
+﻿using Assets.GameClasses;
 using System;
 using System.Collections.Generic;
 using System.Reflection;

@@ -3,8 +3,8 @@ using System.Reflection;
 
 namespace Assets.GameClasses
 {
-    public class BattleAction : IJsonable{
-
+    public class BattleAction : IJsonable
+    {
         public List<Action> ActionOrder = new List<Action>();
         public List<int> CharacterQueue = new List<int>();
 
