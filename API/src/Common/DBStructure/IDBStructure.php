@@ -31,7 +31,7 @@ interface IDBStructure
 
     public function updatePlayer($playerObject);
 
-    public function updateCharacter($playerID, $characterObject);
+    public function updateCharacter($characterObject);
 
     public function startGame($playerID);
 

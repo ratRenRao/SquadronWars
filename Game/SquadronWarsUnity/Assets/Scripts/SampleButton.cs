@@ -14,6 +14,7 @@ public class SampleButton : MonoBehaviour
     public CharacterScreen characterScreen;
     private Stats modifiedStats { get; set; }
     public Text nameLabel;
+    public GameObject CharacterScreenPanel, SquadPanel, SquadScreen;
 
     /*void Start()
     {
@@ -176,8 +177,11 @@ public class SampleButton : MonoBehaviour
 
     public void ConfirmStatChanges()
     {
-        character.BaseStats = modifiedStats;
-        modifiedStats = character.BaseStats.Clone();
+        if (modifiedStats != null)
+        {
+            character.BaseStats = modifiedStats;
+            modifiedStats = character.BaseStats.Clone();
+        }
     }
 
     public void RevertStatChanges()
@@ -287,10 +291,17 @@ public class SampleButton : MonoBehaviour
 
     public void SaveCharacter()
     {
-        Debug.Log(GlobalConstants.curSelectedCharacter);
+        //Debug.Log(GlobalConstants.curSelectedCharacter);
         SetDbConnection();
-        var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.WebServerUrl, new UpdateCharacterPostObject());
-        Debug.Log(www);
+        var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateCharacterUrl, new UpdateCharacterPostObject(modifiedStats));
+
+        if (!www.text.Equals("Failed"))
+        {
+            ConfirmStatChanges();
+            CharacterScreenPanel.SetActive(false);
+            SquadPanel.SetActive(true);
+            SquadScreen.SetActive(true);
+        }
     }
 
     private void SetDbConnection()
