@@ -253,6 +253,45 @@ namespace Assets.Data
                 .ToDictionary(attribute => attribute.Name, attribute => obj.GetType().GetProperty(attribute.Name).GetValue(obj, null).ToString().ToLower());
         }
 
+        public Dictionary<string, string> CreateNestedPropertyDictionary(object obj, Type type, string scope = "public")
+        {
+            var properties = new List<PropertyInfo>();
+            var dictionary = new Dictionary<string, string>();
+            switch (scope)
+            {
+                case "public":
+                    properties = (List<PropertyInfo>) obj.GetType()
+                        .GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
+                        .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()));
+                    break;
+                case "private":
+                    properties = (List<PropertyInfo>)obj.GetType()
+                        .GetProperties(BindingFlags.DeclaredOnly | BindingFlags.NonPublic | BindingFlags.Instance)
+                        .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()));
+                    break;
+                case "all":
+                    properties = (List<PropertyInfo>)obj.GetType()
+                        .GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
+                        .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()));
+                    break;
+            }
+
+            foreach (var prop in obj.GetType().GetProperties())
+            {
+                Console.WriteLine("{0} = {1}", prop.Name, prop.GetValue(obj, null));
+            }
+
+            foreach (var property in properties)
+            {
+                if (!property.PropertyType.IsPrimitive)
+                    dictionary.Add(property.Name, CreateNestedPropertyDictionary(property.GetValue(obj, null), property.PropertyType, scope).ToString());
+                else
+                    dictionary.Add(property.Name, property.GetValue(obj, null).ToString());
+            }
+
+            return dictionary;
+        } 
+
         /// <summary>
         /// Creates a dictionary of string objects containing only private parameters of the 
         /// object passed in, and their corresponding values.
@@ -261,7 +300,7 @@ namespace Assets.Data
         /// <returns>Dictionary&ltstring, string&gt</returns>
         public Dictionary<string, string> CreatePrivatePropertyDictionary<T>(T obj)
         {
-            return obj.GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
+            return obj.GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.NonPublic | BindingFlags.Instance)
                 .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()))
                 .ToDictionary(attribute => attribute.Name, attribute => obj.GetType().GetProperty(attribute.Name).GetValue(obj, null).ToString().ToLower());
         }
