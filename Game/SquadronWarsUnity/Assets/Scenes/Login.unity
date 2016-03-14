@@ -4462,6 +4462,9 @@ MonoBehaviour:
   characterGameObject: {fileID: 0}
   characterScreen: {fileID: 0}
   nameLabel: {fileID: 0}
+  CharacterScreenPanel: {fileID: 0}
+  SquadPanel: {fileID: 0}
+  SquadScreen: {fileID: 0}
 --- !u!1 &287826050
 GameObject:
   m_ObjectHideFlags: 0
@@ -9678,6 +9681,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1900533190}
+        m_MethodName: EvaluateSkills
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &706074787
@@ -11258,6 +11272,9 @@ MonoBehaviour:
   characterGameObject: {fileID: 0}
   characterScreen: {fileID: 0}
   nameLabel: {fileID: 0}
+  CharacterScreenPanel: {fileID: 0}
+  SquadPanel: {fileID: 0}
+  SquadScreen: {fileID: 0}
 --- !u!1 &844143457
 GameObject:
   m_ObjectHideFlags: 0
@@ -14604,6 +14621,18 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: Assets.Scripts.CharacterScreen, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 11471314, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
+      propertyPath: CharacterScreenPanel
+      value: 
+      objectReference: {fileID: 1572668507}
+    - target: {fileID: 11471314, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
+      propertyPath: SquadPanel
+      value: 
+      objectReference: {fileID: 1573321188}
+    - target: {fileID: 11471314, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
+      propertyPath: SquadScreen
+      value: 
+      objectReference: {fileID: 738015285}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3decaa1140bac64196744a3ea02e027, type: 2}
   m_IsPrefabParent: 0
@@ -21896,7 +21925,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 907188548}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -26665,6 +26694,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 1
+      - m_Target: {fileID: 1900533190}
+        m_MethodName: RevertStatChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1988202525
