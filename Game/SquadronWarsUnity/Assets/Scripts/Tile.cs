@@ -16,5 +16,12 @@ namespace Assets.Scripts
         public bool isValidMove { get; set; }
         public bool isObstructed { get; set; }
         public bool isOccupied { get; set; }
+
+        public string GetJSONString()
+        {
+            return "{ \"x\" : \"" + x + "\", \"y\" : \"" + y + "\"}";
+        }
     }
+
+    
 }

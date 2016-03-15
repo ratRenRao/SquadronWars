@@ -30,7 +30,6 @@ namespace Assets.GameClasses
         public const string StartupDataJsonName = "PlayerDetails";
 
         public static bool CharacterLoadReady = false;
-        public static int GameId;
         public static List<CharacterGameObject> MatchCharacters = new List<CharacterGameObject>();
         public static List<AbilityPreReq> AbilityPreReqs { get; set; } 
         public static List<Item> ItemsMasterList { get; set; }
@@ -44,6 +43,16 @@ namespace Assets.GameClasses
         public static Character curSelectedCharacter { get; set; }
 
         public static DbConnection _dbConnection;
+
+        //Battle related constants for managing a game
+        public static int GameId;
+        public static List<Character> player1Characters = new List<Character>();
+        public static List<Character> player2Characters = new List<Character>();
+        public static List<int> queueOrder = new List<int>();
+        public static BattleAction currentActions = new BattleAction();
+        public static int myPlayerId = 1;
+
+
         //public static List<Character> PlayerCharacters { get; set; } 
 
         /*

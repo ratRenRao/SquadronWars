@@ -41,5 +41,24 @@ namespace Assets.GameClasses
         {
             throw new System.NotImplementedException();
         }
+
+        public string GetJSONString()
+        {
+            string returnString = "";
+            returnString += "ActionInfo\", \"actionType\" : \"" + actionType + "\", \"performedAction\" : \"" + performedAction + "\", \"actionTiles\" : { ";
+            int index = 0;
+            foreach(Tile tile in actionTiles)
+            {
+                if(index != 0)
+                {
+                    returnString += ", ";
+                }
+                returnString += "\"" + index + "\" : " + tile.GetJSONString();
+                index++;
+            }
+            returnString += "} , \"end\" : \"end";
+
+            return returnString;
+        }
     }
 }
