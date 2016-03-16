@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 55f65f84454048548980e194359edac5
-timeCreated: 1454638506
+timeCreated: 1457825607
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -219,7 +219,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -244,9 +244,9 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 12
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -260,8 +260,9 @@ TextureImporter:
         width: 32
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_1
       rect:
         serializedVersion: 2
@@ -270,8 +271,9 @@ TextureImporter:
         width: 30
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_2
       rect:
         serializedVersion: 2
@@ -280,8 +282,9 @@ TextureImporter:
         width: 30
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_3
       rect:
         serializedVersion: 2
@@ -290,8 +293,17 @@ TextureImporter:
         width: 38
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.272781, y: 22.302734}
+        - {x: -18.272781, y: 16.302734}
+        - {x: -18.272781, y: -16.697266}
+        - {x: -17.272781, y: -20.697266}
+        - {x: -16.272781, y: -21.697266}
+        - {x: 19.727219, y: -21.697266}
+        - {x: 19.727219, y: 18.302734}
+        - {x: 17.727219, y: 22.302734}
     - name: Character4Sword_4
       rect:
         serializedVersion: 2
@@ -300,8 +312,15 @@ TextureImporter:
         width: 52
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.016922, y: 22.302734}
+        - {x: -25.016922, y: 0.30273438}
+        - {x: -14.016922, y: -21.697266}
+        - {x: 22.983078, y: -21.697266}
+        - {x: 26.983078, y: -17.697266}
+        - {x: 26.983078, y: 22.302734}
     - name: Character4Sword_5
       rect:
         serializedVersion: 2
@@ -310,8 +329,21 @@ TextureImporter:
         width: 50
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.005859, y: 22.302734}
+        - {x: -13.005859, y: 21.302734}
+        - {x: -13.005859, y: 19.302734}
+        - {x: -20.00586, y: 22.302734}
+        - {x: -22.00586, y: 22.302734}
+        - {x: -24.00586, y: 19.302734}
+        - {x: -24.00586, y: 1.3027344}
+        - {x: -12.005859, y: -21.697266}
+        - {x: 13.994141, y: -21.697266}
+        - {x: 17.99414, y: -20.697266}
+        - {x: 25.99414, y: -5.6972656}
+        - {x: 25.99414, y: 22.302734}
     - name: Character4Sword_6
       rect:
         serializedVersion: 2
@@ -320,8 +352,14 @@ TextureImporter:
         width: 38
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.147766, y: 22.302734}
+        - {x: -18.147766, y: -21.697266}
+        - {x: 19.852234, y: -21.697266}
+        - {x: 19.852234, y: 11.302734}
+        - {x: 15.852234, y: 22.302734}
     - name: Character4Sword_7
       rect:
         serializedVersion: 2
@@ -330,8 +368,9 @@ TextureImporter:
         width: 22
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_8
       rect:
         serializedVersion: 2
@@ -340,8 +379,9 @@ TextureImporter:
         width: 25
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_9
       rect:
         serializedVersion: 2
@@ -350,8 +390,9 @@ TextureImporter:
         width: 23
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_10
       rect:
         serializedVersion: 2
@@ -360,8 +401,9 @@ TextureImporter:
         width: 28
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_11
       rect:
         serializedVersion: 2
@@ -370,8 +412,19 @@ TextureImporter:
         width: 35
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.146484, y: 21.761108}
+        - {x: -15.853516, y: 21.761108}
+        - {x: -16.853516, y: 17.761108}
+        - {x: -16.853516, y: -15.238892}
+        - {x: -15.853516, y: -20.238892}
+        - {x: -11.853516, y: -21.238892}
+        - {x: 8.146484, y: -21.238892}
+        - {x: 9.146484, y: -19.238892}
+        - {x: 18.146484, y: -2.2388916}
+        - {x: 18.146484, y: 18.761108}
     - name: Character4Sword_12
       rect:
         serializedVersion: 2
@@ -380,8 +433,23 @@ TextureImporter:
         width: 35
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.188171, y: 19.761108}
+        - {x: 10.188171, y: 17.761108}
+        - {x: 8.188171, y: 16.761108}
+        - {x: 8.188171, y: 14.761108}
+        - {x: 9.188171, y: 20.761108}
+        - {x: 8.188171, y: 21.761108}
+        - {x: -11.811829, y: 21.761108}
+        - {x: -16.811829, y: 19.761108}
+        - {x: -16.811829, y: -10.238892}
+        - {x: -13.811829, y: -21.238892}
+        - {x: 7.1881714, y: -21.238892}
+        - {x: 8.188171, y: -18.238892}
+        - {x: 18.188171, y: 0.7611084}
+        - {x: 18.188171, y: 17.761108}
     - name: Character4Sword_13
       rect:
         serializedVersion: 2
@@ -390,8 +458,9 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_14
       rect:
         serializedVersion: 2
@@ -400,8 +469,9 @@ TextureImporter:
         width: 32
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_15
       rect:
         serializedVersion: 2
@@ -410,8 +480,9 @@ TextureImporter:
         width: 32
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_16
       rect:
         serializedVersion: 2
@@ -420,8 +491,9 @@ TextureImporter:
         width: 30
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_17
       rect:
         serializedVersion: 2
@@ -430,8 +502,17 @@ TextureImporter:
         width: 38
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.727219, y: 23.219482}
+        - {x: -15.272781, y: 23.219482}
+        - {x: -18.272781, y: 15.219482}
+        - {x: -18.272781, y: -9.780518}
+        - {x: -12.272781, y: -22.780518}
+        - {x: 18.727219, y: -22.780518}
+        - {x: 19.727219, y: -20.780518}
+        - {x: 19.727219, y: 12.219482}
     - name: Character4Sword_18
       rect:
         serializedVersion: 2
@@ -440,8 +521,16 @@ TextureImporter:
         width: 52
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.016922, y: 23.219482}
+        - {x: -25.016922, y: -16.780518}
+        - {x: -22.016922, y: -22.780518}
+        - {x: 22.983078, y: -22.780518}
+        - {x: 26.983078, y: -17.780518}
+        - {x: 26.983078, y: 21.219482}
+        - {x: 20.983078, y: 23.219482}
     - name: Character4Sword_19
       rect:
         serializedVersion: 2
@@ -450,8 +539,17 @@ TextureImporter:
         width: 50
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.00586, y: 23.219482}
+        - {x: -21.00586, y: 21.219482}
+        - {x: -24.00586, y: 17.219482}
+        - {x: -24.00586, y: 3.2194824}
+        - {x: -16.00586, y: -22.780518}
+        - {x: 17.99414, y: -22.780518}
+        - {x: 25.99414, y: -2.7805176}
+        - {x: 25.99414, y: 23.219482}
     - name: Character4Sword_20
       rect:
         serializedVersion: 2
@@ -460,8 +558,19 @@ TextureImporter:
         width: 36
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.821625, y: 13.219482}
+        - {x: 16.821625, y: 23.219482}
+        - {x: -14.178375, y: 23.219482}
+        - {x: -17.178375, y: 14.219482}
+        - {x: -17.178375, y: -18.780518}
+        - {x: -15.178375, y: -21.780518}
+        - {x: -13.178375, y: -22.780518}
+        - {x: 14.821625, y: -22.780518}
+        - {x: 16.821625, y: -21.780518}
+        - {x: 18.821625, y: -17.780518}
     - name: Character4Sword_21
       rect:
         serializedVersion: 2
@@ -470,8 +579,9 @@ TextureImporter:
         width: 22
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_22
       rect:
         serializedVersion: 2
@@ -480,8 +590,9 @@ TextureImporter:
         width: 25
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_23
       rect:
         serializedVersion: 2
@@ -490,8 +601,9 @@ TextureImporter:
         width: 23
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_24
       rect:
         serializedVersion: 2
@@ -500,8 +612,9 @@ TextureImporter:
         width: 28
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_25
       rect:
         serializedVersion: 2
@@ -510,8 +623,18 @@ TextureImporter:
         width: 35
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.7005005, y: 21.677734}
+        - {x: -16.7005, y: 12.677734}
+        - {x: -16.7005, y: -6.3222656}
+        - {x: -6.7005005, y: -21.322266}
+        - {x: 13.2994995, y: -21.322266}
+        - {x: 17.2995, y: -20.322266}
+        - {x: 18.2995, y: -16.322266}
+        - {x: 18.2995, y: 15.677734}
+        - {x: 13.2994995, y: 21.677734}
     - name: Character4Sword_26
       rect:
         serializedVersion: 2
@@ -520,8 +643,18 @@ TextureImporter:
         width: 35
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.658844, y: 21.677734}
+        - {x: -16.658844, y: 20.677734}
+        - {x: -16.658844, y: 0.6777344}
+        - {x: -7.658844, y: -19.322266}
+        - {x: -5.658844, y: -21.322266}
+        - {x: 14.341156, y: -21.322266}
+        - {x: 18.341156, y: 1.6777344}
+        - {x: 18.341156, y: 18.677734}
+        - {x: 16.341156, y: 21.677734}
     - name: Character4Sword_27
       rect:
         serializedVersion: 2
@@ -530,8 +663,9 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_28
       rect:
         serializedVersion: 2
@@ -540,8 +674,9 @@ TextureImporter:
         width: 32
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_29
       rect:
         serializedVersion: 2
@@ -550,8 +685,9 @@ TextureImporter:
         width: 28
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_30
       rect:
         serializedVersion: 2
@@ -560,8 +696,9 @@ TextureImporter:
         width: 26
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_31
       rect:
         serializedVersion: 2
@@ -570,8 +707,9 @@ TextureImporter:
         width: 26
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_32
       rect:
         serializedVersion: 2
@@ -580,8 +718,9 @@ TextureImporter:
         width: 26
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_33
       rect:
         serializedVersion: 2
@@ -590,8 +729,9 @@ TextureImporter:
         width: 26
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_34
       rect:
         serializedVersion: 2
@@ -600,8 +740,9 @@ TextureImporter:
         width: 26
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_35
       rect:
         serializedVersion: 2
@@ -610,8 +751,9 @@ TextureImporter:
         width: 26
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_36
       rect:
         serializedVersion: 2
@@ -620,8 +762,9 @@ TextureImporter:
         width: 22
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_37
       rect:
         serializedVersion: 2
@@ -630,8 +773,9 @@ TextureImporter:
         width: 27
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_38
       rect:
         serializedVersion: 2
@@ -640,8 +784,9 @@ TextureImporter:
         width: 29
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_39
       rect:
         serializedVersion: 2
@@ -650,8 +795,9 @@ TextureImporter:
         width: 27
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_40
       rect:
         serializedVersion: 2
@@ -660,8 +806,9 @@ TextureImporter:
         width: 29
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_41
       rect:
         serializedVersion: 2
@@ -670,8 +817,9 @@ TextureImporter:
         width: 32
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_42
       rect:
         serializedVersion: 2
@@ -680,8 +828,9 @@ TextureImporter:
         width: 29
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_43
       rect:
         serializedVersion: 2
@@ -690,8 +839,9 @@ TextureImporter:
         width: 27
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_44
       rect:
         serializedVersion: 2
@@ -700,8 +850,9 @@ TextureImporter:
         width: 32
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_45
       rect:
         serializedVersion: 2
@@ -710,8 +861,9 @@ TextureImporter:
         width: 27
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_46
       rect:
         serializedVersion: 2
@@ -720,8 +872,9 @@ TextureImporter:
         width: 26
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_47
       rect:
         serializedVersion: 2
@@ -730,8 +883,9 @@ TextureImporter:
         width: 28
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_48
       rect:
         serializedVersion: 2
@@ -740,8 +894,9 @@ TextureImporter:
         width: 26
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_49
       rect:
         serializedVersion: 2
@@ -750,8 +905,9 @@ TextureImporter:
         width: 26
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_50
       rect:
         serializedVersion: 2
@@ -760,8 +916,9 @@ TextureImporter:
         width: 26
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_51
       rect:
         serializedVersion: 2
@@ -770,8 +927,9 @@ TextureImporter:
         width: 28
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_52
       rect:
         serializedVersion: 2
@@ -780,8 +938,9 @@ TextureImporter:
         width: 22
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_53
       rect:
         serializedVersion: 2
@@ -790,8 +949,9 @@ TextureImporter:
         width: 27
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_54
       rect:
         serializedVersion: 2
@@ -800,8 +960,9 @@ TextureImporter:
         width: 29
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_55
       rect:
         serializedVersion: 2
@@ -810,8 +971,9 @@ TextureImporter:
         width: 27
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_56
       rect:
         serializedVersion: 2
@@ -820,8 +982,9 @@ TextureImporter:
         width: 29
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_57
       rect:
         serializedVersion: 2
@@ -830,8 +993,9 @@ TextureImporter:
         width: 32
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_58
       rect:
         serializedVersion: 2
@@ -840,8 +1004,9 @@ TextureImporter:
         width: 29
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_59
       rect:
         serializedVersion: 2
@@ -850,8 +1015,9 @@ TextureImporter:
         width: 27
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_60
       rect:
         serializedVersion: 2
@@ -860,8 +1026,9 @@ TextureImporter:
         width: 32
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_61
       rect:
         serializedVersion: 2
@@ -870,8 +1037,9 @@ TextureImporter:
         width: 32
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_62
       rect:
         serializedVersion: 2
@@ -880,8 +1048,9 @@ TextureImporter:
         width: 32
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_63
       rect:
         serializedVersion: 2
@@ -890,8 +1059,9 @@ TextureImporter:
         width: 31
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_64
       rect:
         serializedVersion: 2
@@ -900,8 +1070,9 @@ TextureImporter:
         width: 32
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_65
       rect:
         serializedVersion: 2
@@ -910,8 +1081,9 @@ TextureImporter:
         width: 32
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_66
       rect:
         serializedVersion: 2
@@ -920,8 +1092,9 @@ TextureImporter:
         width: 32
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_67
       rect:
         serializedVersion: 2
@@ -930,8 +1103,9 @@ TextureImporter:
         width: 31
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_68
       rect:
         serializedVersion: 2
@@ -940,8 +1114,9 @@ TextureImporter:
         width: 32
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_69
       rect:
         serializedVersion: 2
@@ -950,8 +1125,9 @@ TextureImporter:
         width: 22
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_70
       rect:
         serializedVersion: 2
@@ -960,8 +1136,9 @@ TextureImporter:
         width: 27
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_71
       rect:
         serializedVersion: 2
@@ -970,8 +1147,9 @@ TextureImporter:
         width: 24
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_72
       rect:
         serializedVersion: 2
@@ -980,8 +1158,9 @@ TextureImporter:
         width: 24
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_73
       rect:
         serializedVersion: 2
@@ -990,8 +1169,9 @@ TextureImporter:
         width: 26
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_74
       rect:
         serializedVersion: 2
@@ -1000,8 +1180,9 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_75
       rect:
         serializedVersion: 2
@@ -1010,8 +1191,9 @@ TextureImporter:
         width: 25
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_76
       rect:
         serializedVersion: 2
@@ -1020,8 +1202,9 @@ TextureImporter:
         width: 24
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_77
       rect:
         serializedVersion: 2
@@ -1030,8 +1213,9 @@ TextureImporter:
         width: 23
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_78
       rect:
         serializedVersion: 2
@@ -1040,8 +1224,9 @@ TextureImporter:
         width: 32
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_79
       rect:
         serializedVersion: 2
@@ -1050,8 +1235,9 @@ TextureImporter:
         width: 32
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_80
       rect:
         serializedVersion: 2
@@ -1060,8 +1246,9 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_81
       rect:
         serializedVersion: 2
@@ -1070,8 +1257,9 @@ TextureImporter:
         width: 31
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_82
       rect:
         serializedVersion: 2
@@ -1080,8 +1268,9 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_83
       rect:
         serializedVersion: 2
@@ -1090,8 +1279,9 @@ TextureImporter:
         width: 32
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_84
       rect:
         serializedVersion: 2
@@ -1100,8 +1290,9 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_85
       rect:
         serializedVersion: 2
@@ -1110,8 +1301,9 @@ TextureImporter:
         width: 31
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_86
       rect:
         serializedVersion: 2
@@ -1120,8 +1312,9 @@ TextureImporter:
         width: 32
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_87
       rect:
         serializedVersion: 2
@@ -1130,8 +1323,9 @@ TextureImporter:
         width: 22
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_88
       rect:
         serializedVersion: 2
@@ -1140,8 +1334,9 @@ TextureImporter:
         width: 27
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_89
       rect:
         serializedVersion: 2
@@ -1150,8 +1345,9 @@ TextureImporter:
         width: 24
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_90
       rect:
         serializedVersion: 2
@@ -1160,8 +1356,9 @@ TextureImporter:
         width: 24
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_91
       rect:
         serializedVersion: 2
@@ -1170,8 +1367,9 @@ TextureImporter:
         width: 26
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_92
       rect:
         serializedVersion: 2
@@ -1180,8 +1378,9 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_93
       rect:
         serializedVersion: 2
@@ -1190,8 +1389,9 @@ TextureImporter:
         width: 25
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_94
       rect:
         serializedVersion: 2
@@ -1200,8 +1400,9 @@ TextureImporter:
         width: 24
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_95
       rect:
         serializedVersion: 2
@@ -1210,8 +1411,9 @@ TextureImporter:
         width: 23
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_96
       rect:
         serializedVersion: 2
@@ -1220,8 +1422,9 @@ TextureImporter:
         width: 32
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_97
       rect:
         serializedVersion: 2
@@ -1230,8 +1433,9 @@ TextureImporter:
         width: 28
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_98
       rect:
         serializedVersion: 2
@@ -1240,8 +1444,9 @@ TextureImporter:
         width: 27
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_99
       rect:
         serializedVersion: 2
@@ -1250,8 +1455,9 @@ TextureImporter:
         width: 29
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_100
       rect:
         serializedVersion: 2
@@ -1260,8 +1466,14 @@ TextureImporter:
         width: 38
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.353516, y: 22.833374}
+        - {x: -18.353516, y: -15.166626}
+        - {x: -14.353516, y: -21.166626}
+        - {x: 19.646484, y: -21.166626}
+        - {x: 19.646484, y: 22.833374}
     - name: Character4Sword_101
       rect:
         serializedVersion: 2
@@ -1270,8 +1482,17 @@ TextureImporter:
         width: 41
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.188171, y: 22.833374}
+        - {x: -19.811829, y: 22.833374}
+        - {x: -19.811829, y: -20.166626}
+        - {x: -16.811829, y: -21.166626}
+        - {x: 13.188171, y: -21.166626}
+        - {x: 21.188171, y: -5.166626}
+        - {x: 21.188171, y: 11.833374}
+        - {x: 19.188171, y: 14.833374}
     - name: Character4Sword_102
       rect:
         serializedVersion: 2
@@ -1280,8 +1501,9 @@ TextureImporter:
         width: 22
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_103
       rect:
         serializedVersion: 2
@@ -1290,8 +1512,9 @@ TextureImporter:
         width: 27
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_104
       rect:
         serializedVersion: 2
@@ -1300,8 +1523,9 @@ TextureImporter:
         width: 26
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_105
       rect:
         serializedVersion: 2
@@ -1310,8 +1534,17 @@ TextureImporter:
         width: 36
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.1809845, y: 22.761108}
+        - {x: -17.180984, y: 10.761108}
+        - {x: -17.180984, y: -9.238892}
+        - {x: -10.1809845, y: -21.238892}
+        - {x: 14.8190155, y: -21.238892}
+        - {x: 18.819016, y: -15.238892}
+        - {x: 18.819016, y: 9.761108}
+        - {x: 15.8190155, y: 22.761108}
     - name: Character4Sword_106
       rect:
         serializedVersion: 2
@@ -1320,8 +1553,17 @@ TextureImporter:
         width: 38
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.047516, y: 22.761108}
+        - {x: -18.047516, y: 17.761108}
+        - {x: -18.047516, y: -11.238892}
+        - {x: -15.047516, y: -21.238892}
+        - {x: 17.952484, y: -21.238892}
+        - {x: 19.952484, y: -16.238892}
+        - {x: 19.952484, y: 10.761108}
+        - {x: 14.952484, y: 22.761108}
     - name: Character4Sword_107
       rect:
         serializedVersion: 2
@@ -1330,8 +1572,17 @@ TextureImporter:
         width: 35
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.597656, y: 22.761108}
+        - {x: -16.597656, y: 21.761108}
+        - {x: -16.597656, y: -3.2388916}
+        - {x: -7.5976562, y: -21.238892}
+        - {x: 14.402344, y: -21.238892}
+        - {x: 18.402344, y: -12.238892}
+        - {x: 18.402344, y: 17.761108}
+        - {x: 17.402344, y: 22.761108}
     - name: Character4Sword_108
       rect:
         serializedVersion: 2
@@ -1340,8 +1591,9 @@ TextureImporter:
         width: 32
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_109
       rect:
         serializedVersion: 2
@@ -1350,8 +1602,9 @@ TextureImporter:
         width: 28
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_110
       rect:
         serializedVersion: 2
@@ -1360,8 +1613,9 @@ TextureImporter:
         width: 29
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_111
       rect:
         serializedVersion: 2
@@ -1370,8 +1624,9 @@ TextureImporter:
         width: 28
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_112
       rect:
         serializedVersion: 2
@@ -1380,8 +1635,16 @@ TextureImporter:
         width: 37
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.914703, y: 24.219482}
+        - {x: -17.914703, y: -21.780518}
+        - {x: -16.914703, y: -22.780518}
+        - {x: 9.085297, y: -22.780518}
+        - {x: 19.085297, y: -8.780518}
+        - {x: 19.085297, y: 3.2194824}
+        - {x: 13.085297, y: 24.219482}
     - name: Character4Sword_113
       rect:
         serializedVersion: 2
@@ -1390,8 +1653,16 @@ TextureImporter:
         width: 41
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.157562, y: 24.219482}
+        - {x: -19.842438, y: 24.219482}
+        - {x: -19.842438, y: -21.780518}
+        - {x: -17.842438, y: -22.780518}
+        - {x: 13.157562, y: -22.780518}
+        - {x: 21.157562, y: -14.780518}
+        - {x: 21.157562, y: 16.219482}
     - name: Character4Sword_114
       rect:
         serializedVersion: 2
@@ -1400,8 +1671,9 @@ TextureImporter:
         width: 22
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_115
       rect:
         serializedVersion: 2
@@ -1410,8 +1682,9 @@ TextureImporter:
         width: 27
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_116
       rect:
         serializedVersion: 2
@@ -1420,8 +1693,9 @@ TextureImporter:
         width: 26
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_117
       rect:
         serializedVersion: 2
@@ -1430,8 +1704,18 @@ TextureImporter:
         width: 36
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.425781, y: 22.677734}
+        - {x: -17.425781, y: 14.677734}
+        - {x: -17.425781, y: -19.322266}
+        - {x: -16.425781, y: -21.322266}
+        - {x: 11.574219, y: -21.322266}
+        - {x: 14.574219, y: -20.322266}
+        - {x: 18.574219, y: -8.322266}
+        - {x: 18.574219, y: 6.6777344}
+        - {x: 9.574219, y: 22.677734}
     - name: Character4Sword_118
       rect:
         serializedVersion: 2
@@ -1440,8 +1724,18 @@ TextureImporter:
         width: 38
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.585297, y: 22.677734}
+        - {x: -14.414703, y: 22.677734}
+        - {x: -18.414703, y: 14.677734}
+        - {x: -18.414703, y: -19.322266}
+        - {x: -17.414703, y: -21.322266}
+        - {x: 6.5852966, y: -21.322266}
+        - {x: 7.5852966, y: -18.322266}
+        - {x: 19.585297, y: 0.6777344}
+        - {x: 19.585297, y: 15.677734}
     - name: Character4Sword_119
       rect:
         serializedVersion: 2
@@ -1450,8 +1744,18 @@ TextureImporter:
         width: 35
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.873047, y: 22.677734}
+        - {x: -11.873047, y: 21.677734}
+        - {x: -16.873047, y: 6.6777344}
+        - {x: -16.873047, y: -16.322266}
+        - {x: -13.873047, y: -21.322266}
+        - {x: 9.126953, y: -21.322266}
+        - {x: 18.126953, y: -1.3222656}
+        - {x: 18.126953, y: 18.677734}
+        - {x: 10.126953, y: 22.677734}
     - name: Character4Sword_120
       rect:
         serializedVersion: 2
@@ -1460,8 +1764,9 @@ TextureImporter:
         width: 32
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_121
       rect:
         serializedVersion: 2
@@ -1470,8 +1775,9 @@ TextureImporter:
         width: 28
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_122
       rect:
         serializedVersion: 2
@@ -1480,8 +1786,9 @@ TextureImporter:
         width: 26
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_123
       rect:
         serializedVersion: 2
@@ -1490,8 +1797,9 @@ TextureImporter:
         width: 26
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_124
       rect:
         serializedVersion: 2
@@ -1500,8 +1808,9 @@ TextureImporter:
         width: 30
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_125
       rect:
         serializedVersion: 2
@@ -1510,8 +1819,9 @@ TextureImporter:
         width: 28
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_126
       rect:
         serializedVersion: 2
@@ -1520,8 +1830,9 @@ TextureImporter:
         width: 29
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_127
       rect:
         serializedVersion: 2
@@ -1530,8 +1841,9 @@ TextureImporter:
         width: 30
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_128
       rect:
         serializedVersion: 2
@@ -1540,8 +1852,9 @@ TextureImporter:
         width: 31
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_129
       rect:
         serializedVersion: 2
@@ -1550,8 +1863,9 @@ TextureImporter:
         width: 30
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_130
       rect:
         serializedVersion: 2
@@ -1560,8 +1874,9 @@ TextureImporter:
         width: 26
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_131
       rect:
         serializedVersion: 2
@@ -1570,8 +1885,9 @@ TextureImporter:
         width: 26
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_132
       rect:
         serializedVersion: 2
@@ -1580,8 +1896,9 @@ TextureImporter:
         width: 26
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_133
       rect:
         serializedVersion: 2
@@ -1590,8 +1907,9 @@ TextureImporter:
         width: 22
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_134
       rect:
         serializedVersion: 2
@@ -1600,8 +1918,9 @@ TextureImporter:
         width: 27
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_135
       rect:
         serializedVersion: 2
@@ -1610,8 +1929,19 @@ TextureImporter:
         width: 34
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.654953, y: 22.594421}
+        - {x: -4.345047, y: 22.594421}
+        - {x: -7.345047, y: 21.594421}
+        - {x: -16.345047, y: 3.5944214}
+        - {x: -16.345047, y: -11.405579}
+        - {x: -10.345047, y: -21.405579}
+        - {x: 11.654953, y: -21.405579}
+        - {x: 13.654953, y: -19.405579}
+        - {x: 17.654953, y: -11.405579}
+        - {x: 17.654953, y: 10.594421}
     - name: Character4Sword_136
       rect:
         serializedVersion: 2
@@ -1620,8 +1950,16 @@ TextureImporter:
         width: 37
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.7421875, y: 22.594421}
+        - {x: -17.742188, y: 14.594421}
+        - {x: -17.742188, y: -10.405579}
+        - {x: -10.7421875, y: -21.405579}
+        - {x: 19.257812, y: -21.405579}
+        - {x: 19.257812, y: 16.594421}
+        - {x: 16.257812, y: 22.594421}
     - name: Character4Sword_137
       rect:
         serializedVersion: 2
@@ -1630,8 +1968,17 @@ TextureImporter:
         width: 37
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.7005005, y: 22.594421}
+        - {x: -17.7005, y: 12.594421}
+        - {x: -17.7005, y: -8.405579}
+        - {x: -9.7005005, y: -19.405579}
+        - {x: -4.7005005, y: -21.405579}
+        - {x: 19.2995, y: -21.405579}
+        - {x: 19.2995, y: 19.594421}
+        - {x: 17.2995, y: 22.594421}
     - name: Character4Sword_138
       rect:
         serializedVersion: 2
@@ -1640,8 +1987,15 @@ TextureImporter:
         width: 34
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.128235, y: 22.594421}
+        - {x: -16.128235, y: 17.594421}
+        - {x: -16.128235, y: -1.4055786}
+        - {x: -4.128235, y: -21.405579}
+        - {x: 17.871765, y: -21.405579}
+        - {x: 17.871765, y: 22.594421}
     - name: Character4Sword_139
       rect:
         serializedVersion: 2
@@ -1650,8 +2004,16 @@ TextureImporter:
         width: 36
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.086578, y: 22.594421}
+        - {x: -17.086578, y: 20.594421}
+        - {x: -17.086578, y: -11.405579}
+        - {x: -13.086578, y: -21.405579}
+        - {x: 17.913422, y: -21.405579}
+        - {x: 18.913422, y: -18.405579}
+        - {x: 18.913422, y: 22.594421}
     - name: Character4Sword_140
       rect:
         serializedVersion: 2
@@ -1660,8 +2022,18 @@ TextureImporter:
         width: 38
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.9244995, y: 22.594421}
+        - {x: -14.0755005, y: 22.594421}
+        - {x: -18.0755, y: 17.594421}
+        - {x: -18.0755, y: 0.5944214}
+        - {x: -8.0755005, y: -21.405579}
+        - {x: 13.9244995, y: -21.405579}
+        - {x: 15.9244995, y: -20.405579}
+        - {x: 19.9245, y: -7.4055786}
+        - {x: 19.9245, y: 18.594421}
     - name: Character4Sword_141
       rect:
         serializedVersion: 2
@@ -1670,8 +2042,18 @@ TextureImporter:
         width: 40
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.033844, y: 22.594421}
+        - {x: -19.033844, y: 10.594421}
+        - {x: -19.033844, y: 3.5944214}
+        - {x: -17.033844, y: 1.5944214}
+        - {x: -8.033844, y: -21.405579}
+        - {x: 15.966156, y: -21.405579}
+        - {x: 20.966156, y: 0.5944214}
+        - {x: 20.966156, y: 13.594421}
+        - {x: 16.966156, y: 22.594421}
     - name: Character4Sword_142
       rect:
         serializedVersion: 2
@@ -1680,8 +2062,18 @@ TextureImporter:
         width: 36
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.022766, y: 22.594421}
+        - {x: -17.022766, y: 10.594421}
+        - {x: -17.022766, y: -8.405579}
+        - {x: -10.022766, y: -19.405579}
+        - {x: -2.022766, y: -21.405579}
+        - {x: 16.977234, y: -21.405579}
+        - {x: 18.977234, y: -17.405579}
+        - {x: 18.977234, y: 19.594421}
+        - {x: 15.977234, y: 22.594421}
     - name: Character4Sword_143
       rect:
         serializedVersion: 2
@@ -1690,8 +2082,15 @@ TextureImporter:
         width: 36
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.4505005, y: 22.594421}
+        - {x: -17.4505, y: 17.594421}
+        - {x: -17.4505, y: -12.405579}
+        - {x: -8.4505005, y: -21.405579}
+        - {x: 17.5495, y: -21.405579}
+        - {x: 17.5495, y: 22.594421}
     - name: Character4Sword_144
       rect:
         serializedVersion: 2
@@ -1700,8 +2099,9 @@ TextureImporter:
         width: 32
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_145
       rect:
         serializedVersion: 2
@@ -1710,8 +2110,16 @@ TextureImporter:
         width: 36
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.8671875, y: 22.594421}
+        - {x: -17.867188, y: 16.594421}
+        - {x: -17.867188, y: -15.405579}
+        - {x: -15.8671875, y: -21.405579}
+        - {x: 18.132812, y: -21.405579}
+        - {x: 18.132812, y: 10.594421}
+        - {x: 14.1328125, y: 22.594421}
     - name: Character4Sword_146
       rect:
         serializedVersion: 2
@@ -1720,8 +2128,9 @@ TextureImporter:
         width: 32
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_147
       rect:
         serializedVersion: 2
@@ -1730,8 +2139,9 @@ TextureImporter:
         width: 27
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_148
       rect:
         serializedVersion: 2
@@ -1740,8 +2150,9 @@ TextureImporter:
         width: 27
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_149
       rect:
         serializedVersion: 2
@@ -1750,8 +2161,9 @@ TextureImporter:
         width: 27
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_150
       rect:
         serializedVersion: 2
@@ -1760,8 +2172,9 @@ TextureImporter:
         width: 26
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_151
       rect:
         serializedVersion: 2
@@ -1770,8 +2183,9 @@ TextureImporter:
         width: 26
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_152
       rect:
         serializedVersion: 2
@@ -1780,8 +2194,9 @@ TextureImporter:
         width: 26
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_153
       rect:
         serializedVersion: 2
@@ -1790,8 +2205,9 @@ TextureImporter:
         width: 27
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_154
       rect:
         serializedVersion: 2
@@ -1800,8 +2216,9 @@ TextureImporter:
         width: 26
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_155
       rect:
         serializedVersion: 2
@@ -1810,8 +2227,9 @@ TextureImporter:
         width: 26
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_156
       rect:
         serializedVersion: 2
@@ -1820,8 +2238,9 @@ TextureImporter:
         width: 27
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_157
       rect:
         serializedVersion: 2
@@ -1830,8 +2249,9 @@ TextureImporter:
         width: 26
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_158
       rect:
         serializedVersion: 2
@@ -1840,8 +2260,9 @@ TextureImporter:
         width: 27
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_159
       rect:
         serializedVersion: 2
@@ -1850,8 +2271,9 @@ TextureImporter:
         width: 22
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_160
       rect:
         serializedVersion: 2
@@ -1860,8 +2282,9 @@ TextureImporter:
         width: 27
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_161
       rect:
         serializedVersion: 2
@@ -1870,8 +2293,19 @@ TextureImporter:
         width: 34
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.40625, y: 22.511108}
+        - {x: -16.40625, y: 19.511108}
+        - {x: -16.40625, y: -15.488892}
+        - {x: -13.40625, y: -20.488892}
+        - {x: -11.40625, y: -21.488892}
+        - {x: 7.59375, y: -21.488892}
+        - {x: 12.59375, y: -20.488892}
+        - {x: 17.59375, y: -14.488892}
+        - {x: 17.59375, y: 4.5111084}
+        - {x: 8.59375, y: 22.511108}
     - name: Character4Sword_162
       rect:
         serializedVersion: 2
@@ -1880,8 +2314,18 @@ TextureImporter:
         width: 37
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.833984, y: 22.511108}
+        - {x: -17.833984, y: 11.511108}
+        - {x: -17.833984, y: -14.488892}
+        - {x: -13.833984, y: -21.488892}
+        - {x: 8.166016, y: -21.488892}
+        - {x: 12.166016, y: -20.488892}
+        - {x: 19.166016, y: -14.488892}
+        - {x: 19.166016, y: 9.511108}
+        - {x: 12.166016, y: 22.511108}
     - name: Character4Sword_163
       rect:
         serializedVersion: 2
@@ -1890,8 +2334,19 @@ TextureImporter:
         width: 37
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.207703, y: 22.511108}
+        - {x: -15.792297, y: 22.511108}
+        - {x: -16.792297, y: 21.511108}
+        - {x: -17.792297, y: 19.511108}
+        - {x: -17.792297, y: -8.488892}
+        - {x: -13.792297, y: -21.488892}
+        - {x: 10.207703, y: -21.488892}
+        - {x: 19.207703, y: -3.4888916}
+        - {x: 19.207703, y: 11.511108}
+        - {x: 18.207703, y: 14.511108}
     - name: Character4Sword_164
       rect:
         serializedVersion: 2
@@ -1900,8 +2355,17 @@ TextureImporter:
         width: 34
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.626953, y: 22.511108}
+        - {x: -16.373047, y: 22.511108}
+        - {x: -16.373047, y: -21.488892}
+        - {x: 3.6269531, y: -21.488892}
+        - {x: 8.626953, y: -20.488892}
+        - {x: 16.626953, y: -0.4888916}
+        - {x: 17.626953, y: 1.5111084}
+        - {x: 17.626953, y: 20.511108}
     - name: Character4Sword_165
       rect:
         serializedVersion: 2
@@ -1910,8 +2374,17 @@ TextureImporter:
         width: 36
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.729828, y: 17.511108}
+        - {x: 6.729828, y: 22.511108}
+        - {x: -17.270172, y: 22.511108}
+        - {x: -17.270172, y: -21.488892}
+        - {x: 1.7298279, y: -21.488892}
+        - {x: 5.729828, y: -20.488892}
+        - {x: 8.729828, y: -17.488892}
+        - {x: 18.729828, y: 1.5111084}
     - name: Character4Sword_166
       rect:
         serializedVersion: 2
@@ -1920,8 +2393,20 @@ TextureImporter:
         width: 38
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.863281, y: 0.5111084}
+        - {x: 19.863281, y: 15.511108}
+        - {x: 9.863281, y: 22.511108}
+        - {x: -17.136719, y: 22.511108}
+        - {x: -18.136719, y: 19.511108}
+        - {x: -18.136719, y: -8.488892}
+        - {x: -12.136719, y: -21.488892}
+        - {x: 3.8632812, y: -21.488892}
+        - {x: 8.863281, y: -20.488892}
+        - {x: 10.863281, y: -18.488892}
+        - {x: 10.863281, y: -14.488892}
     - name: Character4Sword_167
       rect:
         serializedVersion: 2
@@ -1930,8 +2415,18 @@ TextureImporter:
         width: 40
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20.966156, y: -0.4888916}
+        - {x: 20.966156, y: 12.511108}
+        - {x: 10.966156, y: 22.511108}
+        - {x: -13.033844, y: 22.511108}
+        - {x: -19.033844, y: 17.511108}
+        - {x: -19.033844, y: -21.488892}
+        - {x: 8.966156, y: -21.488892}
+        - {x: 11.966156, y: -18.488892}
+        - {x: 11.966156, y: -14.488892}
     - name: Character4Sword_168
       rect:
         serializedVersion: 2
@@ -1940,8 +2435,19 @@ TextureImporter:
         width: 37
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.583984, y: 22.511108}
+        - {x: -13.583984, y: 21.511108}
+        - {x: -17.583984, y: 15.511108}
+        - {x: -17.583984, y: -7.4888916}
+        - {x: -13.583984, y: -20.488892}
+        - {x: -12.583984, y: -21.488892}
+        - {x: 10.416016, y: -21.488892}
+        - {x: 19.416016, y: -11.488892}
+        - {x: 19.416016, y: 18.511108}
+        - {x: 16.416016, y: 22.511108}
     - name: Character4Sword_169
       rect:
         serializedVersion: 2
@@ -1950,8 +2456,20 @@ TextureImporter:
         width: 36
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.072876, y: 22.511108}
+        - {x: -14.072876, y: 21.511108}
+        - {x: -17.072876, y: 9.511108}
+        - {x: -17.072876, y: -14.488892}
+        - {x: -15.072876, y: -20.488892}
+        - {x: -14.072876, y: -21.488892}
+        - {x: 5.927124, y: -21.488892}
+        - {x: 12.927124, y: -20.488892}
+        - {x: 18.927124, y: -1.4888916}
+        - {x: 18.927124, y: 11.511108}
+        - {x: 8.927124, y: 22.511108}
     - name: Character4Sword_170
       rect:
         serializedVersion: 2
@@ -1960,8 +2478,9 @@ TextureImporter:
         width: 32
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_171
       rect:
         serializedVersion: 2
@@ -1970,8 +2489,16 @@ TextureImporter:
         width: 35
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.520142, y: 22.511108}
+        - {x: -16.520142, y: -21.488892}
+        - {x: 5.4798584, y: -21.488892}
+        - {x: 12.479858, y: -20.488892}
+        - {x: 18.479858, y: -1.4888916}
+        - {x: 18.479858, y: 11.511108}
+        - {x: 8.479858, y: 22.511108}
     - name: Character4Sword_172
       rect:
         serializedVersion: 2
@@ -1980,8 +2507,9 @@ TextureImporter:
         width: 32
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_173
       rect:
         serializedVersion: 2
@@ -1990,8 +2518,9 @@ TextureImporter:
         width: 33
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_174
       rect:
         serializedVersion: 2
@@ -2000,8 +2529,9 @@ TextureImporter:
         width: 32
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_175
       rect:
         serializedVersion: 2
@@ -2010,8 +2540,9 @@ TextureImporter:
         width: 32
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_176
       rect:
         serializedVersion: 2
@@ -2020,8 +2551,9 @@ TextureImporter:
         width: 33
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_177
       rect:
         serializedVersion: 2
@@ -2030,8 +2562,13 @@ TextureImporter:
         width: 36
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.311829, y: 18.469421}
+        - {x: -17.311829, y: -17.530579}
+        - {x: 18.688171, y: -17.530579}
+        - {x: 18.688171, y: 18.469421}
     - name: Character4Sword_178
       rect:
         serializedVersion: 2
@@ -2039,9 +2576,10 @@ TextureImporter:
         y: 641
         width: 33
         height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4848182, y: 0.55049026}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_179
       rect:
         serializedVersion: 2
@@ -2049,9 +2587,10 @@ TextureImporter:
         y: 640
         width: 28
         height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5059651, y: 0.56759787}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_180
       rect:
         serializedVersion: 2
@@ -2059,9 +2598,16 @@ TextureImporter:
         y: 640
         width: 40
         height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.62108076, y: 0.5636219}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.086945, y: 18.826355}
+        - {x: -24.086945, y: 10.826355}
+        - {x: -24.086945, y: -18.173645}
+        - {x: -22.086945, y: -23.173645}
+        - {x: 14.913055, y: -23.173645}
+        - {x: 14.913055, y: 18.826355}
     - name: Character4Sword_181
       rect:
         serializedVersion: 2
@@ -2069,9 +2615,10 @@ TextureImporter:
         y: 640
         width: 29
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5230355, y: 0.5569347}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_182
       rect:
         serializedVersion: 2
@@ -2079,9 +2626,19 @@ TextureImporter:
         y: 640
         width: 47
         height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.357866, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29.497375, y: 24.416687}
+        - {x: -5.5026245, y: 24.416687}
+        - {x: -16.502625, y: 21.416687}
+        - {x: -16.502625, y: -21.583313}
+        - {x: -15.5026245, y: -23.583313}
+        - {x: 12.4973755, y: -23.583313}
+        - {x: 13.4973755, y: -20.583313}
+        - {x: 13.4973755, y: -14.583313}
+        - {x: 29.497375, y: 11.416687}
     - name: Character4Sword_183
       rect:
         serializedVersion: 2
@@ -2089,9 +2646,18 @@ TextureImporter:
         y: 640
         width: 64
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.26514626, y: 0.56452525}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.782715, y: 19.66449}
+        - {x: -15.782715, y: 18.66449}
+        - {x: -16.782715, y: 9.66449}
+        - {x: -16.782715, y: -20.33551}
+        - {x: -14.782715, y: -24.33551}
+        - {x: 19.217285, y: -24.33551}
+        - {x: 46.217285, y: -1.3355103}
+        - {x: 46.217285, y: 19.66449}
     - name: Character4Sword_184
       rect:
         serializedVersion: 2
@@ -2099,9 +2665,16 @@ TextureImporter:
         y: 449
         width: 36
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.61690587, y: 0.5478266}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.282959, y: 19.7211}
+        - {x: -21.282959, y: -2.2789001}
+        - {x: -21.282959, y: -22.2789}
+        - {x: -18.282959, y: -23.2789}
+        - {x: 14.717041, y: -23.2789}
+        - {x: 14.717041, y: 19.7211}
     - name: Character4Sword_185
       rect:
         serializedVersion: 2
@@ -2109,9 +2682,10 @@ TextureImporter:
         y: 449
         width: 27
         height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.525052}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_186
       rect:
         serializedVersion: 2
@@ -2119,9 +2693,10 @@ TextureImporter:
         y: 449
         width: 26
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.37185434, y: 0.5557972}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_187
       rect:
         serializedVersion: 2
@@ -2129,9 +2704,18 @@ TextureImporter:
         y: 449
         width: 37
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5142195, y: 0.55978256}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.868774, y: 19.21112}
+        - {x: -18.868774, y: 9.211121}
+        - {x: -18.868774, y: -19.78888}
+        - {x: -16.868774, y: -23.78888}
+        - {x: 16.131226, y: -23.78888}
+        - {x: 18.131226, y: -18.78888}
+        - {x: 18.131226, y: -0.7888794}
+        - {x: 12.131226, y: 19.21112}
     - name: Character4Sword_188
       rect:
         serializedVersion: 2
@@ -2139,9 +2723,18 @@ TextureImporter:
         y: 449
         width: 55
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.66898304, y: 0.53985524}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.662048, y: 20.061096}
+        - {x: -35.66205, y: 16.061096}
+        - {x: -35.66205, y: -3.9389038}
+        - {x: -13.662048, y: -22.938904}
+        - {x: 17.337952, y: -22.938904}
+        - {x: 19.337952, y: -18.938904}
+        - {x: 19.337952, y: 8.061096}
+        - {x: 16.337952, y: 20.061096}
     - name: Character4Sword_189
       rect:
         serializedVersion: 2
@@ -2149,9 +2742,18 @@ TextureImporter:
         y: 449
         width: 58
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.68140703, y: 0.53586996}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.635254, y: 20.23108}
+        - {x: -7.635254, y: 19.23108}
+        - {x: -34.635254, y: 14.231079}
+        - {x: -38.635254, y: 10.231079}
+        - {x: -38.635254, y: 0.2310791}
+        - {x: -6.635254, y: -22.76892}
+        - {x: 18.364746, y: -22.76892}
+        - {x: 18.364746, y: 20.23108}
     - name: Character4Sword_190
       rect:
         serializedVersion: 2
@@ -2159,9 +2761,16 @@ TextureImporter:
         y: 257
         width: 34
         height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4743365, y: 0.5111396}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.602051, y: 22.62854}
+        - {x: -15.602051, y: -23.37146}
+        - {x: 14.397949, y: -23.37146}
+        - {x: 18.39795, y: -16.37146}
+        - {x: 18.39795, y: 17.62854}
+        - {x: 17.39795, y: 22.62854}
     - name: Character4Sword_191
       rect:
         serializedVersion: 2
@@ -2169,9 +2778,16 @@ TextureImporter:
         y: 257
         width: 38
         height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.6194024, y: 0.5111396}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.476593, y: 22.62854}
+        - {x: -22.476593, y: 15.62854}
+        - {x: -22.476593, y: -17.37146}
+        - {x: -19.476593, y: -23.37146}
+        - {x: 15.523407, y: -23.37146}
+        - {x: 15.523407, y: 22.62854}
     - name: Character4Sword_192
       rect:
         serializedVersion: 2
@@ -2179,9 +2795,18 @@ TextureImporter:
         y: 257
         width: 40
         height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.6047066, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.548004, y: 22.136078}
+        - {x: -18.451996, y: 22.136078}
+        - {x: -23.451996, y: 15.136078}
+        - {x: -23.451996, y: -7.863922}
+        - {x: -14.451996, y: -21.863922}
+        - {x: 15.548004, y: -21.863922}
+        - {x: 15.548004, y: 15.136078}
+        - {x: 14.548004, y: 21.136078}
     - name: Character4Sword_193
       rect:
         serializedVersion: 2
@@ -2189,9 +2814,16 @@ TextureImporter:
         y: 257
         width: 34
         height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.6077863, y: 0.50379413}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.033691, y: 22.466888}
+        - {x: -20.033691, y: 10.466888}
+        - {x: -20.033691, y: -17.533112}
+        - {x: -18.033691, y: -22.533112}
+        - {x: 12.966309, y: -22.533112}
+        - {x: 12.966309, y: 22.466888}
     - name: Character4Sword_194
       rect:
         serializedVersion: 2
@@ -2199,9 +2831,17 @@ TextureImporter:
         y: 251
         width: 46
         height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.35204548, y: 0.5691465}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.442017, y: -29.232971}
+        - {x: 26.557983, y: -29.232971}
+        - {x: 30.557983, y: -28.232971}
+        - {x: 30.557983, y: -7.232971}
+        - {x: 16.557983, y: 22.767029}
+        - {x: -15.442017, y: 22.767029}
+        - {x: -15.442017, y: -28.232971}
     - name: Character4Sword_195
       rect:
         serializedVersion: 2
@@ -2209,9 +2849,16 @@ TextureImporter:
         y: 257
         width: 64
         height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.26822853, y: 0.5185657}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20.995422, y: 22.290192}
+        - {x: -17.004578, y: 22.290192}
+        - {x: -17.004578, y: -23.709808}
+        - {x: 35.995422, y: -23.709808}
+        - {x: 45.995422, y: -12.709808}
+        - {x: 45.995422, y: 2.2901917}
     - name: Character4Sword_196
       rect:
         serializedVersion: 2
@@ -2219,9 +2866,17 @@ TextureImporter:
         y: 65
         width: 36
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.38019097, y: 0.5449269}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.610832, y: 19.594772}
+        - {x: -10.389168, y: 19.594772}
+        - {x: -13.389168, y: 18.594772}
+        - {x: -13.389168, y: -23.405228}
+        - {x: 11.610832, y: -23.405228}
+        - {x: 22.610832, y: -17.405228}
+        - {x: 22.610832, y: -11.405228}
     - name: Character4Sword_197
       rect:
         serializedVersion: 2
@@ -2229,9 +2884,10 @@ TextureImporter:
         y: 65
         width: 27
         height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5266249, y: 0.52995044}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_198
       rect:
         serializedVersion: 2
@@ -2239,9 +2895,10 @@ TextureImporter:
         y: 65
         width: 26
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.6313301, y: 0.53675807}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character4Sword_199
       rect:
         serializedVersion: 2
@@ -2249,9 +2906,20 @@ TextureImporter:
         y: 65
         width: 37
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5097145, y: 0.54901123}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.017456, y: 19.420555}
+        - {x: -9.982544, y: 19.420555}
+        - {x: -12.982544, y: 18.420555}
+        - {x: -17.982544, y: 1.4205551}
+        - {x: -17.982544, y: -18.579445}
+        - {x: -14.982544, y: -23.579445}
+        - {x: 13.017456, y: -23.579445}
+        - {x: 18.017456, y: -13.579445}
+        - {x: 19.017456, y: -12.579445}
+        - {x: 19.017456, y: 5.420555}
     - name: Character4Sword_200
       rect:
         serializedVersion: 2
@@ -2259,9 +2927,20 @@ TextureImporter:
         y: 65
         width: 55
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.34642667, y: 0.5326736}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33.648376, y: 12.117416}
+        - {x: 8.648376, y: 20.117416}
+        - {x: -10.351624, y: 20.117416}
+        - {x: -13.351624, y: 19.117416}
+        - {x: -18.351624, y: 5.1174164}
+        - {x: -18.351624, y: -22.882584}
+        - {x: 9.648376, y: -22.882584}
+        - {x: 9.648376, y: -21.882584}
+        - {x: 36.648376, y: 3.1174164}
+        - {x: 36.648376, y: 9.117416}
     - name: Character4Sword_201
       rect:
         serializedVersion: 2
@@ -2269,9 +2948,21 @@ TextureImporter:
         y: 65
         width: 58
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.33267948, y: 0.5326736}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.006958, y: 20.117416}
+        - {x: -16.006958, y: 19.117416}
+        - {x: -19.006958, y: 4.1174164}
+        - {x: -19.006958, y: -17.882584}
+        - {x: -17.006958, y: -21.882584}
+        - {x: -16.006958, y: -22.882584}
+        - {x: 9.993042, y: -22.882584}
+        - {x: 37.993042, y: 2.1174164}
+        - {x: 37.993042, y: 13.117416}
+        - {x: 23.993042, y: 20.117416}
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
