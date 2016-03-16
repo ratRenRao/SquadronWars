@@ -44,8 +44,7 @@ namespace Assets.GameClasses
 
         public string GetJSONString()
         {
-            string returnString = "";
-            returnString += "ActionInfo\", \"actionType\" : \"" + actionType + "\", \"performedAction\" : \"" + performedAction + "\", \"actionTiles\" : { ";
+            string returnString = "{ \"actionType\" : \"" + actionType + "\", \"performedAction\" : \"" + performedAction + "\", \"actionTiles\" : { ";
             int index = 0;
             foreach(Tile tile in actionTiles)
             {
@@ -56,7 +55,7 @@ namespace Assets.GameClasses
                 returnString += "\"" + index + "\" : " + tile.GetJSONString();
                 index++;
             }
-            returnString += "} , \"end\" : \"end";
+            returnString += "} }";
 
             return returnString;
         }

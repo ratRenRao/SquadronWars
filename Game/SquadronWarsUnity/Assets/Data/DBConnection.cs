@@ -53,11 +53,10 @@ namespace Assets.Data
             return form;
         }
 
-        //public JSONObject ConvertToJson<T>(T obj, string propertyScope = "public")
-        public JSONObject ConvertToJson<T>(T obj)
+        public JSONObject ConvertToJson<T>(T obj, string propertyScope = "public")
         {
-            var jsonDictionary = Utilities.CreatePublicPropertyDictionary(obj);
-            //var jsonDictionary = Utilities.CreateNestedPropertyDictionary(obj, typeof(T), propertyScope);
+            //var jsonDictionary = Utilities.CreatePublicPropertyDictionary(obj);
+            var jsonDictionary = Utilities.CreateNestedPropertyDictionary(obj, typeof(T), propertyScope);
             return JSONObject.Create(jsonDictionary);
         }
 

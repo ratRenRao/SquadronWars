@@ -310,6 +310,22 @@ public class SampleButton : MonoBehaviour
         GlobalConstants._dbConnection = gameObject.GetComponent<DbConnection>();
     }
 
+    public void SendBattleMessage()
+    {
+        GlobalConstants.GameId = 14;
+        GlobalConstants.myPlayerId = 1;
+        GlobalConstants.player1Characters = GlobalConstants.Player.Characters;
+        GlobalConstants.currentActions = new BattleAction();
+        GlobalConstants.currentActions.AddAction(new Action(Action.ActionType.Move, new System.Collections.Generic.List<Tile> { new Tile() }, "test Action"));
+        GlobalConstants.currentActions.CharacterQueue = new System.Collections.Generic.List<int> { 1, 2 };
+
+        BattlePostObject test = new BattlePostObject();
+
+        var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.WebServerUrl + "/test", test);
+        Debug.Log(www);
+
+    }
+
     public void EvaluateSkills()
     {
       //  GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");

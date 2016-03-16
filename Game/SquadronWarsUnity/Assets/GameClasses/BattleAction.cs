@@ -34,7 +34,7 @@ namespace Assets.GameClasses
 
         public string GetJSONString()
         {
-            string returnString = "ActionOrder\" : { ";
+            string returnString = "GameJSON\", \"ActionOrder\" : { ";
             int index = 0;
             foreach(Action action in ActionOrder)
             {
@@ -53,9 +53,10 @@ namespace Assets.GameClasses
                 {
                     returnString += ", ";
                 }
-                returnString += position;
+                returnString += "\"" + index + "\" : " + position;
+                index++;
             }
-            returnString += "} , \"end\" : \"end\"";
+            returnString += "} , \"end\" : \"end";
 
             return returnString;
         }
