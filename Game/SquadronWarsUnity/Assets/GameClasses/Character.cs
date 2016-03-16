@@ -77,5 +77,25 @@ namespace Assets.GameClasses
         {
             throw new NotImplementedException();
         }
+
+        public string GetJSONString()
+        {
+            string returnString = "{ \"CharacterId\" : \"" + CharacterId + "\", \"LevelId\" : \"" + LevelId + "\", \"Name\" : \"" + Name + "\", \"SpriteId\" : \""
+                + SpriteId + "\", \"X\" : \"" + X + "\", \"Y\" : \"" + Y + "\", \"BaseStats\" : " + BaseStats.GetJSONString() + ", \"CurrentStats\" : " + CurrentStats.GetJSONString()
+                + ", \"Equipment\" : " + Equipment.GetJSONString() + ", \"Abilities\" : { ";
+            int index = 0;
+            foreach(Ability ability in Abilities)
+            {
+                if(index != 0)
+                {
+                    returnString += ", ";
+                }
+                returnString += "\"" + index + "\" : " + ability.GetJSONString();
+                index++;
+            }
+            returnString += " } }";
+
+            return returnString;
+        }
     }
 }
