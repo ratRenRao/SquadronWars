@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 91ddb0634e05a404680f5b07ba034278
-timeCreated: 1454638328
+timeCreated: 1457993860
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -227,7 +227,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -252,9 +252,9 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 12
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -268,8 +268,9 @@ TextureImporter:
         width: 30
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_1
       rect:
         serializedVersion: 2
@@ -278,8 +279,9 @@ TextureImporter:
         width: 28
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_2
       rect:
         serializedVersion: 2
@@ -288,8 +290,9 @@ TextureImporter:
         width: 28
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_3
       rect:
         serializedVersion: 2
@@ -298,8 +301,19 @@ TextureImporter:
         width: 36
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.696625, y: 24.302734}
+        - {x: -11.303375, y: 24.302734}
+        - {x: -13.303375, y: 23.302734}
+        - {x: -17.303375, y: 8.302734}
+        - {x: -17.303375, y: -9.697266}
+        - {x: -9.303375, y: -23.697266}
+        - {x: 13.696625, y: -23.697266}
+        - {x: 18.696625, y: -15.697266}
+        - {x: 18.696625, y: 13.302734}
+        - {x: 17.696625, y: 17.302734}
     - name: Character3Spear_4
       rect:
         serializedVersion: 2
@@ -308,8 +322,17 @@ TextureImporter:
         width: 46
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.108704, y: 24.302734}
+        - {x: -22.108704, y: 17.302734}
+        - {x: -22.108704, y: -8.697266}
+        - {x: -11.108704, y: -23.697266}
+        - {x: 10.891296, y: -23.697266}
+        - {x: 23.891296, y: -7.6972656}
+        - {x: 23.891296, y: 16.302734}
+        - {x: 19.891296, y: 24.302734}
     - name: Character3Spear_5
       rect:
         serializedVersion: 2
@@ -318,8 +341,17 @@ TextureImporter:
         width: 46
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.067047, y: 24.302734}
+        - {x: -22.067047, y: 20.302734}
+        - {x: -22.067047, y: -1.6972656}
+        - {x: -16.067047, y: -23.697266}
+        - {x: 17.932953, y: -23.697266}
+        - {x: 23.932953, y: -15.697266}
+        - {x: 23.932953, y: 17.302734}
+        - {x: 17.932953, y: 24.302734}
     - name: Character3Spear_6
       rect:
         serializedVersion: 2
@@ -328,8 +360,18 @@ TextureImporter:
         width: 36
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.178375, y: 24.302734}
+        - {x: -17.178375, y: 12.302734}
+        - {x: -17.178375, y: -10.697266}
+        - {x: -12.178375, y: -22.697266}
+        - {x: -9.178375, y: -23.697266}
+        - {x: 10.821625, y: -23.697266}
+        - {x: 18.821625, y: -10.697266}
+        - {x: 18.821625, y: 10.302734}
+        - {x: 14.821625, y: 24.302734}
     - name: Character3Spear_7
       rect:
         serializedVersion: 2
@@ -338,8 +380,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_8
       rect:
         serializedVersion: 2
@@ -348,8 +391,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_9
       rect:
         serializedVersion: 2
@@ -358,8 +402,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_10
       rect:
         serializedVersion: 2
@@ -368,8 +413,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_11
       rect:
         serializedVersion: 2
@@ -378,8 +424,18 @@ TextureImporter:
         width: 34
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.646484, y: 24.761108}
+        - {x: -14.353516, y: 24.761108}
+        - {x: -16.353516, y: 21.761108}
+        - {x: -16.353516, y: -20.238892}
+        - {x: -12.353516, y: -24.238892}
+        - {x: 8.646484, y: -24.238892}
+        - {x: 17.646484, y: -9.238892}
+        - {x: 17.646484, y: 17.761108}
+        - {x: 15.646484, y: 22.761108}
     - name: Character3Spear_12
       rect:
         serializedVersion: 2
@@ -388,8 +444,15 @@ TextureImporter:
         width: 34
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.688171, y: -24.238892}
+        - {x: 17.688171, y: -19.238892}
+        - {x: 17.688171, y: 16.761108}
+        - {x: 8.688171, y: 24.761108}
+        - {x: -16.311829, y: 24.761108}
+        - {x: -16.311829, y: -24.238892}
     - name: Character3Spear_13
       rect:
         serializedVersion: 2
@@ -398,8 +461,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_14
       rect:
         serializedVersion: 2
@@ -408,8 +472,9 @@ TextureImporter:
         width: 30
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_15
       rect:
         serializedVersion: 2
@@ -418,8 +483,9 @@ TextureImporter:
         width: 30
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_16
       rect:
         serializedVersion: 2
@@ -428,8 +494,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_17
       rect:
         serializedVersion: 2
@@ -438,8 +505,17 @@ TextureImporter:
         width: 34
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.333984, y: 25.219482}
+        - {x: -16.333984, y: 22.219482}
+        - {x: -16.333984, y: -23.780518}
+        - {x: -14.333984, y: -24.780518}
+        - {x: 12.666016, y: -24.780518}
+        - {x: 17.666016, y: -15.780518}
+        - {x: 17.666016, y: 24.219482}
+        - {x: 14.666016, y: 25.219482}
     - name: Character3Spear_18
       rect:
         serializedVersion: 2
@@ -448,8 +524,17 @@ TextureImporter:
         width: 46
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.108704, y: 25.219482}
+        - {x: -22.108704, y: 17.219482}
+        - {x: -22.108704, y: -6.7805176}
+        - {x: -12.108704, y: -24.780518}
+        - {x: 11.891296, y: -24.780518}
+        - {x: 23.891296, y: -11.780518}
+        - {x: 23.891296, y: 12.219482}
+        - {x: 13.891296, y: 25.219482}
     - name: Character3Spear_19
       rect:
         serializedVersion: 2
@@ -458,8 +543,17 @@ TextureImporter:
         width: 46
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.067047, y: 25.219482}
+        - {x: -22.067047, y: 20.219482}
+        - {x: -22.067047, y: -19.780518}
+        - {x: -21.067047, y: -24.780518}
+        - {x: 13.932953, y: -24.780518}
+        - {x: 23.932953, y: -7.7805176}
+        - {x: 23.932953, y: 20.219482}
+        - {x: 14.932953, y: 25.219482}
     - name: Character3Spear_20
       rect:
         serializedVersion: 2
@@ -468,8 +562,17 @@ TextureImporter:
         width: 34
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.208984, y: 25.219482}
+        - {x: -16.208984, y: 21.219482}
+        - {x: -16.208984, y: -13.780518}
+        - {x: -10.208984, y: -24.780518}
+        - {x: 13.791016, y: -24.780518}
+        - {x: 17.791016, y: -21.780518}
+        - {x: 17.791016, y: 19.219482}
+        - {x: 15.791016, y: 25.219482}
     - name: Character3Spear_21
       rect:
         serializedVersion: 2
@@ -478,8 +581,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_22
       rect:
         serializedVersion: 2
@@ -488,8 +592,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_23
       rect:
         serializedVersion: 2
@@ -498,8 +603,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_24
       rect:
         serializedVersion: 2
@@ -508,8 +614,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_25
       rect:
         serializedVersion: 2
@@ -518,8 +625,16 @@ TextureImporter:
         width: 34
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.2311096, y: 24.677734}
+        - {x: -16.23111, y: 12.677734}
+        - {x: -16.23111, y: -5.3222656}
+        - {x: -15.23111, y: -10.322266}
+        - {x: -6.2311096, y: -24.322266}
+        - {x: 17.76889, y: -24.322266}
+        - {x: 17.76889, y: 24.677734}
     - name: Character3Spear_26
       rect:
         serializedVersion: 2
@@ -528,8 +643,17 @@ TextureImporter:
         width: 34
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.189453, y: 24.677734}
+        - {x: -16.189453, y: 13.677734}
+        - {x: -16.189453, y: -1.3222656}
+        - {x: -8.189453, y: -24.322266}
+        - {x: 13.810547, y: -24.322266}
+        - {x: 17.810547, y: -15.322266}
+        - {x: 17.810547, y: 18.677734}
+        - {x: 14.810547, y: 24.677734}
     - name: Character3Spear_27
       rect:
         serializedVersion: 2
@@ -538,8 +662,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_28
       rect:
         serializedVersion: 2
@@ -548,8 +673,9 @@ TextureImporter:
         width: 30
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_29
       rect:
         serializedVersion: 2
@@ -558,8 +684,9 @@ TextureImporter:
         width: 30
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_30
       rect:
         serializedVersion: 2
@@ -568,8 +695,9 @@ TextureImporter:
         width: 28
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_31
       rect:
         serializedVersion: 2
@@ -578,8 +706,9 @@ TextureImporter:
         width: 28
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_32
       rect:
         serializedVersion: 2
@@ -588,8 +717,9 @@ TextureImporter:
         width: 28
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_33
       rect:
         serializedVersion: 2
@@ -598,8 +728,9 @@ TextureImporter:
         width: 28
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_34
       rect:
         serializedVersion: 2
@@ -608,8 +739,9 @@ TextureImporter:
         width: 28
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_35
       rect:
         serializedVersion: 2
@@ -618,8 +750,9 @@ TextureImporter:
         width: 28
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_36
       rect:
         serializedVersion: 2
@@ -628,8 +761,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_37
       rect:
         serializedVersion: 2
@@ -638,8 +772,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_38
       rect:
         serializedVersion: 2
@@ -648,8 +783,9 @@ TextureImporter:
         width: 29
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_39
       rect:
         serializedVersion: 2
@@ -658,8 +794,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_40
       rect:
         serializedVersion: 2
@@ -668,8 +805,9 @@ TextureImporter:
         width: 29
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_41
       rect:
         serializedVersion: 2
@@ -678,8 +816,9 @@ TextureImporter:
         width: 32
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_42
       rect:
         serializedVersion: 2
@@ -688,8 +827,9 @@ TextureImporter:
         width: 29
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_43
       rect:
         serializedVersion: 2
@@ -698,8 +838,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_44
       rect:
         serializedVersion: 2
@@ -708,8 +849,9 @@ TextureImporter:
         width: 30
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_45
       rect:
         serializedVersion: 2
@@ -718,8 +860,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_46
       rect:
         serializedVersion: 2
@@ -728,8 +871,9 @@ TextureImporter:
         width: 29
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_47
       rect:
         serializedVersion: 2
@@ -738,8 +882,9 @@ TextureImporter:
         width: 29
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_48
       rect:
         serializedVersion: 2
@@ -748,8 +893,9 @@ TextureImporter:
         width: 29
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_49
       rect:
         serializedVersion: 2
@@ -758,8 +904,9 @@ TextureImporter:
         width: 29
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_50
       rect:
         serializedVersion: 2
@@ -768,8 +915,9 @@ TextureImporter:
         width: 29
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_51
       rect:
         serializedVersion: 2
@@ -778,8 +926,9 @@ TextureImporter:
         width: 28
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_52
       rect:
         serializedVersion: 2
@@ -788,8 +937,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_53
       rect:
         serializedVersion: 2
@@ -798,8 +948,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_54
       rect:
         serializedVersion: 2
@@ -808,8 +959,9 @@ TextureImporter:
         width: 29
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_55
       rect:
         serializedVersion: 2
@@ -818,8 +970,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_56
       rect:
         serializedVersion: 2
@@ -828,8 +981,9 @@ TextureImporter:
         width: 29
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_57
       rect:
         serializedVersion: 2
@@ -838,8 +992,9 @@ TextureImporter:
         width: 32
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_58
       rect:
         serializedVersion: 2
@@ -848,8 +1003,9 @@ TextureImporter:
         width: 29
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_59
       rect:
         serializedVersion: 2
@@ -858,8 +1014,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_60
       rect:
         serializedVersion: 2
@@ -868,8 +1025,9 @@ TextureImporter:
         width: 30
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_61
       rect:
         serializedVersion: 2
@@ -878,8 +1036,9 @@ TextureImporter:
         width: 30
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_62
       rect:
         serializedVersion: 2
@@ -888,8 +1047,9 @@ TextureImporter:
         width: 28
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_63
       rect:
         serializedVersion: 2
@@ -898,8 +1058,9 @@ TextureImporter:
         width: 28
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_64
       rect:
         serializedVersion: 2
@@ -908,8 +1069,9 @@ TextureImporter:
         width: 30
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_65
       rect:
         serializedVersion: 2
@@ -918,8 +1080,9 @@ TextureImporter:
         width: 30
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_66
       rect:
         serializedVersion: 2
@@ -928,8 +1091,9 @@ TextureImporter:
         width: 28
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_67
       rect:
         serializedVersion: 2
@@ -938,8 +1102,9 @@ TextureImporter:
         width: 28
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_68
       rect:
         serializedVersion: 2
@@ -948,8 +1113,9 @@ TextureImporter:
         width: 30
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_69
       rect:
         serializedVersion: 2
@@ -958,8 +1124,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_70
       rect:
         serializedVersion: 2
@@ -968,8 +1135,9 @@ TextureImporter:
         width: 25
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_71
       rect:
         serializedVersion: 2
@@ -978,8 +1146,9 @@ TextureImporter:
         width: 24
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_72
       rect:
         serializedVersion: 2
@@ -988,8 +1157,9 @@ TextureImporter:
         width: 24
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_73
       rect:
         serializedVersion: 2
@@ -998,8 +1168,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_74
       rect:
         serializedVersion: 2
@@ -1008,8 +1179,9 @@ TextureImporter:
         width: 29
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_75
       rect:
         serializedVersion: 2
@@ -1018,8 +1190,9 @@ TextureImporter:
         width: 26
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_76
       rect:
         serializedVersion: 2
@@ -1028,8 +1201,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_77
       rect:
         serializedVersion: 2
@@ -1038,8 +1212,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_78
       rect:
         serializedVersion: 2
@@ -1048,8 +1223,9 @@ TextureImporter:
         width: 30
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_79
       rect:
         serializedVersion: 2
@@ -1058,8 +1234,9 @@ TextureImporter:
         width: 30
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_80
       rect:
         serializedVersion: 2
@@ -1068,8 +1245,9 @@ TextureImporter:
         width: 30
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_81
       rect:
         serializedVersion: 2
@@ -1078,8 +1256,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_82
       rect:
         serializedVersion: 2
@@ -1088,8 +1267,9 @@ TextureImporter:
         width: 30
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_83
       rect:
         serializedVersion: 2
@@ -1098,8 +1278,9 @@ TextureImporter:
         width: 30
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_84
       rect:
         serializedVersion: 2
@@ -1108,8 +1289,9 @@ TextureImporter:
         width: 29
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_85
       rect:
         serializedVersion: 2
@@ -1118,8 +1300,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_86
       rect:
         serializedVersion: 2
@@ -1128,8 +1311,9 @@ TextureImporter:
         width: 30
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_87
       rect:
         serializedVersion: 2
@@ -1138,8 +1322,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_88
       rect:
         serializedVersion: 2
@@ -1148,8 +1333,9 @@ TextureImporter:
         width: 25
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_89
       rect:
         serializedVersion: 2
@@ -1158,8 +1344,9 @@ TextureImporter:
         width: 24
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_90
       rect:
         serializedVersion: 2
@@ -1168,8 +1355,9 @@ TextureImporter:
         width: 24
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_91
       rect:
         serializedVersion: 2
@@ -1178,8 +1366,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_92
       rect:
         serializedVersion: 2
@@ -1188,8 +1377,9 @@ TextureImporter:
         width: 29
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_93
       rect:
         serializedVersion: 2
@@ -1198,8 +1388,9 @@ TextureImporter:
         width: 26
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_94
       rect:
         serializedVersion: 2
@@ -1208,8 +1399,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_95
       rect:
         serializedVersion: 2
@@ -1218,8 +1410,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_96
       rect:
         serializedVersion: 2
@@ -1228,8 +1421,9 @@ TextureImporter:
         width: 30
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_97
       rect:
         serializedVersion: 2
@@ -1238,8 +1432,9 @@ TextureImporter:
         width: 28
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_98
       rect:
         serializedVersion: 2
@@ -1248,8 +1443,9 @@ TextureImporter:
         width: 28
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_99
       rect:
         serializedVersion: 2
@@ -1258,8 +1454,9 @@ TextureImporter:
         width: 28
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_100
       rect:
         serializedVersion: 2
@@ -1268,8 +1465,16 @@ TextureImporter:
         width: 35
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.914703, y: 25.802734}
+        - {x: -16.914703, y: 22.802734}
+        - {x: -16.914703, y: -24.197266}
+        - {x: 6.0852966, y: -24.197266}
+        - {x: 18.085297, y: -1.1972656}
+        - {x: 18.085297, y: 14.802734}
+        - {x: 9.085297, y: 25.802734}
     - name: Character3Spear_101
       rect:
         serializedVersion: 2
@@ -1278,8 +1483,14 @@ TextureImporter:
         width: 38
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.373047, y: 25.802734}
+        - {x: -18.373047, y: -24.197266}
+        - {x: 12.626953, y: -24.197266}
+        - {x: 19.626953, y: -5.1972656}
+        - {x: 19.626953, y: 25.802734}
     - name: Character3Spear_102
       rect:
         serializedVersion: 2
@@ -1288,8 +1499,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_103
       rect:
         serializedVersion: 2
@@ -1298,8 +1510,9 @@ TextureImporter:
         width: 27
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_104
       rect:
         serializedVersion: 2
@@ -1308,8 +1521,9 @@ TextureImporter:
         width: 25
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_105
       rect:
         serializedVersion: 2
@@ -1318,8 +1532,18 @@ TextureImporter:
         width: 34
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.2115784, y: 25.761108}
+        - {x: -11.211578, y: 18.761108}
+        - {x: -16.211578, y: 8.761108}
+        - {x: -16.211578, y: -11.238892}
+        - {x: -10.211578, y: -24.238892}
+        - {x: 14.788422, y: -24.238892}
+        - {x: 17.788422, y: -21.238892}
+        - {x: 17.788422, y: 20.761108}
+        - {x: 16.788422, y: 25.761108}
     - name: Character3Spear_106
       rect:
         serializedVersion: 2
@@ -1328,8 +1552,17 @@ TextureImporter:
         width: 35
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.639313, y: 25.761108}
+        - {x: -16.639313, y: 19.761108}
+        - {x: -16.639313, y: -16.238892}
+        - {x: -12.639313, y: -24.238892}
+        - {x: 16.360687, y: -24.238892}
+        - {x: 18.360687, y: -21.238892}
+        - {x: 18.360687, y: 16.761108}
+        - {x: 16.360687, y: 25.761108}
     - name: Character3Spear_107
       rect:
         serializedVersion: 2
@@ -1338,8 +1571,17 @@ TextureImporter:
         width: 34
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.128235, y: 25.761108}
+        - {x: -16.128235, y: 14.761108}
+        - {x: -16.128235, y: -6.2388916}
+        - {x: -6.128235, y: -23.238892}
+        - {x: -1.1282349, y: -24.238892}
+        - {x: 14.871765, y: -24.238892}
+        - {x: 17.871765, y: -16.238892}
+        - {x: 17.871765, y: 25.761108}
     - name: Character3Spear_108
       rect:
         serializedVersion: 2
@@ -1348,8 +1590,9 @@ TextureImporter:
         width: 30
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_109
       rect:
         serializedVersion: 2
@@ -1358,8 +1601,9 @@ TextureImporter:
         width: 29
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_110
       rect:
         serializedVersion: 2
@@ -1368,8 +1612,9 @@ TextureImporter:
         width: 29
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_111
       rect:
         serializedVersion: 2
@@ -1378,8 +1623,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_112
       rect:
         serializedVersion: 2
@@ -1388,8 +1634,16 @@ TextureImporter:
         width: 34
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.414703, y: 26.219482}
+        - {x: -16.414703, y: 25.219482}
+        - {x: -16.414703, y: -24.780518}
+        - {x: 15.585297, y: -24.780518}
+        - {x: 17.585297, y: -21.780518}
+        - {x: 17.585297, y: 12.219482}
+        - {x: 8.585297, y: 26.219482}
     - name: Character3Spear_113
       rect:
         serializedVersion: 2
@@ -1398,8 +1652,17 @@ TextureImporter:
         width: 36
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.626953, y: 26.219482}
+        - {x: -12.373047, y: 26.219482}
+        - {x: -17.373047, y: 24.219482}
+        - {x: -17.373047, y: -24.780518}
+        - {x: 15.626953, y: -24.780518}
+        - {x: 18.626953, y: -15.780518}
+        - {x: 18.626953, y: 9.219482}
+        - {x: 15.626953, y: 15.219482}
     - name: Character3Spear_114
       rect:
         serializedVersion: 2
@@ -1408,8 +1671,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_115
       rect:
         serializedVersion: 2
@@ -1418,8 +1682,9 @@ TextureImporter:
         width: 27
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_116
       rect:
         serializedVersion: 2
@@ -1428,8 +1693,9 @@ TextureImporter:
         width: 25
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_117
       rect:
         serializedVersion: 2
@@ -1438,8 +1704,18 @@ TextureImporter:
         width: 34
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.543625, y: 21.677734}
+        - {x: 5.543625, y: 25.677734}
+        - {x: -10.456375, y: 25.677734}
+        - {x: -16.456375, y: 24.677734}
+        - {x: -16.456375, y: -24.322266}
+        - {x: 8.543625, y: -24.322266}
+        - {x: 16.543625, y: -19.322266}
+        - {x: 17.543625, y: -17.322266}
+        - {x: 17.543625, y: 8.677734}
     - name: Character3Spear_118
       rect:
         serializedVersion: 2
@@ -1448,8 +1724,17 @@ TextureImporter:
         width: 35
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.0852966, y: 25.677734}
+        - {x: -9.914703, y: 25.677734}
+        - {x: -16.914703, y: 22.677734}
+        - {x: -16.914703, y: -24.322266}
+        - {x: 11.085297, y: -24.322266}
+        - {x: 18.085297, y: -5.3222656}
+        - {x: 18.085297, y: 13.677734}
+        - {x: 11.085297, y: 21.677734}
     - name: Character3Spear_119
       rect:
         serializedVersion: 2
@@ -1458,8 +1743,16 @@ TextureImporter:
         width: 34
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.373047, y: 25.677734}
+        - {x: -16.373047, y: 22.677734}
+        - {x: -16.373047, y: -24.322266}
+        - {x: 10.626953, y: -24.322266}
+        - {x: 17.626953, y: -1.3222656}
+        - {x: 17.626953, y: 13.677734}
+        - {x: 7.626953, y: 25.677734}
     - name: Character3Spear_120
       rect:
         serializedVersion: 2
@@ -1468,8 +1761,9 @@ TextureImporter:
         width: 30
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_121
       rect:
         serializedVersion: 2
@@ -1478,8 +1772,9 @@ TextureImporter:
         width: 30
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_122
       rect:
         serializedVersion: 2
@@ -1488,8 +1783,9 @@ TextureImporter:
         width: 28
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_123
       rect:
         serializedVersion: 2
@@ -1498,8 +1794,9 @@ TextureImporter:
         width: 28
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_124
       rect:
         serializedVersion: 2
@@ -1508,8 +1805,9 @@ TextureImporter:
         width: 31
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_125
       rect:
         serializedVersion: 2
@@ -1518,8 +1816,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_126
       rect:
         serializedVersion: 2
@@ -1528,8 +1827,9 @@ TextureImporter:
         width: 30
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_127
       rect:
         serializedVersion: 2
@@ -1538,8 +1838,9 @@ TextureImporter:
         width: 31
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_128
       rect:
         serializedVersion: 2
@@ -1548,8 +1849,9 @@ TextureImporter:
         width: 32
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_129
       rect:
         serializedVersion: 2
@@ -1558,8 +1860,9 @@ TextureImporter:
         width: 31
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_130
       rect:
         serializedVersion: 2
@@ -1568,8 +1871,9 @@ TextureImporter:
         width: 28
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_131
       rect:
         serializedVersion: 2
@@ -1578,8 +1882,9 @@ TextureImporter:
         width: 28
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_132
       rect:
         serializedVersion: 2
@@ -1588,8 +1893,9 @@ TextureImporter:
         width: 28
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_133
       rect:
         serializedVersion: 2
@@ -1598,8 +1904,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_134
       rect:
         serializedVersion: 2
@@ -1608,8 +1915,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_135
       rect:
         serializedVersion: 2
@@ -1618,8 +1926,16 @@ TextureImporter:
         width: 34
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.314453, y: 25.594421}
+        - {x: -16.314453, y: 14.594421}
+        - {x: -16.314453, y: -20.405579}
+        - {x: -8.314453, y: -24.405579}
+        - {x: 17.685547, y: -24.405579}
+        - {x: 17.685547, y: 22.594421}
+        - {x: 16.685547, y: 25.594421}
     - name: Character3Spear_136
       rect:
         serializedVersion: 2
@@ -1628,8 +1944,17 @@ TextureImporter:
         width: 37
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.7115784, y: 24.594421}
+        - {x: -11.711578, y: 22.594421}
+        - {x: -17.711578, y: 11.594421}
+        - {x: -17.711578, y: -19.405579}
+        - {x: -10.711578, y: -23.405579}
+        - {x: 19.288422, y: -23.405579}
+        - {x: 19.288422, y: 22.594421}
+        - {x: 16.288422, y: 24.594421}
     - name: Character3Spear_137
       rect:
         serializedVersion: 2
@@ -1638,8 +1963,17 @@ TextureImporter:
         width: 37
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.6699219, y: 25.594421}
+        - {x: -17.669922, y: 12.594421}
+        - {x: -17.669922, y: -8.405579}
+        - {x: -9.669922, y: -24.405579}
+        - {x: 14.330078, y: -24.405579}
+        - {x: 19.330078, y: -14.405579}
+        - {x: 19.330078, y: 14.594421}
+        - {x: 14.330078, y: 25.594421}
     - name: Character3Spear_138
       rect:
         serializedVersion: 2
@@ -1648,8 +1982,16 @@ TextureImporter:
         width: 35
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5976562, y: 25.594421}
+        - {x: -16.597656, y: 16.594421}
+        - {x: -16.597656, y: -8.405579}
+        - {x: -10.597656, y: -24.405579}
+        - {x: 18.402344, y: -24.405579}
+        - {x: 18.402344, y: 23.594421}
+        - {x: 16.402344, y: 25.594421}
     - name: Character3Spear_139
       rect:
         serializedVersion: 2
@@ -1658,8 +2000,15 @@ TextureImporter:
         width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.05597, y: 25.594421}
+        - {x: -17.05597, y: -15.405579}
+        - {x: -15.055969, y: -24.405579}
+        - {x: 18.94403, y: -24.405579}
+        - {x: 18.94403, y: 22.594421}
+        - {x: 16.94403, y: 25.594421}
     - name: Character3Spear_140
       rect:
         serializedVersion: 2
@@ -1668,8 +2017,18 @@ TextureImporter:
         width: 38
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.955078, y: 25.594421}
+        - {x: -5.044922, y: 25.594421}
+        - {x: -18.044922, y: 16.594421}
+        - {x: -18.044922, y: -14.405579}
+        - {x: -15.044922, y: -24.405579}
+        - {x: 15.955078, y: -24.405579}
+        - {x: 19.955078, y: -14.405579}
+        - {x: 19.955078, y: 20.594421}
+        - {x: 18.955078, y: 24.594421}
     - name: Character3Spear_141
       rect:
         serializedVersion: 2
@@ -1678,8 +2037,18 @@ TextureImporter:
         width: 40
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.996765, y: 25.594421}
+        - {x: -8.003235, y: 25.594421}
+        - {x: -19.003235, y: 7.5944214}
+        - {x: -19.003235, y: -7.4055786}
+        - {x: -8.003235, y: -24.405579}
+        - {x: 13.996765, y: -24.405579}
+        - {x: 15.996765, y: -22.405579}
+        - {x: 20.996765, y: -16.405579}
+        - {x: 20.996765, y: 19.594421}
     - name: Character3Spear_142
       rect:
         serializedVersion: 2
@@ -1688,8 +2057,18 @@ TextureImporter:
         width: 37
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.038452, y: 25.594421}
+        - {x: -7.961548, y: 25.594421}
+        - {x: -16.961548, y: 9.594421}
+        - {x: -17.961548, y: 8.594421}
+        - {x: -17.961548, y: -6.4055786}
+        - {x: -7.961548, y: -24.405579}
+        - {x: 14.038452, y: -24.405579}
+        - {x: 16.038452, y: -22.405579}
+        - {x: 18.038452, y: -18.405579}
     - name: Character3Spear_143
       rect:
         serializedVersion: 2
@@ -1698,8 +2077,16 @@ TextureImporter:
         width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.4199219, y: 25.594421}
+        - {x: -17.419922, y: 13.594421}
+        - {x: -17.419922, y: -17.405579}
+        - {x: -14.419922, y: -24.405579}
+        - {x: 17.580078, y: -24.405579}
+        - {x: 17.580078, y: 21.594421}
+        - {x: 11.580078, y: 25.594421}
     - name: Character3Spear_144
       rect:
         serializedVersion: 2
@@ -1708,8 +2095,17 @@ TextureImporter:
         width: 37
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.121765, y: 25.594421}
+        - {x: -8.878235, y: 25.594421}
+        - {x: -17.878235, y: 16.594421}
+        - {x: -17.878235, y: -14.405579}
+        - {x: -12.878235, y: -24.405579}
+        - {x: 15.121765, y: -24.405579}
+        - {x: 18.121765, y: -22.405579}
+        - {x: 18.121765, y: 19.594421}
     - name: Character3Spear_145
       rect:
         serializedVersion: 2
@@ -1718,8 +2114,16 @@ TextureImporter:
         width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.836548, y: 25.594421}
+        - {x: -17.836548, y: 15.594421}
+        - {x: -17.836548, y: -13.405579}
+        - {x: -12.836548, y: -24.405579}
+        - {x: 18.163452, y: -24.405579}
+        - {x: 18.163452, y: 17.594421}
+        - {x: 14.163452, y: 25.594421}
     - name: Character3Spear_146
       rect:
         serializedVersion: 2
@@ -1728,8 +2132,9 @@ TextureImporter:
         width: 30
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_147
       rect:
         serializedVersion: 2
@@ -1738,8 +2143,9 @@ TextureImporter:
         width: 29
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_148
       rect:
         serializedVersion: 2
@@ -1748,8 +2154,9 @@ TextureImporter:
         width: 29
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_149
       rect:
         serializedVersion: 2
@@ -1758,8 +2165,9 @@ TextureImporter:
         width: 28
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_150
       rect:
         serializedVersion: 2
@@ -1768,8 +2176,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_151
       rect:
         serializedVersion: 2
@@ -1778,8 +2187,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_152
       rect:
         serializedVersion: 2
@@ -1788,8 +2198,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_153
       rect:
         serializedVersion: 2
@@ -1798,8 +2209,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_154
       rect:
         serializedVersion: 2
@@ -1808,8 +2220,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_155
       rect:
         serializedVersion: 2
@@ -1818,8 +2231,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_156
       rect:
         serializedVersion: 2
@@ -1828,8 +2242,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_157
       rect:
         serializedVersion: 2
@@ -1838,8 +2253,9 @@ TextureImporter:
         width: 29
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_158
       rect:
         serializedVersion: 2
@@ -1848,8 +2264,9 @@ TextureImporter:
         width: 28
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_159
       rect:
         serializedVersion: 2
@@ -1858,8 +2275,9 @@ TextureImporter:
         width: 24
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_160
       rect:
         serializedVersion: 2
@@ -1868,8 +2286,9 @@ TextureImporter:
         width: 27
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_161
       rect:
         serializedVersion: 2
@@ -1878,8 +2297,19 @@ TextureImporter:
         width: 34
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.59375, y: 25.011108}
+        - {x: -15.40625, y: 25.011108}
+        - {x: -16.40625, y: 23.011108}
+        - {x: -16.40625, y: -20.988892}
+        - {x: -13.40625, y: -23.988892}
+        - {x: 10.59375, y: -23.988892}
+        - {x: 13.59375, y: -22.988892}
+        - {x: 17.59375, y: -9.988892}
+        - {x: 17.59375, y: 7.0111084}
+        - {x: 13.59375, y: 20.011108}
     - name: Character3Spear_162
       rect:
         serializedVersion: 2
@@ -1888,8 +2318,17 @@ TextureImporter:
         width: 37
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.1660156, y: 24.511108}
+        - {x: -17.833984, y: 24.511108}
+        - {x: -17.833984, y: -23.488892}
+        - {x: 7.1660156, y: -23.488892}
+        - {x: 12.166016, y: -22.488892}
+        - {x: 19.166016, y: -12.488892}
+        - {x: 19.166016, y: 5.5111084}
+        - {x: 15.166016, y: 19.511108}
     - name: Character3Spear_163
       rect:
         serializedVersion: 2
@@ -1898,8 +2337,19 @@ TextureImporter:
         width: 37
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.207703, y: 13.011108}
+        - {x: 11.207703, y: 25.011108}
+        - {x: -12.792297, y: 25.011108}
+        - {x: -17.792297, y: 23.011108}
+        - {x: -17.792297, y: -10.988892}
+        - {x: -14.792297, y: -21.988892}
+        - {x: -12.792297, y: -23.988892}
+        - {x: 7.2077026, y: -23.988892}
+        - {x: 9.207703, y: -21.988892}
+        - {x: 19.207703, y: -3.9888916}
     - name: Character3Spear_164
       rect:
         serializedVersion: 2
@@ -1908,8 +2358,16 @@ TextureImporter:
         width: 35
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.842438, y: 25.011108}
+        - {x: -16.842438, y: 24.011108}
+        - {x: -16.842438, y: -23.988892}
+        - {x: 8.157562, y: -23.988892}
+        - {x: 18.157562, y: -10.988892}
+        - {x: 18.157562, y: 14.011108}
+        - {x: 11.157562, y: 25.011108}
     - name: Character3Spear_165
       rect:
         serializedVersion: 2
@@ -1918,8 +2376,17 @@ TextureImporter:
         width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.729828, y: 25.011108}
+        - {x: -17.270172, y: 25.011108}
+        - {x: -17.270172, y: -21.988892}
+        - {x: -15.270172, y: -23.988892}
+        - {x: 11.729828, y: -23.988892}
+        - {x: 18.729828, y: -4.9888916}
+        - {x: 18.729828, y: 12.011108}
+        - {x: 17.729828, y: 15.011108}
     - name: Character3Spear_166
       rect:
         serializedVersion: 2
@@ -1928,8 +2395,18 @@ TextureImporter:
         width: 38
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.8632812, y: 25.011108}
+        - {x: -9.136719, y: 25.011108}
+        - {x: -18.136719, y: 17.011108}
+        - {x: -18.136719, y: -9.988892}
+        - {x: -14.136719, y: -23.988892}
+        - {x: 5.8632812, y: -23.988892}
+        - {x: 11.863281, y: -21.988892}
+        - {x: 19.863281, y: -1.9888916}
+        - {x: 19.863281, y: 13.011108}
     - name: Character3Spear_167
       rect:
         serializedVersion: 2
@@ -1938,8 +2415,17 @@ TextureImporter:
         width: 40
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.033844, y: 25.011108}
+        - {x: -19.033844, y: 13.011108}
+        - {x: -19.033844, y: -9.988892}
+        - {x: -11.033844, y: -23.988892}
+        - {x: 13.966156, y: -23.988892}
+        - {x: 20.966156, y: -2.9888916}
+        - {x: 20.966156, y: 11.011108}
+        - {x: 9.966156, y: 25.011108}
     - name: Character3Spear_168
       rect:
         serializedVersion: 2
@@ -1948,8 +2434,17 @@ TextureImporter:
         width: 37
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.583984, y: 25.011108}
+        - {x: -17.583984, y: 18.011108}
+        - {x: -17.583984, y: -13.988892}
+        - {x: -13.583984, y: -23.988892}
+        - {x: 10.416016, y: -23.988892}
+        - {x: 19.416016, y: -3.9888916}
+        - {x: 19.416016, y: 13.011108}
+        - {x: 9.416016, y: 25.011108}
     - name: Character3Spear_169
       rect:
         serializedVersion: 2
@@ -1958,8 +2453,16 @@ TextureImporter:
         width: 36
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.072876, y: 25.011108}
+        - {x: -17.072876, y: 21.011108}
+        - {x: -17.072876, y: -23.988892}
+        - {x: 8.927124, y: -23.988892}
+        - {x: 18.927124, y: -10.988892}
+        - {x: 18.927124, y: 13.011108}
+        - {x: 12.927124, y: 25.011108}
     - name: Character3Spear_170
       rect:
         serializedVersion: 2
@@ -1968,8 +2471,19 @@ TextureImporter:
         width: 37
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.50061, y: 25.011108}
+        - {x: -17.50061, y: 24.011108}
+        - {x: -17.50061, y: -11.988892}
+        - {x: -15.50061, y: -16.988892}
+        - {x: -12.50061, y: -23.988892}
+        - {x: 3.4993896, y: -23.988892}
+        - {x: 11.49939, y: -21.988892}
+        - {x: 19.49939, y: -6.9888916}
+        - {x: 19.49939, y: 18.011108}
+        - {x: 14.49939, y: 25.011108}
     - name: Character3Spear_171
       rect:
         serializedVersion: 2
@@ -1978,8 +2492,17 @@ TextureImporter:
         width: 35
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.479858, y: 25.011108}
+        - {x: -16.520142, y: 25.011108}
+        - {x: -16.520142, y: -21.988892}
+        - {x: -14.520142, y: -23.988892}
+        - {x: 2.4798584, y: -23.988892}
+        - {x: 10.479858, y: -21.988892}
+        - {x: 18.479858, y: -5.9888916}
+        - {x: 18.479858, y: 19.011108}
     - name: Character3Spear_172
       rect:
         serializedVersion: 2
@@ -1988,8 +2511,9 @@ TextureImporter:
         width: 30
         height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_173
       rect:
         serializedVersion: 2
@@ -1998,8 +2522,9 @@ TextureImporter:
         width: 30
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_174
       rect:
         serializedVersion: 2
@@ -2008,8 +2533,9 @@ TextureImporter:
         width: 30
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_175
       rect:
         serializedVersion: 2
@@ -2018,8 +2544,9 @@ TextureImporter:
         width: 30
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_176
       rect:
         serializedVersion: 2
@@ -2028,8 +2555,9 @@ TextureImporter:
         width: 31
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_177
       rect:
         serializedVersion: 2
@@ -2038,8 +2566,15 @@ TextureImporter:
         width: 36
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.28125, y: 19.53064}
+        - {x: -17.28125, y: -17.46936}
+        - {x: -15.28125, y: -18.46936}
+        - {x: 18.71875, y: -18.46936}
+        - {x: 18.71875, y: 17.53064}
+        - {x: 17.71875, y: 19.53064}
     - name: Character3Spear_178
       rect:
         serializedVersion: 2
@@ -2047,9 +2582,18 @@ TextureImporter:
         y: 640
         width: 87
         height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.58, y: 0.45}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48.623978, y: -8.208313}
+        - {x: -27.623978, y: -21.208313}
+        - {x: 21.376022, y: -21.208313}
+        - {x: 36.376022, y: -15.208313}
+        - {x: 36.376022, y: 0.791687}
+        - {x: 10.376022, y: 26.791687}
+        - {x: -25.623978, y: 26.791687}
+        - {x: -48.623978, y: 11.791687}
     - name: Character3Spear_179
       rect:
         serializedVersion: 2
@@ -2057,9 +2601,18 @@ TextureImporter:
         y: 639
         width: 82
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.62, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46.260254, y: 26.886108}
+        - {x: -49.260254, y: 24.886108}
+        - {x: -49.260254, y: -6.1138916}
+        - {x: -47.260254, y: -17.113892}
+        - {x: -28.260254, y: -22.113892}
+        - {x: 31.739746, y: -22.113892}
+        - {x: 31.739746, y: 9.886108}
+        - {x: 13.739746, y: 26.886108}
     - name: Character3Spear_180
       rect:
         serializedVersion: 2
@@ -2067,9 +2620,20 @@ TextureImporter:
         y: 639
         width: 63
         height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.67, y: 0.335}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.245972, y: 37.164}
+        - {x: -14.754028, y: 44.164}
+        - {x: -40.75403, y: 44.164}
+        - {x: -40.75403, y: 36.164}
+        - {x: -6.7540283, y: -20.835999}
+        - {x: -3.7540283, y: -21.835999}
+        - {x: 17.245972, y: -21.835999}
+        - {x: 21.245972, y: -18.835999}
+        - {x: 21.245972, y: 15.164001}
+        - {x: 19.245972, y: 20.164001}
     - name: Character3Spear_181
       rect:
         serializedVersion: 2
@@ -2077,9 +2641,10 @@ TextureImporter:
         y: 639
         width: 28
         height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.45, y: 0.27}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_182
       rect:
         serializedVersion: 2
@@ -2087,9 +2652,10 @@ TextureImporter:
         y: 639
         width: 28
         height: 95
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.45535713, y: 0.23684789}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_183
       rect:
         serializedVersion: 2
@@ -2097,9 +2663,10 @@ TextureImporter:
         y: 639
         width: 28
         height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.47767857, y: 0.21481234}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_184
       rect:
         serializedVersion: 2
@@ -2107,9 +2674,10 @@ TextureImporter:
         y: 639
         width: 28
         height: 95
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.45535713, y: 0.24342683}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_185
       rect:
         serializedVersion: 2
@@ -2117,9 +2685,10 @@ TextureImporter:
         y: 639
         width: 28
         height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.47767857, y: 0.27011985}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_186
       rect:
         serializedVersion: 2
@@ -2127,9 +2696,20 @@ TextureImporter:
         y: 449
         width: 82
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5632966, y: 0.43512022}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.999748, y: -6.094208}
+        - {x: 18.999748, y: 20.905792}
+        - {x: 12.999748, y: 27.905792}
+        - {x: -45.00025, y: 27.905792}
+        - {x: -45.00025, y: -5.094208}
+        - {x: -36.00025, y: -21.094208}
+        - {x: 31.999748, y: -21.094208}
+        - {x: 35.99975, y: -20.094208}
+        - {x: 35.99975, y: -11.094208}
+        - {x: 32.99975, y: -9.094208}
     - name: Character3Spear_187
       rect:
         serializedVersion: 2
@@ -2137,9 +2717,17 @@ TextureImporter:
         y: 449
         width: 84
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.7162632, y: 0.43512022}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.52559, y: 27.905792}
+        - {x: -58.52559, y: 18.905792}
+        - {x: -58.52559, y: -5.094208}
+        - {x: -20.525589, y: -21.094208}
+        - {x: 21.474411, y: -21.094208}
+        - {x: 23.474411, y: -20.094208}
+        - {x: 23.474411, y: 27.905792}
     - name: Character3Spear_188
       rect:
         serializedVersion: 2
@@ -2147,9 +2735,19 @@ TextureImporter:
         y: 449
         width: 87
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.71626335, y: 0.43512022}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.562256, y: 27.905792}
+        - {x: -17.437744, y: 27.905792}
+        - {x: -60.437744, y: 0.90579224}
+        - {x: -60.437744, y: -13.094208}
+        - {x: -33.437744, y: -21.094208}
+        - {x: 22.562256, y: -21.094208}
+        - {x: 24.562256, y: -14.094208}
+        - {x: 24.562256, y: 12.905792}
+        - {x: 19.562256, y: 24.905792}
     - name: Character3Spear_189
       rect:
         serializedVersion: 2
@@ -2157,9 +2755,21 @@ TextureImporter:
         y: 449
         width: 87
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.67897683, y: 0.43512022}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.740112, y: 27.905792}
+        - {x: -8.259888, y: 27.905792}
+        - {x: -10.259888, y: 20.905792}
+        - {x: -57.259888, y: 2.9057922}
+        - {x: -57.259888, y: -6.094208}
+        - {x: -50.259888, y: -11.094208}
+        - {x: -6.2598877, y: -21.094208}
+        - {x: 16.740112, y: -21.094208}
+        - {x: 19.740112, y: -20.094208}
+        - {x: 27.740112, y: -8.094208}
+        - {x: 27.740112, y: 10.905792}
     - name: Character3Spear_190
       rect:
         serializedVersion: 2
@@ -2167,9 +2777,21 @@ TextureImporter:
         y: 449
         width: 87
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.7460923, y: 0.43512022}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.949585, y: 27.905792}
+        - {x: -4.050415, y: 27.905792}
+        - {x: -14.050415, y: 23.905792}
+        - {x: -63.050415, y: -0.09420776}
+        - {x: -63.050415, y: -7.094208}
+        - {x: -56.050415, y: -11.094208}
+        - {x: -28.050415, y: -21.094208}
+        - {x: 20.949585, y: -21.094208}
+        - {x: 22.949585, y: -17.094208}
+        - {x: 22.949585, y: 17.905792}
+        - {x: 20.949585, y: 20.905792}
     - name: Character3Spear_191
       rect:
         serializedVersion: 2
@@ -2177,9 +2799,17 @@ TextureImporter:
         y: 449
         width: 87
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.76100737, y: 0.4480963}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -64.12219, y: -9.723145}
+        - {x: -58.122192, y: -18.723145}
+        - {x: -37.122192, y: -21.723145}
+        - {x: 21.877808, y: -21.723145}
+        - {x: 21.877808, y: 27.276855}
+        - {x: -58.122192, y: 27.276855}
+        - {x: -64.12219, y: 26.276855}
     - name: Character3Spear_192
       rect:
         serializedVersion: 2
@@ -2187,9 +2817,20 @@ TextureImporter:
         y: 449
         width: 87
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.7237212, y: 0.4480963}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.025146, y: 27.276855}
+        - {x: -21.974854, y: 27.276855}
+        - {x: -60.974854, y: -0.72314453}
+        - {x: -60.974854, y: -7.7231445}
+        - {x: -53.974854, y: -11.723145}
+        - {x: -8.9748535, y: -21.723145}
+        - {x: 19.025146, y: -21.723145}
+        - {x: 25.025146, y: -13.723145}
+        - {x: 25.025146, y: 6.2768555}
+        - {x: 20.025146, y: 20.276855}
     - name: Character3Spear_193
       rect:
         serializedVersion: 2
@@ -2197,19 +2838,41 @@ TextureImporter:
         y: 449
         width: 87
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.6789761, y: 0.43512022}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.740234, y: 27.905792}
+        - {x: -3.2597656, y: 27.905792}
+        - {x: -6.2597656, y: 26.905792}
+        - {x: -8.259766, y: 20.905792}
+        - {x: -57.259766, y: 3.9057922}
+        - {x: -57.259766, y: -7.094208}
+        - {x: -50.259766, y: -11.094208}
+        - {x: -9.259766, y: -21.094208}
+        - {x: 21.740234, y: -21.094208}
+        - {x: 28.740234, y: -16.094208}
+        - {x: 28.740234, y: 13.905792}
+        - {x: 24.740234, y: 24.905792}
     - name: Character3Spear_194
       rect:
         serializedVersion: 2
-        x: 60
+        x: 59
         y: 257
         width: 87
         height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.425, y: 0.45}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.979996, y: 27.608063}
+        - {x: -35.979996, y: 14.608063}
+        - {x: -35.979996, y: -11.391937}
+        - {x: -23.979996, y: -22.391937}
+        - {x: 32.020004, y: -22.391937}
+        - {x: 49.020004, y: -18.391937}
+        - {x: 49.020004, y: 1.6080627}
+        - {x: 18.020004, y: 27.608063}
     - name: Character3Spear_195
       rect:
         serializedVersion: 2
@@ -2217,19 +2880,37 @@ TextureImporter:
         y: 253
         width: 82
         height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.37, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5607, y: 27.258469}
+        - {x: -29.5607, y: 23.258469}
+        - {x: -29.5607, y: -6.7415314}
+        - {x: -13.560699, y: -26.741531}
+        - {x: 50.4393, y: -26.741531}
+        - {x: 50.4393, y: -15.741531}
+        - {x: 23.4393, y: 27.258469}
     - name: Character3Spear_196
       rect:
         serializedVersion: 2
-        x: 456
+        x: 455
         y: 232
         width: 63
         height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.395, y: 0.62}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.509918, y: 29.560104}
+        - {x: -21.509918, y: 24.560104}
+        - {x: -24.509918, y: 19.560104}
+        - {x: -24.509918, y: 4.5601044}
+        - {x: -10.509918, y: -21.439896}
+        - {x: 29.490082, y: -45.439896}
+        - {x: 37.49008, y: -45.439896}
+        - {x: 37.49008, y: -19.439896}
+        - {x: 12.490082, y: 29.560104}
     - name: Character3Spear_197
       rect:
         serializedVersion: 2
@@ -2237,9 +2918,10 @@ TextureImporter:
         y: 232
         width: 29
         height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_198
       rect:
         serializedVersion: 2
@@ -2247,9 +2929,10 @@ TextureImporter:
         y: 224
         width: 29
         height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.63}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_199
       rect:
         serializedVersion: 2
@@ -2257,9 +2940,10 @@ TextureImporter:
         y: 216
         width: 29
         height: 91
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.69}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_200
       rect:
         serializedVersion: 2
@@ -2267,9 +2951,10 @@ TextureImporter:
         y: 224
         width: 29
         height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.63}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_201
       rect:
         serializedVersion: 2
@@ -2277,9 +2962,10 @@ TextureImporter:
         y: 232
         width: 28
         height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: Character3Spear_202
       rect:
         serializedVersion: 2
@@ -2287,9 +2973,18 @@ TextureImporter:
         y: 65
         width: 82
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.42554522, y: 0.43339416}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.97866, y: 27.739456}
+        - {x: -21.97866, y: 25.739456}
+        - {x: -33.97866, y: -8.260544}
+        - {x: -33.97866, y: -21.260544}
+        - {x: 10.021339, y: -21.260544}
+        - {x: 45.02134, y: -3.2605438}
+        - {x: 46.02134, y: -1.2605438}
+        - {x: 46.02134, y: 27.739456}
     - name: Character3Spear_203
       rect:
         serializedVersion: 2
@@ -2297,9 +2992,19 @@ TextureImporter:
         y: 65
         width: 84
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.28195336, y: 0.43339416}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.88385, y: 27.739456}
+        - {x: -20.88385, y: 25.739456}
+        - {x: -22.88385, y: 17.739456}
+        - {x: -22.88385, y: -18.260544}
+        - {x: -15.88385, y: -21.260544}
+        - {x: 41.11615, y: -21.260544}
+        - {x: 60.11615, y: -8.260544}
+        - {x: 60.11615, y: 16.739456}
+        - {x: 18.11615, y: 27.739456}
     - name: Character3Spear_204
       rect:
         serializedVersion: 2
@@ -2307,9 +3012,18 @@ TextureImporter:
         y: 65
         width: 87
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.2703331, y: 0.44449478}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 47.355316, y: 27.201408}
+        - {x: -22.644684, y: 27.201408}
+        - {x: -22.644684, y: -15.798592}
+        - {x: -12.644684, y: -21.798592}
+        - {x: 18.355316, y: -21.798592}
+        - {x: 63.355316, y: -10.798592}
+        - {x: 63.355316, y: 14.201408}
+        - {x: 60.355316, y: 23.201408}
     - name: Character3Spear_205
       rect:
         serializedVersion: 2
@@ -2317,9 +3031,17 @@ TextureImporter:
         y: 65
         width: 87
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.29585212, y: 0.44449478}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.080078, y: 27.201408}
+        - {x: -25.080078, y: 18.201408}
+        - {x: -25.080078, y: -21.798592}
+        - {x: 33.91992, y: -21.798592}
+        - {x: 59.91992, y: -12.798592}
+        - {x: 59.91992, y: 8.201408}
+        - {x: 8.919922, y: 27.201408}
     - name: Character3Spear_206
       rect:
         serializedVersion: 2
@@ -2327,9 +3049,16 @@ TextureImporter:
         y: 65
         width: 87
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.23205636, y: 0.44449478}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.819519, y: 27.201408}
+        - {x: -19.819519, y: -21.798592}
+        - {x: 61.18048, y: -21.798592}
+        - {x: 65.18048, y: -20.798592}
+        - {x: 65.18048, y: 6.2014084}
+        - {x: 12.180481, y: 27.201408}
     - name: Character3Spear_207
       rect:
         serializedVersion: 2
@@ -2337,9 +3066,18 @@ TextureImporter:
         y: 65
         width: 87
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.21929581, y: 0.43339416}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.320435, y: 27.739456}
+        - {x: -9.679565, y: 27.739456}
+        - {x: -16.679565, y: 21.739456}
+        - {x: -18.679565, y: 11.739456}
+        - {x: -18.679565, y: -21.260544}
+        - {x: 66.320435, y: -21.260544}
+        - {x: 66.320435, y: 0.7394562}
+        - {x: 58.320435, y: 2.7394562}
     - name: Character3Spear_208
       rect:
         serializedVersion: 2
@@ -2347,9 +3085,19 @@ TextureImporter:
         y: 65
         width: 87
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.25119546, y: 0.44449478}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.122437, y: 27.201408}
+        - {x: -16.122437, y: 23.201408}
+        - {x: -21.122437, y: 6.2014084}
+        - {x: -21.122437, y: -11.798592}
+        - {x: -13.122437, y: -21.798592}
+        - {x: 25.877563, y: -21.798592}
+        - {x: 63.877563, y: -7.7985916}
+        - {x: 63.877563, y: 4.2014084}
+        - {x: 22.877563, y: 27.201408}
     - name: Character3Spear_209
       rect:
         serializedVersion: 2
@@ -2357,9 +3105,21 @@ TextureImporter:
         y: 65
         width: 87
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.3086106, y: 0.44449478}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 59.843872, y: 6.2014084}
+        - {x: 40.843872, y: 27.201408}
+        - {x: -19.156128, y: 27.201408}
+        - {x: -26.156128, y: 18.201408}
+        - {x: -26.156128, y: -17.798592}
+        - {x: -23.156128, y: -21.798592}
+        - {x: 8.843872, y: -21.798592}
+        - {x: 9.843872, y: -20.798592}
+        - {x: 32.843872, y: -21.798592}
+        - {x: 59.843872, y: -21.798592}
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

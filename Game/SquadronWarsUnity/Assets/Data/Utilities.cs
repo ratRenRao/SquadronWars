@@ -260,33 +260,29 @@ namespace Assets.Data
             switch (scope)
             {
                 case "public":
-                    properties = (List<PropertyInfo>) obj.GetType()
+                    properties = obj.GetType()
                         .GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
-                        .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()));
+                        .Where(attribute => !string.IsNullOrEmpty(attribute.ToString())).ToList();
                     break;
                 case "private":
-                    properties = (List<PropertyInfo>)obj.GetType()
+                    properties = obj.GetType()
                         .GetProperties(BindingFlags.DeclaredOnly | BindingFlags.NonPublic | BindingFlags.Instance)
-                        .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()));
+                        .Where(attribute => !string.IsNullOrEmpty(attribute.ToString())).ToList();
                     break;
                 case "all":
-                    properties = (List<PropertyInfo>)obj.GetType()
-                        .GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
-                        .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()));
+                    properties = obj.GetType()
+                        .GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | 
+                            BindingFlags.Instance)
+                        .Where(attribute => !string.IsNullOrEmpty(attribute.ToString())).ToList();
                     break;
-            }
-
-            foreach (var prop in obj.GetType().GetProperties())
-            {
-                Console.WriteLine("{0} = {1}", prop.Name, prop.GetValue(obj, null));
             }
 
             foreach (var property in properties)
             {
-                if (!property.PropertyType.IsPrimitive)
-                    dictionary.Add(property.Name, CreateNestedPropertyDictionary(property.GetValue(obj, null), property.PropertyType, scope).ToString());
-                else
+                if (property.GetType().Namespace.StartsWith("System"))
                     dictionary.Add(property.Name, property.GetValue(obj, null).ToString());
+                else
+                    dictionary.Add(property.Name, CreateNestedPropertyDictionary(property.GetValue(obj, null), property.PropertyType, scope).ToString());
             }
 
             return dictionary;
