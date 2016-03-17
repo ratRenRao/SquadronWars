@@ -36,7 +36,7 @@ namespace Assets.Data
         }
     }
 
-    class GameJSON : IJsonable
+    internal class GameJSON : IJsonable
     {
         public Action ActionOrder { get; set; }
         public List<int> CharacterQueue { get; set; }
@@ -57,7 +57,7 @@ namespace Assets.Data
         }
     }
 
-    class ActionOrder : IJsonable
+    internal class ActionOrder : IJsonable
     {
         Action.ActionType actionType { get; set; }
 
