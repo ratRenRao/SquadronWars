@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -253,10 +254,10 @@ namespace Assets.Data
                 .ToDictionary(attribute => attribute.Name, attribute => obj.GetType().GetProperty(attribute.Name).GetValue(obj, null).ToString().ToLower());
         }
 
-        public Dictionary<string, string> CreateNestedPropertyDictionary(object obj, Type type, string scope = "public")
+        public JSONObject CreateNestedJsonObject(object obj, Type type, string scope = "public")
         {
             var properties = new List<PropertyInfo>();
-            var dictionary = new Dictionary<string, string>();
+            var json = new JSONObject();
             switch (scope)
             {
                 case "public":
@@ -279,13 +280,26 @@ namespace Assets.Data
 
             foreach (var property in properties)
             {
-                if (property.GetType().Namespace.StartsWith("System"))
-                    dictionary.Add(property.Name, property.GetValue(obj, null).ToString());
+                var attribute = property.GetValue(obj, null);
+                var propertyType = attribute.GetType();
+                if (propertyType.ToString().Contains("System.Collections.Generic.List"))
+                {
+                    var tmpJson = new JSONObject();
+                    foreach (var element in (IEnumerable)property.GetValue(obj, null))
+                    {
+                        tmpJson.Add(CreateNestedJsonObject(element,
+                            property.PropertyType.GetGenericArguments().Single(), scope));
+                    }
+                    json.AddField(property.Name, tmpJson);
+                }
+                if (propertyType.ToString().StartsWith("System"))
+                    json.AddField(property.Name, attribute.ToString());
                 else
-                    dictionary.Add(property.Name, CreateNestedPropertyDictionary(property.GetValue(obj, null), property.PropertyType, scope).ToString());
+                    json.AddField(property.Name,
+                        CreateNestedJsonObject(attribute, propertyType, scope));
             }
 
-            return dictionary;
+            return json;
         } 
 
         /// <summary>
