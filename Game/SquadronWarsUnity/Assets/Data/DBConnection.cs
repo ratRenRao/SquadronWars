@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Assets.GameClasses;
+using UnityEditor;
 using UnityEngine;
 using Object = System.Object;
 
@@ -52,10 +53,11 @@ namespace Assets.Data
             return form;
         }
 
-        public JSONObject ConvertToJson<T>(T obj)
+        public JSONObject ConvertToJson<T>(T obj, string propertyScope = "public")
         {
-            var jsonDictionary = Utilities.CreatePublicPropertyDictionary(obj);
-            return JSONObject.Create(jsonDictionary);
+            //var jsonDictionary = Utilities.CreatePublicPropertyDictionary(obj);
+            return Utilities.CreateNestedJsonObject(obj, typeof(T), propertyScope);
+            //return JSONObject.Create(jsonDictionary);
         }
 
         public JSONObject WrapJsonInGameObject(JSONObject jsonObject)

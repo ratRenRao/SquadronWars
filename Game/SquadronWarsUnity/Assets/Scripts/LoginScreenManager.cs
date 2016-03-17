@@ -86,6 +86,7 @@ namespace Assets.Scripts
         {
             gameObject.AddComponent<DbConnection>();
             _dbConnection = gameObject.GetComponent<DbConnection>();
+            GlobalConstants._dbConnection = gameObject.GetComponent<DbConnection>();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Assets.GameClasses
         //Battle Related URLs
         public const string StartGameUrl = WebServerUrl + "/api/StartGame";
         public const string CheckGameStatusUrl = WebServerUrl + "/api/CheckGameInfo";
-        public const string PlaceCharacterUrl = WebServerUrl + "/api/PlaceCharacters"; //not implemented yet
+        public const string PlaceCharacterUrl = WebServerUrl + "/api/PlaceCharacters";
         public const string UpdateGameStatusUrl = WebServerUrl + "/api/UpdateGameInfo";
 
         public const string PlayerJsonObjectName = "PlayerInfo";
@@ -30,7 +30,6 @@ namespace Assets.GameClasses
         public const string StartupDataJsonName = "PlayerDetails";
 
         public static bool CharacterLoadReady = false;
-        public static int GameId;
         public static List<CharacterGameObject> MatchCharacters = new List<CharacterGameObject>();
         public static List<AbilityPreReq> AbilityPreReqs { get; set; } 
         public static List<Item> ItemsMasterList { get; set; }
@@ -44,6 +43,15 @@ namespace Assets.GameClasses
         public static Character curSelectedCharacter { get; set; }
 
         public static DbConnection _dbConnection;
+
+        //Battle related constants for managing a game
+        public static int GameId = 0;
+        public static List<Character> player1Characters = new List<Character>();
+        public static List<Character> player2Characters = new List<Character>();
+        public static BattleAction currentActions = new BattleAction();
+        public static int myPlayerId = 0;
+
+
         //public static List<Character> PlayerCharacters { get; set; } 
 
         /*

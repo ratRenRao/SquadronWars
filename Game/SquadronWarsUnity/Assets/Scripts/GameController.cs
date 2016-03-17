@@ -256,7 +256,7 @@ namespace Assets.Scripts
                             tempTile.isValidMove = false;
                             tempTile.highlight.SetActive(false);
                             tempTile.isOccupied = true;
-                            if ((unitPlacedCount + 1) == characters.Count)
+                            if ((unitPlacedCount + 1) == 5)
                             {
                                 StartCoroutine(WaitForClick("characterload"));                                
                                 
@@ -997,7 +997,7 @@ namespace Assets.Scripts
         public void Attack(Tile targetTile, string ability)
         {
             action = Action.IDLE;
-            string weaponType = "isAttackingBow";          
+            string weaponType = "isAttackingSpear";          
             anim.SetBool(weaponType, true);
             float currentX = (float)(System.Math.Round(tile.transform.localPosition.x, 2));
             float currentY = (float)(System.Math.Round(tile.transform.localPosition.y, 2));
@@ -1285,8 +1285,8 @@ namespace Assets.Scripts
             gameCharacter.Y = tempTile.y;
             tempTile.character = gameCharacter;
             int spriteId = gameCharacter.CharacterClassObject.SpriteId;
-            Debug.Log(idCount);
-            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + 2 /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
+            Debug.Log(spriteId);
+            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + spriteId /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
             //gameCharacter.gameObject.transform.position = new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y);
             //gameCharacter.gameObject.transform.rotation = Quaternion.identity;
             GameObject tempchar = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;

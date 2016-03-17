@@ -14,6 +14,7 @@ public class SampleButton : MonoBehaviour
     public CharacterScreen characterScreen;
     private Stats modifiedStats { get; set; }
     public Text nameLabel;
+    public GameObject CharacterScreenPanel, SquadPanel, SquadScreen;
 
     /*void Start()
     {
@@ -176,8 +177,11 @@ public class SampleButton : MonoBehaviour
 
     public void ConfirmStatChanges()
     {
-        character.BaseStats = modifiedStats;
-        modifiedStats = character.BaseStats.Clone();
+        if (modifiedStats != null)
+        {
+            character.BaseStats = modifiedStats;
+            modifiedStats = character.BaseStats.Clone();
+        }
     }
 
     public void RevertStatChanges()
@@ -287,16 +291,39 @@ public class SampleButton : MonoBehaviour
 
     public void SaveCharacter()
     {
-        Debug.Log(GlobalConstants.curSelectedCharacter);
+        //Debug.Log(GlobalConstants.curSelectedCharacter);
         SetDbConnection();
-        var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.WebServerUrl, new UpdateCharacterPostObject());
-        Debug.Log(www);
+        var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateCharacterUrl, new UpdateCharacterPostObject(modifiedStats));
+
+        if (!www.text.Equals("Failed"))
+        {
+            ConfirmStatChanges();
+            CharacterScreenPanel.SetActive(false);
+            SquadPanel.SetActive(true);
+            SquadScreen.SetActive(true);
+        }
     }
 
     private void SetDbConnection()
     {
         gameObject.AddComponent<DbConnection>();
         GlobalConstants._dbConnection = gameObject.GetComponent<DbConnection>();
+    }
+
+    public void SendBattleMessage()
+    {
+        GlobalConstants.GameId = 14;
+        GlobalConstants.myPlayerId = 1;
+        GlobalConstants.player1Characters = GlobalConstants.Player.Characters;
+        GlobalConstants.currentActions = new BattleAction();
+        GlobalConstants.currentActions.AddAction(new Action(Action.ActionType.Move, new System.Collections.Generic.List<Tile> { new Tile() }, "test Action"));
+        GlobalConstants.currentActions.CharacterQueue = new System.Collections.Generic.List<int> { 1, 2 };
+
+        BattlePostObject test = new BattlePostObject();
+
+        var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.WebServerUrl + "/test", test);
+        Debug.Log(www);
+
     }
 
     public void EvaluateSkills()

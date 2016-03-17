@@ -47,6 +47,11 @@ namespace Assets.GameClasses
         {
             throw new NotImplementedException();
         }
+
+        public string GetJSONString()
+        {
+            return "{ \"Name\" : \"" + Name + "\", \"AbilityId\" : " + AbilityId + ", \"AbilityLevel\" : " + AbilityLevel + ", \"CharacterId\" : " + CharacterId + " }";
+        }
     }
 }
 

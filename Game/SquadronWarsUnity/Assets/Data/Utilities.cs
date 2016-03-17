@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -253,6 +254,54 @@ namespace Assets.Data
                 .ToDictionary(attribute => attribute.Name, attribute => obj.GetType().GetProperty(attribute.Name).GetValue(obj, null).ToString().ToLower());
         }
 
+        public JSONObject CreateNestedJsonObject(object obj, Type type, string scope = "public")
+        {
+            var properties = new List<PropertyInfo>();
+            var json = new JSONObject();
+            switch (scope)
+            {
+                case "public":
+                    properties = obj.GetType()
+                        .GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
+                        .Where(attribute => !string.IsNullOrEmpty(attribute.ToString())).ToList();
+                    break;
+                case "private":
+                    properties = obj.GetType()
+                        .GetProperties(BindingFlags.DeclaredOnly | BindingFlags.NonPublic | BindingFlags.Instance)
+                        .Where(attribute => !string.IsNullOrEmpty(attribute.ToString())).ToList();
+                    break;
+                case "all":
+                    properties = obj.GetType()
+                        .GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | 
+                            BindingFlags.Instance)
+                        .Where(attribute => !string.IsNullOrEmpty(attribute.ToString())).ToList();
+                    break;
+            }
+
+            foreach (var property in properties)
+            {
+                var attribute = property.GetValue(obj, null);
+                var propertyType = attribute.GetType();
+                if (propertyType.ToString().Contains("System.Collections.Generic.List"))
+                {
+                    var tmpJson = new JSONObject();
+                    foreach (var element in (IEnumerable)property.GetValue(obj, null))
+                    {
+                        tmpJson.Add(CreateNestedJsonObject(element,
+                            property.PropertyType.GetGenericArguments().Single(), scope));
+                    }
+                    json.AddField(property.Name, tmpJson);
+                }
+                if (propertyType.ToString().StartsWith("System"))
+                    json.AddField(property.Name, attribute.ToString());
+                else
+                    json.AddField(property.Name,
+                        CreateNestedJsonObject(attribute, propertyType, scope));
+            }
+
+            return json;
+        } 
+
         /// <summary>
         /// Creates a dictionary of string objects containing only private parameters of the 
         /// object passed in, and their corresponding values.
@@ -261,7 +310,7 @@ namespace Assets.Data
         /// <returns>Dictionary&ltstring, string&gt</returns>
         public Dictionary<string, string> CreatePrivatePropertyDictionary<T>(T obj)
         {
-            return obj.GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
+            return obj.GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.NonPublic | BindingFlags.Instance)
                 .Where(attribute => !string.IsNullOrEmpty(attribute.ToString()))
                 .ToDictionary(attribute => attribute.Name, attribute => obj.GetType().GetProperty(attribute.Name).GetValue(obj, null).ToString().ToLower());
         }

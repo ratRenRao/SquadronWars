@@ -32,8 +32,8 @@ public class UpdateCharacterPostObject : IJsonable
     public int vitality { get; set; }
     public int dexterity { get; set; }
     public int spriteId { get; set; }
-    public Character character { get; set; }
-    public Stats modified { get; set; }
+    public string abillist { get; set; }
+    private Stats modifiedStats { get; set; }
 
 public string GetJsonObjectName()
     {
@@ -87,20 +87,26 @@ public string GetJsonObjectName()
         vitality = GlobalConstants.curSelectedCharacter.BaseStats.Vit;
         dexterity = GlobalConstants.curSelectedCharacter.BaseStats.Dex;
         spriteId = GlobalConstants.curSelectedCharacter.SpriteId;
-        character = GlobalConstants.curSelectedCharacter;
+        abillist = "";
+        modifiedStats = new Stats();
     }
 
     public UpdateCharacterPostObject(Stats modifiedstats)
     {
+        modifiedStats = GlobalConstants.curSelectedCharacter.BaseStats;
+        if (modifiedstats != null)
+        {
+            modifiedStats = modifiedstats;
+        }
         username = GlobalConstants.Player.logins.username;
         password = GlobalConstants.Player.logins.password;
         name = GlobalConstants.curSelectedCharacter.Name;
         characterId = GlobalConstants.curSelectedCharacter.CharacterId;
-        statPoints = GlobalConstants.curSelectedCharacter.BaseStats.StatPoints;
-        skillPoints = GlobalConstants.curSelectedCharacter.BaseStats.SkillPoints;
-        luck = GlobalConstants.curSelectedCharacter.BaseStats.Luck;
+        statPoints = modifiedStats.StatPoints;
+        skillPoints = modifiedStats.SkillPoints;
+        luck = modifiedStats.Luck;
         LevelId = GlobalConstants.curSelectedCharacter.LevelId;
-        experience = GlobalConstants.curSelectedCharacter.BaseStats.Experience;
+        experience = modifiedStats.Experience;
         helm = GlobalConstants.curSelectedCharacter.Equipment.Helm.ItemId;
         chest = GlobalConstants.curSelectedCharacter.Equipment.Chest.ItemId;
         gloves = GlobalConstants.curSelectedCharacter.Equipment.Gloves.ItemId;
@@ -110,15 +116,30 @@ public string GetJsonObjectName()
         accessory1 = GlobalConstants.curSelectedCharacter.Equipment.Accessory1.ItemId;
         accessory2 = GlobalConstants.curSelectedCharacter.Equipment.Accessory2.ItemId;
         IsStandard = 0;
-        strength = GlobalConstants.curSelectedCharacter.BaseStats.Str;
-        intelligence = GlobalConstants.curSelectedCharacter.BaseStats.Intl;
-        agility = GlobalConstants.curSelectedCharacter.BaseStats.Agi;
-        wisdom = GlobalConstants.curSelectedCharacter.BaseStats.Wis;
-        vitality = GlobalConstants.curSelectedCharacter.BaseStats.Vit;
-        dexterity = GlobalConstants.curSelectedCharacter.BaseStats.Dex;
+        strength = modifiedStats.Str;
+        intelligence = modifiedStats.Intl;
+        agility = modifiedStats.Agi;
+        wisdom = modifiedStats.Wis;
+        vitality = modifiedStats.Vit;
+        dexterity = modifiedStats.Dex;
         spriteId = GlobalConstants.curSelectedCharacter.SpriteId;
-        character = GlobalConstants.curSelectedCharacter;
-        modified = modifiedstats;
+        abillist = "hackjob\", \"abilities\" : { ";
+        int i = 0;
+        foreach(Ability abil in GlobalConstants.curSelectedCharacter.Abilities)
+        {
+            string s = "";
+            if (i != 0)
+            {
+                s = ", ";
+            }
+            s += "\"" + i + "\" : { \"abilityId\" : \"" + abil.AbilityId + "\" , \"abilityLevel\" : \"" + abil.AbilityLevel+"\" } ";
+
+            abillist += s;
+            i++;
+        }
+
+        abillist += " }, \"end\" :\"test";
+        
     }
 
 }
