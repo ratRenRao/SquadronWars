@@ -412,6 +412,54 @@ class MySQL implements IDBStructure
         return $returnObject;
     }
 
+    public function placeCharacters($gameObject)
+    {
+        //create database reference object
+        $dbh = '';
+
+        //Try to connect to mysql service
+        try
+        {
+            //created config file to hold user name and password that we will use to obscure and keep off of our repo.
+            $dbh = new PDO("mysql:host=localhost:3306;dbname=dbo", dbuser, dbpass);
+        }
+        catch(PDOException $e)
+        {
+            //return status code to be used in response message. 500 server error.
+            return 500;
+        }
+
+        //var_dump($gameObject);
+
+        $query = $dbh->prepare("Call sp_UpdateCharacterInfo(?,?,?)");
+        $query->bindParam(1, $gameObject->{"gameId"}, PDO::PARAM_INT);
+
+        if(($gameObject->{"myPlayerId"} *1) == 1 )
+        {
+            $text = json_encode($gameObject->{"player1characters"});
+        }
+        else
+        {
+            $text = json_encode($gameObject->{"player2characters"});
+        }
+
+        var_dump($text);
+        $query->bindParam(2, $text, PDO::PARAM_STR);
+        $query->bindParam(3, $gameObject->{"myPlayerId"}, PDO::PARAM_INT);
+
+        $query->execute();
+        $rowcount = $query->rowCount();
+        $query->closeCursor();
+
+        if($rowcount == 1)
+        {
+            return 200;
+        }
+
+        return 500;
+    }
+
+
     public function checkGame($gameID)
     {
         //create database reference object

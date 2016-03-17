@@ -118,7 +118,6 @@ $app->post('/api/UpdateCharacter', function() use($app)
         {
             $response = $mysql->updateCharacter($gameObject);
         }
-       // $response = $mysql->updateCharacter($verifyPlayer["playerId"], $gameObject->{"character"});
     }
 
     if($response == 200)
@@ -223,21 +222,16 @@ $app->post('/api/PlaceCharacters', function() use($app)
     if(isset($_POST['GameObject']))
     {
         $gameObject = json_decode($_POST['GameObject']);
-        //TODO: call sql for inserting player characters
+        $returncode = $mysql->placeCharacters($gameObject);
     }
     if($returncode == 200)
     {
         return new Response("Updated Game",200);
 
     }
-    elseif($returncode == 500)
-    {
-        return new Response("Server Error",500);
-    }
     else
     {
-        return new Response("Failed",401);
-
+        return new Response("Server Error",500);
     }
 
 });
@@ -269,17 +263,19 @@ $app->post('/api/UpdateGameInfo', function() use($app)
 
 /*
  * Test Method
- *
+ */
 $app->post('/test', function() use($app){
     $mysql = new MySQL();
 //    $test = $mysql->startGame(17);
-    $test = $mysql->checkGame(14);
-    var_dump($test);
+//    $test = $mysql->checkGame(14);
+//    var_dump($test);
     if(isset($_POST['GameObject']))
     {
+        var_dump($_POST['GameObject']);
         $gameObject = json_decode($_POST['GameObject']);
-        $testing = $mysql->updateGame($gameObject);
-        var_dump($testing);
+        var_dump($gameObject);
+//        $testing = $mysql->updateGame($gameObject);
+//        var_dump($testing);
     }
 
 //    $game = json_encode($game);

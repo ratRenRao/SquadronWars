@@ -39,6 +39,8 @@ interface IDBStructure
 
     public function updateGame($gameInfo);
 
+    public function placeCharacters($gameObject);
+
     //will need to decide how/if we will use this
     //public function createSquad();
 
