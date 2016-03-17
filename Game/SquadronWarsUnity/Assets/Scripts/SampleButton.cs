@@ -31,7 +31,7 @@ public class SampleButton : MonoBehaviour
         var sprite = temp.GetComponent<SpriteRenderer>();
 
         SetActiveCharacter();
-        UpdateStats();
+        UpdateStats(character.BaseStats);
 
         characterScreen.sampleButton = button;
         menu.SquadScreenPanel.SetActive(false);
@@ -89,16 +89,16 @@ public class SampleButton : MonoBehaviour
 
             character.CurrentStats = item.Stats.RemoveAlteredStats(character.CurrentStats, item.Stats);
             character.CurrentStats = item.Stats.ConcatStats(character.CurrentStats, item.Stats);
-            UpdateStats();
+            UpdateStats(character.BaseStats);
         
     }
 
-    public void UpdateStats()
+    public void UpdateStats(Stats s)
     {
         var characterStats = GameObject.FindGameObjectWithTag("CharacterStats");
         var menuScreen = characterStats.GetComponent <CharacterScreen>();
 
-        var stats = modifiedStats == null ? character.BaseStats : modifiedStats;
+        var stats = s;
         var bonusStats = character.CurrentStats;
         var concatStats = stats.ConcatStats(stats, character.CurrentStats);
         menuScreen.strengthStat.text = formatStats(stats.Str, bonusStats.Str);
@@ -120,11 +120,13 @@ public class SampleButton : MonoBehaviour
         menuScreen.criticalRateStat.text = concatStats.CalculateCritRate(character.LevelId).ToString();
         menuScreen.remainingStatPoints.text = stats.StatPoints.ToString();
         menuScreen.remainingSkillPoints.text = stats.SkillPoints.ToString();
+        Debug.Log("MenuScreen" + stats.SkillPoints.ToString());
     }
 
 
     public string formatStats(int stats, int bonusStats)
     {        
+        string concatStats = string.Format("{0} + {1}", stats.ToString(), bonusStats.ToString());
         return stats.ToString();
         //return bonusStats == 0 ? stats.ToString() : string.Format("{0} + {1}", stats.ToString(), bonusStats.ToString());
     }
@@ -172,7 +174,8 @@ public class SampleButton : MonoBehaviour
                 break;
         }
         modifiedStats.StatPoints--;
-        UpdateStats();
+        
+        UpdateStats(modifiedStats);
     }
 
     public void ConfirmStatChanges()
@@ -188,7 +191,7 @@ public class SampleButton : MonoBehaviour
     {
         modifiedStats = character.BaseStats.Clone();
         //character.CurrentStats = character.BaseStats;
-        UpdateStats();
+        UpdateStats(modifiedStats);
     }
 
     public void BuildDropdowns(CharacterScreen dropdowns)
@@ -284,7 +287,7 @@ public class SampleButton : MonoBehaviour
                 stats.bashLvl.text = "L" + ability.AbilityLevel;
             }
             character.BaseStats.SkillPoints--;
-            UpdateStats();
+            UpdateStats(character.BaseStats);
 
         }
     }
@@ -316,8 +319,12 @@ public class SampleButton : MonoBehaviour
         GlobalConstants.myPlayerId = 1;
         GlobalConstants.player1Characters = GlobalConstants.Player.Characters;
         GlobalConstants.currentActions = new BattleAction();
-        GlobalConstants.currentActions.AddAction(new Action(Action.ActionType.Move, new System.Collections.Generic.List<Tile> { new Tile() }, "test Action"));
+        Tile testTile = new Tile();
+        testTile.x = 1;
+        testTile.y = 1;
+        GlobalConstants.currentActions.AddAction(new Action(Action.ActionType.Move, new System.Collections.Generic.List<Tile> { testTile }, "test Action"));
         GlobalConstants.currentActions.CharacterQueue = new System.Collections.Generic.List<int> { 1, 2 };
+        GlobalConstants.currentActions.AddAffectedTile(testTile, 1);
 
         BattlePostObject test = new BattlePostObject();
 
