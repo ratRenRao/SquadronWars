@@ -24,6 +24,12 @@ namespace Assets.GameClasses
             throw new System.NotImplementedException();
         }
 
+        public void ResetBattleActions()
+        {
+            ActionOrder.Clear();
+            CharacterQueue.Clear();
+        }
+
         public void AddAction(Action action)
         {
             if(!ActionOrder.Contains(action))

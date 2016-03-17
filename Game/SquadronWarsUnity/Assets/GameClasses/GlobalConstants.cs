@@ -22,7 +22,7 @@ namespace Assets.GameClasses
         //Battle Related URLs
         public const string StartGameUrl = WebServerUrl + "/api/StartGame";
         public const string CheckGameStatusUrl = WebServerUrl + "/api/CheckGameInfo";
-        public const string PlaceCharacterUrl = WebServerUrl + "/api/PlaceCharacters"; //not implemented yet
+        public const string PlaceCharacterUrl = WebServerUrl + "/api/PlaceCharacters";
         public const string UpdateGameStatusUrl = WebServerUrl + "/api/UpdateGameInfo";
 
         public const string PlayerJsonObjectName = "PlayerInfo";
