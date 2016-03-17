@@ -319,8 +319,12 @@ public class SampleButton : MonoBehaviour
         GlobalConstants.myPlayerId = 1;
         GlobalConstants.player1Characters = GlobalConstants.Player.Characters;
         GlobalConstants.currentActions = new BattleAction();
-        GlobalConstants.currentActions.AddAction(new Action(Action.ActionType.Move, new System.Collections.Generic.List<Tile> { new Tile() }, "test Action"));
+        Tile testTile = new Tile();
+        testTile.x = 1;
+        testTile.y = 1;
+        GlobalConstants.currentActions.AddAction(new Action(Action.ActionType.Move, new System.Collections.Generic.List<Tile> { testTile }, "test Action"));
         GlobalConstants.currentActions.CharacterQueue = new System.Collections.Generic.List<int> { 1, 2 };
+        GlobalConstants.currentActions.AddAffectedTile(testTile, 1);
 
         BattlePostObject test = new BattlePostObject();
 

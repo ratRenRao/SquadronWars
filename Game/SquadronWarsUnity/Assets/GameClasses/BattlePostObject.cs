@@ -10,8 +10,11 @@ public class BattlePostObject
     public string password { get; set; }
     public int gameId { get; set; }
     public string player1 { get; set; }
+    //public List<Character> player1 { get; set; }
     public string player2 { get; set; }
-    public string gameJSON { get; set; }
+    //public List<Character> player2 { get; set; }
+    public string gameInfo { get; set; }
+    //public BattleAction gameJSON { get; set; }
     public int myPlayerId { get; set; }
     
     /**/
@@ -22,7 +25,7 @@ public class BattlePostObject
         gameId = GlobalConstants.GameId;
         player1 = GetPlayerCharacters(GlobalConstants.player1Characters, 1);
         player2 = GetPlayerCharacters(GlobalConstants.player2Characters, 2);
-        gameJSON = GlobalConstants.currentActions.GetJSONString();
+        gameInfo = GlobalConstants.currentActions.GetJSONString();
         myPlayerId = GlobalConstants.myPlayerId;            
     }
     /**
