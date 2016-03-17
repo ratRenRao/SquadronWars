@@ -52,6 +52,18 @@ namespace Assets.GameClasses
             Y = y;
         }
 
+        public CharacterGameObject cloneCharacter(CharacterGameObject c)
+        {
+            CharacterGameObject character = new CharacterGameObject();
+            character.X = c.X;
+            character.Y = c.Y;
+            character._characterId = c._characterId;
+            character.CharacterClassObject = c.CharacterClassObject;
+            character.hasAttacked = c.hasAttacked;
+            character.hasMoved = c.hasMoved;
+            character.isDead = c.isDead;
+            return character;
+        }
         private void UpdateCharacterGameObject()
         {
             

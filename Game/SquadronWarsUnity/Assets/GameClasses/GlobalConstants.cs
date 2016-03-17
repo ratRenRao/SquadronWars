@@ -34,6 +34,7 @@ namespace Assets.GameClasses
         public static List<AbilityPreReq> AbilityPreReqs { get; set; } 
         public static List<Item> ItemsMasterList { get; set; }
         public static Player Player { get; set; }
+        public static int PlayerNum { get; set; }
         public static List<Ability> AbilityMasterList { get; set; }
 
         public static Utilities Utilities = new Utilities();

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
+using Assets.Scripts;
 
 namespace Assets.GameClasses
 {
@@ -7,6 +8,7 @@ namespace Assets.GameClasses
     {
         public List<Action> ActionOrder = new List<Action>();
         public List<int> CharacterQueue = new List<int>();
+        public Dictionary<Tile, int> AffectedTiles = new Dictionary<Tile, int>();
 
         //BuildQueue for characters turns
         public string GetJsonObjectName()
@@ -28,6 +30,12 @@ namespace Assets.GameClasses
         {
             ActionOrder.Clear();
             CharacterQueue.Clear();
+            AffectedTiles.Clear();
+        }
+
+        public void AddAffectedTile(Tile tile, int amount)
+        {
+            AffectedTiles.Add(tile, amount);
         }
 
         public void AddAction(Action action)
@@ -40,7 +48,7 @@ namespace Assets.GameClasses
 
         public string GetJSONString()
         {
-            string returnString = "GameJSON\", \"ActionOrder\" : { ";
+            string returnString = "Gameinfo\", \"GameJSON\" : { \"ActionOrder\" : { ";
             int index = 0;
             foreach(Action action in ActionOrder)
             {
@@ -62,7 +70,18 @@ namespace Assets.GameClasses
                 returnString += "\"" + index + "\" : " + position;
                 index++;
             }
-            returnString += "} , \"end\" : \"end";
+            returnString += "}, \"AffectedTiles\" : { ";
+            index = 0;
+            foreach(KeyValuePair<Tile,int> key in AffectedTiles)
+            {
+                if(index != 0)
+                {
+                    returnString += ", ";
+                }
+                returnString += "\"" + index + "\" : { \"Tile\" : " + key.Key.GetJSONString() + ", \"Amount\" : " + key.Value + "}";
+                index++;
+            }
+            returnString += "} }, \"end\" : \"end";
 
             return returnString;
         }

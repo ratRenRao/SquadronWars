@@ -51,7 +51,9 @@
      <Compile Include="Assets\Data\Utilities.cs" />
      <Compile Include="Assets\GameClasses\Ability.cs" />
      <Compile Include="Assets\GameClasses\Action.cs" />
+     <Compile Include="Assets\GameClasses\Battle.cs" />
      <Compile Include="Assets\GameClasses\BattleAction.cs" />
+     <Compile Include="Assets\GameClasses\BattlePostObject.cs" />
      <Compile Include="Assets\GameClasses\Burn.cs" />
      <Compile Include="Assets\GameClasses\Character.cs" />
      <Compile Include="Assets\GameClasses\CharacterGameObject.cs" />
