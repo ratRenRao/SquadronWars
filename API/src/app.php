@@ -209,7 +209,7 @@ $app->post('/api/CheckGameInfo', function() use($app)
     //verify post request contains username and password.
     if(isset($_POST['GameObject'])) {
         $gameObject = json_decode($_POST['GameObject']);
-        $returnObject = $mysql->checkGame($gameObject->{"gameID"});
+        $returnObject = $mysql->checkGame($gameObject->{"gameId"});
         return json_encode($returnObject);
     }
     return new Response("Failed",401);
@@ -248,7 +248,6 @@ $app->post('/api/UpdateGameInfo', function() use($app)
     if($returncode == 200)
     {
         return new Response("Updated Game",200);
-
     }
     elseif($returncode == 500)
     {
@@ -257,7 +256,6 @@ $app->post('/api/UpdateGameInfo', function() use($app)
     else
     {
         return new Response("Failed",401);
-
     }
 });
 
