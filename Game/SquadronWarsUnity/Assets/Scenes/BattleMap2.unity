@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainPanel: {fileID: 1000275577}
-  abilityPanel: {fileID: 1440515027}
+  abilityPanel: {fileID: 624756778}
   gameController: {fileID: 334646434}
   button: {fileID: 250683119}
   ability: Flame Strike
@@ -2320,12 +2320,14 @@ MonoBehaviour:
   attackButton: {fileID: 787019963}
   abilityButton: {fileID: 787019962}
   moveButton: {fileID: 787019964}
-  player1SpawnXStart: 3
-  player1SpawnXEnd: 9
-  player1SpawnY: 5
-  player2SpawnXStart: 15
-  player2SpawnXEnd: 19
-  player2SpawnY: 6
+  player1SpawnXStart: 2
+  player1SpawnXEnd: 12
+  player1SpawnYStart: 1
+  player1SpawnYEnd: 7
+  player2SpawnXStart: 4
+  player2SpawnXEnd: 14
+  player2SpawnYStart: 13
+  player2SpawnYEnd: 20
 --- !u!114 &334646436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10271,7 +10273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainPanel: {fileID: 1000275577}
-  abilityPanel: {fileID: 1440515027}
+  abilityPanel: {fileID: 624756778}
   gameController: {fileID: 334646434}
   button: {fileID: 1527158968}
   ability: Armor Break
