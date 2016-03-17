@@ -20,6 +20,7 @@ namespace Assets.GameClasses
         List<Tile> actionTiles = new List<Tile>();
         string performedAction { get; set; }
 
+        public Action() { }
         public Action(ActionType actionType, List<Tile> actionTiles, string performedAction)
         {
             this.actionType = actionType;

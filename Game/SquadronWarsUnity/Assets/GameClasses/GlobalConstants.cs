@@ -94,6 +94,11 @@ namespace Assets.GameClasses
         inventory.Add(new Equipment("Leather Helm", ItemType.HELM, new Stats(1,1,1,0,0,0,0)));
         */
 
+        public static string GetJsonObjectName<T>(T obj) where T : IJsonable
+        {
+            return obj.GetJsonObjectName();
+        }
+
         public static string GetJsonObjectName(string property)
         {
             var name = property;

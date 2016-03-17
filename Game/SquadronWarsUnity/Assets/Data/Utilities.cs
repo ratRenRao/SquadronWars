@@ -26,7 +26,10 @@ namespace Assets.Data
             _jsonObject = deserializedJson;
             Debug.Log(deserializedJson.ToString());
             var obj = Activator.CreateInstance<T>();
-            obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(typeof (T).Name.ToLower())), typeof(T));
+            obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(obj)), typeof(T));
+
+            if (obj == null)
+                obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(typeof (T).Name.ToLower())), typeof(T));
 
             return obj;
         }
@@ -73,10 +76,7 @@ namespace Assets.Data
 
                         // If json object isnt found in the subset, search all the json data for it 
                         if (keyIndex == null)
-                        {
                             j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.Name.ToLower()));
-
-                        }
                         else
                             j = obj[keyIndex];
 
