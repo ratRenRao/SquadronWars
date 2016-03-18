@@ -9,7 +9,7 @@ using Action = Assets.GameClasses.Action;
 
 namespace Assets.Data
 {
-    class GameInfo : IJsonable
+    public class GameInfo : IJsonable
     { 
         public int gameID { get; set; }
         public int player1Id { get; set; }
@@ -36,7 +36,7 @@ namespace Assets.Data
         }
     }
 
-    internal class GameJSON : IJsonable
+    public class GameJSON : IJsonable
     {
         public Action ActionOrder { get; set; }
         public List<int> CharacterQueue { get; set; }

@@ -330,9 +330,7 @@ namespace Assets.Data
 
         public T MapJsonToObject<T>(ref T obj)
         {
-            //var obj = new T(); 
             var attributes = GetParameterList(typeof (T));
-                //obj.GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
 
             foreach (
                 var attribute in
@@ -371,8 +369,6 @@ namespace Assets.Data
                 {
                     if (jsonObject[i].IsObject || jsonObject[i].IsArray)
                     {
-                        //string keyObject = jsonObject[key].keys[i];
-                        //JSONObject listObject = item.list[i];
                         var flattenResult = FlattenJsonObject(jsonObject[i]);
                         if (!flattenResult.IsNull)
                             for (var x = 0; x < flattenResult.list.Count; x++)
@@ -387,7 +383,6 @@ namespace Assets.Data
 
             return flattenedJson;
         }
-
 
         public object ConvertToType(Type type, string value)
         {
@@ -411,17 +406,6 @@ namespace Assets.Data
             return parsedJson;
         }
 
-        /*
-        public JSONObject SyncAttributeName<T>(JSONObject jsonObject)
-        {
-            var objectAttributes = typeof(T).GetProperties().ToList();
-            foreach (var key in jsonObject.keys.Where(key => objectAttributes.Select(attribute => attribute.Name.ToLower())
-                 .Contains(key.ToLower())))
-            {
-                jsonObject[key].;
-            }
-        } */
-
         public JSONObject GetJsonObjectSubset(JSONObject obj, string field)
         {
             foreach (var param in obj.keys)
@@ -438,6 +422,22 @@ namespace Assets.Data
                 }
             }
             return null;
+        }
+
+        public GameInfo GetGameInfo()
+        {
+            return GlobalConstants._dbConnection.PopulateObjectFromDb<GameInfo>(
+                GlobalConstants.CheckGameStatusUrl, GlobalConstants.Player.logins);
+        }
+
+        public void SetGlobalDataFromGameInfo(GameInfo gameInfo)
+        {
+            GlobalConstants.player1Characters = gameInfo.character1Info;
+            GlobalConstants.player2Characters = gameInfo.character2Info;
+            GlobalConstants.Player.Characters = gameInfo.character1Info;
+            GlobalConstants.ActionOrder = gameInfo.GameJson.ActionOrder;
+            GlobalConstants.AffectedTiles = gameInfo.GameJson.AffectedTiles;
+            GlobalConstants.CharacterQueue = gameInfo.GameJson.CharacterQueue;
         }
 
         public Character GetCharacterById(int id)
