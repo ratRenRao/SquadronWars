@@ -50,7 +50,8 @@ namespace Assets.GameClasses
 
         public string GetJSONString()
         {
-            return "{ \"Name\" : \"" + Name + "\", \"AbilityId\" : " + AbilityId + ", \"AbilityLevel\" : " + AbilityLevel + ", \"CharacterId\" : " + CharacterId + " }";
+            // removed from string       ", \"CharacterId\" : " + CharacterId +
+            return "{ \"Name\" : \"" + Name + "\", \"AbilityId\" : " + AbilityId + ", \"AbilityLevel\" : " + AbilityLevel +  " }";
         }
     }
 }

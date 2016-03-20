@@ -504,7 +504,7 @@ class MySQL implements IDBStructure
             return 401;
         }
 
-        $test = json_encode($gameInfo->{"gameJSON"});
+        $test = json_encode($gameInfo->{"GameJSON"});
 
         $query = $dbh->prepare("Call sp_UpdateGame(?,?,?)");
         $query->bindParam(1,$gameInfo->{"gameId"},PDO::PARAM_INT);

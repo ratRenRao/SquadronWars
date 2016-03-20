@@ -82,7 +82,7 @@ namespace Assets.GameClasses
         {
             string returnString = "{ \"CharacterId\" : \"" + CharacterId + "\", \"LevelId\" : \"" + LevelId + "\", \"Name\" : \"" + Name + "\", \"SpriteId\" : \""
                 + SpriteId + "\", \"X\" : \"" + X + "\", \"Y\" : \"" + Y + "\", \"BaseStats\" : " + BaseStats.GetJSONString() + ", \"CurrentStats\" : " + CurrentStats.GetJSONString()
-                + ", \"Equipment\" : " + Equipment.GetJSONString() + ", \"Abilities\" : { ";
+                + ", \"Equipment\" : " + Equipment.GetJSONString() + ", \"Abilities\" : [ ";
             int index = 0;
             foreach(Ability ability in Abilities)
             {
@@ -90,10 +90,10 @@ namespace Assets.GameClasses
                 {
                     returnString += ", ";
                 }
-                returnString += "\"" + index + "\" : " + ability.GetJSONString();
+                returnString += ability.GetJSONString();
                 index++;
             }
-            returnString += " } }";
+            returnString += " ] }";
 
             return returnString;
         }
