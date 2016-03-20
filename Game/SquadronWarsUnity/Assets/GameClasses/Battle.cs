@@ -1,18 +1,38 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
+using Assets.Data;
 using Assets.GameClasses;
 
-public class Battle : MonoBehaviour {
+public class Battle : MonoBehaviour
+{
+    private DateTime lastChecked, lastModified;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+	    lastChecked = DateTime.Now;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update ()
+	{
+	    if ((DateTime.Now - lastChecked).TotalSeconds >= 2)
+	    {
+	        var gameInfo = GlobalConstants.Utilities.GetGameInfo();
+	        if (!lastModified.Equals(gameInfo.ModifyTime))
+	        {
+	            UpdateGame(gameInfo);
+                lastModified = gameInfo.ModifyTime;
+	        }
+	    }
 	}
+
+    public void UpdateGame(GameInfo gameInfo)
+    {
+        GlobalConstants.Utilities.SetGlobalDataFromGameInfo(gameInfo);
+        // Add methods to do things like moving characters, taking damage, etc. 
+    }
 
     public void StartGame()
     {

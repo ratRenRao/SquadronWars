@@ -54,6 +54,10 @@ namespace Assets.Scripts
 
             GlobalConstants.Player.logins = _logins;
 
+#if DEBUG
+            //new Tests().Run();
+#endif
+
             LoginScreen.gameObject.SetActive(false);
             HomeScreen.gameObject.SetActive(true);
             //CanvasManager.HomeScreen.SetActive(true);

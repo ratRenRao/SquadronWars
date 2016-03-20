@@ -64,11 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Data\DBConnection.cs" />
+    <Compile Include="Assets\Data\GameInfo.cs" />
     <Compile Include="Assets\Data\MatchData.cs" />
     <Compile Include="Assets\Data\StartupData.cs" />
     <Compile Include="Assets\Data\Utilities.cs" />
     <Compile Include="Assets\GameClasses\Ability.cs" />
     <Compile Include="Assets\GameClasses\Action.cs" />
+    <Compile Include="Assets\GameClasses\Battle.cs" />
     <Compile Include="Assets\GameClasses\BattleAction.cs" />
     <Compile Include="Assets\GameClasses\BattlePostObject.cs" />
     <Compile Include="Assets\GameClasses\Burn.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="Assets\Scripts\StartQueue.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
     <Compile Include="Assets\Scripts\TileMap.cs" />
+    <Compile Include="Assets\Tests.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
