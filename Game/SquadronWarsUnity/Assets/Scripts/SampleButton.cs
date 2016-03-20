@@ -4,6 +4,7 @@ using Assets.Scripts;
 using UnityEngine.UI;
 using System.Linq;
 using Assets.Data;
+using UnityEngine.SceneManagement;
 
 public class SampleButton : MonoBehaviour
 {
@@ -47,7 +48,7 @@ public class SampleButton : MonoBehaviour
         characterScreen.ProgressBar.value = progBar;
         BuildDropdowns(characterScreen);
         GlobalConstants.curSelectedCharacter = character;
-        Debug.Log(character);
+        //Debug.Log(character);
     }
 
     public void SetActiveCharacter()
@@ -74,12 +75,12 @@ public class SampleButton : MonoBehaviour
         /*Debug.Log(item.Stats.Intl);
         Debug.Log(item.Stats.Str);        
         Debug.Log(item.Stats.Vit);
-        Debug.Log(item.Stats.Wis);*/
+        Debug.Log(item.Stats.Wis);
         Debug.Log(item.Name);
         Debug.Log(item.Stats.Dex);
         Debug.Log(item.Stats.Agi);
         Debug.Log(item.Stats.Luck);
-        //Debug.Log(GlobalConstants.Player.Characters[0].BaseStats.Str);
+        //Debug.Log(GlobalConstants.Player.Characters[0].BaseStats.Str);*/
 
  
         foreach (var equipedItem in character.Equipment.GetItemList())
@@ -120,7 +121,7 @@ public class SampleButton : MonoBehaviour
         menuScreen.criticalRateStat.text = concatStats.CalculateCritRate(character.LevelId).ToString();
         menuScreen.remainingStatPoints.text = stats.StatPoints.ToString();
         menuScreen.remainingSkillPoints.text = stats.SkillPoints.ToString();
-        Debug.Log("MenuScreen" + stats.SkillPoints.ToString());
+       // Debug.Log("MenuScreen" + stats.SkillPoints.ToString());
     }
 
 
@@ -237,7 +238,7 @@ public class SampleButton : MonoBehaviour
 
             }
         }
-        Debug.Log(character.Equipment.Helm.Name);
+        //Debug.Log(character.Equipment.Helm.Name);
         dropdowns.helmSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Helm.Name;
         dropdowns.shoulderSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Shoulders.Name;
         dropdowns.chestSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Chest.Name;
@@ -315,6 +316,7 @@ public class SampleButton : MonoBehaviour
 
     public void SendBattleMessage()
     {
+        /**/
         GlobalConstants.GameId = 14;
         GlobalConstants.myPlayerId = 1;
         GlobalConstants.player1Characters = GlobalConstants.Player.Characters;
@@ -330,7 +332,8 @@ public class SampleButton : MonoBehaviour
 
         var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.WebServerUrl + "/test", test);
         Debug.Log(www);
-
+        /**/
+        //SceneManager.LoadScene("Login");
     }
 
     public void EvaluateSkills()
@@ -341,7 +344,8 @@ public class SampleButton : MonoBehaviour
      //   MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
         character = stats.sampleButton.character;
-        foreach (var ability in character.Abilities)
+        //foreach (var ability in character.Abilities)
+        foreach (var ability in GlobalConstants.curSelectedCharacter.Abilities)
         {
             if (ability.Name == "fire")
             {

@@ -43,7 +43,7 @@ public class BattlePostObject
     /**/
     private string GetPlayerCharacters(List<Character> playercharacters, int characterId)
     {
-        string returnString = "player\", \"player" + characterId + "characters\" : { ";
+        string returnString = "player\", \"player" + characterId + "characters\" : [ ";
         int index = 0;
         foreach(Character character in playercharacters)
         {
@@ -51,10 +51,10 @@ public class BattlePostObject
             {
                 returnString += ", ";
             }
-            returnString += "\"" +index + "\" : " + character.GetJSONString();
+            returnString += character.GetJSONString();
             index++;
         }
-        returnString += "}, \"end\" : \"end";
+        returnString += "], \"end\" : \"end";
 
         return returnString;
      }
