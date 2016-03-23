@@ -17,15 +17,26 @@ public class Battle : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if ((DateTime.Now - lastChecked).TotalSeconds >= 2)
+	    if ((DateTime.Now - lastChecked).TotalSeconds >= 4)
 	    {
-	        var gameInfo = GlobalConstants.Utilities.GetGameInfo();
-	        if (!lastModified.Equals(gameInfo.ModifyTime))
+	        if (GlobalConstants.GameId == null)
 	        {
-	            UpdateGame(gameInfo);
-                lastModified = gameInfo.ModifyTime;
-                // Used to determine if changes have been made to data
+                var gameInfo = GlobalConstants.Utilities.GetGameInfo(GlobalConstants.StartGameUrl);
+                StartGame();
 	            GlobalConstants.Updated = true;
+                UpdateGame(gameInfo);
+	        }
+	        else
+	        {
+	            var gameInfo = GlobalConstants.Utilities.GetGameInfo();
+
+	            if (!lastModified.Equals(gameInfo.ModifyTime))
+	            {
+	                UpdateGame(gameInfo);
+	                lastModified = gameInfo.ModifyTime;
+	                // Used to determine if changes have been made to data
+	                GlobalConstants.Updated = true;
+	            }
 	        }
 	    }
 	}
@@ -43,8 +54,8 @@ public class Battle : MonoBehaviour
         GlobalConstants.player1Characters.Clear();
         GlobalConstants.player2Characters.Clear();
         GlobalConstants.currentActions.ResetBattleActions();
-        var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.StartGameUrl, new BattlePostObject());
-        UpdateGameInfo(www);
+        //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.StartGameUrl, new BattlePostObject());
+        //UpdateGameInfo(www);
     }
 
     public void CheckGame()

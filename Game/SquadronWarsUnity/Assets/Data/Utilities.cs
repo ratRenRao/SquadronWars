@@ -423,10 +423,10 @@ namespace Assets.Data
             return null;
         }
 
-        public GameInfo GetGameInfo()
+        public GameInfo GetGameInfo(string url = GlobalConstants.CheckGameStatusUrl)
         {
             return GlobalConstants._dbConnection.PopulateObjectFromDb<GameInfo>(
-                GlobalConstants.CheckGameStatusUrl, GlobalConstants.Player.logins);
+                url, new BattlePostObject());
         }
 
         public void SetGlobalDataFromGameInfo(GameInfo gameInfo)

@@ -46,7 +46,7 @@ namespace Assets.GameClasses
         public static DbConnection _dbConnection;
 
         //Battle related constants for managing a game
-        public static int GameId = 0;
+        public static int? GameId = null;
         public static List<Character> player1Characters = new List<Character>();
         public static List<Character> player2Characters = new List<Character>();
         public static BattleAction currentActions = new BattleAction();
