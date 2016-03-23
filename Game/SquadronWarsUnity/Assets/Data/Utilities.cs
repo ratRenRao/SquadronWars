@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Assets.GameClasses;
+using Assets.Scripts;
 using UnityEngine;
 
 namespace Assets.Data
@@ -433,9 +434,9 @@ namespace Assets.Data
             GlobalConstants.player1Characters = gameInfo.character1Info;
             GlobalConstants.player2Characters = gameInfo.character2Info;
             GlobalConstants.Player.Characters = gameInfo.character1Info;
-            GlobalConstants.ActionOrder = gameInfo.GameJson.ActionOrder;
-            GlobalConstants.AffectedTiles = gameInfo.GameJson.AffectedTiles;
-            GlobalConstants.CharacterQueue = gameInfo.GameJson.CharacterQueue;
+            GlobalConstants.currentActions.ActionOrder.Add(gameInfo.GameJson.ActionOrder);
+            GlobalConstants.currentActions.AffectedTiles = (Dictionary<Tile, int>) GlobalConstants.currentActions.AffectedTiles.Concat(gameInfo.GameJson.AffectedTiles);
+            GlobalConstants.currentActions.CharacterQueue = gameInfo.GameJson.CharacterQueue;
         }
 
         public Character GetCharacterById(int id)

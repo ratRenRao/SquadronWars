@@ -50,9 +50,6 @@ namespace Assets.GameClasses
         public static List<Character> player1Characters = new List<Character>();
         public static List<Character> player2Characters = new List<Character>();
         public static BattleAction currentActions = new BattleAction();
-        public static Action ActionOrder { get; set; }
-        public static List<int> CharacterQueue { get; set; }
-        public static List<Tile> AffectedTiles { get; set; }
         public static int myPlayerId = 0;
         public static bool Updated = true;
 

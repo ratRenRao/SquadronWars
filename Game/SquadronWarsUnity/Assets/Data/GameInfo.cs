@@ -40,7 +40,7 @@ namespace Assets.Data
     {
         public Action ActionOrder { get; set; }
         public List<int> CharacterQueue { get; set; }
-        public List<Tile> AffectedTiles { get; set; }
+        public Dictionary<Tile, int> AffectedTiles { get; set; }
         public string GetJsonObjectName()
         {
             return "GameJSON";
