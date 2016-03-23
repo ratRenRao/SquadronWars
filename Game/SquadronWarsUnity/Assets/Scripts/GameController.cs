@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using Assets.GameClasses;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
@@ -22,6 +23,7 @@ namespace Assets.Scripts
         public TileMap tileMap;
         GameObject currentGameCharacter;
         GameObject targetGameCharacter;
+        public GameObject DisplayVictory;
         public GameObject characterStatsPanel;
         public CharacterStatsPanel statsPanel;
         public GameObject actionPanel;
@@ -264,7 +266,7 @@ namespace Assets.Scripts
                             tempTile.isValidMove = false;
                             tempTile.highlight.SetActive(false);
                             tempTile.isOccupied = true;
-                            if ((unitPlacedCount + 1) == 5)
+                            if ((unitPlacedCount + 1) == 3 || (unitPlacedCount + 1) == 6)
                             {
                                 if (GlobalConstants.PlayerNum == 2)
                                 {
@@ -275,7 +277,6 @@ namespace Assets.Scripts
                                 }
                                 else
                                 {
-                                    unitPlacedCount = -1;
                                     clearHighlights(validMoves);                                    
                                     GlobalConstants.PlayerNum = 2;
                                     highlightSpawn();
@@ -1221,8 +1222,8 @@ namespace Assets.Scripts
         {
             int dmg = currentCharacterGameObject.CharacterClassObject.CurrentStats.Dmg;
             int def = targetCharacterGameObject.CharacterClassObject.CurrentStats.Defense;
-            Debug.Log("Damage: " + dmg);
-            Debug.Log("Def: " + def);
+            //Debug.Log("Damage: " + dmg);
+            //Debug.Log("Def: " + def);
             return dmg - (def / 10);
         }
 
@@ -1245,7 +1246,6 @@ namespace Assets.Scripts
             anim.SetBool(weaponType, false);
             tarAnim.SetBool("isAttacked", false);
             int damage = 0;
-            Debug.Log(ability);
             if (ability != null)
             {
                 GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
@@ -1275,6 +1275,13 @@ namespace Assets.Scripts
                 //myCharacters.Remove(targetCharacterGameObject.gameObject);
                 tarAnim.SetBool("isDead", true);
                 yield return new WaitForSeconds(.8f);
+                Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
+                if (targetCharacterGameObject.CharacterClassObject.Name.Equals("Kelly"))
+                {
+                    DisplayVictory.SetActive(true);
+                    hidePanel = true;
+                    yield return new WaitForSeconds(500f);
+                }
             }            
             selectedAbility = null;
             hidePanel = false;
@@ -1323,6 +1330,13 @@ namespace Assets.Scripts
                     //myCharacters.Remove(targetCharacterGameObject.gameObject);
                     tarAnim.SetBool("isDead", true);
                     yield return new WaitForSeconds(.8f);
+                    Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
+                    if (targetCharacterGameObject.CharacterClassObject.Name.Equals("Kelly"))
+                    {
+                        DisplayVictory.SetActive(true);
+                        hidePanel = true;
+                        yield return new WaitForSeconds(500f);
+                    }
                 }
             }
             selectedAbility = null;
@@ -1463,14 +1477,13 @@ namespace Assets.Scripts
         }*/
 
         public void placeCharacter(Tile tempTile, CharacterGameObject gameCharacter)
-        {
+        {            
             GameObject tileMap = GameObject.FindGameObjectWithTag("map");
             tempTile.isOccupied = true;
             gameCharacter.X = tempTile.x;
             gameCharacter.Y = tempTile.y;
             tempTile.character = gameCharacter;
             int spriteId = gameCharacter.CharacterClassObject.SpriteId;
-            Debug.Log(spriteId);
             GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + spriteId /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
             //gameCharacter.gameObject.transform.position = new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y);
             //gameCharacter.gameObject.transform.rotation = Quaternion.identity;
