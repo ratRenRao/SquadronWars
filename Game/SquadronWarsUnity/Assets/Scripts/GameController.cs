@@ -52,7 +52,8 @@ namespace Assets.Scripts
         CharacterGameObject currentCharacterGameObject;
         CharacterGameObject targetCharacterGameObject;
         List<CharacterGameObject> characters = new List<CharacterGameObject>();
-        List<CharacterGameObject> gCharacters = GlobalConstants.MatchCharacters; 
+        List<CharacterGameObject> gCharacters = GlobalConstants.MatchCharacters;
+        List<Character> characterList = new List<Character>();
         List<GameObject> myCharacters = new List<GameObject>();
         //Character character;
         //Character targetCharacter;
@@ -82,7 +83,7 @@ namespace Assets.Scripts
             //tarAnim.SetFloat("x", 0);
             //tarAnim.SetFloat("y", -1);
             //hidePanel = false;
-            GlobalConstants.PlayerNum = 1;
+            GlobalConstants.myPlayerId = 1;
             battlesong.playOnAwake = true;
             placeCharacterPhase = true;
             characters = GlobalConstants.MatchCharacters;
@@ -101,8 +102,28 @@ namespace Assets.Scripts
         {
             if(action == Action.WaitForGameInfo)
             {
+                //Append Characters to player # character on global constants
 
+                if (GlobalConstants.Updated)
+                {
+                    if (placeCharacterPhase)
+                    {
+                        if(GlobalConstants.player1Characters.Count > 0 && GlobalConstants.player2Characters.Count > 0)
+                        {
+
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+                    StartCoroutine(WaitForGameInformation());
+                }
             }
+
             if (!arraySet)
             {
                 
@@ -266,9 +287,18 @@ namespace Assets.Scripts
                             tempTile.isValidMove = false;
                             tempTile.highlight.SetActive(false);
                             tempTile.isOccupied = true;
-                            if ((unitPlacedCount + 1) == 3 || (unitPlacedCount + 1) == 6)
+                            if ((unitPlacedCount + 1) == 5 /*|| (unitPlacedCount + 1) == 6*/)
                             {
-                                if (GlobalConstants.PlayerNum == 2)
+                                if (GlobalConstants.myPlayerId == 1)
+                                {
+                                    GlobalConstants.player1Characters = characterList;
+                                }
+                                else
+                                {
+                                    GlobalConstants.player2Characters = characterList;
+                                }
+                                var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.PlaceCharacterUrl, new BattlePostObject());
+                                /*if (GlobalConstants.myPlayerId == 2)
                                 {
                                     StartCoroutine(WaitForClick("characterload"));
 
@@ -278,10 +308,10 @@ namespace Assets.Scripts
                                 else
                                 {
                                     clearHighlights(validMoves);                                    
-                                    GlobalConstants.PlayerNum = 2;
+                                    GlobalConstants.myPlayerId = 2;
                                     highlightSpawn();
                                     CloneGameCharacter();
-                                }
+                                }*/
                             }
                             unitPlacedCount++;
                         }
@@ -1276,12 +1306,6 @@ namespace Assets.Scripts
                 tarAnim.SetBool("isDead", true);
                 yield return new WaitForSeconds(.8f);
                 Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
-                if (targetCharacterGameObject.CharacterClassObject.Name.Equals("Kelly"))
-                {
-                    DisplayVictory.SetActive(true);
-                    hidePanel = true;
-                    yield return new WaitForSeconds(500f);
-                }
             }            
             selectedAbility = null;
             hidePanel = false;
@@ -1383,6 +1407,12 @@ namespace Assets.Scripts
                 SelectNextCharacter();
             }
         }
+        IEnumerator WaitForGameInformation()
+        {
+            yield return new WaitForSeconds(4f);
+            //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.CheckGameStatusUrl, new BattlePostObject());
+            
+        }
 
         private void PrepTest()
         {
@@ -1427,7 +1457,7 @@ namespace Assets.Scripts
 
         public void highlightSpawn()
         {
-            if (GlobalConstants.PlayerNum == 1)
+            if (GlobalConstants.myPlayerId == 1)
             {
                 for (int i = player1SpawnXStart; i < player1SpawnXEnd; i++)
                 {
@@ -1501,6 +1531,9 @@ namespace Assets.Scripts
             Animator tempAnim = tempchar.GetComponent<Animator>();
             tempAnim.SetFloat("x", 0);
             tempAnim.SetFloat("y", -1);
+            gameCharacter.CharacterClassObject.X = tempTile.x;
+            gameCharacter.CharacterClassObject.Y = tempTile.y;
+            characterList.Add(gameCharacter.CharacterClassObject);
             myCharacters.Add(tempchar);
             if (unitPlacedCount + 1 < characters.Count)
             {
