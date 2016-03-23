@@ -24,6 +24,8 @@ public class Battle : MonoBehaviour
 	        {
 	            UpdateGame(gameInfo);
                 lastModified = gameInfo.ModifyTime;
+                // Used to determine if changes have been made to data
+	            GlobalConstants.Updated = true;
 	        }
 	    }
 	}

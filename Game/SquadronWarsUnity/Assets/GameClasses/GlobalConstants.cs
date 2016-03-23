@@ -54,6 +54,7 @@ namespace Assets.GameClasses
         public static List<int> CharacterQueue { get; set; }
         public static List<Tile> AffectedTiles { get; set; }
         public static int myPlayerId = 0;
+        public static bool Updated = true;
 
 
         //public static List<Character> PlayerCharacters { get; set; } 

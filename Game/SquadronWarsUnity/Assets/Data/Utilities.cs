@@ -60,8 +60,6 @@ namespace Assets.Data
                 return null;
 
             var objectAttributes = GetParameterList(type);
-                //type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).Select(x => x.Name)
-                //.ToList();;
 
             switch (obj.type)
             {
