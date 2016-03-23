@@ -21,29 +21,41 @@ public class Battle : MonoBehaviour
 	    {
 	        if (GlobalConstants.GameId == null)
 	        {
-                var gameInfo = GlobalConstants.Utilities.GetGameInfo(GlobalConstants.StartGameUrl);
-                StartGame();
-	            GlobalConstants.Updated = true;
-                UpdateGame(gameInfo);
+	            StartCoroutine(StartGameCoroutine());
+                
 	        }
 	        else
 	        {
-	            var gameInfo = GlobalConstants.Utilities.GetGameInfo();
-
-	            if (!lastModified.Equals(gameInfo.ModifyTime))
-	            {
-	                UpdateGame(gameInfo);
-	                lastModified = gameInfo.ModifyTime;
-	                // Used to determine if changes have been made to data
-	                GlobalConstants.Updated = true;
-	            }
+	            StartCoroutine(UpdateGameCoroutine());
 	        }
 	    }
 	}
 
-    public void UpdateGame(GameInfo gameInfo)
+    public IEnumerator StartGameCoroutine()
+    {
+        var gameInfo = GlobalConstants.Utilities.GetGameInfo(GlobalConstants.StartGameUrl);
+        StartGame();
+        GlobalConstants.Updated = true;
+        yield return UpdateGame(gameInfo);
+    }
+
+    public IEnumerator UpdateGameCoroutine()
+    {
+        var gameInfo = GlobalConstants.Utilities.GetGameInfo();
+
+        if (!lastModified.Equals(gameInfo.ModifyTime))
+        {
+                yield return UpdateGame(gameInfo);
+                lastModified = gameInfo.ModifyTime;
+                // Used to determine if changes have been made to data
+                GlobalConstants.Updated = true;
+        }
+    }
+
+    public GameInfo UpdateGame(GameInfo gameInfo)
     {
         GlobalConstants.Utilities.SetGlobalDataFromGameInfo(gameInfo);
+        return gameInfo;
         // Add methods to do things like moving characters, taking damage, etc. 
     }
 
