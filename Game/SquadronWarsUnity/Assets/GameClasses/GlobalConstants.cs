@@ -44,6 +44,7 @@ namespace Assets.GameClasses
         public static Character curSelectedCharacter { get; set; }
 
         public static DbConnection _dbConnection;
+        public static GameInfo GameInfo;
 
         //Battle related constants for managing a game
         public static int? GameId = null;

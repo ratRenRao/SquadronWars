@@ -12,6 +12,7 @@ namespace Assets.Data
     public class Utilities : MonoBehaviour
     {
         private JSONObject _jsonObject = new JSONObject(); 
+        private DbConnection _dbConnection = new DbConnection();
       
         public JSONObject DeserializeData(string data)
         {
@@ -166,6 +167,8 @@ namespace Assets.Data
                 return int.Parse(obj.str); 
             if (type == typeof (bool))
                 return bool.Parse(obj.str);
+            if (type == typeof (DateTime))
+                return DateTime.Parse(obj.str);
 
             return obj.str;
         }
@@ -423,9 +426,12 @@ namespace Assets.Data
             return null;
         }
 
-        public GameInfo GetGameInfo(string url = GlobalConstants.CheckGameStatusUrl)
+        public GameInfo GetGameInfo(string url = GlobalConstants.CheckGameStatusUrl, DbConnection dbConnection = null)
         {
-            return GlobalConstants._dbConnection.PopulateObjectFromDb<GameInfo>(
+            if (dbConnection == null)
+                dbConnection = GlobalConstants._dbConnection;
+
+            return dbConnection.PopulateObjectFromDb<GameInfo>(
                 url, new BattlePostObject());
         }
 
@@ -434,14 +440,25 @@ namespace Assets.Data
             GlobalConstants.player1Characters = gameInfo.character1Info;
             GlobalConstants.player2Characters = gameInfo.character2Info;
             GlobalConstants.Player.Characters = gameInfo.character1Info;
-            GlobalConstants.currentActions.ActionOrder.Add(gameInfo.GameJson.ActionOrder);
-            GlobalConstants.currentActions.AffectedTiles = (Dictionary<Tile, int>) GlobalConstants.currentActions.AffectedTiles.Concat(gameInfo.GameJson.AffectedTiles);
-            GlobalConstants.currentActions.CharacterQueue = gameInfo.GameJson.CharacterQueue;
+            if (gameInfo.GameJson != null)
+            {
+                GlobalConstants.currentActions.ActionOrder.Add(gameInfo.GameJson.ActionOrder);
+                GlobalConstants.currentActions.AffectedTiles =
+                    (Dictionary<Tile, int>)
+                        GlobalConstants.currentActions.AffectedTiles.Concat(gameInfo.GameJson.AffectedTiles);
+                GlobalConstants.currentActions.CharacterQueue = gameInfo.GameJson.CharacterQueue;
+            }
         }
 
         public Character GetCharacterById(int id)
         {
             return GlobalConstants.Player.Characters.Single(x => x.CharacterId == id);
+        }
+
+        public void UpdateGame(GameInfo gameInfo)
+        {
+            GlobalConstants.Utilities.SetGlobalDataFromGameInfo(gameInfo);
+            // Add methods to do things like moving characters, taking damage, etc. 
         }
     }
 } 

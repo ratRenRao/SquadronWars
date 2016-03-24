@@ -7,11 +7,14 @@ using Assets.GameClasses;
 public class Battle : MonoBehaviour
 {
     private DateTime lastChecked, lastModified;
+    private bool running = false;
 
 	// Use this for initialization
 	void Start ()
 	{
-	    lastChecked = DateTime.Now;
+        //StartGameCoroutine();
+	    //lastChecked = DateTime.Now;
+	    //running = true;
 	}
 	
 	// Update is called once per frame
@@ -19,43 +22,43 @@ public class Battle : MonoBehaviour
 	{
 	    if ((DateTime.Now - lastChecked).TotalSeconds >= 4)
 	    {
-	        if (GlobalConstants.GameId == null)
-	        {
-	            StartCoroutine(StartGameCoroutine());
-                
-	        }
-	        else
-	        {
-	            StartCoroutine(UpdateGameCoroutine());
-	        }
+	        UpdateGameCoroutine();
+	        lastChecked = DateTime.Now;
 	    }
 	}
 
-    public IEnumerator StartGameCoroutine()
+    public void StartGameCoroutine()
     {
+        //StartCoroutine(GlobalConstants.Utilities.GetGameInfo(GlobalConstants.StartGameUrl));
         var gameInfo = GlobalConstants.Utilities.GetGameInfo(GlobalConstants.StartGameUrl);
-        StartGame();
-        GlobalConstants.Updated = true;
-        yield return UpdateGame(gameInfo);
+
+        //var gameInfo = GlobalConstants.GameInfo;
+        if (gameInfo != null)
+        {
+            StartGame();
+            UpdateGame(gameInfo);
+            GlobalConstants.Updated = true;
+        }
     }
 
-    public IEnumerator UpdateGameCoroutine()
+    public void UpdateGameCoroutine()
     {
+        //StartCoroutine(GlobalConstants.Utilities.GetGameInfo());
         var gameInfo = GlobalConstants.Utilities.GetGameInfo();
 
-        if (!lastModified.Equals(gameInfo.ModifyTime))
+        //var gameInfo = GlobalConstants.GameInfo;
+        if (gameInfo != null && !lastModified.Equals(gameInfo.ModifyTime))
         {
-                yield return UpdateGame(gameInfo);
+                UpdateGame(gameInfo);
                 lastModified = gameInfo.ModifyTime;
                 // Used to determine if changes have been made to data
                 GlobalConstants.Updated = true;
         }
     }
 
-    public GameInfo UpdateGame(GameInfo gameInfo)
+    public void UpdateGame(GameInfo gameInfo)
     {
         GlobalConstants.Utilities.SetGlobalDataFromGameInfo(gameInfo);
-        return gameInfo;
         // Add methods to do things like moving characters, taking damage, etc. 
     }
 
