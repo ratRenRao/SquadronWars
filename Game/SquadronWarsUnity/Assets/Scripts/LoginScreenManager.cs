@@ -55,7 +55,7 @@ namespace Assets.Scripts
             GlobalConstants.Player.logins = _logins;
 
 #if DEBUG
-            //new Tests().Run();
+            new Tests().Run();
 #endif
 
             LoginScreen.gameObject.SetActive(false);

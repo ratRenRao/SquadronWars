@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using Assets.GameClasses;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
@@ -22,6 +23,7 @@ namespace Assets.Scripts
         public TileMap tileMap;
         GameObject currentGameCharacter;
         GameObject targetGameCharacter;
+        public GameObject DisplayVictory;
         public GameObject characterStatsPanel;
         public CharacterStatsPanel statsPanel;
         public GameObject actionPanel;
@@ -50,7 +52,8 @@ namespace Assets.Scripts
         CharacterGameObject currentCharacterGameObject;
         CharacterGameObject targetCharacterGameObject;
         List<CharacterGameObject> characters = new List<CharacterGameObject>();
-        List<CharacterGameObject> gCharacters = GlobalConstants.MatchCharacters; 
+        List<CharacterGameObject> gCharacters = GlobalConstants.MatchCharacters;
+        List<Character> characterList = new List<Character>();
         List<GameObject> myCharacters = new List<GameObject>();
         //Character character;
         //Character targetCharacter;
@@ -80,7 +83,7 @@ namespace Assets.Scripts
             //tarAnim.SetFloat("x", 0);
             //tarAnim.SetFloat("y", -1);
             //hidePanel = false;
-            GlobalConstants.PlayerNum = 1;
+            GlobalConstants.myPlayerId = 1;
             battlesong.playOnAwake = true;
             placeCharacterPhase = true;
             characters = GlobalConstants.MatchCharacters;
@@ -99,8 +102,28 @@ namespace Assets.Scripts
         {
             if(action == Action.WaitForGameInfo)
             {
+                //Append Characters to player # character on global constants
 
+                if (GlobalConstants.Updated)
+                {
+                    if (placeCharacterPhase)
+                    {
+                        if(GlobalConstants.player1Characters.Count > 0 && GlobalConstants.player2Characters.Count > 0)
+                        {
+
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+                    StartCoroutine(WaitForGameInformation());
+                }
             }
+
             if (!arraySet)
             {
                 
@@ -264,9 +287,18 @@ namespace Assets.Scripts
                             tempTile.isValidMove = false;
                             tempTile.highlight.SetActive(false);
                             tempTile.isOccupied = true;
-                            if ((unitPlacedCount + 1) == 5)
+                            if ((unitPlacedCount + 1) == 5 /*|| (unitPlacedCount + 1) == 6*/)
                             {
-                                if (GlobalConstants.PlayerNum == 2)
+                                if (GlobalConstants.myPlayerId == 1)
+                                {
+                                    GlobalConstants.player1Characters = characterList;
+                                }
+                                else
+                                {
+                                    GlobalConstants.player2Characters = characterList;
+                                }
+                                var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.PlaceCharacterUrl, new BattlePostObject());
+                                /*if (GlobalConstants.myPlayerId == 2)
                                 {
                                     StartCoroutine(WaitForClick("characterload"));
 
@@ -275,12 +307,11 @@ namespace Assets.Scripts
                                 }
                                 else
                                 {
-                                    unitPlacedCount = -1;
                                     clearHighlights(validMoves);                                    
-                                    GlobalConstants.PlayerNum = 2;
+                                    GlobalConstants.myPlayerId = 2;
                                     highlightSpawn();
                                     CloneGameCharacter();
-                                }
+                                }*/
                             }
                             unitPlacedCount++;
                         }
@@ -1221,8 +1252,8 @@ namespace Assets.Scripts
         {
             int dmg = currentCharacterGameObject.CharacterClassObject.CurrentStats.Dmg;
             int def = targetCharacterGameObject.CharacterClassObject.CurrentStats.Defense;
-            Debug.Log("Damage: " + dmg);
-            Debug.Log("Def: " + def);
+            //Debug.Log("Damage: " + dmg);
+            //Debug.Log("Def: " + def);
             return dmg - (def / 10);
         }
 
@@ -1245,7 +1276,6 @@ namespace Assets.Scripts
             anim.SetBool(weaponType, false);
             tarAnim.SetBool("isAttacked", false);
             int damage = 0;
-            Debug.Log(ability);
             if (ability != null)
             {
                 GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
@@ -1275,6 +1305,7 @@ namespace Assets.Scripts
                 //myCharacters.Remove(targetCharacterGameObject.gameObject);
                 tarAnim.SetBool("isDead", true);
                 yield return new WaitForSeconds(.8f);
+                Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
             }            
             selectedAbility = null;
             hidePanel = false;
@@ -1323,6 +1354,13 @@ namespace Assets.Scripts
                     //myCharacters.Remove(targetCharacterGameObject.gameObject);
                     tarAnim.SetBool("isDead", true);
                     yield return new WaitForSeconds(.8f);
+                    Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
+                    if (targetCharacterGameObject.CharacterClassObject.Name.Equals("Kelly"))
+                    {
+                        DisplayVictory.SetActive(true);
+                        hidePanel = true;
+                        yield return new WaitForSeconds(500f);
+                    }
                 }
             }
             selectedAbility = null;
@@ -1369,6 +1407,12 @@ namespace Assets.Scripts
                 SelectNextCharacter();
             }
         }
+        IEnumerator WaitForGameInformation()
+        {
+            yield return new WaitForSeconds(4f);
+            //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.CheckGameStatusUrl, new BattlePostObject());
+            
+        }
 
         private void PrepTest()
         {
@@ -1413,7 +1457,7 @@ namespace Assets.Scripts
 
         public void highlightSpawn()
         {
-            if (GlobalConstants.PlayerNum == 1)
+            if (GlobalConstants.myPlayerId == 1)
             {
                 for (int i = player1SpawnXStart; i < player1SpawnXEnd; i++)
                 {
@@ -1463,14 +1507,13 @@ namespace Assets.Scripts
         }*/
 
         public void placeCharacter(Tile tempTile, CharacterGameObject gameCharacter)
-        {
+        {            
             GameObject tileMap = GameObject.FindGameObjectWithTag("map");
             tempTile.isOccupied = true;
             gameCharacter.X = tempTile.x;
             gameCharacter.Y = tempTile.y;
             tempTile.character = gameCharacter;
             int spriteId = gameCharacter.CharacterClassObject.SpriteId;
-            Debug.Log(spriteId);
             GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + spriteId /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
             //gameCharacter.gameObject.transform.position = new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y);
             //gameCharacter.gameObject.transform.rotation = Quaternion.identity;
@@ -1488,6 +1531,9 @@ namespace Assets.Scripts
             Animator tempAnim = tempchar.GetComponent<Animator>();
             tempAnim.SetFloat("x", 0);
             tempAnim.SetFloat("y", -1);
+            gameCharacter.CharacterClassObject.X = tempTile.x;
+            gameCharacter.CharacterClassObject.Y = tempTile.y;
+            characterList.Add(gameCharacter.CharacterClassObject);
             myCharacters.Add(tempchar);
             if (unitPlacedCount + 1 < characters.Count)
             {

@@ -44,16 +44,15 @@ namespace Assets.GameClasses
         public static Character curSelectedCharacter { get; set; }
 
         public static DbConnection _dbConnection;
+        public static GameInfo GameInfo;
 
         //Battle related constants for managing a game
-        public static int GameId = 0;
+        public static int? GameId = null;
         public static List<Character> player1Characters = new List<Character>();
         public static List<Character> player2Characters = new List<Character>();
         public static BattleAction currentActions = new BattleAction();
-        public static Action ActionOrder { get; set; }
-        public static List<int> CharacterQueue { get; set; }
-        public static List<Tile> AffectedTiles { get; set; }
         public static int myPlayerId = 0;
+        public static bool Updated = true;
 
 
         //public static List<Character> PlayerCharacters { get; set; } 

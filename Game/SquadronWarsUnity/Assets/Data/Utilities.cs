@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Assets.GameClasses;
+using Assets.Scripts;
 using UnityEngine;
 
 namespace Assets.Data
@@ -11,6 +12,7 @@ namespace Assets.Data
     public class Utilities : MonoBehaviour
     {
         private JSONObject _jsonObject = new JSONObject(); 
+        private DbConnection _dbConnection = new DbConnection();
       
         public JSONObject DeserializeData(string data)
         {
@@ -60,8 +62,6 @@ namespace Assets.Data
                 return null;
 
             var objectAttributes = GetParameterList(type);
-                //type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).Select(x => x.Name)
-                //.ToList();;
 
             switch (obj.type)
             {
@@ -167,6 +167,8 @@ namespace Assets.Data
                 return int.Parse(obj.str); 
             if (type == typeof (bool))
                 return bool.Parse(obj.str);
+            if (type == typeof (DateTime))
+                return DateTime.Parse(obj.str);
 
             return obj.str;
         }
@@ -424,10 +426,13 @@ namespace Assets.Data
             return null;
         }
 
-        public GameInfo GetGameInfo()
+        public GameInfo GetGameInfo(string url = GlobalConstants.CheckGameStatusUrl, DbConnection dbConnection = null)
         {
-            return GlobalConstants._dbConnection.PopulateObjectFromDb<GameInfo>(
-                GlobalConstants.CheckGameStatusUrl, GlobalConstants.Player.logins);
+            if (dbConnection == null)
+                dbConnection = GlobalConstants._dbConnection;
+
+            return dbConnection.PopulateObjectFromDb<GameInfo>(
+                url, new BattlePostObject());
         }
 
         public void SetGlobalDataFromGameInfo(GameInfo gameInfo)
@@ -435,14 +440,25 @@ namespace Assets.Data
             GlobalConstants.player1Characters = gameInfo.character1Info;
             GlobalConstants.player2Characters = gameInfo.character2Info;
             GlobalConstants.Player.Characters = gameInfo.character1Info;
-            GlobalConstants.ActionOrder = gameInfo.GameJson.ActionOrder;
-            GlobalConstants.AffectedTiles = gameInfo.GameJson.AffectedTiles;
-            GlobalConstants.CharacterQueue = gameInfo.GameJson.CharacterQueue;
+            if (gameInfo.GameJson != null)
+            {
+                GlobalConstants.currentActions.ActionOrder.Add(gameInfo.GameJson.ActionOrder);
+                GlobalConstants.currentActions.AffectedTiles =
+                    (Dictionary<Tile, int>)
+                        GlobalConstants.currentActions.AffectedTiles.Concat(gameInfo.GameJson.AffectedTiles);
+                GlobalConstants.currentActions.CharacterQueue = gameInfo.GameJson.CharacterQueue;
+            }
         }
 
         public Character GetCharacterById(int id)
         {
             return GlobalConstants.Player.Characters.Single(x => x.CharacterId == id);
+        }
+
+        public void UpdateGame(GameInfo gameInfo)
+        {
+            GlobalConstants.Utilities.SetGlobalDataFromGameInfo(gameInfo);
+            // Add methods to do things like moving characters, taking damage, etc. 
         }
     }
 } 
