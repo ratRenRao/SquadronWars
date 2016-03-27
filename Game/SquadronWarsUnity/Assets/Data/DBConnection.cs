@@ -38,7 +38,6 @@ namespace Assets.Data
         {
             //jsonObject = JSONObject.CreateStringObject("{\"GameObject\": {\"userName\": \"test\",\"password\": \"testing123\"}");
             var www = new WWW(url, jsonObject);
-            Debug.Log(url + " " + jsonObject);
             StartCoroutine(WaitForRequest(www));
             while (!www.isDone) { }
 

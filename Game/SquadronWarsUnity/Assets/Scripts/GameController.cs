@@ -296,11 +296,13 @@ namespace Assets.Scripts
                                 else
                                 {
                                     GlobalConstants.player2Characters = characterList;
-                                }
-                                var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.PlaceCharacterUrl, new BattlePostObject());
+                                    Debug.Log("I was player 2");
+                                }                                
                                 clearHighlights(validMoves);
                                 action = Action.WaitForGameInfo;
                                 Debug.Log("all characters placed");
+                                placeCharacterPhase = false;
+                                var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.PlaceCharacterUrl, new BattlePostObject());
                                 /*if (GlobalConstants.myPlayerId == 2)
                                 {
                                     StartCoroutine(WaitForClick("characterload"));
