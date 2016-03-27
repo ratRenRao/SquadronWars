@@ -83,7 +83,7 @@ namespace Assets.Scripts
             //tarAnim.SetFloat("x", 0);
             //tarAnim.SetFloat("y", -1);
             //hidePanel = false;
-            GlobalConstants.myPlayerId = 1;
+            //GlobalConstants.myPlayerId = 1;
             battlesong.playOnAwake = true;
             placeCharacterPhase = true;
             characters = GlobalConstants.MatchCharacters;
