@@ -8,7 +8,7 @@ public class BattlePostObject
 {
     public string username { get; set; }
     public string password { get; set; }
-    public int? gameId { get; set; }
+    public int gameId { get; set; }
     public string player1 { get; set; }
     //public List<Character> player1 { get; set; }
     public string player2 { get; set; }

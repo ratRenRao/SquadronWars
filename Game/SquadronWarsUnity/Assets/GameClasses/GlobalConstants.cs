@@ -47,7 +47,7 @@ namespace Assets.GameClasses
         public static GameInfo GameInfo;
 
         //Battle related constants for managing a game
-        public static int? GameId = null;
+        public static int GameId = 0;
         public static List<Character> player1Characters = new List<Character>();
         public static List<Character> player2Characters = new List<Character>();
         public static BattleAction currentActions = new BattleAction();
