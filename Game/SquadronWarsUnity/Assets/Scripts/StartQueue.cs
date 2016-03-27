@@ -10,6 +10,7 @@ public class StartQueue : MonoBehaviour {
     public GameObject queueScreen;
     private DbConnection _dbConnection = new DbConnection();
     public bool waitForLoading = true;
+    public bool setQueueScreen = false;
 	// Use this for initialization
 	void Start () {
 	    
@@ -30,7 +31,11 @@ public class StartQueue : MonoBehaviour {
 
     void Update()
     {
-        
+        /*if (setQueueScreen)
+        {
+            setQueueScreen = false;
+        }*/
+
     }
 
     public void WaitForOpponent()

@@ -23,7 +23,8 @@ public class Battle : MonoBehaviour
         if (checkUpdate)
         {
             checkUpdate = false;
-            StartCoroutine(WaitBeforeUpdate());
+            Debug.Log("checkUpdate called");
+            StartCoroutine(BattleWaitForLoad());
         } 
 	}
 
@@ -109,10 +110,21 @@ public class Battle : MonoBehaviour
         */
     }
 
-    IEnumerator WaitBeforeUpdate()
+    /*IEnumerator WaitForLoad()
     {
-        yield return new WaitForSeconds(4f);
-        UpdateGameCoroutine();
+        Debug.Log("WaitUpdate called");
+        
+        yield return new WaitForSeconds(.5f);
         checkUpdate = true;
+    }*/
+
+    IEnumerator BattleWaitForLoad()
+    {
+        Debug.Log("WaitUpdate called");
+        yield return new WaitForSeconds(4f);
+        checkUpdate = true;
+        UpdateGameCoroutine();
+        
+        
     }
 }
