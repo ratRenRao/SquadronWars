@@ -110,6 +110,9 @@ namespace Assets.Scripts
                     {
                         if(GlobalConstants.player1Characters.Count > 0 && GlobalConstants.player2Characters.Count > 0)
                         {
+                            Debug.Log("Player 1 list: " + GlobalConstants.player1Characters.Count);
+                            Debug.Log("Player 2 list: " + GlobalConstants.player2Characters.Count);
+                            //PlaceEnemyCharacters();
                             Debug.Log("All Characters placed");
                         }
                     }
