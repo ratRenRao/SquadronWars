@@ -110,7 +110,7 @@ namespace Assets.Scripts
                     {
                         if(GlobalConstants.player1Characters.Count > 0 && GlobalConstants.player2Characters.Count > 0)
                         {
-
+                            Debug.Log("All Characters placed");
                         }
                     }
                     else
@@ -298,6 +298,9 @@ namespace Assets.Scripts
                                     GlobalConstants.player2Characters = characterList;
                                 }
                                 var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.PlaceCharacterUrl, new BattlePostObject());
+                                clearHighlights(validMoves);
+                                action = Action.WaitForGameInfo;
+                                Debug.Log("all characters placed");
                                 /*if (GlobalConstants.myPlayerId == 2)
                                 {
                                     StartCoroutine(WaitForClick("characterload"));
