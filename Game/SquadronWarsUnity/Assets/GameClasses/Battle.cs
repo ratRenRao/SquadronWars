@@ -20,11 +20,7 @@ public class Battle : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if ((DateTime.Now - lastChecked).TotalSeconds >= 4)
-	    {
-	        UpdateGameCoroutine();
-	        lastChecked = DateTime.Now;
-	    }
+        StartCoroutine(WaitBeforeUpdate());   
 	}
 
     public void StartGameCoroutine()
@@ -107,5 +103,11 @@ public class Battle : MonoBehaviour
         GlobalConstants.player2Characters
         GlobalConstants.currentActions
         */
+    }
+
+    IEnumerator WaitBeforeUpdate()
+    {
+        yield return new WaitForSeconds(4f);
+        UpdateGameCoroutine();
     }
 }
