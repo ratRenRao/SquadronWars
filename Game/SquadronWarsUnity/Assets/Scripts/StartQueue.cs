@@ -38,7 +38,7 @@ public class StartQueue : MonoBehaviour {
         while(!CheckForMatchedPlayer())
         {
             WaitOneSecond();
-            WaitForGameInfoReturned();
+            GetGameStatus();
         }
         SceneManager.LoadScene("BattleMap2");
     }
@@ -60,10 +60,23 @@ public class StartQueue : MonoBehaviour {
     }
     /**/
 
+
     public void WaitForGameInfoReturned()
     {
         //StartCoroutine(GlobalConstants.Utilities.GetGameInfo(GlobalConstants.StartGameUrl));
         var gameInfo = GlobalConstants.Utilities.GetGameInfo(GlobalConstants.StartGameUrl, GlobalConstants._dbConnection);
+
+        //var gameInfo = GlobalConstants.GameInfo;
+        if (gameInfo != null)
+        {
+            GlobalConstants.Utilities.UpdateGame(gameInfo);
+            GlobalConstants.Updated = true;
+        }
+    }
+
+    public void GetGameStatus()
+    {
+        var gameInfo = GlobalConstants.Utilities.GetGameInfo(GlobalConstants.CheckGameStatusUrl, GlobalConstants._dbConnection);
 
         //var gameInfo = GlobalConstants.GameInfo;
         if (gameInfo != null)
