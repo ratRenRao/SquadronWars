@@ -95,7 +95,10 @@ namespace Assets.Scripts
         {
             gameObject.AddComponent<DbConnection>();
             _dbConnection = gameObject.GetComponent<DbConnection>();
-            GlobalConstants._dbConnection = gameObject.GetComponent<DbConnection>();
+            //GlobalConstants._dbConnection = gameObject.GetComponent<DbConnection>();
+            GlobalConstants._dbConnection = new GameObject("DbConnection").AddComponent<DbConnection>();
+            DontDestroyOnLoad(GlobalConstants._dbConnection);
+            DontDestroyOnLoad(GlobalConstants.Utilities);
         }
     }
 }

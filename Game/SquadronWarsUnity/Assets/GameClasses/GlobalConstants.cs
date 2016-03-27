@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Assets.Data;
 using Assets.Scripts;
+using UnityEngine;
 
 namespace Assets.GameClasses
 {
@@ -43,7 +44,7 @@ namespace Assets.GameClasses
 
         public static Character curSelectedCharacter { get; set; }
 
-        public static DbConnection _dbConnection;
+        public static DbConnection _dbConnection = new GameObject().GetComponent<DbConnection>();
         public static GameInfo GameInfo;
 
         //Battle related constants for managing a game
