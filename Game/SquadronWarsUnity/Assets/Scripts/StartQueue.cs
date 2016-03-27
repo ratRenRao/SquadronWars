@@ -21,22 +21,16 @@ public class StartQueue : MonoBehaviour {
     public void StartFindingMatch()
     {
         //homeScreen.SetActive(false);
-        queueScreen.SetActive(true);       
+        queueScreen.SetActive(true);
+        WaitForGameInfoReturned();
+        WaitForOpponent();      
         //StartCoroutine("FindPlayer");
         
     }
 
     void Update()
     {
-        if (waitForLoading)
-        {
-            WaitForGameInfoReturned();
-            WaitForOpponent();
-        }
-        else
-        {
-            SceneManager.LoadScene("BattleMap2");
-        }
+        
     }
 
     public void WaitForOpponent()
@@ -44,11 +38,9 @@ public class StartQueue : MonoBehaviour {
         while(!CheckForMatchedPlayer())
         {
             WaitOneSecond();
+            WaitForGameInfoReturned();
         }
-        if (CheckForMatchedPlayer())
-        {
-            waitForLoading = false;
-        }
+        SceneManager.LoadScene("BattleMap2");
     }
 
 
