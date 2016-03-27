@@ -15,6 +15,8 @@ namespace Assets.GameClasses
         Boots,
         Accessory1,
         Accessory2,
+        MainHand,
+        OffHand,
         Unique
     };
 

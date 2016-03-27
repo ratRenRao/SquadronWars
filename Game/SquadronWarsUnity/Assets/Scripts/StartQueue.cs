@@ -29,6 +29,23 @@ public class StartQueue : MonoBehaviour {
         
     }
 
+    public bool CheckForMatchedPlayer()
+    {
+        if(GlobalConstants.myPlayerId == 1)
+        {
+            if(GlobalConstants.player2Characters.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        if(GlobalConstants.player1Characters.Count > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
     /*
     IEnumerator FindPlayer()
     {
@@ -40,7 +57,7 @@ public class StartQueue : MonoBehaviour {
     public void WaitForGameInfoReturned()
     {
         //StartCoroutine(GlobalConstants.Utilities.GetGameInfo(GlobalConstants.StartGameUrl));
-        var gameInfo = GlobalConstants.Utilities.GetGameInfo(GlobalConstants.StartGameUrl, _dbConnection);
+        var gameInfo = GlobalConstants.Utilities.GetGameInfo(GlobalConstants.StartGameUrl, GlobalConstants._dbConnection);
 
         //var gameInfo = GlobalConstants.GameInfo;
         if (gameInfo != null)

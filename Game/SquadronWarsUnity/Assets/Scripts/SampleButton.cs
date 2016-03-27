@@ -317,9 +317,9 @@ public class SampleButton : MonoBehaviour
     public void SendBattleMessage()
     {
         /**/
-        GlobalConstants.GameId = 14;
-        GlobalConstants.myPlayerId = 1;
-        GlobalConstants.player1Characters = GlobalConstants.Player.Characters;
+        //GlobalConstants.GameId = 14;
+        //GlobalConstants.myPlayerId = 1;
+        //GlobalConstants.player1Characters = GlobalConstants.Player.Characters;
         GlobalConstants.currentActions = new BattleAction();
         Tile testTile = new Tile();
         testTile.x = 1;
@@ -330,7 +330,7 @@ public class SampleButton : MonoBehaviour
 
         BattlePostObject test = new BattlePostObject();
 
-        var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.WebServerUrl + "/test", test);
+        var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.StartGameUrl, test);
         Debug.Log(www);
         /**/
         //SceneManager.LoadScene("Login");

@@ -72,6 +72,12 @@ namespace Assets.Data
                     return ItemType.Gloves;
                 case "B":
                     return ItemType.Boots;
+                case "S":
+                    return ItemType.Shoulders;
+                case "M":
+                    return ItemType.MainHand;
+                case "O":
+                    return ItemType.OffHand;
                 case "A1":
                     return ItemType.Accessory1;
                 case "A2":

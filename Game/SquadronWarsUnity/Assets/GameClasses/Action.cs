@@ -13,7 +13,7 @@ namespace Assets.GameClasses
             Attack,
             AttackAbility,
             CastAbility,
-            Occupy
+            Endturn
         }
 
         ActionType actionType { get; set; }
