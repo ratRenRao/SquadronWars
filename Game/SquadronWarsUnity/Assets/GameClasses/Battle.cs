@@ -66,6 +66,7 @@ public class Battle : MonoBehaviour
     {
         GlobalConstants.GameId = 0;
         GlobalConstants.myPlayerId = 0;
+        GlobalConstants.opponentId = 0;
         GlobalConstants.player1Characters.Clear();
         GlobalConstants.player2Characters.Clear();
         GlobalConstants.currentActions.ResetBattleActions();
@@ -89,6 +90,7 @@ public class Battle : MonoBehaviour
     {
         GlobalConstants.GameId = 0;
         GlobalConstants.myPlayerId = 0;
+        GlobalConstants.opponentId = 0;
         GlobalConstants.player1Characters.Clear();
         GlobalConstants.player2Characters.Clear();
         GlobalConstants.currentActions.ResetBattleActions();

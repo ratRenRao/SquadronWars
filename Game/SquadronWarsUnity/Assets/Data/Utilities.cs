@@ -437,9 +437,30 @@ namespace Assets.Data
 
         public void SetGlobalDataFromGameInfo(GameInfo gameInfo)
         {
-            GlobalConstants.player1Characters = gameInfo.character1Info;
-            GlobalConstants.player2Characters = gameInfo.character2Info;
-            GlobalConstants.Player.Characters = gameInfo.character1Info;
+            if (gameInfo.character1Info != null)
+            {
+                GlobalConstants.player1Characters = gameInfo.character1Info;
+            }
+            if (gameInfo.character2Info != null)
+            {
+                GlobalConstants.player2Characters = gameInfo.character2Info;
+            }
+            if(gameInfo.player1Id == GlobalConstants.Player.playerId)
+            {
+                GlobalConstants.myPlayerId = 1;
+                if(gameInfo.player2Id != 0)
+                {
+                    GlobalConstants.opponentId = gameInfo.player2Id;
+                }
+            }
+            else
+            {
+                GlobalConstants.myPlayerId = 2;
+                GlobalConstants.opponentId = gameInfo.player1Id;
+            }
+            
+            GlobalConstants.GameId = gameInfo.gameID;
+            //GlobalConstants.Player.Characters = gameInfo.character1Info;
             if (gameInfo.GameJson != null)
             {
                 GlobalConstants.currentActions.ActionOrder.Add(gameInfo.GameJson.ActionOrder);

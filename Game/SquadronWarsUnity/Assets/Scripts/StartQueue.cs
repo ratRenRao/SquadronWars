@@ -24,35 +24,36 @@ public class StartQueue : MonoBehaviour {
         //homeScreen.SetActive(false);
         queueScreen.SetActive(true);
         WaitForGameInfoReturned();
+        WaitForOpponent();
         SceneManager.LoadScene("BattleMap2");
         //StartCoroutine("FindPlayer");
         
     }
 
+    public void WaitForOpponent()
+    {
+        while(!CheckForMatchedPlayer())
+        {
+            WaitOneSecond();
+        }
+    }
+
+
     public bool CheckForMatchedPlayer()
     {
-        if(GlobalConstants.myPlayerId == 1)
-        {
-            if(GlobalConstants.player2Characters.Count > 0)
-            {
-                return true;
-            }
-            return false;
-        }
-        if(GlobalConstants.player1Characters.Count > 0)
+        if(GlobalConstants.opponentId != 0)
         {
             return true;
         }
         return false;
     }
 
-    /*
-    IEnumerator FindPlayer()
+    /**/
+    IEnumerator WaitOneSecond()
     {
-        yield return new WaitForSeconds(.5f);
-        SceneManager.LoadScene("BattleMap2");
+        yield return new WaitForSeconds(1f);
     }
-    */
+    /**/
 
     public void WaitForGameInfoReturned()
     {
