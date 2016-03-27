@@ -8,7 +8,7 @@ public class Battle : MonoBehaviour
 {
     private DateTime lastChecked, lastModified;
     private bool running = false;
-
+    public bool checkUpdate = true;
 	// Use this for initialization
 	void Start ()
 	{
@@ -20,7 +20,11 @@ public class Battle : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-        StartCoroutine(WaitBeforeUpdate());   
+        if (checkUpdate)
+        {
+            checkUpdate = false;
+            StartCoroutine(WaitBeforeUpdate());
+        } 
 	}
 
     public void StartGameCoroutine()
@@ -109,5 +113,6 @@ public class Battle : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         UpdateGameCoroutine();
+        checkUpdate = true;
     }
 }
