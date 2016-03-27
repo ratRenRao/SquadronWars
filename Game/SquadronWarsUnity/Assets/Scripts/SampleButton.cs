@@ -26,7 +26,7 @@ public class SampleButton : MonoBehaviour
     public void BuildCharacterScreen()
     {
         characterScreen = GameObject.FindGameObjectWithTag("CharacterStats").GetComponent<CharacterScreen>();
-        var temp = (GameObject)Resources.Load(("Prefabs/Character1"), typeof(GameObject));
+        var temp = (GameObject)Resources.Load(("Prefabs/Character" + characterGameObject.CharacterClassObject.SpriteId), typeof(GameObject));
         var button = gameObject.GetComponent<SampleButton>();
         var menu = GameObject.FindGameObjectWithTag("MenuManager").GetComponent<MenuManager>();
         var sprite = temp.GetComponent<SpriteRenderer>();

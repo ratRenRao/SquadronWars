@@ -19,7 +19,7 @@ namespace Assets.Scripts
             if (GlobalConstants.Player != null)
             {
                 //not working correctly yet.
-                LoginScreen.gameObject.SetActive(false);
+                //LoginScreen.gameObject.SetActive(false);
                 HomeScreen.SetActive(true);
             }
         }
@@ -58,7 +58,7 @@ namespace Assets.Scripts
             new Tests().Run();
 #endif
 
-            LoginScreen.gameObject.SetActive(false);
+            //LoginScreen.gameObject.SetActive(false);
             HomeScreen.gameObject.SetActive(true);
             //CanvasManager.HomeScreen.SetActive(true);
             //CanvasManager.LoginScreen.SetActive(false);
