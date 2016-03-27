@@ -9,25 +9,34 @@ public class StartQueue : MonoBehaviour {
     public GameObject gameScreen;
     public GameObject queueScreen;
     private DbConnection _dbConnection = new DbConnection();
+    public bool waitForLoading = true;
 	// Use this for initialization
 	void Start () {
 	    
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        	
-	}
+	
 
     public void StartFindingMatch()
     {
         //homeScreen.SetActive(false);
-        queueScreen.SetActive(true);
-        WaitForGameInfoReturned();
-        WaitForOpponent();
-        SceneManager.LoadScene("BattleMap2");
+        queueScreen.SetActive(true);       
         //StartCoroutine("FindPlayer");
         
+    }
+
+    void Update()
+    {
+        if (waitForLoading)
+        {
+            WaitForGameInfoReturned();
+            WaitForOpponent();
+        }
+        else
+        {
+            SceneManager.LoadScene("BattleMap2");
+        }
     }
 
     public void WaitForOpponent()
@@ -35,6 +44,10 @@ public class StartQueue : MonoBehaviour {
         while(!CheckForMatchedPlayer())
         {
             WaitOneSecond();
+        }
+        if (CheckForMatchedPlayer())
+        {
+            waitForLoading = false;
         }
     }
 
