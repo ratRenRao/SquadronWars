@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using Assets.GameClasses;
 using Assets.Scripts;
 using UnityEngine;
@@ -24,6 +25,7 @@ namespace Assets.Data
 
         public T BuildObjectFromJsonData<T>(string data) where T : IJsonable
         {
+            data = RemoveSlashes(data);
             var deserializedJson = DeserializeData(data);
             _jsonObject = deserializedJson;
             Debug.Log(deserializedJson.ToString());
@@ -160,6 +162,11 @@ namespace Assets.Data
             public static List<PropertyInfo> InventoryElementParams = buildParameterListFunc(typeof(StartupData.InventoryElement));
 
         }
+
+        private static string RemoveSlashes(string data)
+        {
+            return Regex.Replace(data, "/", "");
+        } 
 
         private object ChangeJsonType(JSONObject obj, Type type)
         {
