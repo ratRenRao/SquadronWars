@@ -26,7 +26,7 @@ public class StartQueue : MonoBehaviour
     {
         //homeScreen.SetActive(false);
         queueScreen.SetActive(true);
-        homeScreen.SetActive(false);
+        //homeScreen.SetActive(false);
         WaitForGameInfoReturned();
         //StartCoroutine(WaitForOpponent());
         WaitForOpponent();
