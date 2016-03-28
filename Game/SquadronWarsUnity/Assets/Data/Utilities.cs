@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using Assets.GameClasses;
 using Assets.Scripts;
 using UnityEngine;
@@ -24,6 +25,9 @@ namespace Assets.Data
 
         public T BuildObjectFromJsonData<T>(string data) where T : IJsonable
         {
+            Debug.Log("Data before removing slashes" + data);
+            data = RemoveSlashes(data);
+            Debug.Log("Data after removing slashes" + data);
             var deserializedJson = DeserializeData(data);
             _jsonObject = deserializedJson;
             Debug.Log(deserializedJson.ToString());
@@ -67,7 +71,7 @@ namespace Assets.Data
             {
                 case JSONObject.Type.OBJECT:
                     var builder = Activator.CreateInstance(type);
-
+                    Debug.Log("JsonObject" + obj);
                     foreach (var param in objectAttributes.AsEnumerable())
                     {
                         JSONObject j = null;
@@ -79,7 +83,6 @@ namespace Assets.Data
                             j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.Name.ToLower()));
                         else
                             j = obj[keyIndex];
-
                         builder.GetType()
                             .GetProperty(param.Name)
                             .SetValue(builder, j != null 
@@ -160,6 +163,16 @@ namespace Assets.Data
             public static List<PropertyInfo> InventoryElementParams = buildParameterListFunc(typeof(StartupData.InventoryElement));
 
         }
+
+        private static string RemoveSlashes(string data)
+        {
+            string temp = Regex.Replace(data, "\\\\", "");
+            temp = Regex.Replace(temp, "\"character2Info\":\"", "\"character2Info\":");
+            temp = Regex.Replace(temp, "\"character1Info\":\"", "\"character1Info\":");
+            temp = Regex.Replace(temp, "}]\"}}", "}]}}");
+            //temp = Regex.Replace(temp, "\"", "'");
+            return temp;
+        } 
 
         private object ChangeJsonType(JSONObject obj, Type type)
         {

@@ -4,13 +4,16 @@ using Assets.Data;
 using Assets.GameClasses;
 using UnityEngine.SceneManagement;
 
-public class StartQueue : MonoBehaviour {
+public class StartQueue : MonoBehaviour
+{
 
+    public GameObject homeScreen;
     public GameObject gameScreen;
     public GameObject queueScreen;
     private DbConnection _dbConnection = new DbConnection();
     public bool waitForLoading = true;
     public bool setQueueScreen = false;
+
 	// Use this for initialization
 	void Start () {
 	    
@@ -23,10 +26,12 @@ public class StartQueue : MonoBehaviour {
     {
         //homeScreen.SetActive(false);
         queueScreen.SetActive(true);
+        //homeScreen.SetActive(false);
         WaitForGameInfoReturned();
-        WaitForOpponent();      
+        //StartCoroutine(WaitForOpponent());
+        WaitForOpponent();
         //StartCoroutine("FindPlayer");
-        
+
     }
 
     void Update()
@@ -64,6 +69,13 @@ public class StartQueue : MonoBehaviour {
         yield return new WaitForSeconds(1f);
     }
     /**/
+
+    public void ButtonClickCancel()
+    {
+        homeScreen.SetActive(true);
+        queueScreen.SetActive(false);
+        
+    }
 
 
     public void WaitForGameInfoReturned()

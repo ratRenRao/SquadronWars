@@ -16,12 +16,12 @@ namespace Assets.Scripts
         // Use this for initialization
         void Start()
         {
-            if (GlobalConstants.Player != null)
-            {
+            //if (GlobalConstants.Player != null)
+            //{
                 //not working correctly yet.
-                LoginScreen.gameObject.SetActive(false);
+                //LoginScreen.gameObject.SetActive(false);
                 HomeScreen.SetActive(true);
-            }
+            //}
         }
 
         // Update is called once per frame
@@ -58,7 +58,7 @@ namespace Assets.Scripts
             new Tests().Run();
 #endif
 
-            LoginScreen.gameObject.SetActive(false);
+            //LoginScreen.gameObject.SetActive(false);
             HomeScreen.gameObject.SetActive(true);
             //CanvasManager.HomeScreen.SetActive(true);
             //CanvasManager.LoginScreen.SetActive(false);
