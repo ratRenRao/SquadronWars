@@ -51,8 +51,8 @@ public class StartQueue : MonoBehaviour
             GetGameStatus();
 
         }
-        yield return true;
         SceneManager.LoadScene("BattleMap2");
+        yield return true;
     }
 
 
