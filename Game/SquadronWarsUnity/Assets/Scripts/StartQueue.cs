@@ -43,16 +43,14 @@ public class StartQueue : MonoBehaviour
 
     }
 
-    public IEnumerator WaitForOpponent()
+    public void WaitForOpponent()
     {
         while(!CheckForMatchedPlayer())
         {
             WaitOneSecond();
             GetGameStatus();
-
         }
         SceneManager.LoadScene("BattleMap2");
-        yield return true;
     }
 
 
