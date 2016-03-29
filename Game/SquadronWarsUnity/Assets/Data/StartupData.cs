@@ -78,10 +78,8 @@ namespace Assets.Data
                     return ItemType.MainHand;
                 case "O":
                     return ItemType.OffHand;
-                case "A1":
-                    return ItemType.Accessory1;
-                case "A2":
-                    return ItemType.Accessory2;
+                case "A":
+                    return ItemType.Accessory;
                 default:
                     return ItemType.Unique;
             }
