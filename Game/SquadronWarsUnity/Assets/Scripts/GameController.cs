@@ -104,11 +104,13 @@ namespace Assets.Scripts
             if(action == Action.WaitForGameInfo)
             {
                 //Append Characters to player # character on global constants
-                
+                //Debug.Log("Player 1 list: " + GlobalConstants.player1Characters.Count);
+                //Debug.Log("Player 2 list: " + GlobalConstants.player2Characters.Count);
                 if (GlobalConstants.Updated)
                 {
                     if (placeCharacterPhase)
                     {
+                        
                         if (GlobalConstants.player1Characters.Count > 0 && GlobalConstants.player2Characters.Count > 0)
                         {
                             Debug.Log("Player 1 list: " + GlobalConstants.player1Characters.Count);

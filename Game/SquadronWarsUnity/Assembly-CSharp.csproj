@@ -87,7 +87,6 @@
      <Compile Include="Assets\Scripts\CharacterStatsPanel.cs" />
      <Compile Include="Assets\Scripts\CreateCharacter.cs" />
      <Compile Include="Assets\Scripts\CreateUnitList.cs" />
-     <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\ExperienceBar.cs" />
      <Compile Include="Assets\Scripts\GameCharacter.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
@@ -97,7 +96,6 @@
      <Compile Include="Assets\Scripts\ModifyCharacterStats.cs" />
      <Compile Include="Assets\Scripts\RegisterButton.cs" />
      <Compile Include="Assets\Scripts\SampleButton.cs" />
-     <Compile Include="Assets\Scripts\SelectCharacterModel.cs" />
      <Compile Include="Assets\Scripts\SetLoginPassword.cs" />
      <Compile Include="Assets\Scripts\SetLoginUsername.cs" />
      <Compile Include="Assets\Scripts\StartQueue.cs" />
