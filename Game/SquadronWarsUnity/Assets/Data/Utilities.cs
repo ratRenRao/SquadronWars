@@ -70,7 +70,8 @@ namespace Assets.Data
             switch (obj.type)
             {
                 case JSONObject.Type.OBJECT:
-                    var builder = Activator.CreateInstance(type);
+                    var builder = TryCatchCreation(obj, type);
+
                     Debug.Log("JsonObject" + obj);
                     foreach (var param in objectAttributes.AsEnumerable())
                     {
@@ -123,6 +124,18 @@ namespace Assets.Data
             }
 
             return null;
+        }
+
+        public static object TryCatchCreation(object obj, Type type)
+        {
+            try
+            {
+                return Activator.CreateInstance(type);
+            }
+            catch (Exception)
+            {
+                return new Stats();
+            }
         }
 
         public static List<PropertyInfo> GetParameterList(Type type)
