@@ -26,12 +26,12 @@ namespace Assets.Data
 
         public T BuildObjectFromJsonData<T>(string data) where T : IJsonable
         {
-            Debug.Log("Data before removing slashes" + data);
+            //Debug.Log("Data before removing slashes" + data);
             data = RemoveSlashes(data);
-            Debug.Log("Data after removing slashes" + data);
+            //Debug.Log("Data after removing slashes" + data);
             var deserializedJson = DeserializeData(data);
             _jsonObject = deserializedJson;
-            Debug.Log(deserializedJson.ToString());
+            //Debug.Log(deserializedJson.ToString());
             var obj = Activator.CreateInstance<T>();
             obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(obj)), typeof(T));
 
@@ -74,7 +74,7 @@ namespace Assets.Data
                 case JSONObject.Type.OBJECT:
                     var builder = TryCatchCreation(obj, type);
 
-                    Debug.Log("JsonObject = " + obj + " Type = " + type);
+                    //Debug.Log("JsonObject = " + obj + " Type = " + type);
                     foreach (var param in objectAttributes.AsEnumerable())
                     {
                         JSONObject j = null;
@@ -98,16 +98,16 @@ namespace Assets.Data
                                 
                                 testBool = int.TryParse(tmpString, out tmp);
                                 int test = int.Parse(tmpString);
-                                Debug.Log(tmpString + " bool = " + test);
+                                //Debug.Log(tmpString + " bool = " + test);
                             }
                             if (testBool)
                             {
-                                Debug.Log("Equipment = " + tmpString + " and testBool = " + testBool);
-                                builder = GetItemFromNumber(int.Parse(tmpString));
+                                //Debug.Log("Equipment = " + tmpString + " and testBool = " + testBool);
+                                builder.GetType().GetProperty(keyIndex).SetValue(builder, j != null ? GetItemFromNumber(int.Parse(tmpString)) : null, null);
                             }
                         }
                         else {
-                            Debug.Log("Not Equipment: " + j);
+                           // Debug.Log("Not Equipment: " + j);
                             builder.GetType()
                                     .GetProperty(param.Name)
                                     .SetValue(builder, j != null
@@ -153,8 +153,8 @@ namespace Assets.Data
 
         private static Item GetItemFromNumber(int num)
         {
-            Debug.Log("int" + num);
-            Debug.Log(GlobalConstants.ItemsMasterList.Single(x => x.ItemId == num));
+            //Debug.Log("int" + num);
+            //Debug.Log(GlobalConstants.ItemsMasterList.Single(x => x.ItemId == num));
             return GlobalConstants.ItemsMasterList.Single(x => x.ItemId == num);
         }
 
@@ -190,6 +190,8 @@ namespace Assets.Data
                     return ParameterLists.InventoryElementParams;
                 case "StartupData":
                     return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static).ToList();
+                case "Equipment":
+                    return ParameterLists.EquipmentParams;
                 default:
                     return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).ToList();
             }            
@@ -206,6 +208,7 @@ namespace Assets.Data
             public static List<PropertyInfo> AbilityParams = buildParameterListFunc(typeof(Ability));
             public static List<PropertyInfo> AbilityPreReqParams = buildParameterListFunc(typeof(AbilityPreReq));
             public static List<PropertyInfo> InventoryElementParams = buildParameterListFunc(typeof(StartupData.InventoryElement));
+            public static List<PropertyInfo> EquipmentParams = buildParameterListFunc(typeof(Equipment));
 
         }
 
