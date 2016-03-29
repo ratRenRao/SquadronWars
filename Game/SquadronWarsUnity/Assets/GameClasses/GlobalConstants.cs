@@ -117,6 +117,8 @@ namespace Assets.GameClasses
               //      name = SquadJsonObjectName;
               //      break;
                 case "characterlist":
+                case "character1list":
+                case "character2list":
                     name = CharacterJsonObjectName;
                     break;
                 case "startupdata" :
