@@ -7,8 +7,8 @@ namespace Assets.GameClasses
 {
     public class Character : IJsonable
     {
-        public int X;
-        public int Y;
+        public int X { get; set; }
+        public int Y { get; set; }
         public bool Updated = false;
 
         public int CharacterId { get; set; }
