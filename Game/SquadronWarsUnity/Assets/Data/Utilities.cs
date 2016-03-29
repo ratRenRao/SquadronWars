@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using Assets.GameClasses;
 using Assets.Scripts;
 using UnityEngine;
+using UnityEngine.Networking.NetworkSystem;
 
 namespace Assets.Data
 {
@@ -67,6 +68,12 @@ namespace Assets.Data
 
             var objectAttributes = GetParameterList(type);
 
+            int tmp;
+            if (type.Name == "Equipment" && int.TryParse(obj[0].str, out tmp))
+            {
+                return GetItemFromNumber((int)obj.n);
+            }
+
             switch (obj.type)
             {
                 case JSONObject.Type.OBJECT:
@@ -84,12 +91,15 @@ namespace Assets.Data
                             j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.Name.ToLower()));
                         else
                             j = obj[keyIndex];
-                        builder.GetType()
+
+                  
+                            builder.GetType()
                             .GetProperty(param.Name)
-                            .SetValue(builder, j != null 
-                                ? Decode(j, builder.GetType().GetProperty(param.Name).PropertyType) 
+                            .SetValue(builder, j != null
+                                ? Decode(j, builder.GetType().GetProperty(param.Name).PropertyType)
                                 : null,
                                 null);
+                        
                     }
 
                     return builder;
@@ -124,6 +134,11 @@ namespace Assets.Data
             }
 
             return null;
+        }
+
+        private static Item GetItemFromNumber(int num)
+        {
+            return GlobalConstants.ItemsMasterList.Single(x => x.ItemId == num);
         }
 
         public static object TryCatchCreation(object obj, Type type)
