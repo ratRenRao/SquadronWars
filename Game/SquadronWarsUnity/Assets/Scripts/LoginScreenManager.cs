@@ -16,11 +16,14 @@ namespace Assets.Scripts
         // Use this for initialization
         void Start()
         {
+#if DEBUG
+            //new Tests().Run();
+#endif
             //if (GlobalConstants.Player != null)
             //{
-                //not working correctly yet.
-                //LoginScreen.gameObject.SetActive(false);
-                HomeScreen.SetActive(true);
+            //not working correctly yet.
+            //LoginScreen.gameObject.SetActive(false);
+            HomeScreen.SetActive(true);
             //}
         }
 
@@ -53,10 +56,6 @@ namespace Assets.Scripts
             _player = GlobalConstants.Player;
 
             GlobalConstants.Player.logins = _logins;
-
-#if DEBUG
-            new Tests().Run();
-#endif
 
             //LoginScreen.gameObject.SetActive(false);
             HomeScreen.gameObject.SetActive(true);
