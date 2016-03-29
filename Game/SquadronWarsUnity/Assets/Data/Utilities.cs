@@ -67,19 +67,15 @@ namespace Assets.Data
                 return null;
 
             var objectAttributes = GetParameterList(type);
-
-            int tmp;
-            if (type.Name == "Equipment" && int.TryParse(obj[0].str, out tmp))
-            {
-                return GetItemFromNumber((int)obj.n);
-            }
+            
+            
 
             switch (obj.type)
             {
                 case JSONObject.Type.OBJECT:
                     var builder = TryCatchCreation(obj, type);
 
-                    Debug.Log("JsonObject" + obj);
+                    Debug.Log("JsonObject = " + obj + " Type = " + type);
                     foreach (var param in objectAttributes.AsEnumerable())
                     {
                         JSONObject j = null;
@@ -91,15 +87,35 @@ namespace Assets.Data
                             j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.Name.ToLower()));
                         else
                             j = obj[keyIndex];
-
-                  
+                        if (type.Name.Equals("Equipment"))
+                        {
+                            int tmp;
+                            bool testBool = false;
+                            string tmpString = "";
+                            
+                            if (j != null)
+                            {
+                                tmpString = j.str;
+                                
+                                testBool = int.TryParse(tmpString, out tmp);
+                                int test = int.Parse(tmpString);
+                                Debug.Log(tmpString + " bool = " + test);
+                            }
+                            if (testBool)
+                            {
+                                Debug.Log("Equipment = " + tmpString + " and testBool = " + testBool);
+                                builder = GetItemFromNumber(int.Parse(tmpString));
+                            }
+                        }
+                        else {
+                            Debug.Log("Not Equipment: " + j);
                             builder.GetType()
-                            .GetProperty(param.Name)
-                            .SetValue(builder, j != null
-                                ? Decode(j, builder.GetType().GetProperty(param.Name).PropertyType)
-                                : null,
-                                null);
-                        
+                                    .GetProperty(param.Name)
+                                    .SetValue(builder, j != null
+                                        ? Decode(j, builder.GetType().GetProperty(param.Name).PropertyType)
+                                        : null,
+                                        null);
+                        }
                     }
 
                     return builder;
@@ -138,6 +154,8 @@ namespace Assets.Data
 
         private static Item GetItemFromNumber(int num)
         {
+            Debug.Log("int" + num);
+            Debug.Log(GlobalConstants.ItemsMasterList.Single(x => x.ItemId == num));
             return GlobalConstants.ItemsMasterList.Single(x => x.ItemId == num);
         }
 
