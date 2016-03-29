@@ -13,8 +13,7 @@ namespace Assets.GameClasses
         Legs,
         Shoulders,
         Boots,
-        Accessory1,
-        Accessory2,
+        Accessory,
         MainHand,
         OffHand,
         Unique

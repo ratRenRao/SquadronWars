@@ -68,7 +68,6 @@ namespace Assets.Data
 
             var objectAttributes = GetParameterList(type);
             
-            
 
             switch (obj.type)
             {
