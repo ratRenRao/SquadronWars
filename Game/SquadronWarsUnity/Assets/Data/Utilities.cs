@@ -536,9 +536,12 @@ namespace Assets.Data
             if (gameInfo.GameJson != null)
             {
                 GlobalConstants.currentActions.ActionOrder.Add(gameInfo.GameJson.ActionOrder);
-                GlobalConstants.currentActions.AffectedTiles =
-                    (Dictionary<Tile, int>)
-                        GlobalConstants.currentActions.AffectedTiles.Concat(gameInfo.GameJson.AffectedTiles);
+                if (gameInfo.GameJson.AffectedTiles.Count > 0)
+                {
+                    GlobalConstants.currentActions.AffectedTiles =
+                            GlobalConstants.currentActions.AffectedTiles.Concat(gameInfo.GameJson.AffectedTiles)
+                                .ToDictionary(x=>x.Key, x=>x.Value);
+                }
                 GlobalConstants.currentActions.CharacterQueue = gameInfo.GameJson.CharacterQueue;
             }
         }
