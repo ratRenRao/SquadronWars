@@ -104,17 +104,25 @@ namespace Assets.Scripts
             if(action == Action.WaitForGameInfo)
             {
                 //Append Characters to player # character on global constants
-                //Debug.Log("Player 1 list: " + GlobalConstants.player1Characters.Count);
-                //Debug.Log("Player 2 list: " + GlobalConstants.player2Characters.Count);
+                
                 if (GlobalConstants.Updated)
                 {
+                    GlobalConstants.Updated = false;
                     if (placeCharacterPhase)
-                    {
-                        
+                    {                        
                         if (GlobalConstants.player1Characters.Count > 0 && GlobalConstants.player2Characters.Count > 0)
                         {
+                            placeCharacterPhase = false;
                             Debug.Log("Player 1 list: " + GlobalConstants.player1Characters.Count);
                             Debug.Log("Player 2 list: " + GlobalConstants.player2Characters.Count);
+                            if(GlobalConstants.myPlayerId == 1)
+                            {
+                                PlaceEnemyCharacters(GlobalConstants.player2Characters);
+                            }
+                            else
+                            {
+                                PlaceEnemyCharacters(GlobalConstants.player1Characters);
+                            }
                             //PlaceEnemyCharacters();
                             Debug.Log("All Characters placed");
                         }
@@ -307,7 +315,7 @@ namespace Assets.Scripts
                                 clearHighlights(validMoves);
                                 action = Action.WaitForGameInfo;
                                 Debug.Log("all my characters placed");
-                                placeCharacterPhase = false;
+                                
                                 var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.PlaceCharacterUrl, new BattlePostObject());
                                 /*if (GlobalConstants.myPlayerId == 2)
                                 {
@@ -1423,48 +1431,7 @@ namespace Assets.Scripts
             yield return new WaitForSeconds(4f);
             //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.CheckGameStatusUrl, new BattlePostObject());
             
-        }
-
-        private void PrepTest()
-        {
-            
-           /*Dictionary<ItemType, Item> equipment = new Dictionary<ItemType, Item>
-                {
-                    {ItemType.Helm, GlobalConstants.ItemList["Cloth Helm"] },
-                    {ItemType.SHOULDERS, GlobalConstants.ItemList["Cloth Shoulders"] },
-                    {ItemType.CHEST, GlobalConstants.ItemList["Cloth Chest"] },
-                    {ItemType.GLOVES, GlobalConstants.ItemList["Cloth Gloves"] },
-                    {ItemType.LEGS, GlobalConstants.ItemList["Cloth Legs"] },
-                    {ItemType.BOOTS, GlobalConstants.ItemList["Cloth Boots"] },
-                };
-            Equipment equipment = new Equipment();
-            equipment.helmObject = GlobalConstants.ItemList["Cloth Helm"];
-            equipment.shouldersObject = GlobalConstants.ItemList["Cloth Shoulders"];
-            equipment.chestObject = GlobalConstants.ItemList["Cloth Chest"];
-            equipment.glovesObject = GlobalConstants.ItemList["Cloth Gloves"];
-            equipment.pantsObject = GlobalConstants.ItemList["Cloth Legs"];
-            equipment.bootsObject = GlobalConstants.ItemList["Cloth Boots"];
-            equipment.accessory1Object = GlobalConstants.ItemList["None(Accessory)"];
-            equipment.accessory2Object = GlobalConstants.ItemList["None(Accessory)"];
-            //screen = ScreenOrientation.Landscape;*/
-            /*Stats stat1 = new Stats(5, 4, 6, 3, 2, 9, 5);
-            CharacterGameObject character1 = new CharacterGameObject(1, stat1, 1, "Saint Lancelot", 1, 75, equipment);
-            character1.CurrentStats = new Stats(0, 0, 0, 0, 0, 0, 0);
-            character1.CurrentStats = GetBonusStats(character1);
-            character1.CurrentStats.Speed = 4;
-            character1.SpriteId = 1;
-            Stats stat2 = new Stats(3, 3, 3, 4, 3, 3, 2);
-            CharacterGameObject character2 = new CharacterGameObject(1, stat2, 1, "Ragthar", 1, 75, equipment);
-            character2.CurrentStats = new Stats(0, 0, 0, 0, 0, 0, 0);
-            character2.CurrentStats = GetBonusStats(character2);
-            character2.CurrentStats.Speed = 3;
-            character2.SpriteId = 2;
-            GlobalConstants.MatchCharacters.Add(character1);
-            GlobalConstants.MatchCharacters.Add(character2);
-            characters = GlobalConstants.MatchCharacters;
-            */
-            
-        }
+        }       
 
         public void highlightSpawn()
         {
@@ -1553,6 +1520,39 @@ namespace Assets.Scripts
             idCount++;
         }
 
+        public void PlaceEnemyCharacters(List<Character> enemyList)
+        {
+            foreach(Character c in enemyList)
+            {
+                Tile tempTile = tileArray[c.X, c.Y];
+                tempTile.isOccupied = true;
+                CharacterGameObject gameCharacter = new CharacterGameObject();
+                gameCharacter.Initialize(c, c.X, c.Y);
+                tempTile.character = gameCharacter;
+                int spriteId = gameCharacter.CharacterClassObject.SpriteId;
+                GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + spriteId /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
+                //gameCharacter.gameObject.transform.position = new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y);
+                //gameCharacter.gameObject.transform.rotation = Quaternion.identity;
+                GameObject tempchar = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;
+                tempchar.GetComponent<SpriteRenderer>().sortingOrder = 6 + (tempTile.y * 2);
+                tempchar.transform.parent = tileMap.transform;
+                tempchar.transform.localScale = new Vector3(1, 1, 0.0f);
+                tempchar.AddComponent<CharacterGameObject>();
+                tempchar.GetComponent<CharacterGameObject>().CharacterClassObject = gameCharacter.CharacterClassObject;
+                tempchar.GetComponent<CharacterGameObject>().X = gameCharacter.X;
+                tempchar.GetComponent<CharacterGameObject>().Y = gameCharacter.Y;
+                tempTile.characterObject = tempchar;
+
+                //tempGC = gameChar;
+                Animator tempAnim = tempchar.GetComponent<Animator>();
+                tempAnim.SetFloat("x", 0);
+                tempAnim.SetFloat("y", -1);
+                gameCharacter.CharacterClassObject.X = tempTile.x;
+                gameCharacter.CharacterClassObject.Y = tempTile.y;
+
+
+            }
+        }
         public void SelectNextCharacter()
         {
             if (placeCharacterPhase)
