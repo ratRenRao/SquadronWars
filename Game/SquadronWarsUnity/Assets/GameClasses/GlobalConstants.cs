@@ -29,6 +29,7 @@ namespace Assets.GameClasses
         public const string PlayerJsonObjectName = "PlayerInfo";
         public const string CharacterJsonObjectName = "Characters";
         public const string StartupDataJsonName = "PlayerDetails";
+        public const string ActionsJsonName = "Actions";
 
         public static bool CharacterLoadReady = false;
         public static List<CharacterGameObject> MatchCharacters = new List<CharacterGameObject>();

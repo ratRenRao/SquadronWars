@@ -77,6 +77,12 @@ namespace Assets.Data
                     //Debug.Log("JsonObject = " + obj + " Type = " + type);
                     foreach (var param in objectAttributes.AsEnumerable())
                     {
+                        // Used w/ breakpoint to debug particular sections of json
+                        if (param.Name.ToLower() == "actions")
+                        {
+                            break;
+                        }
+
                         JSONObject j = null;
                         //var keyIndex = obj.keys.Where(key => key.ToLower().Equals(param.Name.ToLower())).ToList();
                         var keyIndex = obj.keys.SingleOrDefault(key => key.ToLower().Equals(param.Name.ToLower()));
@@ -121,6 +127,9 @@ namespace Assets.Data
 
                 case JSONObject.Type.ARRAY:
                     var listBuilder = Activator.CreateInstance(type);
+                    if (obj.list.Count <= 0)
+                        return listBuilder;
+
                     Type listType = type.GetGenericArguments().Single();
                     
                     foreach (var value in obj.list)
