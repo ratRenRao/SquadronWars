@@ -20,6 +20,13 @@ namespace Assets.Scripts
             WaitForGameInfo
         }
 
+        public enum WaitGameState
+        {
+            Wait,
+            Place,
+            Action,
+            WaitForQueue
+        }
         public TileMap tileMap;
         GameObject currentGameCharacter;
         GameObject targetGameCharacter;
@@ -55,9 +62,11 @@ namespace Assets.Scripts
         List<CharacterGameObject> gCharacters = GlobalConstants.MatchCharacters;
         List<Character> characterList = new List<Character>();
         List<GameObject> myCharacters = new List<GameObject>();
+        List<GameObject> enemyCharacters = new List<GameObject>();
         //Character character;
         //Character targetCharacter;
         Action action = Action.IDLE;
+        WaitGameState waitGameState = WaitGameState.Place;
         bool isWalking;
         bool isCharacter;
         bool reachedPosition = true;
@@ -108,28 +117,35 @@ namespace Assets.Scripts
                 if (GlobalConstants.Updated)
                 {
                     GlobalConstants.Updated = false;
-                    if (placeCharacterPhase)
+                    if (waitGameState == WaitGameState.Place)
                     {                        
                         if (GlobalConstants.player1Characters.Count > 0 && GlobalConstants.player2Characters.Count > 0)
                         {
                             placeCharacterPhase = false;
-                            Debug.Log("Player 1 list: " + GlobalConstants.player1Characters.Count);
-                            Debug.Log("Player 2 list: " + GlobalConstants.player2Characters.Count);
-                            if(GlobalConstants.myPlayerId == 1)
+                            //Debug.Log("Player 1 list: " + GlobalConstants.player1Characters.Count);
+                            //Debug.Log("Player 2 list: " + GlobalConstants.player2Characters.Count);
+                            //Debug.Log("All Characters placed");
+                            if (GlobalConstants.myPlayerId == 1)
                             {
                                 PlaceEnemyCharacters(GlobalConstants.player2Characters);
+                                CreateTurnQueue();
+                                GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                             }
                             else
                             {
                                 PlaceEnemyCharacters(GlobalConstants.player1Characters);
+                                waitGameState = WaitGameState.WaitForQueue;                                               
                             }
-                            //PlaceEnemyCharacters();
-                            Debug.Log("All Characters placed");
+                            //PlaceEnemyCharacters();                            
                         }
                     }
-                    else
+                    if (waitGameState == WaitGameState.WaitForQueue)
                     {
-
+                        Debug.Log("Waiting for queue");
+                        if (GlobalConstants.currentActions.CharacterQueue.Count > 0)
+                        {
+                            Debug.Log("Queue recieved");
+                        }
                     }
                 }
                 else
@@ -1549,8 +1565,18 @@ namespace Assets.Scripts
                 tempAnim.SetFloat("y", -1);
                 gameCharacter.CharacterClassObject.X = tempTile.x;
                 gameCharacter.CharacterClassObject.Y = tempTile.y;
+                enemyCharacters.Add(tempchar);
+            }
+        }
 
-
+        public void CreateTurnQueue()
+        {
+            for(int i = 0; i < myCharacters.Count; i++)
+            {
+                turnQueue.Add(myCharacters[i]);
+                turnQueue.Add(enemyCharacters[i]);
+                GlobalConstants.currentActions.CharacterQueue.Add(myCharacters[i].GetComponent<CharacterGameObject>().CharacterClassObject.CharacterId);
+                GlobalConstants.currentActions.CharacterQueue.Add(enemyCharacters[i].GetComponent<CharacterGameObject>().CharacterClassObject.CharacterId);
             }
         }
         public void SelectNextCharacter()
