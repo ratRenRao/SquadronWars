@@ -130,7 +130,7 @@ namespace Assets.Data
                     var listBuilder = Activator.CreateInstance(type);
                     if (obj.list.Count <= 0)
                         return listBuilder;
-
+                    Debug.Log(obj + " " + type);
                     Type listType = type.GetGenericArguments().Single();
                     
                     foreach (var value in obj.list)
