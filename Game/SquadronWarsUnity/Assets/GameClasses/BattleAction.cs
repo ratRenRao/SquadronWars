@@ -6,9 +6,18 @@ namespace Assets.GameClasses
 {
     public class BattleAction : IJsonable
     {
-        public List<Action> ActionOrder = new List<Action>();
-        public List<int> CharacterQueue = new List<int>();
-        public Dictionary<Tile, int> AffectedTiles = new Dictionary<Tile, int>();
+        public List<Action> ActionOrder { get; set; }
+        public List<int> CharacterQueue { get; set; }
+        public Dictionary<Tile, int> AffectedTiles { get; set; }
+
+        public BattleAction() : this(new List<Action>(), new List<int>(), new Dictionary<Tile, int>()) { }
+
+        public BattleAction(List<Action> actions, List<int> queue, Dictionary<Tile,int> affected)
+        {
+            ActionOrder = actions;
+            CharacterQueue = queue;
+            AffectedTiles = affected;
+        }
 
         //BuildQueue for characters turns
         public string GetJsonObjectName()
@@ -67,7 +76,7 @@ namespace Assets.GameClasses
                 {
                     returnString += ", ";
                 }
-                returnString += position;
+                returnString +="\"" + position + "\"";
                 index++;
             }
             returnString += "], \"AffectedTiles\" : [ ";
@@ -78,7 +87,7 @@ namespace Assets.GameClasses
                 {
                     returnString += ", ";
                 }
-                returnString += "{ \"Tile\" : " + key.Key.GetJSONString() + ", \"Amount\" : " + key.Value + "}";
+                returnString += "{ \"Tile\" : " + key.Key.GetJSONString() + ", \"Amount\" : \"" + key.Value + "\"}";
                 index++;
             }
             returnString += "] }, \"end\" : \"end";

@@ -218,6 +218,8 @@ namespace Assets.Data
             temp = Regex.Replace(temp, "\"character2Info\":\"", "\"character2Info\":");
             temp = Regex.Replace(temp, "\"character1Info\":\"", "\"character1Info\":");
             temp = Regex.Replace(temp, "]\"", "]");
+            temp = Regex.Replace(temp, "\"GameJSON\":\"", "\"GameJSON\":");
+            temp = Regex.Replace(temp, "]}\"", "]}");
             //temp = Regex.Replace(temp, "\"", "'");
             return temp;
         } 

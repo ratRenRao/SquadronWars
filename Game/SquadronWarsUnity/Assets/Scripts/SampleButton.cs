@@ -314,9 +314,10 @@ public class SampleButton : MonoBehaviour
         GlobalConstants._dbConnection = gameObject.GetComponent<DbConnection>();
     }
 
+    /*
     public void SendBattleMessage()
     {
-        /**/
+        /**
         //GlobalConstants.GameId = 14;
         //GlobalConstants.myPlayerId = 1;
         //GlobalConstants.player1Characters = GlobalConstants.Player.Characters;
@@ -332,9 +333,10 @@ public class SampleButton : MonoBehaviour
 
         var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.StartGameUrl, test);
         Debug.Log(www);
-        /**/
+        /**
         //SceneManager.LoadScene("Login");
     }
+    */
 
     public void EvaluateSkills()
     {
