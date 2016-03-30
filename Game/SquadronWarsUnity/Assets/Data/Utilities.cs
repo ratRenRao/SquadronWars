@@ -26,12 +26,12 @@ namespace Assets.Data
 
         public T BuildObjectFromJsonData<T>(string data) where T : IJsonable
         {
-            //Debug.Log("Data before removing slashes" + data);
+            Debug.Log("Data before removing slashes" + data);
             data = RemoveSlashes(data);
-            //Debug.Log("Data after removing slashes" + data);
+            Debug.Log("Data after removing slashes" + data);
             var deserializedJson = DeserializeData(data);
             _jsonObject = deserializedJson;
-            //Debug.Log(deserializedJson.ToString());
+            Debug.Log(deserializedJson.ToString());
             var obj = Activator.CreateInstance<T>();
             obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(obj)), typeof(T));
 
@@ -92,6 +92,7 @@ namespace Assets.Data
                             j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.Name.ToLower()));
                         else
                             j = obj[keyIndex];
+                        //Debug.Log("Jobject + " bool = " + test);
                         if (type.Name.Equals("Equipment"))
                         {
                             int tmp;
@@ -113,7 +114,7 @@ namespace Assets.Data
                             }
                         }
                         else {
-                           // Debug.Log("Not Equipment: " + j);
+                            //Debug.Log("Jobject: " + j);
                             builder.GetType()
                                     .GetProperty(param.Name)
                                     .SetValue(builder, j != null
@@ -228,7 +229,7 @@ namespace Assets.Data
             temp = Regex.Replace(temp, "\"character1Info\":\"", "\"character1Info\":");
             temp = Regex.Replace(temp, "]\"", "]");
             temp = Regex.Replace(temp, "\"GameJSON\":\"", "\"GameJSON\":");
-            temp = Regex.Replace(temp, "]}\"", "]}");
+            temp = Regex.Replace(temp, "]}}\"", "]}}");
             //temp = Regex.Replace(temp, "\"", "'");
             return temp;
         } 
