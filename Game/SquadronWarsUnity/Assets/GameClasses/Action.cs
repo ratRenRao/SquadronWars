@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 using Assets.Scripts;
+using System.Linq;
+
 namespace Assets.GameClasses
 {
     public class Action : IJsonable
@@ -17,10 +19,10 @@ namespace Assets.GameClasses
         }
 
         ActionType actionType { get; set; }
-        List<Tile> actionTiles = new List<Tile>();
+        List<Tile> actionTiles { get; set; }
         string performedAction { get; set; }
 
-        public Action() { }
+        public Action() : this(ActionType.Idle, new List<Tile>(), "default") { }
         public Action(ActionType actionType, List<Tile> actionTiles, string performedAction)
         {
             this.actionType = actionType;
@@ -35,7 +37,7 @@ namespace Assets.GameClasses
 
         public List<PropertyInfo> GetJsonObjectParameters()
         {
-            throw new System.NotImplementedException();
+            return GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).ToList();
         }
 
         public void SetJsonObjectParameters(Dictionary<string, object> parameters)
