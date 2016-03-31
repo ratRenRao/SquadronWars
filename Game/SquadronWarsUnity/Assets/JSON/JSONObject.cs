@@ -31,7 +31,7 @@ public class JSONObject {
 	const string NaN = "\"NaN\"";
 	const string NEWLINE = "\r\n";
 	public static readonly char[] WHITESPACE = { ' ', '\r', '\n', '\t', '\uFEFF', '\u0009' };
-	public enum Type { NULL, STRING, NUMBER, OBJECT, ARRAY, BOOL, BAKED }
+	public enum Type { NULL, STRING, NUMBER, OBJECT, ARRAY, BOOL, BAKED, ENUM }
 	public bool isContainer { get { return (type == Type.ARRAY || type == Type.OBJECT); } }
 	public Type type = Type.NULL;
 	public int Count {

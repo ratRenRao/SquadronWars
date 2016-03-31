@@ -66,7 +66,9 @@ namespace Assets.Data
                 return null;
 
             var objectAttributes = GetParameterList(type);
-            
+
+            if (type.IsEnum)
+                obj.type = JSONObject.Type.ENUM;
 
             switch (obj.type)
             {
@@ -145,6 +147,10 @@ namespace Assets.Data
                     else
                         return obj.str;
 
+                case JSONObject.Type.ENUM:
+                    return GetTypeFromString(obj.str, type);
+                    break;
+
                 case JSONObject.Type.NUMBER:
                     return obj.n;
 
@@ -157,6 +163,11 @@ namespace Assets.Data
             }
 
             return null;
+        }
+
+        private object GetTypeFromString(string typeString, Type parentType)
+        {
+            return Enum.GetValues(parentType).Cast<object>().FirstOrDefault(type => type.ToString() == typeString);
         }
 
         private static Item GetItemFromNumber(int num)
