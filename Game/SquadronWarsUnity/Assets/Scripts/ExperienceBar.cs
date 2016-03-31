@@ -46,7 +46,7 @@ public class ExperienceBar : MonoBehaviour
         if (exp < maxExp)
         {
             if (Input.GetKey(KeyCode.UpArrow))
-                exp += 10;
+                exp += 5;
         }
     }
     void OnGUI()

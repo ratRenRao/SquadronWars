@@ -26,12 +26,12 @@ namespace Assets.Data
 
         public T BuildObjectFromJsonData<T>(string data) where T : IJsonable
         {
-            //Debug.Log("Data before removing slashes" + data);
+            Debug.Log("Data before removing slashes" + data);
             data = RemoveSlashes(data);
-            //Debug.Log("Data after removing slashes" + data);
+            Debug.Log("Data after removing slashes" + data);
             var deserializedJson = DeserializeData(data);
             _jsonObject = deserializedJson;
-            //Debug.Log(deserializedJson.ToString());
+            Debug.Log(deserializedJson.ToString());
             var obj = Activator.CreateInstance<T>();
             obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(obj)), typeof(T));
 
@@ -77,6 +77,12 @@ namespace Assets.Data
                     //Debug.Log("JsonObject = " + obj + " Type = " + type);
                     foreach (var param in objectAttributes.AsEnumerable())
                     {
+                        // Used w/ breakpoint to debug particular sections of json
+                        if (param.Name.ToLower() == "actions")
+                        {
+                            break;
+                        }
+
                         JSONObject j = null;
                         //var keyIndex = obj.keys.Where(key => key.ToLower().Equals(param.Name.ToLower())).ToList();
                         var keyIndex = obj.keys.SingleOrDefault(key => key.ToLower().Equals(param.Name.ToLower()));
@@ -86,6 +92,7 @@ namespace Assets.Data
                             j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.Name.ToLower()));
                         else
                             j = obj[keyIndex];
+                        //Debug.Log("Jobject + " bool = " + test);
                         if (type.Name.Equals("Equipment"))
                         {
                             int tmp;
@@ -107,7 +114,6 @@ namespace Assets.Data
                             }
                         }
                         else {
-                           // Debug.Log("Not Equipment: " + j);
                             builder.GetType()
                                     .GetProperty(param.Name)
                                     .SetValue(builder, j != null
@@ -121,8 +127,18 @@ namespace Assets.Data
 
                 case JSONObject.Type.ARRAY:
                     var listBuilder = Activator.CreateInstance(type);
-                    Type listType = type.GetGenericArguments().Single();
-                    
+                    if (obj.list.Count <= 0)
+                        return listBuilder;
+                    Type listType;
+                    Type a = new GameClasses.Action().GetType();
+                    if (type != a)
+                    {
+                        listType = type.GetGenericArguments().Single();
+                    }
+                    else
+                    {
+                        listType = type;
+                    }
                     foreach (var value in obj.list)
                     {
                         var item = Decode(value, listType);
@@ -219,7 +235,7 @@ namespace Assets.Data
             temp = Regex.Replace(temp, "\"character1Info\":\"", "\"character1Info\":");
             temp = Regex.Replace(temp, "]\"", "]");
             temp = Regex.Replace(temp, "\"GameJSON\":\"", "\"GameJSON\":");
-            temp = Regex.Replace(temp, "]}\"", "]}");
+            temp = Regex.Replace(temp, "]}}\"", "]}}");
             //temp = Regex.Replace(temp, "\"", "'");
             return temp;
         } 
@@ -502,11 +518,15 @@ namespace Assets.Data
         {
             if (gameInfo.character1Info != null)
             {
+                Debug.Log("Character 1 Game Info: " + gameInfo.character1Info.Count());
                 GlobalConstants.player1Characters = gameInfo.character1Info;
+                Debug.Log("Global Constants player2 Chars " + GlobalConstants.player2Characters.Count());
             }
             if (gameInfo.character2Info != null)
             {
+                Debug.Log("Character 2 Game Info: " + gameInfo.character2Info.Count());
                 GlobalConstants.player2Characters = gameInfo.character2Info;
+                Debug.Log("Global Constants player2 Chars " + GlobalConstants.player2Characters.Count());
             }
             if(gameInfo.player1Id == GlobalConstants.Player.playerId)
             {
@@ -527,9 +547,12 @@ namespace Assets.Data
             if (gameInfo.GameJson != null)
             {
                 GlobalConstants.currentActions.ActionOrder.Add(gameInfo.GameJson.ActionOrder);
-                GlobalConstants.currentActions.AffectedTiles =
-                    (Dictionary<Tile, int>)
-                        GlobalConstants.currentActions.AffectedTiles.Concat(gameInfo.GameJson.AffectedTiles);
+                if (gameInfo.GameJson.AffectedTiles.Count > 0)
+                {
+                    GlobalConstants.currentActions.AffectedTiles =
+                            GlobalConstants.currentActions.AffectedTiles.Concat(gameInfo.GameJson.AffectedTiles)
+                                .ToDictionary(x=>x.Key, x=>x.Value);
+                }
                 GlobalConstants.currentActions.CharacterQueue = gameInfo.GameJson.CharacterQueue;
             }
         }

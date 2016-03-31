@@ -10,10 +10,11 @@ using Action = Assets.GameClasses.Action;
 namespace Assets.Data
 {
     public class GameInfo : IJsonable
-    { 
+    {        
         public int gameID { get; set; }
         public int player1Id { get; set; }
         public int player2Id { get; set; }
+        public BattleAction BattleAction { get; set; }
         public GameJSON GameJson { get; set; }
         public DateTime CreateTime { get; set; }
         public DateTime ModifyTime { get; set; }
