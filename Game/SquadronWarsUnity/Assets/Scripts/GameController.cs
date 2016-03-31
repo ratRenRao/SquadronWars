@@ -36,6 +36,7 @@ namespace Assets.Scripts
         public CharacterStatsPanel statsPanel;
         public GameObject actionPanel;
         public AudioSource battlesong;
+        public Text playersTurnText;
         public Button attackButton;
         public Button abilityButton;
         public Button moveButton;
@@ -1638,11 +1639,19 @@ namespace Assets.Scripts
 
             if (myCharacters.Select(character => character).Contains(turnQueue[0]))
             {
-                hidePanel = false;
+                hidePanel = false;                
+                playersTurnText.text = "Player " + GlobalConstants.myPlayerId + "s turn";
             }
             else
             {
                 hidePanel = true;
+                if (GlobalConstants.myPlayerId == 1) {
+                    playersTurnText.text = "Player " + 1 + "s turn";
+                }
+                else
+                {
+                    playersTurnText.text = "Player " + 2 + "s turn";
+                }
             }
                 currentGameCharacter = turnQueue[0];
                 currentCharacterGameObject = currentGameCharacter.GetComponent<CharacterGameObject>();
