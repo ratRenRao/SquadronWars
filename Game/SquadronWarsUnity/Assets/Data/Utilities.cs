@@ -14,7 +14,6 @@ namespace Assets.Data
     public class Utilities : MonoBehaviour
     {
         private JSONObject _jsonObject = new JSONObject(); 
-        private DbConnection _dbConnection = new DbConnection();
       
         public JSONObject DeserializeData(string data)
         {

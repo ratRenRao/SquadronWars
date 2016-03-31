@@ -28,6 +28,7 @@ namespace Assets.GameClasses
             this.actionType = actionType;
             this.actionTiles = actionTiles;
             this.performedAction = performedAction;
+            AddPayoutValueForAction();
         }
 
         public string GetJsonObjectName()
@@ -61,6 +62,21 @@ namespace Assets.GameClasses
             returnString += "] }";
 
             return returnString;
+        }
+
+        public void AddPayoutValueForAction()
+        {
+            actionTiles.ForEach(tile =>
+            {
+                if (actionType == ActionType.CastAbility)
+                {
+                    GlobalConstants.DamageAndHealingDone += (int)(tile.amount*.05) / actionTiles.Count;
+                }
+                else if (actionType == ActionType.Attack || actionType == ActionType.AttackAbility)
+                {
+                    GlobalConstants.DamageAndHealingDone += tile.amount / actionTiles.Count;
+                }
+            });
         }
     }
 }
