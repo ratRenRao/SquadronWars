@@ -39,7 +39,7 @@ namespace Assets.Data
 
     public class GameJSON : IJsonable
     {
-        public Action ActionOrder { get; set; }
+        public List<Action> ActionOrder { get; set; }
         public List<int> CharacterQueue { get; set; }
         public Dictionary<Tile, int> AffectedTiles { get; set; }
         public string GetJsonObjectName()
