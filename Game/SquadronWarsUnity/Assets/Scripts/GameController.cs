@@ -1604,6 +1604,8 @@ namespace Assets.Scripts
 
                 Debug.Log(turnQueue[i]);
             }
+            waitGameState = WaitGameState.Wait;
+            SelectNextCharacter();
         }
 
         public void SelectNextCharacter()
