@@ -46,7 +46,7 @@ public class Battle : MonoBehaviour
     {
         //StartCoroutine(GlobalConstants.Utilities.GetGameInfo());
         var gameInfo = GlobalConstants.Utilities.GetGameInfo();
-
+        Debug.Log("Update Game Coroutine called");
         //var gameInfo = GlobalConstants.GameInfo;
         if (gameInfo != null && !lastModified.Equals(gameInfo.ModifyTime))
         {
@@ -55,6 +55,7 @@ public class Battle : MonoBehaviour
                 // Used to determine if changes have been made to data
                 GlobalConstants.Updated = true;
         }
+        checkUpdate = true;
     }
 
     public void UpdateGame(GameInfo gameInfo)
@@ -122,7 +123,6 @@ public class Battle : MonoBehaviour
     {
         //Debug.Log("WaitUpdate called");
         yield return new WaitForSeconds(4f);
-        checkUpdate = true;
         UpdateGameCoroutine();
         
         
