@@ -17,7 +17,7 @@ namespace Assets.Scripts
         void Start()
         {
 #if DEBUG
-            //new Tests().Run();
+            new Tests().Run();
 #endif
             //if (GlobalConstants.Player != null)
             //{
