@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using Assets.GameClasses;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 namespace Assets.Scripts
 {
@@ -120,7 +121,7 @@ namespace Assets.Scripts
                     {                        
                         if (GlobalConstants.player1Characters.Count > 0 && GlobalConstants.player2Characters.Count > 0)
                         {
-                            placeCharacterPhase = false;
+                            //placeCharacterPhase = false;
                             //Debug.Log("Player 1 list: " + GlobalConstants.player1Characters.Count);
                             //Debug.Log("Player 2 list: " + GlobalConstants.player2Characters.Count);
                             //Debug.Log("All Characters placed");
@@ -130,6 +131,7 @@ namespace Assets.Scripts
                                 CreateTurnQueue();
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 waitGameState = WaitGameState.Wait;
+                                SelectNextCharacter();
                             }
                             else
                             {
@@ -148,8 +150,13 @@ namespace Assets.Scripts
                         if (GlobalConstants.currentActions.CharacterQueue.Count > 0)
                         {
                             Debug.Log("Queue recieved");
+                            //CreateGameCharacterQueue();
                             waitGameState = WaitGameState.Wait;
                         }
+                    }
+                    if(waitGameState == WaitGameState.Wait)
+                    {
+                        Debug.Log(GlobalConstants.currentActions.CharacterQueue.Count);
                     }
                 }
                 else
@@ -1583,6 +1590,19 @@ namespace Assets.Scripts
                 GlobalConstants.currentActions.CharacterQueue.Add(enemyCharacters[i].GetComponent<CharacterGameObject>().CharacterClassObject.CharacterId);
             }
         }
+
+        public void CreateTurnQueueP2()
+        {
+            List<GameObject> tempList = new List<GameObject>();
+            for(int i = 0; i < GlobalConstants.currentActions.CharacterQueue.Count; i++)
+            {
+                int temp = GlobalConstants.currentActions.CharacterQueue[i];
+                tempList.Add(turnQueue.Single(character => character.GetComponent<Character>().CharacterId == temp));
+                Debug.Log(tempList[i]);
+            }
+
+        }
+
         public void SelectNextCharacter()
         {
             if (placeCharacterPhase)

@@ -46,7 +46,7 @@ public class Battle : MonoBehaviour
     {
         //StartCoroutine(GlobalConstants.Utilities.GetGameInfo());
         var gameInfo = GlobalConstants.Utilities.GetGameInfo();
-        Debug.Log("Update Game Coroutine called");
+        //Debug.Log("Update Game Coroutine called");
         //var gameInfo = GlobalConstants.GameInfo;
         if (gameInfo != null && !lastModified.Equals(gameInfo.ModifyTime))
         {
