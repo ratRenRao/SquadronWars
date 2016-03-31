@@ -538,13 +538,13 @@ namespace Assets.Data
             //GlobalConstants.Player.Characters = gameInfo.character1Info;
             if (gameInfo.BattleAction != null)
             {
-                if (gameInfo.BattleAction.ActionOrder.Count > 0)
+                if (gameInfo.BattleAction.ActionOrder.Count > 0 && GlobalConstants.currentActions.ActionOrder.Count <= 0)
                 {
                     GlobalConstants.currentActions.ActionOrder = GlobalConstants.currentActions.ActionOrder
                         .Concat(gameInfo.BattleAction.ActionOrder).ToList();
                 }
 
-                if (gameInfo.BattleAction.AffectedTiles.Count > 0)
+                if (gameInfo.BattleAction.AffectedTiles.Count > 0 && GlobalConstants.currentActions.AffectedTiles.Count <= 0)
                 {
                     GlobalConstants.currentActions.AffectedTiles =
                             GlobalConstants.currentActions.AffectedTiles.Concat(gameInfo.BattleAction.AffectedTiles)

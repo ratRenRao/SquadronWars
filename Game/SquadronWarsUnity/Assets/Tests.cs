@@ -31,9 +31,6 @@ namespace Assets
             //var turnData = GlobalConstants._dbConnection.PopulateObjectFromDb<GameInfo>(GlobalConstants.CheckGameStatusUrl, GlobalConstants.Player.logins);
             var gameInfo = GlobalConstants.Utilities.BuildObjectFromJsonData<GameInfo>(json);
             //var gameInfo = GlobalConstants.Utilities.GetGameInfo();
-
-            if (gameInfo != null && !lastModified.Equals(gameInfo.ModifyTime))
-            {
-            }
+        }
     }
 }
