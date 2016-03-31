@@ -113,6 +113,7 @@ namespace Assets.Data
                             }
                         }
                         else {
+                           // Debug.Log("JsonObject: " + j + " type: " + type);
                             builder.GetType()
                                     .GetProperty(param.Name)
                                     .SetValue(builder, j != null
