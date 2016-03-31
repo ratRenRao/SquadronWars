@@ -25,6 +25,7 @@ public class Battle : MonoBehaviour
             checkUpdate = false;
             //Debug.Log("checkUpdate called");
             StartCoroutine(BattleWaitForLoad());
+            checkUpdate = true;
         } 
 	}
 
@@ -55,7 +56,7 @@ public class Battle : MonoBehaviour
                 // Used to determine if changes have been made to data
                 GlobalConstants.Updated = true;
         }
-        checkUpdate = true;
+        //checkUpdate = true;
     }
 
     public void UpdateGame(GameInfo gameInfo)
