@@ -157,7 +157,10 @@ namespace Assets.Scripts
                     }
                     if(waitGameState == WaitGameState.Wait)
                     {
-                        Debug.Log(GlobalConstants.currentActions.CharacterQueue.Count);
+                        foreach (GameClasses.Action act in GlobalConstants.currentActions.ActionOrder)
+                        {
+                            Debug.Log(act.actionType);
+                        }
                     }
                 }
                 else
@@ -423,7 +426,9 @@ namespace Assets.Scripts
                     reachedPosition = false;
                     clearHighlights(validMoves);
                     currentCharacterGameObject.hasMoved = true;
-                    
+                    GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Move,path,"move");
+                    GlobalConstants.currentActions.AddAction(tempAction);
+                    GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                 }
                 else
                 {
@@ -1668,7 +1673,6 @@ namespace Assets.Scripts
                 abilityButton.interactable = true;
                 statsPanel.charName.text = currentCharacterGameObject.CharacterClassObject.Name;
                 currentCharacterGameObject.CharacterClassObject.CurrentStats.Dmg = 20;
-                Debug.Log(currentCharacterGameObject.CharacterClassObject.CharacterId);
                 statsPanel.hp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurHP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints;
                 statsPanel.mp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurMP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;
                 PositionPanels();
