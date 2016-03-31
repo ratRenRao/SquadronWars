@@ -129,7 +129,6 @@ namespace Assets.Data
                     var listBuilder = Activator.CreateInstance(type);
                     if (obj.list.Count <= 0)
                         return listBuilder;
-                    Debug.Log(obj + " " + type);
                     Type listType;
                     Type a = new GameClasses.Action().GetType();
                     if (type != a)
@@ -235,8 +234,8 @@ namespace Assets.Data
             temp = Regex.Replace(temp, "\"character2Info\":\"", "\"character2Info\":");
             temp = Regex.Replace(temp, "\"character1Info\":\"", "\"character1Info\":");
             temp = Regex.Replace(temp, "]\"", "]");
-            temp = Regex.Replace(temp, "\"GameJSON\":\"", "\"BattleAction\":");
-            temp = Regex.Replace(temp, "]}\"", "]}");
+            temp = Regex.Replace(temp, "\"GameJSON\":\"", "\"GameJSON\":");
+            temp = Regex.Replace(temp, "]}}\"", "]}}");
             //temp = Regex.Replace(temp, "\"", "'");
             return temp;
         } 

@@ -57,7 +57,7 @@ namespace Assets.GameClasses
 
         public string GetJSONString()
         {
-            string returnString = "Gameinfo\", \"GameJSON\" : { \"ActionOrder\" : [ ";
+            string returnString = "Gameinfo\", \"GameJSON\" : { \"BattleActions\" : { \"ActionOrder\" : [ ";
             int index = 0;
             foreach(Action action in ActionOrder)
             {
@@ -90,7 +90,7 @@ namespace Assets.GameClasses
                 returnString += "{ \"Tile\" : " + key.Key.GetJSONString() + ", \"Amount\" : \"" + key.Value + "\"}";
                 index++;
             }
-            returnString += "]  }, \"end\" : \"end";
+            returnString += "] } }, \"end\" : \"end";
 
             return returnString;
         }
