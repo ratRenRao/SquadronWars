@@ -159,7 +159,7 @@ namespace Assets.Scripts
                     {
                         foreach (GameClasses.Action act in GlobalConstants.currentActions.ActionOrder)
                         {
-                            if(act.actionType == GameClasses.Action.ActionType.Move)
+                            if(act.actionType == GameClasses.Action.ActionType.Move && !currentCharacterGameObject.hasMoved)
                             {
                                 tile = act.actionTiles[0];
                                 prevTile = lastTile;
