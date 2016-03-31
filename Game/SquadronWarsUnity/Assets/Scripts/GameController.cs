@@ -129,6 +129,7 @@ namespace Assets.Scripts
                                 PlaceEnemyCharacters(GlobalConstants.player2Characters);
                                 CreateTurnQueue();
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+                                waitGameState = WaitGameState.Wait;
                             }
                             else
                             {
@@ -147,6 +148,7 @@ namespace Assets.Scripts
                         if (GlobalConstants.currentActions.CharacterQueue.Count > 0)
                         {
                             Debug.Log("Queue recieved");
+                            waitGameState = WaitGameState.Wait;
                         }
                     }
                 }
