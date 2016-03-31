@@ -129,16 +129,8 @@ namespace Assets.Data
                     var listBuilder = Activator.CreateInstance(type);
                     if (obj.list.Count <= 0)
                         return listBuilder;
-                    Type listType;
-                    Type a = new GameClasses.Action().GetType();
-                    if (type != a)
-                    {
-                        listType = type.GetGenericArguments().Single();
-                    }
-                    else
-                    {
-                        listType = type;
-                    }
+                    Type listType = type.GetGenericArguments().Single();
+ 
                     foreach (var value in obj.list)
                     {
                         var item = Decode(value, listType);
