@@ -18,9 +18,9 @@ namespace Assets.GameClasses
             Endturn
         }
 
-        ActionType actionType { get; set; }
-        List<Tile> actionTiles { get; set; }
-        string performedAction { get; set; }
+        public ActionType actionType { get; set; }
+        public List<Tile> actionTiles { get; set; }
+        public string performedAction { get; set; }
 
         public Action() : this(ActionType.Idle, new List<Tile>(), "default") { }
         public Action(ActionType actionType, List<Tile> actionTiles, string performedAction)

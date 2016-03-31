@@ -36,6 +36,7 @@ namespace Assets.Scripts
         public CharacterStatsPanel statsPanel;
         public GameObject actionPanel;
         public AudioSource battlesong;
+        public Text playersTurnText;
         public Button attackButton;
         public Button abilityButton;
         public Button moveButton;
@@ -94,7 +95,7 @@ namespace Assets.Scripts
             //tarAnim.SetFloat("y", -1);
             //hidePanel = false;
             //GlobalConstants.myPlayerId = 1;
-            Debug.Log(GlobalConstants._dbConnection);
+            //Debug.Log(GlobalConstants._dbConnection);
             battlesong.playOnAwake = true;
             placeCharacterPhase = true;
             characters = GlobalConstants.MatchCharacters;
@@ -150,13 +151,16 @@ namespace Assets.Scripts
                         if (GlobalConstants.currentActions.CharacterQueue.Count > 0)
                         {
                             Debug.Log("Queue recieved");
-                            //CreateGameCharacterQueue();
+                            CreateTurnQueueP2();
                             waitGameState = WaitGameState.Wait;
                         }
                     }
                     if(waitGameState == WaitGameState.Wait)
                     {
-                        Debug.Log(GlobalConstants.currentActions.CharacterQueue.Count);
+                        foreach (GameClasses.Action act in GlobalConstants.currentActions.ActionOrder)
+                        {
+                            Debug.Log(act.actionType);
+                        }
                     }
                 }
                 else
@@ -422,7 +426,9 @@ namespace Assets.Scripts
                     reachedPosition = false;
                     clearHighlights(validMoves);
                     currentCharacterGameObject.hasMoved = true;
-                    
+                    GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Move,path,"move");
+                    GlobalConstants.currentActions.AddAction(tempAction);
+                    GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                 }
                 else
                 {
@@ -1593,22 +1599,28 @@ namespace Assets.Scripts
 
         public void CreateTurnQueueP2()
         {
+            Debug.Log("Create TurnQueue P2");
             List<GameObject> tempList = new List<GameObject>();
-            for(int i = 0; i < GlobalConstants.currentActions.CharacterQueue.Count; i++)
-            {
+            tempList.AddRange(myCharacters);
+            tempList.AddRange(enemyCharacters);
+            for (int i = 0; i < GlobalConstants.currentActions.CharacterQueue.Count; i++)
+            {                
                 int temp = GlobalConstants.currentActions.CharacterQueue[i];
-                tempList.Add(turnQueue.Single(character => character.GetComponent<Character>().CharacterId == temp));
-                Debug.Log(tempList[i]);
-            }
+                turnQueue.Add(tempList.Single(character => character.GetComponent<CharacterGameObject>().CharacterClassObject.CharacterId == temp));
 
+                Debug.Log(turnQueue[i]);
+            }
+            waitGameState = WaitGameState.Wait;
+            SelectNextCharacter();
         }
 
         public void SelectNextCharacter()
         {
             if (placeCharacterPhase)
-            {                
+            {
                 placeCharacterPhase = false;
-                foreach(GameObject g in myCharacters){
+                foreach (GameObject g in turnQueue)
+                {
                     CharacterGameObject tempGC = g.GetComponent<CharacterGameObject>();
                     Tile t = tileArray[tempGC.X, tempGC.Y];
                     tempGC.CharacterClassObject.CurrentStats.CurHP = tempGC.CharacterClassObject.CurrentStats.HitPoints;
@@ -1620,34 +1632,51 @@ namespace Assets.Scripts
                 bool getNextAvailableCharacter = false;
                 while (!getNextAvailableCharacter)
                 {
-                    myCharacters.Add(myCharacters[0]);
-                    myCharacters.RemoveAt(0);
-                    Tile t = tileArray[myCharacters[0].GetComponent<CharacterGameObject>().X, myCharacters[0].GetComponent<CharacterGameObject>().Y];
+                    turnQueue.Add(turnQueue[0]);
+                    turnQueue.RemoveAt(0);
+                    Tile t = tileArray[turnQueue[0].GetComponent<CharacterGameObject>().X, turnQueue[0].GetComponent<CharacterGameObject>().Y];
                     if (!t.character.isDead)
                     {
                         getNextAvailableCharacter = true;
                     }
                 }
             }
-            currentGameCharacter = myCharacters[0];            
-            currentCharacterGameObject = currentGameCharacter.GetComponent<CharacterGameObject>();
-            targetTile = tileArray[currentCharacterGameObject.X, currentCharacterGameObject.Y];
-            prevTile = targetTile;
-            tile = prevTile;
-            anim = currentCharacterGameObject.GetComponent<Animator>();
-            currentCharacterGameObject.hasAttacked = false;
-            currentCharacterGameObject.hasMoved = false;            
-            //Debug.Log(tile);
-            FindPossibleMoves(tile);
-            moveButton.interactable = true;
-            attackButton.interactable = true;
-            abilityButton.interactable = true;
-            statsPanel.charName.text = currentCharacterGameObject.CharacterClassObject.Name;
-            currentCharacterGameObject.CharacterClassObject.CurrentStats.Dmg = 20;
-            Debug.Log(currentCharacterGameObject.CharacterClassObject.CharacterId);
-            statsPanel.hp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurHP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints;
-            statsPanel.mp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurMP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;            
-            PositionPanels();
+
+            if (myCharacters.Select(character => character).Contains(turnQueue[0]))
+            {
+                hidePanel = false;                
+                playersTurnText.text = "Player " + GlobalConstants.myPlayerId + "s turn";
+            }
+            else
+            {
+                hidePanel = true;
+                if (GlobalConstants.myPlayerId == 1) {
+                    playersTurnText.text = "Player " + 2 + "s turn";
+                }
+                else
+                {
+                    playersTurnText.text = "Player " + 1 + "s turn";
+                }
+            }
+                currentGameCharacter = turnQueue[0];
+                currentCharacterGameObject = currentGameCharacter.GetComponent<CharacterGameObject>();
+                targetTile = tileArray[currentCharacterGameObject.X, currentCharacterGameObject.Y];
+                prevTile = targetTile;
+                tile = prevTile;
+                anim = currentCharacterGameObject.GetComponent<Animator>();
+                currentCharacterGameObject.hasAttacked = false;
+                currentCharacterGameObject.hasMoved = false;
+                //Debug.Log(tile);
+                FindPossibleMoves(tile);
+                moveButton.interactable = true;
+                attackButton.interactable = true;
+                abilityButton.interactable = true;
+                statsPanel.charName.text = currentCharacterGameObject.CharacterClassObject.Name;
+                currentCharacterGameObject.CharacterClassObject.CurrentStats.Dmg = 20;
+                statsPanel.hp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurHP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints;
+                statsPanel.mp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurMP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;
+                PositionPanels();
+            
         }
 
         public void PositionPanels()
