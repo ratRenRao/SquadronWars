@@ -26,12 +26,12 @@ namespace Assets.Data
 
         public T BuildObjectFromJsonData<T>(string data) where T : IJsonable
         {
-            Debug.Log("Data before removing slashes" + data);
+            //Debug.Log("Data before removing slashes" + data);
             data = RemoveSlashes(data);
-            Debug.Log("Data after removing slashes" + data);
+            //Debug.Log("Data after removing slashes" + data);
             var deserializedJson = DeserializeData(data);
             _jsonObject = deserializedJson;
-            Debug.Log(deserializedJson.ToString());
+            //Debug.Log(deserializedJson.ToString());
             var obj = Activator.CreateInstance<T>();
             obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(obj)), typeof(T));
 
@@ -129,16 +129,8 @@ namespace Assets.Data
                     var listBuilder = Activator.CreateInstance(type);
                     if (obj.list.Count <= 0)
                         return listBuilder;
-                    Type listType;
-                    Type a = new GameClasses.Action().GetType();
-                    if (type != a)
-                    {
-                        listType = type.GetGenericArguments().Single();
-                    }
-                    else
-                    {
-                        listType = type;
-                    }
+                    Type listType = type.GetGenericArguments().Single();
+ 
                     foreach (var value in obj.list)
                     {
                         var item = Decode(value, listType);
@@ -234,7 +226,7 @@ namespace Assets.Data
             temp = Regex.Replace(temp, "\"character2Info\":\"", "\"character2Info\":");
             temp = Regex.Replace(temp, "\"character1Info\":\"", "\"character1Info\":");
             temp = Regex.Replace(temp, "]\"", "]");
-            temp = Regex.Replace(temp, "\"GameJSON\":\"", "\"GameJSON\":");
+            temp = Regex.Replace(temp, "\"GameJSON\":\"", "\"BattleAction\":");
             temp = Regex.Replace(temp, "]}}\"", "]}}");
             //temp = Regex.Replace(temp, "\"", "'");
             return temp;
@@ -544,16 +536,21 @@ namespace Assets.Data
             
             GlobalConstants.GameId = gameInfo.gameID;
             //GlobalConstants.Player.Characters = gameInfo.character1Info;
-            if (gameInfo.GameJson != null)
+            if (gameInfo.BattleAction != null)
             {
-                GlobalConstants.currentActions.ActionOrder.Add(gameInfo.GameJson.ActionOrder);
-                if (gameInfo.GameJson.AffectedTiles.Count > 0)
+                if (gameInfo.BattleAction.ActionOrder.Count > 0 && GlobalConstants.currentActions.ActionOrder.Count <= 0)
+                {
+                    GlobalConstants.currentActions.ActionOrder = GlobalConstants.currentActions.ActionOrder
+                        .Concat(gameInfo.BattleAction.ActionOrder).ToList();
+                }
+
+                if (gameInfo.BattleAction.AffectedTiles.Count > 0 && GlobalConstants.currentActions.AffectedTiles.Count <= 0)
                 {
                     GlobalConstants.currentActions.AffectedTiles =
-                            GlobalConstants.currentActions.AffectedTiles.Concat(gameInfo.GameJson.AffectedTiles)
+                            GlobalConstants.currentActions.AffectedTiles.Concat(gameInfo.BattleAction.AffectedTiles)
                                 .ToDictionary(x=>x.Key, x=>x.Value);
                 }
-                GlobalConstants.currentActions.CharacterQueue = gameInfo.GameJson.CharacterQueue;
+                GlobalConstants.currentActions.CharacterQueue = gameInfo.BattleAction.CharacterQueue;
             }
         }
 

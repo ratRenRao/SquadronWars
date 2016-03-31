@@ -8,21 +8,22 @@ public class Battle : MonoBehaviour
 {
     private DateTime lastChecked, lastModified;
     private bool running = false;
-    public bool checkUpdate = true;
+    private bool checkUpdate = true;
 	// Use this for initialization
 	void Start ()
 	{
         //StartGameCoroutine();
-	    //lastChecked = DateTime.Now;
+	    lastChecked = DateTime.Now;
 	    //running = true;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-        if (checkUpdate)
+        if (checkUpdate && (DateTime.Now - lastChecked).TotalSeconds > 4)
         {
             checkUpdate = false;
+            lastChecked = DateTime.Now;
             //Debug.Log("checkUpdate called");
             StartCoroutine(BattleWaitForLoad());
         } 
@@ -38,7 +39,6 @@ public class Battle : MonoBehaviour
         {
             StartGame();
             UpdateGame(gameInfo);
-            GlobalConstants.Updated = true;
         }
     }
 
@@ -46,7 +46,7 @@ public class Battle : MonoBehaviour
     {
         //StartCoroutine(GlobalConstants.Utilities.GetGameInfo());
         var gameInfo = GlobalConstants.Utilities.GetGameInfo();
-        Debug.Log("Update Game Coroutine called");
+        //Debug.Log("Update Game Coroutine called");
         //var gameInfo = GlobalConstants.GameInfo;
         if (gameInfo != null && !lastModified.Equals(gameInfo.ModifyTime))
         {
@@ -54,6 +54,7 @@ public class Battle : MonoBehaviour
                 lastModified = gameInfo.ModifyTime;
                 // Used to determine if changes have been made to data
                 GlobalConstants.Updated = true;
+                //checkUpdate = true;
         }
         checkUpdate = true;
     }
