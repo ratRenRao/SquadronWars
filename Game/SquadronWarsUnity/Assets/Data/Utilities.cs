@@ -114,7 +114,6 @@ namespace Assets.Data
                             }
                         }
                         else {
-                            //Debug.Log("Jobject: " + j);
                             builder.GetType()
                                     .GetProperty(param.Name)
                                     .SetValue(builder, j != null
@@ -130,9 +129,17 @@ namespace Assets.Data
                     var listBuilder = Activator.CreateInstance(type);
                     if (obj.list.Count <= 0)
                         return listBuilder;
-
-                    Type listType = type.GetGenericArguments().Single();
-                    
+                    Debug.Log(obj + " " + type);
+                    Type listType;
+                    Type a = new GameClasses.Action().GetType();
+                    if (type != a)
+                    {
+                        listType = type.GetGenericArguments().Single();
+                    }
+                    else
+                    {
+                        listType = type;
+                    }
                     foreach (var value in obj.list)
                     {
                         var item = Decode(value, listType);
@@ -228,8 +235,8 @@ namespace Assets.Data
             temp = Regex.Replace(temp, "\"character2Info\":\"", "\"character2Info\":");
             temp = Regex.Replace(temp, "\"character1Info\":\"", "\"character1Info\":");
             temp = Regex.Replace(temp, "]\"", "]");
-            temp = Regex.Replace(temp, "\"GameJSON\":\"", "\"GameJSON\":");
-            temp = Regex.Replace(temp, "]}}\"", "]}}");
+            temp = Regex.Replace(temp, "\"GameJSON\":\"", "\"BattleAction\":");
+            temp = Regex.Replace(temp, "]}\"", "]}");
             //temp = Regex.Replace(temp, "\"", "'");
             return temp;
         } 
