@@ -29,7 +29,8 @@ public class StartQueue : MonoBehaviour
         //homeScreen.SetActive(false);
         WaitForGameInfoReturned();
         //StartCoroutine(WaitForOpponent());
-        WaitForOpponent();
+        //WaitForOpponent();
+        StartCoroutine(ShowQueueScreenWaitForMatch());
         //StartCoroutine("FindPlayer");
 
     }
@@ -43,16 +44,28 @@ public class StartQueue : MonoBehaviour
 
     }
 
-    public void WaitForOpponent()
+    IEnumerator ShowQueueScreenWaitForMatch()
     {
+        yield return new WaitForSeconds(2f);
         while(!CheckForMatchedPlayer())
         {
-            WaitOneSecond();
+            WaitForTwoSeconds();
             GetGameStatus();
         }
         SceneManager.LoadScene("BattleMap2");
     }
 
+    /*
+    public void WaitForOpponent()
+    {
+        while(!CheckForMatchedPlayer())
+        {
+            WaitForTwoSeconds();
+            GetGameStatus();
+        }
+        SceneManager.LoadScene("BattleMap2");
+    }
+    */
 
     public bool CheckForMatchedPlayer()
     {
@@ -64,9 +77,9 @@ public class StartQueue : MonoBehaviour
     }
 
     /**/
-    IEnumerator WaitOneSecond()
+    IEnumerator WaitForTwoSeconds()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
     }
     /**/
 
