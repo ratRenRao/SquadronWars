@@ -94,7 +94,7 @@ namespace Assets.Scripts
             //tarAnim.SetFloat("y", -1);
             //hidePanel = false;
             //GlobalConstants.myPlayerId = 1;
-            Debug.Log(GlobalConstants._dbConnection);
+            //Debug.Log(GlobalConstants._dbConnection);
             battlesong.playOnAwake = true;
             placeCharacterPhase = true;
             characters = GlobalConstants.MatchCharacters;
@@ -150,7 +150,7 @@ namespace Assets.Scripts
                         if (GlobalConstants.currentActions.CharacterQueue.Count > 0)
                         {
                             Debug.Log("Queue recieved");
-                            //CreateGameCharacterQueue();
+                            CreateTurnQueueP2();
                             waitGameState = WaitGameState.Wait;
                         }
                     }
@@ -1600,7 +1600,6 @@ namespace Assets.Scripts
                 tempList.Add(turnQueue.Single(character => character.GetComponent<Character>().CharacterId == temp));
                 Debug.Log(tempList[i]);
             }
-
         }
 
         public void SelectNextCharacter()
