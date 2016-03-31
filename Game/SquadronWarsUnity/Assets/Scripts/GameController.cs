@@ -113,7 +113,6 @@ namespace Assets.Scripts
             if(action == Action.WaitForGameInfo)
             {
                 //Append Characters to player # character on global constants
-                
                 if (GlobalConstants.Updated)
                 {
                     GlobalConstants.Updated = false;
