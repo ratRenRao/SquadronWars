@@ -1646,11 +1646,11 @@ namespace Assets.Scripts
             {
                 hidePanel = true;
                 if (GlobalConstants.myPlayerId == 1) {
-                    playersTurnText.text = "Player " + 1 + "s turn";
+                    playersTurnText.text = "Player " + 2 + "s turn";
                 }
                 else
                 {
-                    playersTurnText.text = "Player " + 2 + "s turn";
+                    playersTurnText.text = "Player " + 1 + "s turn";
                 }
             }
                 currentGameCharacter = turnQueue[0];
