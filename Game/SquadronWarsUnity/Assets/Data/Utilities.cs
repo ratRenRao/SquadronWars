@@ -205,6 +205,13 @@ namespace Assets.Data
             }            
         }
 
+        public static PropertyInfo[] GetAllDeclaredAttributes<T>(T obj)
+        {
+            return
+                typeof (T).GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance |
+                                         BindingFlags.Static);
+        }
+
         public static class ParameterLists
         {
             static Func<Type, List<PropertyInfo>> buildParameterListFunc = (type) => type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).ToList();
@@ -563,6 +570,21 @@ namespace Assets.Data
         {
             GlobalConstants.Utilities.SetGlobalDataFromGameInfo(gameInfo);
             // Add methods to do things like moving characters, taking damage, etc. 
+        }
+
+        public T CloneObject<T>(T obj)
+        {
+            var clone = (T) new object();
+            var pubAttributes = GetAllDeclaredAttributes(obj);
+            foreach (var attribute in pubAttributes)
+            {
+                var objAttributeValue = obj.GetType().GetProperty(attribute.Name).GetValue(obj, null);
+
+                clone.GetType().GetProperty(attribute.Name)
+                    .SetValue(attribute, objAttributeValue, null);
+            }
+
+            return clone;
         }
     }
 } 
