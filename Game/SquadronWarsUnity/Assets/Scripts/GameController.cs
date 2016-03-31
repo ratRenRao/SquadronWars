@@ -159,7 +159,19 @@ namespace Assets.Scripts
                     {
                         foreach (GameClasses.Action act in GlobalConstants.currentActions.ActionOrder)
                         {
-                            Debug.Log(act.actionType);
+                            if(act.actionType == GameClasses.Action.ActionType.Move)
+                            {
+                                tile = act.actionTiles[0];
+                                prevTile = lastTile;
+                                currentCharacterGameObject.X = tile.x;
+                                currentCharacterGameObject.Y = tile.y;
+                                path = act.actionTiles;
+                                prevTile.isOccupied = false;
+                                prevTile.character = null;
+                                targetTile = path[0];
+                                reachedPosition = false;
+                                currentCharacterGameObject.hasMoved = true;
+                            }
                         }
                     }
                 }
