@@ -142,6 +142,9 @@ namespace Assets.Scripts
                     if (waitGameState == WaitGameState.WaitForQueue)
                     {
                         Debug.Log("Waiting for queue");
+                        Debug.Log(GlobalConstants.currentActions.CharacterQueue.Count);
+                        Debug.Log(GlobalConstants.currentActions.AffectedTiles);
+                        Debug.Log(GlobalConstants.currentActions.ActionOrder);
                         if (GlobalConstants.currentActions.CharacterQueue.Count > 0)
                         {
                             Debug.Log("Queue recieved");
