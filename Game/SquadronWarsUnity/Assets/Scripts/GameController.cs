@@ -191,8 +191,9 @@ namespace Assets.Scripts
                         
                     }
                     Debug.Log("waiting for other player");
-                    if (waitGameState == WaitGameState.WaitForOtherPlayer)
+                    if (waitGameState == WaitGameState.WaitForOtherPlayer && GlobalConstants.currentActions.ActionOrder.Count == 0)
                     {
+                        Debug.Log("Other Player ready");
                         SelectNextCharacter();
                     }
                 }
@@ -1688,7 +1689,7 @@ namespace Assets.Scripts
                     }
                 }
             }
-            GlobalConstants.currentActions = new BattleAction();
+            
             if (myCharacters.Select(character => character).Contains(turnQueue[0]))
             {
                 hidePanel = false;                
