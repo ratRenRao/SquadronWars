@@ -191,10 +191,10 @@ namespace Assets.Scripts
                         
                     }
                     Debug.Log("waiting for other player");
-                    if (waitGameState == WaitGameState.WaitForOtherPlayer && GlobalConstants.currentActions.ActionOrder.Count == 0)
+                    if (waitGameState == WaitGameState.WaitForOtherPlayer)
                     {
                         Debug.Log("Other Player ready");
-                        SelectNextCharacter();
+                        //SelectNextCharacter();
                     }
                 }
                 else
