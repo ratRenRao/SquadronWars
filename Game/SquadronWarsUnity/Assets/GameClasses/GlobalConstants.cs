@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using Assets.Data;
 using Assets.Scripts;
 using UnityEngine;
@@ -38,7 +39,7 @@ namespace Assets.GameClasses
         public static Player Player { get; set; }
         public static int PlayerNum { get; set; }
         public static List<Ability> AbilityMasterList { get; set; }
-
+        public static List<Effect> EffectMasterList { get; set; }
         public static Utilities Utilities = new Utilities();
 
         public static CharacterGameObject ActiveCharacterGameObject { get; set; }

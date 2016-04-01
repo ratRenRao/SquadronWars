@@ -1,21 +1,19 @@
 namespace Assets.GameClasses
 {
 
-    class Burn : Effect, IEffectable
+    class Burn : Effect
     {
         private int _burnDamage;
 
         public Burn(Stats caster, Stats target, bool hasInitialEffect, int duration)
         {
-            Target = target;
-            Caster = caster;
             HasInitialEffect = hasInitialEffect;
             Duration = duration;
         }
 
         public override void LingeringEffect()
         {
-            Target.HitPoints -= _burnDamage;
+//            Target.HitPoints -= _burnDamage;
         }
     }
 }

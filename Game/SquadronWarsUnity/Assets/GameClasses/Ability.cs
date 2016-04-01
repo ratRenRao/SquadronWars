@@ -5,8 +5,8 @@ using System.Reflection;
 using Assets.GameClasses;
 
 namespace Assets.GameClasses
-{
-    public class Ability : IEffectable, IJsonable
+ {
+    public class Ability : IJsonable
     {
         public string Name { get; set; }
         public int AbilityId { get; set; }

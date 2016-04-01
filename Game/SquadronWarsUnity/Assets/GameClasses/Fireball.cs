@@ -6,15 +6,13 @@ namespace Assets.GameClasses
 
         public Fireball(Stats caster, Stats target, bool hasInitialEffect, int duration)
         {
-            Target = target;
-            Caster = caster;
             HasInitialEffect = hasInitialEffect;
             Duration = duration;
         }
 
         public override void ImmediateEffect()
         {
-            Target.HitPoints -= _fireballDamage;
+            //Target.HitPoints -= _fireballDamage;
         }
     }
 }

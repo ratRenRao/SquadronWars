@@ -1,22 +1,24 @@
 using System;
+using System.Collections.Generic;
 
 namespace Assets.GameClasses
 {
-    abstract public class Effect : IEffectable
+    public abstract class Effect : IEffectable
     {
+        public string Name { get; set; }
         public int Duration { get; set; }
         public bool HasInitialEffect = false;
-        public Stats Caster { get; set; }
-        public Stats Target { get; set; }
+        private List<Stats> _affectedCharacterStats { get; set; }
+        private Stats _executionerStats { get; set; }
 
-        public virtual void Execute(ref Stats characterStats)
+        public virtual void Execute(List<Stats> affectedCharacterStats, ref Stats executionserStats)
         {
-            if (HasInitialEffect)
-            {
-                //initialEffect();
-                HasInitialEffect = false;
-            }
-            else if (Duration > 0)
+            _affectedCharacterStats = affectedCharacterStats;
+            _executionerStats = executionserStats;
+
+            ImmediateEffect();
+           
+            if (Duration > 0)
             {
                 LingeringEffect();
             }
@@ -31,25 +33,16 @@ namespace Assets.GameClasses
             return (stat < minStat) ? minStat : (stat > maxStat) ? maxStat : stat;
         }
 
-        public virtual void LingeringEffect() { }
-
-        public virtual void ImmediateEffect() { }
-
-        public virtual void RemoveEffect() { }
-
-        public virtual void ImmediateEffect(ref Stats characterStats)
+        public virtual void ImmediateEffect()
         {
-            throw new NotImplementedException();
         }
 
-        public  virtual void RemoveEffect(ref Stats characterStats)
+        public  virtual void RemoveEffect()
         {
-            throw new NotImplementedException();
         }
 
-        public virtual void LingeringEffect(ref Stats characterStats)
+        public virtual void LingeringEffect()
         {
-            throw new NotImplementedException();
         }
     }
 }

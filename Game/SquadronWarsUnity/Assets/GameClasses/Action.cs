@@ -21,6 +21,7 @@ namespace Assets.GameClasses
         public ActionType actionType { get; set; }
         public List<Tile> actionTiles { get; set; }
         public string performedAction { get; set; }
+        private Effect _effect;
 
         public Action() : this(ActionType.Idle, new List<Tile>(), "default") { }
         public Action(ActionType actionType, List<Tile> actionTiles, string performedAction)
@@ -28,7 +29,19 @@ namespace Assets.GameClasses
             this.actionType = actionType;
             this.actionTiles = actionTiles;
             this.performedAction = performedAction;
+
+            SetEffectFromString();
             AddPayoutValueForAction();
+        }
+
+        private void SetEffectFromString()
+        {
+            _effect = GlobalConstants.EffectMasterList.SingleOrDefault(effect => effect.Name == performedAction);
+        }
+
+        public void Execute(List<Character> affectedCharacters, ref Stats executionerStats)
+        {
+            _effect.Execute(affectedCharacters.Select(x => x.CurrentStats).ToList(), ref executionerStats);
         }
 
         public string GetJsonObjectName()
