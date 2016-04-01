@@ -159,26 +159,31 @@ namespace Assets.Scripts
                     {
                         foreach (GameClasses.Action act in GlobalConstants.currentActions.ActionOrder)
                         {
+                            Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                             if (act.actionType == GameClasses.Action.ActionType.Move && !currentCharacterGameObject.hasMoved)
                             {
-                                tile = tileArray[act.actionTiles[0].x, act.actionTiles[0].y];
-                                prevTile = tile;
-                                currentCharacterGameObject.X = tile.x;
-                                currentCharacterGameObject.Y = tile.y;
-                                for (int j = 0; j < act.actionTiles.Count; j++)
+                                if (act.actionTiles.Count > 0)
                                 {
-                                    path.Add(tileArray[act.actionTiles[j].x, act.actionTiles[j].y]);
+                                    tile = tileArray[act.actionTiles[0].x, act.actionTiles[0].y];
+                                    prevTile = tile;
+                                    currentCharacterGameObject.X = tile.x;
+                                    currentCharacterGameObject.Y = tile.y;
+                                    for (int j = 0; j < act.actionTiles.Count; j++)
+                                    {
+                                        path.Add(tileArray[act.actionTiles[j].x, act.actionTiles[j].y]);
+                                    }
+                                    prevTile.isOccupied = false;
+                                    prevTile.character = null;
+                                    targetTile = path[0];
+                                    reachedPosition = false;
+                                    currentCharacterGameObject.hasMoved = true;
                                 }
-                                prevTile.isOccupied = false;
-                                prevTile.character = null;
-                                targetTile = path[0];
-                                reachedPosition = false;
-                                currentCharacterGameObject.hasMoved = true;
                             }
                             Debug.Log(act.actionType);
                             if (act.actionType == GameClasses.Action.ActionType.Endturn)
                             {
-                                Debug.Log("End Turn Called");
+                                GlobalConstants.currentActions = new BattleAction();
+                                GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 SelectNextCharacter();
                             }
                         }
@@ -1670,6 +1675,7 @@ namespace Assets.Scripts
                     GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Endturn, new List<Tile>(), "endturn");
                     GlobalConstants.currentActions.AddAction(tempAction);
                     GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+                    
                 }
             }
             GlobalConstants.currentActions = new BattleAction();
