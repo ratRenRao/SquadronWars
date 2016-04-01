@@ -86,11 +86,6 @@ public class ExperienceBar : MonoBehaviour
         GUI.DrawTexture(barRect5, bar);
         GUI.Label(labelRect5, exp.ToString() + " / " + maxExp.ToString(), style);
 
-        GUIStyle myStyle = new GUIStyle();
-        myStyle.fontSize = 30;
-        myStyle.fontStyle = FontStyle.Bold;
-        myStyle.normal.textColor = Color.yellow;
-        GUI.Label(labelRect6, gold.ToString(), myStyle);
     }
 
 }
