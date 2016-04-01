@@ -1678,6 +1678,7 @@ namespace Assets.Scripts
                     
                 }
             }
+            GlobalConstants.currentActions = new BattleAction();
             if (myCharacters.Select(character => character).Contains(turnQueue[0]))
             {
                 hidePanel = false;                
