@@ -161,11 +161,14 @@ namespace Assets.Scripts
                         {
                             if(act.actionType == GameClasses.Action.ActionType.Move && !currentCharacterGameObject.hasMoved)
                             {
-                                tile = act.actionTiles[0];
-                                prevTile = lastTile;
+                                tile = tileArray[act.actionTiles[0].x, act.actionTiles[0].y];
+                                prevTile = tile;
                                 currentCharacterGameObject.X = tile.x;
                                 currentCharacterGameObject.Y = tile.y;
-                                path = act.actionTiles;
+                                for(int j = 0; j < act.actionTiles.Count; j++)
+                                {
+                                    path.Add(tileArray[act.actionTiles[j].x, act.actionTiles[j].y]);
+                                }
                                 prevTile.isOccupied = false;
                                 prevTile.character = null;
                                 targetTile = path[0];
@@ -248,14 +251,18 @@ namespace Assets.Scripts
                         anim.SetBool("isWalking", isWalking);
                         reachedPosition = true;
                         path.Clear();
-                        count = 0;
-                        action = Action.IDLE;
+                        count = 0;                        
                         currentCharacterGameObject.GetComponent<SpriteRenderer>().sortingOrder = 6 + (targetTile.y * 2);
                         targetTile.isOccupied = true;
                         targetTile.character = currentCharacterGameObject;
                         targetTile.characterObject = currentGameCharacter;
                         PositionPanels();
-                        hidePanel = false;
+                        if (action != Action.WaitForGameInfo)
+                        {
+                            Debug.Log("Show Panels called");
+                            action = Action.IDLE;
+                            hidePanel = false;
+                        }
                     }
                     else {
                         count++;                        
