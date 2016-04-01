@@ -1665,7 +1665,7 @@ namespace Assets.Scripts
                 }
                 if(action != Action.WaitForGameInfo)
                 {
-                    GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Endturn, null, "endturn");
+                    GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Endturn, new List<Tile>(), "endturn");
                     GlobalConstants.currentActions.AddAction(tempAction);
                     GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                 }
