@@ -26,7 +26,8 @@ namespace Assets.Scripts
             Wait,
             Place,
             Action,
-            WaitForQueue
+            WaitForQueue,
+            WaitForOtherPlayer
         }
         public TileMap tileMap;
         GameObject currentGameCharacter;
@@ -186,6 +187,10 @@ namespace Assets.Scripts
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 SelectNextCharacter();
                             }
+                        }
+                        if(waitGameState == WaitGameState.WaitForOtherPlayer)
+                        {
+                            SelectNextCharacter();
                         }
                     }
                 }
@@ -1644,6 +1649,14 @@ namespace Assets.Scripts
             SelectNextCharacter();
         }
 
+        public void EndTurn()
+        {
+            GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Endturn, new List<Tile>(), "endturn");
+            GlobalConstants.currentActions.AddAction(tempAction);
+            GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+            waitGameState = WaitGameState.WaitForOtherPlayer;
+        }
+
         public void SelectNextCharacter()
         {
             if (placeCharacterPhase)
@@ -1670,13 +1683,6 @@ namespace Assets.Scripts
                         getNextAvailableCharacter = true;
                     }
                 }
-                if(action != Action.WaitForGameInfo)
-                {
-                    GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Endturn, new List<Tile>(), "endturn");
-                    GlobalConstants.currentActions.AddAction(tempAction);
-                    GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
-                    
-                }
             }
             GlobalConstants.currentActions = new BattleAction();
             if (myCharacters.Select(character => character).Contains(turnQueue[0]))
@@ -1696,6 +1702,7 @@ namespace Assets.Scripts
                     playersTurnText.text = "Player " + 1 + "s turn";
                 }
                 action = Action.WaitForGameInfo;
+                
             }
                 currentGameCharacter = turnQueue[0];
                 currentCharacterGameObject = currentGameCharacter.GetComponent<CharacterGameObject>();
