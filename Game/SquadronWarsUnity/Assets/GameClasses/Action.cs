@@ -70,11 +70,13 @@ namespace Assets.GameClasses
             {
                 if (actionType == ActionType.CastAbility)
                 {
-                    GlobalConstants.DamageAndHealingDone += (int)(tile.amount*.05) / actionTiles.Count;
+                    var total = (int) (tile.amount*.05)/actionTiles.Count;
+                    GlobalConstants.DamageAndHealingDone += total != null ? (int) (tile.amount*.05)/actionTiles.Count : 0;
                 }
                 else if (actionType == ActionType.Attack || actionType == ActionType.AttackAbility)
                 {
-                    GlobalConstants.DamageAndHealingDone += tile.amount / actionTiles.Count;
+                    var total = tile.amount/actionTiles.Count;
+                    GlobalConstants.DamageAndHealingDone += total != null ? tile.amount / actionTiles.Count : 0;
                 }
             });
         }
