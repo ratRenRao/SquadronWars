@@ -159,13 +159,13 @@ namespace Assets.Scripts
                     {
                         foreach (GameClasses.Action act in GlobalConstants.currentActions.ActionOrder)
                         {
-                            if(act.actionType == GameClasses.Action.ActionType.Move && !currentCharacterGameObject.hasMoved)
+                            if (act.actionType == GameClasses.Action.ActionType.Move && !currentCharacterGameObject.hasMoved)
                             {
                                 tile = tileArray[act.actionTiles[0].x, act.actionTiles[0].y];
                                 prevTile = tile;
                                 currentCharacterGameObject.X = tile.x;
                                 currentCharacterGameObject.Y = tile.y;
-                                for(int j = 0; j < act.actionTiles.Count; j++)
+                                for (int j = 0; j < act.actionTiles.Count; j++)
                                 {
                                     path.Add(tileArray[act.actionTiles[j].x, act.actionTiles[j].y]);
                                 }
@@ -174,6 +174,10 @@ namespace Assets.Scripts
                                 targetTile = path[0];
                                 reachedPosition = false;
                                 currentCharacterGameObject.hasMoved = true;
+                            }
+                            if (act.actionType == GameClasses.Action.ActionType.Endturn)
+                            {
+                                SelectNextCharacter();
                             }
                         }
                     }
@@ -1659,12 +1663,19 @@ namespace Assets.Scripts
                         getNextAvailableCharacter = true;
                     }
                 }
+                if(action != Action.WaitForGameInfo)
+                {
+                    GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Endturn, null, "endturn");
+                    GlobalConstants.currentActions.AddAction(tempAction);
+                    GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+                }
             }
 
             if (myCharacters.Select(character => character).Contains(turnQueue[0]))
             {
                 hidePanel = false;                
                 playersTurnText.text = "Player " + GlobalConstants.myPlayerId + "s turn";
+                action = Action.IDLE;
             }
             else
             {
@@ -1676,6 +1687,7 @@ namespace Assets.Scripts
                 {
                     playersTurnText.text = "Player " + 1 + "s turn";
                 }
+                action = Action.WaitForGameInfo;
             }
                 currentGameCharacter = turnQueue[0];
                 currentCharacterGameObject = currentGameCharacter.GetComponent<CharacterGameObject>();
