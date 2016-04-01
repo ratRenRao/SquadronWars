@@ -182,7 +182,8 @@ namespace Assets.Scripts
                             Debug.Log(act.actionType);
                             if (act.actionType == GameClasses.Action.ActionType.Endturn)
                             {
-                                Debug.Log("End Turn Called");
+                                GlobalConstants.currentActions = new BattleAction();
+                                GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 SelectNextCharacter();
                             }
                         }
@@ -1674,11 +1675,9 @@ namespace Assets.Scripts
                     GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Endturn, new List<Tile>(), "endturn");
                     GlobalConstants.currentActions.AddAction(tempAction);
                     GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
-                    GlobalConstants.currentActions = new BattleAction();
-                    GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+                    
                 }
             }
-            GlobalConstants.currentActions = new BattleAction();
             if (myCharacters.Select(character => character).Contains(turnQueue[0]))
             {
                 hidePanel = false;                
