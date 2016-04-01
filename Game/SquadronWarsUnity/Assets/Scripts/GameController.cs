@@ -175,6 +175,7 @@ namespace Assets.Scripts
                                 reachedPosition = false;
                                 currentCharacterGameObject.hasMoved = true;
                             }
+                            Debug.Log(act.actionType);
                             if (act.actionType == GameClasses.Action.ActionType.Endturn)
                             {
                                 Debug.Log("End Turn Called");
