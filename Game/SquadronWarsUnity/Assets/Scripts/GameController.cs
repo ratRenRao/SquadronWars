@@ -190,6 +190,7 @@ namespace Assets.Scripts
                         }
                         
                     }
+                    Debug.Log("waiting for other player");
                     if (waitGameState == WaitGameState.WaitForOtherPlayer)
                     {
                         SelectNextCharacter();
@@ -1656,6 +1657,7 @@ namespace Assets.Scripts
             GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Endturn, new List<Tile>(), "endturn");
             GlobalConstants.currentActions.AddAction(tempAction);
             GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+            action = Action.WaitForGameInfo;
             waitGameState = WaitGameState.WaitForOtherPlayer;
         }
 
