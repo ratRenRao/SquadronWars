@@ -177,6 +177,7 @@ namespace Assets.Scripts
                             }
                             if (act.actionType == GameClasses.Action.ActionType.Endturn)
                             {
+                                Debug.Log("End Turn Called");
                                 SelectNextCharacter();
                             }
                         }
@@ -1670,7 +1671,7 @@ namespace Assets.Scripts
                     GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                 }
             }
-
+            GlobalConstants.currentActions = new BattleAction();
             if (myCharacters.Select(character => character).Contains(turnQueue[0]))
             {
                 hidePanel = false;                
