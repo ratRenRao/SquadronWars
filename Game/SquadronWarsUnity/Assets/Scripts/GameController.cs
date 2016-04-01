@@ -1674,6 +1674,8 @@ namespace Assets.Scripts
                     GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Endturn, new List<Tile>(), "endturn");
                     GlobalConstants.currentActions.AddAction(tempAction);
                     GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+                    GlobalConstants.currentActions = new BattleAction();
+                    GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                 }
             }
             GlobalConstants.currentActions = new BattleAction();
