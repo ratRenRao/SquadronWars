@@ -188,10 +188,11 @@ namespace Assets.Scripts
                                 SelectNextCharacter();
                             }
                         }
-                        if(waitGameState == WaitGameState.WaitForOtherPlayer)
-                        {
-                            SelectNextCharacter();
-                        }
+                        
+                    }
+                    if (waitGameState == WaitGameState.WaitForOtherPlayer)
+                    {
+                        SelectNextCharacter();
                     }
                 }
                 else
