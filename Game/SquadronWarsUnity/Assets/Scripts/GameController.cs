@@ -193,6 +193,7 @@ namespace Assets.Scripts
                     Debug.Log("waiting for other player");
                     if (waitGameState == WaitGameState.WaitForOtherPlayer)
                     {
+                        Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                         Debug.Log("Other Player ready");
                         //SelectNextCharacter();
                     }
