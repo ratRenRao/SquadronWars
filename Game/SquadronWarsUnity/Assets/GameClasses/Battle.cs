@@ -7,8 +7,8 @@ using Assets.GameClasses;
 public class Battle : MonoBehaviour
 {
     private DateTime lastChecked, lastModified;
-    private bool running = false;
     private bool checkUpdate = true;
+
 	// Use this for initialization
 	void Start ()
 	{

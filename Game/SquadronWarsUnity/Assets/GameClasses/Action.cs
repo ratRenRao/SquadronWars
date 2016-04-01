@@ -18,9 +18,9 @@ namespace Assets.GameClasses
             Endturn
         }
 
-        ActionType actionType { get; set; }
-        List<Tile> actionTiles { get; set; }
-        string performedAction { get; set; }
+        public ActionType actionType { get; set; }
+        public List<Tile> actionTiles { get; set; }
+        public string performedAction { get; set; }
 
         public Action() : this(ActionType.Idle, new List<Tile>(), "default") { }
         public Action(ActionType actionType, List<Tile> actionTiles, string performedAction)
@@ -28,6 +28,7 @@ namespace Assets.GameClasses
             this.actionType = actionType;
             this.actionTiles = actionTiles;
             this.performedAction = performedAction;
+            AddPayoutValueForAction();
         }
 
         public string GetJsonObjectName()
@@ -61,6 +62,23 @@ namespace Assets.GameClasses
             returnString += "] }";
 
             return returnString;
+        }
+
+        public void AddPayoutValueForAction()
+        {
+            actionTiles.ForEach(tile =>
+            {
+                if (actionType == ActionType.CastAbility)
+                {
+                    var total = (int) (tile.amount*.05)/actionTiles.Count;
+                    GlobalConstants.DamageAndHealingDone += total != null ? (int) (tile.amount*.05)/actionTiles.Count : 0;
+                }
+                else if (actionType == ActionType.Attack || actionType == ActionType.AttackAbility)
+                {
+                    var total = tile.amount/actionTiles.Count;
+                    GlobalConstants.DamageAndHealingDone += total != null ? tile.amount / actionTiles.Count : 0;
+                }
+            });
         }
     }
 }

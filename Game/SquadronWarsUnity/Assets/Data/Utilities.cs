@@ -14,7 +14,6 @@ namespace Assets.Data
     public class Utilities : MonoBehaviour
     {
         private JSONObject _jsonObject = new JSONObject(); 
-        private DbConnection _dbConnection = new DbConnection();
       
         public JSONObject DeserializeData(string data)
         {
@@ -26,12 +25,12 @@ namespace Assets.Data
 
         public T BuildObjectFromJsonData<T>(string data) where T : IJsonable
         {
-            //Debug.Log("Data before removing slashes" + data);
+            Debug.Log("Data before removing slashes" + data);
             data = RemoveSlashes(data);
-            //Debug.Log("Data after removing slashes" + data);
+            Debug.Log("Data after removing slashes" + data);
             var deserializedJson = DeserializeData(data);
             _jsonObject = deserializedJson;
-            //Debug.Log(deserializedJson.ToString());
+            Debug.Log(deserializedJson.ToString());
             var obj = Activator.CreateInstance<T>();
             obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(obj)), typeof(T));
 
@@ -67,7 +66,9 @@ namespace Assets.Data
                 return null;
 
             var objectAttributes = GetParameterList(type);
-            
+
+            if (type.IsEnum)
+                obj.type = JSONObject.Type.ENUM;
 
             switch (obj.type)
             {
@@ -114,6 +115,7 @@ namespace Assets.Data
                             }
                         }
                         else {
+                           // Debug.Log("JsonObject: " + j + " type: " + type);
                             builder.GetType()
                                     .GetProperty(param.Name)
                                     .SetValue(builder, j != null
@@ -145,6 +147,10 @@ namespace Assets.Data
                     else
                         return obj.str;
 
+                case JSONObject.Type.ENUM:
+                    return GetTypeFromString(obj.str, type);
+                    break;
+
                 case JSONObject.Type.NUMBER:
                     return obj.n;
 
@@ -157,6 +163,11 @@ namespace Assets.Data
             }
 
             return null;
+        }
+
+        private object GetTypeFromString(string typeString, Type parentType)
+        {
+            return Enum.GetValues(parentType).Cast<object>().FirstOrDefault(type => type.ToString() == typeString);
         }
 
         private static Item GetItemFromNumber(int num)
@@ -203,6 +214,13 @@ namespace Assets.Data
                 default:
                     return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).ToList();
             }            
+        }
+
+        public static PropertyInfo[] GetAllDeclaredAttributes<T>(T obj)
+        {
+            return
+                typeof (T).GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance |
+                                         BindingFlags.Static);
         }
 
         public static class ParameterLists
@@ -563,6 +581,21 @@ namespace Assets.Data
         {
             GlobalConstants.Utilities.SetGlobalDataFromGameInfo(gameInfo);
             // Add methods to do things like moving characters, taking damage, etc. 
+        }
+
+        public T CloneObject<T>(T obj)
+        {
+            var clone = (T) new object();
+            var pubAttributes = GetAllDeclaredAttributes(obj);
+            foreach (var attribute in pubAttributes)
+            {
+                var objAttributeValue = obj.GetType().GetProperty(attribute.Name).GetValue(obj, null);
+
+                clone.GetType().GetProperty(attribute.Name)
+                    .SetValue(attribute, objAttributeValue, null);
+            }
+
+            return clone;
         }
     }
 } 
