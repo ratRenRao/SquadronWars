@@ -585,7 +585,7 @@ namespace Assets.Data
 
         public T CloneObject<T>(T obj)
         {
-            var clone = (T) new object();
+            var clone = Activator.CreateInstance<T>();
             var pubAttributes = GetAllDeclaredAttributes(obj);
             foreach (var attribute in pubAttributes)
             {
@@ -595,7 +595,7 @@ namespace Assets.Data
                     .SetValue(attribute, objAttributeValue, null);
             }
 
-            return clone;
+            return (T)clone;
         }
     }
 } 

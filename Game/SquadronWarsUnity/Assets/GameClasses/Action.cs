@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using Assets.Scripts;
 using System.Linq;
 
 namespace Assets.GameClasses
 {
-    public class Action : IJsonable
-    {
+    public class Action : IJsonable    {
 
         public enum ActionType
         {
@@ -21,7 +21,7 @@ namespace Assets.GameClasses
         public ActionType actionType { get; set; }
         public List<Tile> actionTiles { get; set; }
         public string performedAction { get; set; }
-        private Effect _effect;
+        public Effect Effect;
 
         public Action() : this(ActionType.Idle, new List<Tile>(), "default") { }
         public Action(ActionType actionType, List<Tile> actionTiles, string performedAction)
@@ -30,18 +30,32 @@ namespace Assets.GameClasses
             this.actionTiles = actionTiles;
             this.performedAction = performedAction;
 
-            SetEffectFromString();
-            AddPayoutValueForAction();
+            if(performedAction != null && performedAction != "default")
+                SetEffectFromString();
+
+            //AddPayoutValueForAction();
         }
 
-        private void SetEffectFromString()
+        internal void SetEffectFromString()
         {
-            _effect = GlobalConstants.EffectMasterList.SingleOrDefault(effect => effect.Name == performedAction);
+            //var abilityMatchTypeName = GlobalConstants.AbilityMasterList.SingleOrDefault(effect => effect.Name.ToString().Equals(performedAction));
+            //var itemMatch = GlobalConstants.ItemsMasterList.SingleOrDefault(item => item.Name.ToString().Equals(performedAction));
+
+            if (performedAction != null)
+            {
+                var effectType =
+                    GlobalConstants.EffectTypes.SingleOrDefault(type => type.Name.ToString().Equals(performedAction)); 
+
+                if(effectType != null)
+                    Effect = (Effect) Activator.CreateInstance(effectType);
+            }
+            //else if (itemMatch != null)
+            //    Effect = itemMatch; 
         }
 
         public void Execute(List<Character> affectedCharacters, ref Stats executionerStats)
         {
-            _effect.Execute(affectedCharacters.Select(x => x.CurrentStats).ToList(), ref executionerStats);
+            Effect.Execute();
         }
 
         public string GetJsonObjectName()

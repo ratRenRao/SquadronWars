@@ -100,6 +100,9 @@ namespace Assets.Data
             GlobalConstants.AbilityPreReqs = AbilityPreReqs;
             GlobalConstants.ItemsMasterList = Items.Where(item => item != null).ToList();
             GlobalConstants.AbilityMasterList = Abilities;
+
+            foreach (var ability in Abilities)
+                GlobalConstants.EffectMasterList.Add(ability);
         }
 
         public static List<Character> BuildCharacterObjects()

@@ -16,9 +16,6 @@ namespace Assets.Scripts
         // Use this for initialization
         void Start()
         {
-#if DEBUG
-            new Tests().Run();
-#endif
             //if (GlobalConstants.Player != null)
             //{
             //not working correctly yet.
@@ -63,7 +60,10 @@ namespace Assets.Scripts
             //CanvasManager.LoginScreen.SetActive(false);
             //MenuManager.GetComponent<MenuManager>().HomePanel.SetActive(true);
             //MenuManager.GetComponent<MenuManager>().LoginPanel.SetActive(false);
-            
+
+#if DEBUG
+            new Tests().Run();
+#endif
         }
 
         private void GetDbData()
