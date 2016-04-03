@@ -19,7 +19,7 @@ namespace Assets.GameClasses
            // Target.HitPoints -= _hpRemoved;
         }
 
-        public override void RemoveEffect(Stats stats)
+        public override void RemoveEffect(ref Stats stats)
         {
             //Target.HitPoints = ValidateStat(Target.HitPoints + _hpRemoved, 0, Target.HitPoints);
         }

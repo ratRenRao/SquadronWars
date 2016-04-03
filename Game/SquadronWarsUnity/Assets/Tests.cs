@@ -49,13 +49,12 @@ namespace Assets
                 MagicDefense = 6,
                 HitPoints = 100
             };
-            var statsList = new List<Stats>() {targetStats};
+            var statsDictionary = new List<Character>() {new Character() { CurrentStats = targetStats, CharacterId = 1} };
 
 //            GlobalConstants.EffectMasterList.Add(new Fireball());           
             
             action.SetEffectFromString();
-
-            action.Effect.Initialize(ref statsList, ref executionerStats);
+            action.Effect.Initialize(ref statsDictionary, ref executionerStats);
             action.Effect.Execute();
         }
     }

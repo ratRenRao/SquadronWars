@@ -8,31 +8,38 @@ namespace Assets.GameClasses
 {
     public class TimeListener
     {
-        private Timer _timer; // From System.Timers
-        internal delegate void Method(Stats stats);
+        private Timer _timer;
+        internal delegate void Method(ref Stats stats);
         internal Method ExecutionMethod { get; set; }
+        internal Method FinishingMethod { get; set; }
         private Stats Stats;
-        private int Frequency;
+        private int RemainingDuration;
 
-        public TimeListener(int seconds, Stats stats, int frequency = 1)
+        public TimeListener(int remainingDuration, Stats stats, int frequency = 1)
         {
-            Frequency = frequency;
+            RemainingDuration = remainingDuration;
             Stats = stats;
-            _timer = new Timer(seconds * 1000);
-            _timer.Elapsed += new ElapsedEventHandler(Tick);
+            _timer = new Timer(frequency * 1000);
+            _timer.Elapsed += Tick;
         }
 
         public void Start()
         {
             if (ExecutionMethod == null)
                 return;
-            
-            _timer.Enabled = true;
+
+            _timer.Start();
         }
 
         private void Tick(object sender, ElapsedEventArgs e)
         {
-            ExecutionMethod(Stats);
+            ExecutionMethod(ref Stats);
+            RemainingDuration--;
+            if (RemainingDuration <= 0)
+            {
+                _timer.Stop();
+                FinishingMethod(ref Stats);
+            }
         }
     }
 }

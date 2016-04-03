@@ -16,12 +16,12 @@ namespace Assets.GameClasses
             //Target.HitPoints = ValidateStat(Target.HitPoints + _healthRestored, 0, Target.HitPoints);
         }
 
-        public override void RemoveEffect(Stats stats)
+        public override void RemoveEffect(ref Stats stats)
         {
             throw new NotImplementedException();
         }
 
-        public override void LingeringEffect(Stats stats)
+        public override void LingeringEffect(ref Stats stats)
         {
             throw new NotImplementedException();
         }

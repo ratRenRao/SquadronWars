@@ -65,6 +65,7 @@ namespace Assets.GameClasses
         public static int myPlayerId = 0;
         public static int opponentId = 0;
         public static bool Updated = true;
+        public static Dictionary<int, TimeListener> TimeListeners = new Dictionary<int, TimeListener>(); 
 
         //Game data for calculating payout
         public static int DamageAndHealingDone = 0;

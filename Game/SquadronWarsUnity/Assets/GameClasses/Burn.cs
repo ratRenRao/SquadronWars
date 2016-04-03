@@ -5,7 +5,7 @@ namespace Assets.GameClasses
     {
         private int _burnDamage;
 
-        public override void LingeringEffect(Stats stats)
+        public override void LingeringEffect(ref Stats stats)
         {
 //            Target.HitPoints -= _burnDamage;
         }
