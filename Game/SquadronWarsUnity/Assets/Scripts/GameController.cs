@@ -184,11 +184,13 @@ namespace Assets.Scripts
                             Debug.Log(act.actionType);
                             if (act.actionType == GameClasses.Action.ActionType.Endturn)
                             {
-                                GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
-                                GlobalConstants.currentActions.AddAction(tempAction);
-                                GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+                                //GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
+                                //GlobalConstants.currentActions.AddAction(tempAction);
                                 GlobalConstants.currentActions = new BattleAction();
+                                GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+                                
                                 SelectNextCharacter();
+                                break;
                             }
                             
                         }
@@ -1655,8 +1657,6 @@ namespace Assets.Scripts
             {                
                 int temp = GlobalConstants.currentActions.CharacterQueue[i];
                 turnQueue.Add(tempList.Single(character => character.GetComponent<CharacterGameObject>().CharacterClassObject.CharacterId == temp));
-
-                Debug.Log(turnQueue[i]);
             }
             waitGameState = WaitGameState.Wait;
             SelectNextCharacter();

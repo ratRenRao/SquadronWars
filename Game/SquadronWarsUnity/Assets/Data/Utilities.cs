@@ -93,7 +93,6 @@ namespace Assets.Data
                             j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.Name.ToLower()));
                         else
                             j = obj[keyIndex];
-                        //Debug.Log("Jobject + " bool = " + test);
                         if (type.Name.Equals("Equipment"))
                         {
                             int tmp;
@@ -106,7 +105,6 @@ namespace Assets.Data
                                 
                                 testBool = int.TryParse(tmpString, out tmp);
                                 int test = int.Parse(tmpString);
-                                //Debug.Log(tmpString + " bool = " + test);
                             }
                             if (testBool)
                             {
@@ -132,13 +130,12 @@ namespace Assets.Data
                     if (obj.list.Count <= 0)
                         return listBuilder;
                     Type listType = type.GetGenericArguments().Single();
- 
                     foreach (var value in obj.list)
                     {
                         var item = Decode(value, listType);
                         if (item != null)
                             (listBuilder as System.Collections.IList).Add(item);
-                    }
+                    }                        
                         return listBuilder;
 
                 case JSONObject.Type.STRING:
@@ -149,7 +146,7 @@ namespace Assets.Data
 
                 case JSONObject.Type.ENUM:
                     return GetTypeFromString(obj.str, type);
-                    break;
+                    
 
                 case JSONObject.Type.NUMBER:
                     return obj.n;
@@ -556,11 +553,11 @@ namespace Assets.Data
             //GlobalConstants.Player.Characters = gameInfo.character1Info;
             if (gameInfo.BattleAction != null)
             {
-                if (gameInfo.BattleAction.ActionOrder.Count > 0 && GlobalConstants.currentActions.ActionOrder.Count <= 0)
-                {
-                    GlobalConstants.currentActions.ActionOrder = GlobalConstants.currentActions.ActionOrder
-                        .Concat(gameInfo.BattleAction.ActionOrder).ToList();
-                }
+                //if (gameInfo.BattleAction.ActionOrder.Count > 0 && GlobalConstants.currentActions.ActionOrder.Count <= 0)
+                //{
+                    Debug.Log("ACTION ORDER BEING POPULATED: " + gameInfo.BattleAction.ActionOrder.Count);
+                GlobalConstants.currentActions.ActionOrder = gameInfo.BattleAction.ActionOrder.ToList();
+                //}
 
                 if (gameInfo.BattleAction.AffectedTiles.Count > 0 && GlobalConstants.currentActions.AffectedTiles.Count <= 0)
                 {
