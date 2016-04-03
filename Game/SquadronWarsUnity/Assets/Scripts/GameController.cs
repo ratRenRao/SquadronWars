@@ -133,6 +133,7 @@ namespace Assets.Scripts
                                 CreateTurnQueue();
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 waitGameState = WaitGameState.Wait;
+                                Debug.Log("Selecting next character being called");
                                 SelectNextCharacter();
                             }
                             else
@@ -194,8 +195,13 @@ namespace Assets.Scripts
                     if (waitGameState == WaitGameState.WaitForOtherPlayer)
                     {
                         Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
-                        Debug.Log("Other Player ready");
-                        //SelectNextCharacter();
+                        Debug.Log(GlobalConstants.currentActions.ActionOrder[0]);
+                        if (GlobalConstants.currentActions.ActionOrder.Count == 0)
+                        {
+                            GlobalConstants.currentActions = new BattleAction();                            
+                            Debug.Log("Other Player ready");
+                            SelectNextCharacter();
+                        }
                     }
                 }
                 else
@@ -1689,6 +1695,7 @@ namespace Assets.Scripts
                         getNextAvailableCharacter = true;
                     }
                 }
+                Debug.Log(turnQueue[0].GetComponent<CharacterGameObject>().CharacterClassObject.Name);
             }
             
             if (myCharacters.Select(character => character).Contains(turnQueue[0]))
@@ -1707,6 +1714,7 @@ namespace Assets.Scripts
                 {
                     playersTurnText.text = "Player " + 1 + "s turn";
                 }
+                waitGameState = WaitGameState.Wait;
                 action = Action.WaitForGameInfo;
                 
             }
