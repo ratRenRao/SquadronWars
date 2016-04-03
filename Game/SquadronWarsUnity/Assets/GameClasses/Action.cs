@@ -15,7 +15,8 @@ namespace Assets.GameClasses
             Attack,
             AttackAbility,
             CastAbility,
-            Endturn
+            Endturn,
+            Reset
         }
 
         public ActionType actionType { get; set; }

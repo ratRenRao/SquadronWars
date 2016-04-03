@@ -184,10 +184,13 @@ namespace Assets.Scripts
                             Debug.Log(act.actionType);
                             if (act.actionType == GameClasses.Action.ActionType.Endturn)
                             {
-                                GlobalConstants.currentActions = new BattleAction();
+                                GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
+                                GlobalConstants.currentActions.AddAction(tempAction);
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+                                GlobalConstants.currentActions = new BattleAction();
                                 SelectNextCharacter();
                             }
+                            
                         }
                         
                     }
@@ -195,11 +198,10 @@ namespace Assets.Scripts
                     if (waitGameState == WaitGameState.WaitForOtherPlayer)
                     {
                         Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
-                        Debug.Log(GlobalConstants.currentActions.ActionOrder[0]);
-                        if (GlobalConstants.currentActions.ActionOrder.Count == 0)
+                        Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
+                        if (GlobalConstants.currentActions.ActionOrder[1].actionType == GameClasses.Action.ActionType.Reset)
                         {
-                            GlobalConstants.currentActions = new BattleAction();                            
-                            Debug.Log("Other Player ready");
+                            GlobalConstants.currentActions = new BattleAction();
                             SelectNextCharacter();
                         }
                     }
