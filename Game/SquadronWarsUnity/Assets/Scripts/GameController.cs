@@ -195,15 +195,16 @@ namespace Assets.Scripts
                         
                     }
                     Debug.Log("waiting for other player");
+                    Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                     if (waitGameState == WaitGameState.WaitForOtherPlayer)
                     {
                         Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
-                        Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
-                        if (GlobalConstants.currentActions.ActionOrder[1].actionType == GameClasses.Action.ActionType.Reset)
+                        //Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
+                        /*if (GlobalConstants.currentActions.ActionOrder[1].actionType == GameClasses.Action.ActionType.Reset)
                         {
                             GlobalConstants.currentActions = new BattleAction();
                             SelectNextCharacter();
-                        }
+                        }*/
                     }
                 }
                 else

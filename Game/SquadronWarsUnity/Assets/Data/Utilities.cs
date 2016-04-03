@@ -245,7 +245,7 @@ namespace Assets.Data
             temp = Regex.Replace(temp, "\"character1Info\":\"", "\"character1Info\":");
             temp = Regex.Replace(temp, "]\"", "]");
             temp = Regex.Replace(temp, "\"GameJSON\":\"", "\"BattleAction\":");
-            temp = Regex.Replace(temp, "]}}\"", "]}}");
+            temp = Regex.Replace(temp, "]}\"", "]}");
             //temp = Regex.Replace(temp, "\"", "'");
             return temp;
         } 
