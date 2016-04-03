@@ -202,11 +202,11 @@ namespace Assets.Scripts
                     {
                         Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                         //Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
-                        /*if (GlobalConstants.currentActions.ActionOrder[1].actionType == GameClasses.Action.ActionType.Reset)
+                        if (GlobalConstants.currentActions.ActionOrder.Count == 0)
                         {
-                            GlobalConstants.currentActions = new BattleAction();
+                            Debug.Log("Selecting next character");
                             SelectNextCharacter();
-                        }*/
+                        }
                     }
                 }
                 else
