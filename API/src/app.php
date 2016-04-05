@@ -103,6 +103,38 @@ $app->post('/api/CreateSquad', function() use($app)
     return new Response("Failed",401);
 });
 
+$app->post('/api/UpdateInventory',function() use($app)
+{
+    //TODO: Update Inventory;
+    //create database object to be used.
+    $mysql = new MySQL();
+    $response = 401;
+
+    //verify post request contains username and password.
+    if(isset($_POST['GameObject']))
+    {
+        $gameObject = json_decode($_POST['GameObject']);
+        $verifyPlayer = $mysql->authenticateUser($gameObject->{"username"}, $gameObject->{"password"});
+        if(sizeof($verifyPlayer) > 0)
+        {
+            $response = $mysql->updateInventory($gameObject);
+        }
+    }
+
+    if($response == 200)
+    {
+        return new Response("Successful", 200);
+    }
+    else if($response == 500)
+    {
+        return new Response("Server Error", 500);
+    }
+    else
+    {
+        return new Response("Failed",401);
+    }
+});
+
 $app->post('/api/UpdateCharacter', function() use($app)
 {
     //create database object to be used.
@@ -210,6 +242,20 @@ $app->post('/api/CheckGameInfo', function() use($app)
     if(isset($_POST['GameObject'])) {
         $gameObject = json_decode($_POST['GameObject']);
         $returnObject = $mysql->checkGame($gameObject->{"gameId"});
+        return json_encode($returnObject);
+    }
+    return new Response("Failed",401);
+});
+
+$app->post('/api/GetBattleAction', function() use($app)
+{
+    //create database object to be used.
+    $mysql = new MySQL();
+
+    //verify post request contains username and password.
+    if(isset($_POST['GameObject'])) {
+        $gameObject = json_decode($_POST['GameObject']);
+        $returnObject = $mysql->getGameJSON($gameObject->{"gameId"});
         return json_encode($returnObject);
     }
     return new Response("Failed",401);
