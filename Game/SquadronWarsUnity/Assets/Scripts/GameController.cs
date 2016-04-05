@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Assets.GameClasses;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using Animator = UnityEngine.Animator;
 
 namespace Assets.Scripts
 {
@@ -51,8 +52,8 @@ namespace Assets.Scripts
         public int player2SpawnYEnd;
         Vector3 hitDown;
         RaycastHit2D hit;
-        Animator anim;
-        Animator tarAnim;
+        UnityEngine.Animator anim;
+        UnityEngine.Animator tarAnim;
         Tile targetTile;
         Tile tile = null;
         Tile prevTile = null;
@@ -85,6 +86,7 @@ namespace Assets.Scripts
         List<Tile> validMoves = new List<Tile>();
         List<Tile> path = new List<Tile>();
         List<GameObject> turnQueue = new List<GameObject>();
+        public AnimationManager AnimationManager; 
 
         // Use this for initialization
         void Start()
@@ -97,6 +99,7 @@ namespace Assets.Scripts
             //hidePanel = false;
             //GlobalConstants.myPlayerId = 1;
             //Debug.Log(GlobalConstants._dbConnection);
+            GlobalConstants.AnimationManager = AnimationManager;
             battlesong.playOnAwake = true;
             placeCharacterPhase = true;
             characters = GlobalConstants.MatchCharacters;
@@ -1231,13 +1234,29 @@ namespace Assets.Scripts
         public void GetTarget(Tile tile) {
             if (tile.isOccupied)
             {
-                tarAnim = tile.characterObject.GetComponent<Animator>();
+                tarAnim = tile.characterObject.GetComponent<UnityEngine.Animator>();
                 targetCharacterGameObject = tile.character;
                 targetCharacterGameObject = tile.character;
             }
             //targetCharacterGameObject = tile.GetComponent<CharacterGameObject>();
             //targetCharacterGameObject = targetCharacterGameObject.transform.parent.gameObject;
 
+        }
+
+        public CharacterGameObject GetCharacterGameObject(Tile tile)
+        {
+            if (tile.isOccupied)
+                return tile.character;
+
+            return null;
+        }
+
+        public Animator GetAnimator(Tile tile)
+        {
+            if (tile.isOccupied)
+                return tile.characterObject.GetComponent<UnityEngine.Animator>();
+
+            return null;
         }
 
         public void Cast(Tile targetTile, string ability)
@@ -1334,7 +1353,7 @@ namespace Assets.Scripts
 
         public void Injured()
         {
-            tarAnim = targetCharacterGameObject.GetComponent<Animator>();
+            tarAnim = targetCharacterGameObject.GetComponent<UnityEngine.Animator>();
             tarAnim.SetBool("isAttacked", true);
             StartCoroutine("InjuredAnimation");
         }
@@ -1589,7 +1608,7 @@ namespace Assets.Scripts
             tempTile.characterObject = tempchar;
 
             //tempGC = gameChar;
-            Animator tempAnim = tempchar.GetComponent<Animator>();
+            UnityEngine.Animator tempAnim = tempchar.GetComponent<UnityEngine.Animator>();
             tempAnim.SetFloat("x", 0);
             tempAnim.SetFloat("y", -1);
             gameCharacter.CharacterClassObject.X = tempTile.x;
@@ -1627,7 +1646,7 @@ namespace Assets.Scripts
                 tempTile.characterObject = tempchar;
 
                 //tempGC = gameChar;
-                Animator tempAnim = tempchar.GetComponent<Animator>();
+                UnityEngine.Animator tempAnim = tempchar.GetComponent<UnityEngine.Animator>();
                 tempAnim.SetFloat("x", 0);
                 tempAnim.SetFloat("y", -1);
                 gameCharacter.CharacterClassObject.X = tempTile.x;
@@ -1726,7 +1745,7 @@ namespace Assets.Scripts
                 targetTile = tileArray[currentCharacterGameObject.X, currentCharacterGameObject.Y];
                 prevTile = targetTile;
                 tile = prevTile;
-                anim = currentCharacterGameObject.GetComponent<Animator>();
+            anim = currentCharacterGameObject.GetComponent<UnityEngine.Animator>();
                 currentCharacterGameObject.hasAttacked = false;
                 currentCharacterGameObject.hasMoved = false;
                 //Debug.Log(tile);

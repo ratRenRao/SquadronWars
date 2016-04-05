@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.NetworkInformation;
 using System.Security.Cryptography.X509Certificates;
 using Assets.Data;
 using Assets.Scripts;
@@ -66,7 +65,7 @@ namespace Assets.GameClasses
         public static int opponentId = 0;
         public static bool Updated = true;
         public static Dictionary<int, TimeListener> TimeListeners = new Dictionary<int, TimeListener>(); 
-
+        public static AnimationManager AnimationManager { get; set; }
         //Game data for calculating payout
         public static int DamageAndHealingDone = 0;
         public static DateTime StartGameTime { get; set; }

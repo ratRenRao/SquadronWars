@@ -7,7 +7,7 @@ using UnityEditor;
 
 namespace Assets.GameClasses
 {
-    public abstract class Effect : IEffectable
+    public abstract class Effect : IEffectable, IAnimateable
     {
         public string Name { get; set; }
         public double ImmediateBaseDamage = 0;
