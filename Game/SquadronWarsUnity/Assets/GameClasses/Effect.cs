@@ -1,29 +1,65 @@
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading;
+using UnityEditor;
 
 namespace Assets.GameClasses
 {
-    abstract public class Effect : IEffectable
+    public abstract class Effect : IEffectable
     {
-        public int Duration { get; set; }
-        public bool HasInitialEffect = false;
-        public Stats Caster { get; set; }
-        public Stats Target { get; set; }
+        public string Name { get; set; }
+        public double ImmediateBaseDamage = 0;
+        public double LingeringBaseDamage = 0; 
+        public bool complete = false;
+        internal int Duration = 0; 
+        internal Dictionary<int, Stats> AffectedCharacterStats { get; private set; }
+        internal Stats ExecutionerStats { get; private set; }
+        internal Stopwatch Stopwatch = new Stopwatch();
+        internal TimeListener TimeListener;
+        internal List<Effect> ResultingEffects;
 
-        public virtual void Execute(ref Stats characterStats)
+
+        public virtual void Initialize(ref List<Character> affectedCharacters, ref Stats executionserStats)
         {
-            if (HasInitialEffect)
+            AffectedCharacterStats = affectedCharacters.ToDictionary(
+                character => character.CharacterId,
+                character => character.CurrentStats
+            );
+            ExecutionerStats = executionserStats;
+        }
+
+        public virtual void Execute()
+        {
+            foreach (var stats in AffectedCharacterStats)
             {
-                //initialEffect();
-                HasInitialEffect = false;
+                ImmediateEffect(stats.Value);
+
+                if (Duration > 0)
+                {
+                    TimeListener = new TimeListener(Duration, stats.Value)
+                    {
+                        ExecutionMethod = LingeringEffect,
+                        FinishingMethod = RemoveEffect
+                    };
+
+                    TimeListener.Start();
+                    GlobalConstants.TimeListeners.Add(stats.Key, TimeListener);
+                    //LingeringEffect(stats);
+                }
+                else if (Duration == 0)
+                {
+                    RemoveEffect();
+                }
             }
-            else if (Duration > 0)
-            {
-                LingeringEffect();
-            }
-            else if (Duration == 0)
-            {
-                RemoveEffect();
-            }
+        }
+
+        public void SetEffectVariables(int immediateBaseDamage, int lingeringBaseDamage, int duration)
+        {
+            ImmediateBaseDamage = immediateBaseDamage;
+            LingeringBaseDamage = lingeringBaseDamage;
+            Duration = duration;
         }
 
         public static int ValidateStat(int stat, int minStat, int maxStat)
@@ -31,25 +67,23 @@ namespace Assets.GameClasses
             return (stat < minStat) ? minStat : (stat > maxStat) ? maxStat : stat;
         }
 
-        public virtual void LingeringEffect() { }
-
-        public virtual void ImmediateEffect() { }
-
-        public virtual void RemoveEffect() { }
-
-        public virtual void ImmediateEffect(ref Stats characterStats)
+        public virtual void ImmediateEffect(Stats stats)
         {
-            throw new NotImplementedException();
+            
         }
 
-        public  virtual void RemoveEffect(ref Stats characterStats)
+        public virtual void RemoveEffect()
         {
-            throw new NotImplementedException();
+            complete = true;
         }
 
-        public virtual void LingeringEffect(ref Stats characterStats)
+        public  virtual void RemoveEffect(ref Stats stats)
         {
-            throw new NotImplementedException();
+            complete = true;
+        }
+
+        public virtual void LingeringEffect(ref Stats stats)
+        {
         }
     }
 }

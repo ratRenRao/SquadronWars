@@ -3,28 +3,25 @@ using UnityEngine;
 
 namespace Assets.GameClasses
 {
-    class Weaken : Effect
+    class Weaken : Ability
     {
         private int _decreasePercent;
         private int _hpRemoved;
 
         public Weaken(Stats caster, Stats target, bool hasInitialEffect, int duration)
         {
-            Target = target;
-            Caster = caster;
-            HasInitialEffect = hasInitialEffect;
             Duration = duration;
         }
 
-        public override void ImmediateEffect()
+        public override void ImmediateEffect(Stats stats)
         {
-            _hpRemoved = Target.HitPoints * (_decreasePercent / 100);
-            Target.HitPoints -= _hpRemoved;
+           // _hpRemoved = Target.HitPoints * (_decreasePercent / 100);
+           // Target.HitPoints -= _hpRemoved;
         }
 
-        public override void RemoveEffect()
+        public override void RemoveEffect(ref Stats stats)
         {
-            Target.HitPoints = ValidateStat(Target.HitPoints + _hpRemoved, 0, Target.HitPoints);
+            //Target.HitPoints = ValidateStat(Target.HitPoints + _hpRemoved, 0, Target.HitPoints);
         }
 
     }

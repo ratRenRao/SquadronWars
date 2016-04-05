@@ -28,6 +28,7 @@
         public int DodgeRate { get; set; }
         public int Luck { get; set; }
 
+
         public Stats(int strength = 0, int agility = 0, int intelligence = 0, int vitality = 0, int wisdom = 0, int dexterity = 0,
             int luck = 0, int hitPoints = 0, int damage = 0, int magicDmg = 0, int speed = 0, int defense = 0, int magicDef = 0, 
             int hitRate = 0, int dodgeRate = 0, int critRate = 0, int statPoints = 0, int skillPoints = 0)
@@ -177,10 +178,10 @@
 
         public string GetJSONString()
         {
-            return "{ \"Str\" : " + Str + ", \"Agi\" : " + Agi + ", \"Intl\" : " + Intl + ", \"Vit\" : " + Vit + ", \"Wis\" : " + Wis + ", \"Dex\" : " + Dex + ", \"Luck\" : " + Luck
-                + ", \"HitPoints\" : " + HitPoints + ", \"Dmg\" : " + Dmg + ", \"MagicAttack\" : " + MagicAttack + ", \"Speed\" : " + Speed + ", \"Defense\" : " + Defense
-                + ", \"MagicDefense\" : " + MagicDefense + ", \"HitRate\" : " + HitRate + ", \"DodgeRate\" : " + DodgeRate + ", \"CritRate\" : " + CritRate + ", \"StatPoints\" : "
-                + StatPoints + ", \"SkillPoints\" : " + SkillPoints + " }";
+            return "{ \"Str\" : \"" + Str + "\", \"Agi\" : \"" + Agi + "\", \"Intl\" : \"" + Intl + "\", \"Vit\" : \"" + Vit + "\", \"Wis\" : \"" + Wis + "\", \"Dex\" : \"" + Dex + "\", \"Luck\" : \"" + Luck
+                + "\", \"HitPoints\" : \"" + HitPoints + "\", \"Dmg\" : \"" + Dmg + "\", \"MagicAttack\" : \"" + MagicAttack + "\", \"Speed\" : \"" + Speed + "\", \"Defense\" : \"" + Defense
+                + "\", \"MagicDefense\" : \"" + MagicDefense + "\", \"HitRate\" : \"" + HitRate + "\", \"DodgeRate\" : \"" + DodgeRate + "\", \"CritRate\" : \"" + CritRate + "\", \"StatPoints\" : \""
+                + StatPoints + "\", \"SkillPoints\" : \"" + SkillPoints + "\" }";
         }
     }
 }

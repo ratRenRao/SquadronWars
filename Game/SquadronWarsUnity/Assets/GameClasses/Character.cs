@@ -7,8 +7,8 @@ namespace Assets.GameClasses
 {
     public class Character : IJsonable
     {
-        public int X;
-        public int Y;
+        public int X { get; set; }
+        public int Y { get; set; }
         public bool Updated = false;
 
         public int CharacterId { get; set; }
@@ -82,7 +82,7 @@ namespace Assets.GameClasses
         {
             string returnString = "{ \"CharacterId\" : \"" + CharacterId + "\", \"LevelId\" : \"" + LevelId + "\", \"Name\" : \"" + Name + "\", \"SpriteId\" : \""
                 + SpriteId + "\", \"X\" : \"" + X + "\", \"Y\" : \"" + Y + "\", \"BaseStats\" : " + BaseStats.GetJSONString() + ", \"CurrentStats\" : " + CurrentStats.GetJSONString()
-                + ", \"Equipment\" : " + Equipment.GetJSONString() + ", \"Abilities\" : { ";
+                + ", \"Equipment\" : " + Equipment.GetJSONString() + ", \"Abilities\" : [ ";
             int index = 0;
             foreach(Ability ability in Abilities)
             {
@@ -90,10 +90,10 @@ namespace Assets.GameClasses
                 {
                     returnString += ", ";
                 }
-                returnString += "\"" + index + "\" : " + ability.GetJSONString();
+                returnString += ability.GetJSONString();
                 index++;
             }
-            returnString += " } }";
+            returnString += " ] }";
 
             return returnString;
         }

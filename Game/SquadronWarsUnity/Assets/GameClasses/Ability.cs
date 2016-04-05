@@ -5,33 +5,18 @@ using System.Reflection;
 using Assets.GameClasses;
 
 namespace Assets.GameClasses
-{
-    public class Ability : IEffectable, IJsonable
+ {
+    public class Ability : Effect, IJsonable
     {
-        public string Name { get; set; }
+        public string Name
+        {
+            get { return base.Name; } 
+            set { base.Name = value; }
+        }
         public int AbilityId { get; set; }
         public int CharacterId { get; set; }
         public int AbilityLevel { get; set; }
 
-        public void Execute(ref Stats characterStats)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ImmediateEffect(ref Stats characterStats)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void LingeringEffect(ref Stats characterStats)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveEffect(ref Stats characterStats)
-        {
-            throw new NotImplementedException();
-        }
 
         public string GetJsonObjectName()
         {
@@ -50,7 +35,8 @@ namespace Assets.GameClasses
 
         public string GetJSONString()
         {
-            return "{ \"Name\" : \"" + Name + "\", \"AbilityId\" : " + AbilityId + ", \"AbilityLevel\" : " + AbilityLevel + ", \"CharacterId\" : " + CharacterId + " }";
+            // removed from string       ", \"CharacterId\" : " + CharacterId +
+            return "{ \"Name\" : \"" + Name + "\", \"AbilityId\" : \"" + AbilityId + "\", \"AbilityLevel\" : \"" + AbilityLevel +  "\" }";
         }
     }
 }

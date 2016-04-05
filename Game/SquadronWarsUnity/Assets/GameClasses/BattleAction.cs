@@ -6,9 +6,24 @@ namespace Assets.GameClasses
 {
     public class BattleAction : IJsonable
     {
-        public List<Action> ActionOrder = new List<Action>();
-        public List<int> CharacterQueue = new List<int>();
-        public Dictionary<Tile, int> AffectedTiles = new Dictionary<Tile, int>();
+        public List<Action> ActionOrder { get; set; }
+        public List<int> CharacterQueue { get; set; }
+        public Dictionary<Tile, int> AffectedTiles { get; set; }
+
+        public BattleAction() : this(new List<Action>(), new List<int>(), new Dictionary<Tile, int>()) { }
+
+        public BattleAction(List<Action> actions, List<int> queue, Dictionary<Tile,int> affected)
+        {
+            ActionOrder = actions;
+            CharacterQueue = queue;
+            AffectedTiles = affected;
+        }
+
+        public void SetActionEffect()
+        {
+            foreach(var action in ActionOrder)
+                action.SetEffectFromString();
+        }
 
         //BuildQueue for characters turns
         public string GetJsonObjectName()
@@ -48,7 +63,7 @@ namespace Assets.GameClasses
 
         public string GetJSONString()
         {
-            string returnString = "Gameinfo\", \"GameJSON\" : { \"ActionOrder\" : { ";
+            string returnString = "Gameinfo\", \"GameJSON\" : { \"ActionOrder\" : [ ";
             int index = 0;
             foreach(Action action in ActionOrder)
             {
@@ -56,10 +71,10 @@ namespace Assets.GameClasses
                 {
                     returnString += ", ";
                 }
-                returnString += "\"" + index + "\" : " + action.GetJSONString();
+                returnString += action.GetJSONString();
                 index++;
             }
-            returnString += " }, \"CharacterQueue\" : { ";
+            returnString += " ], \"CharacterQueue\" : [ ";
             index = 0;
             foreach(int position in CharacterQueue)
             {
@@ -67,10 +82,10 @@ namespace Assets.GameClasses
                 {
                     returnString += ", ";
                 }
-                returnString += "\"" + index + "\" : " + position;
+                returnString +="\"" + position + "\"";
                 index++;
             }
-            returnString += "}, \"AffectedTiles\" : { ";
+            returnString += "], \"AffectedTiles\" : [ ";
             index = 0;
             foreach(KeyValuePair<Tile,int> key in AffectedTiles)
             {
@@ -78,10 +93,10 @@ namespace Assets.GameClasses
                 {
                     returnString += ", ";
                 }
-                returnString += "\"" + index + "\" : { \"Tile\" : " + key.Key.GetJSONString() + ", \"Amount\" : " + key.Value + "}";
+                returnString += "{ \"Tile\" : " + key.Key.GetJSONString() + ", \"Amount\" : \"" + key.Value + "\"}";
                 index++;
             }
-            returnString += "} }, \"end\" : \"end";
+            returnString += "] }, \"end\" : \"end";
 
             return returnString;
         }

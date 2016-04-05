@@ -17,6 +17,9 @@ namespace Assets.Scripts
         public bool isObstructed { get; set; }
         public bool isOccupied { get; set; }
 
+        // This represents the amount of damage taken for any character on this tile.
+        public int amount { get; set; }
+
         public string GetJSONString()
         {
             return "{ \"x\" : \"" + x + "\", \"y\" : \"" + y + "\"}";

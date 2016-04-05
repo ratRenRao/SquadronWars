@@ -1,39 +1,27 @@
 using System;
+using System.Collections.Generic;
 
 namespace Assets.GameClasses
 {
-    class Heal : Effect
+    class Heal : Ability 
     {
         private readonly int _healthRestored = 50;
-        public Heal(Stats caster, Stats target, bool initial, int duration)
+        public Heal(int duration)
         {
-            Target = target;
-            Caster = caster;
-            HasInitialEffect = initial;
             Duration = duration;
         }
 
-        public override void ImmediateEffect()
+        public override void ImmediateEffect(Stats stats)
         {
-            Target.HitPoints = ValidateStat(Target.HitPoints + _healthRestored, 0, Target.HitPoints);
+            //Target.HitPoints = ValidateStat(Target.HitPoints + _healthRestored, 0, Target.HitPoints);
         }
 
-        public override void Execute(ref Stats characterStats)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ImmediateEffect(ref Stats characterStats)
+        public override void RemoveEffect(ref Stats stats)
         {
             throw new NotImplementedException();
         }
 
-        public override void RemoveEffect(ref Stats characterStats)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void LingeringEffect(ref Stats characterStats)
+        public override void LingeringEffect(ref Stats stats)
         {
             throw new NotImplementedException();
         }

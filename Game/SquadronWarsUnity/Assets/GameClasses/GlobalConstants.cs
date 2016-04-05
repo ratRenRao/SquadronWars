@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
+using System.Security.Cryptography.X509Certificates;
 using Assets.Data;
 using Assets.Scripts;
+using UnityEngine;
 
 namespace Assets.GameClasses
 {
@@ -28,6 +31,7 @@ namespace Assets.GameClasses
         public const string PlayerJsonObjectName = "PlayerInfo";
         public const string CharacterJsonObjectName = "Characters";
         public const string StartupDataJsonName = "PlayerDetails";
+        public const string ActionsJsonName = "Actions";
 
         public static bool CharacterLoadReady = false;
         public static List<CharacterGameObject> MatchCharacters = new List<CharacterGameObject>();
@@ -36,14 +40,22 @@ namespace Assets.GameClasses
         public static Player Player { get; set; }
         public static int PlayerNum { get; set; }
         public static List<Ability> AbilityMasterList { get; set; }
+        
+        public static readonly List<Type> EffectTypes = (from domainAssembly in AppDomain.CurrentDomain.GetAssemblies()
+                                                from assemblyType in domainAssembly.GetTypes()
+                                                where typeof(Effect).IsAssignableFrom(assemblyType)
+                                                select assemblyType).ToList();
 
+        public static List<Effect> EffectMasterList = new List<Effect>(); 
+        public static List<Effect> ActiveEffects = new List<Effect>(); 
         public static Utilities Utilities = new Utilities();
 
         public static CharacterGameObject ActiveCharacterGameObject { get; set; }
 
         public static Character curSelectedCharacter { get; set; }
 
-        public static DbConnection _dbConnection;
+        public static DbConnection _dbConnection = new GameObject().GetComponent<DbConnection>();
+        public static GameInfo GameInfo;
 
         //Battle related constants for managing a game
         public static int GameId = 0;
@@ -51,49 +63,19 @@ namespace Assets.GameClasses
         public static List<Character> player2Characters = new List<Character>();
         public static BattleAction currentActions = new BattleAction();
         public static int myPlayerId = 0;
+        public static int opponentId = 0;
+        public static bool Updated = true;
+        public static Dictionary<int, TimeListener> TimeListeners = new Dictionary<int, TimeListener>(); 
 
+        //Game data for calculating payout
+        public static int DamageAndHealingDone = 0;
+        public static DateTime StartGameTime { get; set; }
+        public static DateTime EndGameTime { get; set; }
 
-        //public static List<Character> PlayerCharacters { get; set; } 
-
-        /*
-		public static Dictionary<string,Item> ItemList = new Dictionary<string,Item>()
+        public static string GetJsonObjectName<T>(T obj) where T : IJsonable
         {
-            //Helmets
-        { "None(Head)",new Item("None(Head)", ItemType.Helm, new Stats(0, 0, 0, 0, 0, 0, 0))},
-        { "Cloth Helm",new Item("Cloth Helm", ItemType.Helm, new Stats(0,0,1,0,1,0,0)) },
-        { "Leather Helm",new Item("Leather Helm", ItemType.Helm, new Stats(0,1,0,0,0,1,0)) },
-        { "Bronze Helm",new Item("Bronze Helm", ItemType.Helm, new Stats(1,0,0,1,0,0,0)) },
-        //Chest
-        { "None(Chest)",new Item("None(Chest)", ItemType.Chest, new Stats(0, 0, 0, 0, 0, 0, 0)) },
-        { "Cloth Chest",new Item("Cloth Chest", ItemType.Chest, new Stats(0,1,2,0,1,0,0)) },
-        { "Leather Chest",new Item("Leather Chest", ItemType.Chest, new Stats(1,2,0,0,0,1,0)) },
-        { "Bronze Chest",new Item("Bronze Chest", ItemType.Chest, new Stats(2,0,0,2,0,0,0)) },
-        //Shoulder
-        { "None(Shoulder)",new Item("None(Shoulder)", ItemType.Shoulders, new Stats(0, 0, 0, 0, 0, 0, 0)) },
-        { "Cloth Shoulders",new Item("Cloth Shoulders", ItemType.Shoulders, new Stats(0,0,1,0,0,0,0)) },
-        { "Leather Shoulders",new Item("Leather Shoulders", ItemType.Shoulders, new Stats(0,1,0,0,0,0,0)) },
-        { "Bronze Shoulders",new Item("Bronze Shoulders", ItemType.Shoulders, new Stats(1,0,0,0,0,0,0)) },
-        //Gloves
-        { "None(Hands)",new Item("None(Hands)", ItemType.Gloves, new Stats(0, 0, 0, 0, 0, 0, 0)) },
-        { "Cloth Gloves",new Item("Cloth Gloves", ItemType.Gloves, new Stats(0,0,2,1,1,0,0)) },
-        { "Leather Gloves",new Item("Leather Gloves", ItemType.Gloves, new Stats(0,1,0,0,0,3,0)) },
-        { "Bronze Gloves",new Item("Bronze Gloves", ItemType.Gloves, new Stats(2,0,0,1,0,1,0)) },
-        //Legs
-        { "None(Legs)", new Item("None(Legs)", ItemType.Legs, new Stats(0, 0, 0, 0, 0, 0, 0)) },
-        { "Cloth Legs",new Item("Cloth Legs", ItemType.Legs, new Stats(0,1,1,0,1,0,0)) },
-        { "Leather Legs",new Item("Leather Legs", ItemType.Legs, new Stats(0,2,0,0,1,0,0)) },
-        { "Bronze Legs",new Item("Bronze Legs", ItemType.Legs, new Stats(1,1,0,1,0,1,0)) },
-        //Boots
-        { "None(Feet)",new Item("None(Feet)", ItemType.Boots, new Stats(0, 0, 0, 0, 0, 0, 0)) },
-        { "Cloth Boots",new Item("Cloth Boots", ItemType.Boots, new Stats(0,0,1,0,0,0,0)) },
-        { "Leather Boots",new Item("Leather Boots", ItemType.Boots, new Stats(0,1,0,0,0,0,0)) },
-        { "Bronze Boots",new Item("Bronze Boots", ItemType.Boots, new Stats(1,0,0,0,0,0,0)) },
-        //Accessory
-        { "None(Accessory)",new Item("None(Accessory)", ItemType.ACCESSORY, new Stats(0, 0, 0, 0, 0, 0, 0)) }
-        };
-        inventory.Add(new Item("None", ItemType.HELM, new Stats(0, 0, 0, 0, 0, 0, 0)));
-        inventory.Add(new Equipment("Leather Helm", ItemType.HELM, new Stats(1,1,1,0,0,0,0)));
-        */
+            return obj.GetJsonObjectName();
+        }
 
         public static string GetJsonObjectName(string property)
         {
@@ -108,6 +90,8 @@ namespace Assets.GameClasses
               //      name = SquadJsonObjectName;
               //      break;
                 case "characterlist":
+                case "character1list":
+                case "character2list":
                     name = CharacterJsonObjectName;
                     break;
                 case "startupdata" :

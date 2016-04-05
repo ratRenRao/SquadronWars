@@ -72,10 +72,14 @@ namespace Assets.Data
                     return ItemType.Gloves;
                 case "B":
                     return ItemType.Boots;
-                case "A1":
-                    return ItemType.Accessory1;
-                case "A2":
-                    return ItemType.Accessory2;
+                case "S":
+                    return ItemType.Shoulders;
+                case "M":
+                    return ItemType.MainHand;
+                case "O":
+                    return ItemType.OffHand;
+                case "A":
+                    return ItemType.Accessory;
                 default:
                     return ItemType.Unique;
             }
@@ -96,6 +100,9 @@ namespace Assets.Data
             GlobalConstants.AbilityPreReqs = AbilityPreReqs;
             GlobalConstants.ItemsMasterList = Items.Where(item => item != null).ToList();
             GlobalConstants.AbilityMasterList = Abilities;
+
+            foreach (var ability in Abilities)
+                GlobalConstants.EffectMasterList.Add(ability);
         }
 
         public static List<Character> BuildCharacterObjects()

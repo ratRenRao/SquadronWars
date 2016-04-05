@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Data\DBConnection.cs" />
+     <Compile Include="Assets\Data\GameInfo.cs" />
      <Compile Include="Assets\Data\MatchData.cs" />
      <Compile Include="Assets\Data\StartupData.cs" />
      <Compile Include="Assets\Data\Utilities.cs" />
@@ -59,7 +60,7 @@
      <Compile Include="Assets\GameClasses\CharacterGameObject.cs" />
      <Compile Include="Assets\GameClasses\Effect.cs" />
      <Compile Include="Assets\GameClasses\Equipment.cs" />
-     <Compile Include="Assets\GameClasses\Fireball.cs" />
+     <Compile Include="Assets\GameClasses\Fire.cs" />
      <Compile Include="Assets\GameClasses\GlobalConstants.cs" />
      <Compile Include="Assets\GameClasses\Heal.cs" />
      <Compile Include="Assets\GameClasses\IEffectable.cs" />
@@ -67,10 +68,10 @@
      <Compile Include="Assets\GameClasses\IWearable.cs" />
      <Compile Include="Assets\GameClasses\Item.cs" />
      <Compile Include="Assets\GameClasses\Player.cs" />
-     <Compile Include="Assets\GameClasses\PlayerGameObject.cs" />
      <Compile Include="Assets\GameClasses\RegistrationData.cs" />
      <Compile Include="Assets\GameClasses\Squad.cs" />
      <Compile Include="Assets\GameClasses\Stats.cs" />
+     <Compile Include="Assets\GameClasses\TimeListener.cs" />
      <Compile Include="Assets\GameClasses\UpdateCharacterPostObject.cs" />
      <Compile Include="Assets\GameClasses\Weaken.cs" />
      <Compile Include="Assets\JSON\JSONObject.cs" />
@@ -81,11 +82,13 @@
      <Compile Include="Assets\ProLoading\Script\bl_Loading.cs" />
      <Compile Include="Assets\Scripts\AbilityButton.cs" />
      <Compile Include="Assets\Scripts\AutoDestroy.cs" />
+     <Compile Include="Assets\Scripts\BattleSummaryPage.cs" />
      <Compile Include="Assets\Scripts\CanvasManager.cs" />
      <Compile Include="Assets\Scripts\CharacterScreen.cs" />
      <Compile Include="Assets\Scripts\CharacterStatsPanel.cs" />
      <Compile Include="Assets\Scripts\CreateCharacter.cs" />
      <Compile Include="Assets\Scripts\CreateUnitList.cs" />
+     <Compile Include="Assets\Scripts\ExperienceBar.cs" />
      <Compile Include="Assets\Scripts\GameCharacter.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\LoginButton.cs" />
@@ -99,6 +102,7 @@
      <Compile Include="Assets\Scripts\StartQueue.cs" />
      <Compile Include="Assets\Scripts\Tile.cs" />
      <Compile Include="Assets\Scripts\TileMap.cs" />
+     <Compile Include="Assets\Tests.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
@@ -127,7 +131,6 @@
      <None Include="Assets\NewTiledMaps\rules.txt" />
      <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Meshes\_ReadMe.txt" />
-     <None Include="Assets\TiledMaps\rules.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

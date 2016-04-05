@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using Assets.GameClasses;
+using Assets.Scripts;
 using UnityEngine;
+using UnityEngine.Networking.NetworkSystem;
 
 namespace Assets.Data
 {
@@ -22,11 +25,17 @@ namespace Assets.Data
 
         public T BuildObjectFromJsonData<T>(string data) where T : IJsonable
         {
+            Debug.Log("Data before removing slashes" + data);
+            data = RemoveSlashes(data);
+            Debug.Log("Data after removing slashes" + data);
             var deserializedJson = DeserializeData(data);
             _jsonObject = deserializedJson;
             Debug.Log(deserializedJson.ToString());
             var obj = Activator.CreateInstance<T>();
-            obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(typeof (T).Name.ToLower())), typeof(T));
+            obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(obj)), typeof(T));
+
+            if (obj == null)
+                obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(typeof (T).Name.ToLower())), typeof(T));
 
             return obj;
         }
@@ -57,49 +66,76 @@ namespace Assets.Data
                 return null;
 
             var objectAttributes = GetParameterList(type);
-                //type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).Select(x => x.Name)
-                //.ToList();;
+
+            if (type.IsEnum)
+                obj.type = JSONObject.Type.ENUM;
 
             switch (obj.type)
             {
                 case JSONObject.Type.OBJECT:
-                    var builder = Activator.CreateInstance(type);
+                    var builder = TryCatchCreation(obj, type);
 
+                    //Debug.Log("JsonObject = " + obj + " Type = " + type);
                     foreach (var param in objectAttributes.AsEnumerable())
                     {
+                        // Used w/ breakpoint to debug particular sections of json
+                        if (param.Name.ToLower() == "actions")
+                        {
+                            break;
+                        }
+
                         JSONObject j = null;
                         //var keyIndex = obj.keys.Where(key => key.ToLower().Equals(param.Name.ToLower())).ToList();
                         var keyIndex = obj.keys.SingleOrDefault(key => key.ToLower().Equals(param.Name.ToLower()));
 
                         // If json object isnt found in the subset, search all the json data for it 
                         if (keyIndex == null)
-                        {
                             j = FindJsonObject(_jsonObject, GlobalConstants.GetJsonObjectName(param.Name.ToLower()));
-
-                        }
                         else
                             j = obj[keyIndex];
-
-                        builder.GetType()
-                            .GetProperty(param.Name)
-                            .SetValue(builder, j != null 
-                                ? Decode(j, builder.GetType().GetProperty(param.Name).PropertyType) 
-                                : null,
-                                null);
+                        if (type.Name.Equals("Equipment"))
+                        {
+                            int tmp;
+                            bool testBool = false;
+                            string tmpString = "";
+                            
+                            if (j != null)
+                            {
+                                tmpString = j.str;
+                                
+                                testBool = int.TryParse(tmpString, out tmp);
+                                int test = int.Parse(tmpString);
+                            }
+                            if (testBool)
+                            {
+                                //Debug.Log("Equipment = " + tmpString + " and testBool = " + testBool);
+                                builder.GetType().GetProperty(keyIndex).SetValue(builder, j != null ? GetItemFromNumber(int.Parse(tmpString)) : null, null);
+                            }
+                        }
+                        else {
+                           // Debug.Log("JsonObject: " + j + " type: " + type);
+                            builder.GetType()
+                                    .GetProperty(param.Name)
+                                    .SetValue(builder, j != null
+                                        ? Decode(j, builder.GetType().GetProperty(param.Name).PropertyType)
+                                        : null,
+                                        null);
+                        }
                     }
 
                     return builder;
 
                 case JSONObject.Type.ARRAY:
                     var listBuilder = Activator.CreateInstance(type);
+                    if (obj.list.Count <= 0)
+                        return listBuilder;
                     Type listType = type.GetGenericArguments().Single();
-                    
                     foreach (var value in obj.list)
                     {
                         var item = Decode(value, listType);
                         if (item != null)
                             (listBuilder as System.Collections.IList).Add(item);
-                    }
+                    }                        
                         return listBuilder;
 
                 case JSONObject.Type.STRING:
@@ -107,6 +143,10 @@ namespace Assets.Data
                         return ChangeJsonType(obj, type);
                     else
                         return obj.str;
+
+                case JSONObject.Type.ENUM:
+                    return GetTypeFromString(obj.str, type);
+                    
 
                 case JSONObject.Type.NUMBER:
                     return obj.n;
@@ -120,6 +160,30 @@ namespace Assets.Data
             }
 
             return null;
+        }
+
+        private object GetTypeFromString(string typeString, Type parentType)
+        {
+            return Enum.GetValues(parentType).Cast<object>().FirstOrDefault(type => type.ToString() == typeString);
+        }
+
+        private static Item GetItemFromNumber(int num)
+        {
+            //Debug.Log("int" + num);
+            //Debug.Log(GlobalConstants.ItemsMasterList.Single(x => x.ItemId == num));
+            return GlobalConstants.ItemsMasterList.Single(x => x.ItemId == num);
+        }
+
+        public static object TryCatchCreation(object obj, Type type)
+        {
+            try
+            {
+                return Activator.CreateInstance(type);
+            }
+            catch (Exception)
+            {
+                return new Stats();
+            }
         }
 
         public static List<PropertyInfo> GetParameterList(Type type)
@@ -142,9 +206,18 @@ namespace Assets.Data
                     return ParameterLists.InventoryElementParams;
                 case "StartupData":
                     return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static).ToList();
+                case "Equipment":
+                    return ParameterLists.EquipmentParams;
                 default:
                     return type.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).ToList();
             }            
+        }
+
+        public static PropertyInfo[] GetAllDeclaredAttributes<T>(T obj)
+        {
+            return
+                typeof (T).GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance |
+                                         BindingFlags.Static);
         }
 
         public static class ParameterLists
@@ -158,8 +231,21 @@ namespace Assets.Data
             public static List<PropertyInfo> AbilityParams = buildParameterListFunc(typeof(Ability));
             public static List<PropertyInfo> AbilityPreReqParams = buildParameterListFunc(typeof(AbilityPreReq));
             public static List<PropertyInfo> InventoryElementParams = buildParameterListFunc(typeof(StartupData.InventoryElement));
+            public static List<PropertyInfo> EquipmentParams = buildParameterListFunc(typeof(Equipment));
 
         }
+
+        private static string RemoveSlashes(string data)
+        {
+            string temp = Regex.Replace(data, "\\\\", "");
+            temp = Regex.Replace(temp, "\"character2Info\":\"", "\"character2Info\":");
+            temp = Regex.Replace(temp, "\"character1Info\":\"", "\"character1Info\":");
+            temp = Regex.Replace(temp, "]\"", "]");
+            temp = Regex.Replace(temp, "\"GameJSON\":\"", "\"BattleAction\":");
+            temp = Regex.Replace(temp, "]}\"", "]}");
+            //temp = Regex.Replace(temp, "\"", "'");
+            return temp;
+        } 
 
         private object ChangeJsonType(JSONObject obj, Type type)
         {
@@ -167,6 +253,8 @@ namespace Assets.Data
                 return int.Parse(obj.str); 
             if (type == typeof (bool))
                 return bool.Parse(obj.str);
+            if (type == typeof (DateTime))
+                return DateTime.Parse(obj.str);
 
             return obj.str;
         }
@@ -330,9 +418,7 @@ namespace Assets.Data
 
         public T MapJsonToObject<T>(ref T obj)
         {
-            //var obj = new T(); 
             var attributes = GetParameterList(typeof (T));
-                //obj.GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
 
             foreach (
                 var attribute in
@@ -371,8 +457,6 @@ namespace Assets.Data
                 {
                     if (jsonObject[i].IsObject || jsonObject[i].IsArray)
                     {
-                        //string keyObject = jsonObject[key].keys[i];
-                        //JSONObject listObject = item.list[i];
                         var flattenResult = FlattenJsonObject(jsonObject[i]);
                         if (!flattenResult.IsNull)
                             for (var x = 0; x < flattenResult.list.Count; x++)
@@ -387,7 +471,6 @@ namespace Assets.Data
 
             return flattenedJson;
         }
-
 
         public object ConvertToType(Type type, string value)
         {
@@ -411,17 +494,6 @@ namespace Assets.Data
             return parsedJson;
         }
 
-        /*
-        public JSONObject SyncAttributeName<T>(JSONObject jsonObject)
-        {
-            var objectAttributes = typeof(T).GetProperties().ToList();
-            foreach (var key in jsonObject.keys.Where(key => objectAttributes.Select(attribute => attribute.Name.ToLower())
-                 .Contains(key.ToLower())))
-            {
-                jsonObject[key].;
-            }
-        } */
-
         public JSONObject GetJsonObjectSubset(JSONObject obj, string field)
         {
             foreach (var param in obj.keys)
@@ -440,9 +512,87 @@ namespace Assets.Data
             return null;
         }
 
+        public GameInfo GetGameInfo(string url = GlobalConstants.CheckGameStatusUrl, DbConnection dbConnection = null)
+        {
+            if (dbConnection == null)
+                dbConnection = GlobalConstants._dbConnection;
+
+            return dbConnection.PopulateObjectFromDb<GameInfo>(
+                url, new BattlePostObject());
+        }
+
+        public void SetGlobalDataFromGameInfo(GameInfo gameInfo)
+        {
+            if (gameInfo.character1Info != null)
+            {
+                //Debug.Log("Character 1 Game Info: " + gameInfo.character1Info.Count());
+                GlobalConstants.player1Characters = gameInfo.character1Info;
+                //Debug.Log("Global Constants player2 Chars " + GlobalConstants.player2Characters.Count());
+            }
+            if (gameInfo.character2Info != null)
+            {
+                //Debug.Log("Character 2 Game Info: " + gameInfo.character2Info.Count());
+                GlobalConstants.player2Characters = gameInfo.character2Info;
+                //Debug.Log("Global Constants player2 Chars " + GlobalConstants.player2Characters.Count());
+            }
+            if(gameInfo.player1Id == GlobalConstants.Player.playerId)
+            {
+                GlobalConstants.myPlayerId = 1;
+                if(gameInfo.player2Id != 0)
+                {
+                    GlobalConstants.opponentId = gameInfo.player2Id;
+                }
+            }
+            else
+            {
+                GlobalConstants.myPlayerId = 2;
+                GlobalConstants.opponentId = gameInfo.player1Id;
+            }
+            
+            GlobalConstants.GameId = gameInfo.gameID;
+            //GlobalConstants.Player.Characters = gameInfo.character1Info;
+            if (gameInfo.BattleAction != null)
+            {
+                //if (gameInfo.BattleAction.ActionOrder.Count > 0 && GlobalConstants.currentActions.ActionOrder.Count <= 0)
+                //{
+                    Debug.Log("ACTION ORDER BEING POPULATED: " + gameInfo.BattleAction.ActionOrder.Count);
+                GlobalConstants.currentActions.ActionOrder = gameInfo.BattleAction.ActionOrder.ToList();
+                //}
+
+                if (gameInfo.BattleAction.AffectedTiles.Count > 0 && GlobalConstants.currentActions.AffectedTiles.Count <= 0)
+                {
+                    GlobalConstants.currentActions.AffectedTiles =
+                            GlobalConstants.currentActions.AffectedTiles.Concat(gameInfo.BattleAction.AffectedTiles)
+                                .ToDictionary(x=>x.Key, x=>x.Value);
+                }
+                GlobalConstants.currentActions.CharacterQueue = gameInfo.BattleAction.CharacterQueue;
+            }
+        }
+
         public Character GetCharacterById(int id)
         {
             return GlobalConstants.Player.Characters.Single(x => x.CharacterId == id);
+        }
+
+        public void UpdateGame(GameInfo gameInfo)
+        {
+            GlobalConstants.Utilities.SetGlobalDataFromGameInfo(gameInfo);
+            // Add methods to do things like moving characters, taking damage, etc. 
+        }
+
+        public T CloneObject<T>(T obj)
+        {
+            var clone = Activator.CreateInstance<T>();
+            var pubAttributes = GetAllDeclaredAttributes(obj);
+            foreach (var attribute in pubAttributes)
+            {
+                var objAttributeValue = obj.GetType().GetProperty(attribute.Name).GetValue(obj, null);
+
+                clone.GetType().GetProperty(attribute.Name)
+                    .SetValue(attribute, objAttributeValue, null);
+            }
+
+            return (T)clone;
         }
     }
 } 

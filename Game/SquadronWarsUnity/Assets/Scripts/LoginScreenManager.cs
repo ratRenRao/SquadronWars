@@ -16,7 +16,12 @@ namespace Assets.Scripts
         // Use this for initialization
         void Start()
         {
-
+            //if (GlobalConstants.Player != null)
+            //{
+            //not working correctly yet.
+            //LoginScreen.gameObject.SetActive(false);
+            HomeScreen.SetActive(true);
+            //}
         }
 
         // Update is called once per frame
@@ -49,13 +54,16 @@ namespace Assets.Scripts
 
             GlobalConstants.Player.logins = _logins;
 
-            LoginScreen.gameObject.SetActive(false);
+            //LoginScreen.gameObject.SetActive(false);
             HomeScreen.gameObject.SetActive(true);
             //CanvasManager.HomeScreen.SetActive(true);
             //CanvasManager.LoginScreen.SetActive(false);
             //MenuManager.GetComponent<MenuManager>().HomePanel.SetActive(true);
             //MenuManager.GetComponent<MenuManager>().LoginPanel.SetActive(false);
-            
+
+#if DEBUG
+            new Tests().Run();
+#endif
         }
 
         private void GetDbData()
@@ -86,7 +94,10 @@ namespace Assets.Scripts
         {
             gameObject.AddComponent<DbConnection>();
             _dbConnection = gameObject.GetComponent<DbConnection>();
-            GlobalConstants._dbConnection = gameObject.GetComponent<DbConnection>();
+            //GlobalConstants._dbConnection = gameObject.GetComponent<DbConnection>();
+            GlobalConstants._dbConnection = new GameObject("DbConnection").AddComponent<DbConnection>();
+            DontDestroyOnLoad(GlobalConstants._dbConnection);
+            DontDestroyOnLoad(GlobalConstants.Utilities);
         }
     }
 }
