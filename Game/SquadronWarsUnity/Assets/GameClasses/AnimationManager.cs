@@ -10,20 +10,20 @@ using ActionType = Assets.GameClasses.Action.ActionType;
 
 namespace Assets.GameClasses
 {
-    class Animator
+    class AnimationManager
     {
         public GameController GameController;
         private UnityEngine.Animator _executionerAnimator;
         private UnityEngine.Animator _targetAnimator;
         private CharacterGameObject _executionerCharacterGameObject;
         private CharacterGameObject _targetCharacterGameObject;
-        private AnimationManager AnimationManager = GlobalConstants.AnimationManager; 
+        private ActionAnimator _actionAnimator = GlobalConstants.ActionAnimator;
         private ActionType _actionType = ActionType.Idle;
         private Tile _executionerTile;
         private Tile _targetTile;
         private int _damage = 0;
 
-        public Animator(Tile executionerTile, Tile targetTile, ActionType actionType)
+        public AnimationManager(Tile executionerTile, Tile targetTile, ActionType actionType)
         {
             _executionerTile = executionerTile;
             _targetTile = targetTile;
@@ -68,35 +68,37 @@ namespace Assets.GameClasses
             }
             if (_targetTile.isOccupied)
             {
-                AnimationManager.Animate(_executionerCharacterGameObject, _targetCharacterGameObject, _executionerAnimator, _targetAnimator, _targetTile, ability, _damage);
+                _actionAnimator.Animate(_executionerCharacterGameObject, _targetCharacterGameObject, _executionerAnimator, _targetAnimator, _targetTile, ability, _damage);
             }
             else
             {
-                AnimationManager.Animate(_executionerAnimator);
+                _actionAnimator.Animate(_executionerAnimator);
             }
         }
 
-        public void Attack(string ability, string weaponType = "")
+        public void Attack(string ability)
         {
             _actionType = ActionType.Idle;
+            var attackType = "";
+
             if (_executionerCharacterGameObject.CharacterClassObject.SpriteId == 1)
             {
-                weaponType = "isAttacking";
+                attackType = "isAttacking";
             }
             else if (_executionerCharacterGameObject.CharacterClassObject.SpriteId == 2)
             {
-                weaponType = "isAttackingBow";
+                attackType = "isAttackingBow";
             }
             else
             {
-                weaponType = "isAttackingSpear";
+                attackType = "isAttackingSpear";
             }
 
-            _executionerAnimator.SetBool(weaponType, true);
-            float currentX = (float) (System.Math.Round(_executionerTile.transform.localPosition.x, 2));
-            float currentY = (float) (System.Math.Round(_executionerTile.transform.localPosition.y, 2));
-            float targetX = (float) (System.Math.Round(_targetTile.transform.localPosition.x + 1.6f, 2));
-            float targetY = (float) (System.Math.Round(_targetTile.transform.localPosition.y, 2));
+            _executionerAnimator.SetBool(attackType, true);
+            var currentX = (float) (Math.Round(_executionerTile.transform.localPosition.x, 2));
+            var currentY = (float) (Math.Round(_executionerTile.transform.localPosition.y, 2));
+            var targetX = (float) (Math.Round(_targetTile.transform.localPosition.x + 1.6f, 2));
+            var targetY = (float) (Math.Round(_targetTile.transform.localPosition.y, 2));
             //  Transform targetLocation = _targetTile.transform;
             if (currentX - targetX > 0)
             {
@@ -121,11 +123,11 @@ namespace Assets.GameClasses
             }
             if (_targetTile.isOccupied)
             {
-                AnimationManager.Animate(_executionerCharacterGameObject, _targetCharacterGameObject, _executionerAnimator, _targetAnimator, _targetTile, ability, weaponType, _damage);
+                _actionAnimator.Animate(_executionerCharacterGameObject, _targetCharacterGameObject, _executionerAnimator, _targetAnimator, _targetTile, ability, attackType, _damage);
             }
             else
             {
-                AnimationManager.Animate(_executionerAnimator, weaponType); 
+                _actionAnimator.Animate(_executionerAnimator, attackType); 
             }
         }
     }

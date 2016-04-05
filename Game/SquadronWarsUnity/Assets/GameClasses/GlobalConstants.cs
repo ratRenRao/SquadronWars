@@ -42,7 +42,7 @@ namespace Assets.GameClasses
         
         public static readonly List<Type> EffectTypes = (from domainAssembly in AppDomain.CurrentDomain.GetAssemblies()
                                                 from assemblyType in domainAssembly.GetTypes()
-                                                where typeof(Effect).IsAssignableFrom(assemblyType)
+                                                where typeof(Action).IsAssignableFrom(assemblyType)
                                                 select assemblyType).ToList();
 
         public static List<Effect> EffectMasterList = new List<Effect>(); 
@@ -65,7 +65,7 @@ namespace Assets.GameClasses
         public static int opponentId = 0;
         public static bool Updated = true;
         public static Dictionary<int, TimeListener> TimeListeners = new Dictionary<int, TimeListener>(); 
-        public static AnimationManager AnimationManager { get; set; }
+        public static ActionAnimator ActionAnimator { get; set; }
         //Game data for calculating payout
         public static int DamageAndHealingDone = 0;
         public static DateTime StartGameTime { get; set; }

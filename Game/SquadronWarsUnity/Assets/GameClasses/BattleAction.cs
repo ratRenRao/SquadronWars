@@ -19,12 +19,6 @@ namespace Assets.GameClasses
             AffectedTiles = affected;
         }
 
-        public void SetActionEffect()
-        {
-            foreach(var action in ActionOrder)
-                action.SetEffectFromString();
-        }
-
         //BuildQueue for characters turns
         public string GetJsonObjectName()
         {

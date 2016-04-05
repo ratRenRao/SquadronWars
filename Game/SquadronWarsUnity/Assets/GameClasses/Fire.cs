@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Assets.Scripts;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,18 +8,21 @@ namespace Assets.GameClasses
 {
     class Fire : Ability
     {
-        public override void Initialize(ref List<Character> affectedCharacters, ref Stats executionserStats)
+        public override void Initialize(ref Dictionary<Character, Tile> tileDictionary, ref Character executioner, ref Tile executionerTile)
         {
-            base.Initialize(ref affectedCharacters, ref executionserStats);
-
-            SetEffectVariables(10, 3, 5);
+            base.Initialize(ref tileDictionary, ref executioner, ref executionerTile);
+            ImmediateBaseDamage = 10;
+            LingeringBaseDamage = 3;
+            Duration = 5;
             AbilityLevel = AbilityLevel <= 0 ? 1 : AbilityLevel;
             //ResultingEffects = new List<Effect> {new Burn()};
         }
 
         public override void ImmediateEffect(Stats stats)
         {
-            stats.HitPoints -= (int)CalculateImmediateDamage(stats);
+            Damage = (int)CalculateImmediateDamage(stats);
+            stats.HitPoints -= Damage;
+            AnimationManager.Cast(Name);
         }
 
         public override void LingeringEffect(ref Stats stats)
@@ -33,12 +37,12 @@ namespace Assets.GameClasses
 
         private double CalculateLingeringDamage()
         {
-            return AbilityLevel*0.1*ImmediateBaseDamage;
+            return Executioner.CurrentStats.MagicAttack*0.5*AbilityLevel*0.1*ImmediateBaseDamage;
         }
 
         private int CalculateDuration()
         {
-            return ExecutionerStats.MagicAttack/10;
+            return Executioner.CurrentStats.MagicAttack/10;
         }
     }
 }

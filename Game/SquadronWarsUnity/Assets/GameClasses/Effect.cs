@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
+using Assets.Scripts;
 using UnityEditor;
 
 namespace Assets.GameClasses
@@ -13,39 +14,42 @@ namespace Assets.GameClasses
         public double ImmediateBaseDamage = 0;
         public double LingeringBaseDamage = 0; 
         public bool complete = false;
-        internal int Duration = 0; 
-        internal Dictionary<int, Stats> AffectedCharacterStats { get; private set; }
-        internal Stats ExecutionerStats { get; private set; }
+        internal int Duration = 0;
+        internal int Damage = 0;
+        internal Character Executioner { get; private set; }
+        internal Tile ExecutionerTile { get; private set; }
         internal Stopwatch Stopwatch = new Stopwatch();
         internal TimeListener TimeListener;
         internal List<Effect> ResultingEffects;
+        internal List<Tile> Tiles = new List<Tile>();
+        internal Dictionary<Character, Tile> TileDictionary; 
+        internal AnimationManager AnimationManager;
+        internal Action.ActionType ActionType;
 
-
-        public virtual void Initialize(ref List<Character> affectedCharacters, ref Stats executionserStats)
+        public virtual void Initialize(ref Dictionary<Character, Tile> tileDictionary , ref Character executioner, ref Tile executionerTile)
         {
-            AffectedCharacterStats = affectedCharacters.ToDictionary(
-                character => character.CharacterId,
-                character => character.CurrentStats
-            );
-            ExecutionerStats = executionserStats;
+            TileDictionary = tileDictionary;
+            Executioner = executioner;
+            ExecutionerTile = executionerTile;
         }
 
         public virtual void Execute()
         {
-            foreach (var stats in AffectedCharacterStats)
+            foreach (var character in TileDictionary) 
             {
-                ImmediateEffect(stats.Value);
+                AnimationManager = new AnimationManager(ExecutionerTile, character.Value, ActionType);
+                ImmediateEffect(character.Key.CurrentStats);
 
                 if (Duration > 0)
                 {
-                    TimeListener = new TimeListener(Duration, stats.Value)
+                    TimeListener = new TimeListener(Duration, character.Key.CurrentStats)
                     {
                         ExecutionMethod = LingeringEffect,
                         FinishingMethod = RemoveEffect
                     };
 
                     TimeListener.Start();
-                    GlobalConstants.TimeListeners.Add(stats.Key, TimeListener);
+                    GlobalConstants.TimeListeners.Add(character.Key.CharacterId, TimeListener);
                     //LingeringEffect(stats);
                 }
                 else if (Duration == 0)

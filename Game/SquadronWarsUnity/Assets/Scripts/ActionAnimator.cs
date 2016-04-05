@@ -6,20 +6,15 @@ using System.Text;
 using Assets.GameClasses;
 using UnityEngine;
 using UnityEngine.UI;
-using Animator = UnityEngine.Animator;
+using Animator = UnityEngine.Animator; 
 
 namespace Assets.Scripts
 {
-    public class AnimationManager : MonoBehaviour
+    public class ActionAnimator : MonoBehaviour
     {
-        delegate void CastDelegate(Tile tile, string ability);
-
-        delegate void AttackDelegate(Tile tile);
-        //public void Animate(Delegate IEnumerator delegate(Tile tile, string ability) animationDelegate)
-
-        public void Animate(CharacterGameObject executioner, CharacterGameObject target, Animator executionerAnimator, Animator targetAnimator, Tile targetTile, string ability, string weaponType, int damage = 0)
+        public void Animate(CharacterGameObject executioner, CharacterGameObject target, Animator executionerAnimator, Animator targetAnimator, Tile targetTile, string ability, string attackType, int damage = 0)
         {
-            StartCoroutine(AttackAnimation(executioner, target, executionerAnimator, targetAnimator, targetTile, ability, weaponType, damage));
+            StartCoroutine(AttackAnimation(executioner, target, executionerAnimator, targetAnimator, targetTile, ability, attackType, damage));
         }
 
         public void Animate(CharacterGameObject executioner, CharacterGameObject target, Animator executionerAnimator, Animator targetAnimator, Tile targetTile, string ability, int damage = 0)
@@ -27,32 +22,32 @@ namespace Assets.Scripts
             StartCoroutine(CastAnimation(executioner, target, executionerAnimator, targetAnimator, targetTile, ability, damage));
         }
 
-        public void Animate(Animator executionerAnimator, string weaponType = "none")
+        public void Animate(Animator executionerAnimator, string attackType = "none")
         {
-            if (weaponType.Equals("none"))
+            if (attackType.Equals("none"))
                 StartCoroutine(CastAnimationNothing(executionerAnimator));
             else
-                StartCoroutine(AttackAnimationNothing(executionerAnimator, weaponType));
+                StartCoroutine(AttackAnimationNothing(executionerAnimator, attackType));
         }
 
 
-        IEnumerator AttackAnimation(CharacterGameObject executioner, CharacterGameObject target, Animator executionerAnimator, Animator targetAnimator, Tile targetTile, string ability, string weaponType, int damage)
+        IEnumerator AttackAnimation(CharacterGameObject executioner, CharacterGameObject target, Animator executionerAnimator, Animator targetAnimator, Tile targetTile, string ability, string attackType, int damage)
         {
             yield return new WaitForSeconds(.2f);
             targetAnimator.SetBool("isAttacked", true);
-            if (weaponType == "isAttackingSpear")
+            if (attackType == "isAttackingSpear")
             {
                 yield return new WaitForSeconds(.55f);
             }
-            if (weaponType == "isAttacking")
+            if (attackType == "isAttacking")
             {
                 yield return new WaitForSeconds(.3f);
             }
-            if (weaponType == "isAttackingBow")
+            if (attackType == "isAttackingBow")
             {
                 yield return new WaitForSeconds(.7f);
             }
-            executionerAnimator.SetBool(weaponType, false);
+            executionerAnimator.SetBool(attackType, false);
             targetAnimator.SetBool("isAttacked", false);
             if (ability != null)
             {
@@ -144,10 +139,10 @@ namespace Assets.Scripts
 //            hidePanel = false;
         }
 
-        IEnumerator AttackAnimationNothing(Animator executionerAnimator, string weaponType)
+        IEnumerator AttackAnimationNothing(Animator executionerAnimator, string attackType)
         {
             yield return new WaitForSeconds(.5f);
-            executionerAnimator.SetBool(weaponType, false);
+            executionerAnimator.SetBool(attackType, false);
 //            hidePanel = false;
         }
 

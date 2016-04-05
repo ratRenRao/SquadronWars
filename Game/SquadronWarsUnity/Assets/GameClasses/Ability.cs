@@ -6,13 +6,9 @@ using Assets.GameClasses;
 
 namespace Assets.GameClasses
  {
-    public class Ability : Effect, IJsonable
+    public class Ability : Action, IJsonable
     {
-        public string Name
-        {
-            get { return base.Name; } 
-            set { base.Name = value; }
-        }
+        public string Name { get; set; }
         public int AbilityId { get; set; }
         public int CharacterId { get; set; }
         public int AbilityLevel { get; set; }

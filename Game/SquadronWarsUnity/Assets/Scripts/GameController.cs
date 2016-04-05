@@ -86,7 +86,7 @@ namespace Assets.Scripts
         List<Tile> validMoves = new List<Tile>();
         List<Tile> path = new List<Tile>();
         List<GameObject> turnQueue = new List<GameObject>();
-        public AnimationManager AnimationManager; 
+        public ActionAnimator ActionAnimator; 
 
         // Use this for initialization
         void Start()
@@ -99,7 +99,7 @@ namespace Assets.Scripts
             //hidePanel = false;
             //GlobalConstants.myPlayerId = 1;
             //Debug.Log(GlobalConstants._dbConnection);
-            GlobalConstants.AnimationManager = AnimationManager;
+            GlobalConstants.ActionAnimator = ActionAnimator;
             battlesong.playOnAwake = true;
             placeCharacterPhase = true;
             characters = GlobalConstants.MatchCharacters;
