@@ -19,11 +19,17 @@ namespace Assets.GameClasses
         Unique
     };
 
-    public class Item : IWearable, IJsonable
+    public class Item : Effect, IWearable, IJsonable
     {
         public int ItemId { get; set; }
         public int Consumeable { get; set; }
-        public string Name { get; set; }
+
+        public string Name
+        {
+            get { return base.Name; }
+            set { base.Name = value; }
+        }
+
         public string Description { get; set; }
         public string Slot { get; set; }
         public int RequiredLevel { get; set; }

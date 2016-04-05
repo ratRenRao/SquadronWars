@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Assets.Data;
 using Assets.GameClasses;
+using Action = Assets.GameClasses.Action;
 
 namespace Assets
 {
@@ -11,7 +12,8 @@ namespace Assets
     {
         public void Run()
         {
-            CheckJsonPostData();
+           // CheckJsonPostData();
+           CheckEffectExecution();
         }
 
         public void CheckJsonPostData()
@@ -32,6 +34,28 @@ namespace Assets
             //var turnData = GlobalConstants._dbConnection.PopulateObjectFromDb<GameInfo>(GlobalConstants.CheckGameStatusUrl, GlobalConstants.Player.logins);
             var gameInfo = GlobalConstants.Utilities.BuildObjectFromJsonData<GameClasses.Action>(json);
             //var gameInfo = GlobalConstants.Utilities.GetGameInfo();
+        }
+
+        public void CheckEffectExecution()
+        {
+            var action = new Action();
+            action.performedAction = "Fire";
+            var executionerStats = new Stats()
+            {
+                MagicAttack = 10
+            };
+            var targetStats = new Stats()
+            {
+                MagicDefense = 6,
+                HitPoints = 100
+            };
+            var statsDictionary = new List<Character>() {new Character() { CurrentStats = targetStats, CharacterId = 1} };
+
+//            GlobalConstants.EffectMasterList.Add(new Fireball());           
+            
+            action.SetEffectFromString();
+            action.Effect.Initialize(ref statsDictionary, ref executionerStats);
+            action.Effect.Execute();
         }
     }
 }

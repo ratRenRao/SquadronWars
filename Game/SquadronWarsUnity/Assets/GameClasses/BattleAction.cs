@@ -19,6 +19,12 @@ namespace Assets.GameClasses
             AffectedTiles = affected;
         }
 
+        public void SetActionEffect()
+        {
+            foreach(var action in ActionOrder)
+                action.SetEffectFromString();
+        }
+
         //BuildQueue for characters turns
         public string GetJsonObjectName()
         {
@@ -57,7 +63,7 @@ namespace Assets.GameClasses
 
         public string GetJSONString()
         {
-            string returnString = "Gameinfo\", \"GameJSON\" : { \"BattleActions\" : { \"ActionOrder\" : [ ";
+            string returnString = "Gameinfo\", \"GameJSON\" : { \"ActionOrder\" : [ ";
             int index = 0;
             foreach(Action action in ActionOrder)
             {
@@ -90,7 +96,7 @@ namespace Assets.GameClasses
                 returnString += "{ \"Tile\" : " + key.Key.GetJSONString() + ", \"Amount\" : \"" + key.Value + "\"}";
                 index++;
             }
-            returnString += "] } }, \"end\" : \"end";
+            returnString += "] }, \"end\" : \"end";
 
             return returnString;
         }
