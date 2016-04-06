@@ -181,6 +181,7 @@ namespace Assets.Scripts
                                     prevTile.character = null;
                                     targetTile = path[0];
                                     reachedPosition = false;
+                                    GlobalConstants.isAnimating = true;
                                     currentCharacterGameObject.hasMoved = true;
                                 }
                             }
@@ -284,6 +285,7 @@ namespace Assets.Scripts
                         isWalking = false;
                         anim.SetBool("isWalking", isWalking);
                         reachedPosition = true;
+                        GlobalConstants.isAnimating = false;
                         path.Clear();
                         count = 0;                        
                         currentCharacterGameObject.GetComponent<SpriteRenderer>().sortingOrder = 6 + (targetTile.y * 2);
