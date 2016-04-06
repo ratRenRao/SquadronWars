@@ -479,6 +479,7 @@ namespace Assets.Scripts
                     prevTile.character = null;
                     targetTile = path[0];
                     reachedPosition = false;
+                    GlobalConstants.isAnimating = true;
                     clearHighlights(validMoves);
                     currentCharacterGameObject.hasMoved = true;
                     GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Move,path,"move");
