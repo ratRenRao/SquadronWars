@@ -149,13 +149,13 @@ namespace Assets.Scripts
                     }
                     if (waitGameState == WaitGameState.WaitForQueue)
                     {
-                        Debug.Log("Waiting for queue");
-                        Debug.Log(GlobalConstants.currentActions.CharacterQueue.Count);
-                        Debug.Log(GlobalConstants.currentActions.AffectedTiles);
-                        Debug.Log(GlobalConstants.currentActions.ActionOrder);
+                        //Debug.Log("Waiting for queue");
+                        //Debug.Log(GlobalConstants.currentActions.CharacterQueue.Count);
+                        //Debug.Log(GlobalConstants.currentActions.AffectedTiles);
+                        //Debug.Log(GlobalConstants.currentActions.ActionOrder);
                         if (GlobalConstants.currentActions.CharacterQueue.Count > 0)
                         {
-                            Debug.Log("Queue recieved");
+                            //Debug.Log("Queue recieved");
                             CreateTurnQueueP2();
                             waitGameState = WaitGameState.Wait;
                         }
@@ -164,7 +164,7 @@ namespace Assets.Scripts
                     {
                         foreach (GameClasses.Action act in GlobalConstants.currentActions.ActionOrder)
                         {
-                            Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
+                            //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                             if (act.actionType == GameClasses.Action.ActionType.Move && !currentCharacterGameObject.hasMoved)
                             {
                                 if (act.actionTiles.Count > 0)
@@ -185,7 +185,7 @@ namespace Assets.Scripts
                                     currentCharacterGameObject.hasMoved = true;
                                 }
                             }
-                            Debug.Log(act.actionType);
+                            //Debug.Log(act.actionType);
                             if (act.actionType == GameClasses.Action.ActionType.Endturn)
                             {
                                 //GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
@@ -200,15 +200,15 @@ namespace Assets.Scripts
                         }
                         
                     }
-                    Debug.Log("waiting for other player");
-                    Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
+                    //Debug.Log("waiting for other player");
+                    //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                     if (waitGameState == WaitGameState.WaitForOtherPlayer)
                     {
-                        Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
+                        //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                         //Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
                         if (GlobalConstants.currentActions.ActionOrder.Count == 0)
                         {
-                            Debug.Log("Selecting next character");
+                            //Debug.Log("Selecting next character");
                             SelectNextCharacter();
                         }
                     }
@@ -295,7 +295,7 @@ namespace Assets.Scripts
                         PositionPanels();
                         if (action != Action.WaitForGameInfo)
                         {
-                            Debug.Log("Show Panels called");
+                            //Debug.Log("Show Panels called");
                             action = Action.IDLE;
                             hidePanel = false;
                         }
@@ -396,11 +396,11 @@ namespace Assets.Scripts
                                 else
                                 {
                                     GlobalConstants.player2Characters = characterList;
-                                    Debug.Log("I was player 2");
+                                    //Debug.Log("I was player 2");
                                 }                                
                                 clearHighlights(validMoves);
                                 action = Action.WaitForGameInfo;
-                                Debug.Log("all my characters placed");
+                                //Debug.Log("all my characters placed");
                                 
                                 var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.PlaceCharacterUrl, new BattlePostObject());
                                 /*if (GlobalConstants.myPlayerId == 2)
@@ -435,7 +435,7 @@ namespace Assets.Scripts
                 }
                 if (Input.GetKeyDown("escape") && action != Action.IDLE)
                 {
-                    Debug.Log("Escape key called");
+                    //Debug.Log("Escape key called");
                     hidePanel = false;
                     clearHighlights(validMoves);
                     action = Action.IDLE;
@@ -1403,7 +1403,7 @@ namespace Assets.Scripts
             if (ability != null)
             {
                 GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
-                Debug.Log(temp);
+                //Debug.Log(temp);
                 GameObject spell = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
                 spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (tempTile.y * 2);
                 spell.transform.parent = tempTile.transform;
@@ -1429,7 +1429,7 @@ namespace Assets.Scripts
                 //myCharacters.Remove(targetCharacterGameObject.gameObject);
                 tarAnim.SetBool("isDead", true);
                 yield return new WaitForSeconds(.8f);
-                Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
+                //Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
             }            
             selectedAbility = null;
             hidePanel = false;
@@ -1449,7 +1449,7 @@ namespace Assets.Scripts
             int damage = 0;
             if (ability != null)
             {
-                Debug.Log(ability);
+                //Debug.Log(ability);
                 GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
                 GameObject spell = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
                 spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (tempTile.y * 2);                
@@ -1478,7 +1478,7 @@ namespace Assets.Scripts
                     //myCharacters.Remove(targetCharacterGameObject.gameObject);
                     tarAnim.SetBool("isDead", true);
                     yield return new WaitForSeconds(.8f);
-                    Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
+                    //Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
                     if (targetCharacterGameObject.CharacterClassObject.Name.Equals("Kelly"))
                     {
                         DisplayVictory.SetActive(true);
@@ -1671,7 +1671,7 @@ namespace Assets.Scripts
 
         public void CreateTurnQueueP2()
         {
-            Debug.Log("Create TurnQueue P2");
+            //Debug.Log("Create TurnQueue P2");
             List<GameObject> tempList = new List<GameObject>();
             tempList.AddRange(myCharacters);
             tempList.AddRange(enemyCharacters);
@@ -1720,7 +1720,7 @@ namespace Assets.Scripts
                         getNextAvailableCharacter = true;
                     }
                 }
-                Debug.Log(turnQueue[0].GetComponent<CharacterGameObject>().CharacterClassObject.Name);
+                //Debug.Log(turnQueue[0].GetComponent<CharacterGameObject>().CharacterClassObject.Name);
             }
             
             if (myCharacters.Select(character => character).Contains(turnQueue[0]))
