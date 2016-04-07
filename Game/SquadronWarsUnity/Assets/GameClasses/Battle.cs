@@ -20,8 +20,12 @@ public class Battle : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-        if (!GlobalConstants.isAnimating && checkUpdate && (DateTime.Now - lastChecked).TotalSeconds > 1)
+        if (!GlobalConstants.isAnimating && checkUpdate && (DateTime.Now - lastChecked).TotalSeconds > 2)
         {
+            if (GlobalConstants.isAnimating)
+            {
+                Debug.Log("Calling Even though is animating");
+            }
             checkUpdate = false;
             lastChecked = DateTime.Now;
             //Debug.Log("checkUpdate called");
@@ -123,7 +127,7 @@ public class Battle : MonoBehaviour
     IEnumerator BattleWaitForLoad()
     {
         //Debug.Log("WaitUpdate called");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0);
         UpdateGameCoroutine();
         
         
