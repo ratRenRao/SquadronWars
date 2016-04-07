@@ -6,6 +6,7 @@ using Assets.GameClasses;
 using UnityEngine.SceneManagement;
 using System.Linq;
 using Animator = UnityEngine.Animator;
+using System;
 
 namespace Assets.Scripts
 {
@@ -367,7 +368,19 @@ namespace Assets.Scripts
                                 hidePanel = true;
                                 GetTarget(tempTile);
                                 clearHighlights(validMoves);
-                                Cast(tempTile, selectedAbility);
+                                //Cast(tempTile, selectedAbility);
+                                GameClasses.Action gameAction = null;
+                                var actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals(selectedAbility));
+                                if (actionType != null)
+                                {
+                                    gameAction = (IEffectable)Activator.CreateInstance(actionType);
+                                }
+                                Dictionary<Character, Tile> effectedCharacterDictionary = new Dictionary<Character, Tile>();
+                                effectedCharacterDictionary.Add(targetCharacterGameObject.CharacterClassObject, tileArray[targetCharacterGameObject.CharacterClassObject.X, targetCharacterGameObject.CharacterClassObject.Y]);
+                                gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
+                                //action.Execute();
+                                GlobalConstants.currentActions.AddAction(gameAction);
+                                GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 currentCharacterGameObject.hasAttacked = true;
                             }
                         }
@@ -1442,11 +1455,9 @@ namespace Assets.Scripts
         }
         IEnumerator CastAnimation(Tile tempTile, string ability)
         {
-            GameClasses.Action tempAction = new GameClasses.Action();
-            Dictionary<Character, Tile> effectedCharacterDictionary = new Dictionary<Character, Tile>();
-            effectedCharacterDictionary.Add(targetCharacterGameObject.CharacterClassObject, tileArray[targetCharacterGameObject.CharacterClassObject.X, targetCharacterGameObject.CharacterClassObject.Y]);
-            tempAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject.CharacterClassObject, ref tile);
-            action.Execute();
+            List<Tile> tempTileList = new List<Tile>();
+            tempTileList.Add(tempTile);
+            
             yield return new WaitForSeconds(.5f);
             /*yield return new WaitForSeconds(.5f);
             
