@@ -185,6 +185,7 @@ namespace Assets.Scripts
                                     reachedPosition = false;
                                     GlobalConstants.isAnimating = true;
                                     currentCharacterGameObject.hasMoved = true;
+                                    break;
                                 }
                             }
 
@@ -197,9 +198,10 @@ namespace Assets.Scripts
                                     foreach (Tile t in act.actionTiles)
                                     {
                                         Debug.Log("X: " + t.x + " Y: " + t.y);
-                                        Debug.Log("Cast Ability P2 Called");
+                                        
                                         Tile tempTile = tileArray[t.x, t.y];
                                         GetTarget(tempTile);
+                                        Debug.Log(targetCharacterGameObject.CharacterClassObject);
                                         clearHighlights(validMoves);
                                         //Cast(tempTile, selectedAbility);
                                         GameClasses.Action gameAction = null;
@@ -213,6 +215,7 @@ namespace Assets.Scripts
                                         gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
                                         gameAction.Execute();
                                         currentCharacterGameObject.hasAttacked = true;
+                                        break;
                                     }                                
                                 }
                             }
@@ -474,7 +477,7 @@ namespace Assets.Scripts
                         action = Action.IDLE;
                     }
                 }
-                if (Input.GetKeyDown("escape") && action != Action.IDLE)
+                if (Input.GetKeyDown("escape") && action != Action.IDLE && action != Action.WaitForGameInfo)
                 {
                     //Debug.Log("Escape key called");
                     hidePanel = false;
@@ -1586,7 +1589,8 @@ namespace Assets.Scripts
         public void ResetData()
         {
             selectedAbility = null;
-            if (action == Action.WaitForGameInfo)
+            Debug.Log(action);
+            if (action != Action.WaitForGameInfo)
             {
                 hidePanel = false;
             }
