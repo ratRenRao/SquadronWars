@@ -1778,7 +1778,12 @@ namespace Assets.Scripts
                     Debug.Log("tile y: " + tile.y + " is < 3");
                     characterStatsPanel.transform.position = new Vector3(characterStatsPanel.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
                 }
-                
+                if (tile.y > 15)
+                {
+                    Debug.Log("tile y: " + tile.y + " is > 15");
+                    actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 30, currentCharacterGameObject.transform.position.y + 14, 0);
+                }
+
             }
             else if (tile.y < 3)
             {
@@ -1794,6 +1799,21 @@ namespace Assets.Scripts
             {
                 Debug.Log("tile x: " + tile.x + " is > 6");
                 actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x - 10, actionPanel.transform.position.y, 0);
+                if (tile.y < 3)
+                {
+                    Debug.Log("tile y: " + tile.y + " is < 3");
+                    characterStatsPanel.transform.position = new Vector3(characterStatsPanel.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
+                }
+                if (tile.y > 15)
+                {
+                    Debug.Log("tile y: " + tile.y + " is > 15");
+                    actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 15, currentCharacterGameObject.transform.position.y + 14, 0);
+                }
+            }
+            else if (tile.y > 15)
+            {
+                Debug.Log("tile y: " + tile.y + " is > 15");
+                actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 15, currentCharacterGameObject.transform.position.y + 14, 0);
             }
         }
 
