@@ -22,10 +22,6 @@ public class Battle : MonoBehaviour
 	{
         if (!GlobalConstants.isAnimating && checkUpdate && (DateTime.Now - lastChecked).TotalSeconds > 2)
         {
-            if (GlobalConstants.isAnimating)
-            {
-                Debug.Log("Calling Even though is animating");
-            }
             checkUpdate = false;
             lastChecked = DateTime.Now;
             //Debug.Log("checkUpdate called");
