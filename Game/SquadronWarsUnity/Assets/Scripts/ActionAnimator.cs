@@ -80,8 +80,7 @@ namespace Assets.Scripts
                 yield return new WaitForSeconds(.8f);
                 Debug.Log(target.CharacterClassObject.Name);
             }
-            //selectedAbility = null;
-            //hidePanel = false;
+            GlobalConstants.GameController.ResetData();
             StartCoroutine(InjuredAnimation(targetAnimator));
         }
 
@@ -125,8 +124,8 @@ namespace Assets.Scripts
                     Debug.Log(target.CharacterClassObject.Name);
                 }
             }
-//            selectedAbility = null;
-//            hidePanel = false;
+
+            GlobalConstants.GameController.ResetData();
             StartCoroutine(InjuredAnimation(targetAnimator));
         }
 
@@ -134,22 +133,21 @@ namespace Assets.Scripts
         {
             yield return new WaitForSeconds(.5f);
             executionerAnimator.SetBool("isCasting", false);
-//            selectedAbility = null;
-//            hidePanel = false;
+            GlobalConstants.GameController.ResetData();
         }
 
         IEnumerator AttackAnimationNothing(Animator executionerAnimator, string attackType)
         {
             yield return new WaitForSeconds(.5f);
             executionerAnimator.SetBool(attackType, false);
-//            hidePanel = false;
+            GlobalConstants.GameController.ResetData();
         }
 
         IEnumerator InjuredAnimation(Animator targetAnimator)
         {
             yield return new WaitForSeconds(.4f);
             targetAnimator.SetBool("isAttacked", false);
-//            hidePanel = false;
+            GlobalConstants.GameController.ResetData();
         }
     }
 }

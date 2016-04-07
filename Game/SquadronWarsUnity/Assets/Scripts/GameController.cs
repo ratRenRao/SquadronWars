@@ -101,6 +101,7 @@ namespace Assets.Scripts
             //GlobalConstants.myPlayerId = 1;
             //Debug.Log(GlobalConstants._dbConnection);
             GlobalConstants.ActionAnimator = ActionAnimator;
+            GlobalConstants.GameController = this;
             battlesong.playOnAwake = true;
             placeCharacterPhase = true;
             characters = GlobalConstants.MatchCharacters;
@@ -201,6 +202,7 @@ namespace Assets.Scripts
                         }
                         
                     }
+
                     //Debug.Log("waiting for other player");
                     //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                     if (waitGameState == WaitGameState.WaitForOtherPlayer)
@@ -373,7 +375,7 @@ namespace Assets.Scripts
                                 var actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals(selectedAbility));
                                 if (actionType != null)
                                 {
-                                    gameAction = (IEffectable)Activator.CreateInstance(actionType);
+                                    gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                 }
                                 Dictionary<Character, Tile> effectedCharacterDictionary = new Dictionary<Character, Tile>();
                                 effectedCharacterDictionary.Add(targetCharacterGameObject.CharacterClassObject, tileArray[targetCharacterGameObject.CharacterClassObject.X, targetCharacterGameObject.CharacterClassObject.Y]);
@@ -1553,7 +1555,14 @@ namespace Assets.Scripts
             yield return new WaitForSeconds(4f);
             //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.CheckGameStatusUrl, new BattlePostObject());
             
-        }       
+        }
+
+        public void ResetData()
+        {
+            selectedAbility = null;
+            hidePanel = false;
+        }
+
 
         public void highlightSpawn()
         {

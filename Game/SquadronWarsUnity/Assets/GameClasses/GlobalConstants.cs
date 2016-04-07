@@ -55,6 +55,7 @@ namespace Assets.GameClasses
 
         public static DbConnection _dbConnection = new GameObject().GetComponent<DbConnection>();
         public static GameInfo GameInfo;
+        public static GameController GameController;
 
         //Battle related constants for managing a game
         public static int GameId = 0;
