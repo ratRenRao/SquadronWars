@@ -220,13 +220,8 @@ namespace Assets.Scripts
                 {
                     StartCoroutine(WaitForGameInformation());
                 }
-            }
+            }            
 
-            if (!arraySet)
-            {
-                
-                
-            }
             if (hidePanel)
             {
                 actionPanel.SetActive(false);
@@ -235,11 +230,13 @@ namespace Assets.Scripts
                     characterStatsPanel.SetActive(false);
                 }
             }
+
             if (!hidePanel)
             {
                 actionPanel.SetActive(true);
                 characterStatsPanel.SetActive(true);
             }
+
             if (reachedPosition == false && count < path.Count)
             {
                 isWalking = true;

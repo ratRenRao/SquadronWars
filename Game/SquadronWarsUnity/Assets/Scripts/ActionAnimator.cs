@@ -51,7 +51,7 @@ namespace Assets.Scripts
             targetAnimator.SetBool("isAttacked", false);
             if (ability != null)
             {
-                GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
+                GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
                 Debug.Log(temp);
                 GameObject spell = GameObject.Instantiate(temp, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
                 spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (targetTile.y * 2);
@@ -93,7 +93,7 @@ namespace Assets.Scripts
             if (ability != null)
             {
                 Debug.Log(ability);
-                GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
+                GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
                 GameObject spell = GameObject.Instantiate(temp, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
                 spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (targetTile.y * 2);
                 spell.transform.parent = targetTile.transform;
