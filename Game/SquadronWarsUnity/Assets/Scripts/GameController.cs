@@ -368,10 +368,6 @@ namespace Assets.Scripts
                                 GetTarget(tempTile);
                                 clearHighlights(validMoves);
                                 Cast(tempTile, selectedAbility);
-                                var tempAction = new GameClasses.Action();
-                                var effectedCharacterDictionary = new Dictionary<Character, Tile>();
-                                tempAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
-                                tempAction.Execute();
                                 currentCharacterGameObject.hasAttacked = true;
                             }
                         }
@@ -464,7 +460,6 @@ namespace Assets.Scripts
             }*/
             
         }
-
         private void Move()
         {
             if (hit.collider != null)
@@ -1447,7 +1442,13 @@ namespace Assets.Scripts
         }
         IEnumerator CastAnimation(Tile tempTile, string ability)
         {
+            GameClasses.Action tempAction = new GameClasses.Action();
+            Dictionary<Character, Tile> effectedCharacterDictionary = new Dictionary<Character, Tile>();
+            effectedCharacterDictionary.Add(targetCharacterGameObject.CharacterClassObject, tileArray[targetCharacterGameObject.CharacterClassObject.X, targetCharacterGameObject.CharacterClassObject.Y]);
+            tempAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject.CharacterClassObject, ref tile);
+            action.Execute();
             yield return new WaitForSeconds(.5f);
+            /*yield return new WaitForSeconds(.5f);
             
             anim.SetBool("isCasting", false);
             float wait = 0;
@@ -1491,7 +1492,7 @@ namespace Assets.Scripts
                         yield return new WaitForSeconds(500f);
                     }
                 }
-            }
+            }*/
             selectedAbility = null;
             hidePanel = false;
         }
@@ -1783,6 +1784,12 @@ namespace Assets.Scripts
                     Debug.Log("tile y: " + tile.y + " is < 3");
                     characterStatsPanel.transform.position = new Vector3(characterStatsPanel.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
                 }
+                if (tile.y > 15)
+                {
+                    Debug.Log("tile y: " + tile.y + " is > 15");
+                    actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 30, currentCharacterGameObject.transform.position.y + 14, 0);
+                }
+
             }
             else if (tile.y < 3)
             {
@@ -1798,6 +1805,21 @@ namespace Assets.Scripts
             {
                 Debug.Log("tile x: " + tile.x + " is > 6");
                 actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x - 10, actionPanel.transform.position.y, 0);
+                if (tile.y < 3)
+                {
+                    Debug.Log("tile y: " + tile.y + " is < 3");
+                    characterStatsPanel.transform.position = new Vector3(characterStatsPanel.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
+                }
+                if (tile.y > 15)
+                {
+                    Debug.Log("tile y: " + tile.y + " is > 15");
+                    actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 15, currentCharacterGameObject.transform.position.y + 14, 0);
+                }
+            }
+            else if (tile.y > 15)
+            {
+                Debug.Log("tile y: " + tile.y + " is > 15");
+                actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 15, currentCharacterGameObject.transform.position.y + 14, 0);
             }
         }
 
