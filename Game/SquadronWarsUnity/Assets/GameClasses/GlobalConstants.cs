@@ -45,7 +45,6 @@ namespace Assets.GameClasses
                                                 where typeof(Action).IsAssignableFrom(assemblyType)
                                                 select assemblyType).ToList();
 
-        public static List<Effect> EffectMasterList = new List<Effect>(); 
         public static List<Effect> ActiveEffects = new List<Effect>(); 
         public static Utilities Utilities = new Utilities();
 
@@ -66,6 +65,7 @@ namespace Assets.GameClasses
         public static bool Updated = true;
         public static Dictionary<int, TimeListener> TimeListeners = new Dictionary<int, TimeListener>(); 
         public static ActionAnimator ActionAnimator { get; set; }
+
         //Game data for calculating payout
         public static int DamageAndHealingDone = 0;
         public static DateTime StartGameTime { get; set; }

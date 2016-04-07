@@ -140,7 +140,7 @@ namespace Assets.GameClasses
         {
             foreach (var character in TileDictionary)
             {
-                AnimationManager = new AnimationManager(ExecutionerTile, character.Value, actionType);
+//                AnimationManager = new AnimationManager(ExecutionerTile, character.Value, actionType);
                 ImmediateEffect(character.Key.CurrentStats);
 
                 if (Duration > 0)
@@ -153,7 +153,6 @@ namespace Assets.GameClasses
 
                     TimeListener.Start();
                     GlobalConstants.TimeListeners.Add(character.Key.CharacterId, TimeListener);
-                    //LingeringEffect(stats);
                 }
                 else if (Duration == 0)
                 {
