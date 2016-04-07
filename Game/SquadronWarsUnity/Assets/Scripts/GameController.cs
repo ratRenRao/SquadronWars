@@ -193,14 +193,17 @@ namespace Assets.Scripts
                                 Debug.Log("Cast Ability P2 Called");
                                 if(act.actionTiles.Count > 0)
                                 {
-                                    foreach(Tile t in act.actionTiles)
+                                    Debug.Log("Cast Ability Tiles Count: " + act.actionTiles.Count);
+                                    foreach (Tile t in act.actionTiles)
                                     {
+                                        Debug.Log("X: " + t.x + " Y: " + t.y);
+                                        Debug.Log("Cast Ability P2 Called");
                                         Tile tempTile = tileArray[t.x, t.y];
                                         GetTarget(tempTile);
                                         clearHighlights(validMoves);
                                         //Cast(tempTile, selectedAbility);
                                         GameClasses.Action gameAction = null;
-                                        var actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals(selectedAbility));
+                                        var actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals(act.performedAction));
                                         if (actionType != null)
                                         {
                                             gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
