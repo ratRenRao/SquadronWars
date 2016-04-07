@@ -1,34 +1,28 @@
 using System;
 using System.Collections.Generic;
+using Assets.Scripts;
 
 namespace Assets.GameClasses
 {
     class Heal : Ability 
     {
-        private readonly int _healthRestored = 50;
-        public Heal(int duration)
+        public override void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
-            Duration = duration;
+            base.Initialize(ref tileDictionary, ref executioner, ref executionerTile);
+            ImmediateBaseDamage = -30;
+            AbilityLevel = AbilityLevel <= 0 ? 1 : AbilityLevel;
         }
 
         public override void ImmediateEffect(Stats stats)
         {
-            //Target.HitPoints = ValidateStat(Target.HitPoints + _healthRestored, 0, Target.HitPoints);
+            Damage = (int)CalculateHeal(stats);
+            stats.HitPoints -= Damage;
+            AnimationManager.Cast("heal");
         }
 
-        public override void RemoveEffect(ref Stats stats)
+        private double CalculateHeal(Stats stats)
         {
-            throw new NotImplementedException();
-        }
-
-        public override void LingeringEffect(ref Stats stats)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetJsonObjectName()
-        {
-            throw new NotImplementedException();
+            return ImmediateBaseDamage - (Executioner.CharacterClassObject.CurrentStats.MagicAttack * 0.5);
         }
     }
 }

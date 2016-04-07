@@ -20,7 +20,7 @@ namespace Assets.GameClasses
 
         public override void ImmediateEffect(Stats stats)
         {
-            Damage = (int)CalculateImmediateDamage(stats);
+            Damage = (int)CalculateImmediateDamage();
             stats.HitPoints -= Damage;
             AnimationManager.Cast("fire");
         }
@@ -30,9 +30,9 @@ namespace Assets.GameClasses
             stats.HitPoints -= (int)CalculateLingeringDamage();
         }
 
-        private double CalculateImmediateDamage(Stats stats)
+        private double CalculateImmediateDamage()
         {
-            return ImmediateBaseDamage;
+            return ImmediateBaseDamage + (int)(Executioner.CharacterClassObject.CurrentStats.MagicAttack * 0.25);
         }
 
         private double CalculateLingeringDamage()
