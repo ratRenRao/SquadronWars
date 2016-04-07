@@ -1442,7 +1442,13 @@ namespace Assets.Scripts
         }
         IEnumerator CastAnimation(Tile tempTile, string ability)
         {
+            GameClasses.Action tempAction = new GameClasses.Action();
+            Dictionary<Character, Tile> effectedCharacterDictionary = new Dictionary<Character, Tile>();
+            effectedCharacterDictionary.Add(targetCharacterGameObject.CharacterClassObject, tileArray[targetCharacterGameObject.CharacterClassObject.X, targetCharacterGameObject.CharacterClassObject.Y]);
+            tempAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject.CharacterClassObject, ref tile);
+            action.Execute();
             yield return new WaitForSeconds(.5f);
+            /*yield return new WaitForSeconds(.5f);
             
             anim.SetBool("isCasting", false);
             float wait = 0;
@@ -1486,7 +1492,7 @@ namespace Assets.Scripts
                         yield return new WaitForSeconds(500f);
                     }
                 }
-            }
+            }*/
             selectedAbility = null;
             hidePanel = false;
         }
