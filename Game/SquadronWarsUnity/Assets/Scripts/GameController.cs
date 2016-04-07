@@ -1586,7 +1586,10 @@ namespace Assets.Scripts
         public void ResetData()
         {
             selectedAbility = null;
-            hidePanel = false;
+            if (action == Action.WaitForGameInfo)
+            {
+                hidePanel = false;
+            }
         }
 
 
