@@ -38,6 +38,7 @@ namespace Assets.GameClasses
 
         public void Cast(string ability)
         {
+            Debug.Log("Cast Method: " + ability);
             //action = ActionType.Idle;
             _executionerAnimator.SetBool("isCasting", true);
             float currentX = (float) (Math.Round(_executionerTile.transform.localPosition.x, 2));

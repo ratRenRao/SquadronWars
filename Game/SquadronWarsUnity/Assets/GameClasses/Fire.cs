@@ -22,7 +22,7 @@ namespace Assets.GameClasses
         {
             Damage = (int)CalculateImmediateDamage(stats);
             stats.HitPoints -= Damage;
-            AnimationManager.Cast(Name);
+            AnimationManager.Cast("fire");
         }
 
         public override void LingeringEffect(ref Stats stats)

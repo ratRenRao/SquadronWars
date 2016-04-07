@@ -375,6 +375,8 @@ namespace Assets.Scripts
                                     gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                 }
                                 Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
+                                targetCharacterGameObject.isDead = true;
+                                Debug.Log(selectedAbility);
                                 effectedCharacterDictionary.Add(targetCharacterGameObject, tileArray[targetCharacterGameObject.CharacterClassObject.X, targetCharacterGameObject.CharacterClassObject.Y]);
                                 gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
                                 gameAction.Execute();

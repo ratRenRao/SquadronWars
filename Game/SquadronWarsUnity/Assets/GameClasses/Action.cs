@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Reflection;
 using Assets.Scripts;
 using System.Linq;
-
 namespace Assets.GameClasses
 {
     public class Action : IJsonable, IEffectable
@@ -130,7 +129,7 @@ namespace Assets.GameClasses
 
         public virtual void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner,
             ref Tile executionerTile)
-        {
+        {            
             TileDictionary = tileDictionary;
             Executioner = executioner;
             ExecutionerTile = executionerTile;
@@ -138,11 +137,11 @@ namespace Assets.GameClasses
 
         public virtual void Execute()
         {
+
             foreach (var character in TileDictionary)
             {
                 AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value, actionType);
-                ImmediateEffect(character.Key.CharacterClassObject.CurrentStats);
-
+                ImmediateEffect(character.Key.CharacterClassObject.CurrentStats);                
                 if (Duration > 0)
                 {
                     TimeListener = new TimeListener(Duration, character.Key.CharacterClassObject.CurrentStats)

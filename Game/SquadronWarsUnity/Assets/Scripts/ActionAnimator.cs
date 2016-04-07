@@ -19,6 +19,7 @@ namespace Assets.Scripts
 
         public void Animate(CharacterGameObject executioner, CharacterGameObject target, Animator executionerAnimator, Animator targetAnimator, Tile targetTile, string ability, int damage = 0)
         {
+            Debug.Log(ability);
             StartCoroutine(CastAnimation(executioner, target, executionerAnimator, targetAnimator, targetTile, ability, damage));
         }
 
@@ -87,7 +88,8 @@ namespace Assets.Scripts
         IEnumerator CastAnimation(CharacterGameObject executioner, CharacterGameObject target, Animator executionerAnimator, Animator targetAnimator, Tile targetTile, string ability, int damage)
         {
             yield return new WaitForSeconds(.5f);
-
+            Debug.Log("Cast Animation Called");
+            Debug.Log(ability);
             executionerAnimator.SetBool("isCasting", false);
             float wait = 0;
             if (ability != null)
