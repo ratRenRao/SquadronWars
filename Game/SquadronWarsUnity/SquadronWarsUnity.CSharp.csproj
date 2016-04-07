@@ -73,6 +73,7 @@
     <Compile Include="Assets\GameClasses\Ability.cs" />
     <Compile Include="Assets\GameClasses\Action.cs" />
     <Compile Include="Assets\GameClasses\AnimationManager.cs" />
+    <Compile Include="Assets\GameClasses\Attack.cs" />
     <Compile Include="Assets\GameClasses\Battle.cs" />
     <Compile Include="Assets\GameClasses\BattleAction.cs" />
     <Compile Include="Assets\GameClasses\BattlePostObject.cs" />
