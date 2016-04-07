@@ -22,11 +22,11 @@ namespace Assets.GameClasses
         internal TimeListener TimeListener;
         internal List<Effect> ResultingEffects;
         internal List<Tile> Tiles = new List<Tile>();
-        internal Dictionary<Character, Tile> TileDictionary; 
+        internal Dictionary<CharacterGameObject, Tile> TileDictionary; 
         internal AnimationManager AnimationManager;
         internal Action.ActionType ActionType;
 
-        public virtual void Initialize(ref Dictionary<Character, Tile> tileDictionary , ref CharacterGameObject executioner, ref Tile executionerTile)
+        public virtual void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary , ref CharacterGameObject executioner, ref Tile executionerTile)
         {
             TileDictionary = tileDictionary;
             Executioner = executioner;
@@ -37,19 +37,19 @@ namespace Assets.GameClasses
         {
             foreach (var character in TileDictionary) 
             {
-                AnimationManager = new AnimationManager(ExecutionerTile, character.Value, ActionType);
-                ImmediateEffect(character.Key.CurrentStats);
+                AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value, ActionType);
+                ImmediateEffect(character.Key.CharacterClassObject.CurrentStats);
 
                 if (Duration > 0)
                 {
-                    TimeListener = new TimeListener(Duration, character.Key.CurrentStats)
+                    TimeListener = new TimeListener(Duration, character.Key.CharacterClassObject.CurrentStats)
                     {
                         ExecutionMethod = LingeringEffect,
                         FinishingMethod = RemoveEffect
                     };
 
                     TimeListener.Start();
-                    GlobalConstants.TimeListeners.Add(character.Key.CharacterId, TimeListener);
+                    GlobalConstants.TimeListeners.Add(character.Key.CharacterClassObject.CharacterId, TimeListener);
                     //LingeringEffect(stats);
                 }
                 else if (Duration == 0)

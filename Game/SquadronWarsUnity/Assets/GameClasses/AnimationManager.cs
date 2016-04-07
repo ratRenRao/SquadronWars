@@ -23,17 +23,17 @@ namespace Assets.GameClasses
         private Tile _targetTile;
         private int _damage = 0;
 
-        public AnimationManager(Tile executionerTile, Tile targetTile, ActionType actionType)
+        public AnimationManager(CharacterGameObject executioner, CharacterGameObject target, Tile executionerTile, Tile targetTile, ActionType actionType)
         {
             _executionerTile = executionerTile;
             _targetTile = targetTile;
             _actionType = actionType;
 
-            _executionerCharacterGameObject = GameController.GetCharacterGameObject(executionerTile);
-            _targetCharacterGameObject = GameController.GetCharacterGameObject(targetTile);
+            _executionerCharacterGameObject = executioner;
+            _targetCharacterGameObject = target;
 
-            _executionerAnimator = GameController.GetAnimator(executionerTile);
-            _targetAnimator = GameController.GetAnimator(targetTile);
+            _executionerAnimator = GlobalConstants.GameController.GetAnimator(executionerTile);
+            _targetAnimator = GlobalConstants.GameController.GetAnimator(targetTile);
         }
 
         public void Cast(string ability)

@@ -856,6 +856,7 @@ MonoBehaviour:
   player2SpawnXEnd: 14
   player2SpawnYStart: 13
   player2SpawnYEnd: 20
+  ActionAnimator: {fileID: 334646437}
 --- !u!114 &334646436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,6 +871,17 @@ MonoBehaviour:
   tiles: []
   xLength: 20
   yLength: 20
+--- !u!114 &334646437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 334646434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c1e60acec486146bbb56f29da81187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &334646473
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -35,7 +35,7 @@ namespace Assets.GameClasses
         internal TimeListener TimeListener;
         internal List<Effect> ResultingEffects;
         internal List<Tile> Tiles = new List<Tile>();
-        internal Dictionary<Character, Tile> TileDictionary;
+        internal Dictionary<CharacterGameObject, Tile> TileDictionary;
         internal AnimationManager AnimationManager;
 
         public Action() : this(ActionType.Idle, new List<Tile>(), "default")
@@ -128,7 +128,7 @@ namespace Assets.GameClasses
             });
         }
 
-        public virtual void Initialize(ref Dictionary<Character, Tile> tileDictionary, ref CharacterGameObject executioner,
+        public virtual void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner,
             ref Tile executionerTile)
         {
             TileDictionary = tileDictionary;
@@ -140,19 +140,19 @@ namespace Assets.GameClasses
         {
             foreach (var character in TileDictionary)
             {
-                AnimationManager = new AnimationManager(ExecutionerTile, character.Value, actionType);
-                ImmediateEffect(character.Key.CurrentStats);
+                AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value, actionType);
+                ImmediateEffect(character.Key.CharacterClassObject.CurrentStats);
 
                 if (Duration > 0)
                 {
-                    TimeListener = new TimeListener(Duration, character.Key.CurrentStats)
+                    TimeListener = new TimeListener(Duration, character.Key.CharacterClassObject.CurrentStats)
                     {
                         ExecutionMethod = LingeringEffect,
                         FinishingMethod = RemoveEffect
                     };
 
                     TimeListener.Start();
-                    GlobalConstants.TimeListeners.Add(character.Key.CharacterId, TimeListener);
+                    GlobalConstants.TimeListeners.Add(character.Key.CharacterClassObject.CharacterId, TimeListener);
                 }
                 else if (Duration == 0)
                 {

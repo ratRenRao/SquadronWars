@@ -374,10 +374,10 @@ namespace Assets.Scripts
                                 {
                                     gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                 }
-                                Dictionary<Character, Tile> effectedCharacterDictionary = new Dictionary<Character, Tile>();
-                                effectedCharacterDictionary.Add(targetCharacterGameObject.CharacterClassObject, tileArray[targetCharacterGameObject.CharacterClassObject.X, targetCharacterGameObject.CharacterClassObject.Y]);
+                                Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
+                                effectedCharacterDictionary.Add(targetCharacterGameObject, tileArray[targetCharacterGameObject.CharacterClassObject.X, targetCharacterGameObject.CharacterClassObject.Y]);
                                 gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
-                                //action.Execute();
+                                gameAction.Execute();
                                 GlobalConstants.currentActions.AddAction(gameAction);
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 currentCharacterGameObject.hasAttacked = true;
