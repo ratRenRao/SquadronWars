@@ -66,7 +66,7 @@ namespace Assets
 
 //            GlobalConstants.EffectMasterList.Add(new Fireball());           
 
-                action.Initialize(ref dictionary, ref executioner, ref executionerTile);
+               // action.Initialize(ref dictionary, ref executioner, ref executionerTile);
                 action.Execute();
             }
         }

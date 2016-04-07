@@ -16,7 +16,7 @@ namespace Assets.GameClasses
         public bool complete = false;
         internal int Duration = 0;
         internal int Damage = 0;
-        internal Character Executioner { get; private set; }
+        internal CharacterGameObject Executioner { get; private set; }
         internal Tile ExecutionerTile { get; private set; }
         internal Stopwatch Stopwatch = new Stopwatch();
         internal TimeListener TimeListener;
@@ -26,7 +26,7 @@ namespace Assets.GameClasses
         internal AnimationManager AnimationManager;
         internal Action.ActionType ActionType;
 
-        public virtual void Initialize(ref Dictionary<Character, Tile> tileDictionary , ref Character executioner, ref Tile executionerTile)
+        public virtual void Initialize(ref Dictionary<Character, Tile> tileDictionary , ref CharacterGameObject executioner, ref Tile executionerTile)
         {
             TileDictionary = tileDictionary;
             Executioner = executioner;

@@ -8,7 +8,7 @@ namespace Assets.GameClasses
 {
     class Fire : Ability
     {
-        public override void Initialize(ref Dictionary<Character, Tile> tileDictionary, ref Character executioner, ref Tile executionerTile)
+        public override void Initialize(ref Dictionary<Character, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
             base.Initialize(ref tileDictionary, ref executioner, ref executionerTile);
             ImmediateBaseDamage = 10;
@@ -22,7 +22,7 @@ namespace Assets.GameClasses
         {
             Damage = (int)CalculateImmediateDamage(stats);
             stats.HitPoints -= Damage;
-      //      AnimationManager.Cast(Name);
+            AnimationManager.Cast(Name);
         }
 
         public override void LingeringEffect(ref Stats stats)
@@ -37,12 +37,12 @@ namespace Assets.GameClasses
 
         private double CalculateLingeringDamage()
         {
-            return Executioner.CurrentStats.MagicAttack*0.5*AbilityLevel*0.1*ImmediateBaseDamage;
+            return Executioner.CharacterClassObject.CurrentStats.MagicAttack*0.5*AbilityLevel*0.1*ImmediateBaseDamage;
         }
 
         private int CalculateDuration()
         {
-            return Executioner.CurrentStats.MagicAttack/10;
+            return Executioner.CharacterClassObject.CurrentStats.MagicAttack/10;
         }
     }
 }

@@ -368,6 +368,10 @@ namespace Assets.Scripts
                                 GetTarget(tempTile);
                                 clearHighlights(validMoves);
                                 Cast(tempTile, selectedAbility);
+                                var tempAction = new GameClasses.Action();
+                                var effectedCharacterDictionary = new Dictionary<Character, Tile>();
+                                tempAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
+                                tempAction.Execute();
                                 currentCharacterGameObject.hasAttacked = true;
                             }
                         }
@@ -460,6 +464,7 @@ namespace Assets.Scripts
             }*/
             
         }
+
         private void Move()
         {
             if (hit.collider != null)
@@ -1778,7 +1783,6 @@ namespace Assets.Scripts
                     Debug.Log("tile y: " + tile.y + " is < 3");
                     characterStatsPanel.transform.position = new Vector3(characterStatsPanel.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
                 }
-                
             }
             else if (tile.y < 3)
             {

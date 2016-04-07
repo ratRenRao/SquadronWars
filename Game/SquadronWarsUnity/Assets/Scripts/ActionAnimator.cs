@@ -84,7 +84,6 @@ namespace Assets.Scripts
             //hidePanel = false;
             StartCoroutine(InjuredAnimation(targetAnimator));
         }
-        
 
         IEnumerator CastAnimation(CharacterGameObject executioner, CharacterGameObject target, Animator executionerAnimator, Animator targetAnimator, Tile targetTile, string ability, int damage)
         {

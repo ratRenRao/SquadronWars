@@ -29,7 +29,7 @@ namespace Assets.GameClasses
         public bool complete = false;
         internal int Duration = 0;
         internal int Damage = 0;
-        internal Character Executioner { get; private set; }
+        internal CharacterGameObject Executioner { get; private set; }
         internal Tile ExecutionerTile { get; private set; }
         internal Stopwatch Stopwatch = new Stopwatch();
         internal TimeListener TimeListener;
@@ -128,7 +128,7 @@ namespace Assets.GameClasses
             });
         }
 
-        public virtual void Initialize(ref Dictionary<Character, Tile> tileDictionary, ref Character executioner,
+        public virtual void Initialize(ref Dictionary<Character, Tile> tileDictionary, ref CharacterGameObject executioner,
             ref Tile executionerTile)
         {
             TileDictionary = tileDictionary;
@@ -140,7 +140,7 @@ namespace Assets.GameClasses
         {
             foreach (var character in TileDictionary)
             {
-//                AnimationManager = new AnimationManager(ExecutionerTile, character.Value, actionType);
+                AnimationManager = new AnimationManager(ExecutionerTile, character.Value, actionType);
                 ImmediateEffect(character.Key.CurrentStats);
 
                 if (Duration > 0)
