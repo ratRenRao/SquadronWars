@@ -6,7 +6,7 @@ using Assets.Scripts;
 
 namespace Assets.GameClasses
 {
-    class Attack : Ability
+    class Attack : Action 
     {
         public override void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
