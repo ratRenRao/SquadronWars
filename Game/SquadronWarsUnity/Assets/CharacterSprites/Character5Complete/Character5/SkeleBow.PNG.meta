@@ -1,0 +1,2619 @@
+fileFormatVersion: 2
+guid: eae197f30d61d614cb25545d8874ac83
+timeCreated: 1459306025
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SkeleBow_0
+    21300002: SkeleBow_1
+    21300004: SkeleBow_2
+    21300006: SkeleBow_3
+    21300008: SkeleBow_4
+    21300010: SkeleBow_5
+    21300012: SkeleBow_6
+    21300014: SkeleBow_7
+    21300016: SkeleBow_8
+    21300018: SkeleBow_9
+    21300020: SkeleBow_10
+    21300022: SkeleBow_11
+    21300024: SkeleBow_12
+    21300026: SkeleBow_13
+    21300028: SkeleBow_14
+    21300030: SkeleBow_15
+    21300032: SkeleBow_16
+    21300034: SkeleBow_17
+    21300036: SkeleBow_18
+    21300038: SkeleBow_19
+    21300040: SkeleBow_20
+    21300042: SkeleBow_21
+    21300044: SkeleBow_22
+    21300046: SkeleBow_23
+    21300048: SkeleBow_24
+    21300050: SkeleBow_25
+    21300052: SkeleBow_26
+    21300054: SkeleBow_27
+    21300056: SkeleBow_28
+    21300058: SkeleBow_29
+    21300060: SkeleBow_30
+    21300062: SkeleBow_31
+    21300064: SkeleBow_32
+    21300066: SkeleBow_33
+    21300068: SkeleBow_34
+    21300070: SkeleBow_35
+    21300072: SkeleBow_36
+    21300074: SkeleBow_37
+    21300076: SkeleBow_38
+    21300078: SkeleBow_39
+    21300080: SkeleBow_40
+    21300082: SkeleBow_41
+    21300084: SkeleBow_42
+    21300086: SkeleBow_43
+    21300088: SkeleBow_44
+    21300090: SkeleBow_45
+    21300092: SkeleBow_46
+    21300094: SkeleBow_47
+    21300096: SkeleBow_48
+    21300098: SkeleBow_49
+    21300100: SkeleBow_50
+    21300102: SkeleBow_51
+    21300104: SkeleBow_52
+    21300106: SkeleBow_53
+    21300108: SkeleBow_54
+    21300110: SkeleBow_55
+    21300112: SkeleBow_56
+    21300114: SkeleBow_57
+    21300116: SkeleBow_58
+    21300118: SkeleBow_59
+    21300120: SkeleBow_60
+    21300122: SkeleBow_61
+    21300124: SkeleBow_62
+    21300126: SkeleBow_63
+    21300128: SkeleBow_64
+    21300130: SkeleBow_65
+    21300132: SkeleBow_66
+    21300134: SkeleBow_67
+    21300136: SkeleBow_68
+    21300138: SkeleBow_69
+    21300140: SkeleBow_70
+    21300142: SkeleBow_71
+    21300144: SkeleBow_72
+    21300146: SkeleBow_73
+    21300148: SkeleBow_74
+    21300150: SkeleBow_75
+    21300152: SkeleBow_76
+    21300154: SkeleBow_77
+    21300156: SkeleBow_78
+    21300158: SkeleBow_79
+    21300160: SkeleBow_80
+    21300162: SkeleBow_81
+    21300164: SkeleBow_82
+    21300166: SkeleBow_83
+    21300168: SkeleBow_84
+    21300170: SkeleBow_85
+    21300172: SkeleBow_86
+    21300174: SkeleBow_87
+    21300176: SkeleBow_88
+    21300178: SkeleBow_89
+    21300180: SkeleBow_90
+    21300182: SkeleBow_91
+    21300184: SkeleBow_92
+    21300186: SkeleBow_93
+    21300188: SkeleBow_94
+    21300190: SkeleBow_95
+    21300192: SkeleBow_96
+    21300194: SkeleBow_97
+    21300196: SkeleBow_98
+    21300198: SkeleBow_99
+    21300200: SkeleBow_100
+    21300202: SkeleBow_101
+    21300204: SkeleBow_102
+    21300206: SkeleBow_103
+    21300208: SkeleBow_104
+    21300210: SkeleBow_105
+    21300212: SkeleBow_106
+    21300214: SkeleBow_107
+    21300216: SkeleBow_108
+    21300218: SkeleBow_109
+    21300220: SkeleBow_110
+    21300222: SkeleBow_111
+    21300224: SkeleBow_112
+    21300226: SkeleBow_113
+    21300228: SkeleBow_114
+    21300230: SkeleBow_115
+    21300232: SkeleBow_116
+    21300234: SkeleBow_117
+    21300236: SkeleBow_118
+    21300238: SkeleBow_119
+    21300240: SkeleBow_120
+    21300242: SkeleBow_121
+    21300244: SkeleBow_122
+    21300246: SkeleBow_123
+    21300248: SkeleBow_124
+    21300250: SkeleBow_125
+    21300252: SkeleBow_126
+    21300254: SkeleBow_127
+    21300256: SkeleBow_128
+    21300258: SkeleBow_129
+    21300260: SkeleBow_130
+    21300262: SkeleBow_131
+    21300264: SkeleBow_132
+    21300266: SkeleBow_133
+    21300268: SkeleBow_134
+    21300270: SkeleBow_135
+    21300272: SkeleBow_136
+    21300274: SkeleBow_137
+    21300276: SkeleBow_138
+    21300278: SkeleBow_139
+    21300280: SkeleBow_140
+    21300282: SkeleBow_141
+    21300284: SkeleBow_142
+    21300286: SkeleBow_143
+    21300288: SkeleBow_144
+    21300290: SkeleBow_145
+    21300292: SkeleBow_146
+    21300294: SkeleBow_147
+    21300296: SkeleBow_148
+    21300298: SkeleBow_149
+    21300300: SkeleBow_150
+    21300302: SkeleBow_151
+    21300304: SkeleBow_152
+    21300306: SkeleBow_153
+    21300308: SkeleBow_154
+    21300310: SkeleBow_155
+    21300312: SkeleBow_156
+    21300314: SkeleBow_157
+    21300316: SkeleBow_158
+    21300318: SkeleBow_159
+    21300320: SkeleBow_160
+    21300322: SkeleBow_161
+    21300324: SkeleBow_162
+    21300326: SkeleBow_163
+    21300328: SkeleBow_164
+    21300330: SkeleBow_165
+    21300332: SkeleBow_166
+    21300334: SkeleBow_167
+    21300336: SkeleBow_168
+    21300338: SkeleBow_169
+    21300340: SkeleBow_170
+    21300342: SkeleBow_171
+    21300344: SkeleBow_172
+    21300346: SkeleBow_173
+    21300348: SkeleBow_174
+    21300350: SkeleBow_175
+    21300352: SkeleBow_176
+    21300354: SkeleBow_177
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SkeleBow_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1282
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1282
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_2
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1282
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1282
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 23}
+        - {x: -18, y: -23}
+        - {x: 18, y: -23}
+        - {x: 18, y: 9}
+        - {x: 14, y: 23}
+    - name: SkeleBow_4
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1282
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 23}
+        - {x: -25, y: 16}
+        - {x: -25, y: -9}
+        - {x: -18, y: -23}
+        - {x: 16, y: -23}
+        - {x: 25, y: -13}
+        - {x: 25, y: 14}
+        - {x: 18, y: 23}
+    - name: SkeleBow_5
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1282
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 23}
+        - {x: -23, y: 20}
+        - {x: -24, y: 19}
+        - {x: -24, y: -7}
+        - {x: -22, y: -23}
+        - {x: 24, y: -23}
+        - {x: 24, y: 23}
+    - name: SkeleBow_6
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1282
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 23}
+        - {x: -18, y: -23}
+        - {x: 18, y: -23}
+        - {x: 18, y: 9}
+        - {x: 14, y: 23}
+    - name: SkeleBow_7
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1218
+        width: 20
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_8
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1218
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_9
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1218
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_10
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1218
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_11
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 1218
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: 23.5}
+        - {x: -16.5, y: 19.5}
+        - {x: -16.5, y: -20.5}
+        - {x: -14.5, y: -23.5}
+        - {x: 8.5, y: -23.5}
+        - {x: 16.5, y: -3.5}
+        - {x: 16.5, y: 15.5}
+        - {x: 9.5, y: 23.5}
+    - name: SkeleBow_12
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1218
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 23.5}
+        - {x: -16.5, y: 17.5}
+        - {x: -16.5, y: -22.5}
+        - {x: -15.5, y: -23.5}
+        - {x: 8.5, y: -23.5}
+        - {x: 16.5, y: -7.5}
+        - {x: 16.5, y: 17.5}
+        - {x: 8.5, y: 23.5}
+    - name: SkeleBow_13
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1218
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_14
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1154
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_15
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1154
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_16
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1154
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_17
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1154
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: -23.5}
+        - {x: 18, y: -15.5}
+        - {x: 18, y: 8.5}
+        - {x: 12, y: 21.5}
+        - {x: 10, y: 23.5}
+        - {x: -14, y: 23.5}
+        - {x: -18, y: 14.5}
+        - {x: -18, y: -23.5}
+        - {x: -2, y: -23.5}
+        - {x: -1, y: -21.5}
+        - {x: -1, y: -18.5}
+        - {x: 2, y: -23.5}
+    - name: SkeleBow_18
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1154
+        width: 50
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: -23.5}
+        - {x: 15, y: -18.5}
+        - {x: 25, y: -7.5}
+        - {x: 25, y: 12.5}
+        - {x: 17, y: 10.5}
+        - {x: 13, y: 18.5}
+        - {x: 9, y: 23.5}
+        - {x: -8, y: 23.5}
+        - {x: -11, y: 21.5}
+        - {x: -13, y: 18.5}
+        - {x: -25, y: 12.5}
+        - {x: -25, y: -10.5}
+        - {x: -18, y: -23.5}
+        - {x: -3, y: -23.5}
+        - {x: -1, y: -21.5}
+        - {x: -1, y: -23.5}
+    - name: SkeleBow_19
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1154
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: -23.5}
+        - {x: 15, y: -18.5}
+        - {x: 24, y: 2.5}
+        - {x: 24, y: 16.5}
+        - {x: 22, y: 19.5}
+        - {x: 19, y: 23.5}
+        - {x: -16, y: 23.5}
+        - {x: -24, y: 20.5}
+        - {x: -24, y: 1.5}
+        - {x: -14, y: -23.5}
+        - {x: -3, y: -23.5}
+        - {x: -1, y: -21.5}
+        - {x: -1, y: -23.5}
+    - name: SkeleBow_20
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1154
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: -23.5}
+        - {x: 17, y: -20.5}
+        - {x: 17, y: 23.5}
+        - {x: -17, y: 23.5}
+        - {x: -17, y: -23.5}
+        - {x: -2, y: -23.5}
+        - {x: -1, y: -21.5}
+        - {x: -1, y: -18.5}
+        - {x: 1, y: -23.5}
+    - name: SkeleBow_21
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1090
+        width: 20
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_22
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1090
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_23
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 1090
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_24
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1090
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_25
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 1090
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 23.5}
+        - {x: -16.5, y: 12.5}
+        - {x: -16.5, y: -12.5}
+        - {x: -7.5, y: -23.5}
+        - {x: 13.5, y: -23.5}
+        - {x: 16.5, y: -15.5}
+        - {x: 16.5, y: 23.5}
+    - name: SkeleBow_26
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 1090
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 23.5}
+        - {x: -16.5, y: 19.5}
+        - {x: -16.5, y: -1.5}
+        - {x: -14.5, y: -7.5}
+        - {x: -8.5, y: -23.5}
+        - {x: 16.5, y: -23.5}
+        - {x: 16.5, y: 16.5}
+        - {x: 12.5, y: 23.5}
+    - name: SkeleBow_27
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1090
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_28
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1026
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_29
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1024
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_30
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 1024
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_31
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1024
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_32
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 1024
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_33
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 1024
+        width: 20
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_34
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1024
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_35
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 1024
+        width: 20
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_36
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 962
+        width: 20
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_37
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 962
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_38
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 962
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_39
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 962
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_40
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 962
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_41
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 962
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_42
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 962
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_43
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 962
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_44
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 898
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_45
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 899
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_46
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 899
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_47
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 899
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_48
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 899
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_49
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 899
+        width: 20
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_50
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 899
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_51
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 899
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_52
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 834
+        width: 20
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_53
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 834
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_54
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 834
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_55
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 834
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_56
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 834
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_57
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 834
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_58
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 834
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_59
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 834
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_60
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 772
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_61
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 772
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_62
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 771
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_63
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 770
+        width: 29
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_64
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 771
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_65
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 772
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_66
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 771
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_67
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 770
+        width: 29
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_68
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 771
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_69
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 707
+        width: 20
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_70
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 707
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_71
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 708
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_72
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 708
+        width: 22
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_73
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 707
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_74
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 707
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_75
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 707
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_76
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 707
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_77
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 707
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_78
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 643
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_79
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 643
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_80
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 642
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_81
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 642
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_82
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 642
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_83
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 643
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_84
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 642
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_85
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 642
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_86
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 642
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_87
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 579
+        width: 20
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_88
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 579
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_89
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 580
+        width: 21
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_90
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 580
+        width: 22
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_91
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 579
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_92
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 579
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_93
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 579
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_94
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 579
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_95
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 579
+        width: 21
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_96
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 514
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_97
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 513
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_98
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 513
+        width: 25
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4342798, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_99
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 513
+        width: 27
+        height: 47
+      alignment: 9
+      pivot: {x: 0.52434117, y: 0.49650413}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_100
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 513
+        width: 36
+        height: 47
+      alignment: 9
+      pivot: {x: 0.44523367, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.971588, y: -19.5}
+        - {x: 19.971588, y: 23.5}
+        - {x: -12.028412, y: 23.5}
+        - {x: -16.028412, y: 12.5}
+        - {x: -16.028412, y: -23.5}
+        - {x: -6.028412, y: -23.5}
+        - {x: -4.028412, y: -21.5}
+        - {x: -1.0284119, y: -23.5}
+        - {x: 16.971588, y: -23.5}
+    - name: SkeleBow_101
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 513
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.5, y: -12.5}
+        - {x: 19.5, y: 18.5}
+        - {x: 9.5, y: 23.5}
+        - {x: -19.5, y: 23.5}
+        - {x: -19.5, y: -23.5}
+        - {x: -9.5, y: -23.5}
+        - {x: -7.5, y: -21.5}
+        - {x: -4.5, y: -23.5}
+        - {x: 12.5, y: -23.5}
+    - name: SkeleBow_102
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 450
+        width: 20
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_103
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 450
+        width: 25
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_104
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 450
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_105
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 450
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 23.5}
+        - {x: -6, y: 23.5}
+        - {x: -11, y: 18.5}
+        - {x: -17, y: 6.5}
+        - {x: -17, y: -15.5}
+        - {x: -14, y: -23.5}
+        - {x: 16, y: -23.5}
+        - {x: 17, y: -21.5}
+        - {x: 17, y: 12.5}
+        - {x: 14, y: 19.5}
+    - name: SkeleBow_106
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 450
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 23.5}
+        - {x: -18, y: 18.5}
+        - {x: -18, y: -5.5}
+        - {x: -9, y: -23.5}
+        - {x: 17, y: -23.5}
+        - {x: 18, y: -22.5}
+        - {x: 18, y: 22.5}
+        - {x: 15, y: 23.5}
+    - name: SkeleBow_107
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 450
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.5, y: 23.5}
+        - {x: -11.5, y: 23.5}
+        - {x: -16.5, y: 16.5}
+        - {x: -16.5, y: -4.5}
+        - {x: -9.5, y: -23.5}
+        - {x: 16.5, y: -23.5}
+        - {x: 16.5, y: 20.5}
+    - name: SkeleBow_108
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 386
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_109
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 386
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_110
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 386
+        width: 26
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_111
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 386
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_112
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 386
+        width: 35
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.5, y: 23.5}
+        - {x: -15.5, y: 23.5}
+        - {x: -17.5, y: 22.5}
+        - {x: -17.5, y: -23.5}
+        - {x: 13.5, y: -23.5}
+        - {x: 17.5, y: -11.5}
+        - {x: 17.5, y: 6.5}
+    - name: SkeleBow_113
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 386
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.5, y: 23.5}
+        - {x: -14.5, y: 23.5}
+        - {x: -19.5, y: 7.5}
+        - {x: -19.5, y: -23.5}
+        - {x: 13.5, y: -23.5}
+        - {x: 19.5, y: -17.5}
+        - {x: 19.5, y: 12.5}
+    - name: SkeleBow_114
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 322
+        width: 20
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_115
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 322
+        width: 25
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_116
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 322
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_117
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 322
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 23.5}
+        - {x: -15, y: 23.5}
+        - {x: -17, y: 17.5}
+        - {x: -17, y: -23.5}
+        - {x: 16, y: -23.5}
+        - {x: 17, y: -21.5}
+        - {x: 17, y: 15.5}
+        - {x: 14, y: 21.5}
+    - name: SkeleBow_118
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 322
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 23.5}
+        - {x: -18, y: 20.5}
+        - {x: -18, y: -23.5}
+        - {x: 8, y: -23.5}
+        - {x: 18, y: -3.5}
+        - {x: 18, y: 15.5}
+        - {x: 11, y: 23.5}
+    - name: SkeleBow_119
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 322
+        width: 33
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.5, y: 23.5}
+        - {x: -14.5, y: 23.5}
+        - {x: -16.5, y: 22.5}
+        - {x: -16.5, y: -23.5}
+        - {x: 9.5, y: -23.5}
+        - {x: 10.5, y: -22.5}
+        - {x: 16.5, y: -2.5}
+        - {x: 16.5, y: 15.5}
+    - name: SkeleBow_120
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 258
+        width: 38
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59833956, y: 0.50000066}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.736904, y: 22.99997}
+        - {x: -22.736904, y: 4.9999695}
+        - {x: -22.736904, y: -9.0000305}
+        - {x: -12.736904, y: -23.00003}
+        - {x: 14.263096, y: -23.00003}
+        - {x: 15.263096, y: -22.00003}
+        - {x: 15.263096, y: 15.9999695}
+        - {x: 13.263096, y: 22.99997}
+    - name: SkeleBow_121
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 256
+        width: 34
+        height: 47
+      alignment: 9
+      pivot: {x: 0.55495477, y: 0.50496984}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.868462, y: 23.266418}
+        - {x: -18.868462, y: -6.7335815}
+        - {x: -8.868462, y: -23.733582}
+        - {x: 15.131538, y: -23.733582}
+        - {x: 15.131538, y: 23.266418}
+    - name: SkeleBow_122
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 256
+        width: 36
+        height: 48
+      alignment: 9
+      pivot: {x: 0.40268496, y: 0.50000066}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.496658, y: 23.99997}
+        - {x: -14.496658, y: -12.0000305}
+        - {x: -12.496658, y: -22.00003}
+        - {x: -5.4966583, y: -24.00003}
+        - {x: 12.503342, y: -24.00003}
+        - {x: 21.503342, y: -17.00003}
+        - {x: 21.503342, y: -0.000030517578}
+        - {x: 15.503342, y: 23.99997}
+    - name: SkeleBow_123
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 256
+        width: 21
+        height: 52
+      alignment: 9
+      pivot: {x: 0.3721001, y: 0.46856043}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_124
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 256
+        width: 25
+        height: 55
+      alignment: 9
+      pivot: {x: 0.29447022, y: 0.42356402}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_125
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 256
+        width: 24
+        height: 58
+      alignment: 9
+      pivot: {x: 0.30050406, y: 0.39127585}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_126
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 256
+        width: 25
+        height: 59
+      alignment: 9
+      pivot: {x: 0.29447022, y: 0.39311865}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_127
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 256
+        width: 24
+        height: 60
+      alignment: 9
+      pivot: {x: 0.30050406, y: 0.38516846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_128
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 256
+        width: 26
+        height: 57
+      alignment: 9
+      pivot: {x: 0.28440973, y: 0.40780747}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_129
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 256
+        width: 25
+        height: 60
+      alignment: 9
+      pivot: {x: 0.29447022, y: 0.38516846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_130
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 256
+        width: 21
+        height: 60
+      alignment: 9
+      pivot: {x: 0.3442964, y: 0.38127595}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_131
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 256
+        width: 21
+        height: 60
+      alignment: 9
+      pivot: {x: 0.3442964, y: 0.38127595}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_132
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 256
+        width: 21
+        height: 60
+      alignment: 9
+      pivot: {x: 0.3442935, y: 0.3793294}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_133
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 194
+        width: 44
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5258223, y: 0.49999967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.136181, y: 23.500015}
+        - {x: -23.13618, y: 12.500015}
+        - {x: -23.13618, y: -7.4999847}
+        - {x: -21.13618, y: -17.499985}
+        - {x: -12.136181, y: -23.499985}
+        - {x: 20.86382, y: -23.499985}
+        - {x: 20.86382, y: 17.500015}
+        - {x: 14.863819, y: 23.500015}
+    - name: SkeleBow_134
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 194
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 23.5}
+        - {x: -18, y: 21.5}
+        - {x: -18, y: -18.5}
+        - {x: -13, y: -23.5}
+        - {x: 18, y: -23.5}
+        - {x: 18, y: 1.5}
+        - {x: 16, y: 18.5}
+        - {x: 12, y: 23.5}
+    - name: SkeleBow_135
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 194
+        width: 37
+        height: 47
+      alignment: 9
+      pivot: {x: 0.54606175, y: 0.50201446}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.204285, y: 23.40532}
+        - {x: -20.204285, y: -5.594681}
+        - {x: -9.204285, y: -23.59468}
+        - {x: 12.795715, y: -23.59468}
+        - {x: 16.795715, y: -16.59468}
+        - {x: 16.795715, y: 23.40532}
+    - name: SkeleBow_136
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 194
+        width: 33
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5286916, y: 0.49999967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.446823, y: 23.500015}
+        - {x: -17.446823, y: -23.499985}
+        - {x: 15.553177, y: -23.499985}
+        - {x: 15.553177, y: 23.500015}
+    - name: SkeleBow_137
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 194
+        width: 35
+        height: 50
+      alignment: 9
+      pivot: {x: 0.4972944, y: 0.46970123}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.405304, y: 26.514938}
+        - {x: -17.405304, y: -12.485062}
+        - {x: -13.405304, y: -23.485062}
+        - {x: 17.594696, y: -23.485062}
+        - {x: 17.594696, y: 18.514938}
+        - {x: 13.594696, y: 26.514938}
+    - name: SkeleBow_138
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 194
+        width: 32
+        height: 53
+      alignment: 9
+      pivot: {x: 0.54734135, y: 0.47320268}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.485077, y: 27.920258}
+        - {x: -8.514923, y: 27.920258}
+        - {x: -15.514923, y: 19.920258}
+        - {x: -17.514923, y: 16.920258}
+        - {x: -17.514923, y: -5.0797424}
+        - {x: -15.514923, y: -8.079742}
+        - {x: -7.514923, y: -23.079742}
+        - {x: -6.514923, y: -25.079742}
+        - {x: 14.485077, y: -25.079742}
+        - {x: 14.485077, y: 23.920258}
+        - {x: 9.485077, y: 26.920258}
+    - name: SkeleBow_139
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 194
+        width: 34
+        height: 55
+      alignment: 9
+      pivot: {x: 0.53341764, y: 0.45351896}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.1362, y: 30.056458}
+        - {x: -16.1362, y: 22.056458}
+        - {x: -18.1362, y: 19.056458}
+        - {x: -18.1362, y: -3.9435425}
+        - {x: -7.1362, y: -24.943542}
+        - {x: 15.8638, y: -24.943542}
+        - {x: 15.8638, y: 26.056458}
+        - {x: 14.8638, y: 30.056458}
+    - name: SkeleBow_140
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 194
+        width: 36
+        height: 53
+      alignment: 9
+      pivot: {x: 0.463178, y: 0.46427026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.325592, y: 28.393677}
+        - {x: -14.674408, y: 28.393677}
+        - {x: -16.674408, y: 20.393677}
+        - {x: -16.674408, y: -9.606323}
+        - {x: -6.674408, y: -24.606323}
+        - {x: 15.325592, y: -24.606323}
+        - {x: 16.325592, y: -19.606323}
+        - {x: 19.325592, y: -11.606323}
+        - {x: 19.325592, y: 16.393677}
+    - name: SkeleBow_141
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 194
+        width: 38
+        height: 49
+      alignment: 9
+      pivot: {x: 0.4526576, y: 0.49806744}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.200989, y: 24.594696}
+        - {x: -17.200989, y: 13.594696}
+        - {x: -17.200989, y: -5.405304}
+        - {x: -8.200989, y: -22.405304}
+        - {x: -6.200989, y: -24.405304}
+        - {x: 18.799011, y: -24.405304}
+        - {x: 20.799011, y: -20.405304}
+        - {x: 20.799011, y: 15.594696}
+        - {x: 16.799011, y: 24.594696}
+    - name: SkeleBow_142
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 194
+        width: 35
+        height: 51
+      alignment: 9
+      pivot: {x: 0.4783587, y: 0.4610126}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.257446, y: 27.488358}
+        - {x: -14.742554, y: 27.488358}
+        - {x: -16.742554, y: 18.488358}
+        - {x: -16.742554, y: -13.511642}
+        - {x: -9.742554, y: -22.511642}
+        - {x: -7.7425537, y: -23.511642}
+        - {x: 18.257446, y: -23.511642}
+        - {x: 18.257446, y: 16.488358}
+        - {x: 17.257446, y: 19.488358}
+    - name: SkeleBow_143
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 194
+        width: 33
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5086078, y: 0.45915613}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.784058, y: 27.583038}
+        - {x: -16.784058, y: 18.583038}
+        - {x: -16.784058, y: -13.416962}
+        - {x: -9.784058, y: -22.416962}
+        - {x: -5.7840576, y: -23.416962}
+        - {x: 16.215942, y: -23.416962}
+        - {x: 16.215942, y: 25.583038}
+        - {x: 11.215942, y: 27.583038}
+    - name: SkeleBow_144
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 194
+        width: 30
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5504984, y: 0.44430363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_145
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 194
+        width: 33
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5258234, y: 0.45729962}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.352173, y: 27.67772}
+        - {x: -17.352173, y: 18.67772}
+        - {x: -17.352173, y: -13.322281}
+        - {x: -10.352173, y: -22.32228}
+        - {x: -6.352173, y: -23.32228}
+        - {x: 15.647827, y: -23.32228}
+        - {x: 15.647827, y: 25.67772}
+        - {x: 10.647827, y: 27.67772}
+    - name: SkeleBow_146
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 130
+        width: 38
+        height: 47
+      alignment: 9
+      pivot: {x: 0.3828906, y: 0.51410174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2.4501572, y: -24.16278}
+        - {x: 17.450157, y: -24.16278}
+        - {x: 23.450157, y: -17.16278}
+        - {x: 23.450157, y: 8.837219}
+        - {x: 19.450157, y: 22.83722}
+        - {x: -13.549843, y: 22.83722}
+        - {x: -14.549843, y: 21.83722}
+        - {x: -14.549843, y: -24.16278}
+        - {x: -2.5498428, y: -24.16278}
+        - {x: -0.54984283, y: -22.16278}
+        - {x: -0.54984283, y: -19.16278}
+        - {x: 1.4501572, y: -22.16278}
+    - name: SkeleBow_147
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 131
+        width: 34
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5306327, y: 0.5082334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.041512, y: 22.621262}
+        - {x: -17.041512, y: 20.621262}
+        - {x: -18.041512, y: 11.621262}
+        - {x: -18.041512, y: -19.378738}
+        - {x: -14.041512, y: -23.378738}
+        - {x: 15.958488, y: -23.378738}
+        - {x: 15.958488, y: 22.621262}
+    - name: SkeleBow_148
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 131
+        width: 36
+        height: 46
+      alignment: 9
+      pivot: {x: 0.48158816, y: 0.50411654}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.337173, y: 22.810638}
+        - {x: -17.337173, y: 12.810638}
+        - {x: -17.337173, y: -23.189362}
+        - {x: 11.662827, y: -23.189362}
+        - {x: 18.662827, y: -1.1893616}
+        - {x: 18.662827, y: 19.810638}
+        - {x: 14.662827, y: 22.810638}
+    - name: SkeleBow_149
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 128
+        width: 23
+        height: 49
+      alignment: 9
+      pivot: {x: 0.524698, y: 0.53478163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_150
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 128
+        width: 22
+        height: 49
+      alignment: 9
+      pivot: {x: 0.47847816, y: 0.5270523}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_151
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 130
+        width: 21
+        height: 47
+      alignment: 9
+      pivot: {x: 0.49098134, y: 0.504029}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_152
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 130
+        width: 22
+        height: 47
+      alignment: 9
+      pivot: {x: 0.49569285, y: 0.51410174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_153
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 130
+        width: 23
+        height: 47
+      alignment: 9
+      pivot: {x: 0.53704834, y: 0.51007277}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_154
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 130
+        width: 23
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5164662, y: 0.5201455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_155
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 128
+        width: 22
+        height: 49
+      alignment: 9
+      pivot: {x: 0.47847956, y: 0.542511}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_156
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 128
+        width: 23
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5164662, y: 0.542511}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_157
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 128
+        width: 20
+        height: 49
+      alignment: 9
+      pivot: {x: 0.44792175, y: 0.5463755}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_158
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 128
+        width: 23
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5164662, y: 0.5521726}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_159
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 66
+        width: 44
+        height: 47
+      alignment: 9
+      pivot: {x: 0.45265806, y: 0.52417463}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.916954, y: 22.363792}
+        - {x: -19.916954, y: 12.363792}
+        - {x: -19.916954, y: -3.6362076}
+        - {x: -12.916954, y: -24.636208}
+        - {x: 18.083046, y: -24.636208}
+        - {x: 24.083046, y: -20.636208}
+        - {x: 24.083046, y: 11.363792}
+        - {x: 16.083046, y: 22.363792}
+    - name: SkeleBow_160
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 66
+        width: 36
+        height: 47
+      alignment: 9
+      pivot: {x: 0.4736985, y: 0.5201455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.946854, y: 14.553162}
+        - {x: 7.9468536, y: 20.553162}
+        - {x: 4.9468536, y: 22.553162}
+        - {x: -11.053146, y: 22.553162}
+        - {x: -15.053146, y: 17.553162}
+        - {x: -17.053146, y: -4.4468384}
+        - {x: -17.053146, y: -22.446838}
+        - {x: -12.053146, y: -24.446838}
+        - {x: 8.946854, y: -24.446838}
+        - {x: 18.946854, y: -8.446838}
+        - {x: 18.946854, y: 19.553162}
+        - {x: 15.946854, y: 17.553162}
+    - name: SkeleBow_161
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 66
+        width: 37
+        height: 47
+      alignment: 9
+      pivot: {x: 0.43858337, y: 0.5342474}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.227585, y: 21.890373}
+        - {x: -16.227585, y: 15.890373}
+        - {x: -16.227585, y: -23.109627}
+        - {x: -15.227585, y: -25.109627}
+        - {x: 20.772415, y: -25.109627}
+        - {x: 20.772415, y: 21.890373}
+    - name: SkeleBow_162
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 66
+        width: 33
+        height: 47
+      alignment: 9
+      pivot: {x: 0.45983055, y: 0.518131}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.174408, y: 22.647842}
+        - {x: -15.174408, y: -24.352158}
+        - {x: 12.825592, y: -24.352158}
+        - {x: 17.825592, y: -13.352158}
+        - {x: 17.825592, y: 19.647842}
+        - {x: 8.825592, y: 22.647842}
+    - name: SkeleBow_163
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 66
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 25}
+        - {x: -17.5, y: 19}
+        - {x: -17.5, y: -18}
+        - {x: -15.5, y: -25}
+        - {x: 8.5, y: -25}
+        - {x: 17.5, y: -10}
+        - {x: 17.5, y: 16}
+        - {x: 10.5, y: 25}
+    - name: SkeleBow_164
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 66
+        width: 32
+        height: 53
+      alignment: 9
+      pivot: {x: 0.4526577, y: 0.5000001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.4850464, y: 26.499992}
+        - {x: -14.485046, y: 22.499992}
+        - {x: -14.485046, y: -26.500008}
+        - {x: 11.514954, y: -26.500008}
+        - {x: 17.514954, y: -8.500008}
+        - {x: 17.514954, y: 24.499992}
+        - {x: 15.514954, y: 26.499992}
+    - name: SkeleBow_165
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 66
+        width: 34
+        height: 55
+      alignment: 9
+      pivot: {x: 0.461012, y: 0.475899}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.674408, y: 28.825554}
+        - {x: -15.674408, y: 24.825554}
+        - {x: -15.674408, y: -26.174446}
+        - {x: 17.325592, y: -26.174446}
+        - {x: 18.325592, y: -19.174446}
+        - {x: 18.325592, y: 28.825554}
+    - name: SkeleBow_166
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 66
+        width: 36
+        height: 53
+      alignment: 9
+      pivot: {x: 0.52893066, y: 0.5000001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.041504, y: 26.499992}
+        - {x: -13.041504, y: 24.499992}
+        - {x: -19.041504, y: 15.499992}
+        - {x: -19.041504, y: -26.500008}
+        - {x: 11.958496, y: -26.500008}
+        - {x: 16.958496, y: -8.500008}
+        - {x: 16.958496, y: 18.499992}
+        - {x: 10.958496, y: 26.499992}
+    - name: SkeleBow_167
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 66
+        width: 38
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5523248, y: 0.52898484}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.988342, y: 23.079742}
+        - {x: -13.988342, y: 19.079742}
+        - {x: -20.988342, y: 6.0797424}
+        - {x: -20.988342, y: -7.9202576}
+        - {x: -14.988342, y: -25.920258}
+        - {x: 10.011658, y: -25.920258}
+        - {x: 17.011658, y: -7.9202576}
+        - {x: 17.011658, y: 12.079742}
+        - {x: 7.0116577, y: 23.079742}
+    - name: SkeleBow_168
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 66
+        width: 35
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 25.5}
+        - {x: -17.5, y: 15.5}
+        - {x: -17.5, y: -17.5}
+        - {x: -14.5, y: -25.5}
+        - {x: 10.5, y: -25.5}
+        - {x: 17.5, y: -19.5}
+        - {x: 17.5, y: 21.5}
+        - {x: 15.5, y: 25.5}
+    - name: SkeleBow_169
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 66
+        width: 33
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: 25.5}
+        - {x: -16.5, y: 14.5}
+        - {x: -16.5, y: -22.5}
+        - {x: -15.5, y: -25.5}
+        - {x: 12.5, y: -25.5}
+        - {x: 16.5, y: -10.5}
+        - {x: 16.5, y: 20.5}
+        - {x: 11.5, y: 25.5}
+    - name: SkeleBow_170
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 66
+        width: 30
+        height: 51
+      alignment: 9
+      pivot: {x: 0.44003296, y: 0.5000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_171
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 66
+        width: 33
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.5, y: 25.5}
+        - {x: -16.5, y: 14.5}
+        - {x: -16.5, y: -22.5}
+        - {x: -15.5, y: -25.5}
+        - {x: 12.5, y: -25.5}
+        - {x: 16.5, y: -10.5}
+        - {x: 16.5, y: 20.5}
+        - {x: 11.5, y: 25.5}
+    - name: SkeleBow_172
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 2
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_173
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 2
+        width: 31
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5122166, y: 0.5041169}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_174
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 2
+        width: 31
+        height: 39
+      alignment: 9
+      pivot: {x: 0.50916266, y: 0.44901666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_175
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 3
+        width: 30
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5031555, y: 0.3663292}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_176
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 3
+        width: 31
+        height: 28
+      alignment: 9
+      pivot: {x: 0.49389058, y: 0.4120794}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleBow_177
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1
+        width: 34
+        height: 35
+      alignment: 9
+      pivot: {x: 0.50278425, y: 0.39449546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.094666, y: 21.19266}
+        - {x: -17.094666, y: 18.19266}
+        - {x: -17.094666, y: -13.807341}
+        - {x: 16.905334, y: -13.807341}
+        - {x: 16.905334, y: 21.19266}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

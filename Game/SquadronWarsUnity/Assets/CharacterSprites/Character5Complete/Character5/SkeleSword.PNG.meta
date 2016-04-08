@@ -1,0 +1,2956 @@
+fileFormatVersion: 2
+guid: f6464937cc1b653478d88c25deb8ba94
+timeCreated: 1459472355
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SkeleSword_0
+    21300002: SkeleSword_1
+    21300004: SkeleSword_2
+    21300006: SkeleSword_3
+    21300008: SkeleSword_4
+    21300010: SkeleSword_5
+    21300012: SkeleSword_6
+    21300014: SkeleSword_7
+    21300016: SkeleSword_8
+    21300018: SkeleSword_9
+    21300020: SkeleSword_10
+    21300022: SkeleSword_11
+    21300024: SkeleSword_12
+    21300026: SkeleSword_13
+    21300028: SkeleSword_14
+    21300030: SkeleSword_15
+    21300032: SkeleSword_16
+    21300034: SkeleSword_17
+    21300036: SkeleSword_18
+    21300038: SkeleSword_19
+    21300040: SkeleSword_20
+    21300042: SkeleSword_21
+    21300044: SkeleSword_22
+    21300046: SkeleSword_23
+    21300048: SkeleSword_24
+    21300050: SkeleSword_25
+    21300052: SkeleSword_26
+    21300054: SkeleSword_27
+    21300056: SkeleSword_28
+    21300058: SkeleSword_29
+    21300060: SkeleSword_30
+    21300062: SkeleSword_31
+    21300064: SkeleSword_32
+    21300066: SkeleSword_33
+    21300068: SkeleSword_34
+    21300070: SkeleSword_35
+    21300072: SkeleSword_36
+    21300074: SkeleSword_37
+    21300076: SkeleSword_38
+    21300078: SkeleSword_39
+    21300080: SkeleSword_40
+    21300082: SkeleSword_41
+    21300084: SkeleSword_42
+    21300086: SkeleSword_43
+    21300088: SkeleSword_44
+    21300090: SkeleSword_45
+    21300092: SkeleSword_46
+    21300094: SkeleSword_47
+    21300096: SkeleSword_48
+    21300098: SkeleSword_49
+    21300100: SkeleSword_50
+    21300102: SkeleSword_51
+    21300104: SkeleSword_52
+    21300106: SkeleSword_53
+    21300108: SkeleSword_54
+    21300110: SkeleSword_55
+    21300112: SkeleSword_56
+    21300114: SkeleSword_57
+    21300116: SkeleSword_58
+    21300118: SkeleSword_59
+    21300120: SkeleSword_60
+    21300122: SkeleSword_61
+    21300124: SkeleSword_62
+    21300126: SkeleSword_63
+    21300128: SkeleSword_64
+    21300130: SkeleSword_65
+    21300132: SkeleSword_66
+    21300134: SkeleSword_67
+    21300136: SkeleSword_68
+    21300138: SkeleSword_69
+    21300140: SkeleSword_70
+    21300142: SkeleSword_71
+    21300144: SkeleSword_72
+    21300146: SkeleSword_73
+    21300148: SkeleSword_74
+    21300150: SkeleSword_75
+    21300152: SkeleSword_76
+    21300154: SkeleSword_77
+    21300156: SkeleSword_78
+    21300158: SkeleSword_79
+    21300160: SkeleSword_80
+    21300162: SkeleSword_81
+    21300164: SkeleSword_82
+    21300166: SkeleSword_83
+    21300168: SkeleSword_84
+    21300170: SkeleSword_85
+    21300172: SkeleSword_86
+    21300174: SkeleSword_87
+    21300176: SkeleSword_88
+    21300178: SkeleSword_89
+    21300180: SkeleSword_90
+    21300182: SkeleSword_91
+    21300184: SkeleSword_92
+    21300186: SkeleSword_93
+    21300188: SkeleSword_94
+    21300190: SkeleSword_95
+    21300192: SkeleSword_96
+    21300194: SkeleSword_97
+    21300196: SkeleSword_98
+    21300198: SkeleSword_99
+    21300200: SkeleSword_100
+    21300202: SkeleSword_101
+    21300204: SkeleSword_102
+    21300206: SkeleSword_103
+    21300208: SkeleSword_104
+    21300210: SkeleSword_105
+    21300212: SkeleSword_106
+    21300214: SkeleSword_107
+    21300216: SkeleSword_108
+    21300218: SkeleSword_109
+    21300220: SkeleSword_110
+    21300222: SkeleSword_111
+    21300224: SkeleSword_112
+    21300226: SkeleSword_113
+    21300228: SkeleSword_114
+    21300230: SkeleSword_115
+    21300232: SkeleSword_116
+    21300234: SkeleSword_117
+    21300236: SkeleSword_118
+    21300238: SkeleSword_119
+    21300240: SkeleSword_120
+    21300242: SkeleSword_121
+    21300244: SkeleSword_122
+    21300246: SkeleSword_123
+    21300248: SkeleSword_124
+    21300250: SkeleSword_125
+    21300252: SkeleSword_126
+    21300254: SkeleSword_127
+    21300256: SkeleSword_128
+    21300258: SkeleSword_129
+    21300260: SkeleSword_130
+    21300262: SkeleSword_131
+    21300264: SkeleSword_132
+    21300266: SkeleSword_133
+    21300268: SkeleSword_134
+    21300270: SkeleSword_135
+    21300272: SkeleSword_136
+    21300274: SkeleSword_137
+    21300276: SkeleSword_138
+    21300278: SkeleSword_139
+    21300280: SkeleSword_140
+    21300282: SkeleSword_141
+    21300284: SkeleSword_142
+    21300286: SkeleSword_143
+    21300288: SkeleSword_144
+    21300290: SkeleSword_145
+    21300292: SkeleSword_146
+    21300294: SkeleSword_147
+    21300296: SkeleSword_148
+    21300298: SkeleSword_149
+    21300300: SkeleSword_150
+    21300302: SkeleSword_151
+    21300304: SkeleSword_152
+    21300306: SkeleSword_153
+    21300308: SkeleSword_154
+    21300310: SkeleSword_155
+    21300312: SkeleSword_156
+    21300314: SkeleSword_157
+    21300316: SkeleSword_158
+    21300318: SkeleSword_159
+    21300320: SkeleSword_160
+    21300322: SkeleSword_161
+    21300324: SkeleSword_162
+    21300326: SkeleSword_163
+    21300328: SkeleSword_164
+    21300330: SkeleSword_165
+    21300332: SkeleSword_166
+    21300334: SkeleSword_167
+    21300336: SkeleSword_168
+    21300338: SkeleSword_169
+    21300340: SkeleSword_170
+    21300342: SkeleSword_171
+    21300344: SkeleSword_172
+    21300346: SkeleSword_173
+    21300348: SkeleSword_174
+    21300350: SkeleSword_175
+    21300352: SkeleSword_176
+    21300354: SkeleSword_177
+    21300356: SkeleSword_178
+    21300358: SkeleSword_179
+    21300360: SkeleSword_180
+    21300362: SkeleSword_181
+    21300364: SkeleSword_182
+    21300366: SkeleSword_183
+    21300368: SkeleSword_184
+    21300370: SkeleSword_185
+    21300372: SkeleSword_186
+    21300374: SkeleSword_187
+    21300376: SkeleSword_188
+    21300378: SkeleSword_189
+    21300380: SkeleSword_190
+    21300382: SkeleSword_191
+    21300384: SkeleSword_192
+    21300386: SkeleSword_193
+    21300388: SkeleSword_194
+    21300390: SkeleSword_195
+    21300392: SkeleSword_196
+    21300394: SkeleSword_197
+    21300396: SkeleSword_198
+    21300398: SkeleSword_199
+    21300400: SkeleSword_200
+    21300402: SkeleSword_201
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SkeleSword_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 2049
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 2049
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 2049
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_3
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 2049
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.272781, y: 23.802734}
+        - {x: -12.272781, y: 18.802734}
+        - {x: -18.272781, y: 9.802734}
+        - {x: -18.272781, y: -17.197266}
+        - {x: -17.272781, y: -22.197266}
+        - {x: -16.272781, y: -23.197266}
+        - {x: 19.727219, y: -23.197266}
+        - {x: 19.727219, y: 17.802734}
+        - {x: 14.727219, y: 23.802734}
+    - name: SkeleSword_4
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2049
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21.983078, y: 23.802734}
+        - {x: -20.016922, y: 23.802734}
+        - {x: -25.016922, y: 16.802734}
+        - {x: -25.016922, y: -13.197266}
+        - {x: -14.016922, y: -23.197266}
+        - {x: 15.983078, y: -23.197266}
+        - {x: 26.983078, y: -3.1972656}
+        - {x: 26.983078, y: 19.802734}
+    - name: SkeleSword_5
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 2049
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.00586, y: 23.802734}
+        - {x: -24.00586, y: 19.802734}
+        - {x: -24.00586, y: 1.8027344}
+        - {x: -14.005859, y: -21.197266}
+        - {x: -11.005859, y: -23.197266}
+        - {x: 21.99414, y: -23.197266}
+        - {x: 25.99414, y: -11.197266}
+        - {x: 25.99414, y: 23.802734}
+    - name: SkeleSword_6
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 2049
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.852234, y: 23.802734}
+        - {x: -18.147766, y: 23.802734}
+        - {x: -18.147766, y: -23.197266}
+        - {x: 14.852234, y: -23.197266}
+        - {x: 17.852234, y: -22.197266}
+        - {x: 19.852234, y: -18.197266}
+        - {x: 19.852234, y: 15.802734}
+    - name: SkeleSword_7
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1985
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_8
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1985
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_9
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 1985
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_10
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1985
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_11
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1985
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.146484, y: 24.261108}
+        - {x: -13.853516, y: 24.261108}
+        - {x: -16.853516, y: 14.261108}
+        - {x: -16.853516, y: -11.738892}
+        - {x: -11.853516, y: -23.738892}
+        - {x: 7.1464844, y: -23.738892}
+        - {x: 8.146484, y: -22.738892}
+        - {x: 18.146484, y: -9.738892}
+        - {x: 18.146484, y: 16.261108}
+    - name: SkeleSword_12
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1985
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.811829, y: 24.261108}
+        - {x: -16.811829, y: 20.261108}
+        - {x: -16.811829, y: -23.738892}
+        - {x: 15.188171, y: -23.738892}
+        - {x: 18.188171, y: -11.738892}
+        - {x: 18.188171, y: 24.261108}
+    - name: SkeleSword_13
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1985
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_14
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1921
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_15
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1921
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_16
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1921
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_17
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1921
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.7272186, y: -23.780518}
+        - {x: 13.727219, y: -23.780518}
+        - {x: 15.727219, y: -22.780518}
+        - {x: 19.727219, y: -15.780518}
+        - {x: 19.727219, y: 9.219482}
+        - {x: 14.727219, y: 24.219482}
+        - {x: -12.272781, y: 24.219482}
+        - {x: -18.272781, y: 12.219482}
+        - {x: -18.272781, y: -11.780518}
+        - {x: -13.272781, y: -23.780518}
+        - {x: -2.2727814, y: -23.780518}
+        - {x: 0.7272186, y: -20.780518}
+        - {x: 0.7272186, y: -16.780518}
+        - {x: 1.7272186, y: -20.780518}
+    - name: SkeleSword_18
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1921
+        width: 52
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.983078, y: -23.780518}
+        - {x: 19.983078, y: -23.780518}
+        - {x: 26.983078, y: -12.780518}
+        - {x: 26.983078, y: 24.219482}
+        - {x: -12.016922, y: 24.219482}
+        - {x: -25.016922, y: 16.219482}
+        - {x: -25.016922, y: -0.7805176}
+        - {x: -21.016922, y: -2.7805176}
+        - {x: -15.016922, y: -23.780518}
+        - {x: -0.016921997, y: -23.780518}
+        - {x: 0.983078, y: -20.780518}
+        - {x: 0.983078, y: -16.780518}
+        - {x: 1.983078, y: -20.780518}
+    - name: SkeleSword_19
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 1921
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.9941406, y: -23.780518}
+        - {x: 15.994141, y: -23.780518}
+        - {x: 25.99414, y: -2.7805176}
+        - {x: 25.99414, y: 24.219482}
+        - {x: -24.00586, y: 24.219482}
+        - {x: -24.00586, y: -20.780518}
+        - {x: -23.00586, y: -23.780518}
+        - {x: -0.005859375, y: -23.780518}
+        - {x: 0.9941406, y: -20.780518}
+        - {x: 0.9941406, y: -16.780518}
+        - {x: 1.9941406, y: -20.780518}
+    - name: SkeleSword_20
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1921
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.8216248, y: -23.780518}
+        - {x: 15.821625, y: -23.780518}
+        - {x: 18.821625, y: -17.780518}
+        - {x: 18.821625, y: 11.219482}
+        - {x: 14.821625, y: 24.219482}
+        - {x: -9.178375, y: 24.219482}
+        - {x: -11.178375, y: 22.219482}
+        - {x: -17.178375, y: 7.2194824}
+        - {x: -17.178375, y: -15.780518}
+        - {x: -15.178375, y: -23.780518}
+        - {x: -0.17837524, y: -23.780518}
+        - {x: 0.82162476, y: -20.780518}
+        - {x: 0.82162476, y: -16.780518}
+        - {x: 1.8216248, y: -20.780518}
+    - name: SkeleSword_21
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1857
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_22
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1857
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_23
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1857
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_24
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1857
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_25
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1857
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.7005, y: 24.177734}
+        - {x: -16.7005, y: -18.822266}
+        - {x: -13.7005005, y: -23.822266}
+        - {x: 18.2995, y: -23.822266}
+        - {x: 18.2995, y: 24.177734}
+    - name: SkeleSword_26
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1857
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.658844, y: 24.177734}
+        - {x: -16.658844, y: 16.177734}
+        - {x: -16.658844, y: -22.822266}
+        - {x: -14.658844, y: -23.822266}
+        - {x: 18.341156, y: -23.822266}
+        - {x: 18.341156, y: 17.177734}
+        - {x: 12.341156, y: 24.177734}
+    - name: SkeleSword_27
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1857
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_28
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1793
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_29
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1791
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_30
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1791
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_31
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1791
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_32
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1791
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_33
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1791
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_34
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 1791
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_35
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1791
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_36
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1729
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_37
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1729
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_38
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1729
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_39
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 1729
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_40
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1729
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_41
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1729
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_42
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1729
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_43
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 1729
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_44
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1665
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_45
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1666
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_46
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1666
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_47
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1666
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_48
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1666
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_49
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1666
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_50
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1666
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_51
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 1666
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_52
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1601
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_53
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1601
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_54
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1601
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_55
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1601
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_56
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1601
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_57
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1601
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_58
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1601
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_59
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 1601
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_60
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1539
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_61
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1539
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_62
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1538
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_63
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1537
+        width: 31
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_64
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1538
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_65
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1539
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_66
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1538
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_67
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 1537
+        width: 31
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_68
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1538
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_69
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1474
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_70
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1474
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_71
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1475
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_72
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1475
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_73
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1474
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_74
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1474
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_75
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1474
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_76
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1474
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_77
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 1474
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_78
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1410
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_79
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1410
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_80
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1409
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_81
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1409
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_82
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1409
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_83
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1410
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_84
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1409
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_85
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1409
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_86
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1409
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_87
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1346
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_88
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1346
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_89
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 1347
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_90
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1347
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_91
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1346
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_92
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 1346
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_93
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1346
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_94
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 1346
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_95
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 1346
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_96
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1281
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_97
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1280
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_98
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1280
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_99
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1280
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_100
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1280
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.353516, y: -23.666626}
+        - {x: 13.646484, y: -23.666626}
+        - {x: 19.646484, y: -14.666626}
+        - {x: 19.646484, y: 17.333374}
+        - {x: 8.646484, y: 25.333374}
+        - {x: -12.353516, y: 25.333374}
+        - {x: -18.353516, y: 9.333374}
+    - name: SkeleSword_101
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1280
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.811829, y: 25.333374}
+        - {x: -19.811829, y: 19.333374}
+        - {x: -19.811829, y: -23.666626}
+        - {x: 15.188171, y: -23.666626}
+        - {x: 21.188171, y: -8.666626}
+        - {x: 21.188171, y: 17.333374}
+        - {x: 14.188171, y: 25.333374}
+    - name: SkeleSword_102
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1217
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_103
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1217
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_104
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1217
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_105
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1217
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.1809845, y: 25.261108}
+        - {x: -17.180984, y: 12.261108}
+        - {x: -17.180984, y: -15.738892}
+        - {x: -12.1809845, y: -23.738892}
+        - {x: 14.8190155, y: -23.738892}
+        - {x: 18.819016, y: -18.738892}
+        - {x: 18.819016, y: 4.2611084}
+        - {x: 11.8190155, y: 25.261108}
+    - name: SkeleSword_106
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1217
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.952484, y: 25.261108}
+        - {x: -8.047516, y: 25.261108}
+        - {x: -16.047516, y: 15.261108}
+        - {x: -18.047516, y: 11.261108}
+        - {x: -18.047516, y: -3.7388916}
+        - {x: -6.047516, y: -23.738892}
+        - {x: 14.952484, y: -23.738892}
+        - {x: 19.952484, y: -22.738892}
+        - {x: 19.952484, y: 13.261108}
+        - {x: 18.952484, y: 24.261108}
+    - name: SkeleSword_107
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1217
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.597656, y: 25.261108}
+        - {x: -16.597656, y: 12.261108}
+        - {x: -16.597656, y: -6.7388916}
+        - {x: -8.597656, y: -20.738892}
+        - {x: -1.5976562, y: -23.738892}
+        - {x: 14.402344, y: -23.738892}
+        - {x: 18.402344, y: -22.738892}
+        - {x: 18.402344, y: 14.261108}
+        - {x: 14.402344, y: 25.261108}
+    - name: SkeleSword_108
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1153
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_109
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1153
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_110
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1153
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_111
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1153
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_112
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 1153
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.0852966, y: 25.219482}
+        - {x: -13.914703, y: 25.219482}
+        - {x: -17.914703, y: 13.219482}
+        - {x: -17.914703, y: -23.780518}
+        - {x: 11.085297, y: -23.780518}
+        - {x: 19.085297, y: -14.780518}
+        - {x: 19.085297, y: 6.2194824}
+        - {x: 11.085297, y: 20.219482}
+    - name: SkeleSword_113
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1153
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.842438, y: 25.219482}
+        - {x: -19.842438, y: 17.219482}
+        - {x: -19.842438, y: -23.780518}
+        - {x: 13.157562, y: -23.780518}
+        - {x: 21.157562, y: -14.780518}
+        - {x: 21.157562, y: 11.219482}
+        - {x: 15.157562, y: 25.219482}
+    - name: SkeleSword_114
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1089
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_115
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1089
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_116
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1089
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_117
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1089
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.425781, y: 25.177734}
+        - {x: -14.425781, y: 24.177734}
+        - {x: -17.425781, y: 10.177734}
+        - {x: -17.425781, y: -12.822266}
+        - {x: -13.425781, y: -23.822266}
+        - {x: 7.5742188, y: -23.822266}
+        - {x: 12.574219, y: -22.822266}
+        - {x: 18.574219, y: -12.822266}
+        - {x: 18.574219, y: 12.177734}
+        - {x: 9.574219, y: 25.177734}
+    - name: SkeleSword_118
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 1089
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5852966, y: 25.177734}
+        - {x: -11.414703, y: 25.177734}
+        - {x: -18.414703, y: 6.1777344}
+        - {x: -18.414703, y: -20.822266}
+        - {x: -16.414703, y: -23.822266}
+        - {x: 9.585297, y: -23.822266}
+        - {x: 19.585297, y: -7.8222656}
+        - {x: 19.585297, y: 10.177734}
+        - {x: 18.585297, y: 11.177734}
+    - name: SkeleSword_119
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1089
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.126953, y: 25.177734}
+        - {x: -8.873047, y: 25.177734}
+        - {x: -16.873047, y: 23.177734}
+        - {x: -16.873047, y: -23.822266}
+        - {x: 11.126953, y: -23.822266}
+        - {x: 18.126953, y: -10.822266}
+        - {x: 18.126953, y: 16.177734}
+    - name: SkeleSword_120
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1025
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_121
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1023
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_122
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 1023
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_123
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1023
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_124
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1023
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_125
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1023
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_126
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1023
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_127
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1023
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_128
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1023
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_129
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1023
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_130
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1023
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_131
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 1023
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_132
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 1023
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_133
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 961
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_134
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 961
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_135
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 961
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.345047, y: -17.905579}
+        - {x: -10.345047, y: -23.905579}
+        - {x: 14.654953, y: -23.905579}
+        - {x: 17.654953, y: -20.905579}
+        - {x: 17.654953, y: 23.094421}
+        - {x: 16.654953, y: 24.094421}
+        - {x: 14.654953, y: 25.094421}
+        - {x: -7.345047, y: 25.094421}
+        - {x: -16.345047, y: 7.0944214}
+    - name: SkeleSword_136
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 961
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.7421875, y: 25.094421}
+        - {x: -16.742188, y: 11.094421}
+        - {x: -16.742188, y: -14.905579}
+        - {x: -11.7421875, y: -23.905579}
+        - {x: 15.2578125, y: -23.905579}
+        - {x: 18.257812, y: -15.905579}
+        - {x: 18.257812, y: 24.094421}
+        - {x: 15.2578125, y: 25.094421}
+    - name: SkeleSword_137
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 961
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.2994995, y: 25.094421}
+        - {x: -8.7005005, y: 25.094421}
+        - {x: -17.7005, y: 10.094421}
+        - {x: -17.7005, y: -10.905579}
+        - {x: -7.7005005, y: -23.905579}
+        - {x: 15.2994995, y: -23.905579}
+        - {x: 19.2995, y: -6.9055786}
+        - {x: 19.2995, y: 17.094421}
+        - {x: 17.2995, y: 24.094421}
+    - name: SkeleSword_138
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 961
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.128235, y: 25.094421}
+        - {x: -16.128235, y: 17.094421}
+        - {x: -16.128235, y: -11.905579}
+        - {x: -7.128235, y: -21.905579}
+        - {x: -2.1282349, y: -23.905579}
+        - {x: 17.871765, y: -23.905579}
+        - {x: 17.871765, y: 25.094421}
+    - name: SkeleSword_139
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 961
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.913422, y: 25.094421}
+        - {x: -4.0865784, y: 25.094421}
+        - {x: -17.086578, y: 13.094421}
+        - {x: -17.086578, y: -10.905579}
+        - {x: -6.0865784, y: -23.905579}
+        - {x: 15.913422, y: -23.905579}
+        - {x: 18.913422, y: -16.905579}
+        - {x: 18.913422, y: 20.094421}
+    - name: SkeleSword_140
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 961
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.0755005, y: 25.094421}
+        - {x: -13.0755005, y: 22.094421}
+        - {x: -18.0755, y: 16.094421}
+        - {x: -18.0755, y: -1.9055786}
+        - {x: -8.0755005, y: -23.905579}
+        - {x: 17.9245, y: -23.905579}
+        - {x: 19.9245, y: -15.905579}
+        - {x: 19.9245, y: 21.094421}
+        - {x: 16.9245, y: 25.094421}
+    - name: SkeleSword_141
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 961
+        width: 40
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.966156, y: 25.094421}
+        - {x: -16.033844, y: 25.094421}
+        - {x: -19.033844, y: 24.094421}
+        - {x: -19.033844, y: -23.905579}
+        - {x: 16.966156, y: -23.905579}
+        - {x: 20.966156, y: -12.905579}
+        - {x: 20.966156, y: 18.094421}
+        - {x: 16.966156, y: 24.094421}
+    - name: SkeleSword_142
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 961
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.022766, y: 25.094421}
+        - {x: -17.022766, y: 14.094421}
+        - {x: -17.022766, y: -3.9055786}
+        - {x: -9.022766, y: -21.905579}
+        - {x: -7.022766, y: -23.905579}
+        - {x: 18.977234, y: -23.905579}
+        - {x: 18.977234, y: 25.094421}
+    - name: SkeleSword_143
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 961
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.0495, y: 25.094421}
+        - {x: -10.9505005, y: 25.094421}
+        - {x: -16.9505, y: 21.094421}
+        - {x: -16.9505, y: -23.905579}
+        - {x: 17.0495, y: -23.905579}
+        - {x: 17.0495, y: 19.094421}
+    - name: SkeleSword_144
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 961
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_145
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 961
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.3671875, y: 25.094421}
+        - {x: -17.367188, y: 22.094421}
+        - {x: -17.367188, y: -23.905579}
+        - {x: 17.632812, y: -23.905579}
+        - {x: 17.632812, y: 25.094421}
+    - name: SkeleSword_146
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 897
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_147
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 898
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_148
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 898
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_149
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 897
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_150
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 897
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_151
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 897
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_152
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 897
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_153
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 897
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_154
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 897
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_155
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 897
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_156
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 897
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_157
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 897
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_158
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 897
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_159
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 833
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_160
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 833
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_161
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 833
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.40625, y: 25.011108}
+        - {x: -16.40625, y: 11.011108}
+        - {x: -16.40625, y: -15.988892}
+        - {x: -11.40625, y: -23.988892}
+        - {x: 17.59375, y: -23.988892}
+        - {x: 17.59375, y: 25.011108}
+    - name: SkeleSword_162
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 833
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.895172, y: 25.011108}
+        - {x: -16.895172, y: -20.988892}
+        - {x: -14.895172, y: -23.988892}
+        - {x: 15.104828, y: -23.988892}
+        - {x: 18.104828, y: -21.988892}
+        - {x: 18.104828, y: 6.0111084}
+        - {x: 11.104828, y: 25.011108}
+    - name: SkeleSword_163
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 833
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.207703, y: 13.011108}
+        - {x: 10.207703, y: 25.011108}
+        - {x: -11.792297, y: 25.011108}
+        - {x: -17.792297, y: 12.011108}
+        - {x: -17.792297, y: -10.988892}
+        - {x: -13.792297, y: -23.988892}
+        - {x: 3.2077026, y: -23.988892}
+        - {x: 7.2077026, y: -22.988892}
+        - {x: 9.207703, y: -20.988892}
+        - {x: 9.207703, y: -16.988892}
+        - {x: 19.207703, y: -0.9888916}
+    - name: SkeleSword_164
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 833
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.373047, y: 25.011108}
+        - {x: -16.373047, y: -23.988892}
+        - {x: 14.626953, y: -23.988892}
+        - {x: 17.626953, y: -11.988892}
+        - {x: 17.626953, y: 25.011108}
+    - name: SkeleSword_165
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 833
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.729828, y: 25.011108}
+        - {x: -17.270172, y: 25.011108}
+        - {x: -17.270172, y: -23.988892}
+        - {x: 4.729828, y: -23.988892}
+        - {x: 10.729828, y: -20.988892}
+        - {x: 18.729828, y: -7.9888916}
+        - {x: 18.729828, y: 18.011108}
+    - name: SkeleSword_166
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 833
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.136719, y: 25.011108}
+        - {x: -18.136719, y: -23.988892}
+        - {x: 10.863281, y: -23.988892}
+        - {x: 19.863281, y: -15.988892}
+        - {x: 19.863281, y: 23.011108}
+        - {x: 17.863281, y: 25.011108}
+    - name: SkeleSword_167
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 833
+        width: 40
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.033844, y: 25.011108}
+        - {x: -19.033844, y: 15.011108}
+        - {x: -19.033844, y: -13.988892}
+        - {x: -18.033844, y: -18.988892}
+        - {x: -13.033844, y: -23.988892}
+        - {x: 11.966156, y: -23.988892}
+        - {x: 20.966156, y: -13.988892}
+        - {x: 20.966156, y: 23.011108}
+        - {x: 17.966156, y: 25.011108}
+    - name: SkeleSword_168
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 833
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.583984, y: 25.011108}
+        - {x: -13.583984, y: 22.011108}
+        - {x: -17.583984, y: 11.011108}
+        - {x: -17.583984, y: -7.9888916}
+        - {x: -15.583984, y: -17.988892}
+        - {x: -12.583984, y: -23.988892}
+        - {x: 12.416016, y: -23.988892}
+        - {x: 19.416016, y: -11.988892}
+        - {x: 19.416016, y: 9.011108}
+        - {x: 7.4160156, y: 25.011108}
+    - name: SkeleSword_169
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 833
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.3964844, y: 25.011108}
+        - {x: -16.603516, y: 25.011108}
+        - {x: -16.603516, y: -23.988892}
+        - {x: 11.396484, y: -23.988892}
+        - {x: 18.396484, y: -13.988892}
+        - {x: 18.396484, y: 11.011108}
+        - {x: 17.396484, y: 12.011108}
+    - name: SkeleSword_170
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 833
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_171
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 833
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.520142, y: 25.011108}
+        - {x: -16.520142, y: -21.988892}
+        - {x: -15.520142, y: -23.988892}
+        - {x: 11.479858, y: -23.988892}
+        - {x: 18.479858, y: -13.988892}
+        - {x: 18.479858, y: 20.011108}
+        - {x: 8.479858, y: 25.011108}
+    - name: SkeleSword_172
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 769
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_173
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 769
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_174
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 769
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_175
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 770
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_176
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 770
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_177
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 768
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.311829, y: 19}
+        - {x: -17.311829, y: -17}
+        - {x: -15.311829, y: -18}
+        - {x: 18.688171, y: -18}
+        - {x: 18.688171, y: 19}
+    - name: SkeleSword_178
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 641
+        width: 33
+        height: 48
+      alignment: 9
+      pivot: {x: 0.47202393, y: 0.5315997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_179
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 640
+        width: 28
+        height: 48
+      alignment: 9
+      pivot: {x: 0.48115757, y: 0.5714404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_180
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 640
+        width: 40
+        height: 48
+      alignment: 9
+      pivot: {x: 0.61045533, y: 0.5714404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.674927, y: -17.407532}
+        - {x: -19.674927, y: -26.407532}
+        - {x: 15.325073, y: -26.407532}
+        - {x: 15.325073, y: 9.592468}
+        - {x: 13.325073, y: 20.592468}
+        - {x: -13.674927, y: 20.592468}
+        - {x: -23.674927, y: 0.59246826}
+    - name: SkeleSword_181
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 640
+        width: 29
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5820948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_182
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 640
+        width: 47
+        height: 49
+      alignment: 9
+      pivot: {x: 0.3498743, y: 0.5820948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.138489, y: 20.51709}
+        - {x: -16.138489, y: 17.51709}
+        - {x: -16.138489, y: -27.48291}
+        - {x: 21.861511, y: -27.48291}
+        - {x: 29.861511, y: 2.5170898}
+        - {x: 29.861511, y: 20.51709}
+    - name: SkeleSword_183
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 640
+        width: 64
+        height: 49
+      alignment: 9
+      pivot: {x: 0.257864, y: 0.58478653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.330933, y: 20.389221}
+        - {x: -16.330933, y: -26.610779}
+        - {x: -15.330933, y: -27.610779}
+        - {x: 20.669067, y: -27.610779}
+        - {x: 46.669067, y: -4.610779}
+        - {x: 46.669067, y: 20.389221}
+    - name: SkeleSword_184
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 449
+        width: 36
+        height: 49
+      alignment: 9
+      pivot: {x: 0.57143867, y: 0.5417206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.6962204, y: 22.279327}
+        - {x: -6.6962204, y: 21.279327}
+        - {x: -7.6962204, y: 6.2793274}
+        - {x: -19.69622, y: -11.720673}
+        - {x: -19.69622, y: -19.720673}
+        - {x: -16.69622, y: -21.720673}
+        - {x: -6.6962204, y: -25.720673}
+        - {x: 14.30378, y: -25.720673}
+        - {x: 16.30378, y: -24.720673}
+        - {x: 16.30378, y: 22.279327}
+    - name: SkeleSword_185
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 449
+        width: 27
+        height: 47
+      alignment: 9
+      pivot: {x: 0.38520756, y: 0.5224518}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_186
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 449
+        width: 26
+        height: 49
+      alignment: 9
+      pivot: {x: 0.3249958, y: 0.5201877}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_187
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 449
+        width: 37
+        height: 49
+      alignment: 9
+      pivot: {x: 0.46970183, y: 0.55921596}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.2719727, y: 21.448303}
+        - {x: -13.271973, y: 18.448303}
+        - {x: -17.271973, y: 11.448303}
+        - {x: -17.271973, y: -26.551697}
+        - {x: 19.728027, y: -26.551697}
+        - {x: 19.728027, y: 21.448303}
+    - name: SkeleSword_188
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 449
+        width: 55
+        height: 49
+      alignment: 9
+      pivot: {x: 0.64507616, y: 0.5619071}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.38739, y: 21.320465}
+        - {x: -34.38739, y: 8.320465}
+        - {x: -34.38739, y: -0.6795349}
+        - {x: -15.38739, y: -26.679535}
+        - {x: 20.61261, y: -26.679535}
+        - {x: 20.61261, y: 21.320465}
+    - name: SkeleSword_189
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 449
+        width: 58
+        height: 49
+      alignment: 9
+      pivot: {x: 0.662585, y: 0.52422535}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.423035, y: 23.110382}
+        - {x: -37.576965, y: 23.110382}
+        - {x: -37.576965, y: -12.889618}
+        - {x: -29.576965, y: -24.889618}
+        - {x: 17.423035, y: -24.889618}
+        - {x: 19.423035, y: -21.889618}
+        - {x: 19.423035, y: 7.110382}
+        - {x: 16.423035, y: 19.110382}
+    - name: SkeleSword_190
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 257
+        width: 34
+        height: 49
+      alignment: 9
+      pivot: {x: 0.45733014, y: 0.54172003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.958473, y: 22.154358}
+        - {x: -9.041527, y: 22.154358}
+        - {x: -15.041527, y: 10.154358}
+        - {x: -15.041527, y: -25.845642}
+        - {x: 18.958473, y: -25.845642}
+        - {x: 18.958473, y: 10.154358}
+        - {x: 14.958473, y: 17.154358}
+    - name: SkeleSword_191
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 257
+        width: 38
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6180034, y: 0.54172003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.425049, y: 22.154358}
+        - {x: -13.425049, y: 21.154358}
+        - {x: -22.425049, y: 4.154358}
+        - {x: -22.425049, y: -19.845642}
+        - {x: -13.425049, y: -25.845642}
+        - {x: 15.574951, y: -25.845642}
+        - {x: 15.574951, y: 22.154358}
+    - name: SkeleSword_192
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 257
+        width: 40
+        height: 47
+      alignment: 9
+      pivot: {x: 0.613752, y: 0.5000013}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.197235, y: 23.136017}
+        - {x: -13.802765, y: 23.136017}
+        - {x: -23.802765, y: 10.136017}
+        - {x: -23.802765, y: -5.863983}
+        - {x: -21.802765, y: -9.863983}
+        - {x: -13.802765, y: -22.863983}
+        - {x: 15.197235, y: -22.863983}
+        - {x: 15.197235, y: 18.136017}
+    - name: SkeleSword_193
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 257
+        width: 34
+        height: 48
+      alignment: 9
+      pivot: {x: 0.602794, y: 0.5082442}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.869141, y: 23.252472}
+        - {x: -19.86914, y: 16.252472}
+        - {x: -19.86914, y: -23.747528}
+        - {x: 13.130859, y: -23.747528}
+        - {x: 13.130859, y: 22.252472}
+        - {x: 11.130859, y: 23.252472}
+    - name: SkeleSword_194
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 251
+        width: 46
+        height: 55
+      alignment: 9
+      pivot: {x: 0.33657572, y: 0.57313955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.752197, y: -30.579895}
+        - {x: 31.247803, y: -30.579895}
+        - {x: 31.247803, y: -3.579895}
+        - {x: 20.247803, y: 21.420105}
+        - {x: 13.247803, y: 23.420105}
+        - {x: -13.752197, y: 23.420105}
+        - {x: -14.752197, y: 22.420105}
+    - name: SkeleSword_195
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 257
+        width: 64
+        height: 49
+      alignment: 9
+      pivot: {x: 0.25580406, y: 0.54172003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.233826, y: 22.154358}
+        - {x: -16.233826, y: 21.154358}
+        - {x: -16.233826, y: -25.845642}
+        - {x: 31.766174, y: -25.845642}
+        - {x: 46.766174, y: -17.845642}
+        - {x: 46.766174, y: -0.8456421}
+        - {x: 14.766174, y: 22.154358}
+    - name: SkeleSword_196
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 65
+        width: 36
+        height: 49
+      alignment: 9
+      pivot: {x: 0.43080458, y: 0.5399447}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.8444977, y: 22.11367}
+        - {x: -14.155502, y: 22.11367}
+        - {x: -15.155502, y: 21.11367}
+        - {x: -15.155502, y: -25.88633}
+        - {x: 17.844498, y: -25.88633}
+        - {x: 20.844498, y: -24.88633}
+        - {x: 20.844498, y: -5.8863297}
+        - {x: 9.844498, y: 21.11367}
+    - name: SkeleSword_197
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 65
+        width: 27
+        height: 47
+      alignment: 9
+      pivot: {x: 0.53295106, y: 0.5208224}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_198
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 65
+        width: 26
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6437155, y: 0.5417603}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSword_199
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 65
+        width: 37
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5216411, y: 0.55810124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.589661, y: 21.251228}
+        - {x: -13.410339, y: 21.251228}
+        - {x: -18.41034, y: 7.2512283}
+        - {x: -18.41034, y: -25.748772}
+        - {x: -17.41034, y: -26.748772}
+        - {x: 13.589661, y: -26.748772}
+        - {x: 18.58966, y: -20.748772}
+        - {x: 18.58966, y: 10.251228}
+        - {x: 16.58966, y: 19.251228}
+    - name: SkeleSword_200
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 65
+        width: 55
+        height: 49
+      alignment: 9
+      pivot: {x: 0.3495661, y: 0.55810124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.481018, y: 8.251228}
+        - {x: 8.481018, y: 21.251228}
+        - {x: -12.518982, y: 21.251228}
+        - {x: -18.518982, y: 8.251228}
+        - {x: -18.518982, y: -26.748772}
+        - {x: 11.481018, y: -26.748772}
+        - {x: 36.481018, y: -1.7487717}
+        - {x: 36.481018, y: 5.2512283}
+        - {x: 33.481018, y: 8.251228}
+    - name: SkeleSword_201
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 65
+        width: 58
+        height: 49
+      alignment: 9
+      pivot: {x: 0.3236, y: 0.5163414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.50354, y: 23.234848}
+        - {x: -13.49646, y: 23.234848}
+        - {x: -16.49646, y: 22.234848}
+        - {x: -18.49646, y: 11.234848}
+        - {x: -18.49646, y: -19.765152}
+        - {x: -15.49646, y: -24.765152}
+        - {x: 9.50354, y: -24.765152}
+        - {x: 38.50354, y: -2.765152}
+        - {x: 38.50354, y: 13.234848}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
