@@ -33,6 +33,7 @@ namespace Assets.GameClasses
         public const string ActionsJsonName = "Actions";
 
         public static bool CharacterLoadReady = false;
+        public static bool isMyTurn = false;
         public static bool isAnimating = false;
         public static List<CharacterGameObject> MatchCharacters = new List<CharacterGameObject>();
         public static List<AbilityPreReq> AbilityPreReqs { get; set; } 

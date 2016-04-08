@@ -1756,6 +1756,7 @@ namespace Assets.Scripts
             GlobalConstants.currentActions.AddAction(tempAction);
             GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
             action = Action.WaitForGameInfo;
+            GlobalConstants.isMyTurn = false;
             waitGameState = WaitGameState.WaitForOtherPlayer;
         }
 
@@ -1790,12 +1791,14 @@ namespace Assets.Scripts
             
             if (myCharacters.Select(character => character).Contains(turnQueue[0]))
             {
-                hidePanel = false;                
+                hidePanel = false;
+                GlobalConstants.isMyTurn = true;
                 playersTurnText.text = "Player " + GlobalConstants.myPlayerId + "s turn";
                 action = Action.IDLE;
             }
             else
             {
+                GlobalConstants.isMyTurn = false;
                 hidePanel = true;
                 if (GlobalConstants.myPlayerId == 1) {
                     playersTurnText.text = "Player " + 2 + "s turn";
