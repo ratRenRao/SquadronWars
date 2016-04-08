@@ -227,7 +227,7 @@ namespace Assets.Scripts
                                 //GlobalConstants.currentActions.AddAction(tempAction);
                                 GlobalConstants.currentActions = new BattleAction();
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
-                                
+                                Debug.Log("End Turn Called by Waiting Player");
                                 SelectNextCharacter();
                                 break;
                             }
@@ -244,6 +244,7 @@ namespace Assets.Scripts
                         //Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
                         if (GlobalConstants.currentActions.ActionOrder.Count == 0)
                         {
+                            Debug.Log("End Turn Called by Current Player");
                             //Debug.Log("Selecting next character");
                             SelectNextCharacter();
                         }
@@ -1751,6 +1752,7 @@ namespace Assets.Scripts
 
         public void EndTurn()
         {
+            Debug.Log("End Turn() Called");
             hidePanel = true;
             GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Endturn, new List<Tile>(), "endturn");
             GlobalConstants.currentActions.AddAction(tempAction);
