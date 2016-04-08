@@ -199,7 +199,7 @@ namespace Assets.Scripts
                                     foreach (Tile t in act.actionTiles)
                                     {
                                         Debug.Log("X: " + t.x + " Y: " + t.y);
-                                        
+                                        GlobalConstants.isAnimating = true;
                                         Tile tempTile = tileArray[t.x, t.y];
                                         GetTarget(tempTile);
                                         Debug.Log(targetCharacterGameObject.CharacterClassObject);
@@ -215,7 +215,7 @@ namespace Assets.Scripts
                                         effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
                                         gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref targetTile);
                                         gameAction.Execute();
-                                        currentCharacterGameObject.hasAttacked = true;
+                                        currentCharacterGameObject.hasAttacked = true;                                        
                                         break;
                                     }                                
                                 }
@@ -402,6 +402,7 @@ namespace Assets.Scripts
                                 clearHighlights(validMoves);
                                 //Cast(tempTile, selectedAbility);
                                 GameClasses.Action gameAction = null;
+                                GlobalConstants.isAnimating = true;
                                 var actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals(selectedAbility));
                                 if (actionType != null)
                                 {
@@ -1593,6 +1594,7 @@ namespace Assets.Scripts
         public void ResetData()
         {
             selectedAbility = null;
+            GlobalConstants.isAnimating = false;
             Debug.Log(action);
             if (action != Action.WaitForGameInfo)
             {

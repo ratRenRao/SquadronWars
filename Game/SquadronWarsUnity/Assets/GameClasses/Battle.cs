@@ -19,9 +19,9 @@ public class Battle : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update ()
-	{
-        if (!GlobalConstants.isAnimating && checkUpdate && (DateTime.Now - lastChecked).TotalSeconds > 2)
-        {
+	{        
+        if (!GlobalConstants.isAnimating && checkUpdate && (DateTime.Now - lastChecked).TotalSeconds > .5f)
+        {            
             checkUpdate = false;
             lastChecked = DateTime.Now;
             //Debug.Log("checkUpdate called");
