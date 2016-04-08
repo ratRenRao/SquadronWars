@@ -20,6 +20,13 @@ TagManager:
   - chasm
   - rock
   - pebbles
+  - ground
+  - stairs
+  - gravestone
+  - stone_block
+  - lava
+  - lava_crack
+  - spikes
   layers:
   - Default
   - TransparentFX
