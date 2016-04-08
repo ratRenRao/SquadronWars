@@ -896,7 +896,10 @@ namespace Assets.Scripts
 
         public void clearHighlights(List<Tile> tiles)
         {
-            action = Action.IDLE;
+            if (action != Action.WaitForGameInfo)
+            {
+                action = Action.IDLE;
+            }
             foreach (Tile tile in tiles)
             {
                 tile.highlight.SetActive(false);
