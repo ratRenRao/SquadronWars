@@ -168,9 +168,10 @@ namespace Assets.Scripts
                         {
                             //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                             if (act.actionType == GameClasses.Action.ActionType.Move && !currentCharacterGameObject.hasMoved)
-                            {
+                            {                                
                                 if (act.actionTiles.Count > 0)
                                 {
+                                    Debug.Log("Move Called");
                                     tile = tileArray[act.actionTiles[0].x, act.actionTiles[0].y];
                                     prevTile = tile;
                                     currentCharacterGameObject.X = tile.x;
@@ -194,7 +195,7 @@ namespace Assets.Scripts
                                 Debug.Log("Cast Ability P2 Called");
                                 if(act.actionTiles.Count > 0)
                                 {
-                                    Debug.Log("Cast Ability Tiles Count: " + act.actionTiles.Count);
+                                    Debug.Log("Cast Called");                                    
                                     foreach (Tile t in act.actionTiles)
                                     {
                                         Debug.Log("X: " + t.x + " Y: " + t.y);
@@ -212,7 +213,7 @@ namespace Assets.Scripts
                                         }
                                         Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
                                         effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
-                                        gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
+                                        gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref targetTile);
                                         gameAction.Execute();
                                         currentCharacterGameObject.hasAttacked = true;
                                         break;
