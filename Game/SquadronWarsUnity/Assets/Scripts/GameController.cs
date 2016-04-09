@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using Assets.GameClasses;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using Animator = UnityEngine.Animator;
+using System;
 
 namespace Assets.Scripts
 {
@@ -51,8 +53,8 @@ namespace Assets.Scripts
         public int player2SpawnYEnd;
         Vector3 hitDown;
         RaycastHit2D hit;
-        Animator anim;
-        Animator tarAnim;
+        UnityEngine.Animator anim;
+        UnityEngine.Animator tarAnim;
         Tile targetTile;
         Tile tile = null;
         Tile prevTile = null;
@@ -85,6 +87,7 @@ namespace Assets.Scripts
         List<Tile> validMoves = new List<Tile>();
         List<Tile> path = new List<Tile>();
         List<GameObject> turnQueue = new List<GameObject>();
+        public ActionAnimator ActionAnimator; 
 
         // Use this for initialization
         void Start()
@@ -97,6 +100,8 @@ namespace Assets.Scripts
             //hidePanel = false;
             //GlobalConstants.myPlayerId = 1;
             //Debug.Log(GlobalConstants._dbConnection);
+            GlobalConstants.ActionAnimator = ActionAnimator;
+            GlobalConstants.GameController = this;
             battlesong.playOnAwake = true;
             placeCharacterPhase = true;
             characters = GlobalConstants.MatchCharacters;
@@ -118,6 +123,7 @@ namespace Assets.Scripts
                 //Append Characters to player # character on global constants
                 if (GlobalConstants.Updated)
                 {
+                    Debug.Log("Game was updated");
                     GlobalConstants.Updated = false;
                     if (waitGameState == WaitGameState.Place)
                     {                        
@@ -146,13 +152,13 @@ namespace Assets.Scripts
                     }
                     if (waitGameState == WaitGameState.WaitForQueue)
                     {
-                        Debug.Log("Waiting for queue");
-                        Debug.Log(GlobalConstants.currentActions.CharacterQueue.Count);
-                        Debug.Log(GlobalConstants.currentActions.AffectedTiles);
-                        Debug.Log(GlobalConstants.currentActions.ActionOrder);
+                        //Debug.Log("Waiting for queue");
+                        //Debug.Log(GlobalConstants.currentActions.CharacterQueue.Count);
+                        //Debug.Log(GlobalConstants.currentActions.AffectedTiles);
+                        //Debug.Log(GlobalConstants.currentActions.ActionOrder);
                         if (GlobalConstants.currentActions.CharacterQueue.Count > 0)
                         {
-                            Debug.Log("Queue recieved");
+                            //Debug.Log("Queue recieved");
                             CreateTurnQueueP2();
                             waitGameState = WaitGameState.Wait;
                         }
@@ -161,11 +167,12 @@ namespace Assets.Scripts
                     {
                         foreach (GameClasses.Action act in GlobalConstants.currentActions.ActionOrder)
                         {
-                            Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
+                            //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                             if (act.actionType == GameClasses.Action.ActionType.Move && !currentCharacterGameObject.hasMoved)
-                            {
+                            {                                
                                 if (act.actionTiles.Count > 0)
                                 {
+                                    Debug.Log("Move Called");
                                     tile = tileArray[act.actionTiles[0].x, act.actionTiles[0].y];
                                     prevTile = tile;
                                     currentCharacterGameObject.X = tile.x;
@@ -178,17 +185,50 @@ namespace Assets.Scripts
                                     prevTile.character = null;
                                     targetTile = path[0];
                                     reachedPosition = false;
+                                    GlobalConstants.isAnimating = true;
                                     currentCharacterGameObject.hasMoved = true;
+                                    break;
                                 }
                             }
-                            Debug.Log(act.actionType);
+
+                            if(act.actionType == GameClasses.Action.ActionType.CastAbility && !currentCharacterGameObject.hasAttacked)
+                            {
+                                Debug.Log("Cast Ability P2 Called");
+                                if(act.actionTiles.Count > 0)
+                                {
+                                    Debug.Log("Cast Called");                                    
+                                    foreach (Tile t in act.actionTiles)
+                                    {
+                                        Debug.Log("X: " + t.x + " Y: " + t.y);
+                                        GlobalConstants.isAnimating = true;
+                                        Tile tempTile = tileArray[t.x, t.y];
+                                        GetTarget(tempTile);
+                                        Debug.Log(targetCharacterGameObject.CharacterClassObject);
+                                        clearHighlights(validMoves);
+                                        //Cast(tempTile, selectedAbility);
+                                        GameClasses.Action gameAction = null;
+                                        var actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals(act.performedAction));
+                                        if (actionType != null)
+                                        {
+                                            gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
+                                        }
+                                        Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
+                                        effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
+                                        gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref targetTile);
+                                        gameAction.Execute();
+                                        currentCharacterGameObject.hasAttacked = true;                                        
+                                        break;
+                                    }                                
+                                }
+                            }
+                            //Debug.Log(act.actionType);
                             if (act.actionType == GameClasses.Action.ActionType.Endturn)
                             {
                                 //GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
                                 //GlobalConstants.currentActions.AddAction(tempAction);
                                 GlobalConstants.currentActions = new BattleAction();
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
-                                
+                                Debug.Log("End Turn Called by Waiting Player");
                                 SelectNextCharacter();
                                 break;
                             }
@@ -196,15 +236,17 @@ namespace Assets.Scripts
                         }
                         
                     }
-                    Debug.Log("waiting for other player");
-                    Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
+
+                    //Debug.Log("waiting for other player");
+                    //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                     if (waitGameState == WaitGameState.WaitForOtherPlayer)
                     {
-                        Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
+                        //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                         //Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
                         if (GlobalConstants.currentActions.ActionOrder.Count == 0)
                         {
-                            Debug.Log("Selecting next character");
+                            Debug.Log("End Turn Called by Current Player");
+                            //Debug.Log("Selecting next character");
                             SelectNextCharacter();
                         }
                     }
@@ -213,13 +255,8 @@ namespace Assets.Scripts
                 {
                     StartCoroutine(WaitForGameInformation());
                 }
-            }
+            }            
 
-            if (!arraySet)
-            {
-                
-                
-            }
             if (hidePanel)
             {
                 actionPanel.SetActive(false);
@@ -228,11 +265,13 @@ namespace Assets.Scripts
                     characterStatsPanel.SetActive(false);
                 }
             }
+
             if (!hidePanel)
             {
                 actionPanel.SetActive(true);
                 characterStatsPanel.SetActive(true);
             }
+
             if (reachedPosition == false && count < path.Count)
             {
                 isWalking = true;
@@ -281,6 +320,7 @@ namespace Assets.Scripts
                         isWalking = false;
                         anim.SetBool("isWalking", isWalking);
                         reachedPosition = true;
+                        GlobalConstants.isAnimating = false;
                         path.Clear();
                         count = 0;                        
                         currentCharacterGameObject.GetComponent<SpriteRenderer>().sortingOrder = 6 + (targetTile.y * 2);
@@ -290,7 +330,7 @@ namespace Assets.Scripts
                         PositionPanels();
                         if (action != Action.WaitForGameInfo)
                         {
-                            Debug.Log("Show Panels called");
+                            //Debug.Log("Show Panels called");
                             action = Action.IDLE;
                             hidePanel = false;
                         }
@@ -362,7 +402,20 @@ namespace Assets.Scripts
                                 hidePanel = true;
                                 GetTarget(tempTile);
                                 clearHighlights(validMoves);
-                                Cast(tempTile, selectedAbility);
+                                //Cast(tempTile, selectedAbility);
+                                GameClasses.Action gameAction = null;
+                                GlobalConstants.isAnimating = true;
+                                var actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals(selectedAbility));
+                                if (actionType != null)
+                                {
+                                    gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
+                                }
+                                Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
+                                effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
+                                gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
+                                gameAction.Execute();
+                                GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.CastAbility, new List<Tile>() { tempTile }, selectedAbility));
+                                GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 currentCharacterGameObject.hasAttacked = true;
                             }
                         }
@@ -391,11 +444,11 @@ namespace Assets.Scripts
                                 else
                                 {
                                     GlobalConstants.player2Characters = characterList;
-                                    Debug.Log("I was player 2");
+                                    //Debug.Log("I was player 2");
                                 }                                
                                 clearHighlights(validMoves);
                                 action = Action.WaitForGameInfo;
-                                Debug.Log("all my characters placed");
+                                //Debug.Log("all my characters placed");
                                 
                                 var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.PlaceCharacterUrl, new BattlePostObject());
                                 /*if (GlobalConstants.myPlayerId == 2)
@@ -428,9 +481,9 @@ namespace Assets.Scripts
                         action = Action.IDLE;
                     }
                 }
-                if (Input.GetKeyDown("escape") && action != Action.IDLE)
+                if (Input.GetKeyDown("escape") && action != Action.IDLE && action != Action.WaitForGameInfo)
                 {
-                    Debug.Log("Escape key called");
+                    //Debug.Log("Escape key called");
                     hidePanel = false;
                     clearHighlights(validMoves);
                     action = Action.IDLE;
@@ -474,6 +527,7 @@ namespace Assets.Scripts
                     prevTile.character = null;
                     targetTile = path[0];
                     reachedPosition = false;
+                    GlobalConstants.isAnimating = true;
                     clearHighlights(validMoves);
                     currentCharacterGameObject.hasMoved = true;
                     GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Move,path,"move");
@@ -845,7 +899,10 @@ namespace Assets.Scripts
 
         public void clearHighlights(List<Tile> tiles)
         {
-            action = Action.IDLE;
+            if (action != Action.WaitForGameInfo)
+            {
+                action = Action.IDLE;
+            }
             foreach (Tile tile in tiles)
             {
                 tile.highlight.SetActive(false);
@@ -1231,13 +1288,29 @@ namespace Assets.Scripts
         public void GetTarget(Tile tile) {
             if (tile.isOccupied)
             {
-                tarAnim = tile.characterObject.GetComponent<Animator>();
+                tarAnim = tile.characterObject.GetComponent<UnityEngine.Animator>();
                 targetCharacterGameObject = tile.character;
                 targetCharacterGameObject = tile.character;
             }
             //targetCharacterGameObject = tile.GetComponent<CharacterGameObject>();
             //targetCharacterGameObject = targetCharacterGameObject.transform.parent.gameObject;
 
+        }
+
+        public CharacterGameObject GetCharacterGameObject(Tile tile)
+        {
+            if (tile.isOccupied)
+                return tile.character;
+
+            return null;
+        }
+
+        public Animator GetAnimator(Tile tile)
+        {
+            if (tile.isOccupied)
+                return tile.characterObject.GetComponent<UnityEngine.Animator>();
+
+            return null;
         }
 
         public void Cast(Tile targetTile, string ability)
@@ -1334,7 +1407,7 @@ namespace Assets.Scripts
 
         public void Injured()
         {
-            tarAnim = targetCharacterGameObject.GetComponent<Animator>();
+            tarAnim = targetCharacterGameObject.GetComponent<UnityEngine.Animator>();
             tarAnim.SetBool("isAttacked", true);
             StartCoroutine("InjuredAnimation");
         }
@@ -1381,7 +1454,7 @@ namespace Assets.Scripts
             if (ability != null)
             {
                 GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
-                Debug.Log(temp);
+                //Debug.Log(temp);
                 GameObject spell = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
                 spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (tempTile.y * 2);
                 spell.transform.parent = tempTile.transform;
@@ -1407,7 +1480,7 @@ namespace Assets.Scripts
                 //myCharacters.Remove(targetCharacterGameObject.gameObject);
                 tarAnim.SetBool("isDead", true);
                 yield return new WaitForSeconds(.8f);
-                Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
+                //Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
             }            
             selectedAbility = null;
             hidePanel = false;
@@ -1420,14 +1493,18 @@ namespace Assets.Scripts
         }
         IEnumerator CastAnimation(Tile tempTile, string ability)
         {
+            List<Tile> tempTileList = new List<Tile>();
+            tempTileList.Add(tempTile);
+            
             yield return new WaitForSeconds(.5f);
+            /*yield return new WaitForSeconds(.5f);
             
             anim.SetBool("isCasting", false);
             float wait = 0;
             int damage = 0;
             if (ability != null)
             {
-                Debug.Log(ability);
+                //Debug.Log(ability);
                 GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
                 GameObject spell = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
                 spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (tempTile.y * 2);                
@@ -1456,7 +1533,7 @@ namespace Assets.Scripts
                     //myCharacters.Remove(targetCharacterGameObject.gameObject);
                     tarAnim.SetBool("isDead", true);
                     yield return new WaitForSeconds(.8f);
-                    Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
+                    //Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
                     if (targetCharacterGameObject.CharacterClassObject.Name.Equals("Kelly"))
                     {
                         DisplayVictory.SetActive(true);
@@ -1464,7 +1541,7 @@ namespace Assets.Scripts
                         yield return new WaitForSeconds(500f);
                     }
                 }
-            }
+            }*/
             selectedAbility = null;
             hidePanel = false;
         }
@@ -1514,7 +1591,19 @@ namespace Assets.Scripts
             yield return new WaitForSeconds(4f);
             //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.CheckGameStatusUrl, new BattlePostObject());
             
-        }       
+        }
+
+        public void ResetData()
+        {
+            selectedAbility = null;
+            GlobalConstants.isAnimating = false;
+            Debug.Log(action);
+            if (action != Action.WaitForGameInfo)
+            {
+                hidePanel = false;
+            }
+        }
+
 
         public void highlightSpawn()
         {
@@ -1589,7 +1678,7 @@ namespace Assets.Scripts
             tempTile.characterObject = tempchar;
 
             //tempGC = gameChar;
-            Animator tempAnim = tempchar.GetComponent<Animator>();
+            UnityEngine.Animator tempAnim = tempchar.GetComponent<UnityEngine.Animator>();
             tempAnim.SetFloat("x", 0);
             tempAnim.SetFloat("y", -1);
             gameCharacter.CharacterClassObject.X = tempTile.x;
@@ -1627,7 +1716,7 @@ namespace Assets.Scripts
                 tempTile.characterObject = tempchar;
 
                 //tempGC = gameChar;
-                Animator tempAnim = tempchar.GetComponent<Animator>();
+                UnityEngine.Animator tempAnim = tempchar.GetComponent<UnityEngine.Animator>();
                 tempAnim.SetFloat("x", 0);
                 tempAnim.SetFloat("y", -1);
                 gameCharacter.CharacterClassObject.X = tempTile.x;
@@ -1649,7 +1738,7 @@ namespace Assets.Scripts
 
         public void CreateTurnQueueP2()
         {
-            Debug.Log("Create TurnQueue P2");
+            //Debug.Log("Create TurnQueue P2");
             List<GameObject> tempList = new List<GameObject>();
             tempList.AddRange(myCharacters);
             tempList.AddRange(enemyCharacters);
@@ -1664,11 +1753,13 @@ namespace Assets.Scripts
 
         public void EndTurn()
         {
+            Debug.Log("End Turn() Called");
             hidePanel = true;
             GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Endturn, new List<Tile>(), "endturn");
             GlobalConstants.currentActions.AddAction(tempAction);
             GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
             action = Action.WaitForGameInfo;
+            GlobalConstants.isMyTurn = false;
             waitGameState = WaitGameState.WaitForOtherPlayer;
         }
 
@@ -1698,17 +1789,19 @@ namespace Assets.Scripts
                         getNextAvailableCharacter = true;
                     }
                 }
-                Debug.Log(turnQueue[0].GetComponent<CharacterGameObject>().CharacterClassObject.Name);
+                //Debug.Log(turnQueue[0].GetComponent<CharacterGameObject>().CharacterClassObject.Name);
             }
             
             if (myCharacters.Select(character => character).Contains(turnQueue[0]))
             {
-                hidePanel = false;                
+                hidePanel = false;
+                GlobalConstants.isMyTurn = true;
                 playersTurnText.text = "Player " + GlobalConstants.myPlayerId + "s turn";
                 action = Action.IDLE;
             }
             else
             {
+                GlobalConstants.isMyTurn = false;
                 hidePanel = true;
                 if (GlobalConstants.myPlayerId == 1) {
                     playersTurnText.text = "Player " + 2 + "s turn";
@@ -1724,9 +1817,10 @@ namespace Assets.Scripts
                 currentGameCharacter = turnQueue[0];
                 currentCharacterGameObject = currentGameCharacter.GetComponent<CharacterGameObject>();
                 targetTile = tileArray[currentCharacterGameObject.X, currentCharacterGameObject.Y];
+                Debug.Log(currentCharacterGameObject.X + " " + currentCharacterGameObject.Y);
                 prevTile = targetTile;
                 tile = prevTile;
-                anim = currentCharacterGameObject.GetComponent<Animator>();
+                anim = currentCharacterGameObject.GetComponent<UnityEngine.Animator>();
                 currentCharacterGameObject.hasAttacked = false;
                 currentCharacterGameObject.hasMoved = false;
                 //Debug.Log(tile);
@@ -1748,24 +1842,49 @@ namespace Assets.Scripts
             actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 15, currentCharacterGameObject.transform.position.y - 7, 0);
             if (tile.x < 3)
             {
+                Debug.Log("tile x: " + tile.x + " is < 3");
                 characterStatsPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 10, currentCharacterGameObject.transform.position.y + 8, 0);
                 if(tile.y < 3)
                 {
+                    Debug.Log("tile y: " + tile.y + " is < 3");
                     characterStatsPanel.transform.position = new Vector3(characterStatsPanel.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
                 }
-                
+                if (tile.y > 15)
+                {
+                    Debug.Log("tile y: " + tile.y + " is > 15");
+                    actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 30, currentCharacterGameObject.transform.position.y + 14, 0);
+                }
+
             }
             else if (tile.y < 3)
             {
+                Debug.Log("tile y: " + tile.y + " is < 3");
                 characterStatsPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
                 if (tile.x > 6)
                 {
+                    Debug.Log("tile x: " + tile.x + " is > 6");
                     actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x - 10, actionPanel.transform.position.y, 0);
                 }
             }
             else if (tile.x > 6)
             {
+                Debug.Log("tile x: " + tile.x + " is > 6");
                 actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x - 10, actionPanel.transform.position.y, 0);
+                if (tile.y < 3)
+                {
+                    Debug.Log("tile y: " + tile.y + " is < 3");
+                    characterStatsPanel.transform.position = new Vector3(characterStatsPanel.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
+                }
+                if (tile.y > 15)
+                {
+                    Debug.Log("tile y: " + tile.y + " is > 15");
+                    actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 15, currentCharacterGameObject.transform.position.y + 14, 0);
+                }
+            }
+            else if (tile.y > 15)
+            {
+                Debug.Log("tile y: " + tile.y + " is > 15");
+                actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 15, currentCharacterGameObject.transform.position.y + 14, 0);
             }
         }
 

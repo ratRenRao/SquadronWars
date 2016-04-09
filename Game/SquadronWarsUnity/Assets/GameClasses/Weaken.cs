@@ -1,27 +1,37 @@
+using System.Collections.Generic;
 using Assets.GameClasses;
+using Assets.Scripts;
 using UnityEngine;
 
 namespace Assets.GameClasses
 {
     class Weaken : Ability
     {
-        private int _decreasePercent;
-        private int _hpRemoved;
+        private Stats _initialStats;
 
-        public Weaken(Stats caster, Stats target, bool hasInitialEffect, int duration)
+        public override void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
-            Duration = duration;
+            base.Initialize(ref tileDictionary, ref executioner, ref executionerTile);
+            ImmediateBaseDamage = 0;
+            AbilityLevel = AbilityLevel <= 0 ? 1 : AbilityLevel;
         }
 
         public override void ImmediateEffect(Stats stats)
         {
-           // _hpRemoved = Target.HitPoints * (_decreasePercent / 100);
-           // Target.HitPoints -= _hpRemoved;
+            _initialStats = stats;
+            Damage = (int)CalculateWeaken();
+            stats.Defense -= Damage;
+            AnimationManager.Cast("weaken");
         }
 
         public override void RemoveEffect(ref Stats stats)
         {
-            //Target.HitPoints = ValidateStat(Target.HitPoints + _hpRemoved, 0, Target.HitPoints);
+            stats.Defense = _initialStats.Defense;
+        }
+
+        private int CalculateWeaken()
+        {
+            return 5 + (int) (Executioner.CharacterClassObject.CurrentStats.MagicAttack*0.1);
         }
 
     }

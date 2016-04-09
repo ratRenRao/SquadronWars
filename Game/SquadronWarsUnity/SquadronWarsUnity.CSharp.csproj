@@ -65,13 +65,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Data\DBConnection.cs" />
+    <Compile Include="Assets\Data\DbConnection.cs" />
     <Compile Include="Assets\Data\GameInfo.cs" />
     <Compile Include="Assets\Data\MatchData.cs" />
     <Compile Include="Assets\Data\StartupData.cs" />
     <Compile Include="Assets\Data\Utilities.cs" />
     <Compile Include="Assets\GameClasses\Ability.cs" />
     <Compile Include="Assets\GameClasses\Action.cs" />
+    <Compile Include="Assets\GameClasses\AnimationManager.cs" />
+    <Compile Include="Assets\GameClasses\Attack.cs" />
     <Compile Include="Assets\GameClasses\Battle.cs" />
     <Compile Include="Assets\GameClasses\BattleAction.cs" />
     <Compile Include="Assets\GameClasses\BattlePostObject.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Assets\GameClasses\Fire.cs" />
     <Compile Include="Assets\GameClasses\GlobalConstants.cs" />
     <Compile Include="Assets\GameClasses\Heal.cs" />
+    <Compile Include="Assets\GameClasses\IAnimateable.cs" />
     <Compile Include="Assets\GameClasses\IEffectable.cs" />
     <Compile Include="Assets\GameClasses\IJsonable.cs" />
     <Compile Include="Assets\GameClasses\IWearable.cs" />
@@ -101,6 +104,7 @@
     <Compile Include="Assets\ProLoading\Script\Internal\PlaceEnum.cs" />
     <Compile Include="Assets\ProLoading\Script\bl_Loading.cs" />
     <Compile Include="Assets\Scripts\AbilityButton.cs" />
+    <Compile Include="Assets\Scripts\ActionAnimator.cs" />
     <Compile Include="Assets\Scripts\AutoDestroy.cs" />
     <Compile Include="Assets\Scripts\BattleSummaryPage.cs" />
     <Compile Include="Assets\Scripts\CanvasManager.cs" />

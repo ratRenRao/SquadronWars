@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Assets.Data;
 using Assets.GameClasses;
+using Assets.Scripts;
 using Action = Assets.GameClasses.Action;
 
 namespace Assets
@@ -38,24 +39,36 @@ namespace Assets
 
         public void CheckEffectExecution()
         {
-            var action = new Action();
-            action.performedAction = "Fire";
-            var executionerStats = new Stats()
+            var performedAction = "Fire";
+
+            var actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals(performedAction));
+
+            if (actionType != null)
             {
-                MagicAttack = 10
-            };
-            var targetStats = new Stats()
-            {
-                MagicDefense = 6,
-                HitPoints = 100
-            };
-            var statsDictionary = new List<Character>() {new Character() { CurrentStats = targetStats, CharacterId = 1} };
+                var action = (IEffectable) Activator.CreateInstance(actionType);
+                var executioner = new Character()
+                {
+                    CharacterId = 1,
+                    CurrentStats = new Stats()
+                };
+                executioner.CurrentStats.MagicAttack = 10;
+                Tile executionerTile = null; 
+
+                var target = new Character()
+                {
+                    CharacterId = 2,
+                    CurrentStats = new Stats()
+                };
+                target.CurrentStats.MagicDefense = 6;
+                target.CurrentStats.HitPoints = 100;
+                //var targetTile = new Tile();
+                var dictionary = new Dictionary<Character, Tile>() { {target, null}};
 
 //            GlobalConstants.EffectMasterList.Add(new Fireball());           
-            
-            action.SetEffectFromString();
-            action.Effect.Initialize(ref statsDictionary, ref executionerStats);
-            action.Effect.Execute();
+
+               // action.Initialize(ref dictionary, ref executioner, ref executionerTile);
+                action.Execute();
+            }
         }
     }
 }

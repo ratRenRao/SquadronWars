@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.NetworkInformation;
 using System.Security.Cryptography.X509Certificates;
 using Assets.Data;
 using Assets.Scripts;
@@ -34,6 +33,8 @@ namespace Assets.GameClasses
         public const string ActionsJsonName = "Actions";
 
         public static bool CharacterLoadReady = false;
+        public static bool isMyTurn = false;
+        public static bool isAnimating = false;
         public static List<CharacterGameObject> MatchCharacters = new List<CharacterGameObject>();
         public static List<AbilityPreReq> AbilityPreReqs { get; set; } 
         public static List<Item> ItemsMasterList { get; set; }
@@ -43,10 +44,9 @@ namespace Assets.GameClasses
         
         public static readonly List<Type> EffectTypes = (from domainAssembly in AppDomain.CurrentDomain.GetAssemblies()
                                                 from assemblyType in domainAssembly.GetTypes()
-                                                where typeof(Effect).IsAssignableFrom(assemblyType)
+                                                where typeof(Action).IsAssignableFrom(assemblyType)
                                                 select assemblyType).ToList();
 
-        public static List<Effect> EffectMasterList = new List<Effect>(); 
         public static List<Effect> ActiveEffects = new List<Effect>(); 
         public static Utilities Utilities = new Utilities();
 
@@ -56,6 +56,7 @@ namespace Assets.GameClasses
 
         public static DbConnection _dbConnection = new GameObject().GetComponent<DbConnection>();
         public static GameInfo GameInfo;
+        public static GameController GameController;
 
         //Battle related constants for managing a game
         public static int GameId = 0;
@@ -66,6 +67,7 @@ namespace Assets.GameClasses
         public static int opponentId = 0;
         public static bool Updated = true;
         public static Dictionary<int, TimeListener> TimeListeners = new Dictionary<int, TimeListener>(); 
+        public static ActionAnimator ActionAnimator { get; set; }
 
         //Game data for calculating payout
         public static int DamageAndHealingDone = 0;

@@ -25,12 +25,12 @@ namespace Assets.Data
 
         public T BuildObjectFromJsonData<T>(string data) where T : IJsonable
         {
-            Debug.Log("Data before removing slashes" + data);
+            //Debug.Log("Data before removing slashes" + data);
             data = RemoveSlashes(data);
-            Debug.Log("Data after removing slashes" + data);
+            //Debug.Log("Data after removing slashes" + data);
             var deserializedJson = DeserializeData(data);
             _jsonObject = deserializedJson;
-            Debug.Log(deserializedJson.ToString());
+            //Debug.Log(deserializedJson.ToString());
             var obj = Activator.CreateInstance<T>();
             obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(obj)), typeof(T));
 
@@ -555,7 +555,7 @@ namespace Assets.Data
             {
                 //if (gameInfo.BattleAction.ActionOrder.Count > 0 && GlobalConstants.currentActions.ActionOrder.Count <= 0)
                 //{
-                    Debug.Log("ACTION ORDER BEING POPULATED: " + gameInfo.BattleAction.ActionOrder.Count);
+                    //Debug.Log("ACTION ORDER BEING POPULATED: " + gameInfo.BattleAction.ActionOrder.Count);
                 GlobalConstants.currentActions.ActionOrder = gameInfo.BattleAction.ActionOrder.ToList();
                 //}
 
