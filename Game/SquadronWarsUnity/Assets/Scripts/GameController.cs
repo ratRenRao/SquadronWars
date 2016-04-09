@@ -1587,10 +1587,10 @@ namespace Assets.Scripts
         }
         IEnumerator WaitForPlayer1()
         {            
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(2f);
             GlobalConstants.currentActions = new BattleAction();
             GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(2f);
             Debug.Log("End Turn Called by Waiting Player");
             SelectNextCharacter();
             //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.CheckGameStatusUrl, new BattlePostObject());
