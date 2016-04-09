@@ -24,7 +24,7 @@ namespace Assets.GameClasses
         public int ItemId { get; set; }
         public int Consumeable { get; set; }
 
-        public string Name
+        public new string Name
         {
             get { return base.Name; }
             set { base.Name = value; }

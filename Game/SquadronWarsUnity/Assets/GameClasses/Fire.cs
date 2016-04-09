@@ -37,7 +37,7 @@ namespace Assets.GameClasses
 
         private double CalculateLingeringDamage()
         {
-            return Executioner.CharacterClassObject.CurrentStats.MagicAttack*0.5*AbilityLevel*0.1*ImmediateBaseDamage;
+            return Executioner.CharacterClassObject.CurrentStats.MagicAttack*0.5 + (AbilityLevel*0.1) + ImmediateBaseDamage;
         }
 
         private int CalculateDuration()
