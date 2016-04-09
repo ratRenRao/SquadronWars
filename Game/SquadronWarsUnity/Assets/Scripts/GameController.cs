@@ -1593,7 +1593,7 @@ namespace Assets.Scripts
         }
         IEnumerator WaitForPlayer1()
         {            
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(1.5f);
             GlobalConstants.currentActions = new BattleAction();
             GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
             yield return new WaitForSeconds(.5f);
