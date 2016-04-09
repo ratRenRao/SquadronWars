@@ -175,8 +175,8 @@ namespace Assets.Scripts
                                     Debug.Log("Move Called");
                                     tile = tileArray[act.actionTiles[0].x, act.actionTiles[0].y];
                                     prevTile = tile;
-                                    currentCharacterGameObject.X = tile.x;
-                                    currentCharacterGameObject.Y = tile.y;
+                                    turnQueue[0].GetComponent<CharacterGameObject>().X = targetTile.x;
+                                    turnQueue[0].GetComponent<CharacterGameObject>().Y = targetTile.y;
                                     for (int j = 0; j < act.actionTiles.Count; j++)
                                     {
                                         path.Add(tileArray[act.actionTiles[j].x, act.actionTiles[j].y]);
