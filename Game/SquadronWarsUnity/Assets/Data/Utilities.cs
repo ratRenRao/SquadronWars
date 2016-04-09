@@ -523,6 +523,7 @@ namespace Assets.Data
 
         public void SetGlobalDataFromGameInfo(GameInfo gameInfo)
         {
+            Debug.Log("SetGlobalDataFromGameInfo()");
             if (gameInfo.character1Info != null)
             {
                 //Debug.Log("Character 1 Game Info: " + gameInfo.character1Info.Count());

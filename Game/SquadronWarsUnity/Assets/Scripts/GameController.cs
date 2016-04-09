@@ -251,6 +251,7 @@ namespace Assets.Scripts
                     if (GlobalConstants.currentActions.ActionOrder.Count == 0)
                     {
                         Debug.Log("End Turn Called by Current Player");
+                        waitGameState = WaitGameState.Wait;
                         //Debug.Log("Selecting next character");
                         SelectNextCharacter();
                     }
