@@ -37,6 +37,11 @@ namespace Assets.GameClasses
             _targetAnimator = GlobalConstants.GameController.GetAnimator(targetTile);
         }
 
+        public void SetDamage(int damage)
+        {
+            _damage = damage;
+        }
+
         public void Cast(string ability)
         {
             Debug.Log("Cast Method: " + ability);
