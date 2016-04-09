@@ -141,7 +141,8 @@ namespace Assets.GameClasses
             foreach (var character in TileDictionary)
             {
                 AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value, actionType, Damage);
-                ImmediateEffect(character.Key.CharacterClassObject.CurrentStats);                
+                ImmediateEffect(character.Key.CharacterClassObject.CurrentStats);
+
                 if (Duration > 0)
                 {
                     TimeListener = new TimeListener(Duration, character.Key.CharacterClassObject.CurrentStats)

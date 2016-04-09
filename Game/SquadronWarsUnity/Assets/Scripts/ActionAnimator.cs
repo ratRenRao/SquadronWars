@@ -68,7 +68,7 @@ namespace Assets.Scripts
             GameObject damageText = (GameObject)Resources.Load(("Prefabs/DamageText"), typeof(GameObject));
             GameObject dmgObject = GameObject.Instantiate(damageText, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y + 3.2f), Quaternion.identity) as GameObject;
             dmgObject.transform.parent = particleCanvas.transform;
-            damage = (damage <= 0) ? 1 : damage;
+            //damage = (damage <= 0) ? 1 : damage;
             dmgObject.GetComponent<Text>().text = damage.ToString();
             //target.CharacterClassObject.CurrentStats.CurHP -= damage;
             yield return new WaitForSeconds(.4f);
@@ -112,7 +112,7 @@ namespace Assets.Scripts
                 GameObject damageText = (GameObject)Resources.Load(("Prefabs/DamageText"), typeof(GameObject));
                 GameObject dmgObject = GameObject.Instantiate(damageText, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y + 3.2f), Quaternion.identity) as GameObject;
                 dmgObject.transform.parent = particleCanvas.transform;
-                damage = (damage <= 0) ? 1 : damage;
+                //damage = (damage <= 0) ? 1 : damage;
                 dmgObject.GetComponent<Text>().text = damage.ToString();
                 //target.CharacterClassObject.CurrentStats.CurHP -= damage;
                 yield return new WaitForSeconds(wait);

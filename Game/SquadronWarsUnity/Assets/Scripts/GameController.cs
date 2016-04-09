@@ -414,6 +414,7 @@ namespace Assets.Scripts
                                 {
                                     gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                 }
+                                targetCharacterGameObject.GetComponent<CharacterGameObject>();
                                 Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
                                 effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
                                 gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
@@ -1294,8 +1295,7 @@ namespace Assets.Scripts
             if (tile.isOccupied)
             {
                 tarAnim = tile.characterObject.GetComponent<UnityEngine.Animator>();
-                targetCharacterGameObject = tile.character;
-                targetCharacterGameObject = tile.character;
+                targetCharacterGameObject = tile.characterObject.GetComponent<CharacterGameObject>();
             }
             //targetCharacterGameObject = tile.GetComponent<CharacterGameObject>();
             //targetCharacterGameObject = targetCharacterGameObject.transform.parent.gameObject;
@@ -1460,7 +1460,7 @@ namespace Assets.Scripts
             {
                 GameObject temp = (GameObject)Resources.Load((ability), typeof(GameObject));
                 //Debug.Log(temp);
-                GameObject spell = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
+                GameObject spell = GameObject.Instantiate(temp.gameObject, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
                 spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (tempTile.y * 2);
                 spell.transform.parent = tempTile.transform;
                 spell.transform.localScale = new Vector3(1, 1, 0.0f);
@@ -1472,7 +1472,7 @@ namespace Assets.Scripts
             }
             GameObject particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
             GameObject damageText = (GameObject)Resources.Load(("Prefabs/DamageText"), typeof(GameObject));
-            GameObject dmgObject = GameObject.Instantiate(damageText, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y + 3.2f), Quaternion.identity) as GameObject;
+            GameObject dmgObject = GameObject.Instantiate(damageText.gameObject, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y + 3.2f), Quaternion.identity) as GameObject;
             dmgObject.transform.parent = particleCanvas.transform;
             damage = (damage <= 0) ? 1 : damage;
             dmgObject.GetComponent<Text>().text = damage.ToString();
@@ -1677,7 +1677,7 @@ namespace Assets.Scripts
             GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + spriteId /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
             //gameCharacter.gameObject.transform.position = new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y);
             //gameCharacter.gameObject.transform.rotation = Quaternion.identity;
-            GameObject tempchar = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;
+            GameObject tempchar = Instantiate(temp.gameObject, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;
             tempchar.GetComponent<SpriteRenderer>().sortingOrder = 6 + (tempTile.y * 2);
             tempchar.transform.parent = tileMap.transform;
             tempchar.transform.localScale = new Vector3(1, 1, 0.0f);
@@ -1715,7 +1715,7 @@ namespace Assets.Scripts
                 GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + spriteId /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
                 //gameCharacter.gameObject.transform.position = new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y);
                 //gameCharacter.gameObject.transform.rotation = Quaternion.identity;
-                GameObject tempchar = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;
+                GameObject tempchar = GameObject.Instantiate(temp.gameObject, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;
                 tempchar.GetComponent<SpriteRenderer>().sortingOrder = 6 + (tempTile.y * 2);
                 tempchar.transform.parent = tileMap.transform;
                 tempchar.transform.localScale = new Vector3(1, 1, 0.0f);
@@ -1794,8 +1794,12 @@ namespace Assets.Scripts
                     turnQueue.Add(turnQueue[0]);
                     turnQueue.RemoveAt(0);
                     Tile t = tileArray[turnQueue[0].GetComponent<CharacterGameObject>().X, turnQueue[0].GetComponent<CharacterGameObject>().Y];
-                    Debug.Log(t.character.CharacterClassObject.Name);
+                    if (t.character == null)
+                        break;
+                    Debug.Log(t.character);
                     Debug.Log(t.character.isDead);
+                    if (t.character == null)
+                        break;
                     if (!t.character.isDead)
                     {
                         getNextAvailableCharacter = true;
