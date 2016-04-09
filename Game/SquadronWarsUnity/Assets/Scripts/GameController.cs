@@ -225,9 +225,7 @@ namespace Assets.Scripts
                             if (act.actionType == GameClasses.Action.ActionType.Endturn)
                             {
                                 //GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
-                                //GlobalConstants.currentActions.AddAction(tempAction);
-                                GlobalConstants.currentActions = new BattleAction();
-                                GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+                                //GlobalConstants.currentActions.AddAction(tempAction);                                
                                 StartCoroutine(WaitForPlayer1());                                                          
                                 break;
                             }
@@ -1589,7 +1587,10 @@ namespace Assets.Scripts
         }
         IEnumerator WaitForPlayer1()
         {            
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.5f);
+            GlobalConstants.currentActions = new BattleAction();
+            GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+            yield return new WaitForSeconds(.5f);
             Debug.Log("End Turn Called by Waiting Player");
             SelectNextCharacter();
             //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.CheckGameStatusUrl, new BattlePostObject());
