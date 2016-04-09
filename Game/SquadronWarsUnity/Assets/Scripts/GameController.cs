@@ -182,6 +182,7 @@ namespace Assets.Scripts
                                         path.Add(tileArray[act.actionTiles[j].x, act.actionTiles[j].y]);
                                     }
                                     prevTile.isOccupied = false;
+                                    prevTile.characterObject = null;
                                     prevTile.character = null;
                                     targetTile = path[0];
                                     reachedPosition = false;
@@ -225,8 +226,7 @@ namespace Assets.Scripts
                             if (act.actionType == GameClasses.Action.ActionType.Endturn)
                             {
                                 //GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
-                                //GlobalConstants.currentActions.AddAction(tempAction);
-                                GlobalConstants.currentActions = new BattleAction();
+                                //GlobalConstants.currentActions.AddAction(tempAction);                                
                                 StartCoroutine(WaitForPlayer1());                                                          
                                 break;
                             }
@@ -241,11 +241,16 @@ namespace Assets.Scripts
                 }
                 if (waitGameState == WaitGameState.WaitForOtherPlayer)
                 {
-                    Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
-                    //Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
+                    //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
+                    if(GlobalConstants.currentActions.ActionOrder.Count == 1)
+                    {
+                        Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
+                    }
+                   
                     if (GlobalConstants.currentActions.ActionOrder.Count == 0)
                     {
                         Debug.Log("End Turn Called by Current Player");
+                        waitGameState = WaitGameState.Wait;
                         //Debug.Log("Selecting next character");
                         SelectNextCharacter();
                     }
@@ -320,6 +325,10 @@ namespace Assets.Scripts
                         count = 0;                        
                         currentCharacterGameObject.GetComponent<SpriteRenderer>().sortingOrder = 6 + (targetTile.y * 2);
                         targetTile.isOccupied = true;
+                        currentCharacterGameObject.X = targetTile.x;
+                        currentCharacterGameObject.X = targetTile.y;
+                        turnQueue[0].GetComponent<CharacterGameObject>().X = targetTile.x;
+                        turnQueue[0].GetComponent<CharacterGameObject>().Y = targetTile.y;
                         targetTile.character = currentCharacterGameObject;
                         targetTile.characterObject = currentGameCharacter;
                         PositionPanels();
@@ -519,6 +528,7 @@ namespace Assets.Scripts
                     currentCharacterGameObject.Y = tile.y;
                     path = buildPath(prevTile, tile);
                     prevTile.isOccupied = false;
+                    prevTile.characterObject = null;
                     prevTile.character = null;
                     targetTile = path[0];
                     reachedPosition = false;
@@ -1582,9 +1592,11 @@ namespace Assets.Scripts
             }
         }
         IEnumerator WaitForPlayer1()
-        {
-            GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());            
-            yield return new WaitForSeconds(1f);
+        {            
+            yield return new WaitForSeconds(1.5f);
+            GlobalConstants.currentActions = new BattleAction();
+            GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+            yield return new WaitForSeconds(.5f);
             Debug.Log("End Turn Called by Waiting Player");
             SelectNextCharacter();
             //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.CheckGameStatusUrl, new BattlePostObject());
@@ -1782,6 +1794,8 @@ namespace Assets.Scripts
                     turnQueue.Add(turnQueue[0]);
                     turnQueue.RemoveAt(0);
                     Tile t = tileArray[turnQueue[0].GetComponent<CharacterGameObject>().X, turnQueue[0].GetComponent<CharacterGameObject>().Y];
+                    Debug.Log(t.character);
+                    Debug.Log(t.character.isDead);
                     if (!t.character.isDead)
                     {
                         getNextAvailableCharacter = true;

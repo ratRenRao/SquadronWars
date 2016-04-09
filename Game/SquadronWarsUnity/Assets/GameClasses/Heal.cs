@@ -16,7 +16,8 @@ namespace Assets.GameClasses
         public override void ImmediateEffect(Stats stats)
         {
             Damage = (int)CalculateHeal(stats);
-            stats.HitPoints -= Damage;
+            stats.CurHP = stats.CurHP - Damage > stats.HitPoints ? stats.HitPoints : stats.CurHP - Damage;
+            
             AnimationManager.Cast("heal");
         }
 

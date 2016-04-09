@@ -26,6 +26,7 @@ namespace Assets.GameClasses
         public const string CheckGameStatusUrl = WebServerUrl + "/api/CheckGameInfo";
         public const string PlaceCharacterUrl = WebServerUrl + "/api/PlaceCharacters";
         public const string UpdateGameStatusUrl = WebServerUrl + "/api/UpdateGameInfo";
+        public const string GetGameJSONUrl = WebServerUrl + "/api/GetBattleAction";
 
         public const string PlayerJsonObjectName = "PlayerInfo";
         public const string CharacterJsonObjectName = "Characters";
