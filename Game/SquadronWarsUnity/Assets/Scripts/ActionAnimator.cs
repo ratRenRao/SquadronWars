@@ -70,11 +70,11 @@ namespace Assets.Scripts
             dmgObject.transform.parent = particleCanvas.transform;
             damage = (damage <= 0) ? 1 : damage;
             dmgObject.GetComponent<Text>().text = damage.ToString();
-            target.CharacterClassObject.CurrentStats.CurHP -= damage;
+            //target.CharacterClassObject.CurrentStats.CurHP -= damage;
             yield return new WaitForSeconds(.4f);
             if (target.CharacterClassObject.CurrentStats.CurHP <= 0)
             {
-                target.CharacterClassObject.CurrentStats.CurHP = 0;
+                //target.CharacterClassObject.CurrentStats.CurHP = 0;
                 target.isDead = true;
                 //myCharacters.Remove(targetCharacterGameObject.gameObject);
                 targetAnimator.SetBool("isDead", true);
@@ -118,7 +118,7 @@ namespace Assets.Scripts
                 yield return new WaitForSeconds(wait);
                 if (target.CharacterClassObject.CurrentStats.CurHP <= 0)
                 {
-                    target.CharacterClassObject.CurrentStats.CurHP = 0;
+                    //target.CharacterClassObject.CurrentStats.CurHP = 0;
                     target.isDead = true;
                     //myCharacters.Remove(target.gameObject);
                     targetAnimator.SetBool("isDead", true);
