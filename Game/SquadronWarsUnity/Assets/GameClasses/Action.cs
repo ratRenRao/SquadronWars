@@ -140,23 +140,28 @@ namespace Assets.GameClasses
 
             foreach (var character in TileDictionary)
             {
-                AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value, actionType, Damage);
-                ImmediateEffect(character.Key.CharacterClassObject.CurrentStats);
-
-                if (Duration > 0)
+                if (!character.Key.isDead)
                 {
-                    TimeListener = new TimeListener(Duration, character.Key.CharacterClassObject.CurrentStats)
+                    AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value,
+                        actionType, Damage);
+                    ImmediateEffect(character.Key.CharacterClassObject.CurrentStats);
+
+                    if (Duration > 0)
                     {
-                        ExecutionMethod = LingeringEffect,
-                        FinishingMethod = RemoveEffect
-                    };
+                        TimeListener = new TimeListener(Duration, character.Key.CharacterClassObject.CurrentStats)
+                        {
+                            ExecutionMethod = LingeringEffect,
+                            FinishingMethod = RemoveEffect
+                        };
 
-                    TimeListener.Start();
-                    GlobalConstants.TimeListeners[character.Key.CharacterClassObject.CharacterId] = TimeListener; //.Add(character.Key.CharacterClassObject.CharacterId, TimeListener);
-                }
-                else if (Duration == 0)
-                {
-                    RemoveEffect();
+                        TimeListener.Start();
+                        GlobalConstants.TimeListeners[character.Key.CharacterClassObject.CharacterId] = TimeListener;
+                            //.Add(character.Key.CharacterClassObject.CharacterId, TimeListener);
+                    }
+                    else if (Duration == 0)
+                    {
+                        RemoveEffect();
+                    }
                 }
             }
         }
