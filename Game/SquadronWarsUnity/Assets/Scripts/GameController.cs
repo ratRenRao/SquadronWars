@@ -227,6 +227,7 @@ namespace Assets.Scripts
                                 //GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
                                 //GlobalConstants.currentActions.AddAction(tempAction);
                                 GlobalConstants.currentActions = new BattleAction();
+                                GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 StartCoroutine(WaitForPlayer1());                                                          
                                 break;
                             }
@@ -241,8 +242,12 @@ namespace Assets.Scripts
                 }
                 if (waitGameState == WaitGameState.WaitForOtherPlayer)
                 {
-                    Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
-                    //Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
+                    //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
+                    if(GlobalConstants.currentActions.ActionOrder.Count == 1)
+                    {
+                        Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
+                    }
+                   
                     if (GlobalConstants.currentActions.ActionOrder.Count == 0)
                     {
                         Debug.Log("End Turn Called by Current Player");
@@ -1582,8 +1587,7 @@ namespace Assets.Scripts
             }
         }
         IEnumerator WaitForPlayer1()
-        {
-            GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());            
+        {            
             yield return new WaitForSeconds(1f);
             Debug.Log("End Turn Called by Waiting Player");
             SelectNextCharacter();
