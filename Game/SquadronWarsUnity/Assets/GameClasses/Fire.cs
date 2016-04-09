@@ -21,13 +21,13 @@ namespace Assets.GameClasses
         public override void ImmediateEffect(Stats stats)
         {
             Damage = (int)CalculateImmediateDamage();
-            stats.HitPoints -= Damage;
+            stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
             AnimationManager.Cast("fire");
         }
 
         public override void LingeringEffect(ref Stats stats)
         {
-            stats.HitPoints -= (int)CalculateLingeringDamage();
+            stats.CurHP -= (int)CalculateLingeringDamage();
         }
 
         private double CalculateImmediateDamage()
