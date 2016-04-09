@@ -329,8 +329,8 @@ namespace Assets.Scripts
                         currentCharacterGameObject.X = targetTile.y;
                         turnQueue[0].GetComponent<CharacterGameObject>().X = targetTile.x;
                         turnQueue[0].GetComponent<CharacterGameObject>().Y = targetTile.y;
-                        targetTile.character = currentCharacterGameObject;
-                        targetTile.characterObject = currentGameCharacter;
+                        targetTile.character = turnQueue[0].GetComponent<CharacterGameObject>();
+                        targetTile.characterObject = turnQueue[0];
                         PositionPanels();
                         if (action != Action.WaitForGameInfo)
                         {
@@ -1794,7 +1794,7 @@ namespace Assets.Scripts
                     turnQueue.Add(turnQueue[0]);
                     turnQueue.RemoveAt(0);
                     Tile t = tileArray[turnQueue[0].GetComponent<CharacterGameObject>().X, turnQueue[0].GetComponent<CharacterGameObject>().Y];
-                    Debug.Log(t.character);
+                    Debug.Log(t.character.CharacterClassObject.Name);
                     Debug.Log(t.character.isDead);
                     if (!t.character.isDead)
                     {
