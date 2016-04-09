@@ -239,21 +239,18 @@ namespace Assets.Scripts
 
                     //Debug.Log("waiting for other player");
                     //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
-                    if (waitGameState == WaitGameState.WaitForOtherPlayer)
-                    {
-                        //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
-                        //Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
-                        if (GlobalConstants.currentActions.ActionOrder.Count == 0)
-                        {
-                            Debug.Log("End Turn Called by Current Player");
-                            //Debug.Log("Selecting next character");
-                            SelectNextCharacter();
-                        }
-                    }
+                    
                 }
-                else
+                if (waitGameState == WaitGameState.WaitForOtherPlayer)
                 {
-                    StartCoroutine(WaitForGameInformation());
+                    //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
+                    //Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
+                    if (GlobalConstants.currentActions.ActionOrder.Count == 0)
+                    {
+                        Debug.Log("End Turn Called by Current Player");
+                        //Debug.Log("Selecting next character");
+                        SelectNextCharacter();
+                    }
                 }
             }            
 
