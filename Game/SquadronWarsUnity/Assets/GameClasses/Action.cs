@@ -115,14 +115,14 @@ namespace Assets.GameClasses
                 if (actionType == ActionType.CastAbility)
                 {
                     var total = (int) (tile.amount*.05)/actionTiles.Count;
-                    GlobalConstants.DamageAndHealingDone += total != null
+                    GlobalConstants.DamageAndHealingDone += total != 0
                         ? (int) (tile.amount*.05)/actionTiles.Count
                         : 0;
                 }
                 else if (actionType == ActionType.Attack || actionType == ActionType.AttackAbility)
                 {
                     var total = tile.amount/actionTiles.Count;
-                    GlobalConstants.DamageAndHealingDone += total != null ? tile.amount/actionTiles.Count : 0;
+                    GlobalConstants.DamageAndHealingDone += total != 0 ? tile.amount/actionTiles.Count : 0;
                 }
             });
         }
@@ -140,7 +140,7 @@ namespace Assets.GameClasses
 
             foreach (var character in TileDictionary)
             {
-                AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value, actionType);
+                AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value, actionType, Damage);
                 ImmediateEffect(character.Key.CharacterClassObject.CurrentStats);                
                 if (Duration > 0)
                 {

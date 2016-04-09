@@ -23,11 +23,12 @@ namespace Assets.GameClasses
         private Tile _targetTile;
         private int _damage = 0;
 
-        public AnimationManager(CharacterGameObject executioner, CharacterGameObject target, Tile executionerTile, Tile targetTile, ActionType actionType)
+        public AnimationManager(CharacterGameObject executioner, CharacterGameObject target, Tile executionerTile, Tile targetTile, ActionType actionType, int damage)
         {
             _executionerTile = executionerTile;
             _targetTile = targetTile;
             _actionType = actionType;
+            _damage = damage;
 
             _executionerCharacterGameObject = executioner;
             _targetCharacterGameObject = target;

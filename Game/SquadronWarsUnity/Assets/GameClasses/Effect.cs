@@ -37,7 +37,7 @@ namespace Assets.GameClasses
         {
             foreach (var character in TileDictionary) 
             {
-                AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value, ActionType);
+                AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value, ActionType, Damage);
                 ImmediateEffect(character.Key.CharacterClassObject.CurrentStats);
 
                 if (Duration > 0)
