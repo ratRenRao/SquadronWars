@@ -227,9 +227,7 @@ namespace Assets.Scripts
                                 //GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
                                 //GlobalConstants.currentActions.AddAction(tempAction);
                                 GlobalConstants.currentActions = new BattleAction();
-                                GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
-                                Debug.Log("End Turn Called by Waiting Player");
-                                SelectNextCharacter();
+                                StartCoroutine(WaitForPlayer1());                                                          
                                 break;
                             }
                             
@@ -243,7 +241,7 @@ namespace Assets.Scripts
                 }
                 if (waitGameState == WaitGameState.WaitForOtherPlayer)
                 {
-                    //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
+                    Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                     //Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
                     if (GlobalConstants.currentActions.ActionOrder.Count == 0)
                     {
@@ -1583,11 +1581,14 @@ namespace Assets.Scripts
                 SelectNextCharacter();
             }
         }
-        IEnumerator WaitForGameInformation()
+        IEnumerator WaitForPlayer1()
         {
-            yield return new WaitForSeconds(4f);
+            GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());            
+            yield return new WaitForSeconds(1f);
+            Debug.Log("End Turn Called by Waiting Player");
+            SelectNextCharacter();
             //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.CheckGameStatusUrl, new BattlePostObject());
-            
+
         }
 
         public void ResetData()

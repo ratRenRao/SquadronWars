@@ -151,7 +151,7 @@ namespace Assets.GameClasses
                     };
 
                     TimeListener.Start();
-                    GlobalConstants.TimeListeners.Add(character.Key.CharacterClassObject.CharacterId, TimeListener);
+                    GlobalConstants.TimeListeners[character.Key.CharacterClassObject.CharacterId] = TimeListener; //.Add(character.Key.CharacterClassObject.CharacterId, TimeListener);
                 }
                 else if (Duration == 0)
                 {
