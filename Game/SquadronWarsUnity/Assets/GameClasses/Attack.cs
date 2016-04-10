@@ -19,6 +19,7 @@ namespace Assets.GameClasses
         {
             Damage = (int)CalculateAttack(stats);
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
+            AnimationManager.SetDamage(Damage);
             AnimationManager.Attack("attack");
         }
 
