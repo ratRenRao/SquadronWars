@@ -87,7 +87,7 @@ namespace Assets.GameClasses
         {
             _actionType = ActionType.Idle;
             var attackType = "";
-
+            //_executionerCharacterGameObject.CharacterClassObject.Equipment.Weapon1.ItemId;
             if (_executionerCharacterGameObject.CharacterClassObject.SpriteId == 1)
             {
                 attackType = "isAttacking";

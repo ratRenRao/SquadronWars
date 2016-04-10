@@ -50,7 +50,7 @@ namespace Assets.Scripts
             }
             executionerAnimator.SetBool(attackType, false);
             targetAnimator.SetBool("isAttacked", false);
-            if (ability != null)
+            if (ability != "attack")
             {
                 GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
                 Debug.Log(temp);

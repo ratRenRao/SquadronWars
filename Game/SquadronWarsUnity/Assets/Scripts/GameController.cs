@@ -366,6 +366,7 @@ namespace Assets.Scripts
                             Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
                             if (tempTile.isValidMove)
                             {
+                                Debug.Log("Attack Called");
                                 /*attackButton.interactable = false;
                                 abilityButton.interactable = false;
                                 hidePanel = true;
@@ -385,6 +386,7 @@ namespace Assets.Scripts
                                 gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
                                 gameAction.Execute();
                                 GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.Attack, new List<Tile>() { tempTile }, "attack"));
+                                Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType + " " + GlobalConstants.currentActions.ActionOrder[0].performedAction);
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 currentCharacterGameObject.hasAttacked = true;
                             }
@@ -394,6 +396,7 @@ namespace Assets.Scripts
                     {
                         if (hit.collider != null)
                         {
+                            Debug.Log("Attack Ability Called");
                             attackButton.interactable = false;
                             abilityButton.interactable = false;
                             Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
@@ -402,8 +405,29 @@ namespace Assets.Scripts
                                 hidePanel = true;
                                 GetTarget(tempTile);
                                 clearHighlights(validMoves);
-                                Attack(tempTile, selectedAbility);
+                                GameClasses.Action gameAction = null;
+                                GlobalConstants.isAnimating = true;
+                                var actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals(selectedAbility));
+                                if (actionType != null)
+                                {
+                                    gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
+                                }
+                                else
+                                {
+                                    actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals("Attack"));
+                                    gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
+                                }
+                                Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
+                                Debug.Log(currentCharacterGameObject.CharacterClassObject.Equipment.Weapon1);
+                                effectedCharacterDictionary.Add(targetCharacterGameObject.GetComponent<CharacterGameObject>(), tempTile);
+                                gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
+                                gameAction.Execute();
+                                GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.Attack, new List<Tile>() { tempTile }, "attack"));
+                                Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType + " " + GlobalConstants.currentActions.ActionOrder[0].performedAction);
+                                GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 currentCharacterGameObject.hasAttacked = true;
+                                /*Attack(tempTile, selectedAbility);
+                                currentCharacterGameObject.hasAttacked = true;*/
                             }              
                         }
                     }
