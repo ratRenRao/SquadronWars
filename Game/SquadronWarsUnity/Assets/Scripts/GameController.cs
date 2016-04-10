@@ -222,15 +222,43 @@ namespace Assets.Scripts
                                     }                                
                                 }
                             }
-                            //Debug.Log(act.actionType);
-                            if (act.actionType == GameClasses.Action.ActionType.Endturn)
+
+                            if (act.actionType == GameClasses.Action.ActionType.AttackAbility && !currentCharacterGameObject.hasAttacked)
                             {
-                                //GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
-                                //GlobalConstants.currentActions.AddAction(tempAction);                                
-                                StartCoroutine(WaitForPlayer1());                                                          
-                                break;
-                            }
-                            
+                                foreach (Tile t in act.actionTiles)
+                                {
+                                    hidePanel = true;
+                                    GetTarget(t);
+                                    clearHighlights(validMoves);
+                                    GameClasses.Action gameAction = null;
+                                    GlobalConstants.isAnimating = true;
+                                    var actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals(selectedAbility));
+                                    if (actionType != null)
+                                    {
+                                        gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
+                                    }
+                                    else
+                                    {
+                                        selectedAbility = "attack";
+                                        actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals("Attack"));
+                                        gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
+                                    }
+                                    Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
+                                    effectedCharacterDictionary.Add(targetCharacterGameObject, t);
+                                    gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref targetTile);
+                                    gameAction.Execute();
+                                    currentCharacterGameObject.hasAttacked = true;
+                                    break;
+                                }
+                                //Debug.Log(act.actionType);
+                                if (act.actionType == GameClasses.Action.ActionType.Endturn)
+                                {
+                                    //GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
+                                    //GlobalConstants.currentActions.AddAction(tempAction);                                
+                                    StartCoroutine(WaitForPlayer1());
+                                    break;
+                                }
+                            }                            
                         }
                         
                     }
@@ -414,6 +442,7 @@ namespace Assets.Scripts
                                 }
                                 else
                                 {
+                                    selectedAbility = "attack";
                                     actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals("Attack"));
                                     gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                 }
@@ -422,7 +451,7 @@ namespace Assets.Scripts
                                 effectedCharacterDictionary.Add(targetCharacterGameObject.GetComponent<CharacterGameObject>(), tempTile);
                                 gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
                                 gameAction.Execute();
-                                GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.Attack, new List<Tile>() { tempTile }, "attack"));
+                                GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.Attack, new List<Tile>() { tempTile }, selectedAbility));
                                 Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType + " " + GlobalConstants.currentActions.ActionOrder[0].performedAction);
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 currentCharacterGameObject.hasAttacked = true;
