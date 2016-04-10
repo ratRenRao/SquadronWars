@@ -366,14 +366,27 @@ namespace Assets.Scripts
                             Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
                             if (tempTile.isValidMove)
                             {
-                                attackButton.interactable = false;
+                                /*attackButton.interactable = false;
                                 abilityButton.interactable = false;
                                 hidePanel = true;
                                 GetTarget(tempTile);
                                 Attack(tempTile, null);
                                 clearHighlights(validMoves);
-                                currentCharacterGameObject.hasAttacked = true;
+                                currentCharacterGameObject.hasAttacked = true;*/
                                 //hidePanel = false;
+                                hidePanel = true;
+                                GetTarget(tempTile);
+                                clearHighlights(validMoves);
+                                //Cast(tempTile, selectedAbility);
+                                GameClasses.Action gameAction = null;
+                                GlobalConstants.isAnimating = true;
+                                Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
+                                effectedCharacterDictionary.Add(targetCharacterGameObject.GetComponent<CharacterGameObject>(), tempTile);
+                                gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
+                                gameAction.Execute();
+                                GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.Attack, new List<Tile>() { tempTile }, "attack"));
+                                GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
+                                currentCharacterGameObject.hasAttacked = true;
                             }
                         }
                     }

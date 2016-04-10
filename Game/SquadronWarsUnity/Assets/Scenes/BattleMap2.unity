@@ -795,6 +795,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 156846, guid: f8c7e17148272f74aaecf7b4af08b29d, type: 2}
+      propertyPath: m_TagString
+      value: grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 130728, guid: f8c7e17148272f74aaecf7b4af08b29d, type: 2}
+      propertyPath: m_TagString
+      value: bridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 187212, guid: f8c7e17148272f74aaecf7b4af08b29d, type: 2}
+      propertyPath: m_TagString
+      value: bridge
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11488458, guid: f8c7e17148272f74aaecf7b4af08b29d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f8c7e17148272f74aaecf7b4af08b29d, type: 2}
