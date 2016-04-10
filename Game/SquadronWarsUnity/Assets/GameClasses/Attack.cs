@@ -18,7 +18,7 @@ namespace Assets.GameClasses
         public override void ImmediateEffect(Stats stats)
         {
             Damage = (int)CalculateAttack(stats);
-            stats.HitPoints = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
+            stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
             AnimationManager.Attack("attack");
         }
 
