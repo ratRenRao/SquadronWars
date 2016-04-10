@@ -447,7 +447,7 @@ namespace Assets.Scripts
                                     gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                 }
                                 Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
-                                Debug.Log(currentCharacterGameObject.CharacterClassObject.Equipment.Weapon1);
+                                Debug.Log(currentCharacterGameObject.CharacterClassObject.Equipment.Weapon);
                                 effectedCharacterDictionary.Add(targetCharacterGameObject.GetComponent<CharacterGameObject>(), tempTile);
                                 gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
                                 gameAction.Execute();

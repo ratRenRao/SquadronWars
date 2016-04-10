@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.GameClasses
 {
-    class Weaken : Ability
+    class ArmorBreak : Ability
     {
         private Stats _initialStats;
 
@@ -21,7 +21,7 @@ namespace Assets.GameClasses
             _initialStats = stats;
             Damage = (int)CalculateWeaken();
             stats.Defense -= Damage;
-            AnimationManager.Cast("weaken");
+            AnimationManager.Cast("armor break");
         }
 
         public override void RemoveEffect(ref Stats stats)

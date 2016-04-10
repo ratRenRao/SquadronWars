@@ -190,6 +190,8 @@ namespace Assets.Data
             public int Pants { get; set; }
             public int Shoulders { get; set; }
             public int Boots { get; set; }
+            public int Weapon { get; set; }
+            public int Offhand { get; set; }
             public int Accessory1 { get; set; }
             public int Accessory2 { get; set; }
             public int IsStandard { get; set; }
@@ -256,7 +258,9 @@ namespace Assets.Data
                     getItemFunc(Shoulders),
                     getItemFunc(Boots),
                     getItemFunc(Accessory1),
-                    getItemFunc(Accessory2));
+                    getItemFunc(Accessory2),
+                    getItemFunc(Weapon),
+                    getItemFunc(Offhand));
 
                 return _equipment;
             }
