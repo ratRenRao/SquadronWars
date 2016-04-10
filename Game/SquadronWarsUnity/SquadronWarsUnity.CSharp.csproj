@@ -96,7 +96,7 @@
     <Compile Include="Assets\GameClasses\Stats.cs" />
     <Compile Include="Assets\GameClasses\TimeListener.cs" />
     <Compile Include="Assets\GameClasses\UpdateCharacterPostObject.cs" />
-    <Compile Include="Assets\GameClasses\Weaken.cs" />
+    <Compile Include="Assets\GameClasses\ArmorBreak.cs" />
     <Compile Include="Assets\JSON\JSONObject.cs" />
     <Compile Include="Assets\JSON\JSONTemplates.cs" />
     <Compile Include="Assets\JSON\VectorTemplates.cs" />

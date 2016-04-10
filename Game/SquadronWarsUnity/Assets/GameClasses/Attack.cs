@@ -11,8 +11,8 @@ namespace Assets.GameClasses
         public override void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
             base.Initialize(ref tileDictionary, ref executioner, ref executionerTile);
-            ImmediateBaseDamage = Executioner.CharacterClassObject.Equipment.Weapon1 != null
-               ? Executioner.CharacterClassObject.Equipment.Weapon1.Damage : 0;
+            ImmediateBaseDamage = Executioner.CharacterClassObject.Equipment.Weapon != null
+               ? Executioner.CharacterClassObject.Equipment.Weapon.Damage : 0;
         }
 
         public override void ImmediateEffect(Stats stats)

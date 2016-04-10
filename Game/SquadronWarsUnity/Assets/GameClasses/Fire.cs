@@ -23,7 +23,7 @@ namespace Assets.GameClasses
             Damage = (int)CalculateImmediateDamage();
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
             AnimationManager.SetDamage(Damage);
-            AnimationManager.Cast("fire");
+            AnimationManager.Cast("Fire");
         }
 
         public override void LingeringEffect(ref Stats stats)

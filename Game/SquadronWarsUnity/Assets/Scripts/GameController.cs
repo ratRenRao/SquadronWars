@@ -228,7 +228,8 @@ namespace Assets.Scripts
                                 foreach (Tile t in act.actionTiles)
                                 {
                                     hidePanel = true;
-                                    GetTarget(t);
+                                    Tile tempTile = tileArray[t.x, t.y];
+                                    GetTarget(tempTile);
                                     clearHighlights(validMoves);
                                     GameClasses.Action gameAction = null;
                                     GlobalConstants.isAnimating = true;
@@ -244,7 +245,7 @@ namespace Assets.Scripts
                                         gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                     }
                                     Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
-                                    effectedCharacterDictionary.Add(targetCharacterGameObject, t);
+                                    effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
                                     gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref targetTile);
                                     gameAction.Execute();
                                     currentCharacterGameObject.hasAttacked = true;
@@ -387,7 +388,7 @@ namespace Assets.Scripts
                         Move();
                         currentCharacterGameObject.hasMoved = true;
                     }
-                    if (action == Action.Attack)
+                    /*if (action == Action.Attack)
                     {
                         if (hit.collider != null)
                         {
@@ -395,13 +396,13 @@ namespace Assets.Scripts
                             if (tempTile.isValidMove)
                             {
                                 Debug.Log("Attack Called");
-                                /*attackButton.interactable = false;
+                                attackButton.interactable = false;
                                 abilityButton.interactable = false;
                                 hidePanel = true;
                                 GetTarget(tempTile);
                                 Attack(tempTile, null);
                                 clearHighlights(validMoves);
-                                currentCharacterGameObject.hasAttacked = true;*/
+                                currentCharacterGameObject.hasAttacked = true;
                                 //hidePanel = false;
                                 hidePanel = true;
                                 GetTarget(tempTile);
@@ -413,13 +414,12 @@ namespace Assets.Scripts
                                 effectedCharacterDictionary.Add(targetCharacterGameObject.GetComponent<CharacterGameObject>(), tempTile);
                                 gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
                                 gameAction.Execute();
-                                GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.Attack, new List<Tile>() { tempTile }, "attack"));
-                                Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType + " " + GlobalConstants.currentActions.ActionOrder[0].performedAction);
+                                GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.AttackAbility, new List<Tile>() { tempTile }, "attack"));
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 currentCharacterGameObject.hasAttacked = true;
                             }
                         }
-                    }
+                    }*/
                     if (action == Action.AttackAbility)
                     {
                         if (hit.collider != null)
@@ -447,11 +447,11 @@ namespace Assets.Scripts
                                     gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                 }
                                 Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
-                                Debug.Log(currentCharacterGameObject.CharacterClassObject.Equipment.Weapon1);
+                                Debug.Log(currentCharacterGameObject.CharacterClassObject.Equipment.Weapon);
                                 effectedCharacterDictionary.Add(targetCharacterGameObject.GetComponent<CharacterGameObject>(), tempTile);
                                 gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
                                 gameAction.Execute();
-                                GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.Attack, new List<Tile>() { tempTile }, selectedAbility));
+                                GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.AttackAbility, new List<Tile>() { tempTile }, selectedAbility));
                                 Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType + " " + GlobalConstants.currentActions.ActionOrder[0].performedAction);
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 currentCharacterGameObject.hasAttacked = true;

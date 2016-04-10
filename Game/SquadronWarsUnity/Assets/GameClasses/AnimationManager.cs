@@ -86,10 +86,13 @@ namespace Assets.GameClasses
         public void Attack(string ability)
         {
             _actionType = ActionType.Idle;
-            var weaponId = _executionerCharacterGameObject.CharacterClassObject.Equipment.Weapon1.ItemId;
+            int weaponId = 0;
+            if (_executionerCharacterGameObject.CharacterClassObject.Equipment.Weapon != null)
+                weaponId = _executionerCharacterGameObject.CharacterClassObject.Equipment.Weapon.ItemId;
+
             var attackType = "";
 
-            if (weaponId >= 8000 && weaponId < 9000)
+            if (weaponId == 0 || (weaponId >= 8000 && weaponId < 9000))
             {
                 attackType = "isAttacking";
             }
