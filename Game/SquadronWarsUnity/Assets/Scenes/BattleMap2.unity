@@ -795,6 +795,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 156846, guid: f8c7e17148272f74aaecf7b4af08b29d, type: 2}
+      propertyPath: m_TagString
+      value: grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 130728, guid: f8c7e17148272f74aaecf7b4af08b29d, type: 2}
+      propertyPath: m_TagString
+      value: bridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 187212, guid: f8c7e17148272f74aaecf7b4af08b29d, type: 2}
+      propertyPath: m_TagString
+      value: bridge
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11488458, guid: f8c7e17148272f74aaecf7b4af08b29d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f8c7e17148272f74aaecf7b4af08b29d, type: 2}
@@ -8125,6 +8137,20 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 334646433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca52f6306cb21524380292b8b8626a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlight: {fileID: 0}
+  characterObject: {fileID: 0}
+  character: {fileID: 0}
+--- !u!114 &334646861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 334646042}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca52f6306cb21524380292b8b8626a29, type: 3}

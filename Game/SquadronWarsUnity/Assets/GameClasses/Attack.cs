@@ -11,14 +11,16 @@ namespace Assets.GameClasses
         public override void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
             base.Initialize(ref tileDictionary, ref executioner, ref executionerTile);
-            ImmediateBaseDamage = Executioner.CharacterClassObject.Equipment.Weapon1.Damage;
+            ImmediateBaseDamage = Executioner.CharacterClassObject.Equipment.Weapon1 != null
+               ? Executioner.CharacterClassObject.Equipment.Weapon1.Damage : 0;
         }
 
         public override void ImmediateEffect(Stats stats)
         {
             Damage = (int)CalculateAttack(stats);
-            stats.HitPoints = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
-            AnimationManager.Cast("attack");
+            stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
+            AnimationManager.SetDamage(Damage);
+            AnimationManager.Attack("attack");
         }
 
         private double CalculateAttack(Stats stats)
