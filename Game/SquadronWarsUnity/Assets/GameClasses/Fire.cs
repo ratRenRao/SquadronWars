@@ -13,7 +13,7 @@ namespace Assets.GameClasses
             base.Initialize(ref tileDictionary, ref executioner, ref executionerTile);
             ImmediateBaseDamage = 10;
             LingeringBaseDamage = 3;
-            Duration = 5;
+            //Duration = 5;
             AbilityLevel = AbilityLevel <= 0 ? 1 : AbilityLevel;
             //ResultingEffects = new List<Effect> {new Burn()};
         }

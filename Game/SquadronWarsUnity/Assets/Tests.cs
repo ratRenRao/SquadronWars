@@ -14,7 +14,7 @@ namespace Assets
         public void Run()
         {
            // CheckJsonPostData();
-           CheckEffectExecution();
+           //CheckEffectExecution();
         }
 
         public void CheckJsonPostData()

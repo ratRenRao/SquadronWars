@@ -1607,7 +1607,7 @@ namespace Assets.Scripts
         {
             selectedAbility = null;
             GlobalConstants.isAnimating = false;
-            Debug.Log(action);
+            //Debug.Log(action);
             if (action != Action.WaitForGameInfo)
             {
                 hidePanel = false;
@@ -1796,8 +1796,8 @@ namespace Assets.Scripts
                     Tile t = tileArray[turnQueue[0].GetComponent<CharacterGameObject>().X, turnQueue[0].GetComponent<CharacterGameObject>().Y];
                     if (t.character == null)
                         break;
-                    Debug.Log(t.character);
-                    Debug.Log(t.character.isDead);
+                    //Debug.Log(t.character);
+                    //Debug.Log(t.character.isDead);
                     if (t.character == null)
                         break;
                     if (!t.character.isDead)
@@ -1858,23 +1858,23 @@ namespace Assets.Scripts
             actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 15, currentCharacterGameObject.transform.position.y - 7, 0);
             if (tile.x < 3)
             {
-                Debug.Log("tile x: " + tile.x + " is < 3");
+                //Debug.Log("tile x: " + tile.x + " is < 3");
                 characterStatsPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 10, currentCharacterGameObject.transform.position.y + 8, 0);
                 if(tile.y < 3)
                 {
-                    Debug.Log("tile y: " + tile.y + " is < 3");
+                    //Debug.Log("tile y: " + tile.y + " is < 3");
                     characterStatsPanel.transform.position = new Vector3(characterStatsPanel.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
                 }
                 if (tile.y > 15)
                 {
-                    Debug.Log("tile y: " + tile.y + " is > 15");
+                    //Debug.Log("tile y: " + tile.y + " is > 15");
                     actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 30, currentCharacterGameObject.transform.position.y + 14, 0);
                 }
 
             }
             else if (tile.y < 3)
             {
-                Debug.Log("tile y: " + tile.y + " is < 3");
+                //Debug.Log("tile y: " + tile.y + " is < 3");
                 characterStatsPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
                 if (tile.x > 6)
                 {
