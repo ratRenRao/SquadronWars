@@ -228,7 +228,8 @@ namespace Assets.Scripts
                                 foreach (Tile t in act.actionTiles)
                                 {
                                     hidePanel = true;
-                                    GetTarget(t);
+                                    Tile tempTile = tileArray[t.x, t.y];
+                                    GetTarget(tempTile);
                                     clearHighlights(validMoves);
                                     GameClasses.Action gameAction = null;
                                     GlobalConstants.isAnimating = true;
@@ -244,7 +245,7 @@ namespace Assets.Scripts
                                         gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                     }
                                     Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
-                                    effectedCharacterDictionary.Add(targetCharacterGameObject, t);
+                                    effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
                                     gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref targetTile);
                                     gameAction.Execute();
                                     currentCharacterGameObject.hasAttacked = true;
