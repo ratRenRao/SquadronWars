@@ -413,10 +413,9 @@ namespace Assets.Scripts
                                 if (actionType != null)
                                 {
                                     gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
-                                }
-                                targetCharacterGameObject.GetComponent<CharacterGameObject>();
+                                }                                
                                 Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
-                                effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
+                                effectedCharacterDictionary.Add(targetCharacterGameObject.GetComponent<CharacterGameObject>(), tempTile);
                                 gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
                                 gameAction.Execute();
                                 GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.CastAbility, new List<Tile>() { tempTile }, selectedAbility));

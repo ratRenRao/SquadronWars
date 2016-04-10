@@ -114,7 +114,7 @@ namespace Assets.Scripts
                 dmgObject.transform.parent = particleCanvas.transform;
                 //damage = (damage <= 0) ? 1 : damage;
                 dmgObject.GetComponent<Text>().text = damage.ToString();
-                //target.CharacterClassObject.CurrentStats.CurHP -= damage;
+                Debug.Log(target.CharacterClassObject.CurrentStats.CurHP);
                 yield return new WaitForSeconds(wait);
                 if (target.CharacterClassObject.CurrentStats.CurHP <= 0)
                 {
