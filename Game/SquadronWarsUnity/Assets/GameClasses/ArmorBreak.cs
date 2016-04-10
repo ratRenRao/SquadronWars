@@ -21,7 +21,7 @@ namespace Assets.GameClasses
             _initialStats = stats;
             Damage = (int)CalculateWeaken();
             stats.Defense -= Damage;
-            AnimationManager.Cast("armor break");
+            AnimationManager.Attack("Armor Break");
         }
 
         public override void RemoveEffect(ref Stats stats)
