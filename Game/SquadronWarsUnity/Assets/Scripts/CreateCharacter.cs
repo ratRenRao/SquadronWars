@@ -26,9 +26,9 @@ namespace Assets.Scripts
 
         public void CreateNewCharacter()
         {
-            Debug.Log(GlobalConstants.Player);
-            Debug.Log(characterName.text);
-            Debug.Log(spriteId.text);
+            //Debug.Log(GlobalConstants.Player);
+            //Debug.Log(characterName.text);
+            //Debug.Log(spriteId.text);
 
             SetDbConnection();
 
@@ -43,7 +43,7 @@ namespace Assets.Scripts
 
             if(!www.text.Equals("Failed"))
             {
-                Debug.Log(www.text);
+                //Debug.Log(www.text);
                 LoadCharacterScreen();
             }           
         }

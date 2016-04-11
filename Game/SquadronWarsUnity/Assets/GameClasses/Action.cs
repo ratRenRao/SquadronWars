@@ -137,7 +137,8 @@ namespace Assets.GameClasses
 
         public virtual void Execute()
         {
-
+            if(TileDictionary != null)
+            { 
             foreach (var character in TileDictionary)
             {
                 if (!character.Key.isDead)
@@ -163,6 +164,7 @@ namespace Assets.GameClasses
                         RemoveEffect();
                     }
                 }
+            }
             }
         }
 

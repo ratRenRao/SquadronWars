@@ -47,6 +47,10 @@ namespace Assets.Scripts
         public Dropdown legsSlot;
         public Dropdown glovesSlot;
         public Dropdown bootsSlot;
+        public Dropdown mainHandSlot;
+        public Dropdown offHandSlot;
+        public Dropdown accessory1Slot;
+        public Dropdown accessory2Slot;
 
     }
 }
