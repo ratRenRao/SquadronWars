@@ -25,6 +25,7 @@ namespace Assets.GameClasses
             Damage = (int) CalculateAttack(stats);
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
             stats.CurMP -= mpCost;
+            AnimationManager.SetDamage(Damage);
             AnimationManager.Attack("Armor Break");
         }
 

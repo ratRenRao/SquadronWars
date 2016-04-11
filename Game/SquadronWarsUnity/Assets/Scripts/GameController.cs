@@ -436,7 +436,6 @@ namespace Assets.Scripts
                                 clearHighlights(validMoves);
                                 GameClasses.Action gameAction = null;
                                 GlobalConstants.isAnimating = true;
-                                Debug.Log(selectedAbility);
                                 var actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals(selectedAbility));
                                 if (actionType != null)
                                 {
