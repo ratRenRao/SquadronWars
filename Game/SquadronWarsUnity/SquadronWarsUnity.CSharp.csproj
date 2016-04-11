@@ -77,14 +77,16 @@
     <Compile Include="Assets\GameClasses\Battle.cs" />
     <Compile Include="Assets\GameClasses\BattleAction.cs" />
     <Compile Include="Assets\GameClasses\BattlePostObject.cs" />
+    <Compile Include="Assets\GameClasses\Bio.cs" />
     <Compile Include="Assets\GameClasses\Burn.cs" />
     <Compile Include="Assets\GameClasses\Character.cs" />
     <Compile Include="Assets\GameClasses\CharacterGameObject.cs" />
     <Compile Include="Assets\GameClasses\Effect.cs" />
     <Compile Include="Assets\GameClasses\Equipment.cs" />
     <Compile Include="Assets\GameClasses\Fire.cs" />
+    <Compile Include="Assets\GameClasses\FlameStrike.cs" />
     <Compile Include="Assets\GameClasses\GlobalConstants.cs" />
-    <Compile Include="Assets\GameClasses\Heal.cs" />
+    <Compile Include="Assets\GameClasses\Cure.cs" />
     <Compile Include="Assets\GameClasses\IAnimateable.cs" />
     <Compile Include="Assets\GameClasses\IEffectable.cs" />
     <Compile Include="Assets\GameClasses\IJsonable.cs" />
