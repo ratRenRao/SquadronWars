@@ -142,8 +142,8 @@ namespace Assets.GameClasses
             { 
                 foreach (var tile in Tiles)
                 {
-                    var character = tile.GetComponent<CharacterGameObject>();
-                    if (!character.isDead)
+                    var character = tile.characterObject.GetComponent<CharacterGameObject>();
+                    if (character != null && !character.isDead)
                     {
                         /*if (characterCharacterClassObject == null)
                         {

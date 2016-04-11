@@ -36,7 +36,8 @@ namespace Assets.GameClasses
         {
             foreach (var tile in Tiles)
             {
-                var character = tile.GetComponent<CharacterGameObject>();
+                var character = tile.characterObject.GetComponent<CharacterGameObject>();
+
                 AnimationManager = new AnimationManager(Executioner, character, ExecutionerTile, tile, ActionType, Damage);
                 ImmediateEffect(character.CharacterClassObject.CurrentStats);
 
