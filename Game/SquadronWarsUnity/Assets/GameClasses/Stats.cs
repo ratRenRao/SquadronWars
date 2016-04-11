@@ -181,7 +181,9 @@
             return "{ \"Str\" : \"" + Str + "\", \"Agi\" : \"" + Agi + "\", \"Intl\" : \"" + Intl + "\", \"Vit\" : \"" + Vit + "\", \"Wis\" : \"" + Wis + "\", \"Dex\" : \"" + Dex + "\", \"Luck\" : \"" + Luck
                 + "\", \"HitPoints\" : \"" + HitPoints + "\", \"Dmg\" : \"" + Dmg + "\", \"MagicAttack\" : \"" + MagicAttack + "\", \"Speed\" : \"" + Speed + "\", \"Defense\" : \"" + Defense
                 + "\", \"MagicDefense\" : \"" + MagicDefense + "\", \"HitRate\" : \"" + HitRate + "\", \"DodgeRate\" : \"" + DodgeRate + "\", \"CritRate\" : \"" + CritRate + "\", \"StatPoints\" : \""
-                + StatPoints + "\", \"SkillPoints\" : \"" + SkillPoints + "\" }";
+                + StatPoints + "\", \"SkillPoints\" : \"" + SkillPoints + "\", \"Experience\" : \"" + Experience + "\", \"CurHP\" : \"" + CurHP + "\", \"AbilityPoints\" : \"" + AbilityPoints 
+                + "\", \"MagicPoints\" : \"" + MagicPoints + "\", \"CurMP\" : \"" + CurMP + "\" }";
         }
+        
     }
 }

@@ -6776,10 +6776,10 @@ MonoBehaviour:
   legsSlot: {fileID: 950882631}
   glovesSlot: {fileID: 123833373}
   bootsSlot: {fileID: 343548268}
-  mainHandSlot: {fileID: 0}
-  offHandSlot: {fileID: 0}
-  accessory1Slot: {fileID: 0}
-  accessory2Slot: {fileID: 0}
+  mainHandSlot: {fileID: 1888863480}
+  offHandSlot: {fileID: 1036575095}
+  accessory1Slot: {fileID: 933553134}
+  accessory2Slot: {fileID: 866911899}
 --- !u!4 &504933759
 Transform:
   m_ObjectHideFlags: 0
@@ -12190,7 +12190,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1900533190}
+        m_MethodName: ReevaluateStats
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1640952683}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Dropdown+DropdownEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &866911900
@@ -13330,7 +13341,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1900533190}
+        m_MethodName: ReevaluateStats
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1475587049}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Dropdown+DropdownEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &933553135
@@ -15199,7 +15221,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1900533190}
+        m_MethodName: ReevaluateStats
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1634002416}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Dropdown+DropdownEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1036575096
@@ -26571,7 +26604,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1900533190}
+        m_MethodName: ReevaluateStats
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 855295211}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Dropdown+DropdownEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1888863481
