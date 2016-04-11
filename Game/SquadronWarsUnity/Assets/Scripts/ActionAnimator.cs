@@ -50,8 +50,10 @@ namespace Assets.Scripts
             }
             executionerAnimator.SetBool(attackType, false);
             targetAnimator.SetBool("isAttacked", false);
+            Debug.Log(ability);
             if (ability != "attack")
             {
+                Debug.Log("show ability called " + ability);
                 GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
                 Debug.Log(temp);
                 GameObject spell = GameObject.Instantiate(temp, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
