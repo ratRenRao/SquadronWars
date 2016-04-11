@@ -146,13 +146,13 @@ namespace Assets.GameClasses
                 {
                     if (character.Value.character == null)
                     {
-                        character.Value.character = new CharacterGameObject()
-                        {
-                            CharacterClassObject = new Character()
+                            character.Value.character = new CharacterGameObject()
                             {
-                                CurrentStats = new Stats()
-                            }
-                        }
+                                CharacterClassObject = new Character()
+                                {
+                                    CurrentStats = new Stats()
+                                }
+                            };
                     }
 
                     AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value,
