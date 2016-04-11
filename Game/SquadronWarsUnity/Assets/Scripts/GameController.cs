@@ -251,15 +251,15 @@ namespace Assets.Scripts
                                     currentCharacterGameObject.hasAttacked = true;
                                     break;
                                 }
-                                //Debug.Log(act.actionType);
-                                if (act.actionType == GameClasses.Action.ActionType.Endturn)
-                                {
-                                    //GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
-                                    //GlobalConstants.currentActions.AddAction(tempAction);                                
-                                    StartCoroutine(WaitForPlayer1());
-                                    break;
-                                }
-                            }                            
+                                //Debug.Log(act.actionType);                                
+                            }
+                            if (act.actionType == GameClasses.Action.ActionType.Endturn)
+                            {
+                                //GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
+                                //GlobalConstants.currentActions.AddAction(tempAction);                                
+                                StartCoroutine(WaitForPlayer1());
+                                break;
+                            }
                         }
                         
                     }

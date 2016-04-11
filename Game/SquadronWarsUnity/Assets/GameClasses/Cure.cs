@@ -4,7 +4,7 @@ using Assets.Scripts;
 
 namespace Assets.GameClasses
 {
-    class Heal : Ability 
+    class Cure : Ability 
     {
         public override void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
@@ -18,7 +18,7 @@ namespace Assets.GameClasses
             Damage = (int)CalculateHeal(stats);
             stats.CurHP = stats.CurHP - Damage > stats.HitPoints ? stats.HitPoints : stats.CurHP - Damage;
             
-            AnimationManager.Cast("heal");
+            AnimationManager.Cast("Cure");
         }
 
         private double CalculateHeal(Stats stats)
