@@ -30,7 +30,7 @@ namespace Assets.Data
             Debug.Log("Data after removing slashes" + data);
             var deserializedJson = DeserializeData(data);
             _jsonObject = deserializedJson;
-            Debug.Log(deserializedJson.ToString());
+            //Debug.Log(deserializedJson.ToString());
             var obj = Activator.CreateInstance<T>();
             obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(obj)), typeof(T));
 

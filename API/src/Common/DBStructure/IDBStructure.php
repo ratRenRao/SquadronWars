@@ -33,6 +33,10 @@ interface IDBStructure
 
     public function updateCharacter($characterObject);
 
+    public function updateInventory($gameObject);
+
+    public function getGameJSON($gameId);
+
     public function startGame($playerID);
 
     public function checkGame($gameID);

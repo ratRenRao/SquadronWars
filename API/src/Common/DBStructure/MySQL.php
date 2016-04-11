@@ -385,6 +385,42 @@ class MySQL implements IDBStructure
         return $returnCode;
     }
 
+    public function updateInventory($gameObject)
+    {
+        return null;
+    }
+
+    public function getGameJSON($gameId)
+    {
+        //create database reference object
+        $dbh = '';
+
+        //Try to connect to mysql service
+        try
+        {
+            //created config file to hold user name and password that we will use to obscure and keep off of our repo.
+            $dbh = new PDO("mysql:host=localhost:3306;dbname=dbo", dbuser, dbpass);
+        }
+        catch(PDOException $e)
+        {
+            //return status code to be used in response message. 500 server error.
+            return null;
+        }
+
+        $query = $dbh->prepare("Call sp_GetGame(?)");
+        $query->bindParam(1,$gameId,PDO::PARAM_INT);
+        $query->execute();
+
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        $returnObject["GameJSON"] = $result["GameJSON"];
+        $returnObject["ModifyTime"] = $result["ModifyTime"];
+        $returnObject["Finished"] = $result["Finished"];
+        $query->closeCursor();
+
+        return $returnObject;
+    }
+
+
     public function startGame($playerID)
     {
         //create database reference object

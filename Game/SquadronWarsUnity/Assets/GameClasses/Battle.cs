@@ -48,10 +48,10 @@ public class Battle : MonoBehaviour
         var gameInfo = GlobalConstants.Utilities.GetGameInfo();
         //Debug.Log("Update Game Coroutine called");
         //var gameInfo = GlobalConstants.GameInfo;
-        Debug.Log("Update Game Coroutine Entered");
+        //Debug.Log("Update Game Coroutine Entered");
         if (gameInfo != null && !lastModified.Equals(gameInfo.ModifyTime))
         {
-            Debug.Log("Update Game Coroutine Called");
+            //Debug.Log("Update Game Coroutine Called");
                 UpdateGame(gameInfo);
                 lastModified = gameInfo.ModifyTime;
                 // Used to determine if changes have been made to data
