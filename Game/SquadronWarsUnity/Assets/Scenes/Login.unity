@@ -6776,6 +6776,10 @@ MonoBehaviour:
   legsSlot: {fileID: 950882631}
   glovesSlot: {fileID: 123833373}
   bootsSlot: {fileID: 343548268}
+  mainHandSlot: {fileID: 0}
+  offHandSlot: {fileID: 0}
+  accessory1Slot: {fileID: 0}
+  accessory2Slot: {fileID: 0}
 --- !u!4 &504933759
 Transform:
   m_ObjectHideFlags: 0
@@ -26865,7 +26869,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0.25356546}
   m_AnchorMax: {x: 1, y: 0.607779}
-  m_AnchoredPosition: {x: 2, y: 102.36969}
+  m_AnchoredPosition: {x: 2, y: 102.36966}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1916724122

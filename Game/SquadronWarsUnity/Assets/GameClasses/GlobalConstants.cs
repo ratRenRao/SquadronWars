@@ -21,6 +21,7 @@ namespace Assets.GameClasses
         public const string UpdateCharacterUrl = WebServerUrl + "/api/UpdateCharacter";
         public const string UpdatePlayerUrl = WebServerUrl + "/api/UpdatePlayer";
         public const string UpdateSquadUrl = WebServerUrl + "/api/UpdateSquad"; //not implemented yet
+        public const string UpdateInventoryUrl = WebServerUrl + "/api/UpdateInventory"; //not fully implemented. need to discuss how we are going to handle this.
         //Battle Related URLs
         public const string StartGameUrl = WebServerUrl + "/api/StartGame";
         public const string CheckGameStatusUrl = WebServerUrl + "/api/CheckGameInfo";
