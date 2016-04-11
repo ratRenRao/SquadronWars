@@ -1,15 +1,24 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Assets.Scripts;
-using UnityEditor;
-using UnityEngine;
 
 namespace Assets.GameClasses
 {
-    class Fire : Ability
+    class ScorchedEarth : Ability
     {
         public override void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
+            for(int i = 0; i <= 5; i++)
+            {
+                tileDictionary.Add(new CharacterGameObject(), new Tile()
+                {
+                    x = tileDictionary.First().Key.X + i,
+                    y = tileDictionary.First().Key.Y + i
+                });
+            }
+
             base.Initialize(ref tileDictionary, ref executioner, ref executionerTile);
             ImmediateBaseDamage = 10;
             LingeringBaseDamage = 3;
@@ -20,10 +29,13 @@ namespace Assets.GameClasses
 
         public override void ImmediateEffect(Stats stats)
         {
-            Damage = (int)CalculateImmediateDamage();
-            stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
-            stats.CurMP -= mpCost;
-            AnimationManager.SetDamage(Damage);
+            if (stats.CurHP == 0)
+            {
+                Damage = (int) CalculateImmediateDamage();
+                stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
+                stats.CurMP -= mpCost;
+                AnimationManager.SetDamage(Damage);
+            }
             AnimationManager.Cast("Fire");
         }
 
@@ -39,12 +51,12 @@ namespace Assets.GameClasses
 
         private double CalculateLingeringDamage()
         {
-            return Executioner.CharacterClassObject.CurrentStats.MagicAttack*0.5 + (AbilityLevel*0.1) + ImmediateBaseDamage;
+            return Executioner.CharacterClassObject.CurrentStats.MagicAttack * 0.5 + (AbilityLevel * 0.1) + ImmediateBaseDamage;
         }
 
         private int CalculateDuration()
         {
-            return Executioner.CharacterClassObject.CurrentStats.MagicAttack/10;
+            return Executioner.CharacterClassObject.CurrentStats.MagicAttack / 10;
         }
     }
 }

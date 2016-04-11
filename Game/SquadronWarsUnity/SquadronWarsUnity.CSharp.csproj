@@ -81,6 +81,7 @@
     <Compile Include="Assets\GameClasses\Burn.cs" />
     <Compile Include="Assets\GameClasses\Character.cs" />
     <Compile Include="Assets\GameClasses\CharacterGameObject.cs" />
+    <Compile Include="Assets\GameClasses\DoubleAttack.cs" />
     <Compile Include="Assets\GameClasses\Effect.cs" />
     <Compile Include="Assets\GameClasses\Equipment.cs" />
     <Compile Include="Assets\GameClasses\Fire.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Assets\GameClasses\Item.cs" />
     <Compile Include="Assets\GameClasses\Player.cs" />
     <Compile Include="Assets\GameClasses\RegistrationData.cs" />
+    <Compile Include="Assets\GameClasses\ScorchedEarth.cs" />
     <Compile Include="Assets\GameClasses\Squad.cs" />
     <Compile Include="Assets\GameClasses\Stats.cs" />
     <Compile Include="Assets\GameClasses\TimeListener.cs" />

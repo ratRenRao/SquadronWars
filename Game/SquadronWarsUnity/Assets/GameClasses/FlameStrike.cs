@@ -22,6 +22,7 @@ namespace Assets.GameClasses
         {
             Damage = (int)CalculateImmediateDamage();
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
+            stats.CurMP -= mpCost;
             AnimationManager.SetDamage(Damage);
             AnimationManager.Cast("Flame Strike");
         }

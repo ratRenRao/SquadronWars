@@ -28,6 +28,7 @@ namespace Assets.GameClasses
         public bool complete = false;
         internal int Duration = 0;
         internal int Damage = 0;
+        internal int mpCost = 10;
         internal CharacterGameObject Executioner { get; private set; }
         internal Tile ExecutionerTile { get; private set; }
         internal Stopwatch Stopwatch = new Stopwatch();
@@ -143,6 +144,17 @@ namespace Assets.GameClasses
             {
                 if (!character.Key.isDead)
                 {
+                    if (character.Value.character == null)
+                    {
+                        character.Value.character = new CharacterGameObject()
+                        {
+                            CharacterClassObject = new Character()
+                            {
+                                CurrentStats = new Stats()
+                            }
+                        }
+                    }
+
                     AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value,
                         actionType, Damage);
                     ImmediateEffect(character.Key.CharacterClassObject.CurrentStats);
