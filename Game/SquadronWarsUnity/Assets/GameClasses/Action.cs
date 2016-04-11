@@ -34,8 +34,8 @@ namespace Assets.GameClasses
         internal Stopwatch Stopwatch = new Stopwatch();
         internal TimeListener TimeListener;
         internal List<Effect> ResultingEffects;
-        internal List<Tile> Tiles = new List<Tile>();
-        internal Dictionary<CharacterGameObject, Tile> TileDictionary;
+        internal List<Tile> Tiles;
+        //internal Dictionary<CharacterGameObject, Tile> TileDictionary;
         internal AnimationManager AnimationManager;
 
         public Action() : this(ActionType.Idle, new List<Tile>(), "default")
@@ -128,55 +128,56 @@ namespace Assets.GameClasses
             });
         }
 
-        public virtual void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner,
+        public virtual void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner,
             ref Tile executionerTile)
         {            
-            TileDictionary = tileDictionary;
+            Tiles = tiles;
             Executioner = executioner;
             ExecutionerTile = executionerTile;
         }
 
         public virtual void Execute()
         {
-            if(TileDictionary != null)
+            if(Tiles != null)
             { 
-            foreach (var character in TileDictionary)
-            {
-                if (!character.Key.isDead)
+                foreach (var tile in Tiles)
                 {
-                    if (character.Value.character == null)
+                    var character = tile.GetComponent<CharacterGameObject>();
+                    if (!character.isDead)
                     {
-                            character.Value.character = new CharacterGameObject()
-                            {
-                                CharacterClassObject = new Character()
-                                {
-                                    CurrentStats = new Stats()
-                                }
-                            };
-                    }
-
-                    AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value,
-                        actionType, Damage);
-                    ImmediateEffect(character.Key.CharacterClassObject.CurrentStats);
-
-                    if (Duration > 0)
-                    {
-                        TimeListener = new TimeListener(Duration, character.Key.CharacterClassObject.CurrentStats)
+                        /*if (characterCharacterClassObject == null)
                         {
-                            ExecutionMethod = LingeringEffect,
-                            FinishingMethod = RemoveEffect
-                        };
+                                character.ch = new CharacterGameObject()
+                                {
+                                    CharacterClassObject = new Character()
+                                    {
+                                        CurrentStats = new Stats()
+                                    }
+                                };
+                        }*/
 
-                        TimeListener.Start();
-                        GlobalConstants.TimeListeners[character.Key.CharacterClassObject.CharacterId] = TimeListener;
-                            //.Add(character.Key.CharacterClassObject.CharacterId, TimeListener);
-                    }
-                    else if (Duration == 0)
-                    {
-                        RemoveEffect();
+                        AnimationManager = new AnimationManager(Executioner, character, ExecutionerTile, tile,
+                            actionType, Damage);
+                        ImmediateEffect(character.CharacterClassObject.CurrentStats);
+
+                        if (Duration > 0)
+                        {
+                            TimeListener = new TimeListener(Duration, character.CharacterClassObject.CurrentStats)
+                            {
+                                ExecutionMethod = LingeringEffect,
+                                FinishingMethod = RemoveEffect
+                            };
+
+                            TimeListener.Start();
+                            GlobalConstants.TimeListeners[character.CharacterClassObject.CharacterId] = TimeListener;
+                                //.Add(character.Key.CharacterClassObject.CharacterId, TimeListener);
+                        }
+                        else if (Duration == 0)
+                        {
+                            RemoveEffect();
+                        }
                     }
                 }
-            }
             }
         }
 

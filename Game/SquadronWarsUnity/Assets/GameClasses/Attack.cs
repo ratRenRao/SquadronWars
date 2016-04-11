@@ -8,9 +8,9 @@ namespace Assets.GameClasses
 {
     class Attack : Action 
     {
-        public override void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile)
+        public override void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
-            base.Initialize(ref tileDictionary, ref executioner, ref executionerTile);
+            base.Initialize(ref tiles, ref executioner, ref executionerTile);
             ImmediateBaseDamage = Executioner.CharacterClassObject.Equipment.Weapon != null
                ? Executioner.CharacterClassObject.Equipment.Weapon.Damage : 0;
         }

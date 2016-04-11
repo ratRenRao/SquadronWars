@@ -8,18 +8,43 @@ namespace Assets.GameClasses
 {
     class ScorchedEarth : Ability
     {
-        public override void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile)
+        public override void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
-            for(int i = 0; i <= 5; i++)
+            var firstX = tiles.First().x;
+            var firstY = tiles.First().y;
+
+            for (int i = 0; i <= 8; i++)
             {
-                tileDictionary.Add(new CharacterGameObject(), new Tile()
-                {
-                    x = tileDictionary.First().Key.X + i,
-                    y = tileDictionary.First().Key.Y + i
-                });
+                if (firstX + i > 19
+                    || firstY + i > 19)
+                    break;
+
+                var tileX = GlobalConstants.GameController.tileMap.tiles
+                    .Select(tile => tile.GetComponent<Tile>())
+                    .Single(tile => tile.x == firstX + i && tile.y == firstY + i);
+
+                if(tileX != null)
+                    tiles.Add(tileX);
             }
 
-            base.Initialize(ref tileDictionary, ref executioner, ref executionerTile);
+            for (int i = 0; i <= 8; i++)
+            {
+                if (firstX - i < 0 
+                    || firstY - i < 0)
+                    break;
+
+                var tileY = GlobalConstants.GameController.tileMap.tiles
+                    .Select(tile => tile.GetComponent<Tile>())
+                    .Single(tile => tile.x == firstX - i && tile.y == firstY - i);
+
+                if (tileY != null)
+                    tiles.Add(tileY);
+            }
+
+            Random rand = new Random();
+            var randomizedTiles= tiles.OrderBy(tile => rand.Next()).ToList();
+
+            base.Initialize(ref randomizedTiles, ref executioner, ref executionerTile);
             ImmediateBaseDamage = 10;
             LingeringBaseDamage = 3;
             //Duration = 5;

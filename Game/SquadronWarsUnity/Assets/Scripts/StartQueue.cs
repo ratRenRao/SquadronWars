@@ -49,6 +49,7 @@ namespace Assets.Scripts
         {
             if(GlobalConstants.opponentId != 0)
             {
+                queued = false;
                 return true;
             }
             return false;

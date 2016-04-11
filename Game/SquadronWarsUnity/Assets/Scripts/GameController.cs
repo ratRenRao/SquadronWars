@@ -213,9 +213,10 @@ namespace Assets.Scripts
                                         {
                                             gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                         }
-                                        Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
-                                        effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
-                                        gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref targetTile);
+                                        //Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
+                                        //effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
+                                        var effectedTiles = new List<Tile> {tempTile};
+                                        gameAction.Initialize(ref effectedTiles, ref currentCharacterGameObject, ref targetTile);
                                         gameAction.Execute();
                                         currentCharacterGameObject.hasAttacked = true;                                        
                                         break;
@@ -245,9 +246,11 @@ namespace Assets.Scripts
                                         actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals("Attack"));
                                         gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                     }
-                                    Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
-                                    effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
-                                    gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref targetTile);
+                                    //Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
+                                    //effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
+                                    //gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref targetTile);
+                                    var effectedTiles = new List<Tile> { tempTile };
+                                    gameAction.Initialize(ref effectedTiles, ref currentCharacterGameObject, ref targetTile);
                                     gameAction.Execute();
                                     currentCharacterGameObject.hasAttacked = true;
                                     break;
@@ -447,10 +450,12 @@ namespace Assets.Scripts
                                     actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals("Attack"));
                                     gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                 }
-                                Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
+                                //Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
                                 Debug.Log(currentCharacterGameObject.CharacterClassObject.Equipment.Weapon);
-                                effectedCharacterDictionary.Add(targetCharacterGameObject.GetComponent<CharacterGameObject>(), tempTile);
-                                gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
+                                //effectedCharacterDictionary.Add(targetCharacterGameObject.GetComponent<CharacterGameObject>(), tempTile);
+                                //gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
+                                var effectedTiles = new List<Tile> { tempTile };
+                                gameAction.Initialize(ref effectedTiles, ref currentCharacterGameObject, ref targetTile);
                                 gameAction.Execute();
                                 GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.AttackAbility, new List<Tile>() { tempTile }, selectedAbility));
                                 Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType + " " + GlobalConstants.currentActions.ActionOrder[0].performedAction);
@@ -480,10 +485,12 @@ namespace Assets.Scripts
                                 if (actionType != null)
                                 {
                                     gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
-                                }                                
-                                Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
-                                effectedCharacterDictionary.Add(targetCharacterGameObject.GetComponent<CharacterGameObject>(), tempTile);
-                                gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
+                                }
+                                //Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
+                                //effectedCharacterDictionary.Add(targetCharacterGameObject.GetComponent<CharacterGameObject>(), tempTile);
+                                //gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
+                                var effectedTiles = new List<Tile> { tempTile };
+                                gameAction.Initialize(ref effectedTiles, ref currentCharacterGameObject, ref targetTile);
                                 gameAction.Execute();
                                 GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.CastAbility, new List<Tile>() { tempTile }, selectedAbility));
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
