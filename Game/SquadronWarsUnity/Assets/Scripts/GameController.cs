@@ -20,7 +20,8 @@ namespace Assets.Scripts
             AttackAbility,
             CastAbility,
             Occupy,
-            WaitForGameInfo
+            WaitForGameInfo,
+            VIEW
         }
 
         public enum WaitGameState
@@ -36,7 +37,9 @@ namespace Assets.Scripts
         GameObject targetGameCharacter;
         public GameObject DisplayVictory;
         public GameObject characterStatsPanel;
+        public GameObject selectedCharcterStatsPanel;
         public CharacterStatsPanel statsPanel;
+        public CharacterStatsPanel selectedCharcterStats;
         public GameObject actionPanel;
         public AudioSource battlesong;
         public Text playersTurnText;
@@ -388,9 +391,7 @@ namespace Assets.Scripts
                     hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                     if (action == Action.MOVE)
                     {
-                        moveButton.interactable = false;                
-                        Move();
-                        currentCharacterGameObject.hasMoved = true;
+                        Move();                        
                     }
                     /*if (action == Action.Attack)
                     {
@@ -467,14 +468,14 @@ namespace Assets.Scripts
                         }
                     }
                     if (action == Action.CastAbility)
-                    {
-                        attackButton.interactable = false;
-                        abilityButton.interactable = false;
+                    {                        
                         if (hit.collider != null)
                         {                            
                             Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
                             if (tempTile.isValidMove)
                             {
+                                attackButton.interactable = false;
+                                abilityButton.interactable = false;
                                 hidePanel = true;
                                 GetTarget(tempTile);
                                 clearHighlights(validMoves);
@@ -559,12 +560,45 @@ namespace Assets.Scripts
                         action = Action.IDLE;
                     }
                 }
-                if (Input.GetKeyDown("escape") && action != Action.IDLE && action != Action.WaitForGameInfo)
+
+                if (Input.GetMouseButtonUp(0) && (action == Action.IDLE || action == Action.VIEW))
+                {
+                    if (hit.collider != null)
+                    {
+
+                        Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
+                        
+                        if (null != tempTile.characterObject)
+                        {
+                            CharacterGameObject c = tempTile.characterObject.GetComponent<CharacterGameObject>();
+                            selectedCharcterStatsPanel.SetActive(true);
+                            selectedCharcterStats.charName.text = c.CharacterClassObject.Name;
+                            selectedCharcterStats.hp.text = c.CharacterClassObject.CurrentStats.CurHP.ToString() + "/" + c.CharacterClassObject.CurrentStats.HitPoints.ToString();
+                            selectedCharcterStats.mp.text = c.CharacterClassObject.CurrentStats.CurMP.ToString() + "/" + c.CharacterClassObject.CurrentStats.MagicPoints.ToString();
+                        }
+                        else
+                        {
+                            selectedCharcterStatsPanel.SetActive(false);
+                        }
+                    }
+                }
+
+                if (Input.GetKeyDown("escape") && action != Action.WaitForGameInfo)
                 {
                     //Debug.Log("Escape key called");
-                    hidePanel = false;
-                    clearHighlights(validMoves);
-                    action = Action.IDLE;
+                    if (action == Action.IDLE)
+                    {
+                        Debug.Log("Escape key called for view mode");
+                        hidePanel = true;
+                        action = Action.VIEW;
+                    }
+                    else
+                    {
+                        hidePanel = false;
+                        selectedCharcterStatsPanel.SetActive(false);
+                        clearHighlights(validMoves);
+                        action = Action.IDLE;
+                    }
                 }
             }
         }
@@ -595,6 +629,8 @@ namespace Assets.Scripts
                 Tile tempTile = targetTile;
                 if (tempTile.isValidMove)
                 {
+                    moveButton.interactable = false;
+                    currentCharacterGameObject.hasMoved = true;
                     hidePanel = true;
                     tile = tempTile;
                     prevTile = lastTile;
