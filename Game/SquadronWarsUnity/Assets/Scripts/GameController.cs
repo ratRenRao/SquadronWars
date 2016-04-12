@@ -81,6 +81,7 @@ namespace Assets.Scripts
         bool lifeLost = false;
         bool arraySet = false;
         bool placeCharacterPhase = false;
+        bool viewMode = false;
         bool hidePanel = true;
         string selectedAbility;
         int count = 0;
@@ -231,6 +232,7 @@ namespace Assets.Scripts
                             {
                                 foreach (Tile t in act.actionTiles)
                                 {
+                                    Debug.Log("AttackType Called");  
                                     hidePanel = true;
                                     Tile tempTile = tileArray[t.x, t.y];
                                     GetTarget(tempTile);
@@ -561,7 +563,7 @@ namespace Assets.Scripts
                     }
                 }
 
-                if (Input.GetMouseButtonUp(0) && (action == Action.IDLE || action == Action.VIEW))
+                if (Input.GetMouseButtonUp(0) && (action == Action.IDLE || action == Action.VIEW) && viewMode)
                 {
                     if (hit.collider != null)
                     {
@@ -575,6 +577,8 @@ namespace Assets.Scripts
                             selectedCharcterStats.charName.text = c.CharacterClassObject.Name;
                             selectedCharcterStats.hp.text = c.CharacterClassObject.CurrentStats.CurHP.ToString() + "/" + c.CharacterClassObject.CurrentStats.HitPoints.ToString();
                             selectedCharcterStats.mp.text = c.CharacterClassObject.CurrentStats.CurMP.ToString() + "/" + c.CharacterClassObject.CurrentStats.MagicPoints.ToString();
+                            PositionSelectedPanel(c, tempTile);
+                            //characterStatsPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x, currentCharacterGameObject.transform.position.y + 8, 0);
                         }
                         else
                         {
@@ -583,18 +587,19 @@ namespace Assets.Scripts
                     }
                 }
 
-                if (Input.GetKeyDown("escape") && action != Action.WaitForGameInfo)
+                if (Input.GetKeyDown("escape") && action != Action.WaitForGameInfo && !placeCharacterPhase)
                 {
                     //Debug.Log("Escape key called");
                     if (action == Action.IDLE)
                     {
-                        Debug.Log("Escape key called for view mode");
+                        viewMode = true;
                         hidePanel = true;
                         action = Action.VIEW;
                     }
                     else
                     {
                         hidePanel = false;
+                        viewMode = false;
                         selectedCharcterStatsPanel.SetActive(false);
                         clearHighlights(validMoves);
                         action = Action.IDLE;
@@ -1961,6 +1966,15 @@ namespace Assets.Scripts
             
         }
 
+        public void PositionSelectedPanel(CharacterGameObject selCharacter, Tile tempTile)
+        {
+            selectedCharcterStatsPanel.transform.position = new Vector3(selCharacter.transform.position.x, selCharacter.transform.position.y + 8, 0);
+            if (tempTile.y < 4)
+            {
+                selectedCharcterStatsPanel.transform.position = new Vector3(selCharacter.transform.position.x, selCharacter.transform.position.y - 8, 0);
+            }
+        }
+        
         public void PositionPanels()
         {
             characterStatsPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x, currentCharacterGameObject.transform.position.y + 8, 0);
