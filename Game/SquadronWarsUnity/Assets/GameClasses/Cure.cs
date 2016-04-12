@@ -6,9 +6,9 @@ namespace Assets.GameClasses
 {
     class Cure : Ability 
     {
-        public override void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile)
+        public override void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
-            base.Initialize(ref tileDictionary, ref executioner, ref executionerTile);
+            base.Initialize(ref tiles, ref executioner, ref executionerTile);
             ImmediateBaseDamage = -30;
             AbilityLevel = AbilityLevel <= 0 ? 1 : AbilityLevel;
         }
@@ -17,7 +17,7 @@ namespace Assets.GameClasses
         {
             Damage = (int)CalculateHeal(stats);
             stats.CurHP = stats.CurHP - Damage > stats.HitPoints ? stats.HitPoints : stats.CurHP - Damage;
-            
+            stats.CurMP -= mpCost;
             AnimationManager.Cast("Cure");
         }
 

@@ -8,9 +8,9 @@ namespace Assets.GameClasses
 {
     class FlameStrike : Ability
     {
-        public override void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile)
+        public override void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
-            base.Initialize(ref tileDictionary, ref executioner, ref executionerTile);
+            base.Initialize(ref tiles, ref executioner, ref executionerTile);
             ImmediateBaseDamage = 15;
             LingeringBaseDamage = 3;
             //Duration = 5;
@@ -22,6 +22,7 @@ namespace Assets.GameClasses
         {
             Damage = (int)CalculateImmediateDamage();
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
+            stats.CurMP -= mpCost;
             AnimationManager.SetDamage(Damage);
             AnimationManager.Cast("Flame Strike");
         }

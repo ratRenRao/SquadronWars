@@ -9,9 +9,9 @@ namespace Assets.GameClasses
     {
         private Stats _initialStats;
 
-        public override void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile)
+        public override void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
-            base.Initialize(ref tileDictionary, ref executioner, ref executionerTile);
+            base.Initialize(ref tiles, ref executioner, ref executionerTile);
             ImmediateBaseDamage = Executioner.CharacterClassObject.Equipment.Weapon != null
                ? Executioner.CharacterClassObject.Equipment.Weapon.Damage / 2 : 0;
             AbilityLevel = AbilityLevel <= 0 ? 1 : AbilityLevel;
@@ -24,6 +24,8 @@ namespace Assets.GameClasses
             stats.Defense -= Damage;
             Damage = (int) CalculateAttack(stats);
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
+            stats.CurMP -= mpCost;
+            AnimationManager.SetDamage(Damage);
             AnimationManager.Attack("Armor Break");
         }
 

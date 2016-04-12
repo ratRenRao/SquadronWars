@@ -7,7 +7,7 @@ namespace Assets.GameClasses
 {
     public interface IEffectable
     {
-        void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary, ref CharacterGameObject executioner, ref Tile executionerTile);
+        void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile);
         void Execute();
         void ImmediateEffect(Stats stats);
         void RemoveEffect(ref Stats stats);

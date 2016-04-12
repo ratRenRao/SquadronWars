@@ -22,34 +22,35 @@ namespace Assets.GameClasses
         internal TimeListener TimeListener;
         internal List<Effect> ResultingEffects;
         internal List<Tile> Tiles = new List<Tile>();
-        internal Dictionary<CharacterGameObject, Tile> TileDictionary; 
         internal AnimationManager AnimationManager;
         internal Action.ActionType ActionType;
 
-        public virtual void Initialize(ref Dictionary<CharacterGameObject, Tile> tileDictionary , ref CharacterGameObject executioner, ref Tile executionerTile)
+        public virtual void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
-            TileDictionary = tileDictionary;
+            Tiles = tiles;
             Executioner = executioner;
             ExecutionerTile = executionerTile;
         }
 
         public virtual void Execute()
         {
-            foreach (var character in TileDictionary) 
+            foreach (var tile in Tiles)
             {
-                AnimationManager = new AnimationManager(Executioner, character.Key, ExecutionerTile, character.Value, ActionType, Damage);
-                ImmediateEffect(character.Key.CharacterClassObject.CurrentStats);
+                var character = tile.characterObject.GetComponent<CharacterGameObject>();
+
+                AnimationManager = new AnimationManager(Executioner, character, ExecutionerTile, tile, ActionType, Damage);
+                ImmediateEffect(character.CharacterClassObject.CurrentStats);
 
                 if (Duration > 0)
                 {
-                    TimeListener = new TimeListener(Duration, character.Key.CharacterClassObject.CurrentStats)
+                    TimeListener = new TimeListener(Duration, character.CharacterClassObject.CurrentStats)
                     {
                         ExecutionMethod = LingeringEffect,
                         FinishingMethod = RemoveEffect
                     };
 
                     TimeListener.Start();
-                    GlobalConstants.TimeListeners.Add(character.Key.CharacterClassObject.CharacterId, TimeListener);
+                    GlobalConstants.TimeListeners.Add(character.CharacterClassObject.CharacterId, TimeListener);
                     //LingeringEffect(stats);
                 }
                 else if (Duration == 0)
