@@ -6,7 +6,7 @@ using Assets.Scripts;
 using UnityEngine;
 namespace Assets.GameClasses
 {
-    class ScorchedEarth : Ability
+    class MeteorShower : Ability
     {
         public override void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
