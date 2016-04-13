@@ -1,9 +1,11 @@
 ﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using Assets.Scripts;
 using System.Linq;
+
 namespace Assets.GameClasses
 {
     public class Action : IJsonable, IEffectable
@@ -142,7 +144,11 @@ namespace Assets.GameClasses
             { 
                 foreach (var tile in Tiles)
                 {
-                    var character = tile.characterObject.GetComponent<CharacterGameObject>();
+                    CharacterGameObject character = null;
+                    if (null != tile.characterObject)
+                    {
+                        character = tile.characterObject.GetComponent<CharacterGameObject>();
+                    }
                     if (character != null && !character.isDead)
                     {
                         /*if (characterCharacterClassObject == null)
@@ -155,7 +161,8 @@ namespace Assets.GameClasses
                                     }
                                 };
                         }*/
-
+                        UnityEngine.Debug.Log("X: " + tile.x + " Y: " + tile.y);
+                        UnityEngine.Debug.Log("Name: " + character.CharacterClassObject.Name);
                         AnimationManager = new AnimationManager(Executioner, character, ExecutionerTile, tile,
                             actionType, Damage);
                         ImmediateEffect(character.CharacterClassObject.CurrentStats);

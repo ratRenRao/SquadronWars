@@ -24,7 +24,7 @@ namespace Assets.GameClasses
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
             stats.CurMP -= mpCost;
             AnimationManager.SetDamage(Damage);
-            AnimationManager.Cast("Flame Strike");
+            AnimationManager.Attack("Flame Strike");
         }
 
         public override void LingeringEffect(ref Stats stats)

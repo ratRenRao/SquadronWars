@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Assets.Scripts;
-
+using UnityEngine;
 namespace Assets.GameClasses
 {
     class ScorchedEarth : Ability
@@ -13,7 +13,7 @@ namespace Assets.GameClasses
             var firstX = tiles.First().x;
             var firstY = tiles.First().y;
 
-            for (int i = 0; i <= 8; i++)
+            /*for (int i = 0; i <= 8; i++)
             {
                 if (firstX + i > 19
                     || firstY + i > 19)
@@ -39,9 +39,16 @@ namespace Assets.GameClasses
 
                 if (tileY != null)
                     tiles.Add(tileY);
+            }*/
+            for(int i = 0; i < 5; i++)
+            {
+                if (firstX + i < 20){
+                    Debug.Log("X: " + (firstX + i) + " Y: " + firstY);
+                    tiles.Add(GlobalConstants.GameController.tileMap.tileArray[firstX + i, firstY]);
+                }
             }
 
-            Random rand = new Random();
+            System.Random rand = new System.Random();
             var randomizedTiles= tiles.OrderBy(tile => rand.Next()).ToList();
 
             base.Initialize(ref randomizedTiles, ref executioner, ref executionerTile);
@@ -54,13 +61,12 @@ namespace Assets.GameClasses
 
         public override void ImmediateEffect(Stats stats)
         {
-            if (stats.CurHP == 0)
-            {
-                Damage = (int) CalculateImmediateDamage();
-                stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
-                stats.CurMP -= mpCost;
-                AnimationManager.SetDamage(Damage);
-            }
+
+            Damage = (int) CalculateImmediateDamage();
+            stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
+            stats.CurMP -= mpCost;
+            AnimationManager.SetDamage(Damage);
+            Debug.Log("Scorched " + Damage);
             AnimationManager.Cast("Fire");
         }
 

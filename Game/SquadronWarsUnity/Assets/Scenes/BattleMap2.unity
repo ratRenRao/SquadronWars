@@ -607,7 +607,7 @@ MonoBehaviour:
   abilityPanel: {fileID: 624756778}
   gameController: {fileID: 334646434}
   button: {fileID: 250683119}
-  ability: Flame Strike
+  ability: FlameStrike
   abilityType: ability
 --- !u!114 &250683119
 MonoBehaviour:
@@ -8443,7 +8443,7 @@ MonoBehaviour:
   abilityPanel: {fileID: 624756778}
   gameController: {fileID: 334646434}
   button: {fileID: 527955517}
-  ability: Scorched Earth
+  ability: ScorchedEarth
   abilityType: cast
 --- !u!114 &527955517
 MonoBehaviour:
