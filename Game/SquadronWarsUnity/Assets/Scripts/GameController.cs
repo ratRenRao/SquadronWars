@@ -69,8 +69,8 @@ namespace Assets.Scripts
         List<CharacterGameObject> characters = new List<CharacterGameObject>();
         List<CharacterGameObject> gCharacters = GlobalConstants.MatchCharacters;
         List<Character> characterList = new List<Character>();
-        List<GameObject> myCharacters = new List<GameObject>();
-        List<GameObject> enemyCharacters = new List<GameObject>();
+        public List<GameObject> myCharacters = new List<GameObject>();
+        public List<GameObject> enemyCharacters = new List<GameObject>();
         //Character character;
         //Character targetCharacter;
         Action action = Action.IDLE;

@@ -40,14 +40,18 @@ namespace Assets.GameClasses
                 if (tileY != null)
                     tiles.Add(tileY);
             }*/
-            for(int i = 0; i < 5; i++)
+            /*for(int i = 0; i < 5; i++)
             {
                 if (firstX + i < 20){
                     Debug.Log("X: " + (firstX + i) + " Y: " + firstY);
                     tiles.Add(GlobalConstants.GameController.tileMap.tileArray[firstX + i, firstY]);
                 }
+            }*/
+            tiles.Clear();
+            foreach(GameObject GO in GlobalConstants.GameController.enemyCharacters)
+            {
+                tiles.Add(GlobalConstants.GameController.tileMap.tileArray[GO.GetComponent<CharacterGameObject>().X, GO.GetComponent<CharacterGameObject>().Y]);
             }
-
             System.Random rand = new System.Random();
             var randomizedTiles= tiles.OrderBy(tile => rand.Next()).ToList();
 
@@ -62,12 +66,11 @@ namespace Assets.GameClasses
         public override void ImmediateEffect(Stats stats)
         {
 
-            Damage = (int) CalculateImmediateDamage();
+            Damage = 999;
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
             stats.CurMP -= mpCost;
             AnimationManager.SetDamage(Damage);
-            Debug.Log("Scorched " + Damage);
-            AnimationManager.Cast("Fire");
+            AnimationManager.Cast("MeteorShower");
         }
 
         public override void LingeringEffect(ref Stats stats)
