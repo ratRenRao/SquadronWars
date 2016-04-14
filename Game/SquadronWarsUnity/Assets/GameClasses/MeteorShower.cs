@@ -13,45 +13,22 @@ namespace Assets.GameClasses
             var firstX = tiles.First().x;
             var firstY = tiles.First().y;
 
-            /*for (int i = 0; i <= 8; i++)
-            {
-                if (firstX + i > 19
-                    || firstY + i > 19)
-                    break;
-
-                var tileX = GlobalConstants.GameController.tileMap.tiles
-                    .Select(tile => tile.GetComponent<Tile>())
-                    .Single(tile => tile.x == firstX + i && tile.y == firstY + i);
-
-                if(tileX != null)
-                    tiles.Add(tileX);
-            }
-
-            for (int i = 0; i <= 8; i++)
-            {
-                if (firstX - i < 0 
-                    || firstY - i < 0)
-                    break;
-
-                var tileY = GlobalConstants.GameController.tileMap.tiles
-                    .Select(tile => tile.GetComponent<Tile>())
-                    .Single(tile => tile.x == firstX - i && tile.y == firstY - i);
-
-                if (tileY != null)
-                    tiles.Add(tileY);
-            }*/
-            /*for(int i = 0; i < 5; i++)
-            {
-                if (firstX + i < 20){
-                    Debug.Log("X: " + (firstX + i) + " Y: " + firstY);
-                    tiles.Add(GlobalConstants.GameController.tileMap.tileArray[firstX + i, firstY]);
-                }
-            }*/
             tiles.Clear();
-            foreach(GameObject GO in GlobalConstants.GameController.enemyCharacters)
+            if(GlobalConstants.GameController.myCharacters.Select(character => character.GetComponent<CharacterGameObject>()).Contains(executioner))
             {
-                tiles.Add(GlobalConstants.GameController.tileMap.tileArray[GO.GetComponent<CharacterGameObject>().X, GO.GetComponent<CharacterGameObject>().Y]);
+                foreach (GameObject GO in GlobalConstants.GameController.enemyCharacters)
+                {
+                    tiles.Add(GlobalConstants.GameController.tileMap.tileArray[GO.GetComponent<CharacterGameObject>().X, GO.GetComponent<CharacterGameObject>().Y]);
+                }
             }
+            else
+            {
+                foreach (GameObject GO in GlobalConstants.GameController.myCharacters)
+                {
+                    tiles.Add(GlobalConstants.GameController.tileMap.tileArray[GO.GetComponent<CharacterGameObject>().X, GO.GetComponent<CharacterGameObject>().Y]);
+                }
+            }
+            
             System.Random rand = new System.Random();
             var randomizedTiles= tiles.OrderBy(tile => rand.Next()).ToList();
 
