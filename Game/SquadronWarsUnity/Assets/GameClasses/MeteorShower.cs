@@ -6,48 +6,29 @@ using Assets.Scripts;
 using UnityEngine;
 namespace Assets.GameClasses
 {
-    class ScorchedEarth : Ability
+    class MeteorShower : Ability
     {
         public override void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
             var firstX = tiles.First().x;
             var firstY = tiles.First().y;
 
-            /*for (int i = 0; i <= 8; i++)
+            tiles.Clear();
+            if(GlobalConstants.GameController.myCharacters.Select(character => character.GetComponent<CharacterGameObject>()).Contains(executioner))
             {
-                if (firstX + i > 19
-                    || firstY + i > 19)
-                    break;
-
-                var tileX = GlobalConstants.GameController.tileMap.tiles
-                    .Select(tile => tile.GetComponent<Tile>())
-                    .Single(tile => tile.x == firstX + i && tile.y == firstY + i);
-
-                if(tileX != null)
-                    tiles.Add(tileX);
-            }
-
-            for (int i = 0; i <= 8; i++)
-            {
-                if (firstX - i < 0 
-                    || firstY - i < 0)
-                    break;
-
-                var tileY = GlobalConstants.GameController.tileMap.tiles
-                    .Select(tile => tile.GetComponent<Tile>())
-                    .Single(tile => tile.x == firstX - i && tile.y == firstY - i);
-
-                if (tileY != null)
-                    tiles.Add(tileY);
-            }*/
-            for(int i = 0; i < 5; i++)
-            {
-                if (firstX + i < 20){
-                    Debug.Log("X: " + (firstX + i) + " Y: " + firstY);
-                    tiles.Add(GlobalConstants.GameController.tileMap.tileArray[firstX + i, firstY]);
+                foreach (GameObject GO in GlobalConstants.GameController.enemyCharacters)
+                {
+                    tiles.Add(GlobalConstants.GameController.tileMap.tileArray[GO.GetComponent<CharacterGameObject>().X, GO.GetComponent<CharacterGameObject>().Y]);
                 }
             }
-
+            else
+            {
+                foreach (GameObject GO in GlobalConstants.GameController.myCharacters)
+                {
+                    tiles.Add(GlobalConstants.GameController.tileMap.tileArray[GO.GetComponent<CharacterGameObject>().X, GO.GetComponent<CharacterGameObject>().Y]);
+                }
+            }
+            
             System.Random rand = new System.Random();
             var randomizedTiles= tiles.OrderBy(tile => rand.Next()).ToList();
 
@@ -62,12 +43,11 @@ namespace Assets.GameClasses
         public override void ImmediateEffect(Stats stats)
         {
 
-            Damage = (int) CalculateImmediateDamage();
+            Damage = 999;
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
             stats.CurMP -= mpCost;
             AnimationManager.SetDamage(Damage);
-            Debug.Log("Scorched " + Damage);
-            AnimationManager.Cast("Fire");
+            AnimationManager.Cast("MeteorShower");
         }
 
         public override void LingeringEffect(ref Stats stats)

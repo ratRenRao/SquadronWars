@@ -96,12 +96,23 @@ namespace Assets.Scripts
             float wait = 0;
             if (ability != null)
             {
-                Debug.Log(ability);
-                GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
-                GameObject spell = GameObject.Instantiate(temp, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
-                spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (targetTile.y * 2);
-                spell.transform.parent = targetTile.transform;
-                spell.transform.localScale = new Vector3(1, 1, 0.0f);
+                GameObject spell;
+                if (ability == "MeteorShower")
+                {
+                    GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
+                    spell = GameObject.Instantiate(temp, new Vector3(targetTile.transform.parent.transform.position.x + 35, targetTile.transform.parent.transform.position.y - 25), Quaternion.identity) as GameObject;
+                    spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (targetTile.y * 2);
+                    spell.transform.parent = targetTile.transform.parent.transform;
+                    spell.transform.localScale = new Vector3(10, 10, 0.0f);
+                }
+                else {
+                    Debug.Log(ability);
+                    GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
+                    spell = GameObject.Instantiate(temp, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
+                    spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (targetTile.y * 2);
+                    spell.transform.parent = targetTile.transform;
+                    spell.transform.localScale = new Vector3(1, 1, 0.0f);
+                }
                 yield return new WaitForSeconds(.2f);
                 targetAnimator.SetBool("isAttacked", true);
                 yield return new WaitForSeconds(.4f);
