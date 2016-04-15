@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb5ae2dcc28bd24593534f759d399fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animTime: 0.3
+  animTime: 0.5
 --- !u!114 &11497522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,7 +107,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: animTime
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_FontData.m_FontSize
