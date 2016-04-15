@@ -114,34 +114,44 @@ namespace Assets.Scripts
                     spell.transform.localScale = new Vector3(1, 1, 0.0f);
                 }
                 yield return new WaitForSeconds(.2f);
-                targetAnimator.SetBool("isAttacked", true);
+                if(targetAnimator != null)
+                    targetAnimator.SetBool("isAttacked", true);
                 yield return new WaitForSeconds(.4f);
-                targetAnimator.SetBool("isAttacked", false);
+                if(targetAnimator != null)
+                    targetAnimator.SetBool("isAttacked", false);
                 wait = spell.GetComponent<AutoDestroy>().animTime + .4f;
                 //damage = CalculateMagicDamage(ability);
 
                 yield return new WaitForSeconds(.2f);
-                GameObject particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
-                GameObject damageText = (GameObject)Resources.Load(("Prefabs/DamageText"), typeof(GameObject));
-                GameObject dmgObject = GameObject.Instantiate(damageText, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y + 3.2f), Quaternion.identity) as GameObject;
-                dmgObject.transform.parent = particleCanvas.transform;
-                //damage = (damage <= 0) ? 1 : damage;
-                dmgObject.GetComponent<Text>().text = damage.ToString();
-                Debug.Log(target.CharacterClassObject.CurrentStats.CurHP);
+                if (targetAnimator != null)
+                {
+                    GameObject particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
+                    GameObject damageText = (GameObject) Resources.Load(("Prefabs/DamageText"), typeof (GameObject));
+                    GameObject dmgObject =
+                        GameObject.Instantiate(damageText,
+                            new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y + 3.2f),
+                            Quaternion.identity) as GameObject;
+                    dmgObject.transform.parent = particleCanvas.transform;
+                    //damage = (damage <= 0) ? 1 : damage;
+                    dmgObject.GetComponent<Text>().text = damage.ToString();
+                    Debug.Log(target.CharacterClassObject.CurrentStats.CurHP);
+                }
                 yield return new WaitForSeconds(wait);
                 if (target.CharacterClassObject.CurrentStats.CurHP <= 0)
                 {
                     //target.CharacterClassObject.CurrentStats.CurHP = 0;
                     target.isDead = true;
                     //myCharacters.Remove(target.gameObject);
-                    targetAnimator.SetBool("isDead", true);
+                    if (targetAnimator != null)
+                        targetAnimator.SetBool("isDead", true);
                     yield return new WaitForSeconds(.8f);
                     Debug.Log(target.CharacterClassObject.Name);
                 }
             }
 
             GlobalConstants.GameController.ResetData();
-            StartCoroutine(InjuredAnimation(targetAnimator));
+            if(targetAnimator != null)
+                StartCoroutine(InjuredAnimation(targetAnimator));
         }
 
         IEnumerator CastAnimationNothing(Animator executionerAnimator)

@@ -1418,21 +1418,17 @@ namespace Assets.Scripts
 
         public CharacterGameObject GetCharacterGameObject(Tile tile)
         {
-            if (tile.isOccupied)
-                return tile.character;
-
-            return null;
+            return tile.isOccupied ? tile.character : null;
         }
 
         public Animator GetAnimator(Tile tile)
         {
-            if (tile.isOccupied)
-                return tile.characterObject.GetComponent<UnityEngine.Animator>();
-
-            return null;
+            if (tile.characterObject == null)
+                return null; 
+            return tile.isOccupied ? tile.characterObject.GetComponent<UnityEngine.Animator>() : null;
         }
 
-        public void Cast(Tile targetTile, string ability)
+            public void Cast(Tile targetTile, string ability)
         {
             action = Action.IDLE;
             anim.SetBool("isCasting", true);

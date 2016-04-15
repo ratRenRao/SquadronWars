@@ -149,9 +149,20 @@ namespace Assets.GameClasses
                     {
                         character = tile.characterObject.GetComponent<CharacterGameObject>();
                     }
-                    if (character != null && !character.isDead)
+                    if (character == null || character.isDead)
                     {
-                        /*if (characterCharacterClassObject == null)
+                        character = new CharacterGameObject()
+                        {
+                            CharacterClassObject = new Character()
+                            {
+                                CurrentStats = new Stats()
+                                {
+                                    CurHP = 100
+                                }
+                            }
+                        };
+                    }
+                    /*if (characterCharacterClassObject == null)
                         {
                                 character.ch = new CharacterGameObject()
                                 {
@@ -161,28 +172,27 @@ namespace Assets.GameClasses
                                     }
                                 };
                         }*/
-                        UnityEngine.Debug.Log("X: " + tile.x + " Y: " + tile.y);
-                        UnityEngine.Debug.Log("Name: " + character.CharacterClassObject.Name);
-                        AnimationManager = new AnimationManager(Executioner, character, ExecutionerTile, tile,
-                            actionType, Damage);
-                        ImmediateEffect(character.CharacterClassObject.CurrentStats);
+                        //UnityEngine.Debug.Log("X: " + tile.x + " Y: " + tile.y);
+                        //UnityEngine.Debug.Log("Name: " + character.CharacterClassObject.Name);
+                    AnimationManager = new AnimationManager(Executioner, character, ExecutionerTile, tile,
+                        actionType, Damage);
+                    ImmediateEffect(character.CharacterClassObject.CurrentStats);
 
-                        if (Duration > 0)
+                    if (Duration > 0)
+                    {
+                        TimeListener = new TimeListener(Duration, character.CharacterClassObject.CurrentStats)
                         {
-                            TimeListener = new TimeListener(Duration, character.CharacterClassObject.CurrentStats)
-                            {
-                                ExecutionMethod = LingeringEffect,
-                                FinishingMethod = RemoveEffect
-                            };
+                            ExecutionMethod = LingeringEffect,
+                            FinishingMethod = RemoveEffect
+                        };
 
-                            TimeListener.Start();
-                            GlobalConstants.TimeListeners[character.CharacterClassObject.CharacterId] = TimeListener;
-                                //.Add(character.Key.CharacterClassObject.CharacterId, TimeListener);
-                        }
-                        else if (Duration == 0)
-                        {
-                            RemoveEffect();
-                        }
+                        TimeListener.Start();
+                        GlobalConstants.TimeListeners[character.CharacterClassObject.CharacterId] = TimeListener;
+                            //.Add(character.Key.CharacterClassObject.CharacterId, TimeListener);
+                    }
+                    else if (Duration == 0)
+                    {
+                        RemoveEffect();
                     }
                 }
             }
