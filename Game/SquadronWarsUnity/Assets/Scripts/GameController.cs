@@ -1908,13 +1908,7 @@ namespace Assets.Scripts
                     turnQueue.Add(turnQueue[0]);
                     turnQueue.RemoveAt(0);
                     Tile t = tileArray[turnQueue[0].GetComponent<CharacterGameObject>().X, turnQueue[0].GetComponent<CharacterGameObject>().Y];
-                    if (t.character == null)
-                        break;
-                    //Debug.Log(t.character);
-                    //Debug.Log(t.character.isDead);
-                    if (t.character == null)
-                        break;
-                    if (!t.character.isDead)
+                    if (!turnQueue[0].GetComponent<CharacterGameObject>().isDead)
                     {
                         getNextAvailableCharacter = true;
                     }
