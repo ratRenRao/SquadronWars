@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Assets.GameClasses;
 
 public class ExperienceBar : MonoBehaviour
 {
     public Text experience;
     public Text level;
+    public Text charName;
+    public GameObject characterModel;
     public Image bar;
+    public int slot;
     int lvl;
     int index;
     int exp = 0;
@@ -15,25 +19,28 @@ public class ExperienceBar : MonoBehaviour
 
     void Start()
     {
+        CharacterGameObject chararacter = GlobalConstants.MatchCharacters[slot];
+        var temp = (GameObject)Resources.Load(("Prefabs/Character" + chararacter.CharacterClassObject.SpriteId), typeof(GameObject));
+        var sprite = temp.GetComponent<SpriteRenderer>();
         Image bar = GetComponent<Image>();
-        lvl = 1;
-        index = 0;
-        maxExp = expLevel[index];
+        characterModel.GetComponent<Image>().sprite = sprite.sprite;
+        lvl = chararacter.CharacterClassObject.LevelId;
+        exp = chararacter.CharacterClassObject.BaseStats.Experience;
+        maxExp = expLevel[lvl - 1];
         experience.text = exp.ToString() + " / " + maxExp.ToString();
         level.text = lvl.ToString();
+        charName.text = chararacter.CharacterClassObject.Name;
     }
 
     void Update()
     {
         //TEST
-        if (exp < maxExp)
+        if (0 < GlobalConstants.EarnedExp)
         {
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                exp += 1;
-                experience.text = exp.ToString() + " / " + maxExp.ToString();
-                bar.fillAmount = exp * 1.0f / maxExp;
-            }
+            exp += 1;
+            experience.text = exp.ToString() + " / " + maxExp.ToString();
+            bar.fillAmount = exp * 1.0f / maxExp;
+            GlobalConstants.EarnedExp -= 1;
         }
 
         if (exp == maxExp && maxExp != 1000)

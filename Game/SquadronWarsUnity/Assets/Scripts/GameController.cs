@@ -152,7 +152,8 @@ namespace Assets.Scripts
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 waitGameState = WaitGameState.Wait;
                                 Debug.Log("Selecting next character being called");
-                                SelectNextCharacter();
+                                StartCoroutine(WaitSecToStart());
+                                
                             }
                             else
                             {
@@ -1609,6 +1610,8 @@ namespace Assets.Scripts
 
         IEnumerator DisplayVictory()
         {
+            GlobalConstants.EarnedGold = 200;
+            GlobalConstants.EarnedExp = 750;
             yield return new WaitForSeconds(.5f);
             battlesong.mute = true;
             victorysong.Play();
@@ -1623,6 +1626,8 @@ namespace Assets.Scripts
 
         IEnumerator DisplayDefeat()
         {
+            GlobalConstants.EarnedGold = 50;
+            GlobalConstants.EarnedExp = 375;
             yield return new WaitForSeconds(.5f);
             battlesong.mute = true;
             defeatsong.Play();
@@ -1741,7 +1746,14 @@ namespace Assets.Scripts
             //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.CheckGameStatusUrl, new BattlePostObject());
 
         }
+        IEnumerator WaitSecToStart()
+        {
+            yield return new WaitForSeconds(1f);
+            SelectNextCharacter();
+            //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.CheckGameStatusUrl, new BattlePostObject());
 
+        }
+        
         public void ResetData()
         {
             selectedAbility = null;

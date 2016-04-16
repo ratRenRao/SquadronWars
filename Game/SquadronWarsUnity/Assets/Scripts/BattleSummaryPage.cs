@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Assets.GameClasses;
 
 public class BattleSummaryPage : MonoBehaviour
 {
@@ -18,11 +19,11 @@ public class BattleSummaryPage : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (gold < maxGold)
+        if (0 < GlobalConstants.EarnedGold)
         {
-            if (Input.GetKey(KeyCode.UpArrow))
-                gold += 1;
-            goldAmount.text = gold.ToString();
+            GlobalConstants.Player.gold += 1;
+            goldAmount.text = GlobalConstants.Player.gold.ToString();
+            GlobalConstants.EarnedGold -= 1;
         }
     }
 }

@@ -75,7 +75,8 @@ namespace Assets.GameClasses
         public static int DamageAndHealingDone = 0;
         public static DateTime StartGameTime { get; set; }
         public static DateTime EndGameTime { get; set; }
-
+        public static int EarnedExp = 0;
+        public static int EarnedGold = 0;
         public static string GetJsonObjectName<T>(T obj) where T : IJsonable
         {
             return obj.GetJsonObjectName();
