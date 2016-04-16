@@ -97,7 +97,17 @@ namespace Assets.Scripts
             if (ability != null)
             {
                 GameObject spell;
-                if (ability == "MeteorShower")
+                if(ability == "UltimateSummon")
+                {
+                    GlobalConstants.GameController.battlesong.mute = true;
+                    GlobalConstants.GameController.funsong.Play();
+                    GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
+                    spell = GameObject.Instantiate(temp, new Vector3(targetTile.transform.parent.transform.position.x + 18, targetTile.transform.parent.transform.position.y - 35), Quaternion.identity) as GameObject;
+                    spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (targetTile.y * 2);
+                    spell.transform.parent = targetTile.transform.parent.transform;
+                    spell.transform.localScale = new Vector3(6, 12, 0.0f);
+                }
+                else if (ability == "MeteorShower")
                 {
                     GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
                     spell = GameObject.Instantiate(temp, new Vector3(targetTile.transform.parent.transform.position.x + 35, targetTile.transform.parent.transform.position.y - 25), Quaternion.identity) as GameObject;

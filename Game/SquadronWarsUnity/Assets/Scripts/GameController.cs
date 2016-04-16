@@ -42,6 +42,7 @@ namespace Assets.Scripts
         public CharacterStatsPanel selectedCharcterStats;
         public GameObject actionPanel;
         public AudioSource battlesong;
+        public AudioSource funsong;
         public Text playersTurnText;
         public Button attackButton;
         public Button abilityButton;
@@ -2026,8 +2027,13 @@ namespace Assets.Scripts
             }
             gCharacters = cgo;
         }
-        //TODO
-        //AddAction()
-        //CheckAction()
+
+        private void SetUsableAbilities()
+        {
+            foreach(Ability a in currentCharacterGameObject.CharacterClassObject.Abilities)
+            {
+                
+            }
+        }
     }
 }
