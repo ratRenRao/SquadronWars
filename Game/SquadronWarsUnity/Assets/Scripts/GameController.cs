@@ -46,6 +46,9 @@ namespace Assets.Scripts
         public GameObject actionPanel;
         public AudioSource battlesong;
         public AudioSource funsong;
+        public AudioSource defeatsong;
+        public AudioSource victorysong;
+        public AudioSource placecharactersong;
         public Text playersTurnText;
         public Button attackButton;
         public Button abilityButton;
@@ -87,6 +90,7 @@ namespace Assets.Scripts
         bool placeCharacterPhase = false;
         bool viewMode = false;
         bool hidePanel = true;
+        bool endcalled = false;
         string selectedAbility;
         int count = 0;
         int idCount = 1;
@@ -110,7 +114,7 @@ namespace Assets.Scripts
             //Debug.Log(GlobalConstants._dbConnection);
             GlobalConstants.ActionAnimator = ActionAnimator;
             GlobalConstants.GameController = this;
-            battlesong.playOnAwake = true;
+            placecharactersong.playOnAwake = true;
             placeCharacterPhase = true;
             characters = GlobalConstants.MatchCharacters;
             statsPanel.charName.text = characters[0].CharacterClassObject.Name;
@@ -589,14 +593,16 @@ namespace Assets.Scripts
                     abilityList.ShowSuperAbilities();
                 }
 
-                if (action == Action.Victory)
+                if (action == Action.Victory && !endcalled)
                 {
                     Debug.Log("YOU WIN");
+                    endcalled = true;
                     StartCoroutine(DisplayVictory());
                 }
-                if (action == Action.Defeat)
+                if (action == Action.Defeat && !endcalled)
                 {
                     Debug.Log("YOU LOSE");
+                    endcalled = true;
                     StartCoroutine(DisplayDefeat());
                 }
             }
@@ -1604,6 +1610,8 @@ namespace Assets.Scripts
         IEnumerator DisplayVictory()
         {
             yield return new WaitForSeconds(.5f);
+            battlesong.mute = true;
+            victorysong.Play();
             GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/Victory"), typeof(GameObject));
             GameObject message = GameObject.Instantiate(temp.gameObject, new Vector3(targetTile.transform.parent.transform.position.x + 35, targetTile.transform.parent.transform.position.y - 35), Quaternion.identity) as GameObject;
             message.GetComponent<SpriteRenderer>().sortingOrder = 50;
@@ -1616,6 +1624,8 @@ namespace Assets.Scripts
         IEnumerator DisplayDefeat()
         {
             yield return new WaitForSeconds(.5f);
+            battlesong.mute = true;
+            defeatsong.Play();
             GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/Defeat"), typeof(GameObject));
             GameObject message = GameObject.Instantiate(temp.gameObject, new Vector3(targetTile.transform.parent.transform.position.x + 35, targetTile.transform.parent.transform.position.y - 35), Quaternion.identity) as GameObject;
             message.GetComponent<SpriteRenderer>().sortingOrder = 50;
@@ -1906,6 +1916,8 @@ namespace Assets.Scripts
         {
             if (placeCharacterPhase)
             {
+                placecharactersong.mute = true;
+                battlesong.Play();
                 placeCharacterPhase = false;
                 foreach (GameObject g in turnQueue)
                 {

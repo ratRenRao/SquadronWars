@@ -85,16 +85,17 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &172680775 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 8259824, guid: 1e0bcd8f67ea56b478c525f698e5a9ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 1531998204}
 --- !u!114 &213108877 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11454660, guid: 1e0bcd8f67ea56b478c525f698e5a9ee,
     type: 2}
   m_PrefabInternal: {fileID: 1531998204}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
---- !u!1 &332873274 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 162894, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-  m_PrefabInternal: {fileID: 1531998204}
 --- !u!1001 &334646031
 Prefab:
   m_ObjectHideFlags: 0
@@ -1858,6 +1859,9 @@ MonoBehaviour:
   actionPanel: {fileID: 787019965}
   battlesong: {fileID: 787019959}
   funsong: {fileID: 866907081}
+  defeatsong: {fileID: 475763580}
+  victorysong: {fileID: 172680775}
+  placecharactersong: {fileID: 1550129861}
   playersTurnText: {fileID: 213108877}
   attackButton: {fileID: 787019963}
   abilityButton: {fileID: 787019962}
@@ -7579,6 +7583,11 @@ MonoBehaviour:
   highlight: {fileID: 0}
   characterObject: {fileID: 0}
   character: {fileID: 0}
+--- !u!82 &475763580 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 8243052, guid: 1e0bcd8f67ea56b478c525f698e5a9ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 1531998204}
 --- !u!82 &787019959 stripped
 AudioSource:
   m_PrefabParentObject: {fileID: 8206048, guid: 1e0bcd8f67ea56b478c525f698e5a9ee,
@@ -7685,7 +7694,7 @@ CanvasRenderer:
   m_GameObject: {fileID: 864084403}
 --- !u!82 &866907081 stripped
 AudioSource:
-  m_PrefabParentObject: {fileID: 8202650, guid: 1e0bcd8f67ea56b478c525f698e5a9ee,
+  m_PrefabParentObject: {fileID: 8282442, guid: 1e0bcd8f67ea56b478c525f698e5a9ee,
     type: 2}
   m_PrefabInternal: {fileID: 1531998204}
 --- !u!1 &1209817606
@@ -7993,6 +8002,10 @@ Prefab:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 334646434}
+    - target: {fileID: 11423582, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 334646434}
     - target: {fileID: 11486684, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -8001,107 +8014,20 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 334646435}
-    - target: {fileID: 11423582, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-      propertyPath: gameController
-      value: 
-      objectReference: {fileID: 334646434}
-    - target: {fileID: 11454986, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-      propertyPath: ArmorBreak
-      value: 
-      objectReference: {fileID: 1531998214}
-    - target: {fileID: 11454986, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-      propertyPath: Bash
-      value: 
-      objectReference: {fileID: 1531998213}
-    - target: {fileID: 11454986, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-      propertyPath: Bio
-      value: 
-      objectReference: {fileID: 1531998212}
-    - target: {fileID: 11454986, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-      propertyPath: Cure
-      value: 
-      objectReference: {fileID: 1531998211}
-    - target: {fileID: 11454986, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-      propertyPath: DoubleAttack
-      value: 
-      objectReference: {fileID: 1531998210}
-    - target: {fileID: 11454986, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-      propertyPath: FlameStrike
-      value: 
-      objectReference: {fileID: 1531998209}
-    - target: {fileID: 11454986, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-      propertyPath: Fire
-      value: 
-      objectReference: {fileID: 1531998208}
-    - target: {fileID: 11454986, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-      propertyPath: Focus
-      value: 
-      objectReference: {fileID: 1531998207}
-    - target: {fileID: 11454986, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-      propertyPath: Ice
-      value: 
-      objectReference: {fileID: 332873274}
-    - target: {fileID: 11454986, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-      propertyPath: ScorchedEarth
-      value: 
-      objectReference: {fileID: 1531998206}
-    - target: {fileID: 11454986, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-      propertyPath: MeteorShower
-      value: 
-      objectReference: {fileID: 1531998205}
-    - target: {fileID: 11454986, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-      propertyPath: UltimateSummon
-      value: 
-      objectReference: {fileID: 1811100296}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1531998205 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 173000, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-  m_PrefabInternal: {fileID: 1531998204}
---- !u!1 &1531998206 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 163278, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-  m_PrefabInternal: {fileID: 1531998204}
---- !u!1 &1531998207 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 193740, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-  m_PrefabInternal: {fileID: 1531998204}
---- !u!1 &1531998208 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 104056, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-  m_PrefabInternal: {fileID: 1531998204}
---- !u!1 &1531998209 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 160750, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-  m_PrefabInternal: {fileID: 1531998204}
---- !u!1 &1531998210 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 188868, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-  m_PrefabInternal: {fileID: 1531998204}
---- !u!1 &1531998211 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 122142, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-  m_PrefabInternal: {fileID: 1531998204}
---- !u!1 &1531998212 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 114326, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-  m_PrefabInternal: {fileID: 1531998204}
---- !u!1 &1531998213 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 129752, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-  m_PrefabInternal: {fileID: 1531998204}
---- !u!1 &1531998214 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 182010, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-  m_PrefabInternal: {fileID: 1531998204}
 --- !u!114 &1531998215 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11454986, guid: 1e0bcd8f67ea56b478c525f698e5a9ee,
     type: 2}
   m_PrefabInternal: {fileID: 1531998204}
   m_Script: {fileID: 11500000, guid: ca8fe4fcb48cb1d49afc17cb9b14c41d, type: 3}
+--- !u!82 &1550129861 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 8202650, guid: 1e0bcd8f67ea56b478c525f698e5a9ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 1531998204}
 --- !u!1 &1652792448
 GameObject:
   m_ObjectHideFlags: 0
@@ -8163,10 +8089,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!1 &1811100296 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 104400, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
-  m_PrefabInternal: {fileID: 1531998204}
 --- !u!1 &1982254630 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 163404, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
