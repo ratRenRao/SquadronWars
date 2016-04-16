@@ -129,10 +129,10 @@ namespace Assets.Scripts
                 yield return new WaitForSeconds(.4f);
                 if(targetAnimator != null)
                     targetAnimator.SetBool("isAttacked", false);
-                wait = spell.GetComponent<AutoDestroy>().animTime + .4f;
+                wait = spell.GetComponent<AutoDestroy>().animTime + .1f;
                 //damage = CalculateMagicDamage(ability);
 
-                yield return new WaitForSeconds(.2f);
+                yield return new WaitForSeconds(wait);
                 if (targetAnimator != null)
                 {
                     GameObject particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
@@ -146,7 +146,7 @@ namespace Assets.Scripts
                     dmgObject.GetComponent<Text>().text = damage.ToString();
                     Debug.Log(target.CharacterClassObject.CurrentStats.CurHP);
                 }
-                yield return new WaitForSeconds(wait);
+                bool gameover = false;
                 if (target.CharacterClassObject.CurrentStats.CurHP <= 0)
                 {
                     //target.CharacterClassObject.CurrentStats.CurHP = 0;
@@ -156,11 +156,20 @@ namespace Assets.Scripts
                         targetAnimator.SetBool("isDead", true);
                     yield return new WaitForSeconds(.8f);
                     Debug.Log(target.CharacterClassObject.Name);
+                    if(GlobalConstants.GameController.CheckGameOver()){
+                        gameover = true;
+                    }
+                    if (GlobalConstants.GameController.CheckVictory())
+                    {
+                        Debug.Log("Victory");
+                        gameover = true;
+                    }
                 }
             }
-
+            yield return new WaitForSeconds(.5f);
             GlobalConstants.GameController.ResetData();
-            if(targetAnimator != null)
+            GlobalConstants.GameController.battlesong.mute = false;
+            if (targetAnimator != null)
                 StartCoroutine(InjuredAnimation(targetAnimator));
         }
 
