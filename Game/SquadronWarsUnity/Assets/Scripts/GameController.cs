@@ -597,7 +597,7 @@ namespace Assets.Scripts
                 if (action == Action.Defeat)
                 {
                     Debug.Log("YOU LOSE");
-                    StartCoroutine(DisplayVictory());
+                    StartCoroutine(DisplayDefeat());
                 }
             }
         }
