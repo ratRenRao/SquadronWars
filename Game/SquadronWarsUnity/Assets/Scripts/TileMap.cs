@@ -55,7 +55,7 @@ namespace Assets.Scripts
                 tile.isValidMove = false;
 
                 string tagName = child.gameObject.tag;
-                if(tagName == "grass" || tagName == "bridge")
+                if(tagName == "grass" || tagName == "bridge" || tagName == "ground")
                 {
                     tile.isOccupied = false;
                 }

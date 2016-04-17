@@ -42,7 +42,7 @@ namespace Assets.Scripts
                 GetGameStatus();
             }
             if (CheckForMatchedPlayer())
-                SceneManager.LoadScene("BattleMap2");
+                SceneManager.LoadScene("BattleMap1");
         }
 
         public bool CheckForMatchedPlayer()
