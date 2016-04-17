@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_1;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_WEBPLAYER;ENABLE_SUBSTANCE;WEBPLUG;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_1;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -53,29 +53,39 @@
      <Compile Include="Assets\GameClasses\Ability.cs" />
      <Compile Include="Assets\GameClasses\Action.cs" />
      <Compile Include="Assets\GameClasses\AnimationManager.cs" />
+     <Compile Include="Assets\GameClasses\ArmorBreak.cs" />
+     <Compile Include="Assets\GameClasses\Attack.cs" />
+     <Compile Include="Assets\GameClasses\Bash.cs" />
      <Compile Include="Assets\GameClasses\Battle.cs" />
      <Compile Include="Assets\GameClasses\BattleAction.cs" />
      <Compile Include="Assets\GameClasses\BattlePostObject.cs" />
+     <Compile Include="Assets\GameClasses\Bio.cs" />
      <Compile Include="Assets\GameClasses\Burn.cs" />
      <Compile Include="Assets\GameClasses\Character.cs" />
      <Compile Include="Assets\GameClasses\CharacterGameObject.cs" />
+     <Compile Include="Assets\GameClasses\Cure.cs" />
+     <Compile Include="Assets\GameClasses\DoubleAttack.cs" />
      <Compile Include="Assets\GameClasses\Effect.cs" />
      <Compile Include="Assets\GameClasses\Equipment.cs" />
      <Compile Include="Assets\GameClasses\Fire.cs" />
+     <Compile Include="Assets\GameClasses\FlameStrike.cs" />
+     <Compile Include="Assets\GameClasses\Focus.cs" />
      <Compile Include="Assets\GameClasses\GlobalConstants.cs" />
-     <Compile Include="Assets\GameClasses\Heal.cs" />
      <Compile Include="Assets\GameClasses\IAnimateable.cs" />
      <Compile Include="Assets\GameClasses\IEffectable.cs" />
      <Compile Include="Assets\GameClasses\IJsonable.cs" />
      <Compile Include="Assets\GameClasses\IWearable.cs" />
+     <Compile Include="Assets\GameClasses\Ice.cs" />
      <Compile Include="Assets\GameClasses\Item.cs" />
+     <Compile Include="Assets\GameClasses\MeteorShower.cs" />
      <Compile Include="Assets\GameClasses\Player.cs" />
      <Compile Include="Assets\GameClasses\RegistrationData.cs" />
+     <Compile Include="Assets\GameClasses\ScorchedEarth.cs" />
      <Compile Include="Assets\GameClasses\Squad.cs" />
      <Compile Include="Assets\GameClasses\Stats.cs" />
      <Compile Include="Assets\GameClasses\TimeListener.cs" />
+     <Compile Include="Assets\GameClasses\UltimateSummon.cs" />
      <Compile Include="Assets\GameClasses\UpdateCharacterPostObject.cs" />
-     <Compile Include="Assets\GameClasses\Weaken.cs" />
      <Compile Include="Assets\JSON\JSONObject.cs" />
      <Compile Include="Assets\JSON\JSONTemplates.cs" />
      <Compile Include="Assets\JSON\VectorTemplates.cs" />
@@ -83,6 +93,7 @@
      <Compile Include="Assets\ProLoading\Script\Internal\PlaceEnum.cs" />
      <Compile Include="Assets\ProLoading\Script\bl_Loading.cs" />
      <Compile Include="Assets\Scripts\AbilityButton.cs" />
+     <Compile Include="Assets\Scripts\AbilityList.cs" />
      <Compile Include="Assets\Scripts\ActionAnimator.cs" />
      <Compile Include="Assets\Scripts\AutoDestroy.cs" />
      <Compile Include="Assets\Scripts\BattleSummaryPage.cs" />
@@ -99,7 +110,9 @@
      <Compile Include="Assets\Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\ModifyCharacterStats.cs" />
      <Compile Include="Assets\Scripts\RegisterButton.cs" />
+     <Compile Include="Assets\Scripts\ReturnHome.cs" />
      <Compile Include="Assets\Scripts\SampleButton.cs" />
+     <Compile Include="Assets\Scripts\SelectCharacterModel.cs" />
      <Compile Include="Assets\Scripts\SetLoginPassword.cs" />
      <Compile Include="Assets\Scripts\SetLoginUsername.cs" />
      <Compile Include="Assets\Scripts\StartQueue.cs" />
