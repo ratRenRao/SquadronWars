@@ -44,6 +44,7 @@ namespace Assets.Scripts
         public CharacterStatsPanel selectedCharcterStats;
         public AbilityList abilityList;
         public GameObject actionPanel;
+        public Battle battle;
         public AudioSource battlesong;
         public AudioSource funsong;
         public AudioSource defeatsong;
@@ -177,7 +178,6 @@ namespace Assets.Scripts
                         {
                             //Debug.Log("Queue recieved");
                             CreateTurnQueueP2();
-                            waitGameState = WaitGameState.Wait;
                         }
                     }
                     if (waitGameState == WaitGameState.Wait)
@@ -1626,6 +1626,8 @@ namespace Assets.Scripts
             BattlePostObject endgamepost = new BattlePostObject();
             endgamepost.Finished = 1;
             GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, endgamepost);
+            battle.EndGame();
+            Debug.Log("End Game Sent");
             yield return new WaitForSeconds(6f);
             SceneManager.LoadScene("BattleSummary");
         }
@@ -1642,6 +1644,7 @@ namespace Assets.Scripts
             message.GetComponent<SpriteRenderer>().sortingOrder = 50;
             message.transform.parent = targetTile.transform.parent.transform;
             message.transform.localScale = new Vector3(4, 4, 0.0f);
+            battle.EndGame();
             yield return new WaitForSeconds(6f);
             SceneManager.LoadScene("BattleSummary");
         }
@@ -1912,7 +1915,7 @@ namespace Assets.Scripts
                 int temp = GlobalConstants.currentActions.CharacterQueue[i];
                 turnQueue.Add(tempList.Single(character => character.GetComponent<CharacterGameObject>().CharacterClassObject.CharacterId == temp));
             }
-            waitGameState = WaitGameState.Wait;
+            //waitGameState = WaitGameState.Wait;
             SelectNextCharacter();
         }
 
