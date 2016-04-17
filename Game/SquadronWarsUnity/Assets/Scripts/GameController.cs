@@ -1625,8 +1625,9 @@ namespace Assets.Scripts
             message.transform.localScale = new Vector3(4, 4, 0.0f);
             BattlePostObject endgamepost = new BattlePostObject();
             endgamepost.Finished = 1;
-            GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, endgamepost);
-            battle.EndGame();
+            //GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, endgamepost);
+            //battle.EndGame();
+            GlobalConstants.isMyTurn = false;
             Debug.Log("End Game Sent");
             yield return new WaitForSeconds(6f);
             SceneManager.LoadScene("BattleSummary");

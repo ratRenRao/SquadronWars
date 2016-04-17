@@ -143,6 +143,11 @@ namespace Assets.Scripts
                             Quaternion.identity) as GameObject;
                     dmgObject.transform.parent = particleCanvas.transform;
                     //damage = (damage <= 0) ? 1 : damage;
+                    if(damage < 0)
+                    {
+                        dmgObject.GetComponent<Text>().color = new Color32(146, 255, 255, 255);
+                        damage = Math.Abs(damage);
+                    }
                     dmgObject.GetComponent<Text>().text = damage.ToString();
                     Debug.Log(target.CharacterClassObject.CurrentStats.CurHP);
                 }

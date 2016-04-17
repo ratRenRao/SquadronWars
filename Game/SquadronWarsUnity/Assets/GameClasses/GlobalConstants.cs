@@ -63,6 +63,7 @@ namespace Assets.GameClasses
 
         //Battle related constants for managing a game
         public static int GameId = 0;
+        public static int mapId = 0;
         public static List<Character> player1Characters = new List<Character>();
         public static List<Character> player2Characters = new List<Character>();
         public static BattleAction currentActions = new BattleAction();

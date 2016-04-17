@@ -19,6 +19,7 @@ namespace Assets.Data
         public DateTime CreateTime { get; set; }
         public DateTime ModifyTime { get; set; }
         public string Finished { get; set; }
+        public int MapID { get; set; }
         public List<Character> character1Info { get; set; }
         public List<Character> character2Info { get; set; }
         public string GetJsonObjectName()

@@ -5962,6 +5962,10 @@ Prefab:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 356535390}
+    - target: {fileID: 11463760, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: m_Text
+      value: Bash
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11451484, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}

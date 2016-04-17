@@ -4,7 +4,7 @@ using Assets.Scripts;
 
 namespace Assets.GameClasses
 {
-    class Fire : Ability
+    class Focus : Ability
     {
         public override void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
@@ -22,7 +22,7 @@ namespace Assets.GameClasses
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
             Executioner.CharacterClassObject.CurrentStats.CurMP -= mpCost;
             AnimationManager.SetDamage(Damage);
-            AnimationManager.Cast("Fire");
+            AnimationManager.Cast("Focus");
         }
 
         public override void LingeringEffect(ref Stats stats)
