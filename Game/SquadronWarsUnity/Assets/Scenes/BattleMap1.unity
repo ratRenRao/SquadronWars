@@ -5913,6 +5913,54 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EndTurn
       objectReference: {fileID: 0}
+    - target: {fileID: 11423582, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 356535390}
+    - target: {fileID: 11471646, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 356535390}
+    - target: {fileID: 11438874, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 356535390}
+    - target: {fileID: 11452148, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 356535390}
+    - target: {fileID: 11422530, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 356535390}
+    - target: {fileID: 11497924, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 356535390}
+    - target: {fileID: 11411348, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 356535390}
+    - target: {fileID: 11433004, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 356535390}
+    - target: {fileID: 11439918, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 356535390}
+    - target: {fileID: 11406656, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 356535390}
+    - target: {fileID: 11431490, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 356535390}
+    - target: {fileID: 11405162, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 356535390}
     m_RemovedComponents:
     - {fileID: 11451484, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
