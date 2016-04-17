@@ -221,7 +221,6 @@ namespace Assets.Scripts
                                         GlobalConstants.isAnimating = true;
                                         Tile tempTile = tileArray[t.x, t.y];
                                         GetTarget(tempTile);
-                                        Debug.Log(targetCharacterGameObject.CharacterClassObject);
                                         clearHighlights(validMoves);
                                         //Cast(tempTile, selectedAbility);
                                         GameClasses.Action gameAction = null;
@@ -1624,6 +1623,9 @@ namespace Assets.Scripts
             message.GetComponent<SpriteRenderer>().sortingOrder = 50;
             message.transform.parent = targetTile.transform.parent.transform;
             message.transform.localScale = new Vector3(4, 4, 0.0f);
+            BattlePostObject endgamepost = new BattlePostObject();
+            endgamepost.Finished = 1;
+            GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, endgamepost);
             yield return new WaitForSeconds(6f);
             SceneManager.LoadScene("BattleSummary");
         }
