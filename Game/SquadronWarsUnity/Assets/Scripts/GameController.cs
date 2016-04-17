@@ -1829,9 +1829,7 @@ namespace Assets.Scripts
             gameCharacter.Y = tempTile.y;
             tempTile.character = gameCharacter;
             int spriteId = gameCharacter.CharacterClassObject.SpriteId;
-            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + spriteId /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
-            //gameCharacter.gameObject.transform.position = new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y);
-            //gameCharacter.gameObject.transform.rotation = Quaternion.identity;
+            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + spriteId), typeof(GameObject));
             GameObject tempchar = Instantiate(temp.gameObject, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;
             tempchar.GetComponent<SpriteRenderer>().sortingOrder = 6 + (tempTile.y * 2);
             tempchar.transform.parent = tileMap.transform;
@@ -1930,6 +1928,7 @@ namespace Assets.Scripts
 
         public void SelectNextCharacter()
         {
+            Debug.Log("Select Next Character Called");
             if (placeCharacterPhase)
             {
                 placecharactersong.mute = true;
