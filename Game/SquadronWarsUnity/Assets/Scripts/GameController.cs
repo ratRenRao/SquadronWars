@@ -133,6 +133,10 @@ namespace Assets.Scripts
             if (action == Action.WaitForGameInfo)
             {
                 //Append Characters to player # character on global constants
+                if (GlobalConstants.player1Characters.Count > 0 && GlobalConstants.player2Characters.Count > 0 && waitGameState == WaitGameState.Place)
+                {
+                    GlobalConstants.Updated = true;
+                }
                 if (GlobalConstants.Updated)
                 {
                     Debug.Log("Game was updated");

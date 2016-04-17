@@ -37,6 +37,7 @@ namespace Assets.GameClasses
         public static bool CharacterLoadReady = false;
         public static bool isMyTurn = false;
         public static bool isAnimating = false;
+        public static bool IsLoggedIn = false;
         public static List<CharacterGameObject> MatchCharacters = new List<CharacterGameObject>();
         public static List<AbilityPreReq> AbilityPreReqs { get; set; } 
         public static List<Item> ItemsMasterList { get; set; }
