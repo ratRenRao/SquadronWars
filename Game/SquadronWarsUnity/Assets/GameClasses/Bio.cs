@@ -34,7 +34,7 @@ namespace Assets.GameClasses
 
         private double CalculateImmediateDamage()
         {
-            return ImmediateBaseDamage + (int)(Executioner.CharacterClassObject.CurrentStats.MagicAttack * 0.25);
+            return ImmediateBaseDamage + (int)(Executioner.CharacterClassObject.CurrentStats.MagicAttack * 0.3);
         }
 
         private double CalculateLingeringDamage()

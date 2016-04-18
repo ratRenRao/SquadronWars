@@ -1104,16 +1104,18 @@ namespace Assets.Scripts
             int rangeConst = 5;
             Tile[,] tileArray = tileMap.tileArray;
             clearHighlights(validMoves);
-            string weaponType = "";
-            if (currentCharacterGameObject.CharacterClassObject.SpriteId == 1)
+            int weaponId = currentCharacterGameObject.CharacterClassObject.Equipment.Weapon.ItemId;
+            var weaponType = "";
+
+            if (weaponId == 0 || (weaponId >= 8000 && weaponId < 9000))
             {
                 weaponType = "isAttacking";
             }
-            else if (currentCharacterGameObject.CharacterClassObject.SpriteId == 2)
+            else if (weaponId >= 10000 && weaponId < 11000)
             {
                 weaponType = "isAttackingBow";
             }
-            else
+            else if (weaponId >= 9000 && weaponId < 10000)
             {
                 weaponType = "isAttackingSpear";
             }
