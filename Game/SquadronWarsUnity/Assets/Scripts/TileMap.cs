@@ -61,7 +61,7 @@ namespace Assets.Scripts
                 }
                 else
                 {
-                    tile.isOccupied = true;
+                    tile.isObstructed = true;
                 }
                 //tiles.Add(child.gameObject);
                 tiles.Add(child.gameObject);
