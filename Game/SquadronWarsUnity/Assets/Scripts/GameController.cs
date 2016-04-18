@@ -257,6 +257,12 @@ namespace Assets.Scripts
                                     {
                                         gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                     }
+                                    else
+                                    {
+                                        selectedAbility = "attack";
+                                        actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals("Attack"));
+                                        gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
+                                    }
                                     //Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
                                     //effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
                                     //gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref targetTile);
@@ -419,6 +425,12 @@ namespace Assets.Scripts
                                 var actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals(selectedAbility));
                                 if (actionType != null)
                                 {
+                                    gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
+                                }
+                                else
+                                {
+                                    selectedAbility = "attack";
+                                    actionType = GlobalConstants.EffectTypes.SingleOrDefault(ability => ability.Name.Equals("Attack"));
                                     gameAction = (GameClasses.Action)Activator.CreateInstance(actionType);
                                 }
                                 //Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
@@ -1091,10 +1103,9 @@ namespace Assets.Scripts
             int rangeConst = 5;
             Tile[,] tileArray = tileMap.tileArray;
             clearHighlights(validMoves);
-            selectedAbility = type;
             int weaponId = currentCharacterGameObject.CharacterClassObject.Equipment.Weapon.ItemId;
             var weaponType = "";
-
+            selectedAbility = type;
             if (weaponId == 0 || (weaponId >= 8000 && weaponId < 9000))
             {
                 weaponType = "isAttacking";
