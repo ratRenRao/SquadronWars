@@ -43,7 +43,7 @@ namespace Assets.GameClasses
         public override void ImmediateEffect(Stats stats)
         {
 
-            Damage = 999;
+            Damage = 99999;
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
             Executioner.CharacterClassObject.CurrentStats.CurMP -= mpCost;
             AnimationManager.SetDamage(Damage);
