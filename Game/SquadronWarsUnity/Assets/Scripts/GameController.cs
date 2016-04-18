@@ -134,7 +134,7 @@ namespace Assets.Scripts
             if (action == Action.WaitForGameInfo)
             {
                 //Append Characters to player # character on global constants
-                if (GlobalConstants.player1Characters.Count > 0 && GlobalConstants.player2Characters.Count > 0 && waitGameState == WaitGameState.WaitForQueue)
+                if (GlobalConstants.currentActions.CharacterQueue.Count > 0 && waitGameState == WaitGameState.WaitForQueue)
                 {
                     GlobalConstants.Updated = true;
                 }
