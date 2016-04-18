@@ -10,6 +10,7 @@ namespace Assets.GameClasses
 {
     public static class GlobalConstants
     {
+        
         //Primary Webserver URL
         //public const string WebServerUrl = "http://squadronwars.ddns.net";
         public const string WebServerUrl = "ec2-52-27-154-55.us-west-2.compute.amazonaws.com";

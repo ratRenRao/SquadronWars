@@ -22,6 +22,8 @@ namespace Assets.Data
         public int MapID { get; set; }
         public List<Character> character1Info { get; set; }
         public List<Character> character2Info { get; set; }
+
+
         public string GetJsonObjectName()
         {
             return "GameInfo";
