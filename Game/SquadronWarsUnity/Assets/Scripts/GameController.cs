@@ -669,7 +669,7 @@ namespace Assets.Scripts
         {
             if (!currentCharacterGameObject.hasAttacked)
             {
-                ShowAttackMoves("ability");                
+                ShowAttackMoves(ability);                
 
             }
         }
@@ -678,8 +678,7 @@ namespace Assets.Scripts
         {
             if (!currentCharacterGameObject.hasAttacked)
             {
-                showCastMoves();
-                selectedAbility = ability;
+                showCastMoves();                
             }
         }
 
