@@ -10,7 +10,7 @@ using System;
 
 namespace Assets.Scripts
 {
-        public class GameController : MonoBehaviour
+    public class GameController : MonoBehaviour
     {
         public enum Action
         {
@@ -21,7 +21,10 @@ namespace Assets.Scripts
             CastAbility,
             Occupy,
             WaitForGameInfo,
-            VIEW
+            VIEW,
+            Victory,
+            Defeat
+
         }
 
         public enum WaitGameState
@@ -35,13 +38,18 @@ namespace Assets.Scripts
         public TileMap tileMap;
         GameObject currentGameCharacter;
         GameObject targetGameCharacter;
-        public GameObject DisplayVictory;
         public GameObject characterStatsPanel;
         public GameObject selectedCharcterStatsPanel;
         public CharacterStatsPanel statsPanel;
         public CharacterStatsPanel selectedCharcterStats;
+        public AbilityList abilityList;
         public GameObject actionPanel;
+        public Battle battle;
         public AudioSource battlesong;
+        public AudioSource funsong;
+        public AudioSource defeatsong;
+        public AudioSource victorysong;
+        public AudioSource placecharactersong;
         public Text playersTurnText;
         public Button attackButton;
         public Button abilityButton;
@@ -83,6 +91,7 @@ namespace Assets.Scripts
         bool placeCharacterPhase = false;
         bool viewMode = false;
         bool hidePanel = true;
+        bool endcalled = false;
         string selectedAbility;
         int count = 0;
         int idCount = 1;
@@ -91,7 +100,7 @@ namespace Assets.Scripts
         List<Tile> validMoves = new List<Tile>();
         List<Tile> path = new List<Tile>();
         List<GameObject> turnQueue = new List<GameObject>();
-        public ActionAnimator ActionAnimator; 
+        public ActionAnimator ActionAnimator;
 
         // Use this for initialization
         void Start()
@@ -106,31 +115,35 @@ namespace Assets.Scripts
             //Debug.Log(GlobalConstants._dbConnection);
             GlobalConstants.ActionAnimator = ActionAnimator;
             GlobalConstants.GameController = this;
-            battlesong.playOnAwake = true;
+            placecharactersong.playOnAwake = true;
             placeCharacterPhase = true;
             characters = GlobalConstants.MatchCharacters;
             statsPanel.charName.text = characters[0].CharacterClassObject.Name;
             statsPanel.hp.text = characters[0].CharacterClassObject.CurrentStats.HitPoints + " / " + characters[0].CharacterClassObject.CurrentStats.HitPoints;
             statsPanel.mp.text = characters[0].CharacterClassObject.CurrentStats.MagicPoints + " / " + characters[0].CharacterClassObject.CurrentStats.MagicPoints;
             tileMap.addHighlightObjects();
-            tileArray = tileMap.tileArray;            
+            tileArray = tileMap.tileArray;
             highlightSpawn();
             arraySet = true;
         }
 
-        
+
 
         void Update()
         {
-            if(action == Action.WaitForGameInfo)
+            if (action == Action.WaitForGameInfo)
             {
                 //Append Characters to player # character on global constants
+                if (GlobalConstants.player1Characters.Count > 0 && GlobalConstants.player2Characters.Count > 0 && waitGameState == WaitGameState.Place)
+                {
+                    GlobalConstants.Updated = true;
+                }
                 if (GlobalConstants.Updated)
                 {
                     Debug.Log("Game was updated");
                     GlobalConstants.Updated = false;
                     if (waitGameState == WaitGameState.Place)
-                    {                        
+                    {
                         if (GlobalConstants.player1Characters.Count > 0 && GlobalConstants.player2Characters.Count > 0)
                         {
                             //placeCharacterPhase = false;
@@ -144,12 +157,13 @@ namespace Assets.Scripts
                                 GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                                 waitGameState = WaitGameState.Wait;
                                 Debug.Log("Selecting next character being called");
-                                SelectNextCharacter();
+                                StartCoroutine(WaitSecToStart());
+                                
                             }
                             else
                             {
                                 PlaceEnemyCharacters(GlobalConstants.player1Characters);
-                                waitGameState = WaitGameState.WaitForQueue;                                               
+                                waitGameState = WaitGameState.WaitForQueue;
                             }
                             //PlaceEnemyCharacters();                            
                         }
@@ -164,16 +178,15 @@ namespace Assets.Scripts
                         {
                             //Debug.Log("Queue recieved");
                             CreateTurnQueueP2();
-                            waitGameState = WaitGameState.Wait;
                         }
                     }
-                    if(waitGameState == WaitGameState.Wait)
+                    if (waitGameState == WaitGameState.Wait)
                     {
                         foreach (GameClasses.Action act in GlobalConstants.currentActions.ActionOrder)
                         {
                             //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
                             if (act.actionType == GameClasses.Action.ActionType.Move && !currentCharacterGameObject.hasMoved)
-                            {                                
+                            {
                                 if (act.actionTiles.Count > 0)
                                 {
                                     Debug.Log("Move Called");
@@ -196,19 +209,18 @@ namespace Assets.Scripts
                                 }
                             }
 
-                            if(act.actionType == GameClasses.Action.ActionType.CastAbility && !currentCharacterGameObject.hasAttacked)
+                            if (act.actionType == GameClasses.Action.ActionType.CastAbility && !currentCharacterGameObject.hasAttacked)
                             {
                                 Debug.Log("Cast Ability P2 Called");
-                                if(act.actionTiles.Count > 0)
+                                if (act.actionTiles.Count > 0)
                                 {
-                                    Debug.Log("Cast Called");                                    
+                                    Debug.Log("Cast Called");
                                     foreach (Tile t in act.actionTiles)
                                     {
                                         Debug.Log("X: " + t.x + " Y: " + t.y);
                                         GlobalConstants.isAnimating = true;
                                         Tile tempTile = tileArray[t.x, t.y];
                                         GetTarget(tempTile);
-                                        Debug.Log(targetCharacterGameObject.CharacterClassObject);
                                         clearHighlights(validMoves);
                                         //Cast(tempTile, selectedAbility);
                                         GameClasses.Action gameAction = null;
@@ -219,12 +231,12 @@ namespace Assets.Scripts
                                         }
                                         //Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
                                         //effectedCharacterDictionary.Add(targetCharacterGameObject, tempTile);
-                                        var effectedTiles = new List<Tile> {tempTile};
+                                        var effectedTiles = new List<Tile> { tempTile };
                                         gameAction.Initialize(ref effectedTiles, ref currentCharacterGameObject, ref targetTile);
                                         gameAction.Execute();
-                                        currentCharacterGameObject.hasAttacked = true;                                        
+                                        currentCharacterGameObject.hasAttacked = true;
                                         break;
-                                    }                                
+                                    }
                                 }
                             }
 
@@ -232,7 +244,7 @@ namespace Assets.Scripts
                             {
                                 foreach (Tile t in act.actionTiles)
                                 {
-                                    Debug.Log("AttackType Called");  
+                                    Debug.Log("AttackType Called");
                                     hidePanel = true;
                                     Tile tempTile = tileArray[t.x, t.y];
                                     GetTarget(tempTile);
@@ -270,21 +282,21 @@ namespace Assets.Scripts
                                 break;
                             }
                         }
-                        
+
                     }
 
                     //Debug.Log("waiting for other player");
                     //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
-                    
+
                 }
                 if (waitGameState == WaitGameState.WaitForOtherPlayer)
                 {
                     //Debug.Log(GlobalConstants.currentActions.ActionOrder.Count);
-                    if(GlobalConstants.currentActions.ActionOrder.Count == 1)
+                    if (GlobalConstants.currentActions.ActionOrder.Count == 1)
                     {
                         Debug.Log(GlobalConstants.currentActions.ActionOrder[0].actionType);
                     }
-                   
+
                     if (GlobalConstants.currentActions.ActionOrder.Count == 0)
                     {
                         Debug.Log("End Turn Called by Current Player");
@@ -293,7 +305,7 @@ namespace Assets.Scripts
                         SelectNextCharacter();
                     }
                 }
-            }            
+            }
 
             if (hidePanel)
             {
@@ -314,7 +326,7 @@ namespace Assets.Scripts
             {
                 isWalking = true;
                 anim.SetBool("isWalking", isWalking);
-                
+
                 float currentX = (float)(System.Math.Round(currentCharacterGameObject.transform.localPosition.x, 2));
                 float currentY = (float)(System.Math.Round(currentCharacterGameObject.transform.localPosition.y, 2));
                 float targetX = (float)(System.Math.Round(targetTile.transform.localPosition.x + 1.6f, 2));
@@ -360,7 +372,7 @@ namespace Assets.Scripts
                         reachedPosition = true;
                         GlobalConstants.isAnimating = false;
                         path.Clear();
-                        count = 0;                        
+                        count = 0;
                         currentCharacterGameObject.GetComponent<SpriteRenderer>().sortingOrder = 6 + (targetTile.y * 2);
                         targetTile.isOccupied = true;
                         currentCharacterGameObject.X = targetTile.x;
@@ -378,10 +390,10 @@ namespace Assets.Scripts
                         }
                     }
                     else {
-                        count++;                        
+                        count++;
                         currentCharacterGameObject.GetComponent<SpriteRenderer>().sortingOrder = 6 + (targetTile.y * 2);
                         targetTile = path[count];
-                        
+
                     }
                 }
             }
@@ -393,40 +405,8 @@ namespace Assets.Scripts
                     hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                     if (action == Action.MOVE)
                     {
-                        Move();                        
+                        Move();
                     }
-                    /*if (action == Action.Attack)
-                    {
-                        if (hit.collider != null)
-                        {
-                            Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
-                            if (tempTile.isValidMove)
-                            {
-                                Debug.Log("Attack Called");
-                                attackButton.interactable = false;
-                                abilityButton.interactable = false;
-                                hidePanel = true;
-                                GetTarget(tempTile);
-                                Attack(tempTile, null);
-                                clearHighlights(validMoves);
-                                currentCharacterGameObject.hasAttacked = true;
-                                //hidePanel = false;
-                                hidePanel = true;
-                                GetTarget(tempTile);
-                                clearHighlights(validMoves);
-                                //Cast(tempTile, selectedAbility);
-                                GameClasses.Action gameAction = null;
-                                GlobalConstants.isAnimating = true;
-                                Dictionary<CharacterGameObject, Tile> effectedCharacterDictionary = new Dictionary<CharacterGameObject, Tile>();
-                                effectedCharacterDictionary.Add(targetCharacterGameObject.GetComponent<CharacterGameObject>(), tempTile);
-                                gameAction.Initialize(ref effectedCharacterDictionary, ref currentCharacterGameObject, ref tile);
-                                gameAction.Execute();
-                                GlobalConstants.currentActions.AddAction(new GameClasses.Action(GameClasses.Action.ActionType.AttackAbility, new List<Tile>() { tempTile }, "attack"));
-                                GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
-                                currentCharacterGameObject.hasAttacked = true;
-                            }
-                        }
-                    }*/
                     if (action == Action.AttackAbility)
                     {
                         if (hit.collider != null)
@@ -466,13 +446,13 @@ namespace Assets.Scripts
                                 currentCharacterGameObject.hasAttacked = true;
                                 /*Attack(tempTile, selectedAbility);
                                 currentCharacterGameObject.hasAttacked = true;*/
-                            }              
+                            }
                         }
                     }
                     if (action == Action.CastAbility)
-                    {                        
+                    {
                         if (hit.collider != null)
-                        {                            
+                        {
                             Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
                             if (tempTile.isValidMove)
                             {
@@ -508,7 +488,7 @@ namespace Assets.Scripts
                     hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                     if (hit.collider != null)
                     {
-                        
+
                         Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
                         if (tempTile.isValidMove)
                         {
@@ -526,11 +506,11 @@ namespace Assets.Scripts
                                 {
                                     GlobalConstants.player2Characters = characterList;
                                     //Debug.Log("I was player 2");
-                                }                                
+                                }
                                 clearHighlights(validMoves);
                                 action = Action.WaitForGameInfo;
                                 //Debug.Log("all my characters placed");
-                                
+
                                 var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.PlaceCharacterUrl, new BattlePostObject());
                                 /*if (GlobalConstants.myPlayerId == 2)
                                 {
@@ -569,7 +549,7 @@ namespace Assets.Scripts
                     {
 
                         Tile tempTile = hit.collider.gameObject.GetComponent<Tile>();
-                        
+
                         if (null != tempTile.characterObject)
                         {
                             CharacterGameObject c = tempTile.characterObject.GetComponent<CharacterGameObject>();
@@ -605,6 +585,30 @@ namespace Assets.Scripts
                         action = Action.IDLE;
                     }
                 }
+
+                if (Input.GetKeyDown("m") && action != Action.WaitForGameInfo && !placeCharacterPhase)
+                {
+                    //Debug.Log("Escape key called");
+                    abilityList.ShowAllAbilities();
+                }
+                if (Input.GetKeyDown("j") && action != Action.WaitForGameInfo && !placeCharacterPhase)
+                {
+                    //Debug.Log("Escape key called");
+                    abilityList.ShowSuperAbilities();
+                }
+
+                if (action == Action.Victory && !endcalled)
+                {
+                    Debug.Log("YOU WIN");
+                    endcalled = true;
+                    StartCoroutine(DisplayVictory());
+                }
+                if (action == Action.Defeat && !endcalled)
+                {
+                    Debug.Log("YOU LOSE");
+                    endcalled = true;
+                    StartCoroutine(DisplayDefeat());
+                }
             }
         }
 
@@ -623,7 +627,7 @@ namespace Assets.Scripts
                 t.highlight.SetActive(false);
                 highlight.transform.localScale = new Vector3(0.072f, 0.072f, 0.0f);
             }*/
-            
+
         }
         private void Move()
         {
@@ -650,7 +654,7 @@ namespace Assets.Scripts
                     GlobalConstants.isAnimating = true;
                     clearHighlights(validMoves);
                     currentCharacterGameObject.hasMoved = true;
-                    GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Move,path,"move");
+                    GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Move, path, "move");
                     GlobalConstants.currentActions.AddAction(tempAction);
                     GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
                 }
@@ -664,7 +668,7 @@ namespace Assets.Scripts
         public void AttackAbility(string ability)
         {
             if (!currentCharacterGameObject.hasAttacked)
-            {                
+            {
                 ShowAttackMoves("ability");
                 selectedAbility = ability;
 
@@ -674,7 +678,7 @@ namespace Assets.Scripts
         public void CastAbility(string ability)
         {
             if (!currentCharacterGameObject.hasAttacked)
-            {                
+            {
                 showCastMoves();
                 selectedAbility = ability;
             }
@@ -691,7 +695,7 @@ namespace Assets.Scripts
                 validMoves.Add(t);
             }
             hidePanel = true;
-            StartCoroutine(WaitForClick("move"));            
+            StartCoroutine(WaitForClick("move"));
         }
 
         public List<Tile> buildPath(Tile start, Tile end)
@@ -760,8 +764,8 @@ namespace Assets.Scripts
 
         private List<Tile> GetPossiblePaths(Tile t, bool isPathSearch)
         {
-            
-            List<Tile> tempList = new List<Tile>();            
+
+            List<Tile> tempList = new List<Tile>();
             if (t.y - 1 >= 0)
             {
                 if ((tileArray[t.x, t.y - 1].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x, t.y - 1]) && !tileArray[t.x, t.y - 1].isOccupied)
@@ -803,7 +807,7 @@ namespace Assets.Scripts
             int countCheck = 0;
             List<Tile> openPath = new List<Tile>();
             List<Tile> openPathTemp = new List<Tile>();
-            walkableTiles = new List<Tile>();            
+            walkableTiles = new List<Tile>();
             openPath.Add(tile);
             for (int i = 0; i < move; i++)
             {
@@ -813,14 +817,14 @@ namespace Assets.Scripts
                     List<Tile> temp = GetPossiblePaths(t, true);
                     foreach (Tile til in temp)
                     {
-                        countCheck++;               
+                        countCheck++;
                         openPathTemp.Add(til);
                         walkableTiles.Add(til);
-                        
-                    }                    
+
+                    }
                 }
                 openPath = new List<Tile>(openPathTemp);
-                
+
             }
         }
 
@@ -841,6 +845,12 @@ namespace Assets.Scripts
                     hidePanel = true;
                     validMoves = new List<Tile>();
                     //Create Bottom Move Tiles
+                    Tile startTile = tileArray[tileX, tileY];
+                    startTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
+                    startTile.highlight.SetActive(true);
+                    startTile.isValidMove = true;
+                    validMoves.Add(startTile);
+
                     for (int i = 1; i <= range; i++)
                     {
 
@@ -910,10 +920,10 @@ namespace Assets.Scripts
                     range = 4;
                     var tempRange = range;
                     for (int i = 1; i < range; i++)
-                    {                        
+                    {
                         for (int j = 1; j < tempRange; j++)
                         {
-                            
+
                             if (tileX - i >= 0 && tileY - j >= 0)
                             {
                                 Tile tempTile = tileArray[tileX - i, tileY - j];
@@ -1034,8 +1044,8 @@ namespace Assets.Scripts
         {
             int currentX = currentCharacterGameObject.X;
             int currentY = currentCharacterGameObject.Y;
-          //  int tileX = tile.x;
-          //  int tileY = tile.y;
+            //  int tileX = tile.x;
+            //  int tileY = tile.y;
             //top left
             if (currentX - 1 == tile.x && currentY - 1 == tile.y)
             {
@@ -1079,7 +1089,7 @@ namespace Assets.Scripts
             return false;
         }
 
-       
+
         public void SetAction(string newAction)
         {
 
@@ -1114,57 +1124,57 @@ namespace Assets.Scripts
                 //Create Bottom Move Tiles
                 if (weaponType == "isAttacking")
                 {
-                        if (tileY + 1 < tileArray.GetLength(1))
-                        {
-                            Tile tempTile = tileArray[tileX, tileY + 1];
-                            tempTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
-                            tempTile.highlight.SetActive(true);
-                            tempTile.isValidMove = true;
-                            validMoves.Add(tempTile);
-                            //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
+                    if (tileY + 1 < tileArray.GetLength(1))
+                    {
+                        Tile tempTile = tileArray[tileX, tileY + 1];
+                        tempTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
+                        tempTile.highlight.SetActive(true);
+                        tempTile.isValidMove = true;
+                        validMoves.Add(tempTile);
+                        //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
 
-                            // GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
-                            //highlight.transform.parent = tempTile.transform;
-                        }
-                    
+                        // GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
+                        //highlight.transform.parent = tempTile.transform;
+                    }
+
                     //Create Top Move Tiles
 
-                        if (tileY - 1 >= 0)
-                        {
-                            Tile tempTile = tileArray[tileX, tileY - 1];
-                            tempTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
-                            tempTile.highlight.SetActive(true);
-                            tempTile.isValidMove = true;
-                            validMoves.Add(tempTile);
-                            //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
-                            //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
-                            //highlight.transform.parent = tempTile.transform;
-                        }
+                    if (tileY - 1 >= 0)
+                    {
+                        Tile tempTile = tileArray[tileX, tileY - 1];
+                        tempTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
+                        tempTile.highlight.SetActive(true);
+                        tempTile.isValidMove = true;
+                        validMoves.Add(tempTile);
+                        //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
+                        //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
+                        //highlight.transform.parent = tempTile.transform;
+                    }
 
                     //Create Left Move Tiles
-                        if (tileX - 1 >= 0)
-                        {
-                            Tile tempTile = tileArray[tileX - 1, tileY];
-                            tempTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
-                            tempTile.highlight.SetActive(true);
-                            tempTile.isValidMove = true;
-                            validMoves.Add(tempTile);
-                            //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
-                            //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
-                            //highlight.transform.parent = tempTile.transform;
-                        }
+                    if (tileX - 1 >= 0)
+                    {
+                        Tile tempTile = tileArray[tileX - 1, tileY];
+                        tempTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
+                        tempTile.highlight.SetActive(true);
+                        tempTile.isValidMove = true;
+                        validMoves.Add(tempTile);
+                        //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
+                        //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
+                        //highlight.transform.parent = tempTile.transform;
+                    }
                     //Create Right Move Tiles
-                        if (tileX + 1 < tileArray.GetLength(0))
-                        {
-                            Tile tempTile = tileArray[tileX + 1, tileY];
-                            tempTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
-                            tempTile.highlight.SetActive(true);
-                            tempTile.isValidMove = true;
-                            validMoves.Add(tempTile);
-                            //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
-                            //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
-                            //highlight.transform.parent = tempTile.transform;
-                        }
+                    if (tileX + 1 < tileArray.GetLength(0))
+                    {
+                        Tile tempTile = tileArray[tileX + 1, tileY];
+                        tempTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
+                        tempTile.highlight.SetActive(true);
+                        tempTile.isValidMove = true;
+                        validMoves.Add(tempTile);
+                        //GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
+                        //GameObject highlight = GameObject.Instantiate(temp, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
+                        //highlight.transform.parent = tempTile.transform;
+                    }
                 }
                 if (weaponType == "isAttackingSpear")
                 {
@@ -1401,8 +1411,8 @@ namespace Assets.Scripts
             else
             {
                 clearHighlights(validMoves);
-            }       
-    
+            }
+
         }
 
         public void GetTarget(Tile tile) {
@@ -1418,18 +1428,14 @@ namespace Assets.Scripts
 
         public CharacterGameObject GetCharacterGameObject(Tile tile)
         {
-            if (tile.isOccupied)
-                return tile.character;
-
-            return null;
+            return tile.isOccupied ? tile.character : null;
         }
 
         public Animator GetAnimator(Tile tile)
         {
-            if (tile.isOccupied)
-                return tile.characterObject.GetComponent<UnityEngine.Animator>();
-
-            return null;
+            if (tile.characterObject == null)
+                return null;
+            return tile.isOccupied ? tile.characterObject.GetComponent<UnityEngine.Animator>() : null;
         }
 
         public void Cast(Tile targetTile, string ability)
@@ -1479,7 +1485,7 @@ namespace Assets.Scripts
             if (currentCharacterGameObject.CharacterClassObject.SpriteId == 1)
             {
                 weaponType = "isAttacking";
-            }else if (currentCharacterGameObject.CharacterClassObject.SpriteId == 2)
+            } else if (currentCharacterGameObject.CharacterClassObject.SpriteId == 2)
             {
                 weaponType = "isAttackingBow";
             }
@@ -1487,7 +1493,7 @@ namespace Assets.Scripts
             {
                 weaponType = "isAttackingSpear";
             }
-                    
+
             anim.SetBool(weaponType, true);
             float currentX = (float)(System.Math.Round(tile.transform.localPosition.x, 2));
             float currentY = (float)(System.Math.Round(tile.transform.localPosition.y, 2));
@@ -1516,7 +1522,7 @@ namespace Assets.Scripts
                 anim.SetFloat("y", 1);
             }
             if (targetTile.isOccupied)
-            {                
+            {
                 StartCoroutine(AttackAnimation(targetTile, ability, weaponType));
             }
             else {
@@ -1600,7 +1606,7 @@ namespace Assets.Scripts
                 tarAnim.SetBool("isDead", true);
                 yield return new WaitForSeconds(.8f);
                 //Debug.Log(targetCharacterGameObject.CharacterClassObject.Name);
-            }            
+            }
             selectedAbility = null;
             hidePanel = false;
         }
@@ -1610,11 +1616,51 @@ namespace Assets.Scripts
             anim.SetBool(weaponType, false);
             hidePanel = false;
         }
+
+        IEnumerator DisplayVictory()
+        {
+            GlobalConstants.EarnedGold = 200;
+            GlobalConstants.EarnedExp = 750;
+            yield return new WaitForSeconds(.5f);
+            battlesong.mute = true;
+            victorysong.Play();
+            GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/Victory"), typeof(GameObject));
+            GameObject message = GameObject.Instantiate(temp.gameObject, new Vector3(targetTile.transform.parent.transform.position.x + 35, targetTile.transform.parent.transform.position.y - 35), Quaternion.identity) as GameObject;
+            message.GetComponent<SpriteRenderer>().sortingOrder = 50;
+            message.transform.parent = targetTile.transform.parent.transform;
+            message.transform.localScale = new Vector3(4, 4, 0.0f);
+            BattlePostObject endgamepost = new BattlePostObject();
+            endgamepost.Finished = 1;
+            //GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, endgamepost);
+            //battle.EndGame();
+            GlobalConstants.isMyTurn = false;
+            Debug.Log("End Game Sent");
+            yield return new WaitForSeconds(6f);
+            SceneManager.LoadScene("BattleSummary");
+        }
+
+        IEnumerator DisplayDefeat()
+        {
+            GlobalConstants.EarnedGold = 50;
+            GlobalConstants.EarnedExp = 375;
+            yield return new WaitForSeconds(.5f);
+            battlesong.mute = true;
+            defeatsong.Play();
+            GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/Defeat"), typeof(GameObject));
+            GameObject message = GameObject.Instantiate(temp.gameObject, new Vector3(targetTile.transform.parent.transform.position.x + 35, targetTile.transform.parent.transform.position.y - 35), Quaternion.identity) as GameObject;
+            message.GetComponent<SpriteRenderer>().sortingOrder = 50;
+            message.transform.parent = targetTile.transform.parent.transform;
+            message.transform.localScale = new Vector3(4, 4, 0.0f);
+            battle.EndGame();
+            yield return new WaitForSeconds(6f);
+            SceneManager.LoadScene("BattleSummary");
+        }
+
         IEnumerator CastAnimation(Tile tempTile, string ability)
         {
             List<Tile> tempTileList = new List<Tile>();
             tempTileList.Add(tempTile);
-            
+
             yield return new WaitForSeconds(.5f);
             /*yield return new WaitForSeconds(.5f);
             
@@ -1706,7 +1752,7 @@ namespace Assets.Scripts
             }
         }
         IEnumerator WaitForPlayer1()
-        {            
+        {
             yield return new WaitForSeconds(2f);
             GlobalConstants.currentActions = new BattleAction();
             GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateGameStatusUrl, new BattlePostObject());
@@ -1716,13 +1762,20 @@ namespace Assets.Scripts
             //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.CheckGameStatusUrl, new BattlePostObject());
 
         }
+        IEnumerator WaitSecToStart()
+        {
+            yield return new WaitForSeconds(1f);
+            SelectNextCharacter();
+            //var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.CheckGameStatusUrl, new BattlePostObject());
 
+        }
+        
         public void ResetData()
         {
             selectedAbility = null;
             GlobalConstants.isAnimating = false;
             //Debug.Log(action);
-            if (action != Action.WaitForGameInfo)
+            if (action != Action.WaitForGameInfo && action != Action.Victory && action != Action.Defeat)
             {
                 hidePanel = false;
             }
@@ -1788,9 +1841,7 @@ namespace Assets.Scripts
             gameCharacter.Y = tempTile.y;
             tempTile.character = gameCharacter;
             int spriteId = gameCharacter.CharacterClassObject.SpriteId;
-            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + spriteId /*+ characters[unitPlacedCount].CharacterClassObject.SpriteId*/), typeof(GameObject));
-            //gameCharacter.gameObject.transform.position = new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y);
-            //gameCharacter.gameObject.transform.rotation = Quaternion.identity;
+            GameObject temp = (GameObject)Resources.Load(("Prefabs/Character" + spriteId), typeof(GameObject));
             GameObject tempchar = Instantiate(temp.gameObject, new Vector3(tempTile.transform.position.x + 1.6f, tempTile.transform.position.y), Quaternion.identity) as GameObject;
             tempchar.GetComponent<SpriteRenderer>().sortingOrder = 6 + (tempTile.y * 2);
             tempchar.transform.parent = tileMap.transform;
@@ -1871,7 +1922,7 @@ namespace Assets.Scripts
                 int temp = GlobalConstants.currentActions.CharacterQueue[i];
                 turnQueue.Add(tempList.Single(character => character.GetComponent<CharacterGameObject>().CharacterClassObject.CharacterId == temp));
             }
-            waitGameState = WaitGameState.Wait;
+            //waitGameState = WaitGameState.Wait;
             SelectNextCharacter();
         }
 
@@ -1889,8 +1940,11 @@ namespace Assets.Scripts
 
         public void SelectNextCharacter()
         {
+            Debug.Log("Select Next Character Called");
             if (placeCharacterPhase)
             {
+                placecharactersong.mute = true;
+                battlesong.Play();
                 placeCharacterPhase = false;
                 foreach (GameObject g in turnQueue)
                 {
@@ -1938,6 +1992,7 @@ namespace Assets.Scripts
                 action = Action.WaitForGameInfo;
                 
             }
+                
                 currentGameCharacter = turnQueue[0];
                 currentCharacterGameObject = currentGameCharacter.GetComponent<CharacterGameObject>();
                 targetTile = tileArray[currentCharacterGameObject.X, currentCharacterGameObject.Y];
@@ -1957,7 +2012,8 @@ namespace Assets.Scripts
                 statsPanel.hp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurHP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.HitPoints;
                 statsPanel.mp.text = currentCharacterGameObject.CharacterClassObject.CurrentStats.CurMP + " / " + currentCharacterGameObject.CharacterClassObject.CurrentStats.MagicPoints;
                 PositionPanels();
-            
+                HideUsableAbilities();
+                SetUsableAbilities();
         }
 
         public void PositionSelectedPanel(CharacterGameObject selCharacter, Tile tempTile)
@@ -1982,7 +2038,7 @@ namespace Assets.Scripts
                     //Debug.Log("tile y: " + tile.y + " is < 3");
                     characterStatsPanel.transform.position = new Vector3(characterStatsPanel.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
                 }
-                if (tile.y > 15)
+                if (tile.y > tileMap.yLength - 5)
                 {
                     //Debug.Log("tile y: " + tile.y + " is > 15");
                     actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 30, currentCharacterGameObject.transform.position.y + 14, 0);
@@ -2008,13 +2064,13 @@ namespace Assets.Scripts
                     Debug.Log("tile y: " + tile.y + " is < 3");
                     characterStatsPanel.transform.position = new Vector3(characterStatsPanel.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
                 }
-                if (tile.y > 15)
+                if (tile.y > tileMap.yLength - 5)
                 {
                     Debug.Log("tile y: " + tile.y + " is > 15");
                     actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 15, currentCharacterGameObject.transform.position.y + 14, 0);
                 }
             }
-            else if (tile.y > 15)
+            else if (tile.y > tileMap.yLength - 5)
             {
                 Debug.Log("tile y: " + tile.y + " is > 15");
                 actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 15, currentCharacterGameObject.transform.position.y + 14, 0);
@@ -2030,8 +2086,43 @@ namespace Assets.Scripts
             }
             gCharacters = cgo;
         }
-        //TODO
-        //AddAction()
-        //CheckAction()
+
+        private void SetUsableAbilities()
+        {
+            foreach(Ability a in currentCharacterGameObject.CharacterClassObject.Abilities)
+            {
+                abilityList.ShowAbility(a.Name);
+            }
+        }
+
+        private void HideUsableAbilities()
+        {
+            abilityList.HideAbilities();
+        }
+
+        public bool CheckGameOver()
+        {
+            foreach(GameObject g in myCharacters)
+            {
+                if(!g.GetComponent<CharacterGameObject>().isDead){
+                    return false;
+                }
+            }
+            action = Action.Defeat;
+            return true;
+        }
+
+        public bool CheckVictory()
+        {
+            foreach (GameObject g in enemyCharacters)
+            {
+                if (!g.GetComponent<CharacterGameObject>().isDead)
+                {
+                    return false;
+                }
+            }
+            action = Action.Victory;
+            return true;
+        }
     }
 }

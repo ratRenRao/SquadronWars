@@ -11,6 +11,7 @@ public class SampleButton : MonoBehaviour
 
     public Button button;
     public CharacterGameObject characterGameObject;
+    
     public Character character { get; set; }
     public CharacterScreen characterScreen;
     private Stats modifiedStats { get; set; }
@@ -29,8 +30,7 @@ public class SampleButton : MonoBehaviour
         var temp = (GameObject)Resources.Load(("Prefabs/Character" + characterGameObject.CharacterClassObject.SpriteId), typeof(GameObject));
         var button = gameObject.GetComponent<SampleButton>();
         var menu = GameObject.FindGameObjectWithTag("MenuManager").GetComponent<MenuManager>();
-        var sprite = temp.GetComponent<SpriteRenderer>();
-
+        var sprite = temp.GetComponent<SpriteRenderer>();        
         SetActiveCharacter();
         UpdateStats(character.BaseStats);
 

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Assets.GameClasses;
 
 namespace Assets.Scripts
 {
@@ -22,6 +23,7 @@ namespace Assets.Scripts
         // Use this for initialization
         void Start()
         {
+            
             MenuPanels = GameObject.FindGameObjectsWithTag("MenuPanel");
             HomePanel = GameObject.FindGameObjectWithTag("HomePanel");
 
@@ -36,6 +38,7 @@ namespace Assets.Scripts
             characterList = GameObject.Find("CharacterList");*/
 
             Setup();
+            
         }
 
         // Update is called once per frame
@@ -54,6 +57,10 @@ namespace Assets.Scripts
             ShopPanel.SetActive(false);
             RegisterPanel.SetActive(false);
             CreateCharacterPanel.SetActive(false);
+            if (GlobalConstants.IsLoggedIn)
+            {
+                MainMenuPanel.gameObject.SetActive(true);
+            }
         }
 
    

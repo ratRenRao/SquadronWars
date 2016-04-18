@@ -536,7 +536,11 @@ namespace Assets.Data
                 GlobalConstants.player2Characters = gameInfo.character2Info;
                 //Debug.Log("Global Constants player2 Chars " + GlobalConstants.player2Characters.Count());
             }
-            if(gameInfo.player1Id == GlobalConstants.Player.playerId)
+            if (gameInfo.MapID != 0)
+            {
+                GlobalConstants.mapId = gameInfo.MapID;
+            }
+            if (gameInfo.player1Id == GlobalConstants.Player.playerId)
             {
                 GlobalConstants.myPlayerId = 1;
                 if(gameInfo.player2Id != 0)

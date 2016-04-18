@@ -37,6 +37,7 @@ namespace Assets.GameClasses
         public static bool CharacterLoadReady = false;
         public static bool isMyTurn = false;
         public static bool isAnimating = false;
+        public static bool IsLoggedIn = false;
         public static List<CharacterGameObject> MatchCharacters = new List<CharacterGameObject>();
         public static List<AbilityPreReq> AbilityPreReqs { get; set; } 
         public static List<Item> ItemsMasterList { get; set; }
@@ -62,6 +63,7 @@ namespace Assets.GameClasses
 
         //Battle related constants for managing a game
         public static int GameId = 0;
+        public static int mapId = 0;
         public static List<Character> player1Characters = new List<Character>();
         public static List<Character> player2Characters = new List<Character>();
         public static BattleAction currentActions = new BattleAction();
@@ -75,7 +77,8 @@ namespace Assets.GameClasses
         public static int DamageAndHealingDone = 0;
         public static DateTime StartGameTime { get; set; }
         public static DateTime EndGameTime { get; set; }
-
+        public static int EarnedExp = 0;
+        public static int EarnedGold = 0;
         public static string GetJsonObjectName<T>(T obj) where T : IJsonable
         {
             return obj.GetJsonObjectName();

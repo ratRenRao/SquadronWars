@@ -56,6 +56,7 @@ namespace Assets.Scripts
 
             //LoginScreen.gameObject.SetActive(false);
             HomeScreen.gameObject.SetActive(true);
+            GlobalConstants.IsLoggedIn = true;
             //CanvasManager.HomeScreen.SetActive(true);
             //CanvasManager.LoginScreen.SetActive(false);
             //MenuManager.GetComponent<MenuManager>().HomePanel.SetActive(true);

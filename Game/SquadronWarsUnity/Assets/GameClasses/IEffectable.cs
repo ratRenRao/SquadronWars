@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Assets.Scripts;
-using UnityEditor;
 
 namespace Assets.GameClasses
 {

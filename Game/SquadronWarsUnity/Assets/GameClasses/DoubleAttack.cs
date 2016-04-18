@@ -19,8 +19,9 @@ namespace Assets.GameClasses
         {
             Damage = (int)CalculateAttack(stats);
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
+            Executioner.CharacterClassObject.CurrentStats.CurMP -= mpCost;
             AnimationManager.SetDamage(Damage);
-            AnimationManager.Attack("Double Attack");
+            AnimationManager.Attack("DoubleAttack");
         }
 
         private double CalculateAttack(Stats stats)

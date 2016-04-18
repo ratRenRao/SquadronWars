@@ -92,6 +92,7 @@
     <Compile Include="Assets\GameClasses\IJsonable.cs" />
     <Compile Include="Assets\GameClasses\IWearable.cs" />
     <Compile Include="Assets\GameClasses\Item.cs" />
+    <Compile Include="Assets\GameClasses\MeteorShower.cs" />
     <Compile Include="Assets\GameClasses\Player.cs" />
     <Compile Include="Assets\GameClasses\RegistrationData.cs" />
     <Compile Include="Assets\GameClasses\ScorchedEarth.cs" />

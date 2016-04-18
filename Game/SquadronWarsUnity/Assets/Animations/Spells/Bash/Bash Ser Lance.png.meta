@@ -1,9 +1,29 @@
 fileFormatVersion: 2
 guid: 333efb5bee243c149953ff0a49a32b56
-timeCreated: 1454087494
+timeCreated: 1460768683
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Bash Ser Lance_0
+    21300002: Bash Ser Lance_1
+    21300004: Bash Ser Lance_2
+    21300006: Bash Ser Lance_3
+    21300008: Bash Ser Lance_4
+    21300010: Bash Ser Lance_5
+    21300012: Bash Ser Lance_6
+    21300014: Bash Ser Lance_7
+    21300016: Bash Ser Lance_8
+    21300018: Bash Ser Lance_9
+    21300020: Bash Ser Lance_10
+    21300022: Bash Ser Lance_11
+    21300024: Bash Ser Lance_12
+    21300026: Bash Ser Lance_14
+    21300028: Bash Ser Lance_21
+    21300030: Bash Ser Lance_34
+    21300032: Bash Ser Lance_39
+    21300034: Bash Ser Lance_40
+    21300036: Bash Ser Lance_44
+    21300038: Bash Ser Lance_46
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +50,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +58,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +69,606 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Bash Ser Lance_0
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 688
+        width: 75
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 37}
+        - {x: -19.5, y: 33}
+        - {x: -37.5, y: 7}
+        - {x: -37.5, y: -29}
+        - {x: -31.5, y: -36}
+        - {x: -30.5, y: -37}
+        - {x: 13.5, y: -37}
+        - {x: 37.5, y: -4}
+        - {x: 37.5, y: 37}
+    - name: Bash Ser Lance_1
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 623
+        width: 139
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.5, y: 69.5}
+        - {x: 16.5, y: 60.5}
+        - {x: -63.5, y: -19.5}
+        - {x: -69.5, y: -27.5}
+        - {x: -69.5, y: -69.5}
+        - {x: -12.5, y: -69.5}
+        - {x: 69.5, y: 17.5}
+        - {x: 69.5, y: 69.5}
+    - name: Bash Ser Lance_2
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 579
+        width: 182
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41, y: 91.5}
+        - {x: 32, y: 90.5}
+        - {x: -91, y: -45.5}
+        - {x: -91, y: -91.5}
+        - {x: -6, y: -91.5}
+        - {x: 91, y: 38.5}
+        - {x: 91, y: 91.5}
+    - name: Bash Ser Lance_3
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 579
+        width: 182
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -82, y: 91.5}
+        - {x: -91, y: 65.5}
+        - {x: -91, y: -91.5}
+        - {x: -8, y: -91.5}
+        - {x: 91, y: 37.5}
+        - {x: 91, y: 91.5}
+    - name: Bash Ser Lance_4
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 579
+        width: 182
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -91, y: 91.5}
+        - {x: -91, y: -91.5}
+        - {x: 10, y: -91.5}
+        - {x: 67, y: -79.5}
+        - {x: 91, y: 2.5}
+        - {x: 91, y: 91.5}
+    - name: Bash Ser Lance_5
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 387
+        width: 182
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -90, y: 91}
+        - {x: -91, y: 80}
+        - {x: -91, y: -91}
+        - {x: 91, y: -91}
+        - {x: 91, y: 91}
+    - name: Bash Ser Lance_6
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 386
+        width: 156
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55, y: 94}
+        - {x: 52, y: 95}
+        - {x: -48, y: 95}
+        - {x: -78, y: 67}
+        - {x: -78, y: -44}
+        - {x: -43, y: -95}
+        - {x: 41, y: -95}
+        - {x: 78, y: -55}
+        - {x: 78, y: 63}
+    - name: Bash Ser Lance_7
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 387
+        width: 154
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 77, y: 94.5}
+        - {x: -73, y: 94.5}
+        - {x: -77, y: 82.5}
+        - {x: -77, y: -53.5}
+        - {x: -65, y: -76.5}
+        - {x: -34, y: -94.5}
+        - {x: 37, y: -94.5}
+        - {x: 66, y: -73.5}
+        - {x: 75, y: -35.5}
+        - {x: 77, y: -30.5}
+    - name: Bash Ser Lance_8
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 387
+        width: 154
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52, y: 94.5}
+        - {x: -59, y: 94.5}
+        - {x: -77, y: 77.5}
+        - {x: -77, y: -33.5}
+        - {x: -66, y: -79.5}
+        - {x: -31, y: -94.5}
+        - {x: 41, y: -94.5}
+        - {x: 77, y: -45.5}
+        - {x: 77, y: 67.5}
+        - {x: 61, y: 93.5}
+    - name: Bash Ser Lance_9
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 388
+        width: 154
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 61, y: 93}
+        - {x: 52, y: 94}
+        - {x: -58, y: 94}
+        - {x: -77, y: 73}
+        - {x: -77, y: -46}
+        - {x: -41, y: -94}
+        - {x: 38, y: -94}
+        - {x: 58, y: -69}
+        - {x: 77, y: -38}
+        - {x: 77, y: 69}
+    - name: Bash Ser Lance_10
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 196
+        width: 154
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 61, y: 93}
+        - {x: 52, y: 94}
+        - {x: -58, y: 94}
+        - {x: -77, y: 73}
+        - {x: -77, y: -46}
+        - {x: -41, y: -94}
+        - {x: 38, y: -94}
+        - {x: 58, y: -69}
+        - {x: 77, y: -38}
+        - {x: 77, y: 69}
+    - name: Bash Ser Lance_11
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 196
+        width: 154
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 61, y: 93}
+        - {x: 52, y: 94}
+        - {x: -58, y: 94}
+        - {x: -77, y: 73}
+        - {x: -77, y: -46}
+        - {x: -41, y: -94}
+        - {x: 38, y: -94}
+        - {x: 58, y: -69}
+        - {x: 77, y: -38}
+        - {x: 77, y: 69}
+    - name: Bash Ser Lance_12
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 212
+        width: 83
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.5, y: 17.5}
+        - {x: 10.5, y: 18.5}
+        - {x: -10.5, y: 18.5}
+        - {x: -10.5, y: 17.5}
+        - {x: -11.5, y: 14.5}
+        - {x: -11.5, y: 10.5}
+        - {x: -9.5, y: 9.5}
+        - {x: -6.5, y: 3.5}
+        - {x: -3.5, y: -5.5}
+        - {x: 3.5, y: -18.5}
+        - {x: 36.5, y: -18.5}
+        - {x: 41.5, y: -14.5}
+        - {x: 41.5, y: -6.5}
+        - {x: 40.5, y: -3.5}
+      - - {x: -18.5, y: 17.5}
+        - {x: -26.5, y: 17.5}
+        - {x: -39.5, y: 12.5}
+        - {x: -41.5, y: 10.5}
+        - {x: -41.5, y: -8.5}
+        - {x: -10.5, y: -8.5}
+        - {x: -7.5, y: -4.5}
+        - {x: -7.5, y: 3.5}
+        - {x: -10.5, y: 8.5}
+    - name: Bash Ser Lance_14
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 207
+        width: 90
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 20}
+        - {x: 5, y: 17}
+        - {x: 4, y: 10}
+        - {x: 4, y: 8}
+        - {x: 3, y: 7}
+        - {x: 3, y: 3}
+        - {x: 4, y: 13}
+        - {x: 3, y: 22}
+        - {x: 1, y: 27}
+        - {x: -14, y: 27}
+        - {x: -14, y: 11}
+        - {x: -3, y: -27}
+        - {x: 30, y: -27}
+        - {x: 39, y: -20}
+        - {x: 42, y: -5}
+        - {x: 42, y: 8}
+        - {x: 35, y: 11}
+      - - {x: -12, y: 2}
+        - {x: -28, y: 27}
+        - {x: -45, y: 27}
+        - {x: -45, y: -6}
+        - {x: -39, y: -13}
+        - {x: -37, y: -13}
+        - {x: -33, y: -11}
+        - {x: -14, y: -12}
+        - {x: -12, y: -10}
+    - name: Bash Ser Lance_21
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 215
+        width: 106
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 24.5}
+        - {x: 18, y: 23.5}
+        - {x: 7, y: -18.5}
+        - {x: 7, y: -29.5}
+        - {x: 8, y: -31.5}
+        - {x: 16, y: -31.5}
+        - {x: 25, y: -25.5}
+        - {x: 39, y: 2.5}
+        - {x: 39, y: 20.5}
+        - {x: 37, y: 24.5}
+      - - {x: 52, y: 11.5}
+        - {x: 42, y: 11.5}
+        - {x: 36, y: 10.5}
+        - {x: 29, y: -17.5}
+        - {x: 29, y: -31.5}
+        - {x: 36, y: -31.5}
+        - {x: 52, y: -17.5}
+        - {x: 53, y: -12.5}
+        - {x: 53, y: 10.5}
+      - - {x: -26, y: 27.5}
+        - {x: -31, y: 31.5}
+        - {x: -51, y: 31.5}
+        - {x: -51, y: 17.5}
+        - {x: -32, y: -26.5}
+        - {x: -20, y: -26.5}
+        - {x: -5, y: -24.5}
+        - {x: -5, y: -12.5}
+        - {x: -18, y: 18.5}
+      - - {x: -8, y: 30.5}
+        - {x: -8, y: 10.5}
+        - {x: -1, y: -12.5}
+        - {x: 8, y: -13.5}
+        - {x: 11, y: -11.5}
+        - {x: 11, y: 28.5}
+        - {x: 6, y: 30.5}
+    - name: Bash Ser Lance_34
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 70
+        width: 134
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57, y: 11.5}
+        - {x: 51, y: 8.5}
+        - {x: 46, y: -7.5}
+        - {x: 44, y: -42.5}
+        - {x: 44, y: -43.5}
+        - {x: 52, y: -43.5}
+        - {x: 67, y: -12.5}
+        - {x: 67, y: 6.5}
+        - {x: 63, y: 11.5}
+      - - {x: 36, y: 39.5}
+        - {x: 34, y: 38.5}
+        - {x: 29, y: 25.5}
+        - {x: 26, y: -25.5}
+        - {x: 26, y: -33.5}
+        - {x: 29, y: -35.5}
+        - {x: 32, y: -34.5}
+        - {x: 55, y: 8.5}
+        - {x: 55, y: 35.5}
+        - {x: 52, y: 39.5}
+      - - {x: -8, y: 23.5}
+        - {x: -8, y: -25.5}
+        - {x: -6, y: -29.5}
+        - {x: -3, y: -30.5}
+        - {x: 2, y: -30.5}
+        - {x: 10, y: 0.5}
+        - {x: 10, y: 21.5}
+        - {x: 4, y: 23.5}
+      - - {x: -67, y: 16.5}
+        - {x: -66, y: 12.5}
+        - {x: -62, y: -8.5}
+        - {x: -51, y: -27.5}
+        - {x: -47, y: -27.5}
+        - {x: -46, y: -26.5}
+        - {x: -46, y: -6.5}
+        - {x: -48, y: 34.5}
+        - {x: -53, y: 36.5}
+        - {x: -67, y: 36.5}
+      - - {x: -36, y: 43.5}
+        - {x: -36, y: -14.5}
+        - {x: -27, y: -14.5}
+        - {x: -17, y: 19.5}
+        - {x: -17, y: 43.5}
+    - name: Bash Ser Lance_39
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 80
+        width: 137
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52.5, y: 6}
+        - {x: 47.5, y: -7}
+        - {x: 46.5, y: -29}
+        - {x: 46.5, y: -43}
+        - {x: 53.5, y: -43}
+        - {x: 68.5, y: -10}
+        - {x: 68.5, y: 3}
+        - {x: 63.5, y: 6}
+      - - {x: -3.5, y: 22}
+        - {x: -7.5, y: 19}
+        - {x: -7.5, y: -21}
+        - {x: -6.5, y: -27}
+        - {x: -5.5, y: -28}
+        - {x: 0.5, y: -28}
+        - {x: 9.5, y: -13}
+        - {x: 9.5, y: 17}
+        - {x: 6.5, y: 22}
+      - - {x: 36.5, y: 39}
+        - {x: 28.5, y: 30}
+        - {x: 28.5, y: -27}
+        - {x: 33.5, y: -27}
+        - {x: 55.5, y: 9}
+        - {x: 55.5, y: 38}
+        - {x: 54.5, y: 39}
+      - - {x: -68.5, y: 36}
+        - {x: -68.5, y: 12}
+        - {x: -61.5, y: -18}
+        - {x: -54.5, y: -22}
+        - {x: -52.5, y: -22}
+        - {x: -50.5, y: -21}
+        - {x: -50.5, y: 34}
+        - {x: -56.5, y: 36}
+      - - {x: -34.5, y: 43}
+        - {x: -35.5, y: 42}
+        - {x: -35.5, y: -3}
+        - {x: -33.5, y: -9}
+        - {x: -25.5, y: -9}
+        - {x: -23.5, y: -6}
+        - {x: -16.5, y: 22}
+        - {x: -16.5, y: 43}
+    - name: Bash Ser Lance_40
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 30
+        width: 115
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39.5, y: 33}
+        - {x: 26.5, y: 33}
+        - {x: 20.5, y: 30}
+        - {x: 14.5, y: -9}
+        - {x: 12.5, y: -28}
+        - {x: 12.5, y: -37}
+        - {x: 18.5, y: -37}
+        - {x: 29.5, y: -23}
+        - {x: 42.5, y: 7}
+        - {x: 42.5, y: 30}
+      - - {x: 39.5, y: 15}
+        - {x: 31.5, y: -11}
+        - {x: 30.5, y: -34}
+        - {x: 30.5, y: -37}
+        - {x: 44.5, y: -37}
+        - {x: 57.5, y: -11}
+        - {x: 57.5, y: 15}
+      - - {x: -57.5, y: 3}
+        - {x: -37.5, y: -31}
+        - {x: -29.5, y: -33}
+        - {x: -9.5, y: -33}
+        - {x: -9.5, y: -5}
+        - {x: -15.5, y: 35}
+        - {x: -19.5, y: 37}
+        - {x: -57.5, y: 37}
+      - - {x: 10.5, y: 21}
+        - {x: 6.5, y: 32}
+        - {x: -1.5, y: 33}
+        - {x: -9.5, y: 33}
+        - {x: -9.5, y: -18}
+        - {x: -0.5, y: -20}
+        - {x: 5.5, y: -20}
+        - {x: 7.5, y: -19}
+        - {x: 7.5, y: -15}
+        - {x: 10.5, y: -7}
+    - name: Bash Ser Lance_44
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 33
+        width: 123
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57.5, y: 17}
+        - {x: 42.5, y: 17}
+        - {x: 33.5, y: -29}
+        - {x: 33.5, y: -48}
+        - {x: 39.5, y: -48}
+        - {x: 61.5, y: -14}
+        - {x: 61.5, y: 14}
+      - - {x: 25.5, y: 39}
+        - {x: 21.5, y: 38}
+        - {x: 16.5, y: -6}
+        - {x: 16.5, y: -42}
+        - {x: 27.5, y: -42}
+        - {x: 47.5, y: 3}
+        - {x: 47.5, y: 39}
+      - - {x: -58.5, y: 48}
+        - {x: -60.5, y: 47}
+        - {x: -60.5, y: 9}
+        - {x: -39.5, y: -40}
+        - {x: -20.5, y: -40}
+        - {x: -17.5, y: -25}
+        - {x: -17.5, y: 48}
+      - - {x: -19.5, y: -36}
+        - {x: -16.5, y: -35}
+        - {x: -16.5, y: -32}
+        - {x: -19.5, y: -31}
+        - {x: -21.5, y: -33}
+      - - {x: -2.5, y: 33}
+        - {x: -5.5, y: 28}
+        - {x: -7.5, y: 18}
+        - {x: -7.5, y: 2}
+        - {x: -5.5, y: -6}
+        - {x: 0.5, y: -27}
+        - {x: 3.5, y: -30}
+        - {x: 7.5, y: -29}
+        - {x: 11.5, y: -3}
+        - {x: 11.5, y: 30}
+        - {x: 6.5, y: 33}
+    - name: Bash Ser Lance_46
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 51
+        width: 135
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 50.5, y: 39}
+        - {x: 35.5, y: 39}
+        - {x: 30.5, y: 38}
+        - {x: 22.5, y: -19}
+        - {x: 22.5, y: -49}
+        - {x: 29.5, y: -49}
+        - {x: 34.5, y: -46}
+        - {x: 54.5, y: 20}
+        - {x: 54.5, y: 36}
+      - - {x: 53.5, y: 11}
+        - {x: 47.5, y: -2}
+        - {x: 46.5, y: -11}
+        - {x: 43.5, y: -46}
+        - {x: 43.5, y: -49}
+        - {x: 55.5, y: -49}
+        - {x: 67.5, y: -14}
+        - {x: 67.5, y: 11}
+      - - {x: -26.5, y: -46}
+        - {x: -23.5, y: -45}
+        - {x: -23.5, y: -42}
+        - {x: -26.5, y: -41}
+        - {x: -28.5, y: -43}
+      - - {x: -36.5, y: -35}
+        - {x: -29.5, y: -35}
+        - {x: -29.5, y: -27}
+        - {x: -44.5, y: 38}
+        - {x: -61.5, y: 38}
+        - {x: -61.5, y: -13}
+      - - {x: -3.5, y: 27}
+        - {x: -3.5, y: -33}
+        - {x: 8.5, y: -33}
+        - {x: 13.5, y: -14}
+        - {x: 13.5, y: 26}
+        - {x: 9.5, y: 27}
+      - - {x: -28.5, y: 48}
+        - {x: -35.5, y: 41}
+        - {x: -35.5, y: -19}
+        - {x: -21.5, y: -19}
+        - {x: -12.5, y: 6}
+        - {x: -12.5, y: 45}
+        - {x: -13.5, y: 48}
     outline: []
   spritePackingTag: 
   userData: 

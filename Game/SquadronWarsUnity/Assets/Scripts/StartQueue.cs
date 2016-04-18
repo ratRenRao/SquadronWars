@@ -42,7 +42,7 @@ namespace Assets.Scripts
                 GetGameStatus();
             }
             if (CheckForMatchedPlayer())
-                SceneManager.LoadScene("BattleMap2");
+                SceneManager.LoadScene("BattleMap1");
         }
 
         public bool CheckForMatchedPlayer()
@@ -71,9 +71,9 @@ namespace Assets.Scripts
         public void WaitForGameInfoReturned()
         {
             var gameInfo = GlobalConstants.Utilities.GetGameInfo(GlobalConstants.StartGameUrl, GlobalConstants._dbConnection);
-
             if (gameInfo != null)
             {
+                Debug.Log("WaitForGameInfo not null Called");
                 GlobalConstants.Utilities.UpdateGame(gameInfo);
                 GlobalConstants.Updated = true;
                 GlobalConstants.StartGameTime = DateTime.Now;
@@ -83,7 +83,6 @@ namespace Assets.Scripts
         public void GetGameStatus()
         {
             var gameInfo = GlobalConstants.Utilities.GetGameInfo(GlobalConstants.CheckGameStatusUrl, GlobalConstants._dbConnection);
-
             if (gameInfo != null)
             {
                 GlobalConstants.Utilities.UpdateGame(gameInfo);

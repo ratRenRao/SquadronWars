@@ -45,7 +45,7 @@ namespace Assets.GameClasses
 
             Damage = 999;
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
-            stats.CurMP -= mpCost;
+            Executioner.CharacterClassObject.CurrentStats.CurMP -= mpCost;
             AnimationManager.SetDamage(Damage);
             AnimationManager.Cast("MeteorShower");
         }

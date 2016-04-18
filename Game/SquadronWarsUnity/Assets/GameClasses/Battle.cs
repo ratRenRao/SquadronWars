@@ -19,9 +19,9 @@ public class Battle : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update ()
-	{        
+	{
         if (!GlobalConstants.isMyTurn && !GlobalConstants.isAnimating && checkUpdate && (DateTime.Now - lastChecked).TotalSeconds > 1f)
-        {            
+        {
             checkUpdate = false;
             lastChecked = DateTime.Now;
             //Debug.Log("checkUpdate called");
@@ -94,6 +94,7 @@ public class Battle : MonoBehaviour
     public void EndGame()
     {
         GlobalConstants.GameId = 0;
+        GlobalConstants.mapId = 0;
         GlobalConstants.myPlayerId = 0;
         GlobalConstants.opponentId = 0;
         GlobalConstants.player1Characters.Clear();
