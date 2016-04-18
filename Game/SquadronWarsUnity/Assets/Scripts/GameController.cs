@@ -845,6 +845,12 @@ namespace Assets.Scripts
                     hidePanel = true;
                     validMoves = new List<Tile>();
                     //Create Bottom Move Tiles
+                    Tile startTile = tileArray[tileX, tileY];
+                    startTile.highlight.GetComponent<Image>().color = new Color32(255, 32, 32, 165);
+                    startTile.highlight.SetActive(true);
+                    startTile.isValidMove = true;
+                    validMoves.Add(startTile);
+
                     for (int i = 1; i <= range; i++)
                     {
 
@@ -2032,7 +2038,7 @@ namespace Assets.Scripts
                     //Debug.Log("tile y: " + tile.y + " is < 3");
                     characterStatsPanel.transform.position = new Vector3(characterStatsPanel.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
                 }
-                if (tile.y > 15)
+                if (tile.y > tileMap.yLength - 5)
                 {
                     //Debug.Log("tile y: " + tile.y + " is > 15");
                     actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 30, currentCharacterGameObject.transform.position.y + 14, 0);
@@ -2058,13 +2064,13 @@ namespace Assets.Scripts
                     Debug.Log("tile y: " + tile.y + " is < 3");
                     characterStatsPanel.transform.position = new Vector3(characterStatsPanel.transform.position.x, currentCharacterGameObject.transform.position.y - 21, 0);
                 }
-                if (tile.y > 15)
+                if (tile.y > tileMap.yLength - 5)
                 {
                     Debug.Log("tile y: " + tile.y + " is > 15");
                     actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 15, currentCharacterGameObject.transform.position.y + 14, 0);
                 }
             }
-            else if (tile.y > 15)
+            else if (tile.y > tileMap.yLength - 5)
             {
                 Debug.Log("tile y: " + tile.y + " is > 15");
                 actionPanel.transform.position = new Vector3(currentCharacterGameObject.transform.position.x + 15, currentCharacterGameObject.transform.position.y + 14, 0);
