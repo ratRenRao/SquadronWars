@@ -163,7 +163,14 @@ namespace Assets.Scripts
                             else
                             {
                                 PlaceEnemyCharacters(GlobalConstants.player1Characters);
-                                waitGameState = WaitGameState.WaitForQueue;
+                                if (GlobalConstants.currentActions.CharacterQueue.Count > 0)
+                                {
+                                    CreateTurnQueueP2();
+                                }
+                                else
+                                {
+                                    waitGameState = WaitGameState.WaitForQueue;
+                                }
                             }
                             //PlaceEnemyCharacters();                            
                         }
@@ -766,7 +773,7 @@ namespace Assets.Scripts
             List<Tile> tempList = new List<Tile>();
             if (t.y - 1 >= 0)
             {
-                if ((tileArray[t.x, t.y - 1].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x, t.y - 1]) && !tileArray[t.x, t.y - 1].isOccupied)
+                if ((tileArray[t.x, t.y - 1].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x, t.y - 1]) && !tileArray[t.x, t.y - 1].isOccupied && !tileArray[t.x, t.y - 1].isObstructed)
                 {
                     //Debug.Log(t);
                     tempList.Add(tileArray[t.x, t.y - 1]);
@@ -774,7 +781,7 @@ namespace Assets.Scripts
             }
             if (t.y + 1 < tileMap.yLength)
             {
-                if ((tileArray[t.x, t.y + 1].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x, t.y + 1]) && !tileArray[t.x, t.y + 1].isOccupied)
+                if ((tileArray[t.x, t.y + 1].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x, t.y + 1]) && !tileArray[t.x, t.y + 1].isOccupied && !tileArray[t.x, t.y - 1].isObstructed)
                 {
                     //Debug.Log(t);
                     tempList.Add(tileArray[t.x, t.y + 1]);
@@ -782,7 +789,7 @@ namespace Assets.Scripts
             }
             if (t.x - 1 >= 0)
             {
-                if ((tileArray[t.x - 1, t.y].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x - 1, t.y]) && !tileArray[t.x - 1, t.y].isOccupied)
+                if ((tileArray[t.x - 1, t.y].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x - 1, t.y]) && !tileArray[t.x - 1, t.y].isOccupied && !tileArray[t.x, t.y - 1].isObstructed)
                 {
                     //Debug.Log(t);
                     tempList.Add(tileArray[t.x - 1, t.y]);
@@ -790,7 +797,7 @@ namespace Assets.Scripts
             }
             if (t.x + 1 < tileMap.xLength)
             {
-                if ((tileArray[t.x + 1, t.y].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x + 1, t.y]) && !tileArray[t.x + 1, t.y].isOccupied)
+                if ((tileArray[t.x + 1, t.y].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x + 1, t.y]) && !tileArray[t.x + 1, t.y].isOccupied && !tileArray[t.x, t.y - 1].isObstructed)
                 {
                     //Debug.Log(t);
                     tempList.Add(tileArray[t.x + 1, t.y]);
