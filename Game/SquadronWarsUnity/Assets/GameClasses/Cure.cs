@@ -24,7 +24,7 @@ namespace Assets.GameClasses
 
         private double CalculateHeal(Stats stats)
         {
-            return ImmediateBaseDamage - (Executioner.CharacterClassObject.CurrentStats.MagicAttack * 0.5);
+            return ImmediateBaseDamage - (Executioner.CharacterClassObject.CurrentStats.MagicAttack * 0.3);
         }
     }
 }

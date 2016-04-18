@@ -36,7 +36,7 @@ namespace Assets.GameClasses
 
         private int CalculateWeaken(Stats stats)
         {
-            return (int) ((Executioner.CharacterClassObject.CurrentStats.Str * 0.001) + .15) * stats.Defense;
+            return (int) ((Executioner.CharacterClassObject.CurrentStats.Str * 0.001) + .15) * stats.Defense + Executioner.CharacterClassObject.Equipment.Weapon.Damage;
         }
 
         private double CalculateAttack(Stats stats)
