@@ -9724,7 +9724,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.9747543, y: -1.0404863, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 485522}
@@ -19909,13 +19909,13 @@ MonoBehaviour:
   abilityButton: {fileID: 0}
   moveButton: {fileID: 0}
   player1SpawnXStart: 0
-  player1SpawnXEnd: 20
+  player1SpawnXEnd: 19
   player1SpawnYStart: 0
   player1SpawnYEnd: 6
-  player2SpawnXStart: 0
-  player2SpawnXEnd: 0
-  player2SpawnYStart: 14
-  player2SpawnYEnd: 20
+  player2SpawnXStart: 5
+  player2SpawnXEnd: 19
+  player2SpawnYStart: 10
+  player2SpawnYEnd: 19
   myCharacters: []
   enemyCharacters: []
   ActionAnimator: {fileID: 11412778}

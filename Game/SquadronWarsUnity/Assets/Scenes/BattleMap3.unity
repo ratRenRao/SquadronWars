@@ -655,6 +655,34 @@ Prefab:
       propertyPath: moveButton
       value: 
       objectReference: {fileID: 239228443}
+    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+      propertyPath: player2SpawnYEnd
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+      propertyPath: player2SpawnYStart
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+      propertyPath: player2SpawnXStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+      propertyPath: player1SpawnYEnd
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489946, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+      propertyPath: yLength
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+      propertyPath: player1SpawnXEnd
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+      propertyPath: player2SpawnXEnd
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
   m_IsPrefabParent: 0
