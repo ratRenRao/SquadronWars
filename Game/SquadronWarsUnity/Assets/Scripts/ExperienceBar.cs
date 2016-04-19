@@ -19,17 +19,18 @@ public class ExperienceBar : MonoBehaviour
 
     void Start()
     {
-        CharacterGameObject chararacter = GlobalConstants.MatchCharacters[slot];
-        var temp = (GameObject)Resources.Load(("Prefabs/Character" + chararacter.CharacterClassObject.SpriteId), typeof(GameObject));
+        CharacterGameObject character = GlobalConstants.MatchCharacters[slot];
+        var temp = (GameObject)Resources.Load(("Prefabs/Character" + character.CharacterClassObject.SpriteId), typeof(GameObject));
         var sprite = temp.GetComponent<SpriteRenderer>();
         Image bar = GetComponent<Image>();
         characterModel.GetComponent<Image>().sprite = sprite.sprite;
-        lvl = chararacter.CharacterClassObject.LevelId;
-        exp = chararacter.CharacterClassObject.BaseStats.Experience;
+        //lvl = chararacter.CharacterClassObject.LevelId;
+        lvl = 
+        exp = character.CharacterClassObject.BaseStats.Experience;
         maxExp = expLevel[lvl - 1];
         experience.text = exp.ToString() + " / " + maxExp.ToString();
         level.text = lvl.ToString();
-        charName.text = chararacter.CharacterClassObject.Name;
+        charName.text = character.CharacterClassObject.Name;
     }
 
     void Update()

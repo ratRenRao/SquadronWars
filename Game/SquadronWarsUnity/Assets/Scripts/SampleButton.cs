@@ -39,6 +39,7 @@ public class SampleButton : MonoBehaviour
         menu.CharacterScreenPanel.SetActive(true);
         characterScreen.characterSprite.sprite = sprite.sprite;
         characterScreen.characterName.text = characterGameObject.CharacterClassObject.Name;
+        characterScreen.levelStat.text = characterGameObject.CharacterClassObject.LevelId.ToString();
 
 
 
