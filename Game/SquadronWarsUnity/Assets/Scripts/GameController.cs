@@ -393,6 +393,7 @@ namespace Assets.Scripts
                         {
                             //Debug.Log("Show Panels called");
                             action = Action.IDLE;
+                            targetTile.isAlly = true;
                             hidePanel = false;
                         }
                     }
@@ -643,7 +644,7 @@ namespace Assets.Scripts
                 lastTile = targetTile;
                 targetTile = hit.collider.gameObject.GetComponent<Tile>();
                 Tile tempTile = targetTile;
-                if (tempTile.isValidMove)
+                if (tempTile.isValidMove && !targetTile.isAlly && !targetTile.isDead)
                 {
                     moveButton.interactable = false;
                     currentCharacterGameObject.hasMoved = true;
@@ -654,6 +655,7 @@ namespace Assets.Scripts
                     currentCharacterGameObject.Y = tile.y;
                     path = buildPath(prevTile, tile);
                     prevTile.isOccupied = false;
+                    prevTile.isAlly = false;
                     prevTile.characterObject = null;
                     prevTile.character = null;
                     targetTile = path[0];
@@ -694,10 +696,14 @@ namespace Assets.Scripts
             //FindPossibleMoves(tile);
             foreach (Tile t in walkableTiles)
             {
-                t.highlight.GetComponent<Image>().color = new Color32(99, 178, 255, 165);
-                t.highlight.SetActive(true);
                 t.isValidMove = true;
                 validMoves.Add(t);
+                if (!t.isAlly && !t.isDead)
+                {
+                    t.highlight.GetComponent<Image>().color = new Color32(99, 178, 255, 165);
+                    t.highlight.SetActive(true);                    
+                    
+                }
             }
             hidePanel = true;
             StartCoroutine(WaitForClick("move"));
@@ -773,7 +779,7 @@ namespace Assets.Scripts
             List<Tile> tempList = new List<Tile>();
             if (t.y - 1 >= 0)
             {
-                if ((tileArray[t.x, t.y - 1].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x, t.y - 1]) && !tileArray[t.x, t.y - 1].isOccupied)
+                if ((tileArray[t.x, t.y - 1].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x, t.y - 1]) && (!tileArray[t.x, t.y - 1].isOccupied || tileArray[t.x, t.y - 1].isAlly || tileArray[t.x, t.y - 1].isDead))
                 {
                     //Debug.Log(t);
                     tempList.Add(tileArray[t.x, t.y - 1]);
@@ -781,7 +787,7 @@ namespace Assets.Scripts
             }
             if (t.y + 1 < tileMap.yLength)
             {
-                if ((tileArray[t.x, t.y + 1].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x, t.y + 1]) && !tileArray[t.x, t.y + 1].isOccupied)
+                if ((tileArray[t.x, t.y + 1].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x, t.y + 1]) && (!tileArray[t.x, t.y + 1].isOccupied || tileArray[t.x, t.y + 1].isAlly || tileArray[t.x, t.y + 1].isDead))
                 {
                     //Debug.Log(t);
                     tempList.Add(tileArray[t.x, t.y + 1]);
@@ -789,7 +795,7 @@ namespace Assets.Scripts
             }
             if (t.x - 1 >= 0)
             {
-                if ((tileArray[t.x - 1, t.y].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x - 1, t.y]) && !tileArray[t.x - 1, t.y].isOccupied)
+                if ((tileArray[t.x - 1, t.y].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x - 1, t.y]) && (!tileArray[t.x - 1, t.y].isOccupied || tileArray[t.x - 1, t.y].isAlly || tileArray[t.x - 1, t.y].isDead))
                 {
                     //Debug.Log(t);
                     tempList.Add(tileArray[t.x - 1, t.y]);
@@ -797,7 +803,7 @@ namespace Assets.Scripts
             }
             if (t.x + 1 < tileMap.xLength)
             {
-                if ((tileArray[t.x + 1, t.y].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x + 1, t.y]) && !tileArray[t.x + 1, t.y].isOccupied)
+                if ((tileArray[t.x + 1, t.y].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x + 1, t.y]) && (!tileArray[t.x + 1, t.y].isOccupied || tileArray[t.x + 1, t.y].isAlly || tileArray[t.x + 1, t.y].isDead))
                 {
                     //Debug.Log(t);
                     tempList.Add(tileArray[t.x + 1, t.y]);
@@ -824,8 +830,7 @@ namespace Assets.Scripts
                     {
                         countCheck++;
                         openPathTemp.Add(til);
-                        walkableTiles.Add(til);
-
+                        walkableTiles.Add(til);   
                     }
                 }
                 openPath = new List<Tile>(openPathTemp);
@@ -1866,6 +1871,7 @@ namespace Assets.Scripts
         {            
             GameObject tileMap = GameObject.FindGameObjectWithTag("map");
             tempTile.isOccupied = true;
+            tempTile.isAlly = true;
             gameCharacter.X = tempTile.x;
             gameCharacter.Y = tempTile.y;
             tempTile.character = gameCharacter;

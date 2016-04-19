@@ -16,6 +16,8 @@ namespace Assets.Scripts
         public bool isValidMove { get; set; }
         public bool isObstructed { get; set; }
         public bool isOccupied { get; set; }
+        public bool isAlly { get; set; }
+        public bool isDead { get; set; }
 
         // This represents the amount of damage taken for any character on this tile.
         public int amount { get; set; }

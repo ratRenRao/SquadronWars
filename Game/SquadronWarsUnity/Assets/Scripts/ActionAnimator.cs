@@ -162,6 +162,7 @@ namespace Assets.Scripts
                 {
                     //target.CharacterClassObject.CurrentStats.CurHP = 0;
                     target.isDead = true;
+                    targetTile.isDead = true;
                     //myCharacters.Remove(target.gameObject);
                     if (targetAnimator != null)
                         targetAnimator.SetBool("isDead", true);
@@ -209,6 +210,7 @@ namespace Assets.Scripts
             {
                 //target.CharacterClassObject.CurrentStats.CurHP = 0;
                 target.isDead = true;
+                targetTile.isDead = true;
                 //myCharacters.Remove(target.gameObject);
                 if (targetAnimator != null)
                     targetAnimator.SetBool("isDead", true);
