@@ -2055,7 +2055,7 @@ namespace Assets.Scripts
             {
                 Debug.Log("!!! Effect : " + effect.Value.ToString() + " !!!");
                 effect.Value.LingeringEffect(effect.Key.CharacterClassObject.CurrentStats);
-                if (effect.Value.IsComplete())
+                if (effect.Value.IsComplete() || effect.Key.isDead)
                 {
                     effect.Value.RemoveEffect(effect.Key.CharacterClassObject.CurrentStats);
                     GlobalConstants.ActiveEffects.Remove(effect.Key);
