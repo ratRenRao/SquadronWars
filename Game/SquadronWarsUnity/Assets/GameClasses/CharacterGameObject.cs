@@ -15,6 +15,7 @@ namespace Assets.GameClasses
         public bool hasAttacked = false;
         public bool hasMoved = false;
         public bool isDead = false;
+        public bool isAlly = false;
 
         private int _characterId { get; set; }
 

@@ -58,9 +58,11 @@ namespace Assets.Scripts
                 if (tagName == "grass" || tagName == "bridge" || tagName == "ground" || tagName == "lava_crack")
                 {
                     tile.isOccupied = false;
+                    tile.isObstructed = false;
                 }
                 else
                 {
+                    tile.isOccupied = true;
                     tile.isObstructed = true;
                 }
                 //tiles.Add(child.gameObject);

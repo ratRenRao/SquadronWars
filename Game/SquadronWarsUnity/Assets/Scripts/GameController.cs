@@ -773,7 +773,7 @@ namespace Assets.Scripts
             List<Tile> tempList = new List<Tile>();
             if (t.y - 1 >= 0)
             {
-                if ((tileArray[t.x, t.y - 1].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x, t.y - 1]) && !tileArray[t.x, t.y - 1].isOccupied && !tileArray[t.x, t.y - 1].isObstructed)
+                if ((tileArray[t.x, t.y - 1].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x, t.y - 1]) && !tileArray[t.x, t.y - 1].isOccupied)
                 {
                     //Debug.Log(t);
                     tempList.Add(tileArray[t.x, t.y - 1]);
@@ -781,7 +781,7 @@ namespace Assets.Scripts
             }
             if (t.y + 1 < tileMap.yLength)
             {
-                if ((tileArray[t.x, t.y + 1].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x, t.y + 1]) && !tileArray[t.x, t.y + 1].isOccupied && !tileArray[t.x, t.y - 1].isObstructed)
+                if ((tileArray[t.x, t.y + 1].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x, t.y + 1]) && !tileArray[t.x, t.y + 1].isOccupied)
                 {
                     //Debug.Log(t);
                     tempList.Add(tileArray[t.x, t.y + 1]);
@@ -789,7 +789,7 @@ namespace Assets.Scripts
             }
             if (t.x - 1 >= 0)
             {
-                if ((tileArray[t.x - 1, t.y].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x - 1, t.y]) && !tileArray[t.x - 1, t.y].isOccupied && !tileArray[t.x, t.y - 1].isObstructed)
+                if ((tileArray[t.x - 1, t.y].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x - 1, t.y]) && !tileArray[t.x - 1, t.y].isOccupied)
                 {
                     //Debug.Log(t);
                     tempList.Add(tileArray[t.x - 1, t.y]);
@@ -797,7 +797,7 @@ namespace Assets.Scripts
             }
             if (t.x + 1 < tileMap.xLength)
             {
-                if ((tileArray[t.x + 1, t.y].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x + 1, t.y]) && !tileArray[t.x + 1, t.y].isOccupied && !tileArray[t.x, t.y - 1].isObstructed)
+                if ((tileArray[t.x + 1, t.y].isValidMove || isPathSearch) && !walkableTiles.Contains(tileArray[t.x + 1, t.y]) && !tileArray[t.x + 1, t.y].isOccupied)
                 {
                     //Debug.Log(t);
                     tempList.Add(tileArray[t.x + 1, t.y]);
@@ -1988,6 +1988,7 @@ namespace Assets.Scripts
             else
             {
                 bool getNextAvailableCharacter = false;
+                currentCharacterGameObject.GetComponent<SpriteRenderer>().color = new Color32(0, 0, 0, 255);
                 while (!getNextAvailableCharacter)
                 {
                     turnQueue.Add(turnQueue[0]);
@@ -2026,6 +2027,7 @@ namespace Assets.Scripts
                 
                 currentGameCharacter = turnQueue[0];
                 currentCharacterGameObject = currentGameCharacter.GetComponent<CharacterGameObject>();
+                currentCharacterGameObject.GetComponent<SpriteRenderer>().color = new Color32(161, 221, 255, 255);
                 targetTile = tileArray[currentCharacterGameObject.X, currentCharacterGameObject.Y];
                 Debug.Log(currentCharacterGameObject.X + " " + currentCharacterGameObject.Y);
                 prevTile = targetTile;
