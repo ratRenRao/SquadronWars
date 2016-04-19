@@ -60,6 +60,7 @@ namespace Assets.Scripts
             if (GlobalConstants.IsLoggedIn)
             {
                 GlobalConstants.ResetCharacters();
+                GlobalConstants.EndGame();
                 MainMenuPanel.gameObject.SetActive(true);
             }
         }

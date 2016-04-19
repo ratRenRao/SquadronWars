@@ -116,7 +116,21 @@ namespace Assets.GameClasses
             MatchCharacters.Clear();
             CharacterLoadReady = true;
         }
-        
+
+        public static void EndGame()
+        {
+            GameId = 0;
+            mapId = 0;
+            myPlayerId = 0;
+            opponentId = 0;
+            player1Characters.Clear();
+            player2Characters.Clear();
+            currentActions.ResetBattleActions();
+            Updated = true;
+            TimeListeners = new Dictionary<int, TimeListener>();
+            //Call additional functions for end game.
+        }
+
     }
 
     
