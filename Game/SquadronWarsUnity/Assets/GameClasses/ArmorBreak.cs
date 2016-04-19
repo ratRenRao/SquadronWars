@@ -15,10 +15,12 @@ namespace Assets.GameClasses
             ImmediateBaseDamage = Executioner.CharacterClassObject.Equipment.Weapon != null
                ? Executioner.CharacterClassObject.Equipment.Weapon.Damage / 2 : 0;
             AbilityLevel = AbilityLevel <= 0 ? 1 : AbilityLevel;
+            Duration = 4;
         }
 
         public override void ImmediateEffect(Stats stats)
         {
+            Debug.Log("Pre Armor Break: Current Defense = " + stats.Defense);
             _initialStats = stats;
             Damage = CalculateWeaken(stats);
             stats.Defense -= Damage;
@@ -32,6 +34,7 @@ namespace Assets.GameClasses
         public override void RemoveEffect(Stats stats)
         {
             stats.Defense = _initialStats.Defense;
+            Debug.Log("Post Armor Break: Current Defense = " + stats.Defense);
         }
 
         private int CalculateWeaken(Stats stats)
@@ -42,6 +45,12 @@ namespace Assets.GameClasses
         private double CalculateAttack(Stats stats)
         {
             return ImmediateBaseDamage + (Executioner.CharacterClassObject.CurrentStats.Str * 0.25);
+        }
+
+        public override void LingeringEffect(Stats stats)
+        {
+            base.LingeringEffect(stats);
+            Debug.Log("Armor Break: Current Defense = " + stats.Defense);
         }
     }
 }
