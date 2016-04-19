@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Assets.Scripts;
 
 namespace Assets.GameClasses
@@ -25,9 +27,12 @@ namespace Assets.GameClasses
             AnimationManager.Cast("Fire");
         }
 
-        public override void LingeringEffect(ref Stats stats)
+        public override void LingeringEffect(Stats stats)
         {
             stats.CurHP -= (int)CalculateLingeringDamage();
+            base.LingeringEffect(stats);
+            AnimationManager.SetDamage(Damage);
+            AnimationManager.ExecuteLingeringEffect();
         }
 
         private double CalculateImmediateDamage()

@@ -27,7 +27,7 @@ namespace Assets.GameClasses
             AnimationManager.Cast("Bio");
         }
 
-        public override void LingeringEffect(ref Stats stats)
+        public override void LingeringEffect(Stats stats)
         {
             stats.CurHP -= (int)CalculateLingeringDamage();
         }

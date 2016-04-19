@@ -42,6 +42,11 @@ namespace Assets.GameClasses
             _damage = damage;
         }
 
+        public void ExecuteLingeringEffect()
+        {
+            _actionAnimator.Animate(_targetCharacterGameObject, _targetAnimator, _targetTile, _damage);
+        }
+
         public void Cast(string ability)
         {
             Debug.Log("Cast Method: " + ability);

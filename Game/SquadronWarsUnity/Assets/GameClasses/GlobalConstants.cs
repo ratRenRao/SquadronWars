@@ -51,7 +51,7 @@ namespace Assets.GameClasses
                                                 where typeof(Action).IsAssignableFrom(assemblyType)
                                                 select assemblyType).ToList();
 
-        public static List<Effect> ActiveEffects = new List<Effect>(); 
+        public static Dictionary<CharacterGameObject, IEffectable> ActiveEffects = new Dictionary<CharacterGameObject, IEffectable>(); 
         public static Utilities Utilities = new Utilities();
 
         public static CharacterGameObject ActiveCharacterGameObject { get; set; }

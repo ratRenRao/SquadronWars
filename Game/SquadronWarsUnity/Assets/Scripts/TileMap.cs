@@ -55,13 +55,15 @@ namespace Assets.Scripts
                 tile.isValidMove = false;
 
                 string tagName = child.gameObject.tag;
-                if(tagName == "grass" || tagName == "bridge" || tagName == "ground")
+                if (tagName == "grass" || tagName == "bridge" || tagName == "ground" || tagName == "lava_crack")
                 {
                     tile.isOccupied = false;
+                    tile.isObstructed = false;
                 }
                 else
                 {
                     tile.isOccupied = true;
+                    tile.isObstructed = true;
                 }
                 //tiles.Add(child.gameObject);
                 tiles.Add(child.gameObject);

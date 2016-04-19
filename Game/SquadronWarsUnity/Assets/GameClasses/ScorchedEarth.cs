@@ -41,11 +41,12 @@ namespace Assets.GameClasses
                     tiles.Add(tileY);
             }*/
             tiles.Clear();
-            for(int i = 0; i < 5; i++)
+            var tileMap = GlobalConstants.GameController.tileMap;
+            for (int i = 0; i < 5; i++)
             {
                 for(int j = 0; j < 5; j++)
                 {
-                    if (firstX + i < 20 && firstY + j < 20)
+                    if (firstX + i < tileMap.xLength && firstY + j < tileMap.yLength)
                     {
                         Debug.Log("X: " + (firstX + i) + " Y: " + (firstY + j));
                         tiles.Add(GlobalConstants.GameController.tileMap.tileArray[firstX + i, firstY + j]);
@@ -86,7 +87,7 @@ namespace Assets.GameClasses
             AnimationManager.Cast("Fire");
         }
 
-        public override void LingeringEffect(ref Stats stats)
+        public override void LingeringEffect(Stats stats)
         {
             stats.CurHP -= (int)CalculateLingeringDamage();
         }
