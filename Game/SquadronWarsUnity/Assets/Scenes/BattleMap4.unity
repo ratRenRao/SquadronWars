@@ -506,6 +506,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 11411888, guid: b3bf326aeceb0b04a945312a839c34e2, type: 2}
+      propertyPath: m_Text
+      value: Regen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3bf326aeceb0b04a945312a839c34e2, type: 2}
   m_IsPrefabParent: 0
@@ -710,6 +714,14 @@ Prefab:
     - target: {fileID: 11426602, guid: 5c5f1c6258d4c66469aac300ba4e240f, type: 2}
       propertyPath: player2SpawnYStart
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426602, guid: 5c5f1c6258d4c66469aac300ba4e240f, type: 2}
+      propertyPath: player2SpawnXEnd
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426602, guid: 5c5f1c6258d4c66469aac300ba4e240f, type: 2}
+      propertyPath: player2SpawnYEnd
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11432476, guid: 5c5f1c6258d4c66469aac300ba4e240f, type: 2}
