@@ -29,7 +29,8 @@ namespace Assets.GameClasses
 
         public override void LingeringEffect(Stats stats)
         {
-            stats.CurHP -= (int)CalculateLingeringDamage();
+            Damage = (int)CalculateLingeringDamage();
+            stats.CurHP -= Damage;
             base.LingeringEffect(stats);
             AnimationManager.SetDamage(Damage);
             AnimationManager.ExecuteLingeringEffect();
