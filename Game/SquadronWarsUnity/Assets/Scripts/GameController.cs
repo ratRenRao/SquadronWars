@@ -1988,7 +1988,7 @@ namespace Assets.Scripts
             else
             {
                 bool getNextAvailableCharacter = false;
-                currentCharacterGameObject.GetComponent<SpriteRenderer>().color = new Color32(0, 0, 0, 255);
+                currentCharacterGameObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
                 while (!getNextAvailableCharacter)
                 {
                     turnQueue.Add(turnQueue[0]);
