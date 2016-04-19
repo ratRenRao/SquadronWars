@@ -167,7 +167,7 @@ Prefab:
     - target: {fileID: 11435696, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1232798539}
+      objectReference: {fileID: 0}
     - target: {fileID: 11435696, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: showMoves
@@ -175,7 +175,7 @@ Prefab:
     - target: {fileID: 11425750, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1232798539}
+      objectReference: {fileID: 0}
     - target: {fileID: 11425750, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EndTurn
@@ -183,7 +183,7 @@ Prefab:
     - target: {fileID: 11436240, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1232798539}
+      objectReference: {fileID: 0}
     - target: {fileID: 11436240, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ShowAttackMoves
@@ -233,6 +233,42 @@ Prefab:
       value: 
       objectReference: {fileID: 1232798900}
     - target: {fileID: 11412974, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1232798900}
+    - target: {fileID: 22429928, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 22486492, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 22473286, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22457130, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 22450616, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 22417948, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 22440628, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 22435782, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464798, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
       propertyPath: gameController
       value: 
       objectReference: {fileID: 1232798900}
@@ -690,12 +726,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 481482, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
   m_PrefabInternal: {fileID: 1232798537}
---- !u!114 &1232798539 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1232798537}
-  m_Script: {fileID: 11500000, guid: 9eeb4f93c8582234e890d442bfb618b3, type: 3}
 --- !u!1 &1232798900 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 177078, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}

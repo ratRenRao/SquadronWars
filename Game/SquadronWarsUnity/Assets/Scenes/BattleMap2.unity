@@ -8483,6 +8483,42 @@ Prefab:
       propertyPath: m_Text
       value: OVER 9000!!!
       objectReference: {fileID: 0}
+    - target: {fileID: 22456402, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 22410374, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 22472552, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 22457556, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 22488572, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 22425474, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 22433278, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 22423440, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415314, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 334646434}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e0bcd8f67ea56b478c525f698e5a9ee, type: 2}
   m_IsPrefabParent: 0
