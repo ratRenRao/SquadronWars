@@ -185,6 +185,13 @@ public class SampleButton : MonoBehaviour
         {
             character.BaseStats = modifiedStats;
             modifiedStats = character.BaseStats.Clone();
+            for (int i = 0; i < GlobalConstants.Player.Characters.Count; i++)
+            {
+                if (GlobalConstants.Player.Characters[i].CharacterId == character.CharacterId)
+                {
+                    GlobalConstants.Player.Characters[i] = character;
+                }
+            }
         }
     }
 
@@ -317,12 +324,13 @@ public class SampleButton : MonoBehaviour
     public void SaveCharacter()
     {
         //Debug.Log(GlobalConstants.curSelectedCharacter);
-        SetDbConnection();
+        //SetDbConnection();
         var www = GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateCharacterUrl, new UpdateCharacterPostObject(modifiedStats));
 
         if (!www.text.Equals("Failed"))
         {
-            ConfirmStatChanges();
+            ConfirmStatChanges();            
+            GlobalConstants.ResetCharacters();
             CharacterScreenPanel.SetActive(false);
             SquadPanel.SetActive(true);
             SquadScreen.SetActive(true);
@@ -412,4 +420,5 @@ public class SampleButton : MonoBehaviour
         stats.chargeLvl.text = "";
         stats.doubleAttackLvl.text = "";
     }
+
 }
