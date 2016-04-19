@@ -2068,9 +2068,12 @@ namespace Assets.Scripts
                 if (effect.Value.IsComplete() || effect.Key.isDead)
                 {
                     effect.Value.RemoveEffect(effect.Key.CharacterClassObject.CurrentStats);
-                    GlobalConstants.ActiveEffects.Remove(effect.Key);
                 }
             }
+
+            GlobalConstants.ActiveEffects = GlobalConstants.ActiveEffects.Where( kvp => !kvp.Value.IsComplete()
+                && !kvp.Key.isDead)
+                  .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
         }
 
         public void PositionSelectedPanel(CharacterGameObject selCharacter, Tile tempTile)
