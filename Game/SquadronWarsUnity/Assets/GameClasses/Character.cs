@@ -14,6 +14,7 @@ namespace Assets.GameClasses
         public int CharacterId { get; set; }
         public int LevelId { get; set; }
         public string Name { get; set; }
+        public int Experience { get; set; }
         public int SpriteId { get; set; }
         public Stats BaseStats { get; set; }
         public Stats CurrentStats { get; set; }

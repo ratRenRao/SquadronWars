@@ -119,6 +119,7 @@ namespace Assets.Data
 
                 characterBuilder.Equipment = character.BuildEquipment();
                 characterBuilder.BaseStats = character.BuildBaseStats();
+                characterBuilder.BaseStats.Experience = character.Experience;
                 characterBuilder.CurrentStats = AddItemStats(characterBuilder.Equipment.GetItemList(), characterBuilder.BaseStats);
 
                // characterBuilder.BaseStats.AbilityPoints = 3;
