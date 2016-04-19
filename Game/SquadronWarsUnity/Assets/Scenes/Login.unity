@@ -103,6 +103,7 @@ MonoBehaviour:
   hasAttacked: 0
   hasMoved: 0
   isDead: 0
+  isAlly: 0
 --- !u!1 &20844263
 GameObject:
   m_ObjectHideFlags: 0
@@ -11952,6 +11953,7 @@ MonoBehaviour:
   hasAttacked: 0
   hasMoved: 0
   isDead: 0
+  isAlly: 0
 --- !u!1 &844838901
 GameObject:
   m_ObjectHideFlags: 0

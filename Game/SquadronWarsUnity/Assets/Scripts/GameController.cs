@@ -1914,6 +1914,7 @@ namespace Assets.Scripts
                 tempchar.transform.parent = tileMap.transform;
                 tempchar.transform.localScale = new Vector3(1, 1, 0.0f);
                 tempchar.AddComponent<CharacterGameObject>();
+                tempchar.GetComponent<CharacterGameObject>().GetComponent<SpriteRenderer>().color = new Color32(255, 195, 195, 255);
                 tempchar.GetComponent<CharacterGameObject>().CharacterClassObject = gameCharacter.CharacterClassObject;
                 tempchar.GetComponent<CharacterGameObject>().X = gameCharacter.X;
                 tempchar.GetComponent<CharacterGameObject>().Y = gameCharacter.Y;
@@ -1988,7 +1989,14 @@ namespace Assets.Scripts
             else
             {
                 bool getNextAvailableCharacter = false;
-                currentCharacterGameObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+                if (enemyCharacters.Select(character => character).Contains(turnQueue[0]))
+                {
+                    currentCharacterGameObject.GetComponent<SpriteRenderer>().color =  new Color32(255, 195, 195, 255);
+                }
+                else
+                {
+                    currentCharacterGameObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+                }
                 while (!getNextAvailableCharacter)
                 {
                     turnQueue.Add(turnQueue[0]);
