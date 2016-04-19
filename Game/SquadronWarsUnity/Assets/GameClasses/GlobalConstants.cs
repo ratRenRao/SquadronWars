@@ -110,7 +110,16 @@ namespace Assets.GameClasses
 
             return name;
         }
+
+        public static void ResetCharacters()
+        {
+            MatchCharacters.Clear();
+            CharacterLoadReady = true;
+        }
+        
     }
+
+    
 
     /*
     public class AbilityPreReqs

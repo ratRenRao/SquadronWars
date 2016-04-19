@@ -1892,6 +1892,8 @@ namespace Assets.Scripts
             if (unitPlacedCount + 1 < characters.Count)
             {
                 statsPanel.charName.text = characters[unitPlacedCount + 1].CharacterClassObject.Name;
+                statsPanel.hp.text = characters[unitPlacedCount + 1].CharacterClassObject.CurrentStats.HitPoints + " / " + characters[unitPlacedCount + 1].CharacterClassObject.CurrentStats.HitPoints;
+                statsPanel.mp.text = characters[unitPlacedCount + 1].CharacterClassObject.CurrentStats.MagicPoints + " / " + characters[unitPlacedCount + 1].CharacterClassObject.CurrentStats.MagicPoints;
             }
             idCount++;
         }

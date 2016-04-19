@@ -167,7 +167,7 @@ Prefab:
     - target: {fileID: 11435696, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1232798901}
     - target: {fileID: 11435696, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: showMoves
@@ -175,7 +175,7 @@ Prefab:
     - target: {fileID: 11425750, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1232798901}
     - target: {fileID: 11425750, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: EndTurn
@@ -183,7 +183,7 @@ Prefab:
     - target: {fileID: 11436240, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1232798901}
     - target: {fileID: 11436240, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ShowAttackMoves
@@ -272,6 +272,14 @@ Prefab:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 1232798900}
+    - target: {fileID: 11436240, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11477520, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
+      propertyPath: m_Text
+      value: Regen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e53d8adce0d74464b8172e3288ab42ff, type: 2}
   m_IsPrefabParent: 0
@@ -631,93 +639,77 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: characterStatsPanel
       value: 
       objectReference: {fileID: 224788291}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: selectedCharcterStatsPanel
       value: 
       objectReference: {fileID: 224788289}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: statsPanel
       value: 
       objectReference: {fileID: 224788292}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: selectedCharcterStats
       value: 
       objectReference: {fileID: 224788290}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: abilityList
       value: 
       objectReference: {fileID: 224788296}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: actionPanel
       value: 
       objectReference: {fileID: 224788297}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: battlesong
       value: 
       objectReference: {fileID: 224788288}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: funsong
       value: 
       objectReference: {fileID: 224788286}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: defeatsong
       value: 
       objectReference: {fileID: 224788285}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: victorysong
       value: 
       objectReference: {fileID: 224788284}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: placecharactersong
       value: 
       objectReference: {fileID: 224788283}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: playersTurnText
       value: 
       objectReference: {fileID: 224788287}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: attackButton
       value: 
       objectReference: {fileID: 224788295}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: abilityButton
       value: 
       objectReference: {fileID: 224788294}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: moveButton
       value: 
       objectReference: {fileID: 224788293}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
-      propertyPath: player2SpawnYEnd
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
-      propertyPath: player2SpawnYStart
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
-      propertyPath: player2SpawnXStart
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
-      propertyPath: player1SpawnYEnd
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 11489946, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
-      propertyPath: yLength
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: player1SpawnXEnd
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 11474216, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
       propertyPath: player2SpawnXEnd
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
+      propertyPath: player2SpawnYEnd
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
@@ -730,3 +722,9 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 177078, guid: 15a2b4b5952f6814da633fdfef57f87a, type: 2}
   m_PrefabInternal: {fileID: 1232798537}
+--- !u!114 &1232798901 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11469164, guid: 15a2b4b5952f6814da633fdfef57f87a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232798537}
+  m_Script: {fileID: 11500000, guid: 9eeb4f93c8582234e890d442bfb618b3, type: 3}
