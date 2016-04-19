@@ -6,24 +6,20 @@ using Assets.GameClasses;
 
 namespace Assets.GameClasses
  {
-    public class Ability : Effect, IJsonable
+    public class Ability : Action, IJsonable
     {
-        public string Name
-        {
-            get { return base.Name; } 
-            set { base.Name = value; }
-        }
+        public string Name { get; set; }
         public int AbilityId { get; set; }
         public int CharacterId { get; set; }
         public int AbilityLevel { get; set; }
 
 
-        public string GetJsonObjectName()
+        public new string GetJsonObjectName()
         {
             return "Abilities";
         }
 
-        public List<PropertyInfo> GetJsonObjectParameters()
+        public new List<PropertyInfo> GetJsonObjectParameters()
         {
             return GetType().GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance).ToList();
         }
@@ -33,7 +29,7 @@ namespace Assets.GameClasses
             throw new NotImplementedException();
         }
 
-        public string GetJSONString()
+        public new string GetJSONString()
         {
             // removed from string       ", \"CharacterId\" : " + CharacterId +
             return "{ \"Name\" : \"" + Name + "\", \"AbilityId\" : \"" + AbilityId + "\", \"AbilityLevel\" : \"" + AbilityLevel +  "\" }";

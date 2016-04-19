@@ -14,64 +14,42 @@ namespace Assets.Scripts
         public GameObject queueScreen;
         public bool waitForLoading = true;
         public bool setQueueScreen = false;
+        private static bool queued = true;
 
         // Use this for initialization
-        void Start () {
-	    
+        void Start ()
+        {
         }
 	
         // Update is called once per frame
-	
-
         public void StartFindingMatch()
         {
-            //homeScreen.SetActive(false);
             queueScreen.SetActive(true);
-            //homeScreen.SetActive(false);
             WaitForGameInfoReturned();
-            //StartCoroutine(WaitForOpponent());
-            //WaitForOpponent();
             StartCoroutine(ShowQueueScreenWaitForMatch());
-            //StartCoroutine("FindPlayer");
 
         }
 
         void Update()
         {
-            /*if (setQueueScreen)
-        {
-            setQueueScreen = false;
-        }*/
-
         }
 
         IEnumerator ShowQueueScreenWaitForMatch()
         {
-            yield return new WaitForSeconds(2f);
-            while(!CheckForMatchedPlayer())
+            while(!CheckForMatchedPlayer() && queued)
             {
-                WaitForTwoSeconds();
+                yield return new WaitForSeconds(2f);
                 GetGameStatus();
             }
-            SceneManager.LoadScene("BattleMap2");
+            if (CheckForMatchedPlayer())
+                SceneManager.LoadScene("BattleMap2");
         }
-
-        /*
-    public void WaitForOpponent()
-    {
-        while(!CheckForMatchedPlayer())
-        {
-            WaitForTwoSeconds();
-            GetGameStatus();
-        }
-        SceneManager.LoadScene("BattleMap2");
-    }
-    */
 
         public bool CheckForMatchedPlayer()
         {
             if(GlobalConstants.opponentId != 0)
             {
+                queued = false;
                 return true;
             }
             return false;
@@ -84,19 +62,18 @@ namespace Assets.Scripts
 
         public void ButtonClickCancel()
         {
+            queued = false;
+            StopCoroutine(ShowQueueScreenWaitForMatch());
             homeScreen.SetActive(true);
             queueScreen.SetActive(false);
-        
         }
 
         public void WaitForGameInfoReturned()
         {
-            //StartCoroutine(GlobalConstants.Utilities.GetGameInfo(GlobalConstants.StartGameUrl));
             var gameInfo = GlobalConstants.Utilities.GetGameInfo(GlobalConstants.StartGameUrl, GlobalConstants._dbConnection);
-
-            //var gameInfo = GlobalConstants.GameInfo;
             if (gameInfo != null)
             {
+                Debug.Log("WaitForGameInfo not null Called");
                 GlobalConstants.Utilities.UpdateGame(gameInfo);
                 GlobalConstants.Updated = true;
                 GlobalConstants.StartGameTime = DateTime.Now;
@@ -106,8 +83,6 @@ namespace Assets.Scripts
         public void GetGameStatus()
         {
             var gameInfo = GlobalConstants.Utilities.GetGameInfo(GlobalConstants.CheckGameStatusUrl, GlobalConstants._dbConnection);
-
-            //var gameInfo = GlobalConstants.GameInfo;
             if (gameInfo != null)
             {
                 GlobalConstants.Utilities.UpdateGame(gameInfo);

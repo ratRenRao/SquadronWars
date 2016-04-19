@@ -9,6 +9,7 @@ public class BattlePostObject
     public string username { get; set; }
     public string password { get; set; }
     public int gameId { get; set; }
+    public int Finished { get; set; }
     public string player1 { get; set; }
     //public List<Character> player1 { get; set; }
     public string player2 { get; set; }
@@ -23,6 +24,7 @@ public class BattlePostObject
         username = GlobalConstants.Player.logins.username;
         password = GlobalConstants.Player.logins.password;
         gameId = GlobalConstants.GameId;
+        Finished = 0;
         player1 = GetPlayerCharacters(GlobalConstants.player1Characters, 1);
         player2 = GetPlayerCharacters(GlobalConstants.player2Characters, 2);
         gameInfo = GlobalConstants.currentActions.GetJSONString();

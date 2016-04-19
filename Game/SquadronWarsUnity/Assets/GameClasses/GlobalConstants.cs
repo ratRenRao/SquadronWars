@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.NetworkInformation;
 using System.Security.Cryptography.X509Certificates;
 using Assets.Data;
 using Assets.Scripts;
@@ -11,6 +10,7 @@ namespace Assets.GameClasses
 {
     public static class GlobalConstants
     {
+        
         //Primary Webserver URL
         //public const string WebServerUrl = "http://squadronwars.ddns.net";
         public const string WebServerUrl = "ec2-52-27-154-55.us-west-2.compute.amazonaws.com";
@@ -22,11 +22,13 @@ namespace Assets.GameClasses
         public const string UpdateCharacterUrl = WebServerUrl + "/api/UpdateCharacter";
         public const string UpdatePlayerUrl = WebServerUrl + "/api/UpdatePlayer";
         public const string UpdateSquadUrl = WebServerUrl + "/api/UpdateSquad"; //not implemented yet
+        public const string UpdateInventoryUrl = WebServerUrl + "/api/UpdateInventory"; //not fully implemented. need to discuss how we are going to handle this.
         //Battle Related URLs
         public const string StartGameUrl = WebServerUrl + "/api/StartGame";
         public const string CheckGameStatusUrl = WebServerUrl + "/api/CheckGameInfo";
         public const string PlaceCharacterUrl = WebServerUrl + "/api/PlaceCharacters";
         public const string UpdateGameStatusUrl = WebServerUrl + "/api/UpdateGameInfo";
+        public const string GetGameJSONUrl = WebServerUrl + "/api/GetBattleAction";
 
         public const string PlayerJsonObjectName = "PlayerInfo";
         public const string CharacterJsonObjectName = "Characters";
@@ -34,6 +36,9 @@ namespace Assets.GameClasses
         public const string ActionsJsonName = "Actions";
 
         public static bool CharacterLoadReady = false;
+        public static bool isMyTurn = false;
+        public static bool isAnimating = false;
+        public static bool IsLoggedIn = false;
         public static List<CharacterGameObject> MatchCharacters = new List<CharacterGameObject>();
         public static List<AbilityPreReq> AbilityPreReqs { get; set; } 
         public static List<Item> ItemsMasterList { get; set; }
@@ -43,11 +48,10 @@ namespace Assets.GameClasses
         
         public static readonly List<Type> EffectTypes = (from domainAssembly in AppDomain.CurrentDomain.GetAssemblies()
                                                 from assemblyType in domainAssembly.GetTypes()
-                                                where typeof(Effect).IsAssignableFrom(assemblyType)
+                                                where typeof(Action).IsAssignableFrom(assemblyType)
                                                 select assemblyType).ToList();
 
-        public static List<Effect> EffectMasterList = new List<Effect>(); 
-        public static List<Effect> ActiveEffects = new List<Effect>(); 
+        public static Dictionary<CharacterGameObject, IEffectable> ActiveEffects = new Dictionary<CharacterGameObject, IEffectable>(); 
         public static Utilities Utilities = new Utilities();
 
         public static CharacterGameObject ActiveCharacterGameObject { get; set; }
@@ -56,9 +60,11 @@ namespace Assets.GameClasses
 
         public static DbConnection _dbConnection = new GameObject().GetComponent<DbConnection>();
         public static GameInfo GameInfo;
+        public static GameController GameController;
 
         //Battle related constants for managing a game
         public static int GameId = 0;
+        public static int mapId = 0;
         public static List<Character> player1Characters = new List<Character>();
         public static List<Character> player2Characters = new List<Character>();
         public static BattleAction currentActions = new BattleAction();
@@ -66,12 +72,14 @@ namespace Assets.GameClasses
         public static int opponentId = 0;
         public static bool Updated = true;
         public static Dictionary<int, TimeListener> TimeListeners = new Dictionary<int, TimeListener>(); 
+        public static ActionAnimator ActionAnimator { get; set; }
 
         //Game data for calculating payout
         public static int DamageAndHealingDone = 0;
         public static DateTime StartGameTime { get; set; }
         public static DateTime EndGameTime { get; set; }
-
+        public static int EarnedExp = 0;
+        public static int EarnedGold = 0;
         public static string GetJsonObjectName<T>(T obj) where T : IJsonable
         {
             return obj.GetJsonObjectName();

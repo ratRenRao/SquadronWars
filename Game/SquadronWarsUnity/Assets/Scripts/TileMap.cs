@@ -55,13 +55,15 @@ namespace Assets.Scripts
                 tile.isValidMove = false;
 
                 string tagName = child.gameObject.tag;
-                if(tagName == "grass" || tagName == "bridge")
+                if (tagName == "grass" || tagName == "bridge" || tagName == "ground" || tagName == "lava_crack")
                 {
                     tile.isOccupied = false;
+                    tile.isObstructed = false;
                 }
                 else
                 {
                     tile.isOccupied = true;
+                    tile.isObstructed = true;
                 }
                 //tiles.Add(child.gameObject);
                 tiles.Add(child.gameObject);
@@ -102,7 +104,7 @@ namespace Assets.Scripts
                 
                 GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
                 GameObject highlight = GameObject.Instantiate(temp, new Vector3(t.transform.position.x + 1.6f, t.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
-                highlight.transform.parent = t.transform;
+                highlight.transform.SetParent(t.transform, true);
                 t.GetComponent<Tile>().highlight = highlight;
                 t.GetComponent<Tile>().highlight.SetActive(false);
                 highlight.transform.localScale = new Vector3(0.072f, 0.072f, 0.0f);

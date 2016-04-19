@@ -20,7 +20,7 @@ public class Battle : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-        if (checkUpdate && (DateTime.Now - lastChecked).TotalSeconds > 4)
+        if (!GlobalConstants.isMyTurn && !GlobalConstants.isAnimating && checkUpdate && (DateTime.Now - lastChecked).TotalSeconds > 1f)
         {
             checkUpdate = false;
             lastChecked = DateTime.Now;
@@ -48,8 +48,10 @@ public class Battle : MonoBehaviour
         var gameInfo = GlobalConstants.Utilities.GetGameInfo();
         //Debug.Log("Update Game Coroutine called");
         //var gameInfo = GlobalConstants.GameInfo;
+        //Debug.Log("Update Game Coroutine Entered");
         if (gameInfo != null && !lastModified.Equals(gameInfo.ModifyTime))
         {
+            //Debug.Log("Update Game Coroutine Called");
                 UpdateGame(gameInfo);
                 lastModified = gameInfo.ModifyTime;
                 // Used to determine if changes have been made to data
@@ -92,6 +94,7 @@ public class Battle : MonoBehaviour
     public void EndGame()
     {
         GlobalConstants.GameId = 0;
+        GlobalConstants.mapId = 0;
         GlobalConstants.myPlayerId = 0;
         GlobalConstants.opponentId = 0;
         GlobalConstants.player1Characters.Clear();
@@ -123,7 +126,7 @@ public class Battle : MonoBehaviour
     IEnumerator BattleWaitForLoad()
     {
         //Debug.Log("WaitUpdate called");
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(0);
         UpdateGameCoroutine();
         
         

@@ -11,6 +11,7 @@ public class SampleButton : MonoBehaviour
 
     public Button button;
     public CharacterGameObject characterGameObject;
+    
     public Character character { get; set; }
     public CharacterScreen characterScreen;
     private Stats modifiedStats { get; set; }
@@ -29,8 +30,7 @@ public class SampleButton : MonoBehaviour
         var temp = (GameObject)Resources.Load(("Prefabs/Character" + characterGameObject.CharacterClassObject.SpriteId), typeof(GameObject));
         var button = gameObject.GetComponent<SampleButton>();
         var menu = GameObject.FindGameObjectWithTag("MenuManager").GetComponent<MenuManager>();
-        var sprite = temp.GetComponent<SpriteRenderer>();
-
+        var sprite = temp.GetComponent<SpriteRenderer>();        
         SetActiveCharacter();
         UpdateStats(character.BaseStats);
 
@@ -205,6 +205,10 @@ public class SampleButton : MonoBehaviour
         dropdowns.glovesSlot.options.Clear();
         dropdowns.legsSlot.options.Clear();
         dropdowns.bootsSlot.options.Clear();
+        dropdowns.mainHandSlot.options.Clear();
+        dropdowns.offHandSlot.options.Clear();
+        dropdowns.accessory1Slot.options.Clear();
+        dropdowns.accessory2Slot.options.Clear();
         foreach(var element in GlobalConstants.Player.Inventory)
         {
             var item = element.Item;
@@ -233,9 +237,22 @@ public class SampleButton : MonoBehaviour
             {
                 dropdowns.bootsSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
             }
+            else if (item.ItemType == ItemType.MainHand)
+            {
+                dropdowns.mainHandSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
+            }
+            else if (item.ItemType == ItemType.OffHand)
+            {
+                dropdowns.offHandSlot.options.Add(new Dropdown.OptionData() { text = item.Name });
+            }
+            else if (item.ItemType == ItemType.Accessory)
+            {
+                dropdowns.accessory1Slot.options.Add(new Dropdown.OptionData() { text = item.Name });
+                dropdowns.accessory2Slot.options.Add(new Dropdown.OptionData() { text = item.Name });
+            }
             else
             {
-
+                //empty for now
             }
         }
         //Debug.Log(character.Equipment.Helm.Name);
@@ -245,6 +262,10 @@ public class SampleButton : MonoBehaviour
         dropdowns.glovesSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Gloves.Name;
         dropdowns.legsSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Pants.Name;
         dropdowns.bootsSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Boots.Name;
+        dropdowns.mainHandSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Weapon.Name;
+        dropdowns.offHandSlot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Offhand.Name;
+        dropdowns.accessory1Slot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Accessory1.Name;
+        dropdowns.accessory2Slot.GetComponentsInChildren<Text>()[0].text = character.Equipment.Accessory2.Name;
     }
 
     public void LevelSkill(string skill)

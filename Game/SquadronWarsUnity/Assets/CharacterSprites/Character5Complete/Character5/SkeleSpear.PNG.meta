@@ -1,0 +1,3095 @@
+fileFormatVersion: 2
+guid: 1b8c086c83925fa4da83557f94b97b5b
+timeCreated: 1459471795
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SkeleSpear_0
+    21300002: SkeleSpear_1
+    21300004: SkeleSpear_2
+    21300006: SkeleSpear_3
+    21300008: SkeleSpear_4
+    21300010: SkeleSpear_5
+    21300012: SkeleSpear_6
+    21300014: SkeleSpear_7
+    21300016: SkeleSpear_8
+    21300018: SkeleSpear_9
+    21300020: SkeleSpear_10
+    21300022: SkeleSpear_11
+    21300024: SkeleSpear_12
+    21300026: SkeleSpear_13
+    21300028: SkeleSpear_14
+    21300030: SkeleSpear_15
+    21300032: SkeleSpear_16
+    21300034: SkeleSpear_17
+    21300036: SkeleSpear_18
+    21300038: SkeleSpear_19
+    21300040: SkeleSpear_20
+    21300042: SkeleSpear_21
+    21300044: SkeleSpear_22
+    21300046: SkeleSpear_23
+    21300048: SkeleSpear_24
+    21300050: SkeleSpear_25
+    21300052: SkeleSpear_26
+    21300054: SkeleSpear_27
+    21300056: SkeleSpear_28
+    21300058: SkeleSpear_29
+    21300060: SkeleSpear_30
+    21300062: SkeleSpear_31
+    21300064: SkeleSpear_32
+    21300066: SkeleSpear_33
+    21300068: SkeleSpear_34
+    21300070: SkeleSpear_35
+    21300072: SkeleSpear_36
+    21300074: SkeleSpear_37
+    21300076: SkeleSpear_38
+    21300078: SkeleSpear_39
+    21300080: SkeleSpear_40
+    21300082: SkeleSpear_41
+    21300084: SkeleSpear_42
+    21300086: SkeleSpear_43
+    21300088: SkeleSpear_44
+    21300090: SkeleSpear_45
+    21300092: SkeleSpear_46
+    21300094: SkeleSpear_47
+    21300096: SkeleSpear_48
+    21300098: SkeleSpear_49
+    21300100: SkeleSpear_50
+    21300102: SkeleSpear_51
+    21300104: SkeleSpear_52
+    21300106: SkeleSpear_53
+    21300108: SkeleSpear_54
+    21300110: SkeleSpear_55
+    21300112: SkeleSpear_56
+    21300114: SkeleSpear_57
+    21300116: SkeleSpear_58
+    21300118: SkeleSpear_59
+    21300120: SkeleSpear_60
+    21300122: SkeleSpear_61
+    21300124: SkeleSpear_62
+    21300126: SkeleSpear_63
+    21300128: SkeleSpear_64
+    21300130: SkeleSpear_65
+    21300132: SkeleSpear_66
+    21300134: SkeleSpear_67
+    21300136: SkeleSpear_68
+    21300138: SkeleSpear_69
+    21300140: SkeleSpear_70
+    21300142: SkeleSpear_71
+    21300144: SkeleSpear_72
+    21300146: SkeleSpear_73
+    21300148: SkeleSpear_74
+    21300150: SkeleSpear_75
+    21300152: SkeleSpear_76
+    21300154: SkeleSpear_77
+    21300156: SkeleSpear_78
+    21300158: SkeleSpear_79
+    21300160: SkeleSpear_80
+    21300162: SkeleSpear_81
+    21300164: SkeleSpear_82
+    21300166: SkeleSpear_83
+    21300168: SkeleSpear_84
+    21300170: SkeleSpear_85
+    21300172: SkeleSpear_86
+    21300174: SkeleSpear_87
+    21300176: SkeleSpear_88
+    21300178: SkeleSpear_89
+    21300180: SkeleSpear_90
+    21300182: SkeleSpear_91
+    21300184: SkeleSpear_92
+    21300186: SkeleSpear_93
+    21300188: SkeleSpear_94
+    21300190: SkeleSpear_95
+    21300192: SkeleSpear_96
+    21300194: SkeleSpear_97
+    21300196: SkeleSpear_98
+    21300198: SkeleSpear_99
+    21300200: SkeleSpear_100
+    21300202: SkeleSpear_101
+    21300204: SkeleSpear_102
+    21300206: SkeleSpear_103
+    21300208: SkeleSpear_104
+    21300210: SkeleSpear_105
+    21300212: SkeleSpear_106
+    21300214: SkeleSpear_107
+    21300216: SkeleSpear_108
+    21300218: SkeleSpear_109
+    21300220: SkeleSpear_110
+    21300222: SkeleSpear_111
+    21300224: SkeleSpear_112
+    21300226: SkeleSpear_113
+    21300228: SkeleSpear_114
+    21300230: SkeleSpear_115
+    21300232: SkeleSpear_116
+    21300234: SkeleSpear_117
+    21300236: SkeleSpear_118
+    21300238: SkeleSpear_119
+    21300240: SkeleSpear_120
+    21300242: SkeleSpear_121
+    21300244: SkeleSpear_122
+    21300246: SkeleSpear_123
+    21300248: SkeleSpear_124
+    21300250: SkeleSpear_125
+    21300252: SkeleSpear_126
+    21300254: SkeleSpear_127
+    21300256: SkeleSpear_128
+    21300258: SkeleSpear_129
+    21300260: SkeleSpear_130
+    21300262: SkeleSpear_131
+    21300264: SkeleSpear_132
+    21300266: SkeleSpear_133
+    21300268: SkeleSpear_134
+    21300270: SkeleSpear_135
+    21300272: SkeleSpear_136
+    21300274: SkeleSpear_137
+    21300276: SkeleSpear_138
+    21300278: SkeleSpear_139
+    21300280: SkeleSpear_140
+    21300282: SkeleSpear_141
+    21300284: SkeleSpear_142
+    21300286: SkeleSpear_143
+    21300288: SkeleSpear_144
+    21300290: SkeleSpear_145
+    21300292: SkeleSpear_146
+    21300294: SkeleSpear_147
+    21300296: SkeleSpear_148
+    21300298: SkeleSpear_149
+    21300300: SkeleSpear_150
+    21300302: SkeleSpear_151
+    21300304: SkeleSpear_152
+    21300306: SkeleSpear_153
+    21300308: SkeleSpear_154
+    21300310: SkeleSpear_155
+    21300312: SkeleSpear_156
+    21300314: SkeleSpear_157
+    21300316: SkeleSpear_158
+    21300318: SkeleSpear_159
+    21300320: SkeleSpear_160
+    21300322: SkeleSpear_161
+    21300324: SkeleSpear_162
+    21300326: SkeleSpear_163
+    21300328: SkeleSpear_164
+    21300330: SkeleSpear_165
+    21300332: SkeleSpear_166
+    21300334: SkeleSpear_167
+    21300336: SkeleSpear_168
+    21300338: SkeleSpear_169
+    21300340: SkeleSpear_170
+    21300342: SkeleSpear_171
+    21300344: SkeleSpear_172
+    21300346: SkeleSpear_173
+    21300348: SkeleSpear_174
+    21300350: SkeleSpear_175
+    21300352: SkeleSpear_176
+    21300354: SkeleSpear_177
+    21300356: SkeleSpear_178
+    21300358: SkeleSpear_179
+    21300360: SkeleSpear_180
+    21300362: SkeleSpear_181
+    21300364: SkeleSpear_182
+    21300366: SkeleSpear_183
+    21300368: SkeleSpear_184
+    21300370: SkeleSpear_185
+    21300372: SkeleSpear_186
+    21300374: SkeleSpear_187
+    21300376: SkeleSpear_188
+    21300378: SkeleSpear_189
+    21300380: SkeleSpear_190
+    21300382: SkeleSpear_191
+    21300384: SkeleSpear_192
+    21300386: SkeleSpear_193
+    21300388: SkeleSpear_194
+    21300390: SkeleSpear_195
+    21300392: SkeleSpear_196
+    21300394: SkeleSpear_197
+    21300396: SkeleSpear_198
+    21300398: SkeleSpear_199
+    21300400: SkeleSpear_200
+    21300402: SkeleSpear_201
+    21300404: SkeleSpear_202
+    21300406: SkeleSpear_203
+    21300408: SkeleSpear_204
+    21300410: SkeleSpear_205
+    21300412: SkeleSpear_206
+    21300414: SkeleSpear_207
+    21300416: SkeleSpear_208
+    21300418: SkeleSpear_209
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SkeleSpear_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 2049
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 2049
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 2049
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_3
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 2049
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.272781, y: 23.802734}
+        - {x: -12.272781, y: 18.802734}
+        - {x: -18.272781, y: 9.802734}
+        - {x: -18.272781, y: -17.197266}
+        - {x: -17.272781, y: -22.197266}
+        - {x: -16.272781, y: -23.197266}
+        - {x: 19.727219, y: -23.197266}
+        - {x: 19.727219, y: 17.802734}
+        - {x: 14.727219, y: 23.802734}
+    - name: SkeleSpear_4
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2049
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21.983078, y: 23.802734}
+        - {x: -20.016922, y: 23.802734}
+        - {x: -25.016922, y: 16.802734}
+        - {x: -25.016922, y: -13.197266}
+        - {x: -14.016922, y: -23.197266}
+        - {x: 15.983078, y: -23.197266}
+        - {x: 26.983078, y: -3.1972656}
+        - {x: 26.983078, y: 19.802734}
+    - name: SkeleSpear_5
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 2049
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.00586, y: 23.802734}
+        - {x: -24.00586, y: 19.802734}
+        - {x: -24.00586, y: 1.8027344}
+        - {x: -14.005859, y: -21.197266}
+        - {x: -11.005859, y: -23.197266}
+        - {x: 21.99414, y: -23.197266}
+        - {x: 25.99414, y: -11.197266}
+        - {x: 25.99414, y: 23.802734}
+    - name: SkeleSpear_6
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 2049
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.852234, y: 23.802734}
+        - {x: -18.147766, y: 23.802734}
+        - {x: -18.147766, y: -23.197266}
+        - {x: 14.852234, y: -23.197266}
+        - {x: 17.852234, y: -22.197266}
+        - {x: 19.852234, y: -18.197266}
+        - {x: 19.852234, y: 15.802734}
+    - name: SkeleSpear_7
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1985
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_8
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1985
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_9
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 1985
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_10
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1985
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_11
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1985
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.146484, y: 24.261108}
+        - {x: -13.853516, y: 24.261108}
+        - {x: -16.853516, y: 14.261108}
+        - {x: -16.853516, y: -11.738892}
+        - {x: -11.853516, y: -23.738892}
+        - {x: 7.1464844, y: -23.738892}
+        - {x: 8.146484, y: -22.738892}
+        - {x: 18.146484, y: -9.738892}
+        - {x: 18.146484, y: 16.261108}
+    - name: SkeleSpear_12
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1985
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.811829, y: 24.261108}
+        - {x: -16.811829, y: 20.261108}
+        - {x: -16.811829, y: -23.738892}
+        - {x: 15.188171, y: -23.738892}
+        - {x: 18.188171, y: -11.738892}
+        - {x: 18.188171, y: 24.261108}
+    - name: SkeleSpear_13
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1985
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_14
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1921
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_15
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1921
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_16
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1921
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_17
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1921
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.7272186, y: -23.780518}
+        - {x: 13.727219, y: -23.780518}
+        - {x: 15.727219, y: -22.780518}
+        - {x: 19.727219, y: -15.780518}
+        - {x: 19.727219, y: 9.219482}
+        - {x: 14.727219, y: 24.219482}
+        - {x: -12.272781, y: 24.219482}
+        - {x: -18.272781, y: 12.219482}
+        - {x: -18.272781, y: -11.780518}
+        - {x: -13.272781, y: -23.780518}
+        - {x: -2.2727814, y: -23.780518}
+        - {x: 0.7272186, y: -20.780518}
+        - {x: 0.7272186, y: -16.780518}
+        - {x: 1.7272186, y: -20.780518}
+    - name: SkeleSpear_18
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1921
+        width: 52
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.983078, y: -23.780518}
+        - {x: 19.983078, y: -23.780518}
+        - {x: 26.983078, y: -12.780518}
+        - {x: 26.983078, y: 24.219482}
+        - {x: -12.016922, y: 24.219482}
+        - {x: -25.016922, y: 16.219482}
+        - {x: -25.016922, y: -0.7805176}
+        - {x: -21.016922, y: -2.7805176}
+        - {x: -15.016922, y: -23.780518}
+        - {x: -0.016921997, y: -23.780518}
+        - {x: 0.983078, y: -20.780518}
+        - {x: 0.983078, y: -16.780518}
+        - {x: 1.983078, y: -20.780518}
+    - name: SkeleSpear_19
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 1921
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.9941406, y: -23.780518}
+        - {x: 15.994141, y: -23.780518}
+        - {x: 25.99414, y: -2.7805176}
+        - {x: 25.99414, y: 24.219482}
+        - {x: -24.00586, y: 24.219482}
+        - {x: -24.00586, y: -20.780518}
+        - {x: -23.00586, y: -23.780518}
+        - {x: -0.005859375, y: -23.780518}
+        - {x: 0.9941406, y: -20.780518}
+        - {x: 0.9941406, y: -16.780518}
+        - {x: 1.9941406, y: -20.780518}
+    - name: SkeleSpear_20
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1921
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.8216248, y: -23.780518}
+        - {x: 15.821625, y: -23.780518}
+        - {x: 18.821625, y: -17.780518}
+        - {x: 18.821625, y: 11.219482}
+        - {x: 14.821625, y: 24.219482}
+        - {x: -9.178375, y: 24.219482}
+        - {x: -11.178375, y: 22.219482}
+        - {x: -17.178375, y: 7.2194824}
+        - {x: -17.178375, y: -15.780518}
+        - {x: -15.178375, y: -23.780518}
+        - {x: -0.17837524, y: -23.780518}
+        - {x: 0.82162476, y: -20.780518}
+        - {x: 0.82162476, y: -16.780518}
+        - {x: 1.8216248, y: -20.780518}
+    - name: SkeleSpear_21
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1857
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_22
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1857
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_23
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1857
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_24
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1857
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_25
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1857
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.7005, y: 24.177734}
+        - {x: -16.7005, y: -18.822266}
+        - {x: -13.7005005, y: -23.822266}
+        - {x: 18.2995, y: -23.822266}
+        - {x: 18.2995, y: 24.177734}
+    - name: SkeleSpear_26
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1857
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.658844, y: 24.177734}
+        - {x: -16.658844, y: 16.177734}
+        - {x: -16.658844, y: -22.822266}
+        - {x: -14.658844, y: -23.822266}
+        - {x: 18.341156, y: -23.822266}
+        - {x: 18.341156, y: 17.177734}
+        - {x: 12.341156, y: 24.177734}
+    - name: SkeleSpear_27
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1857
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_28
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1793
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_29
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1791
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_30
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1791
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_31
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1791
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_32
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1791
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_33
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1791
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_34
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 1791
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_35
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1791
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_36
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1729
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_37
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1729
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_38
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1729
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_39
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 1729
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_40
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1729
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_41
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1729
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_42
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1729
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_43
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 1729
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_44
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1665
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_45
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1666
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_46
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1666
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_47
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1666
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_48
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1666
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_49
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1666
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_50
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1666
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_51
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 1666
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_52
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1601
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_53
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1601
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_54
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1601
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_55
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1601
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_56
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1601
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_57
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1601
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_58
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1601
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_59
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 1601
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_60
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1539
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_61
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1539
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_62
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1538
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_63
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1537
+        width: 31
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_64
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1538
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_65
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1539
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_66
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1538
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_67
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 1537
+        width: 31
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_68
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1538
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_69
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1474
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_70
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1474
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_71
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1475
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_72
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1475
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_73
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1474
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_74
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1474
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_75
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1474
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_76
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1474
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_77
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 1474
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_78
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1410
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_79
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1410
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_80
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1409
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_81
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1409
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_82
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1409
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_83
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1410
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_84
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1409
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_85
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1409
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_86
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1409
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_87
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1346
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_88
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1346
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_89
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 1347
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_90
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1347
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_91
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1346
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_92
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 1346
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_93
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1346
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_94
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 1346
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_95
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 1346
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_96
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1281
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_97
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1280
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_98
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1280
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_99
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1280
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_100
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1280
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.353516, y: -23.666626}
+        - {x: 13.646484, y: -23.666626}
+        - {x: 19.646484, y: -14.666626}
+        - {x: 19.646484, y: 17.333374}
+        - {x: 8.646484, y: 25.333374}
+        - {x: -12.353516, y: 25.333374}
+        - {x: -18.353516, y: 9.333374}
+    - name: SkeleSpear_101
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1280
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.811829, y: 25.333374}
+        - {x: -19.811829, y: 19.333374}
+        - {x: -19.811829, y: -23.666626}
+        - {x: 15.188171, y: -23.666626}
+        - {x: 21.188171, y: -8.666626}
+        - {x: 21.188171, y: 17.333374}
+        - {x: 14.188171, y: 25.333374}
+    - name: SkeleSpear_102
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1217
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_103
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1217
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_104
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1217
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_105
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1217
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.1809845, y: 25.261108}
+        - {x: -17.180984, y: 12.261108}
+        - {x: -17.180984, y: -15.738892}
+        - {x: -12.1809845, y: -23.738892}
+        - {x: 14.8190155, y: -23.738892}
+        - {x: 18.819016, y: -18.738892}
+        - {x: 18.819016, y: 4.2611084}
+        - {x: 11.8190155, y: 25.261108}
+    - name: SkeleSpear_106
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1217
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.952484, y: 25.261108}
+        - {x: -8.047516, y: 25.261108}
+        - {x: -16.047516, y: 15.261108}
+        - {x: -18.047516, y: 11.261108}
+        - {x: -18.047516, y: -3.7388916}
+        - {x: -6.047516, y: -23.738892}
+        - {x: 14.952484, y: -23.738892}
+        - {x: 19.952484, y: -22.738892}
+        - {x: 19.952484, y: 13.261108}
+        - {x: 18.952484, y: 24.261108}
+    - name: SkeleSpear_107
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1217
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.597656, y: 25.261108}
+        - {x: -16.597656, y: 12.261108}
+        - {x: -16.597656, y: -6.7388916}
+        - {x: -8.597656, y: -20.738892}
+        - {x: -1.5976562, y: -23.738892}
+        - {x: 14.402344, y: -23.738892}
+        - {x: 18.402344, y: -22.738892}
+        - {x: 18.402344, y: 14.261108}
+        - {x: 14.402344, y: 25.261108}
+    - name: SkeleSpear_108
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1153
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_109
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1153
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_110
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1153
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_111
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1153
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_112
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 1153
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.0852966, y: 25.219482}
+        - {x: -13.914703, y: 25.219482}
+        - {x: -17.914703, y: 13.219482}
+        - {x: -17.914703, y: -23.780518}
+        - {x: 11.085297, y: -23.780518}
+        - {x: 19.085297, y: -14.780518}
+        - {x: 19.085297, y: 6.2194824}
+        - {x: 11.085297, y: 20.219482}
+    - name: SkeleSpear_113
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1153
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.842438, y: 25.219482}
+        - {x: -19.842438, y: 17.219482}
+        - {x: -19.842438, y: -23.780518}
+        - {x: 13.157562, y: -23.780518}
+        - {x: 21.157562, y: -14.780518}
+        - {x: 21.157562, y: 11.219482}
+        - {x: 15.157562, y: 25.219482}
+    - name: SkeleSpear_114
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1089
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_115
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1089
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_116
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1089
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_117
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1089
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.425781, y: 25.177734}
+        - {x: -14.425781, y: 24.177734}
+        - {x: -17.425781, y: 10.177734}
+        - {x: -17.425781, y: -12.822266}
+        - {x: -13.425781, y: -23.822266}
+        - {x: 7.5742188, y: -23.822266}
+        - {x: 12.574219, y: -22.822266}
+        - {x: 18.574219, y: -12.822266}
+        - {x: 18.574219, y: 12.177734}
+        - {x: 9.574219, y: 25.177734}
+    - name: SkeleSpear_118
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 1089
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5852966, y: 25.177734}
+        - {x: -11.414703, y: 25.177734}
+        - {x: -18.414703, y: 6.1777344}
+        - {x: -18.414703, y: -20.822266}
+        - {x: -16.414703, y: -23.822266}
+        - {x: 9.585297, y: -23.822266}
+        - {x: 19.585297, y: -7.8222656}
+        - {x: 19.585297, y: 10.177734}
+        - {x: 18.585297, y: 11.177734}
+    - name: SkeleSpear_119
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1089
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.126953, y: 25.177734}
+        - {x: -8.873047, y: 25.177734}
+        - {x: -16.873047, y: 23.177734}
+        - {x: -16.873047, y: -23.822266}
+        - {x: 11.126953, y: -23.822266}
+        - {x: 18.126953, y: -10.822266}
+        - {x: 18.126953, y: 16.177734}
+    - name: SkeleSpear_120
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1025
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_121
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1023
+        width: 28
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_122
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 1023
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_123
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1023
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_124
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1023
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_125
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1023
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_126
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1023
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_127
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1023
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_128
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1023
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_129
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1023
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_130
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1023
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_131
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 1023
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_132
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 1023
+        width: 23
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_133
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 961
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_134
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 961
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_135
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 961
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.345047, y: -17.905579}
+        - {x: -10.345047, y: -23.905579}
+        - {x: 14.654953, y: -23.905579}
+        - {x: 17.654953, y: -20.905579}
+        - {x: 17.654953, y: 23.094421}
+        - {x: 16.654953, y: 24.094421}
+        - {x: 14.654953, y: 25.094421}
+        - {x: -7.345047, y: 25.094421}
+        - {x: -16.345047, y: 7.0944214}
+    - name: SkeleSpear_136
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 961
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.7421875, y: 25.094421}
+        - {x: -16.742188, y: 11.094421}
+        - {x: -16.742188, y: -14.905579}
+        - {x: -11.7421875, y: -23.905579}
+        - {x: 15.2578125, y: -23.905579}
+        - {x: 18.257812, y: -15.905579}
+        - {x: 18.257812, y: 24.094421}
+        - {x: 15.2578125, y: 25.094421}
+    - name: SkeleSpear_137
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 961
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.2994995, y: 25.094421}
+        - {x: -8.7005005, y: 25.094421}
+        - {x: -17.7005, y: 10.094421}
+        - {x: -17.7005, y: -10.905579}
+        - {x: -7.7005005, y: -23.905579}
+        - {x: 15.2994995, y: -23.905579}
+        - {x: 19.2995, y: -6.9055786}
+        - {x: 19.2995, y: 17.094421}
+        - {x: 17.2995, y: 24.094421}
+    - name: SkeleSpear_138
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 961
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.128235, y: 25.094421}
+        - {x: -16.128235, y: 17.094421}
+        - {x: -16.128235, y: -11.905579}
+        - {x: -7.128235, y: -21.905579}
+        - {x: -2.1282349, y: -23.905579}
+        - {x: 17.871765, y: -23.905579}
+        - {x: 17.871765, y: 25.094421}
+    - name: SkeleSpear_139
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 961
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.913422, y: 25.094421}
+        - {x: -4.0865784, y: 25.094421}
+        - {x: -17.086578, y: 13.094421}
+        - {x: -17.086578, y: -10.905579}
+        - {x: -6.0865784, y: -23.905579}
+        - {x: 15.913422, y: -23.905579}
+        - {x: 18.913422, y: -16.905579}
+        - {x: 18.913422, y: 20.094421}
+    - name: SkeleSpear_140
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 961
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.0755005, y: 25.094421}
+        - {x: -13.0755005, y: 22.094421}
+        - {x: -18.0755, y: 16.094421}
+        - {x: -18.0755, y: -1.9055786}
+        - {x: -8.0755005, y: -23.905579}
+        - {x: 17.9245, y: -23.905579}
+        - {x: 19.9245, y: -15.905579}
+        - {x: 19.9245, y: 21.094421}
+        - {x: 16.9245, y: 25.094421}
+    - name: SkeleSpear_141
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 961
+        width: 40
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.966156, y: 25.094421}
+        - {x: -16.033844, y: 25.094421}
+        - {x: -19.033844, y: 24.094421}
+        - {x: -19.033844, y: -23.905579}
+        - {x: 16.966156, y: -23.905579}
+        - {x: 20.966156, y: -12.905579}
+        - {x: 20.966156, y: 18.094421}
+        - {x: 16.966156, y: 24.094421}
+    - name: SkeleSpear_142
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 961
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.022766, y: 25.094421}
+        - {x: -17.022766, y: 14.094421}
+        - {x: -17.022766, y: -3.9055786}
+        - {x: -9.022766, y: -21.905579}
+        - {x: -7.022766, y: -23.905579}
+        - {x: 18.977234, y: -23.905579}
+        - {x: 18.977234, y: 25.094421}
+    - name: SkeleSpear_143
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 961
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.0495, y: 25.094421}
+        - {x: -10.9505005, y: 25.094421}
+        - {x: -16.9505, y: 21.094421}
+        - {x: -16.9505, y: -23.905579}
+        - {x: 17.0495, y: -23.905579}
+        - {x: 17.0495, y: 19.094421}
+    - name: SkeleSpear_144
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 961
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_145
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 961
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.3671875, y: 25.094421}
+        - {x: -17.367188, y: 22.094421}
+        - {x: -17.367188, y: -23.905579}
+        - {x: 17.632812, y: -23.905579}
+        - {x: 17.632812, y: 25.094421}
+    - name: SkeleSpear_146
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 897
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_147
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 898
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_148
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 898
+        width: 26
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_149
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 897
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_150
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 897
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_151
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 897
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_152
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 897
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_153
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 897
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_154
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 897
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_155
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 897
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_156
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 897
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_157
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 897
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_158
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 897
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_159
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 833
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_160
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 833
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_161
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 833
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.40625, y: 25.011108}
+        - {x: -16.40625, y: 11.011108}
+        - {x: -16.40625, y: -15.988892}
+        - {x: -11.40625, y: -23.988892}
+        - {x: 17.59375, y: -23.988892}
+        - {x: 17.59375, y: 25.011108}
+    - name: SkeleSpear_162
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 833
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.895172, y: 25.011108}
+        - {x: -16.895172, y: -20.988892}
+        - {x: -14.895172, y: -23.988892}
+        - {x: 15.104828, y: -23.988892}
+        - {x: 18.104828, y: -21.988892}
+        - {x: 18.104828, y: 6.0111084}
+        - {x: 11.104828, y: 25.011108}
+    - name: SkeleSpear_163
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 833
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.207703, y: 13.011108}
+        - {x: 10.207703, y: 25.011108}
+        - {x: -11.792297, y: 25.011108}
+        - {x: -17.792297, y: 12.011108}
+        - {x: -17.792297, y: -10.988892}
+        - {x: -13.792297, y: -23.988892}
+        - {x: 3.2077026, y: -23.988892}
+        - {x: 7.2077026, y: -22.988892}
+        - {x: 9.207703, y: -20.988892}
+        - {x: 9.207703, y: -16.988892}
+        - {x: 19.207703, y: -0.9888916}
+    - name: SkeleSpear_164
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 833
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.373047, y: 25.011108}
+        - {x: -16.373047, y: -23.988892}
+        - {x: 14.626953, y: -23.988892}
+        - {x: 17.626953, y: -11.988892}
+        - {x: 17.626953, y: 25.011108}
+    - name: SkeleSpear_165
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 833
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.729828, y: 25.011108}
+        - {x: -17.270172, y: 25.011108}
+        - {x: -17.270172, y: -23.988892}
+        - {x: 4.729828, y: -23.988892}
+        - {x: 10.729828, y: -20.988892}
+        - {x: 18.729828, y: -7.9888916}
+        - {x: 18.729828, y: 18.011108}
+    - name: SkeleSpear_166
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 833
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.136719, y: 25.011108}
+        - {x: -18.136719, y: -23.988892}
+        - {x: 10.863281, y: -23.988892}
+        - {x: 19.863281, y: -15.988892}
+        - {x: 19.863281, y: 23.011108}
+        - {x: 17.863281, y: 25.011108}
+    - name: SkeleSpear_167
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 833
+        width: 40
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.033844, y: 25.011108}
+        - {x: -19.033844, y: 15.011108}
+        - {x: -19.033844, y: -13.988892}
+        - {x: -18.033844, y: -18.988892}
+        - {x: -13.033844, y: -23.988892}
+        - {x: 11.966156, y: -23.988892}
+        - {x: 20.966156, y: -13.988892}
+        - {x: 20.966156, y: 23.011108}
+        - {x: 17.966156, y: 25.011108}
+    - name: SkeleSpear_168
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 833
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.583984, y: 25.011108}
+        - {x: -13.583984, y: 22.011108}
+        - {x: -17.583984, y: 11.011108}
+        - {x: -17.583984, y: -7.9888916}
+        - {x: -15.583984, y: -17.988892}
+        - {x: -12.583984, y: -23.988892}
+        - {x: 12.416016, y: -23.988892}
+        - {x: 19.416016, y: -11.988892}
+        - {x: 19.416016, y: 9.011108}
+        - {x: 7.4160156, y: 25.011108}
+    - name: SkeleSpear_169
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 833
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.3964844, y: 25.011108}
+        - {x: -16.603516, y: 25.011108}
+        - {x: -16.603516, y: -23.988892}
+        - {x: 11.396484, y: -23.988892}
+        - {x: 18.396484, y: -13.988892}
+        - {x: 18.396484, y: 11.011108}
+        - {x: 17.396484, y: 12.011108}
+    - name: SkeleSpear_170
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 833
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_171
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 833
+        width: 35
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.520142, y: 25.011108}
+        - {x: -16.520142, y: -21.988892}
+        - {x: -15.520142, y: -23.988892}
+        - {x: 11.479858, y: -23.988892}
+        - {x: 18.479858, y: -13.988892}
+        - {x: 18.479858, y: 20.011108}
+        - {x: 8.479858, y: 25.011108}
+    - name: SkeleSpear_172
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 769
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_173
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 769
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_174
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 769
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_175
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 770
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_176
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 770
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_177
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 768
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.311829, y: 19}
+        - {x: -17.311829, y: -17}
+        - {x: -15.311829, y: -18}
+        - {x: 18.688171, y: -18}
+        - {x: 18.688171, y: 19}
+    - name: SkeleSpear_178
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 641
+        width: 87
+        height: 48
+      alignment: 9
+      pivot: {x: 0.57859164, y: 0.5241432}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.505203, y: 22.762695}
+        - {x: -48.505203, y: 15.762695}
+        - {x: -48.505203, y: -14.237305}
+        - {x: -21.505203, y: -24.237305}
+        - {x: 30.494797, y: -24.237305}
+        - {x: 36.494797, y: -16.237305}
+        - {x: 36.494797, y: 17.762695}
+        - {x: 31.494797, y: 22.762695}
+    - name: SkeleSpear_179
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 639
+        width: 82
+        height: 49
+      alignment: 9
+      pivot: {x: 0.62154293, y: 0.5378418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -49.382904, y: 3.6497192}
+        - {x: -40.382904, y: -2.3502808}
+        - {x: -6.382904, y: -25.35028}
+        - {x: 31.617096, y: -25.35028}
+        - {x: 31.617096, y: 9.649719}
+        - {x: 28.617096, y: 22.64972}
+        - {x: -12.382904, y: 22.64972}
+        - {x: -49.382904, y: 13.649719}
+    - name: SkeleSpear_180
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 639
+        width: 63
+        height: 67
+      alignment: 9
+      pivot: {x: 0.6581988, y: 0.37200198}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.033295, y: 41.76068}
+        - {x: -40.033295, y: 4.760681}
+        - {x: -30.033295, y: -24.239319}
+        - {x: 21.966705, y: -24.239319}
+        - {x: 21.966705, y: 24.760681}
+        - {x: -11.033295, y: 41.76068}
+    - name: SkeleSpear_181
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 639
+        width: 24
+        height: 87
+      alignment: 9
+      pivot: {x: 0.35030618, y: 0.29086548}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_182
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 639
+        width: 23
+        height: 95
+      alignment: 9
+      pivot: {x: 0.34883714, y: 0.26944003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_183
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 639
+        width: 22
+        height: 103
+      alignment: 9
+      pivot: {x: 0.37883967, y: 0.2535934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_184
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 639
+        width: 23
+        height: 95
+      alignment: 9
+      pivot: {x: 0.36899203, y: 0.27065945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_185
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 639
+        width: 22
+        height: 87
+      alignment: 9
+      pivot: {x: 0.37883967, y: 0.3041859}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_186
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 449
+        width: 82
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5494647, y: 0.5189209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43.90074, y: 23.362335}
+        - {x: -43.90074, y: -0.6376648}
+        - {x: -11.900742, y: -24.637665}
+        - {x: 32.09926, y: -24.637665}
+        - {x: 37.09926, y: -23.637665}
+        - {x: 37.09926, y: -12.637665}
+        - {x: 24.099258, y: 23.362335}
+    - name: SkeleSpear_187
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 449
+        width: 84
+        height: 49
+      alignment: 9
+      pivot: {x: 0.70142764, y: 0.52601653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -57.31752, y: -6.974701}
+        - {x: -13.31752, y: -24.9747}
+        - {x: 24.68248, y: -24.9747}
+        - {x: 24.68248, y: 23.0253}
+        - {x: -53.31752, y: 23.0253}
+        - {x: -57.31752, y: 22.0253}
+    - name: SkeleSpear_188
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 449
+        width: 87
+        height: 49
+      alignment: 9
+      pivot: {x: 0.71579504, y: 0.51182586}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.398254, y: 23.69934}
+        - {x: -60.398254, y: -3.3006592}
+        - {x: -60.398254, y: -17.30066}
+        - {x: -16.398254, y: -24.30066}
+        - {x: 14.601746, y: -24.30066}
+        - {x: 24.601746, y: -13.300659}
+        - {x: 24.601746, y: 3.6993408}
+        - {x: 13.601746, y: 23.69934}
+    - name: SkeleSpear_189
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 449
+        width: 87
+        height: 49
+      alignment: 9
+      pivot: {x: 0.67716473, y: 0.5141907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.107056, y: 23.587006}
+        - {x: -57.107056, y: 14.587006}
+        - {x: -57.107056, y: -9.412994}
+        - {x: -50.107056, y: -14.412994}
+        - {x: -11.107056, y: -24.412994}
+        - {x: 23.892944, y: -24.412994}
+        - {x: 27.892944, y: -19.412994}
+        - {x: 27.892944, y: 10.587006}
+        - {x: 23.892944, y: 23.587006}
+    - name: SkeleSpear_190
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 449
+        width: 87
+        height: 49
+      alignment: 9
+      pivot: {x: 0.7451004, y: 0.5141907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -62.966797, y: -10.412994}
+        - {x: -55.966797, y: -14.412994}
+        - {x: -12.966797, y: -24.412994}
+        - {x: 23.033203, y: -24.412994}
+        - {x: 23.033203, y: 23.587006}
+        - {x: -31.966797, y: 23.587006}
+        - {x: -62.966797, y: 14.587006}
+    - name: SkeleSpear_191
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 449
+        width: 87
+        height: 49
+      alignment: 9
+      pivot: {x: 0.7677451, y: 0.53074676}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.69043, y: 22.800598}
+        - {x: -64.69043, y: 12.800598}
+        - {x: -64.69043, y: -13.199402}
+        - {x: -25.69043, y: -25.199402}
+        - {x: 21.30957, y: -25.199402}
+        - {x: 21.30957, y: 22.800598}
+    - name: SkeleSpear_192
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 449
+        width: 87
+        height: 49
+      alignment: 9
+      pivot: {x: 0.72645164, y: 0.5189209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.2052, y: 23.362335}
+        - {x: -61.2052, y: 15.362335}
+        - {x: -61.2052, y: -10.637665}
+        - {x: -54.2052, y: -14.637665}
+        - {x: -20.2052, y: -24.637665}
+        - {x: 23.7948, y: -24.637665}
+        - {x: 24.7948, y: -21.637665}
+        - {x: 24.7948, y: 23.362335}
+    - name: SkeleSpear_193
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 449
+        width: 87
+        height: 49
+      alignment: 9
+      pivot: {x: 0.67849624, y: 0.51182586}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.21924, y: 23.69934}
+        - {x: -57.21924, y: 4.699341}
+        - {x: -57.21924, y: -24.30066}
+        - {x: 23.780762, y: -24.30066}
+        - {x: 28.780762, y: -12.300659}
+        - {x: 28.780762, y: 2.6993408}
+        - {x: 14.780762, y: 23.69934}
+    - name: SkeleSpear_194
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 257
+        width: 87
+        height: 49
+      alignment: 9
+      pivot: {x: 0.41474712, y: 0.5141907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.14588928, y: -24.537994}
+        - {x: 48.85411, y: -24.537994}
+        - {x: 49.85411, y: -18.537994}
+        - {x: 49.85411, y: -1.5379944}
+        - {x: 12.854111, y: 23.462006}
+        - {x: -18.14589, y: 23.462006}
+        - {x: -35.14589, y: 1.4620056}
+        - {x: -35.14589, y: -14.537994}
+        - {x: -18.14589, y: -24.537994}
+        - {x: -3.1458893, y: -24.537994}
+        - {x: -0.14588928, y: -21.537994}
+        - {x: -1.1458893, y: -15.537994}
+        - {x: -0.14588928, y: -21.537994}
+    - name: SkeleSpear_195
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 253
+        width: 82
+        height: 53
+      alignment: 9
+      pivot: {x: 0.36291057, y: 0.55247873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.997162, y: -17.43779}
+        - {x: -22.997162, y: -28.43779}
+        - {x: 51.00284, y: -28.43779}
+        - {x: 51.00284, y: -2.43779}
+        - {x: 36.00284, y: 23.56221}
+        - {x: -17.997162, y: 23.56221}
+        - {x: -28.997162, y: 16.56221}
+    - name: SkeleSpear_196
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 232
+        width: 63
+        height: 74
+      alignment: 9
+      pivot: {x: 0.37675112, y: 0.6785336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.426025, y: 24.593826}
+        - {x: -15.426025, y: 23.593826}
+        - {x: -23.426025, y: 17.593826}
+        - {x: -23.426025, y: -0.4061737}
+        - {x: -15.426025, y: -23.406174}
+        - {x: 23.573975, y: -45.406174}
+        - {x: 29.573975, y: -48.406174}
+        - {x: 38.573975, y: -48.406174}
+        - {x: 38.573975, y: -37.406174}
+        - {x: 13.573975, y: 24.593826}
+    - name: SkeleSpear_197
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 232
+        width: 26
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5668593, y: 0.5839209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_198
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 224
+        width: 23
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5251916, y: 0.6598483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_199
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 216
+        width: 22
+        height: 89
+      alignment: 9
+      pivot: {x: 0.48946312, y: 0.74219745}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_200
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 224
+        width: 23
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5050367, y: 0.66384465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_201
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 232
+        width: 26
+        height: 87
+      alignment: 9
+      pivot: {x: 0.57131255, y: 0.57459617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: SkeleSpear_202
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 65
+        width: 82
+        height: 49
+      alignment: 9
+      pivot: {x: 0.45336086, y: 0.51419175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.18975, y: 23.336952}
+        - {x: -36.18975, y: 17.336952}
+        - {x: -36.18975, y: -24.663048}
+        - {x: 25.81025, y: -24.663048}
+        - {x: 43.81025, y: 0.3369522}
+        - {x: 43.81025, y: 23.336952}
+    - name: SkeleSpear_203
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 65
+        width: 84
+        height: 49
+      alignment: 9
+      pivot: {x: 0.29581234, y: 0.51182663}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20.98761, y: 23.449303}
+        - {x: -11.01239, y: 23.449303}
+        - {x: -24.01239, y: -2.5506973}
+        - {x: -24.01239, y: -17.550697}
+        - {x: -20.01239, y: -24.550697}
+        - {x: 33.98761, y: -24.550697}
+        - {x: 58.98761, y: -17.550697}
+        - {x: 58.98761, y: 1.4493027}
+        - {x: 56.98761, y: 3.4493027}
+    - name: SkeleSpear_204
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 65
+        width: 87
+        height: 49
+      alignment: 9
+      pivot: {x: 0.2855365, y: 0.51419175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.92691, y: -17.663048}
+        - {x: -17.92691, y: -24.663048}
+        - {x: 62.07309, y: -24.663048}
+        - {x: 62.07309, y: 6.336952}
+        - {x: 45.07309, y: 23.336952}
+        - {x: -15.92691, y: 23.336952}
+        - {x: -18.92691, y: 20.336952}
+        - {x: -23.92691, y: 4.336952}
+    - name: SkeleSpear_205
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 65
+        width: 87
+        height: 49
+      alignment: 9
+      pivot: {x: 0.32150233, y: 0.51419175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.243347, y: -24.663048}
+        - {x: 57.756653, y: -24.663048}
+        - {x: 57.756653, y: 2.3369522}
+        - {x: 31.756653, y: 23.336952}
+        - {x: -27.243347, y: 23.336952}
+        - {x: -27.243347, y: -16.663048}
+    - name: SkeleSpear_206
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 65
+        width: 87
+        height: 49
+      alignment: 9
+      pivot: {x: 0.24424236, y: 0.51892185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.847229, y: -21.887726}
+        - {x: -19.847229, y: -24.887726}
+        - {x: 43.15277, y: -24.887726}
+        - {x: 64.15277, y: -22.887726}
+        - {x: 64.15277, y: 5.112274}
+        - {x: 43.15277, y: 23.112274}
+        - {x: -13.847229, y: 23.112274}
+        - {x: -20.847229, y: 10.112274}
+    - name: SkeleSpear_207
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 65
+        width: 87
+        height: 49
+      alignment: 9
+      pivot: {x: 0.22026536, y: 0.542573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.76123, y: 21.98883}
+        - {x: -18.76123, y: 10.988831}
+        - {x: -18.76123, y: -26.01117}
+        - {x: 66.23877, y: -26.01117}
+        - {x: 66.23877, y: 4.9888306}
+        - {x: 50.23877, y: 21.98883}
+    - name: SkeleSpear_208
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 65
+        width: 87
+        height: 49
+      alignment: 9
+      pivot: {x: 0.26821935, y: 0.51892185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.558228, y: -17.887726}
+        - {x: -19.558228, y: -24.887726}
+        - {x: 62.441772, y: -24.887726}
+        - {x: 62.441772, y: 6.112274}
+        - {x: 44.441772, y: 23.112274}
+        - {x: -14.558228, y: 23.112274}
+        - {x: -15.558228, y: 22.112274}
+        - {x: -22.558228, y: -0.88772583}
+    - name: SkeleSpear_209
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 65
+        width: 87
+        height: 49
+      alignment: 9
+      pivot: {x: 0.30818123, y: 0.5283823}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.119873, y: -25.337105}
+        - {x: 41.880127, y: -25.337105}
+        - {x: 59.880127, y: -20.337105}
+        - {x: 59.880127, y: 1.6628952}
+        - {x: 54.880127, y: 6.662895}
+        - {x: 12.880127, y: 22.662895}
+        - {x: -17.119873, y: 22.662895}
+        - {x: -26.119873, y: 6.662895}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

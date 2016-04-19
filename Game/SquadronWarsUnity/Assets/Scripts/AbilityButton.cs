@@ -20,10 +20,10 @@ namespace Assets.Scripts {
                 abilityPanel.SetActive(false);
                 if (abilityType == "cast")
                 {
-                    gameController.GetComponent<GameController>().CastAbility("SpellPrefabs/" + ability);
+                    gameController.GetComponent<GameController>().CastAbility(ability);
                 }
                 else {
-                    gameController.GetComponent<GameController>().AttackAbility("SpellPrefabs/" + ability);
+                    gameController.GetComponent<GameController>().AttackAbility(ability);
                 }
             });
         }

@@ -30,7 +30,7 @@ namespace Assets.Data
             Debug.Log("Data after removing slashes" + data);
             var deserializedJson = DeserializeData(data);
             _jsonObject = deserializedJson;
-            Debug.Log(deserializedJson.ToString());
+            //Debug.Log(deserializedJson.ToString());
             var obj = Activator.CreateInstance<T>();
             obj = (T) Decode(FindJsonObject(deserializedJson, GlobalConstants.GetJsonObjectName(obj)), typeof(T));
 
@@ -523,6 +523,7 @@ namespace Assets.Data
 
         public void SetGlobalDataFromGameInfo(GameInfo gameInfo)
         {
+            Debug.Log("SetGlobalDataFromGameInfo()");
             if (gameInfo.character1Info != null)
             {
                 //Debug.Log("Character 1 Game Info: " + gameInfo.character1Info.Count());
@@ -535,7 +536,11 @@ namespace Assets.Data
                 GlobalConstants.player2Characters = gameInfo.character2Info;
                 //Debug.Log("Global Constants player2 Chars " + GlobalConstants.player2Characters.Count());
             }
-            if(gameInfo.player1Id == GlobalConstants.Player.playerId)
+            if (gameInfo.MapID != 0)
+            {
+                GlobalConstants.mapId = gameInfo.MapID;
+            }
+            if (gameInfo.player1Id == GlobalConstants.Player.playerId)
             {
                 GlobalConstants.myPlayerId = 1;
                 if(gameInfo.player2Id != 0)
@@ -555,7 +560,7 @@ namespace Assets.Data
             {
                 //if (gameInfo.BattleAction.ActionOrder.Count > 0 && GlobalConstants.currentActions.ActionOrder.Count <= 0)
                 //{
-                    Debug.Log("ACTION ORDER BEING POPULATED: " + gameInfo.BattleAction.ActionOrder.Count);
+                Debug.Log("GameInfo BattleAction : " + gameInfo.BattleAction.ActionOrder.Count);
                 GlobalConstants.currentActions.ActionOrder = gameInfo.BattleAction.ActionOrder.ToList();
                 //}
 
