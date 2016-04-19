@@ -64,7 +64,7 @@ $app->post('/api/CreateCharacter', function() use($app)
     if(isset($_POST['GameObject']))
     {
         $createRequest = json_decode($_POST['GameObject']);
-        $returnObject = $mysql->createCharacter($createRequest);
+        $returnObject["CreatedCharacters"] = $mysql->createCharacter($createRequest);
     }
 
     if(sizeof($returnObject) > 0)
@@ -307,7 +307,7 @@ $app->post('/api/UpdateGameInfo', function() use($app)
 
 /*
  * Test Method
- */
+ *
 $app->post('/test', function() use($app){
     $mysql = new MySQL();
 //    $test = $mysql->startGame(17);
