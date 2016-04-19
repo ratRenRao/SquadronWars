@@ -4578,11 +4578,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 296628789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c10e8dbd78699d44b472dbb6a7019bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 377ab0d777124564e94cc536140fb5b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterId: {fileID: 761391357}
+  spriteId: {fileID: 761391357}
   id: 5
+  characterName: {fileID: 0}
+  HomePanel: {fileID: 0}
+  SquadPanel: {fileID: 0}
+  ShopPanel: {fileID: 0}
+  CharacterScreenPanel: {fileID: 0}
+  CreateCharacterPanel: {fileID: 0}
 --- !u!114 &296628792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4790,6 +4796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteId: {fileID: 761391357}
+  id: 0
   characterName: {fileID: 144885104}
   HomePanel: {fileID: 237818262}
   SquadPanel: {fileID: 1573321188}
@@ -5455,11 +5462,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 338899841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c10e8dbd78699d44b472dbb6a7019bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 377ab0d777124564e94cc536140fb5b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterId: {fileID: 761391357}
+  spriteId: {fileID: 761391357}
   id: 6
+  characterName: {fileID: 0}
+  HomePanel: {fileID: 0}
+  SquadPanel: {fileID: 0}
+  ShopPanel: {fileID: 0}
+  CharacterScreenPanel: {fileID: 0}
+  CreateCharacterPanel: {fileID: 0}
 --- !u!114 &338899844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5948,11 +5961,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 378056724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c10e8dbd78699d44b472dbb6a7019bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 377ab0d777124564e94cc536140fb5b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterId: {fileID: 761391357}
+  spriteId: {fileID: 761391357}
   id: 2
+  characterName: {fileID: 0}
+  HomePanel: {fileID: 0}
+  SquadPanel: {fileID: 0}
+  ShopPanel: {fileID: 0}
+  CharacterScreenPanel: {fileID: 0}
+  CreateCharacterPanel: {fileID: 0}
 --- !u!1 &408729651
 GameObject:
   m_ObjectHideFlags: 0
@@ -7532,11 +7551,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 534688777}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c10e8dbd78699d44b472dbb6a7019bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 377ab0d777124564e94cc536140fb5b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterId: {fileID: 761391357}
+  spriteId: {fileID: 761391357}
   id: 4
+  characterName: {fileID: 0}
+  HomePanel: {fileID: 0}
+  SquadPanel: {fileID: 0}
+  ShopPanel: {fileID: 0}
+  CharacterScreenPanel: {fileID: 0}
+  CreateCharacterPanel: {fileID: 0}
 --- !u!1 &535868760
 GameObject:
   m_ObjectHideFlags: 0
@@ -15481,11 +15506,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1028698320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c10e8dbd78699d44b472dbb6a7019bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 377ab0d777124564e94cc536140fb5b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterId: {fileID: 761391357}
+  spriteId: {fileID: 761391357}
   id: 3
+  characterName: {fileID: 0}
+  HomePanel: {fileID: 0}
+  SquadPanel: {fileID: 0}
+  ShopPanel: {fileID: 0}
+  CharacterScreenPanel: {fileID: 0}
+  CreateCharacterPanel: {fileID: 0}
 --- !u!1 &1036575093
 GameObject:
   m_ObjectHideFlags: 0
@@ -21375,11 +21406,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1503268069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c10e8dbd78699d44b472dbb6a7019bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 377ab0d777124564e94cc536140fb5b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterId: {fileID: 761391357}
+  spriteId: {fileID: 761391357}
   id: 1
+  characterName: {fileID: 0}
+  HomePanel: {fileID: 0}
+  SquadPanel: {fileID: 0}
+  ShopPanel: {fileID: 0}
+  CharacterScreenPanel: {fileID: 0}
+  CreateCharacterPanel: {fileID: 0}
 --- !u!1 &1522841277
 GameObject:
   m_ObjectHideFlags: 0
@@ -27268,7 +27305,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0.25356546}
   m_AnchorMax: {x: 1, y: 0.607779}
-  m_AnchoredPosition: {x: 2, y: 102.36969}
+  m_AnchoredPosition: {x: 2, y: 102.36966}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1916724122

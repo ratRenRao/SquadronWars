@@ -286,7 +286,7 @@ class MySQL implements IDBStructure
         }
 
 
-        $query = $dbh->prepare("CALL sp_UpdateCharacter(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $query = $dbh->prepare("CALL sp_UpdateCharacter(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         $query->bindParam(1, $characterObject->{"characterId"}, PDO::PARAM_INT);
         $query->bindParam(2, $characterObject->{"statPoints"}, PDO::PARAM_INT);
         $query->bindParam(3, $characterObject->{"skillPoints"}, PDO::PARAM_INT);
@@ -310,6 +310,9 @@ class MySQL implements IDBStructure
         $query->bindParam(21, $characterObject->{"vitality"}, PDO::PARAM_INT);
         $query->bindParam(22, $characterObject->{"dexterity"}, PDO::PARAM_INT);
         $query->bindParam(23, $characterObject->{"spriteId"}, PDO::PARAM_INT);
+        $query->bindParam(24, $characterObject->{"weapon"}, PDO::PARAM_INT);
+        $query->bindParam(25, $characterObject->{"offhand"}, PDO::PARAM_INT);
+
 
         //execute procedure.
         $query->execute();
