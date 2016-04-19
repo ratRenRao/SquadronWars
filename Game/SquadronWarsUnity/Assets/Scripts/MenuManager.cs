@@ -59,6 +59,7 @@ namespace Assets.Scripts
             CreateCharacterPanel.SetActive(false);
             if (GlobalConstants.IsLoggedIn)
             {
+                GlobalConstants.ResetCharacters();
                 MainMenuPanel.gameObject.SetActive(true);
             }
         }
