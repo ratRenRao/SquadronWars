@@ -27,11 +27,12 @@ namespace Assets.GameClasses
         public string performedAction { get; set; }
         public double ImmediateBaseDamage = 0;
         public double LingeringBaseDamage = 0;
-        public bool complete = false;
+        public bool Complete = false;
         internal int Duration = 0;
         internal int Damage = 0;
         internal int mpCost = 10;
         internal CharacterGameObject Executioner { get; private set; }
+        internal CharacterGameObject Target { get; private set; }
         internal Tile ExecutionerTile { get; private set; }
         internal Stopwatch Stopwatch = new Stopwatch();
         internal TimeListener TimeListener;
@@ -180,6 +181,8 @@ namespace Assets.GameClasses
 
                     if (Duration > 0)
                     {
+                        GlobalConstants.ActiveEffects.Add(character, this);
+                        /*
                         TimeListener = new TimeListener(Duration, character.CharacterClassObject.CurrentStats)
                         {
                             ExecutionMethod = LingeringEffect,
@@ -189,6 +192,7 @@ namespace Assets.GameClasses
                         TimeListener.Start();
                         GlobalConstants.TimeListeners[character.CharacterClassObject.CharacterId] = TimeListener;
                             //.Add(character.Key.CharacterClassObject.CharacterId, TimeListener);
+                        */
                     }
                     else if (Duration == 0)
                     {
@@ -205,16 +209,24 @@ namespace Assets.GameClasses
 
         public virtual void RemoveEffect()
         {
-            complete = true;
+            Complete = true;
         }
 
-        public virtual void RemoveEffect(ref Stats stats)
+        public virtual void RemoveEffect(Stats stats)
         {
-            complete = true;
+            Complete = true;
         }
 
-        public virtual void LingeringEffect(ref Stats stats)
+        public virtual void LingeringEffect(Stats stats)
         {
+            --Duration;
+            if (Duration <= 0)
+                Complete = true;
+        }
+
+        public bool IsComplete()
+        {
+            return Complete;
         }
     }
 }

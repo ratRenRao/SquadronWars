@@ -44,8 +44,8 @@ namespace Assets.GameClasses
                 {
                     TimeListener = new TimeListener(Duration, character.CharacterClassObject.CurrentStats)
                     {
-                        ExecutionMethod = LingeringEffect,
-                        FinishingMethod = RemoveEffect
+                       // ExecutionMethod = LingeringEffect,
+                       // FinishingMethod = RemoveEffect
                     };
 
                     TimeListener.Start();
@@ -81,13 +81,18 @@ namespace Assets.GameClasses
             complete = true;
         }
 
-        public  virtual void RemoveEffect(ref Stats stats)
+        public  virtual void RemoveEffect(Stats stats)
         {
             complete = true;
         }
 
-        public virtual void LingeringEffect(ref Stats stats)
+        public virtual void LingeringEffect(Stats stats)
         {
+        }
+
+        public bool IsComplete()
+        {
+            throw new NotImplementedException();
         }
     }
 }

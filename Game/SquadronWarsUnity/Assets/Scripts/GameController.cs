@@ -1970,6 +1970,8 @@ namespace Assets.Scripts
         public void SelectNextCharacter()
         {
             Debug.Log("Select Next Character Called");
+            ExecuteLingeringEffects();
+
             if (placeCharacterPhase)
             {
                 placecharactersong.mute = true;
@@ -2043,6 +2045,20 @@ namespace Assets.Scripts
                 PositionPanels();
                 HideUsableAbilities();
                 SetUsableAbilities();
+        }
+
+        public void ExecuteLingeringEffects()
+        {
+            foreach (var effect in GlobalConstants.ActiveEffects)
+            {
+                Debug.Log("!!! Effect : " + effect.Value.ToString() + " !!!");
+                effect.Value.LingeringEffect(effect.Key.CharacterClassObject.CurrentStats);
+                if (effect.Value.IsComplete())
+                {
+                    effect.Value.RemoveEffect(effect.Key.CharacterClassObject.CurrentStats);
+                    GlobalConstants.ActiveEffects.Remove(effect.Key);
+                }
+            }
         }
 
         public void PositionSelectedPanel(CharacterGameObject selCharacter, Tile tempTile)

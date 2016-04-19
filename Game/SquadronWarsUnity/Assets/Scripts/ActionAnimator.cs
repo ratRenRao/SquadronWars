@@ -23,6 +23,12 @@ namespace Assets.Scripts
             StartCoroutine(CastAnimation(executioner, target, executionerAnimator, targetAnimator, targetTile, ability, damage));
         }
 
+        public void Animate(CharacterGameObject target, Animator targetAnimator, Tile targetTile, int damage = 0)
+        {
+            Debug.Log("Lingering Effect Damage: " + damage);
+            StartCoroutine(LingeringEffectAnimation(target, targetAnimator, targetTile, damage));
+        }
+
         public void Animate(Animator executionerAnimator, string attackType = "none")
         {
             if (attackType.Equals("none"))
@@ -177,6 +183,54 @@ namespace Assets.Scripts
             if (targetAnimator != null)
                 StartCoroutine(InjuredAnimation(targetAnimator));
         }
+
+        IEnumerator LingeringEffectAnimation(CharacterGameObject target, Animator targetAnimator, Tile targetTile, int damage)
+        {
+            if (targetAnimator != null)
+            {
+                GameObject particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
+                GameObject damageText = (GameObject)Resources.Load(("Prefabs/DamageText"), typeof(GameObject));
+                GameObject dmgObject =
+                    GameObject.Instantiate(damageText,
+                        new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y + 3.2f),
+                        Quaternion.identity) as GameObject;
+                dmgObject.transform.parent = particleCanvas.transform;
+                //damage = (damage <= 0) ? 1 : damage;
+                if (damage < 0)
+                {
+                    dmgObject.GetComponent<Text>().color = new Color32(146, 255, 255, 255);
+                    damage = Math.Abs(damage);
+                }
+                dmgObject.GetComponent<Text>().text = damage.ToString();
+                Debug.Log(target.CharacterClassObject.CurrentStats.CurHP);
+            }
+            bool gameover = false;
+            if (target.CharacterClassObject.CurrentStats.CurHP <= 0)
+            {
+                //target.CharacterClassObject.CurrentStats.CurHP = 0;
+                target.isDead = true;
+                //myCharacters.Remove(target.gameObject);
+                if (targetAnimator != null)
+                    targetAnimator.SetBool("isDead", true);
+                yield return new WaitForSeconds(.8f);
+                Debug.Log(target.CharacterClassObject.Name);
+                if (GlobalConstants.GameController.CheckGameOver())
+                {
+                    gameover = true;
+                }
+                if (GlobalConstants.GameController.CheckVictory())
+                {
+                    Debug.Log("Victory");
+                    gameover = true;
+                }
+            }
+
+            yield return new WaitForSeconds(.5f);
+            GlobalConstants.GameController.ResetData();
+                GlobalConstants.GameController.battlesong.mute = false;
+                if (targetAnimator != null)
+                    StartCoroutine(InjuredAnimation(targetAnimator));
+       }
 
         IEnumerator CastAnimationNothing(Animator executionerAnimator)
         {

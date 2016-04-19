@@ -29,7 +29,7 @@ namespace Assets.GameClasses
             AnimationManager.Attack("Armor Break");
         }
 
-        public override void RemoveEffect(ref Stats stats)
+        public override void RemoveEffect(Stats stats)
         {
             stats.Defense = _initialStats.Defense;
         }

@@ -50,7 +50,7 @@ namespace Assets.GameClasses
             AnimationManager.Cast("UltimateSummon");
         }
 
-        public override void LingeringEffect(ref Stats stats)
+        public override void LingeringEffect(Stats stats)
         {
             stats.CurHP -= (int)CalculateLingeringDamage();
         }
