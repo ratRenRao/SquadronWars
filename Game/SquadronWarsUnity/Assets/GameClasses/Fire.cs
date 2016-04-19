@@ -38,12 +38,12 @@ namespace Assets.GameClasses
 
         private double CalculateImmediateDamage()
         {
-            return ImmediateBaseDamage + (int)(Executioner.CharacterClassObject.CurrentStats.MagicAttack * 0.4);
+            return ImmediateBaseDamage + (int)(Executioner.CharacterClassObject.CurrentStats.MagicAttack * 0.4) + AbilityLevel * 0.1;
         }
 
         private double CalculateLingeringDamage()
         {
-            return Executioner.CharacterClassObject.CurrentStats.MagicAttack*0.5 + (AbilityLevel*0.1) + ImmediateBaseDamage;
+            return Executioner.CharacterClassObject.CurrentStats.MagicAttack*0.11 + (AbilityLevel*0.1) + ImmediateBaseDamage;
         }
 
         private int CalculateDuration()
