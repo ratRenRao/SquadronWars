@@ -91,30 +91,34 @@ public string GetJsonObjectName()
         modifiedStats = new Stats();
     }
 
-    public UpdateCharacterPostObject(Stats modifiedstats)
+    public UpdateCharacterPostObject(Stats modifiedstats, Character character = null)
     {
-        modifiedStats = GlobalConstants.curSelectedCharacter.BaseStats;
+        if(character == null)
+        {
+            character = GlobalConstants.curSelectedCharacter;
+        }
+        modifiedStats = character.BaseStats;
         if (modifiedstats != null)
         {
             modifiedStats = modifiedstats;
         }
         username = GlobalConstants.Player.logins.username;
         password = GlobalConstants.Player.logins.password;
-        name = GlobalConstants.curSelectedCharacter.Name;
-        characterId = GlobalConstants.curSelectedCharacter.CharacterId;
+        name = character.Name;
+        characterId = character.CharacterId;
         statPoints = modifiedStats.StatPoints;
         skillPoints = modifiedStats.SkillPoints;
         luck = modifiedStats.Luck;
-        LevelId = GlobalConstants.curSelectedCharacter.LevelId;
+        LevelId = character.LevelId;
         experience = modifiedStats.Experience;
-        helm = GlobalConstants.curSelectedCharacter.Equipment.Helm.ItemId;
-        chest = GlobalConstants.curSelectedCharacter.Equipment.Chest.ItemId;
-        gloves = GlobalConstants.curSelectedCharacter.Equipment.Gloves.ItemId;
-        pants = GlobalConstants.curSelectedCharacter.Equipment.Pants.ItemId;
-        shoulders = GlobalConstants.curSelectedCharacter.Equipment.Shoulders.ItemId;
-        boots = GlobalConstants.curSelectedCharacter.Equipment.Boots.ItemId;
-        accessory1 = GlobalConstants.curSelectedCharacter.Equipment.Accessory1.ItemId;
-        accessory2 = GlobalConstants.curSelectedCharacter.Equipment.Accessory2.ItemId;
+        helm = character.Equipment.Helm.ItemId;
+        chest = character.Equipment.Chest.ItemId;
+        gloves = character.Equipment.Gloves.ItemId;
+        pants = character.Equipment.Pants.ItemId;
+        shoulders = character.Equipment.Shoulders.ItemId;
+        boots = character.Equipment.Boots.ItemId;
+        accessory1 = character.Equipment.Accessory1.ItemId;
+        accessory2 = character.Equipment.Accessory2.ItemId;
         IsStandard = 0;
         strength = modifiedStats.Str;
         intelligence = modifiedStats.Intl;
@@ -122,10 +126,10 @@ public string GetJsonObjectName()
         wisdom = modifiedStats.Wis;
         vitality = modifiedStats.Vit;
         dexterity = modifiedStats.Dex;
-        spriteId = GlobalConstants.curSelectedCharacter.SpriteId;
+        spriteId = character.SpriteId;
         abillist = "hackjob\", \"abilities\" : { ";
         int i = 0;
-        foreach(Ability abil in GlobalConstants.curSelectedCharacter.Abilities)
+        foreach(Ability abil in character.Abilities)
         {
             string s = "";
             if (i != 0)

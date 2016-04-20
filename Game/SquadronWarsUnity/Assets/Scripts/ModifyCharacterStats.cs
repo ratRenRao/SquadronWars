@@ -28,7 +28,7 @@ public class ModifyCharacterStats : MonoBehaviour
         characterScreen.experienceStat.text = string.Format("{0} / {1}", character.BaseStats.Experience.ToString(), expToNextLevel.ToString());
         int progBar = character.PercentToNextLevel();
         characterScreen.ProgressBar.value = progBar;
-        Debug.Log(character.BaseStats.Intl);
+        //Debug.Log(character.BaseStats.Intl);
     }
 
     public void ReevaluateStats(Text labelText)

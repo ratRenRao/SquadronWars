@@ -25,9 +25,9 @@ namespace Assets.Data
 
         public T BuildObjectFromJsonData<T>(string data) where T : IJsonable
         {
-            Debug.Log("Data before removing slashes" + data);
+            //Debug.Log("Data before removing slashes" + data);
             data = RemoveSlashes(data);
-            Debug.Log("Data after removing slashes" + data);
+            //Debug.Log("Data after removing slashes" + data);
             var deserializedJson = DeserializeData(data);
             _jsonObject = deserializedJson;
             //Debug.Log(deserializedJson.ToString());
@@ -523,7 +523,7 @@ namespace Assets.Data
 
         public void SetGlobalDataFromGameInfo(GameInfo gameInfo)
         {
-            Debug.Log("SetGlobalDataFromGameInfo()");
+            //Debug.Log("SetGlobalDataFromGameInfo()");
             if (gameInfo.character1Info != null)
             {
                 //Debug.Log("Character 1 Game Info: " + gameInfo.character1Info.Count());
@@ -560,7 +560,7 @@ namespace Assets.Data
             {
                 //if (gameInfo.BattleAction.ActionOrder.Count > 0 && GlobalConstants.currentActions.ActionOrder.Count <= 0)
                 //{
-                Debug.Log("GameInfo BattleAction : " + gameInfo.BattleAction.ActionOrder.Count);
+                //Debug.Log("GameInfo BattleAction : " + gameInfo.BattleAction.ActionOrder.Count);
                 GlobalConstants.currentActions.ActionOrder = gameInfo.BattleAction.ActionOrder.ToList();
                 //}
 

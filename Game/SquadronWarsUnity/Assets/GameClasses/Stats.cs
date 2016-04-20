@@ -31,7 +31,7 @@
 
         public Stats(int strength = 0, int agility = 0, int intelligence = 0, int vitality = 0, int wisdom = 0, int dexterity = 0,
             int luck = 0, int hitPoints = 0, int damage = 0, int magicDmg = 0, int speed = 0, int defense = 0, int magicDef = 0, 
-            int hitRate = 0, int dodgeRate = 0, int critRate = 0, int statPoints = 0, int skillPoints = 0)
+            int hitRate = 0, int dodgeRate = 0, int critRate = 0, int statPoints = 0, int skillPoints = 0, int experience = 0)
         {
             Str = strength;
             Agi = agility;
@@ -51,6 +51,7 @@
             CritRate = critRate;
             StatPoints = statPoints;
             SkillPoints = skillPoints;
+            Experience = experience;
         }
 
         public Stats Clone()
@@ -73,7 +74,8 @@
                 DodgeRate,
                 CritRate,
                 StatPoints,
-                SkillPoints);
+                SkillPoints,
+                Experience);
         }
 
         public int CalculateHp(int level) {

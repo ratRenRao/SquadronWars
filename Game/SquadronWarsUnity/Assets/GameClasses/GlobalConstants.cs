@@ -36,6 +36,8 @@ namespace Assets.GameClasses
         public const string ActionsJsonName = "Actions";
 
         public static bool CharacterLoadReady = false;
+        public static bool ChangeStatsObject = true;
+        public static Stats CurrentModifiedStats;
         public static bool isMyTurn = false;
         public static bool isAnimating = false;
         public static bool IsLoggedIn = false;
@@ -73,6 +75,8 @@ namespace Assets.GameClasses
         public static bool Updated = true;
         public static Dictionary<int, TimeListener> TimeListeners = new Dictionary<int, TimeListener>(); 
         public static ActionAnimator ActionAnimator { get; set; }
+        public static bool updateCharacters = true;
+        public static int allFiveCharacters = 0;
 
         //Game data for calculating payout
         public static int DamageAndHealingDone = 0;
@@ -123,6 +127,7 @@ namespace Assets.GameClasses
             mapId = 0;
             myPlayerId = 0;
             opponentId = 0;
+            allFiveCharacters = 0;
             player1Characters.Clear();
             player2Characters.Clear();
             currentActions.ResetBattleActions();
