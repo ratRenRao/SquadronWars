@@ -191,6 +191,7 @@ namespace Assets.Scripts
 
         IEnumerator LingeringEffectAnimation(CharacterGameObject target, Animator targetAnimator, Tile targetTile, int damage)
         {
+            targetTile = GlobalConstants.GameController.tileMap.tileArray[target.X, target.Y];
             if (targetAnimator != null)
             {
                 GameObject particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
