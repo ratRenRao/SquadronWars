@@ -12,7 +12,7 @@ namespace Assets.GameClasses
         {
             base.Initialize(ref tiles, ref executioner, ref executionerTile);
             ImmediateBaseDamage = 10;
-            LingeringBaseDamage = 3;
+            LingeringBaseDamage = 5;
             //Duration = 5;
             AbilityLevel = AbilityLevel <= 0 ? 1 : AbilityLevel;
             //ResultingEffects = new List<Effect> {new Burn()};
@@ -29,7 +29,11 @@ namespace Assets.GameClasses
 
         public override void LingeringEffect(Stats stats)
         {
-            stats.CurHP -= (int)CalculateLingeringDamage();
+            Damage = (int)CalculateLingeringDamage();
+            stats.CurHP -= Damage;
+            base.LingeringEffect(stats);
+            AnimationManager.SetDamage(Damage);
+            AnimationManager.ExecuteLingeringEffect();
         }
 
         private double CalculateImmediateDamage()
@@ -39,7 +43,7 @@ namespace Assets.GameClasses
 
         private double CalculateLingeringDamage()
         {
-            return Executioner.CharacterClassObject.CurrentStats.MagicAttack * 0.5 + (AbilityLevel * 0.1) + ImmediateBaseDamage;
+            return (Executioner.CharacterClassObject.CurrentStats.MagicAttack * 0.08) + (AbilityLevel * 0.1) + (LingeringBaseDamage / Duration);
         }
 
         private int CalculateDuration()

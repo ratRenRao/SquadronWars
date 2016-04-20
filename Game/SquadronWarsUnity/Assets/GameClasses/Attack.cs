@@ -6,8 +6,10 @@ using Assets.Scripts;
 
 namespace Assets.GameClasses
 {
-    class Attack : Action 
+    class Attack : Action
     {
+        private Item Weapon;
+
         public override void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
             base.Initialize(ref tiles, ref executioner, ref executionerTile);
@@ -25,7 +27,22 @@ namespace Assets.GameClasses
 
         private double CalculateAttack(Stats stats)
         {
-            return ImmediateBaseDamage + (Executioner.CharacterClassObject.CurrentStats.Str * 2.5);
+            var damage = ImmediateBaseDamage + (Executioner.CharacterClassObject.CurrentStats.Str * 2.5);
+
+            if (CriticalHit(stats))
+                    damage += (Executioner.CharacterClassObject.CurrentStats.Str * 2);
+
+            return damage;
+        }
+
+        private bool CriticalHit(Stats stats)
+        {
+            Random rand = new Random();
+            var roll = rand.Next(100);
+            if (roll <= stats.CritRate)
+                return true;
+
+            return false;
         }
     }
 }
