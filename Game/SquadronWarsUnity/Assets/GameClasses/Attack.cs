@@ -8,7 +8,7 @@ namespace Assets.GameClasses
 {
     class Attack : Action
     {
-        private Item Weapon;
+        private bool crit = false;
 
         public override void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
@@ -22,7 +22,7 @@ namespace Assets.GameClasses
             Damage = (int)CalculateAttack(stats);
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
             AnimationManager.SetDamage(Damage);
-            AnimationManager.Attack("attack");
+            AnimationManager.Attack("attack", crit);
         }
 
         private double CalculateAttack(Stats stats)
@@ -40,9 +40,9 @@ namespace Assets.GameClasses
             Random rand = new Random();
             var roll = rand.Next(100);
             if (roll <= stats.CritRate)
-                return true;
+                crit = true;
 
-            return false;
+            return crit;
         }
     }
 }
