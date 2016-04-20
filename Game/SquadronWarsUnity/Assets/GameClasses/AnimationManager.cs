@@ -88,7 +88,7 @@ namespace Assets.GameClasses
             }
         }
 
-        public void Attack(string ability)
+        public void Attack(string ability, bool crit)
         {
             _actionType = ActionType.Idle;
             int weaponId = 0;
@@ -139,7 +139,7 @@ namespace Assets.GameClasses
             }
             if (_targetTile.isOccupied)
             {
-                _actionAnimator.Animate(_executionerCharacterGameObject, _targetCharacterGameObject, _executionerAnimator, _targetAnimator, _targetTile, ability, attackType, _damage);
+                _actionAnimator.Animate(_executionerCharacterGameObject, _targetCharacterGameObject, _executionerAnimator, _targetAnimator, _targetTile, ability, attackType, _damage, crit);
             }
             else
             {

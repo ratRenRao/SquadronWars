@@ -12,9 +12,9 @@ namespace Assets.Scripts
 {
     public class ActionAnimator : MonoBehaviour
     {
-        public void Animate(CharacterGameObject executioner, CharacterGameObject target, Animator executionerAnimator, Animator targetAnimator, Tile targetTile, string ability, string attackType, int damage = 0)
+        public void Animate(CharacterGameObject executioner, CharacterGameObject target, Animator executionerAnimator, Animator targetAnimator, Tile targetTile, string ability, string attackType, int damage = 0, bool crit = false)
         {
-            StartCoroutine(AttackAnimation(executioner, target, executionerAnimator, targetAnimator, targetTile, ability, attackType, damage));
+            StartCoroutine(AttackAnimation(executioner, target, executionerAnimator, targetAnimator, targetTile, ability, attackType, damage, crit));
         }
 
         public void Animate(CharacterGameObject executioner, CharacterGameObject target, Animator executionerAnimator, Animator targetAnimator, Tile targetTile, string ability, int damage = 0)
@@ -38,7 +38,7 @@ namespace Assets.Scripts
         }
 
 
-        IEnumerator AttackAnimation(CharacterGameObject executioner, CharacterGameObject target, Animator executionerAnimator, Animator targetAnimator, Tile targetTile, string ability, string attackType, int damage)
+        IEnumerator AttackAnimation(CharacterGameObject executioner, CharacterGameObject target, Animator executionerAnimator, Animator targetAnimator, Tile targetTile, string ability, string attackType, int damage, bool crit)
         {
             yield return new WaitForSeconds(.2f);
             targetAnimator.SetBool("isAttacked", true);
@@ -77,7 +77,11 @@ namespace Assets.Scripts
             GameObject dmgObject = GameObject.Instantiate(damageText, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y + 3.2f), Quaternion.identity) as GameObject;
             dmgObject.transform.parent = particleCanvas.transform;
             //damage = (damage <= 0) ? 1 : damage;
-            dmgObject.GetComponent<Text>().text = damage.ToString();
+            var textObject = dmgObject.GetComponent<Text>();
+            textObject.color = Color.red;
+            textObject.fontStyle = FontStyle.Bold;
+            textObject.text = damage + "!";
+            
             //target.CharacterClassObject.CurrentStats.CurHP -= damage;
             yield return new WaitForSeconds(.4f);
             if (target.CharacterClassObject.CurrentStats.CurHP <= 0)
@@ -162,6 +166,7 @@ namespace Assets.Scripts
                 {
                     //target.CharacterClassObject.CurrentStats.CurHP = 0;
                     target.isDead = true;
+                    targetTile.isDead = true;
                     //myCharacters.Remove(target.gameObject);
                     if (targetAnimator != null)
                         targetAnimator.SetBool("isDead", true);
@@ -186,6 +191,7 @@ namespace Assets.Scripts
 
         IEnumerator LingeringEffectAnimation(CharacterGameObject target, Animator targetAnimator, Tile targetTile, int damage)
         {
+            targetTile = GlobalConstants.GameController.tileMap.tileArray[target.X, target.Y];
             if (targetAnimator != null)
             {
                 GameObject particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
@@ -209,6 +215,7 @@ namespace Assets.Scripts
             {
                 //target.CharacterClassObject.CurrentStats.CurHP = 0;
                 target.isDead = true;
+                targetTile.isDead = true;
                 //myCharacters.Remove(target.gameObject);
                 if (targetAnimator != null)
                     targetAnimator.SetBool("isDead", true);

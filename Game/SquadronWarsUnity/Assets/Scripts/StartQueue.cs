@@ -42,7 +42,10 @@ namespace Assets.Scripts
                 GetGameStatus();
             }
             if (CheckForMatchedPlayer())
-                SceneManager.LoadScene("BattleMap2");
+            {
+                queued = true;
+                SceneManager.LoadScene("BattleMap" + GlobalConstants.mapId);
+            }
         }
 
         public bool CheckForMatchedPlayer()

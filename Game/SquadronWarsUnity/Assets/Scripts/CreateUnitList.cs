@@ -34,6 +34,11 @@ namespace Assets.Scripts
 
         public void PopulateList()
         {
+            int removeButtons = contentPanel.childCount;
+            for(int i = 0; i < removeButtons; i++)
+            {
+                contentPanel.GetChild(0).transform.parent = null;                
+            }
 
             foreach (var character in GlobalConstants.Player.Characters)
             {
@@ -66,6 +71,7 @@ namespace Assets.Scripts
 
         public static void GetBonusStats(Character character)
         {
+            character.CurrentStats = character.BaseStats;
             foreach (var item in character.Equipment.GetItemList())
             {
                 if(item != null)

@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using Assets.Data;
 using Assets.GameClasses;
+using System.Collections.Generic;
 
 public class Battle : MonoBehaviour
 {
@@ -95,11 +96,13 @@ public class Battle : MonoBehaviour
     {
         GlobalConstants.GameId = 0;
         GlobalConstants.mapId = 0;
-        GlobalConstants.myPlayerId = 0;
+        GlobalConstants. myPlayerId = 0;
         GlobalConstants.opponentId = 0;
         GlobalConstants.player1Characters.Clear();
         GlobalConstants.player2Characters.Clear();
         GlobalConstants.currentActions.ResetBattleActions();
+        GlobalConstants.Updated = true;
+        GlobalConstants.TimeListeners = new Dictionary<int, TimeListener>();
         //Call additional functions for end game.
     }
 

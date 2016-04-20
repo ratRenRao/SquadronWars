@@ -21,12 +21,12 @@ namespace Assets.GameClasses
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
             Executioner.CharacterClassObject.CurrentStats.CurMP -= mpCost;
             AnimationManager.SetDamage(Damage);
-            AnimationManager.Attack("DoubleAttack");
+            AnimationManager.Attack("DoubleAttack", false);
         }
 
         private double CalculateAttack(Stats stats)
         {
-            return (ImmediateBaseDamage + (Executioner.CharacterClassObject.CurrentStats.Str * 0.5)) * 2;
+            return (ImmediateBaseDamage + (Executioner.CharacterClassObject.CurrentStats.Str * 2.5)) * 2;
         }
     }
 }

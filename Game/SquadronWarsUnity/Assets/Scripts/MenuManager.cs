@@ -59,6 +59,12 @@ namespace Assets.Scripts
             CreateCharacterPanel.SetActive(false);
             if (GlobalConstants.IsLoggedIn)
             {
+                GlobalConstants.ResetCharacters();
+                GlobalConstants.EndGame();
+                foreach(Character character in GlobalConstants.Player.Characters)
+                {
+                    GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateCharacterUrl, new UpdateCharacterPostObject(null, character));
+                }
                 MainMenuPanel.gameObject.SetActive(true);
             }
         }

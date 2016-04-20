@@ -22,7 +22,7 @@ namespace Assets.GameClasses
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
             Executioner.CharacterClassObject.CurrentStats.CurMP -= mpCost;
             AnimationManager.SetDamage(Damage);
-            AnimationManager.Attack("Bash");
+            AnimationManager.Attack("Bash", false);
         }
 
         public override void LingeringEffect(Stats stats)
