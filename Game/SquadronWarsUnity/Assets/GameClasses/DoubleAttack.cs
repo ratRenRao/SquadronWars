@@ -26,7 +26,7 @@ namespace Assets.GameClasses
 
         private double CalculateAttack(Stats stats)
         {
-            return (ImmediateBaseDamage + (Executioner.CharacterClassObject.CurrentStats.Str * 0.5)) * 2;
+            return (ImmediateBaseDamage + (Executioner.CharacterClassObject.CurrentStats.Str * 2.5)) * 2;
         }
     }
 }
