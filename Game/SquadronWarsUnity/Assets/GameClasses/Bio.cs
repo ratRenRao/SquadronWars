@@ -11,7 +11,7 @@ namespace Assets.GameClasses
         public override void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile)
         {
             base.Initialize(ref tiles, ref executioner, ref executionerTile);
-            ImmediateBaseDamage = 10;
+            ImmediateBaseDamage = 0;
             LingeringBaseDamage = 5;
             Duration = 5;
             AbilityLevel = AbilityLevel <= 0 ? 1 : AbilityLevel;
@@ -43,7 +43,7 @@ namespace Assets.GameClasses
 
         private double CalculateLingeringDamage()
         {
-            return (Executioner.CharacterClassObject.CurrentStats.MagicAttack * 0.03) + (AbilityLevel * 0.1) + (LingeringBaseDamage / Duration);
+            return (Executioner.CharacterClassObject.CurrentStats.MagicAttack * 0.05) + (AbilityLevel * 0.1) + (LingeringBaseDamage / Duration);
         }
 
         private int CalculateDuration()

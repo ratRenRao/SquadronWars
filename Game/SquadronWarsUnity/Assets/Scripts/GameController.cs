@@ -1966,6 +1966,7 @@ namespace Assets.Scripts
 
         public void EndTurn()
         {
+            ExecuteLingeringEffects();
             Debug.Log("End Turn() Called");
             hidePanel = true;
             GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Endturn, new List<Tile>(), "endturn");
@@ -1979,7 +1980,7 @@ namespace Assets.Scripts
         public void SelectNextCharacter()
         {
             Debug.Log("Select Next Character Called");
-            ExecuteLingeringEffects();
+            //ExecuteLingeringEffects();
 
             if (placeCharacterPhase)
             {
