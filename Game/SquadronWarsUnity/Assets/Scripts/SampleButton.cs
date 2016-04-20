@@ -299,13 +299,14 @@ public class SampleButton : MonoBehaviour
             var ability = character.Abilities.SingleOrDefault(x => x.Name.ToLower() == skill.ToLower());
             if (ability != null)
             {
-                character.Abilities.Single(x => x.Name.ToLower() == skill.ToLower()).AbilityLevel++;
+                GlobalConstants.curSelectedCharacter.Abilities.Single(x => x.Name.ToLower() == skill.ToLower()).AbilityLevel++;
             }
             else
             {
                 ability = GlobalConstants.AbilityMasterList.Single(x => x.Name.ToLower() == skill.ToLower());
                 ability.AbilityLevel++;
-                character.Abilities.Add(ability);
+                ability.CharacterId = GlobalConstants.curSelectedCharacter.CharacterId;
+                GlobalConstants.curSelectedCharacter.Abilities.Add(ability);
             }
             if (skill.Equals("fire"))
             {

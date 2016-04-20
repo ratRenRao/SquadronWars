@@ -127,7 +127,7 @@ public string GetJsonObjectName()
         vitality = modifiedStats.Vit;
         dexterity = modifiedStats.Dex;
         spriteId = character.SpriteId;
-        abillist = "hackjob\", \"abilities\" : { ";
+        abillist = "hackjob\", \"abilities\" : [ ";
         int i = 0;
         foreach(Ability abil in character.Abilities)
         {
@@ -136,13 +136,13 @@ public string GetJsonObjectName()
             {
                 s = ", ";
             }
-            s += "\"" + i + "\" : { \"abilityId\" : \"" + abil.AbilityId + "\" , \"abilityLevel\" : \"" + abil.AbilityLevel+"\" } ";
+            s += "{ \"abilityId\" : \"" + abil.AbilityId + "\" , \"abilityLevel\" : \"" + abil.AbilityLevel+"\" } ";
 
             abillist += s;
             i++;
         }
 
-        abillist += " }, \"end\" :\"test";
+        abillist += " ], \"end\" :\"test";
         
     }
 
