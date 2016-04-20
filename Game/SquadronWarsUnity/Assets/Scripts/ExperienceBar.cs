@@ -24,8 +24,7 @@ public class ExperienceBar : MonoBehaviour
         var sprite = temp.GetComponent<SpriteRenderer>();
         Image bar = GetComponent<Image>();
         characterModel.GetComponent<Image>().sprite = sprite.sprite;
-        //lvl = chararacter.CharacterClassObject.LevelId;
-        lvl = 
+        lvl = character.CharacterClassObject.LevelId;
         exp = character.CharacterClassObject.BaseStats.Experience;
         maxExp = expLevel[lvl - 1];
         experience.text = exp.ToString() + " / " + maxExp.ToString();
