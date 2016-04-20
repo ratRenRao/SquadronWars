@@ -45,6 +45,7 @@ public class SampleButton : MonoBehaviour
 
         int expToNextLevel = character.ExperienceNeeded();
         characterScreen.experienceStat.text = string.Format("{0} / {1}", character.BaseStats.Experience.ToString(), expToNextLevel.ToString());
+        Debug.Log(character.PercentToNextLevel());
         int progBar = character.PercentToNextLevel();
         characterScreen.ProgressBar.value = progBar;
         BuildDropdowns(characterScreen);
