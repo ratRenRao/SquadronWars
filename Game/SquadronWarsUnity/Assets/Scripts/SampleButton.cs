@@ -105,6 +105,7 @@ public class SampleButton : MonoBehaviour
             GlobalConstants.ChangeStatsObject = false;
             GlobalConstants.curSelectedCharacter = character;
             GlobalConstants.CurrentModifiedStats = GlobalConstants.curSelectedCharacter.BaseStats.Clone();
+            EvaluateSkills();
             
         }
 
@@ -383,43 +384,8 @@ public class SampleButton : MonoBehaviour
      //   SampleButton button = gameObject.GetComponent<SampleButton>();
      //   MenuManager menu = menuManager.GetComponent<MenuManager>();
         CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
-        character = stats.sampleButton.character;
+        //character = stats.sampleButton.character;
         //foreach (var ability in character.Abilities)
-        foreach (var ability in GlobalConstants.curSelectedCharacter.Abilities)
-        {
-            if (ability.Name == "fire")
-            {
-                stats.fireLvl.text = "L" + ability.AbilityLevel;
-            }
-            else
-            {
-                stats.fireLvl.text = "";
-            }
-            if (ability.Name == "bash")
-            {
-                stats.bashLvl.text = "L" + ability.AbilityLevel;
-            }
-            else
-            {
-                stats.bashLvl.text = "";
-            }
-            if (ability.Name == "cure")
-            {
-                stats.cureLvl.text = "L" + ability.AbilityLevel;
-            }
-            else
-            {
-                stats.cureLvl.text = "";
-            }
-            if (ability.Name == "focus")
-            {
-                stats.focusLvl.text = "L" + ability.AbilityLevel;
-            }
-            else
-            {
-                stats.focusLvl.text = "";
-            }
-        }
         stats.hasteLvl.text = "";
         stats.regenLvl.text = "";
         stats.bioLvl.text = "";
@@ -428,6 +394,34 @@ public class SampleButton : MonoBehaviour
         stats.armorBreakLvl.text = "";
         stats.chargeLvl.text = "";
         stats.doubleAttackLvl.text = "";
+        stats.fireLvl.text = "";
+        stats.bashLvl.text = "";
+        stats.cureLvl.text = "";
+        stats.focusLvl.text = "";
+        foreach (var ability in GlobalConstants.curSelectedCharacter.Abilities)
+        {
+            if (ability.Name.Equals("Fire"))
+            {
+                stats.fireLvl.text = "L" + ability.AbilityLevel;
+                continue;
+            }
+            if (ability.Name.Equals("Bash"))
+            {
+                stats.bashLvl.text = "L" + ability.AbilityLevel;
+                continue;
+            }
+            if (ability.Name.Equals("Cure"))
+            {
+                stats.cureLvl.text = "L" + ability.AbilityLevel;
+                continue;
+            }
+            if (ability.Name.Equals("Focus"))
+            {
+                stats.focusLvl.text = "L" + ability.AbilityLevel;
+                continue;
+            }
+        }
+        
     }
 
 }
