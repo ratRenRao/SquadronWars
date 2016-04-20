@@ -285,7 +285,6 @@ namespace Assets.Scripts
                             {
                                 //GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
                                 //GlobalConstants.currentActions.AddAction(tempAction);                                
-                                ExecuteLingeringEffects();
                                 StartCoroutine(WaitForPlayer1());
                                 break;
                             }
@@ -1147,7 +1146,7 @@ namespace Assets.Scripts
             {
                 weaponType = "isAttacking";
             }
-            else if (weaponId >= 10000 && weaponId < 11000)
+            else if (weaponId >= 10000)
             {
                 weaponType = "isAttackingBow";
             }
@@ -1967,7 +1966,6 @@ namespace Assets.Scripts
 
         public void EndTurn()
         {
-            ExecuteLingeringEffects();
             Debug.Log("End Turn() Called");
             hidePanel = true;
             GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Endturn, new List<Tile>(), "endturn");
@@ -1981,7 +1979,7 @@ namespace Assets.Scripts
         public void SelectNextCharacter()
         {
             Debug.Log("Select Next Character Called");
-            //ExecuteLingeringEffects();
+            ExecuteLingeringEffects();
 
             if (placeCharacterPhase)
             {
