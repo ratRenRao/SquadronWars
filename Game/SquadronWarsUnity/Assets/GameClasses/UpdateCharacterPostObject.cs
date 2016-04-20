@@ -22,6 +22,8 @@ public class UpdateCharacterPostObject : IJsonable
     public int pants { get; set; }
     public int shoulders { get; set; }
     public int boots { get; set; }
+    public int weapon { get; set; }
+    public int offhand { get; set; }
     public int accessory1 { get; set; }
     public int accessory2 { get; set; }
     public int IsStandard { get; set; }
@@ -77,6 +79,8 @@ public string GetJsonObjectName()
         pants = GlobalConstants.curSelectedCharacter.Equipment.Pants.ItemId;
         shoulders = GlobalConstants.curSelectedCharacter.Equipment.Shoulders.ItemId;
         boots = GlobalConstants.curSelectedCharacter.Equipment.Boots.ItemId;
+        weapon = GlobalConstants.curSelectedCharacter.Equipment.Weapon.ItemId;
+        offhand = GlobalConstants.curSelectedCharacter.Equipment.Offhand.ItemId;
         accessory1 = GlobalConstants.curSelectedCharacter.Equipment.Accessory1.ItemId;
         accessory2 = GlobalConstants.curSelectedCharacter.Equipment.Accessory2.ItemId;
         IsStandard = 0;
@@ -117,6 +121,8 @@ public string GetJsonObjectName()
         pants = character.Equipment.Pants.ItemId;
         shoulders = character.Equipment.Shoulders.ItemId;
         boots = character.Equipment.Boots.ItemId;
+        weapon = character.Equipment.Weapon.ItemId;
+        offhand = character.Equipment.Offhand.ItemId;
         accessory1 = character.Equipment.Accessory1.ItemId;
         accessory2 = character.Equipment.Accessory2.ItemId;
         IsStandard = 0;

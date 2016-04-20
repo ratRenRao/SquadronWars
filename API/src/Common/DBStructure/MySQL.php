@@ -291,7 +291,7 @@ class MySQL implements IDBStructure
         $query->bindParam(2, $characterObject->{"statPoints"}, PDO::PARAM_INT);
         $query->bindParam(3, $characterObject->{"skillPoints"}, PDO::PARAM_INT);
         $query->bindParam(4, $characterObject->{"luck"}, PDO::PARAM_INT);
-        $query->bindParam(5, $characterObject->{"LevelID"}, PDO::PARAM_INT);
+        $query->bindParam(5, $characterObject->{"LevelId"}, PDO::PARAM_INT);
         $query->bindParam(6, $characterObject->{"name"}, PDO::PARAM_STR);
         $query->bindParam(7, $characterObject->{"experience"}, PDO::PARAM_INT);
         $query->bindParam(8, $characterObject->{"helm"}, PDO::PARAM_INT);
@@ -325,20 +325,20 @@ class MySQL implements IDBStructure
 
         $query->closeCursor();
 
+        $query2 = $dbh->prepare("CALL sp_UpsertCharacterAbility(?,?,?)");
         foreach($characterObject->{"abilities"} as $ability)
         {
             $returnCode = 500;
-            $query = $dbh->prepare("CALL sp_UpsertCharacterAbility(?,?,?)");
-            $query->bindParam(1, $characterObject->{"characterId"}, PDO::PARAM_INT);
-            $query->bindParam(2, $ability->{"abilityid"}, PDO::PARAM_INT);
-            $query->bindParam(3, $ability->{"abilitylevel"}, PDO::PARAM_INT);
-            $query->execute();
-            $query->closeCursor();
-            if($query->errorCode() == "00000")
+            $query2->bindParam(1, $characterObject->{"characterId"}, PDO::PARAM_INT);
+            $query2->bindParam(2, $ability->{"abilityId"}, PDO::PARAM_INT);
+            $query2->bindParam(3, $ability->{"abilityLevel"}, PDO::PARAM_INT);
+            $query2->execute();
+            if($query2->errorCode() == "00000")
             {
                 $returnCode = 200;
             }
         }
+        $query2->closeCursor();
 
         return $returnCode;
     }
