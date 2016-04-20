@@ -38,30 +38,23 @@ namespace Assets.GameClasses
             */
         }
 
-        public int StartExperience()
+        public int CurrentExperience()
         {
-            if (LevelId == 1)
-            {
-                return 0;
-            }
-            return 200 + ((int)Math.Pow(LevelId - 1, 2) * 50);
+            return Experience;
         }
 
         public int ExperienceNeeded()
         {
-            if (LevelId == 1)
-            {
-                return 200;
-            }
-            return 200 + ((int)Math.Pow(LevelId, 2) * 50);
+            int[] expLevel = new int[] { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 };
+            return expLevel[LevelId - 1];
         }
 
         public int PercentToNextLevel()
         {
-            var startExp = StartExperience();
+            var startExp = CurrentExperience();
             var finishExp = ExperienceNeeded();
-            var percentComplete = (double)(BaseStats.Experience - startExp) / (finishExp - startExp) * 100;
-            return Convert.ToInt32(percentComplete);
+            double percentComplete = ((double)startExp / (double)finishExp);
+            return Convert.ToInt32(percentComplete * 100);
         }
 
         public string GetJsonObjectName()
