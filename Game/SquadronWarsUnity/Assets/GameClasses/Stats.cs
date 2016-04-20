@@ -77,7 +77,7 @@
         }
 
         public int CalculateHp(int level) {
-            return (level * 5) + (Vit * 10) + (Str * 2);
+            return (level * 5) + (Vit * 10) + Str;
             /*
             HitPoints = CalculateHp(level);
             M = calculateMP(level);
@@ -94,12 +94,12 @@
 
         public int CalculateMp(int level)
         {
-            return (level * 5) + (Intl * 5) + (Wis * 10); 
+            return (level * 5) + (Intl * 2) + (Wis * 6); 
         }
 
         public int CalculateDamage(int level)
         {
-            return (level * 2) + (Str * 6) + (Dex * 2);
+            return (level * 2) + (Str * 4) + (Dex * 2);
         }
 
         public int CalculateMagicDamage(int level)
@@ -114,7 +114,7 @@
 
         public int CalculateDefense(int level)
         {
-            return (level * 2) + (Vit * 6) + Str;
+            return (level * 2) + (Vit * 5) + Str;
         }
 
         public int CalculateMagicDefense(int level)

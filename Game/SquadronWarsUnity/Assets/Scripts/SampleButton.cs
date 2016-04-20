@@ -102,7 +102,7 @@ public class SampleButton : MonoBehaviour
 
         var stats = s;
         var bonusStats = character.CurrentStats;
-        var concatStats = stats.ConcatStats(stats, character.CurrentStats);
+        var concatStats = character.CurrentStats;//stats.ConcatStats(stats, character.CurrentStats);
         menuScreen.strengthStat.text = formatStats(stats.Str, bonusStats.Str);
         menuScreen.agilityStat.text = formatStats(stats.Agi, bonusStats.Agi);
         menuScreen.intelligenceStat.text = formatStats(stats.Intl, bonusStats.Intl);
