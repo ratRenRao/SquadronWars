@@ -1146,7 +1146,7 @@ namespace Assets.Scripts
             {
                 weaponType = "isAttacking";
             }
-            else if (weaponId >= 10000 && weaponId < 11000)
+            else if (weaponId >= 10000)
             {
                 weaponType = "isAttackingBow";
             }

@@ -95,21 +95,20 @@ public class SampleButton : MonoBehaviour
         
     }
 
-    public void UpdateStats(Stats s)
+    public void UpdateStats(Stats concatStats)
     {
         var characterStats = GameObject.FindGameObjectWithTag("CharacterStats");
         var menuScreen = characterStats.GetComponent <CharacterScreen>();
 
-        var stats = s;
-        var bonusStats = character.CurrentStats;
-        var concatStats = character.CurrentStats;//stats.ConcatStats(stats, character.CurrentStats);
-        menuScreen.strengthStat.text = formatStats(stats.Str, bonusStats.Str);
-        menuScreen.agilityStat.text = formatStats(stats.Agi, bonusStats.Agi);
-        menuScreen.intelligenceStat.text = formatStats(stats.Intl, bonusStats.Intl);
-        menuScreen.vitalityStat.text = formatStats(stats.Vit, bonusStats.Vit);
-        menuScreen.dexterityStat.text = formatStats(stats.Dex, bonusStats.Dex);
-        menuScreen.wisdomStat.text = formatStats(stats.Wis, bonusStats.Wis);
-        menuScreen.luckStat.text = formatStats(stats.Luck, bonusStats.Luck);
+        var baseStats = character.BaseStats;//stats.ConcatStats(stats, character.CurrentStats);
+        menuScreen.strengthStat.text = formatStats(concatStats.Str, concatStats.Str);
+        menuScreen.agilityStat.text = formatStats(concatStats.Agi, concatStats.Agi);
+        menuScreen.intelligenceStat.text = formatStats(concatStats.Intl, concatStats.Intl);
+        menuScreen.vitalityStat.text = formatStats(concatStats.Vit, concatStats.Vit);
+        menuScreen.dexterityStat.text = formatStats(concatStats.Dex, concatStats.Dex);
+        menuScreen.wisdomStat.text = formatStats(concatStats.Wis, concatStats.Wis);
+        menuScreen.luckStat.text = formatStats(concatStats.Luck, concatStats.Luck);
+        Debug.Log(concatStats.CalculateHp(character.LevelId).ToString());
         menuScreen.hitPointsStat.text = concatStats.CalculateHp(character.LevelId).ToString();
         menuScreen.manaStat.text = concatStats.CalculateMp(character.LevelId).ToString();
         menuScreen.damageStat.text = concatStats.CalculateDamage(character.LevelId).ToString();
@@ -120,17 +119,15 @@ public class SampleButton : MonoBehaviour
         menuScreen.hitRateStat.text = concatStats.CalculateHitRate(character.LevelId).ToString();
         menuScreen.dodgeRateStat.text = concatStats.CalculateDodgeRate(character.LevelId).ToString();
         menuScreen.criticalRateStat.text = concatStats.CalculateCritRate(character.LevelId).ToString();
-        menuScreen.remainingStatPoints.text = stats.StatPoints.ToString();
-        menuScreen.remainingSkillPoints.text = stats.SkillPoints.ToString();
+        menuScreen.remainingStatPoints.text = concatStats.StatPoints.ToString();
+        menuScreen.remainingSkillPoints.text = concatStats.SkillPoints.ToString();
        // Debug.Log("MenuScreen" + stats.SkillPoints.ToString());
     }
 
 
     public string formatStats(int stats, int bonusStats)
-    {        
-        string concatStats = string.Format("{0} + {1}", stats.ToString(), bonusStats.ToString());
+    {
         return stats.ToString();
-        //return bonusStats == 0 ? stats.ToString() : string.Format("{0} + {1}", stats.ToString(), bonusStats.ToString());
     }
 
     public void incrementStat(string stat)
