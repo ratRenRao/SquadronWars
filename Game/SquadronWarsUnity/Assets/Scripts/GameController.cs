@@ -285,6 +285,7 @@ namespace Assets.Scripts
                             {
                                 //GameClasses.Action tempAction = new GameClasses.Action(GameClasses.Action.ActionType.Reset, new List<Tile>(), "reset");
                                 //GlobalConstants.currentActions.AddAction(tempAction);                                
+                                ExecuteLingeringEffects();
                                 StartCoroutine(WaitForPlayer1());
                                 break;
                             }
