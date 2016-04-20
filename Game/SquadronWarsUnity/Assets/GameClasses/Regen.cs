@@ -18,7 +18,7 @@ namespace Assets.GameClasses
         public override void ImmediateEffect(Stats stats)
         {
             Damage = (int)CalculateRegen();
-            stats.CurHP = stats.CurHP - Damage > stats.HitPoints ? stats.HitPoints : stats.CurHP - Damage;
+            stats.CurHP = stats.CurHP + Damage > stats.HitPoints ? stats.HitPoints : stats.CurHP + Damage;
             Executioner.CharacterClassObject.CurrentStats.CurMP -= mpCost;
             AnimationManager.SetDamage(Damage);
             AnimationManager.Cast("Regen");
