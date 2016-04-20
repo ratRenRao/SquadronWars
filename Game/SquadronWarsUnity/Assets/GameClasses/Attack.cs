@@ -38,7 +38,7 @@ namespace Assets.GameClasses
         private bool CriticalHit(Stats stats)
         {
             Random rand = new Random();
-            var roll = rand.Next(100);
+            var roll = rand.Next(600);
             if (roll <= stats.CritRate)
                 crit = true;
 
