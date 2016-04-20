@@ -49,6 +49,7 @@ public class SampleButton : MonoBehaviour
         characterScreen.ProgressBar.value = progBar;
         BuildDropdowns(characterScreen);
         GlobalConstants.curSelectedCharacter = character;
+        modifiedStats = character.BaseStats.Clone();
         //Debug.Log(character);
     }
 
@@ -99,6 +100,13 @@ public class SampleButton : MonoBehaviour
     {
         var characterStats = GameObject.FindGameObjectWithTag("CharacterStats");
         var menuScreen = characterStats.GetComponent <CharacterScreen>();
+        if(GlobalConstants.ChangeStatsObject)
+        {
+            GlobalConstants.ChangeStatsObject = false;
+            GlobalConstants.curSelectedCharacter = character;
+            GlobalConstants.CurrentModifiedStats = GlobalConstants.curSelectedCharacter.BaseStats.Clone();
+            
+        }
 
         var baseStats = character.BaseStats;//stats.ConcatStats(stats, character.CurrentStats);
         menuScreen.strengthStat.text = formatStats(concatStats.Str, concatStats.Str);
@@ -143,8 +151,9 @@ public class SampleButton : MonoBehaviour
         //character = characterGameObject.CharacterClassObject;
 
         GetActiveCharacter();
-        if(modifiedStats == null)
-            modifiedStats = character.BaseStats.Clone();
+        //if(modifiedStats == null)
+        // modifiedStats = character.BaseStats.Clone();
+        modifiedStats = GlobalConstants.CurrentModifiedStats;
 
         if (modifiedStats.StatPoints <= 0) return;
 
@@ -195,9 +204,10 @@ public class SampleButton : MonoBehaviour
 
     public void RevertStatChanges()
     {
-        modifiedStats = character.BaseStats.Clone();
+        //modifiedStats = character.BaseStats.Clone();
+        GlobalConstants.ChangeStatsObject = true;
         //character.CurrentStats = character.BaseStats;
-        UpdateStats(modifiedStats);
+        //UpdateStats(modifiedStats);
     }
 
     public void BuildDropdowns(CharacterScreen dropdowns)
@@ -329,6 +339,7 @@ public class SampleButton : MonoBehaviour
         {
             ConfirmStatChanges();            
             GlobalConstants.ResetCharacters();
+            GlobalConstants.ChangeStatsObject = true;
             CharacterScreenPanel.SetActive(false);
             SquadPanel.SetActive(true);
             SquadScreen.SetActive(true);

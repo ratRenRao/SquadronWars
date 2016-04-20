@@ -44,7 +44,7 @@ namespace Assets.Scripts
             if (_startupData == null)
             {
                 // Change to display error message
-                Debug.Log("Invalid Credentials");
+                //Debug.Log("Invalid Credentials");
                 return;
             }
             

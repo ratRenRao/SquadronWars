@@ -30,6 +30,7 @@ public class ExperienceBar : MonoBehaviour
         experience.text = exp.ToString() + " / " + maxExp.ToString();
         level.text = lvl.ToString();
         charName.text = character.CharacterClassObject.Name;
+        GlobalConstants.updateCharacters = true;
     }
 
     void Update()
@@ -46,10 +47,36 @@ public class ExperienceBar : MonoBehaviour
         if (exp == maxExp && maxExp != 1000)
         {
             lvl++;
+            for(int i = 0; i < GlobalConstants.Player.Characters.Count; i++)
+            {
+                if(GlobalConstants.Player.Characters[i].CharacterId == GlobalConstants.MatchCharacters[slot].CharacterClassObject.CharacterId)
+                {
+                    GlobalConstants.Player.Characters[i].LevelId++;
+                    GlobalConstants.Player.Characters[i].BaseStats.SkillPoints++;
+                    GlobalConstants.Player.Characters[i].BaseStats.StatPoints += 5;
+                }
+            }
             index++;
             level.text = lvl.ToString();
             exp = 0;
             maxExp = expLevel[index];
+        }
+
+        if(0 == GlobalConstants.EarnedExp && GlobalConstants.updateCharacters)
+        {
+            for (int i = 0; i < GlobalConstants.Player.Characters.Count; i++)
+            {
+                if (GlobalConstants.Player.Characters[i].CharacterId == GlobalConstants.MatchCharacters[slot].CharacterClassObject.CharacterId)
+                {
+                    GlobalConstants.Player.Characters[i].BaseStats.Experience = exp;
+                    GlobalConstants.Player.Characters[i].Experience = exp;
+                    GlobalConstants.allFiveCharacters++;
+                    if(GlobalConstants.allFiveCharacters == 5)
+                    {
+                        GlobalConstants.updateCharacters = false;
+                    }
+                }
+            }
         }
     }
 } 
