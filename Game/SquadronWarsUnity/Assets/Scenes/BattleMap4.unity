@@ -713,7 +713,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11426602, guid: 5c5f1c6258d4c66469aac300ba4e240f, type: 2}
       propertyPath: player2SpawnYStart
-      value: 16
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 11426602, guid: 5c5f1c6258d4c66469aac300ba4e240f, type: 2}
       propertyPath: player2SpawnXEnd
@@ -721,7 +721,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11426602, guid: 5c5f1c6258d4c66469aac300ba4e240f, type: 2}
       propertyPath: player2SpawnYEnd
-      value: 20
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11432476, guid: 5c5f1c6258d4c66469aac300ba4e240f, type: 2}
