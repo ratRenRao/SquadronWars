@@ -538,7 +538,24 @@ namespace Assets.Data
             }
             if (gameInfo.MapID != 0)
             {
-                GlobalConstants.mapId = gameInfo.MapID;
+                //GlobalConstants.mapId = gameInfo.MapID;
+                //testing upping random range
+                if(gameInfo.MapID < 26)
+                {
+                    GlobalConstants.mapId = 1;
+                }
+                else if(gameInfo.MapID < 51)
+                {
+                    GlobalConstants.mapId = 2;
+                }
+                else if(gameInfo.MapID < 76)
+                {
+                    GlobalConstants.mapId = 3;
+                }
+                else
+                {
+                    GlobalConstants.mapId = 4;
+                }
             }
             if (gameInfo.player1Id == GlobalConstants.Player.playerId)
             {
