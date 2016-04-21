@@ -44,7 +44,7 @@ namespace Assets.Scripts
             if (CheckForMatchedPlayer())
             {
                 queued = true;
-                SceneManager.LoadScene("BattleMap" + GlobalConstants.mapId);
+                SceneManager.LoadScene("BattleMap") + GlobalConstants.mapId);
             }
         }
 
