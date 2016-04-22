@@ -78,9 +78,9 @@ namespace Assets.Scripts
             dmgObject.transform.parent = particleCanvas.transform;
             //damage = (damage <= 0) ? 1 : damage;
             var textObject = dmgObject.GetComponent<Text>();
-            textObject.color = Color.red;
-            textObject.fontStyle = FontStyle.Bold;
-            textObject.text = damage + "!";
+            /*textObject.color = Color.red;
+            textObject.fontStyle = FontStyle.Bold;*/
+            textObject.text = damage.ToString();
             
             //target.CharacterClassObject.CurrentStats.CurHP -= damage;
             yield return new WaitForSeconds(.4f);

@@ -22,15 +22,15 @@ namespace Assets.GameClasses
             Damage = (int)CalculateAttack(stats);
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
             AnimationManager.SetDamage(Damage);
-            AnimationManager.Attack("attack", crit);
+            AnimationManager.Attack("attack", false);
         }
 
         private double CalculateAttack(Stats stats)
         {
             var damage = ImmediateBaseDamage + (Executioner.CharacterClassObject.CurrentStats.Str * 2.5);
 
-            if (CriticalHit(stats))
-                    damage += (Executioner.CharacterClassObject.CurrentStats.Str * 2);
+            //if (CriticalHit(stats))
+            //        damage += (Executioner.CharacterClassObject.CurrentStats.Str * 2);
 
             return damage;
         }
@@ -38,7 +38,7 @@ namespace Assets.GameClasses
         private bool CriticalHit(Stats stats)
         {
             Random rand = new Random();
-            var roll = rand.Next(600);
+            var roll = rand.Next(1000);
             if (roll <= stats.CritRate)
                 crit = true;
 
