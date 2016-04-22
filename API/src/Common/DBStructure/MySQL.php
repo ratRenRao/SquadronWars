@@ -166,6 +166,10 @@ class MySQL implements IDBStructure
         if($query->rowCount() == 1)
         {
             $return["PlayerInfo"] = $this->authenticateUser($register->{"username"}, $register->{"password"});
+            $query2 = $dbh->prepare("CALL sp_InitializeInventory(?)");
+            $query2->bindParam(1,$return["PlayerInfo"]["playerId"],PDO::PARAM_INT);
+            $query2->execute();
+            $query2->closeCursor();
             $return["PlayerDetails"] = $this->getPlayer($return["PlayerInfo"]["playerId"]);
         }
 
