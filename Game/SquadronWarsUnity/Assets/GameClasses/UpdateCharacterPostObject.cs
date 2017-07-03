@@ -7,9 +7,9 @@ using System.Linq;
 public class UpdateCharacterPostObject : IJsonable
 {
 
-    public string username { get; set; }
-    public string password { get; set; }
-    public string name { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+    public string Name { get; set; }
     public int characterId { get; set; }
     public int statPoints { get; set; }
     public int skillPoints { get; set; }
@@ -64,9 +64,9 @@ public string GetJsonObjectName()
 
     public UpdateCharacterPostObject()
     {
-        username = GlobalConstants.Player.logins.username;
-        password = GlobalConstants.Player.logins.password;
-        name = GlobalConstants.curSelectedCharacter.Name;
+        Username = GlobalConstants.Player.login.Username;
+        Password = GlobalConstants.Player.login.Password;
+        Name = GlobalConstants.curSelectedCharacter.Name;
         characterId = GlobalConstants.curSelectedCharacter.CharacterId;
         statPoints = GlobalConstants.curSelectedCharacter.BaseStats.StatPoints;
         skillPoints = GlobalConstants.curSelectedCharacter.BaseStats.SkillPoints;
@@ -106,9 +106,9 @@ public string GetJsonObjectName()
         {
             modifiedStats = modifiedstats;
         }
-        username = GlobalConstants.Player.logins.username;
-        password = GlobalConstants.Player.logins.password;
-        name = character.Name;
+        Username = GlobalConstants.Player.login.Username;
+        Password = GlobalConstants.Player.login.Password;
+        Name = character.Name;
         characterId = character.CharacterId;
         statPoints = modifiedStats.StatPoints;
         skillPoints = modifiedStats.SkillPoints;
@@ -134,10 +134,10 @@ public string GetJsonObjectName()
         dexterity = modifiedStats.Dex;
         spriteId = character.SpriteId;
         abillist = "hackjob\", \"abilities\" : [ ";
-        int i = 0;
-        foreach(Ability abil in character.Abilities)
+        var i = 0;
+        foreach(var abil in character.Abilities)
         {
-            string s = "";
+            var s = "";
             if (i != 0)
             {
                 s = ", ";

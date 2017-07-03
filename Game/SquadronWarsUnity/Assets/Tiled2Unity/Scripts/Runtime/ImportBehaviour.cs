@@ -32,7 +32,7 @@ namespace Tiled2Unity
         // However, if it has been created then use it.
         public static ImportBehaviour FindOrCreateImportBehaviour(string xmlPath)
         {
-            string importName = Path.GetFileNameWithoutExtension(xmlPath);
+            var importName = Path.GetFileNameWithoutExtension(xmlPath);
 
             // Try to find
             foreach (var status in UnityEngine.Object.FindObjectsOfType<ImportBehaviour>())
@@ -44,7 +44,7 @@ namespace Tiled2Unity
             }
 
             // Couldn't find, so create.
-            GameObject gameObject = new GameObject("__temp_tiled2unity_import");
+            var gameObject = new GameObject("__temp_tiled2unity_import");
             gameObject.transform.SetAsFirstSibling();
 
             var importStatus = gameObject.AddComponent<ImportBehaviour>();
@@ -62,15 +62,15 @@ namespace Tiled2Unity
 
         private void StartProgressBar(string xmlPath)
         {
-            string title = string.Format("Tiled2Unity Import ({0})", this.ImportName);
+            var title = string.Format("Tiled2Unity Import ({0})", this.ImportName);
             UnityEditor.EditorUtility.DisplayProgressBar(title, xmlPath, 0);
         }
 
         public void IncrementProgressBar(string detail)
         {
-            string title = string.Format("Tiled2Unity Import ({0})", this.ImportName);
+            var title = string.Format("Tiled2Unity Import ({0})", this.ImportName);
 
-            float progress = this.importCounter / (float)this.numberOfElements;
+            var progress = this.importCounter / (float)this.numberOfElements;
             UnityEditor.EditorUtility.DisplayProgressBar(title, detail, progress);
             this.importCounter++;
         }

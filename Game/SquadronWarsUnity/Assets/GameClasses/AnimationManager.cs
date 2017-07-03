@@ -6,15 +6,14 @@ using System.Text;
 using Assets.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
-using ActionType = Assets.GameClasses.Action.ActionType;
 
 namespace Assets.GameClasses
 {
     class AnimationManager
     {
         public GameController GameController;
-        private UnityEngine.Animator _executionerAnimator;
-        private UnityEngine.Animator _targetAnimator;
+        private Animator _executionerAnimator;
+        private Animator _targetAnimator;
         private CharacterGameObject _executionerCharacterGameObject;
         private CharacterGameObject _targetCharacterGameObject;
         private ActionAnimator _actionAnimator = GlobalConstants.ActionAnimator;
@@ -52,10 +51,10 @@ namespace Assets.GameClasses
             Debug.Log("Cast Method: " + ability);
             //action = ActionType.Idle;
             _executionerAnimator.SetBool("isCasting", true);
-            float currentX = (float) (Math.Round(_executionerTile.transform.localPosition.x, 2));
-            float currentY = (float) (Math.Round(_executionerTile.transform.localPosition.y, 2));
-            float targetX = (float) (Math.Round(_targetTile.transform.localPosition.x + 1.6f, 2));
-            float targetY = (float) (Math.Round(_targetTile.transform.localPosition.y, 2));
+            var currentX = (float) (Math.Round(_executionerTile.transform.localPosition.x, 2));
+            var currentY = (float) (Math.Round(_executionerTile.transform.localPosition.y, 2));
+            var targetX = (float) (Math.Round(_targetTile.transform.localPosition.x + 1.6f, 2));
+            var targetY = (float) (Math.Round(_targetTile.transform.localPosition.y, 2));
             //  Transform targetLocation = _targetTile.transform;
             if (currentX - targetX > 0)
             {
@@ -91,7 +90,7 @@ namespace Assets.GameClasses
         public void Attack(string ability, bool crit)
         {
             _actionType = ActionType.Idle;
-            int weaponId = 0;
+            var weaponId = 0;
             if (_executionerCharacterGameObject.CharacterClassObject.Equipment.Weapon != null)
                 weaponId = _executionerCharacterGameObject.CharacterClassObject.Equipment.Weapon.ItemId;
 

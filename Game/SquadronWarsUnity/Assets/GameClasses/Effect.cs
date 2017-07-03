@@ -22,7 +22,7 @@ namespace Assets.GameClasses
         internal List<Effect> ResultingEffects;
         internal List<Tile> Tiles = new List<Tile>();
         internal AnimationManager AnimationManager;
-        internal Action.ActionType ActionType;
+        internal ActionType ActionType;
 
         public virtual void Initialize(ref List<Tile> tiles, ref CharacterGameObject executioner, ref Tile executionerTile)
         {

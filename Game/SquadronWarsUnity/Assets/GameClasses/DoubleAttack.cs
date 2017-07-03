@@ -19,7 +19,7 @@ namespace Assets.GameClasses
         {
             Damage = (int)CalculateAttack(stats);
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
-            Executioner.CharacterClassObject.CurrentStats.CurMP -= mpCost;
+            Executioner.CharacterClassObject.CurrentStats.CurMP -= MpCost;
             AnimationManager.SetDamage(Damage);
             AnimationManager.Attack("DoubleAttack", false);
         }

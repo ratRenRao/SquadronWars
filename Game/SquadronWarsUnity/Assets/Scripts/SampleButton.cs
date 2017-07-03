@@ -43,10 +43,10 @@ public class SampleButton : MonoBehaviour
 
 
 
-        int expToNextLevel = character.ExperienceNeeded();
+        var expToNextLevel = character.ExperienceNeeded();
         characterScreen.experienceStat.text = string.Format("{0} / {1}", character.BaseStats.Experience.ToString(), expToNextLevel.ToString());
         Debug.Log(character.PercentToNextLevel());
-        int progBar = character.PercentToNextLevel();
+        var progBar = character.PercentToNextLevel();
         characterScreen.ProgressBar.value = progBar;
         BuildDropdowns(characterScreen);
         GlobalConstants.curSelectedCharacter = character;
@@ -194,7 +194,7 @@ public class SampleButton : MonoBehaviour
         {
             character.BaseStats = modifiedStats;
             modifiedStats = character.BaseStats.Clone();
-            for (int i = 0; i < GlobalConstants.Player.Characters.Count; i++)
+            for (var i = 0; i < GlobalConstants.Player.Characters.Count; i++)
             {
                 if (GlobalConstants.Player.Characters[i].CharacterId == character.CharacterId)
                 {
@@ -288,10 +288,10 @@ public class SampleButton : MonoBehaviour
     public void LevelSkill(string skill)
     {
      //   GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
-        GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
-        SampleButton button = gameObject.GetComponent<SampleButton>();
+        var statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
+        var button = gameObject.GetComponent<SampleButton>();
     //    MenuManager menu = menuManager.GetComponent<MenuManager>();
-        CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
+        var stats = statsManager.GetComponent<CharacterScreen>();
         //character = stats.sampleButton.character;
 
         GetActiveCharacter();
@@ -382,10 +382,10 @@ public class SampleButton : MonoBehaviour
     public void EvaluateSkills()
     {
       //  GameObject menuManager = GameObject.FindGameObjectWithTag("MenuManager");
-        GameObject statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
+        var statsManager = GameObject.FindGameObjectWithTag("CharacterStats");
      //   SampleButton button = gameObject.GetComponent<SampleButton>();
      //   MenuManager menu = menuManager.GetComponent<MenuManager>();
-        CharacterScreen stats = statsManager.GetComponent<CharacterScreen>();
+        var stats = statsManager.GetComponent<CharacterScreen>();
         //character = stats.sampleButton.character;
         //foreach (var ability in character.Abilities)
         stats.hasteLvl.text = "";

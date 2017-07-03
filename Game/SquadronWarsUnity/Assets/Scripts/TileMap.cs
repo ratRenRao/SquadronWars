@@ -37,7 +37,7 @@ namespace Assets.Scripts
         }
         public void CreateTileArray()
         {
-            int count = 0;
+            var count = 0;
             foreach (Transform child in transform)
             {
                 //if (positionY != child.localPosition.y)
@@ -46,15 +46,15 @@ namespace Assets.Scripts
                 //    x = 0;
                 //    y += 1;
                 //}
-                Tile tile = child.gameObject.GetComponent<Tile>();
-                float floatX = Mathf.Abs((child.localPosition.x / 3.2f));
-                float floatY = Mathf.Abs((child.localPosition.y / 3.2f));
+                var tile = child.gameObject.GetComponent<Tile>();
+                var floatX = Mathf.Abs((child.localPosition.x / 3.2f));
+                var floatY = Mathf.Abs((child.localPosition.y / 3.2f));
 
                 tile.x = (int)floatX;
                 tile.y = (int)floatY;
                 tile.isValidMove = false;
 
-                string tagName = child.gameObject.tag;
+                var tagName = child.gameObject.tag;
                 if (tagName == "grass" || tagName == "bridge" || tagName == "ground" || tagName == "lava_crack")
                 {
                     tile.isOccupied = false;
@@ -73,12 +73,12 @@ namespace Assets.Scripts
         }
         public void setTileArray()
         {
-            int count = 0;
-            for (int i = 0; i < xLength; i++)
+            var count = 0;
+            for (var i = 0; i < xLength; i++)
             {
-                for (int j = 0; j < yLength; j++)
+                for (var j = 0; j < yLength; j++)
                 {
-                    Tile tempTile = tiles[count].GetComponent<Tile>();
+                    var tempTile = tiles[count].GetComponent<Tile>();
                     while (count < 410)
                     {
                         if (tiles[count].GetComponent<Tile>().x == i && tiles[count].GetComponent<Tile>().y == j) {
@@ -99,11 +99,11 @@ namespace Assets.Scripts
         {
             tileArray = new Tile[xLength, yLength];
             
-            foreach (GameObject t in tiles)
+            foreach (var t in tiles)
             {
                 
-                GameObject temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
-                GameObject highlight = GameObject.Instantiate(temp, new Vector3(t.transform.position.x + 1.6f, t.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
+                var temp = (GameObject)Resources.Load(("Prefabs/highlightmove"), typeof(GameObject));
+                var highlight = GameObject.Instantiate(temp, new Vector3(t.transform.position.x + 1.6f, t.transform.position.y - 1.6f), Quaternion.identity) as GameObject;
                 highlight.transform.SetParent(t.transform, true);
                 t.GetComponent<Tile>().highlight = highlight;
                 t.GetComponent<Tile>().highlight.SetActive(false);

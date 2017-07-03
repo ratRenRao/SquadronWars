@@ -34,10 +34,10 @@ namespace Tiled2Unity
         private void OnDrawGizmosSelected()
         {
             Vector2 pos_w = this.gameObject.transform.position;
-            Vector2 topLeft = Vector2.zero + pos_w;
-            Vector2 topRight = new Vector2(GetMapWidthInPixelsScaled(), 0) + pos_w;
-            Vector2 bottomRight = new Vector2(GetMapWidthInPixelsScaled(), -GetMapHeightInPixelsScaled()) + pos_w;
-            Vector2 bottomLeft = new Vector2(0, -GetMapHeightInPixelsScaled()) + pos_w;
+            var topLeft = Vector2.zero + pos_w;
+            var topRight = new Vector2(GetMapWidthInPixelsScaled(), 0) + pos_w;
+            var bottomRight = new Vector2(GetMapWidthInPixelsScaled(), -GetMapHeightInPixelsScaled()) + pos_w;
+            var bottomLeft = new Vector2(0, -GetMapHeightInPixelsScaled()) + pos_w;
 
             Gizmos.color = Color.blue;
             Gizmos.DrawLine(topLeft, topRight);

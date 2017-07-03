@@ -117,7 +117,7 @@ public class bl_Loading : MonoBehaviour {
             }
             GUIUtility.RotateAroundPivot(rotationOffset, anchor);
 
-            for (int i = 0; i < steps; i++)
+            for (var i = 0; i < steps; i++)
             {
                 if (m_Texture == null)
                 {
@@ -137,7 +137,7 @@ public class bl_Loading : MonoBehaviour {
 
     private Texture2D CreateTexture(Color32 col)
     {
-        Texture2D tex = new Texture2D(1, 1, TextureFormat.ARGB32, false); //Create simple texture for GUI.
+        var tex = new Texture2D(1, 1, TextureFormat.ARGB32, false); //Create simple texture for GUI.
         tex.SetPixel(0, 0, col); //Set flat color for texture
         tex.Apply(); //Apply texture 
 

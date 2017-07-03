@@ -6,29 +6,26 @@ using Assets.GameClasses;
 
 public class BattlePostObject
 {
-    public string username { get; set; }
-    public string password { get; set; }
-    public int gameId { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+    public int GameId { get; set; }
     public int Finished { get; set; }
-    public string player1 { get; set; }
-    //public List<Character> player1 { get; set; }
-    public string player2 { get; set; }
-    //public List<Character> player2 { get; set; }
-    public string gameInfo { get; set; }
-    //public BattleAction gameJSON { get; set; }
-    public int myPlayerId { get; set; }
+    public string Player1 { get; set; }
+    public string Player2 { get; set; }
+    public string GameInfo { get; set; }
+    public int MyPlayerId { get; set; }
     
     /**/
     public BattlePostObject()
     {
-        username = GlobalConstants.Player.logins.username;
-        password = GlobalConstants.Player.logins.password;
-        gameId = GlobalConstants.GameId;
+        Username = GlobalConstants.Player.login.Username;
+        Password = GlobalConstants.Player.login.Password;
+        GameId = GlobalConstants.GameId;
         Finished = 0;
-        player1 = GetPlayerCharacters(GlobalConstants.player1Characters, 1);
-        player2 = GetPlayerCharacters(GlobalConstants.player2Characters, 2);
-        gameInfo = GlobalConstants.currentActions.GetJSONString();
-        myPlayerId = GlobalConstants.myPlayerId;            
+        Player1 = GetPlayerCharacters(GlobalConstants.player1Characters, 1);
+        Player2 = GetPlayerCharacters(GlobalConstants.player2Characters, 2);
+        GameInfo = GlobalConstants.currentActions.GetJSONString();
+        MyPlayerId = GlobalConstants.myPlayerId;            
     }
     /**
 
@@ -45,9 +42,9 @@ public class BattlePostObject
     /**/
     private string GetPlayerCharacters(List<Character> playercharacters, int characterId)
     {
-        string returnString = "player\", \"player" + characterId + "characters\" : [ ";
-        int index = 0;
-        foreach(Character character in playercharacters)
+        var returnString = "player\", \"player" + characterId + "characters\" : [ ";
+        var index = 0;
+        foreach(var character in playercharacters)
         {
             if (index != 0)
             {

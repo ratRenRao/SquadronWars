@@ -41,8 +41,8 @@ namespace Tiled2Unity
             }
 
             // Should our mesh be rendered or not?
-            MeshRenderer renderer = this.gameObject.GetComponent<MeshRenderer>();
-            bool isEnabled = renderer.enabled;
+            var renderer = this.gameObject.GetComponent<MeshRenderer>();
+            var isEnabled = renderer.enabled;
 
             if (timer >= this.StartTime && timer < (this.StartTime + this.Duration))
             {

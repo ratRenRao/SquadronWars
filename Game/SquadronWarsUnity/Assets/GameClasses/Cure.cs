@@ -17,7 +17,7 @@ namespace Assets.GameClasses
         {
             Damage = (int)CalculateHeal(stats);
             stats.CurHP = stats.CurHP - Damage > stats.HitPoints ? stats.HitPoints : stats.CurHP - Damage;
-            Executioner.CharacterClassObject.CurrentStats.CurMP -= mpCost;
+            Executioner.CharacterClassObject.CurrentStats.CurMP -= MpCost;
             AnimationManager.SetDamage(Damage);
             AnimationManager.Cast("Cure");
         }

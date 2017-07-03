@@ -16,20 +16,20 @@ namespace Assets.GameClasses
             tiles.Clear();
             if(GlobalConstants.GameController.myCharacters.Select(character => character.GetComponent<CharacterGameObject>()).Contains(executioner))
             {
-                foreach (GameObject GO in GlobalConstants.GameController.enemyCharacters)
+                foreach (var GO in GlobalConstants.GameController.enemyCharacters)
                 {
                     tiles.Add(GlobalConstants.GameController.tileMap.tileArray[GO.GetComponent<CharacterGameObject>().X, GO.GetComponent<CharacterGameObject>().Y]);
                 }
             }
             else
             {
-                foreach (GameObject GO in GlobalConstants.GameController.myCharacters)
+                foreach (var GO in GlobalConstants.GameController.myCharacters)
                 {
                     tiles.Add(GlobalConstants.GameController.tileMap.tileArray[GO.GetComponent<CharacterGameObject>().X, GO.GetComponent<CharacterGameObject>().Y]);
                 }
             }
             
-            System.Random rand = new System.Random();
+            var rand = new System.Random();
             var randomizedTiles= tiles.OrderBy(tile => rand.Next()).ToList();
 
             base.Initialize(ref randomizedTiles, ref executioner, ref executionerTile);
@@ -45,7 +45,7 @@ namespace Assets.GameClasses
 
             Damage = 999;
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
-            Executioner.CharacterClassObject.CurrentStats.CurMP -= mpCost;
+            Executioner.CharacterClassObject.CurrentStats.CurMP -= MpCost;
             AnimationManager.SetDamage(Damage);
             AnimationManager.Cast("MeteorShower");
         }

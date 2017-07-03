@@ -57,9 +57,9 @@ namespace Assets.GameClasses
 
         public string GetJSONString()
         {
-            string returnString = "Gameinfo\", \"GameJSON\" : { \"ActionOrder\" : [ ";
-            int index = 0;
-            foreach(Action action in ActionOrder)
+            var returnString = "Gameinfo\", \"GameJSON\" : { \"ActionOrder\" : [ ";
+            var index = 0;
+            foreach(var action in ActionOrder)
             {
                 if(index != 0)
                 {
@@ -70,7 +70,7 @@ namespace Assets.GameClasses
             }
             returnString += " ], \"CharacterQueue\" : [ ";
             index = 0;
-            foreach(int position in CharacterQueue)
+            foreach(var position in CharacterQueue)
             {
                 if(index != 0)
                 {
@@ -81,7 +81,7 @@ namespace Assets.GameClasses
             }
             returnString += "], \"AffectedTiles\" : [ ";
             index = 0;
-            foreach(KeyValuePair<Tile,int> key in AffectedTiles)
+            foreach(var key in AffectedTiles)
             {
                 if(index != 0)
                 {

@@ -105,7 +105,7 @@ namespace Assets.Data
         public static List<Character> BuildCharacterObjects()
         {
             var tempCharacterData = Characters;
-            List<Character> characterList = new List<Character>();
+            var characterList = new List<Character>();
 
             foreach (var character in tempCharacterData)
             {
@@ -148,7 +148,7 @@ namespace Assets.Data
 
         public static Stats AddItemStats(List<Item> items, Stats stats)
         {
-            Stats newStats = new Stats();
+            var newStats = new Stats();
             var itemList = items.Where(item => item != null).Where(item => item.Stats != null).ToList();
             foreach (var item in itemList)
             {

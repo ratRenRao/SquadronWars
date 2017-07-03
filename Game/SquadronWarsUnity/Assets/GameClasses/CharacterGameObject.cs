@@ -55,7 +55,7 @@ namespace Assets.GameClasses
 
         public CharacterGameObject cloneCharacter(CharacterGameObject c)
         {
-            CharacterGameObject character = new CharacterGameObject
+            var character = new CharacterGameObject
             {
                 X = c.X,
                 Y = c.Y,

@@ -57,7 +57,7 @@ public class JSONChecker : EditorWindow {
 		}
 		if(j) {
 			//Debug.Log(System.GC.GetTotalMemory(false) + "");
-			if(j.type == JSONObject.Type.NULL)
+			if(j.ObjectType == JSONObject.JsonType.NULL)
 				GUILayout.Label("JSON fail:\n" + j.ToString(true));
 			else
 				GUILayout.Label("JSON success:\n" + j.ToString(true));

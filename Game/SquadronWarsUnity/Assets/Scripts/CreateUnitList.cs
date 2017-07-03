@@ -34,8 +34,8 @@ namespace Assets.Scripts
 
         public void PopulateList()
         {
-            int removeButtons = contentPanel.childCount;
-            for(int i = 0; i < removeButtons; i++)
+            var removeButtons = contentPanel.childCount;
+            for(var i = 0; i < removeButtons; i++)
             {
                 contentPanel.GetChild(0).transform.parent = null;                
             }

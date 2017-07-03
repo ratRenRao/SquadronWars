@@ -1,1 +1,1 @@
-# cs3750fall2015group3
+A Final Fantasy Tactics like online strategy game.

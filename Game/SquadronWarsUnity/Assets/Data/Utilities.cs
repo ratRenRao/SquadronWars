@@ -44,7 +44,7 @@ namespace Assets.Data
         {
             JSONObject result = null;
 
-            if (jsonObject.type == JSONObject.Type.NULL) return null; 
+            if (jsonObject.ObjectType == JSONObject.JsonType.NULL) return null; 
 
             foreach (var key in jsonObject.keys)
             {
@@ -62,17 +62,17 @@ namespace Assets.Data
 
         public object Decode(JSONObject obj, Type type)
         {
-            if (obj == null || obj.type == JSONObject.Type.NULL)
+            if (obj == null || obj.ObjectType == JSONObject.JsonType.NULL)
                 return null;
 
             var objectAttributes = GetParameterList(type);
 
             if (type.IsEnum)
-                obj.type = JSONObject.Type.ENUM;
+                obj.ObjectType = JSONObject.JsonType.ENUM;
 
-            switch (obj.type)
+            switch (obj.ObjectType)
             {
-                case JSONObject.Type.OBJECT:
+                case JSONObject.JsonType.OBJECT:
                     var builder = TryCatchCreation(obj, type);
 
                     //Debug.Log("JsonObject = " + obj + " Type = " + type);
@@ -96,15 +96,15 @@ namespace Assets.Data
                         if (type.Name.Equals("Equipment"))
                         {
                             int tmp;
-                            bool testBool = false;
-                            string tmpString = "";
+                            var testBool = false;
+                            var tmpString = "";
                             
                             if (j != null)
                             {
                                 tmpString = j.str;
                                 
                                 testBool = int.TryParse(tmpString, out tmp);
-                                int test = int.Parse(tmpString);
+                                var test = int.Parse(tmpString);
                             }
                             if (testBool)
                             {
@@ -125,11 +125,11 @@ namespace Assets.Data
 
                     return builder;
 
-                case JSONObject.Type.ARRAY:
+                case JSONObject.JsonType.ARRAY:
                     var listBuilder = Activator.CreateInstance(type);
                     if (obj.list.Count <= 0)
                         return listBuilder;
-                    Type listType = type.GetGenericArguments().Single();
+                    var listType = type.GetGenericArguments().Single();
                     foreach (var value in obj.list)
                     {
                         var item = Decode(value, listType);
@@ -138,23 +138,23 @@ namespace Assets.Data
                     }                        
                         return listBuilder;
 
-                case JSONObject.Type.STRING:
+                case JSONObject.JsonType.STRING:
                     if(type != typeof(string))
                         return ChangeJsonType(obj, type);
                     else
                         return obj.str;
 
-                case JSONObject.Type.ENUM:
+                case JSONObject.JsonType.ENUM:
                     return GetTypeFromString(obj.str, type);
                     
 
-                case JSONObject.Type.NUMBER:
+                case JSONObject.JsonType.NUMBER:
                     return obj.n;
 
-                case JSONObject.Type.BOOL:
+                case JSONObject.JsonType.BOOL:
                     return obj.b;
 
-                case JSONObject.Type.NULL:
+                case JSONObject.JsonType.NULL:
                     return null;
 
             }
@@ -237,7 +237,7 @@ namespace Assets.Data
 
         private static string RemoveSlashes(string data)
         {
-            string temp = Regex.Replace(data, "\\\\", "");
+            var temp = Regex.Replace(data, "\\\\", "");
             temp = Regex.Replace(temp, "\"character2Info\":\"", "\"character2Info\":");
             temp = Regex.Replace(temp, "\"character1Info\":\"", "\"character1Info\":");
             temp = Regex.Replace(temp, "]\"", "]");
@@ -322,7 +322,7 @@ namespace Assets.Data
 
         public string ObjectToString(object obj)
         {
-            string attributes = "";
+            var attributes = "";
             foreach (var attribute in obj.GetType().GetProperties())
                 string.Format(attributes += "{0}: {1} ", attribute.Name, attribute.ToString());
 
@@ -524,31 +524,31 @@ namespace Assets.Data
         public void SetGlobalDataFromGameInfo(GameInfo gameInfo)
         {
             //Debug.Log("SetGlobalDataFromGameInfo()");
-            if (gameInfo.character1Info != null)
+            if (gameInfo.Character1Info != null)
             {
                 //Debug.Log("Character 1 Game Info: " + gameInfo.character1Info.Count());
-                GlobalConstants.player1Characters = gameInfo.character1Info;
+                GlobalConstants.player1Characters = gameInfo.Character1Info;
                 //Debug.Log("Global Constants player2 Chars " + GlobalConstants.player2Characters.Count());
             }
-            if (gameInfo.character2Info != null)
+            if (gameInfo.Character2Info != null)
             {
                 //Debug.Log("Character 2 Game Info: " + gameInfo.character2Info.Count());
-                GlobalConstants.player2Characters = gameInfo.character2Info;
+                GlobalConstants.player2Characters = gameInfo.Character2Info;
                 //Debug.Log("Global Constants player2 Chars " + GlobalConstants.player2Characters.Count());
             }
-            if (gameInfo.MapID != 0)
+            if (gameInfo.MapId != 0)
             {
                 //GlobalConstants.mapId = gameInfo.MapID;
                 //testing upping random range
-                if(gameInfo.MapID < 26)
+                if(gameInfo.MapId < 26)
                 {
                     GlobalConstants.mapId = 1;
                 }
-                else if(gameInfo.MapID < 51)
+                else if(gameInfo.MapId < 51)
                 {
                     GlobalConstants.mapId = 2;
                 }
-                else if(gameInfo.MapID < 76)
+                else if(gameInfo.MapId < 76)
                 {
                     GlobalConstants.mapId = 3;
                 }
@@ -557,21 +557,21 @@ namespace Assets.Data
                     GlobalConstants.mapId = 4;
                 }
             }
-            if (gameInfo.player1Id == GlobalConstants.Player.playerId)
+            if (gameInfo.Player1Id == GlobalConstants.Player.playerId)
             {
                 GlobalConstants.myPlayerId = 1;
-                if(gameInfo.player2Id != 0)
+                if(gameInfo.Player2Id != 0)
                 {
-                    GlobalConstants.opponentId = gameInfo.player2Id;
+                    GlobalConstants.opponentId = gameInfo.Player2Id;
                 }
             }
             else
             {
                 GlobalConstants.myPlayerId = 2;
-                GlobalConstants.opponentId = gameInfo.player1Id;
+                GlobalConstants.opponentId = gameInfo.Player1Id;
             }
             
-            GlobalConstants.GameId = gameInfo.gameID;
+            GlobalConstants.GameId = gameInfo.GameId;
             //GlobalConstants.Player.Characters = gameInfo.character1Info;
             if (gameInfo.BattleAction != null)
             {

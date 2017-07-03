@@ -11,17 +11,17 @@ namespace Assets.Data
 {
     public class GameInfo : IJsonable
     {        
-        public int gameID { get; set; }
-        public int player1Id { get; set; }
-        public int player2Id { get; set; }
+        public int GameId { get; set; }
+        public int Player1Id { get; set; }
+        public int Player2Id { get; set; }
         public BattleAction BattleAction { get; set; }
         public GameJSON GameJson { get; set; }
         public DateTime CreateTime { get; set; }
         public DateTime ModifyTime { get; set; }
         public string Finished { get; set; }
-        public int MapID { get; set; }
-        public List<Character> character1Info { get; set; }
-        public List<Character> character2Info { get; set; }
+        public int MapId { get; set; }
+        public List<Character> Character1Info { get; set; }
+        public List<Character> Character2Info { get; set; }
 
 
         public string GetJsonObjectName()
@@ -63,7 +63,7 @@ namespace Assets.Data
 
     internal class ActionOrder : IJsonable
     {
-        Action.ActionType actionType { get; set; }
+        ActionType ActionType { get; set; }
 
         public string GetJsonObjectName()
         {

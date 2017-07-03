@@ -24,9 +24,9 @@ public class ModifyCharacterStats : MonoBehaviour
         var sprite = temp.GetComponent<SpriteRenderer>();
         UpdateStats();
 
-        int expToNextLevel = character.ExperienceNeeded();
+        var expToNextLevel = character.ExperienceNeeded();
         characterScreen.experienceStat.text = string.Format("{0} / {1}", character.BaseStats.Experience.ToString(), expToNextLevel.ToString());
-        int progBar = character.PercentToNextLevel();
+        var progBar = character.PercentToNextLevel();
         characterScreen.ProgressBar.value = progBar;
         //Debug.Log(character.BaseStats.Intl);
     }
@@ -53,7 +53,7 @@ public class ModifyCharacterStats : MonoBehaviour
 
     public void UpdateStats()
     {
-        Stats stats = modifiedStats == null ? character.BaseStats : modifiedStats;
+        var stats = modifiedStats == null ? character.BaseStats : modifiedStats;
 
         var bonusStats = character.CurrentStats;
         var concatStats = stats.ConcatStats(character.BaseStats, character.CurrentStats);

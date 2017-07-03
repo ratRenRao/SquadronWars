@@ -42,9 +42,9 @@ namespace Assets.GameClasses
             }*/
             tiles.Clear();
             var tileMap = GlobalConstants.GameController.tileMap;
-            for (int i = 0; i < 5; i++)
+            for (var i = 0; i < 5; i++)
             {
-                for(int j = 0; j < 5; j++)
+                for(var j = 0; j < 5; j++)
                 {
                     if (firstX + i < tileMap.xLength && firstY + j < tileMap.yLength)
                     {
@@ -53,9 +53,9 @@ namespace Assets.GameClasses
                     }
                 }
             }
-            for (int i = 1; i < 5; i++)
+            for (var i = 1; i < 5; i++)
             {
-                for (int j = 1; j < 5; j++)
+                for (var j = 1; j < 5; j++)
                 {
                     if (firstX - i >= 0 && firstY - j >= 0)
                     {
@@ -65,7 +65,7 @@ namespace Assets.GameClasses
                 }
             }
 
-            System.Random rand = new System.Random();
+            var rand = new System.Random();
             var randomizedTiles= tiles.OrderBy(tile => rand.Next()).ToList();
 
             base.Initialize(ref randomizedTiles, ref executioner, ref executionerTile);
@@ -81,7 +81,7 @@ namespace Assets.GameClasses
 
             Damage = (int) CalculateImmediateDamage();
             stats.CurHP = stats.CurHP - Damage < 0 ? 0 : stats.CurHP - Damage;
-            Executioner.CharacterClassObject.CurrentStats.CurMP -= mpCost;
+            Executioner.CharacterClassObject.CurrentStats.CurMP -= MpCost;
             AnimationManager.SetDamage(Damage);
             Debug.Log("Scorched " + Damage);
             AnimationManager.Cast("Fire");

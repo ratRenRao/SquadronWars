@@ -45,7 +45,7 @@ namespace Assets.GameClasses
 
         public int ExperienceNeeded()
         {
-            int[] expLevel = new int[] { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 };
+            var expLevel = new int[] { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 };
             return expLevel[LevelId - 1];
         }
 
@@ -53,7 +53,7 @@ namespace Assets.GameClasses
         {
             var startExp = CurrentExperience();
             var finishExp = ExperienceNeeded();
-            double percentComplete = ((double)startExp / (double)finishExp);
+            var percentComplete = ((double)startExp / (double)finishExp);
             return Convert.ToInt32(percentComplete * 100);
         }
 
@@ -74,11 +74,11 @@ namespace Assets.GameClasses
 
         public string GetJSONString()
         {
-            string returnString = "{ \"CharacterId\" : \"" + CharacterId + "\", \"LevelId\" : \"" + LevelId + "\", \"Name\" : \"" + Name + "\", \"SpriteId\" : \""
+            var returnString = "{ \"CharacterId\" : \"" + CharacterId + "\", \"LevelId\" : \"" + LevelId + "\", \"Name\" : \"" + Name + "\", \"SpriteId\" : \""
                 + SpriteId + "\", \"X\" : \"" + X + "\", \"Y\" : \"" + Y + "\", \"BaseStats\" : " + BaseStats.GetJSONString() + ", \"CurrentStats\" : " + CurrentStats.GetJSONString()
                 + ", \"Equipment\" : " + Equipment.GetJSONString() + ", \"Abilities\" : [ ";
-            int index = 0;
-            foreach(Ability ability in Abilities)
+            var index = 0;
+            foreach(var ability in Abilities)
             {
                 if(index != 0)
                 {

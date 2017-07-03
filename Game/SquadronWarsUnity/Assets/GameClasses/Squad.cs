@@ -50,7 +50,7 @@ namespace Assets.GameClasses
 
         public IEnumerator<Character> GetEnumerator()
         {
-            foreach (Character c in CharacterList)
+            foreach (var c in CharacterList)
             {
                if (c == null) 
                    break;

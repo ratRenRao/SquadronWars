@@ -143,7 +143,7 @@ public class bl_Test : MonoBehaviour {
 
         m_scroll = GUILayout.BeginScrollView(m_scroll, "box");
        GUILayout.BeginHorizontal();
-        for (int i = 0; i < m_Textures.Count; i++)
+        for (var i = 0; i < m_Textures.Count; i++)
         {
            
                 if (GUILayout.Button(m_Textures[i], GUILayout.Width(50), GUILayout.Height(50)))
@@ -177,14 +177,14 @@ public class bl_Test : MonoBehaviour {
 
     void ReadFile()
     {
-        StreamReader read = new StreamReader(Application.dataPath + "/ProLoading/Example/Present/" + FileName);
-        string sr = read.ReadToEnd();
+        var read = new StreamReader(Application.dataPath + "/ProLoading/Example/Present/" + FileName);
+        var sr = read.ReadToEnd();
         read.Close();
-       string[] lines = sr.Split("\n"[0]);
+       var lines = sr.Split("\n"[0]);
 
-       foreach (string line in lines)
+       foreach (var line in lines)
        {
-           string[] t_get = line.Split(":"[0]);
+           var t_get = line.Split(":"[0]);
            if (t_get[0] == "step")
            {
               Circle.steps = int.Parse(t_get[1]);

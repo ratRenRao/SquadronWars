@@ -61,7 +61,7 @@ namespace Assets.Scripts
             {
                 GlobalConstants.ResetCharacters();
                 GlobalConstants.EndGame();
-                foreach(Character character in GlobalConstants.Player.Characters)
+                foreach(var character in GlobalConstants.Player.Characters)
                 {
                     GlobalConstants._dbConnection.SendPostData(GlobalConstants.UpdateCharacterUrl, new UpdateCharacterPostObject(null, character));
                 }

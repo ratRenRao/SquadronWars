@@ -12,7 +12,7 @@ namespace Assets.Data
 
         public void SendMatchData()
         {
-            JSONObject matchData = new JSONObject();
+            var matchData = new JSONObject();
             matchData.Add(_dbConnection.ConvertToJson(_actions));
             matchData.Add(_dbConnection.ConvertToJson(_battleActions));
             matchData = _dbConnection.WrapJsonInGameObject(matchData);

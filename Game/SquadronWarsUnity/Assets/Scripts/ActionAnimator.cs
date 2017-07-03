@@ -60,9 +60,9 @@ namespace Assets.Scripts
             if (ability != "attack")
             {
                 Debug.Log("show ability called " + ability);
-                GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
+                var temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
                 Debug.Log(temp);
-                GameObject spell = GameObject.Instantiate(temp, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
+                var spell = GameObject.Instantiate(temp, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
                 spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (targetTile.y * 2);
                 spell.transform.parent = targetTile.transform;
                 spell.transform.localScale = new Vector3(1, 1, 0.0f);
@@ -72,9 +72,9 @@ namespace Assets.Scripts
             {
                 //damage = CalculateDamage();
             }
-            GameObject particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
-            GameObject damageText = (GameObject)Resources.Load(("Prefabs/DamageText"), typeof(GameObject));
-            GameObject dmgObject = GameObject.Instantiate(damageText, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y + 3.2f), Quaternion.identity) as GameObject;
+            var particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
+            var damageText = (GameObject)Resources.Load(("Prefabs/DamageText"), typeof(GameObject));
+            var dmgObject = GameObject.Instantiate(damageText, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y + 3.2f), Quaternion.identity) as GameObject;
             dmgObject.transform.parent = particleCanvas.transform;
             //damage = (damage <= 0) ? 1 : damage;
             var textObject = dmgObject.GetComponent<Text>();
@@ -111,7 +111,7 @@ namespace Assets.Scripts
                 {
                     GlobalConstants.GameController.battlesong.mute = true;
                     GlobalConstants.GameController.funsong.Play();
-                    GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
+                    var temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
                     spell = GameObject.Instantiate(temp, new Vector3(targetTile.transform.parent.transform.position.x + 18, targetTile.transform.parent.transform.position.y - 35), Quaternion.identity) as GameObject;
                     spell.GetComponent<SpriteRenderer>().sortingOrder = 75;
                     spell.transform.parent = targetTile.transform.parent.transform;
@@ -119,7 +119,7 @@ namespace Assets.Scripts
                 }
                 else if (ability == "MeteorShower")
                 {
-                    GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
+                    var temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
                     spell = GameObject.Instantiate(temp, new Vector3(targetTile.transform.parent.transform.position.x + 35, targetTile.transform.parent.transform.position.y - 25), Quaternion.identity) as GameObject;
                     spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (targetTile.y * 2);
                     spell.transform.parent = targetTile.transform.parent.transform;
@@ -127,7 +127,7 @@ namespace Assets.Scripts
                 }
                 else {
                     Debug.Log(ability);
-                    GameObject temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
+                    var temp = (GameObject)Resources.Load(("SpellPrefabs/" + ability), typeof(GameObject));
                     spell = GameObject.Instantiate(temp, new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y - .5f), Quaternion.identity) as GameObject;
                     spell.GetComponent<SpriteRenderer>().sortingOrder = 7 + (targetTile.y * 2);
                     spell.transform.parent = targetTile.transform;
@@ -145,9 +145,9 @@ namespace Assets.Scripts
                 yield return new WaitForSeconds(wait);
                 if (targetAnimator != null)
                 {
-                    GameObject particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
-                    GameObject damageText = (GameObject) Resources.Load(("Prefabs/DamageText"), typeof (GameObject));
-                    GameObject dmgObject =
+                    var particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
+                    var damageText = (GameObject) Resources.Load(("Prefabs/DamageText"), typeof (GameObject));
+                    var dmgObject =
                         GameObject.Instantiate(damageText,
                             new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y + 3.2f),
                             Quaternion.identity) as GameObject;
@@ -161,7 +161,7 @@ namespace Assets.Scripts
                     dmgObject.GetComponent<Text>().text = damage.ToString();
                     Debug.Log(target.CharacterClassObject.CurrentStats.CurHP);
                 }
-                bool gameover = false;
+                var gameover = false;
                 if (target.CharacterClassObject.CurrentStats.CurHP <= 0)
                 {
                     //target.CharacterClassObject.CurrentStats.CurHP = 0;
@@ -194,9 +194,9 @@ namespace Assets.Scripts
             targetTile = GlobalConstants.GameController.tileMap.tileArray[target.X, target.Y];
             if (targetAnimator != null)
             {
-                GameObject particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
-                GameObject damageText = (GameObject)Resources.Load(("Prefabs/DamageText"), typeof(GameObject));
-                GameObject dmgObject =
+                var particleCanvas = GameObject.FindGameObjectWithTag("ParticleCanvas");
+                var damageText = (GameObject)Resources.Load(("Prefabs/DamageText"), typeof(GameObject));
+                var dmgObject =
                     GameObject.Instantiate(damageText,
                         new Vector3(targetTile.transform.position.x + 1.6f, targetTile.transform.position.y + 3.2f),
                         Quaternion.identity) as GameObject;
@@ -210,7 +210,7 @@ namespace Assets.Scripts
                 dmgObject.GetComponent<Text>().text = damage.ToString();
                 Debug.Log(target.CharacterClassObject.CurrentStats.CurHP);
             }
-            bool gameover = false;
+            var gameover = false;
             if (target.CharacterClassObject.CurrentStats.CurHP <= 0)
             {
                 //target.CharacterClassObject.CurrentStats.CurHP = 0;

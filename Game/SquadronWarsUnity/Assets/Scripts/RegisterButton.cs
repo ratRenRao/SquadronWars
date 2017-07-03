@@ -36,7 +36,7 @@ public class RegisterButton : MonoBehaviour
         SetDbConnection();
         if (!password.text.Equals(confirmPass.text))
         {
-            ColorBlock cb = password.colors;
+            var cb = password.colors;
             cb.normalColor = Color.red;
             password.colors = cb;
             confirmPass.colors = cb;
@@ -52,7 +52,7 @@ public class RegisterButton : MonoBehaviour
 
         if (www.text.Equals("Failed"))
         {
-            ColorBlock cb = username.colors;
+            var cb = username.colors;
             cb.normalColor = Color.red;
             username.colors = cb;
             return;

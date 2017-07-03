@@ -8,29 +8,28 @@ using System.Linq;
 
 namespace Assets.GameClasses
 {
+    public enum ActionType
+    {
+        Idle,
+        Move,
+        Attack,
+        AttackAbility,
+        CastAbility,
+        Endturn,
+        Reset
+    }
+
     public class Action : IJsonable, IEffectable
     {
-
-        public enum ActionType
-        {
-            Idle,
-            Move,
-            Attack,
-            AttackAbility,
-            CastAbility,
-            Endturn,
-            Reset
-        }
-
-        public ActionType actionType { get; set; }
-        public List<Tile> actionTiles { get; set; }
-        public string performedAction { get; set; }
+        public ActionType ActionType { get; set; }
+        public List<Tile> ActionTiles { get; set; }
+        public string PerformedAction { get; set; }
         public double ImmediateBaseDamage = 0;
         public double LingeringBaseDamage = 0;
         public bool Complete = false;
         internal int Duration = 0;
         internal int Damage = 0;
-        internal int mpCost = 10;
+        internal int MpCost = 10;
         internal CharacterGameObject Executioner { get; private set; }
         internal CharacterGameObject Target { get; private set; }
         internal Tile ExecutionerTile { get; private set; }
@@ -47,9 +46,9 @@ namespace Assets.GameClasses
 
         public Action(ActionType actionType, List<Tile> actionTiles, string performedAction)
         {
-            this.actionType = actionType;
-            this.actionTiles = actionTiles;
-            this.performedAction = performedAction;
+            ActionType = actionType;
+            ActionTiles = actionTiles;
+            PerformedAction = performedAction;
 
             //if (performedAction != null && performedAction != "default")
             //    SetEffectFromString();
@@ -95,10 +94,10 @@ namespace Assets.GameClasses
 
         public string GetJSONString()
         {
-            string returnString = "{ \"actionType\" : \"" + actionType + "\", \"performedAction\" : \"" +
-                                  performedAction + "\", \"actionTiles\" : [ ";
-            int index = 0;
-            foreach (Tile tile in actionTiles)
+            var returnString = "{ \"actionType\" : \"" + ActionType + "\", \"performedAction\" : \"" +
+                                  PerformedAction + "\", \"actionTiles\" : [ ";
+            var index = 0;
+            foreach (var tile in ActionTiles)
             {
                 if (index != 0)
                 {
@@ -114,19 +113,19 @@ namespace Assets.GameClasses
 
         public void AddPayoutValueForAction()
         {
-            actionTiles.ForEach(tile =>
+            ActionTiles.ForEach(tile =>
             {
-                if (actionType == ActionType.CastAbility)
+                if (ActionType == ActionType.CastAbility)
                 {
-                    var total = (int) (tile.amount*.05)/actionTiles.Count;
+                    var total = (int) (tile.amount*.05)/ActionTiles.Count;
                     GlobalConstants.DamageAndHealingDone += total != 0
-                        ? (int) (tile.amount*.05)/actionTiles.Count
+                        ? (int) (tile.amount*.05)/ActionTiles.Count
                         : 0;
                 }
-                else if (actionType == ActionType.Attack || actionType == ActionType.AttackAbility)
+                else if (ActionType == ActionType.Attack || ActionType == ActionType.AttackAbility)
                 {
-                    var total = tile.amount/actionTiles.Count;
-                    GlobalConstants.DamageAndHealingDone += total != 0 ? tile.amount/actionTiles.Count : 0;
+                    var total = tile.amount/ActionTiles.Count;
+                    GlobalConstants.DamageAndHealingDone += total != 0 ? tile.amount/ActionTiles.Count : 0;
                 }
             });
         }
@@ -176,7 +175,7 @@ namespace Assets.GameClasses
                         //UnityEngine.Debug.Log("X: " + tile.x + " Y: " + tile.y);
                         //UnityEngine.Debug.Log("Name: " + character.CharacterClassObject.Name);
                     AnimationManager = new AnimationManager(Executioner, character, ExecutionerTile, tile,
-                        actionType, Damage);
+                        ActionType, Damage);
                     ImmediateEffect(character.CharacterClassObject.CurrentStats);
 
                     if (Duration > 0)

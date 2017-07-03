@@ -48,9 +48,9 @@ namespace Assets.Scripts
                 return;
             }
 
-            int spriteid = int.Parse(spriteId.text);
+            var spriteid = int.Parse(spriteId.text);
 
-            CreateCharacterPostObject create = new CreateCharacterPostObject(GlobalConstants.Player.logins, spriteid, characterName.text);
+            var create = new CreateCharacterPostObject(GlobalConstants.Player.login, spriteid, characterName.text);
 
             // Debug.Log(create);
 
@@ -61,7 +61,7 @@ namespace Assets.Scripts
             {
                 characterName.text = "";
                 var newCharacterList = GlobalConstants.Utilities.BuildObjectFromJsonData<CreatedCharacters>(www.text);
-                List<Character> rebuiltList = RebuildCharacterObjects(newCharacterList.Characters);
+                var rebuiltList = RebuildCharacterObjects(newCharacterList.Characters);
                 GlobalConstants.Player.Characters = rebuiltList;
 
                 //Debug.Log(www.text);
@@ -96,7 +96,7 @@ namespace Assets.Scripts
 
         public static Stats AddItemStats(List<Item> items, Stats stats)
         {
-            Stats newStats = new Stats();
+            var newStats = new Stats();
             var itemList = items.Where(item => item != null).Where(item => item.Stats != null).ToList();
             foreach (var item in itemList)
             {
@@ -109,7 +109,7 @@ namespace Assets.Scripts
         public List<Character> RebuildCharacterObjects(List<StartupData.CharacterData> Characters)
         {
             var tempCharacterData = Characters;
-            List<Character> characterList = new List<Character>();
+            var characterList = new List<Character>();
 
             foreach (var character in tempCharacterData)
             {
@@ -180,8 +180,8 @@ public class CreateCharacterPostObject
 
     public CreateCharacterPostObject(Player.Logins p, int sprite, string character)
     {
-        username = p.username;
-        password = p.password;
+        username = p.Username;
+        password = p.Password;
         spriteId = sprite;
         charactername = character;
     }

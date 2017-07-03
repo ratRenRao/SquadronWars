@@ -23,7 +23,7 @@ namespace Assets.GameClasses
         //public Squad squad { get; set; }
         public List<Character> Characters { get; set; }
         public List<StartupData.InventoryElement> Inventory { get; set; } 
-        public Logins logins = new Logins();
+        public Logins login = new Logins();
         public readonly bool Updated = false;
 
         /*
@@ -76,8 +76,8 @@ namespace Assets.GameClasses
 
         public class Logins
         {
-            public string username { get; set; }
-            public string password { get; set; }
+            public string Username { get; set; }
+            public string Password { get; set; }
         }
 
         /*public async Task UpdatePlayerFromDb()

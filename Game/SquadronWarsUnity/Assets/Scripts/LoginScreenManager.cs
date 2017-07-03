@@ -52,7 +52,7 @@ namespace Assets.Scripts
 
             _player = GlobalConstants.Player;
 
-            GlobalConstants.Player.logins = _logins;
+            GlobalConstants.Player.login = _logins;
 
             //LoginScreen.gameObject.SetActive(false);
             HomeScreen.gameObject.SetActive(true);
@@ -77,13 +77,13 @@ namespace Assets.Scripts
 #if DEBUG
             if (Username == "" && Password == "")
             {
-                _logins.username = "test";
-                _logins.password = "testing123";
+                _logins.Username = "test";
+                _logins.Password = "testing123";
             }
             else
             {
-                _logins.username = Username;
-                _logins.password = Password;
+                _logins.Username = Username;
+                _logins.Password = Password;
             }
 #else
             _logins.username = Username;

@@ -19,10 +19,10 @@ public class ExperienceBar : MonoBehaviour
 
     void Start()
     {
-        CharacterGameObject character = GlobalConstants.MatchCharacters[slot];
+        var character = GlobalConstants.MatchCharacters[slot];
         var temp = (GameObject)Resources.Load(("Prefabs/Character" + character.CharacterClassObject.SpriteId), typeof(GameObject));
         var sprite = temp.GetComponent<SpriteRenderer>();
-        Image bar = GetComponent<Image>();
+        var bar = GetComponent<Image>();
         characterModel.GetComponent<Image>().sprite = sprite.sprite;
         lvl = character.CharacterClassObject.LevelId;
         exp = character.CharacterClassObject.BaseStats.Experience;
@@ -47,7 +47,7 @@ public class ExperienceBar : MonoBehaviour
         if (exp == maxExp && maxExp != 1000)
         {
             lvl++;
-            for(int i = 0; i < GlobalConstants.Player.Characters.Count; i++)
+            for(var i = 0; i < GlobalConstants.Player.Characters.Count; i++)
             {
                 if(GlobalConstants.Player.Characters[i].CharacterId == GlobalConstants.MatchCharacters[slot].CharacterClassObject.CharacterId)
                 {
@@ -64,7 +64,7 @@ public class ExperienceBar : MonoBehaviour
 
         if(0 == GlobalConstants.EarnedExp && GlobalConstants.updateCharacters)
         {
-            for (int i = 0; i < GlobalConstants.Player.Characters.Count; i++)
+            for (var i = 0; i < GlobalConstants.Player.Characters.Count; i++)
             {
                 if (GlobalConstants.Player.Characters[i].CharacterId == GlobalConstants.MatchCharacters[slot].CharacterClassObject.CharacterId)
                 {
