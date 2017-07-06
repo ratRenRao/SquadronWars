@@ -1,3 +1,5 @@
+DELIMITER &&
+ 
 -- -----------------------------------------------------
 -- procedure sp_GetInventory
 -- -----------------------------------------------------
@@ -9,4 +11,4 @@ BEGIN
     select  playerId,itemId , quantity from dbo.inventory where playerId = p_playerId;
     
     
-END
+END&&

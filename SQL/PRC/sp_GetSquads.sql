@@ -1,3 +1,5 @@
+DELIMITER &&
+ 
 -- -----------------------------------------------------
 -- procedure sp_GetSquads
 -- -----------------------------------------------------
@@ -9,4 +11,4 @@ BEGIN
     SELECT SquadID, playerId, Capasity, SquadName from Squad where playerId = p_playerId;
     
     
-END
+END&&

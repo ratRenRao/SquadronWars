@@ -1,3 +1,5 @@
+DELIMITER &&
+ 
 CREATE PROCEDURE sp_CreateCharacter(OUT p_characterId int,IN p_SquadID int ,  IN p_LevelID int , IN p_name varchar(45) , IN p_experience int , IN p_helm int , IN p_chest int , IN p_gloves int , IN p_pants int ,IN  p_shoulders int ,IN  p_boots int , IN p_accessory1 int , IN p_accessory2 int , IN p_IsStandard tinyint, IN p_str int , IN p_int int , IN p_agi int , IN p_wis int ,IN  p_vit int ,IN  p_dex int ,IN  p_hitPoints int ,IN  p_dmg int ,IN  p_abilityPoints int , IN p_speed int ,IN  p_defense int , IN p_magicDefense int ,IN  p_magicAttack int ,IN  p_hitRate int ,IN  p_critRate int , IN p_dodgeRate int)
 BEGIN	
     
@@ -13,4 +15,4 @@ BEGIN
     
     SELECT LAST_INSERT_ID() INTO p_characterId;
    
-   END
+   END&&

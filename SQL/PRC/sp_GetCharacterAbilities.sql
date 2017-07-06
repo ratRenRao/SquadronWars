@@ -1,3 +1,5 @@
+DELIMITER &&
+ 
 -- -----------------------------------------------------
 -- procedure sp_GetCharacterAbilities
 -- -----------------------------------------------------
@@ -17,4 +19,4 @@ BEGIN
     on ch.characterId = cha.characterId;
  
     
-END
+END&&

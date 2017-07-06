@@ -1,3 +1,5 @@
+DELIMITER &&
+ 
 -- -----------------------------------------------------
 -- procedure sp_UpdatePlayer
 -- -----------------------------------------------------
@@ -14,4 +16,4 @@ BEGIN
     where userName = p_username;
     
     
-END
+END&&

@@ -1,3 +1,5 @@
+DELIMITER &&
+ 
 CREATE  PROCEDURE sp_CreateSquad(IN p_playerId int, IN p_Capasity int , IN p_SquadName varchar(45), OUT p_SquadID int)
 BEGIN	
     
@@ -6,4 +8,4 @@ BEGIN
     
     SELECT LAST_INSERT_ID() INTO p_SquadID;
     
-END
+END&&

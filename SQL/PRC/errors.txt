@@ -1,0 +1,59 @@
+sp_AuthorizePlayer.sql
+Enter password:
+sp_CreateCharacter.sql
+Enter password:
+ERROR 1304 (42000) at line 3: PROCEDURE sp_CreateCharacter already exists
+sp_CreatePlayer2.sql
+Enter password:
+ERROR 1304 (42000) at line 8: PROCEDURE sp_CreatePlayer already exists
+SP_CreatePlayer.sql
+Enter password:
+ERROR 1064 (42000) at line 4: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ON
+GO
+if exists (select top 1 1 from dbo.sysobjects where id = object_id(N'[dbo' at line 1
+sp_CreateSquad.sql
+Enter password:
+ERROR 1304 (42000) at line 3: PROCEDURE sp_CreateSquad already exists
+sp_GetAbilitiesPreReqs.sql
+Enter password:
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+sp_GetAbilities.sql
+Enter password:
+ERROR 1064 (42000) at line 5: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_GetAbilities`()
+BEGIN
+
+ ' at line 1
+ sp_GetCharacterAbilities.sql
+ Enter password:
+ ERROR 1304 (42000) at line 8: PROCEDURE sp_GetCharacterAbilities already exists
+ sp_GetCharacters.sql
+ Enter password:
+ ERROR 1304 (42000) at line 8: PROCEDURE sp_GetCharacters already exists
+ sp_GetEquipment.sql
+ Enter password:
+ ERROR 1304 (42000) at line 8: PROCEDURE sp_GetEquipment already exists
+ sp_GetInventory.sql
+ Enter password:
+ ERROR 1304 (42000) at line 8: PROCEDURE sp_GetInventory already exists
+ sp_GetItems.sql
+ Enter password:
+ ERROR 1304 (42000) at line 7: PROCEDURE sp_GetItems already exists
+ sp_GetSquads.sql
+ Enter password:
+ ERROR 1304 (42000) at line 8: PROCEDURE sp_GetSquads already exists
+ sp_UpdateCharacter.sql
+ Enter password:
+ ERROR 1304 (42000) at line 8: PROCEDURE sp_UpdateCharacter already exists
+ sp_UpdatePlayer.sql
+ Enter password:
+ ERROR 1304 (42000) at line 8: PROCEDURE sp_UpdatePlayer already exists
+ sp_UpdateSquad.sql
+ Enter password:
+ ERROR 1304 (42000) at line 8: PROCEDURE sp_UpdateSquad already exists
+ sp_UpsertCharacterAbility.sql
+ Enter password:
+ ERROR 1064 (42000) at line 5: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '$$
+ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_UpsertCharacterAbility`(in p_' at line 1
+ ratrenrao@UbuntuServer16-10:~/GitRepos/SquadronWars/SQL/PRC$ Stonesoup_283028
+ Stonesoup_283028: command not found

@@ -1,4 +1,5 @@
-DELIMITER $$
+DELIMITER &&
+ 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_UpsertCharacterAbility`(in p_characterId INT, in p_abilityId INT, in p_abilityLevel INT)
 BEGIN
 	
@@ -15,5 +16,5 @@ BEGIN
 			abilityLevel = values (p_abilityLevel);
 	end if;
     
-END$$
-DELIMITER ;
+END
+&&
