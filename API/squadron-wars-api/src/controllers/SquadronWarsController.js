@@ -13,7 +13,7 @@ let con = mysql.createConnection({
 exports.login = function(user, pass){
     con.connect(function (err) {
         if (err) throw err;
-        con.query(`SELECT userName, password from Player where userName = ${user} and password = ${pass}`, function (err, result, fields) {
+        con.query(`SELECT userName, password from Player where userName = \'${user}\' and password = \'${pass}\'`, function (err, result, fields) {
             if (err) throw err;
             if (result.value = null)
                 return false;
